@@ -13,29 +13,25 @@ def is_valid_ip(ip):
 
 def initial_scan(target_ip, output_file):
     print(f"[+] Obteniendo puertos abiertos de {target_ip}...")
-
-    # Asegurar que el directorio exista (mkdir -p logs/nmap)
     os.makedirs("logs/nmap", exist_ok=True)
 
-    # Separamos los argumentos en una lista
     command = [
         "nmap",
-        "-p-",  # Escanear todos los puertos
-        "--open",  # Mostrar solo puertos abiertos
+        "-p-",
+        "--open",
         "--min-rate", "5000",
-        "-n",  # No hacer resolución DNS
-        "-Pn",  # Tratar todos los hosts como "up"
+        "-n",
+        "-Pn",
         target_ip,
         "-oG",
         output_file
     ]
 
-    # Ejecutar nmap con la lista de argumentos
     result = subprocess.run(
         command,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        text=True  # Para recibir la salida como string en lugar de bytes
+        text=True
     )
 
     if result.returncode != 0:
@@ -73,25 +69,22 @@ def extract_ports(file_path):
 
 def hard_scan(target_ip, ports, output_file):
     print(f"[+] Escaneando puertos en detalle...")
-
     os.makedirs("logs/nmap", exist_ok=True)
 
-    # Separamos los argumentos en una lista
     command = [
         "nmap",
-        "-p" + ",".join(ports),  # Escanear solo los puertos abiertos
+        "-p" + ",".join(ports),
         "-sCV",
         target_ip,
         "-oN",
         output_file
     ]
 
-    # Ejecutar nmap con la lista de argumentos
     result = subprocess.run(
         command,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
-        text=True  # Para recibir la salida como string en lugar de bytes
+        text=True
     )
 
     if result.returncode != 0:
