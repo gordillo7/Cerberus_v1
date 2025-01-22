@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Wed Jan 22 18:23:17 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG logs/nmap/nmap_results.txt 10.10.10.245
+Host: 10.10.10.245 ()	Status: Up
+Host: 10.10.10.245 ()	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///
+# Nmap done at Wed Jan 22 18:23:28 2025 -- 1 IP address (1 host up) scanned in 11.36 seconds
