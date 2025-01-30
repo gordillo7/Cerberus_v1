@@ -2,18 +2,10 @@ import subprocess
 import re
 import sys
 import os
-import ipaddress
-
-def is_valid_ip(ip):
-    try:
-        ipaddress.ip_address(ip)
-        return True
-    except ValueError:
-        return False
 
 def initial_scan(target_ip, output_file):
     print(f"[+] Obteniendo puertos abiertos de {target_ip}...")
-    os.makedirs("logs/" + target_ip + "/nmap", exist_ok=True)
+    os.makedirs(f"logs/{target_ip}/nmap", exist_ok=True)
 
     command = [
         "nmap",
@@ -59,7 +51,7 @@ def extract_ports(file_path):
 
 def hard_scan(target_ip, ports, output_file):
     print(f"[+] Escaneando puertos en detalle...")
-    os.makedirs("logs/" + target_ip + "/nmap", exist_ok=True)
+    os.makedirs(f"logs/{target_ip}/nmap", exist_ok=True)
 
     command = [
         "nmap",
@@ -101,16 +93,13 @@ def limpiar_reporte_nmap(archivo_reporte, archivo_salida):
 
 def nmap():
     target = sys.argv[1]
-    if not is_valid_ip(target):
-        print("[!] Dirección IP no válida. Intente nuevamente.")
-        sys.exit(1)
     # 1. Ejecutar Nmap para escaneo de puertos abiertos
-    initial_scan(target, "logs/" + target + "/nmap/initial_scan.txt")
+    initial_scan(target, f"logs/{target}/nmap/initial_scan.txt")
     # 2. Extraer puertos
-    open_ports = extract_ports("logs/" + target + "/nmap/initial_scan.txt")
+    open_ports = extract_ports(f"logs/{target}/nmap/initial_scan.txt")
     # 3. Escaneo sCV de servicios
-    hard_scan(target, open_ports, "logs/" + target + "/nmap/ports_services_versions_temp.txt")
-    limpiar_reporte_nmap("logs/" + target + "/nmap/ports_services_versions_temp.txt", "logs/" + target + "/nmap/ports_services_versions.txt")
+    hard_scan(target, open_ports, f"logs/{target}/nmap/ports_services_versions_temp.txt")
+    limpiar_reporte_nmap(f"logs/{target}/nmap/ports_services_versions_temp.txt", "logs/" + target + "/nmap/ports_services_versions.txt")
 
 #Main de prueba
 if __name__ == "__main__":

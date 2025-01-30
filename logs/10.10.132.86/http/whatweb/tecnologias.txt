@@ -1,0 +1,210 @@
+Identifying: http://10.10.132.86
+HTTP-Status: 200
+[["Apache",
+  [{:regexp=>["Apache"],
+    :search=>"headers[server]",
+    :name=>"HTTP Server Header",
+    :regexp_compiled=>/^Apache/i,
+    :certainty=>100},
+   {:version=>["2.4.18"],
+    :search=>"headers[server]",
+    :name=>"HTTP Server Header",
+    :regexp_compiled=>/^Apache\/([\d\.]+)/i,
+    :certainty=>100}]],
+ ["Country", [{:string=>"RESERVED", :module=>"ZZ", :certainty=>100}]],
+ ["HTML5",
+  [{:regexp=>["<!doctype html>"],
+    :regexp_compiled=>/<!DOCTYPE html>/i,
+    :certainty=>100}]],
+ ["HTTPServer",
+  [{:os=>"Ubuntu Linux", :certainty=>100},
+   {:name=>"server string",
+    :string=>"Apache/2.4.18 (Ubuntu)",
+    :certainty=>100}]],
+ ["IP", [{:string=>"10.10.132.86", :certainty=>100}]],
+ ["JQuery",
+  [{:regexp=>
+     ["<script src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery",
+      "<script src='/wp-includes/js/jquery/jquery.min.js' id='jquery"],
+    :regexp_compiled=>/<script [^>]*jquery/,
+    :certainty=>100}]],
+ ["MetaGenerator",
+  [{:string=>["WordPress 5.6.2"],
+    :regexp_compiled=>
+     /<meta[^>=]+name[\s]*=[\s]*["|']?generator["|']?[^>=]+content[\s]*=[\s]*"([^"'>]+)"/i,
+    :certainty=>100}]],
+ ["PoweredBy",
+  [{:string=>["--"],
+    :regexp_compiled=>/powered[ -]?by[ ]?([^\s<>'".]+)/i,
+    :certainty=>100}]],
+ ["Script",
+  [{:regexp=>[" ", ">"],
+    :regexp_compiled=>/<script(\s|>)/i,
+    :certainty=>100}]],
+ ["Title",
+  [{:name=>"page title",
+    :string=>"Tryhackme &#8211; Just another WordPress site",
+    :certainty=>100}]],
+ ["UncommonHeaders", [{:name=>"headers", :string=>"link", :certainty=>100}]],
+ ["WordPress",
+  [{:regexp=>
+     ["\");</script>\t<script>\n" +
+      "\tif ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {\n" +
+      "\t\tdocument.body.classList.add( 'is-IE' );\n" +
+      "\t}\n" +
+      "\t</script>\n" +
+      "\t<link rel='stylesheet' id='whp7363tw-bs4.css-css'  href='/wp-content/plugins/wp-security-hardening/modules/inc/assets/css/tw-bs4.css' media='all' />\n" +
+      "<link rel='stylesheet' id='whp2951font-awesome.min.css-css'  href='/wp-content/plugins/wp-security-hardening/modules/inc/fa/css/font-awesome.min.css' media='all' />\n" +
+      "<link rel='stylesheet' id='whp9724front.css-css'  href='/wp-content/plugins/wp-security-hardening/modules/css/front.css' media='all' />\n" +
+      "<script id='twenty-twenty-one-ie11-polyfills-js-after'>\n" +
+      "( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script src=\"",
+      "\"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);\n" +
+      "\t\t</script>\n" +
+      "\t\t<style>\n" +
+      "img.wp-smiley,\n" +
+      "img.emoji {\n" +
+      "\tdisplay: inline !important;\n" +
+      "\tborder: none !important;\n" +
+      "\tbox-shadow: none !important;\n" +
+      "\theight: 1em !important;\n" +
+      "\twidth: 1em !important;\n" +
+      "\tmargin: 0 .07em !important;\n" +
+      "\tvertical-align: -0.1em !important;\n" +
+      "\tbackground: none !important;\n" +
+      "\tpadding: 0 !important;\n" +
+      "}\n" +
+      "</style>\n" +
+      "\t<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css' media='all' />\n" +
+      "<link rel='stylesheet' id='wp-block-library-theme-css'  href='/wp-includes/css/dist/block-library/theme.min.css' media='all' />\n" +
+      "<link rel='stylesheet' id='twenty-twenty-one-style-css'  href='/wp-content/themes/twentytwentyone/style.css' media='all' />\n" +
+      "<link rel='stylesheet' id='twenty-twenty-one-print-style-css'  href='/wp-content/themes/twentytwentyone/assets/css/print.css' media='print' />\n" +
+      "<script src='/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>\n" +
+      "<script src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>\n" +
+      "<script id='whp9963front.js2335-js-extra'>\n" +
+      "var whp_local_data = {\"",
+      "\"></scr' + 'ipt>' );\n" +
+      "</script>\n" +
+      "<script src='/wp-content/themes/twentytwentyone/assets/js/responsive-embeds.js' id='twenty-twenty-one-responsive-embeds-script-js'></script>\n" +
+      "<script src='/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>\n" +
+      "\t<script>\n" +
+      "\t/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener(\"",
+      "\"};\n" +
+      "</script>\n" +
+      "<script src='/wp-content/plugins/wp-security-hardening/modules/js/front.js' id='whp9963front.js2335-js'></script>\n" +
+      "<link rel=\""],
+    :name=>"wp-content",
+    :certainty=>75,
+    :regexp_compiled=>/"[^"]+\/wp-content\/[^"]+"/},
+   {:version=>["5.6.2"],
+    :regexp_compiled=>/<meta name="generator" content="WordPress ([0-9\.]+)"/,
+    :certainty=>100},
+   {:name=>"Relative /wp-content/ link", :certainty=>100},
+   {:name=>"Relative /wp-includes/ link", :certainty=>100},
+   {:name=>"Relative /wp-json/ link", :certainty=>100}]],
+ ["X-Frame-Options", [{:string=>"sameorigin", :certainty=>100}]]]
+
+Identifying: http://10.10.132.86
+HTTP-Status: 200
+[["Apache",
+  [{:regexp=>["Apache"],
+    :search=>"headers[server]",
+    :name=>"HTTP Server Header",
+    :regexp_compiled=>/^Apache/i,
+    :certainty=>100},
+   {:version=>["2.4.18"],
+    :search=>"headers[server]",
+    :name=>"HTTP Server Header",
+    :regexp_compiled=>/^Apache\/([\d\.]+)/i,
+    :certainty=>100}]],
+ ["Country", [{:string=>"RESERVED", :module=>"ZZ", :certainty=>100}]],
+ ["HTML5",
+  [{:regexp=>["<!doctype html>"],
+    :regexp_compiled=>/<!DOCTYPE html>/i,
+    :certainty=>100}]],
+ ["HTTPServer",
+  [{:os=>"Ubuntu Linux", :certainty=>100},
+   {:name=>"server string",
+    :string=>"Apache/2.4.18 (Ubuntu)",
+    :certainty=>100}]],
+ ["IP", [{:string=>"10.10.132.86", :certainty=>100}]],
+ ["JQuery",
+  [{:regexp=>
+     ["<script src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery",
+      "<script src='/wp-includes/js/jquery/jquery.min.js' id='jquery"],
+    :regexp_compiled=>/<script [^>]*jquery/,
+    :certainty=>100}]],
+ ["MetaGenerator",
+  [{:string=>["WordPress 5.6.2"],
+    :regexp_compiled=>
+     /<meta[^>=]+name[\s]*=[\s]*["|']?generator["|']?[^>=]+content[\s]*=[\s]*"([^"'>]+)"/i,
+    :certainty=>100}]],
+ ["PoweredBy",
+  [{:string=>["--"],
+    :regexp_compiled=>/powered[ -]?by[ ]?([^\s<>'".]+)/i,
+    :certainty=>100}]],
+ ["Script",
+  [{:regexp=>[" ", ">"],
+    :regexp_compiled=>/<script(\s|>)/i,
+    :certainty=>100}]],
+ ["Title",
+  [{:name=>"page title",
+    :string=>"Tryhackme &#8211; Just another WordPress site",
+    :certainty=>100}]],
+ ["UncommonHeaders", [{:name=>"headers", :string=>"link", :certainty=>100}]],
+ ["WordPress",
+  [{:regexp=>
+     ["\");</script>\t<script>\n" +
+      "\tif ( -1 !== navigator.userAgent.indexOf( 'MSIE' ) || -1 !== navigator.appVersion.indexOf( 'Trident/' ) ) {\n" +
+      "\t\tdocument.body.classList.add( 'is-IE' );\n" +
+      "\t}\n" +
+      "\t</script>\n" +
+      "\t<link rel='stylesheet' id='whp5753tw-bs4.css-css'  href='/wp-content/plugins/wp-security-hardening/modules/inc/assets/css/tw-bs4.css' media='all' />\n" +
+      "<link rel='stylesheet' id='whp4717font-awesome.min.css-css'  href='/wp-content/plugins/wp-security-hardening/modules/inc/fa/css/font-awesome.min.css' media='all' />\n" +
+      "<link rel='stylesheet' id='whp3196front.css-css'  href='/wp-content/plugins/wp-security-hardening/modules/css/front.css' media='all' />\n" +
+      "<script id='twenty-twenty-one-ie11-polyfills-js-after'>\n" +
+      "( Element.prototype.matches && Element.prototype.closest && window.NodeList && NodeList.prototype.forEach ) || document.write( '<script src=\"",
+      "\"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);\n" +
+      "\t\t</script>\n" +
+      "\t\t<style>\n" +
+      "img.wp-smiley,\n" +
+      "img.emoji {\n" +
+      "\tdisplay: inline !important;\n" +
+      "\tborder: none !important;\n" +
+      "\tbox-shadow: none !important;\n" +
+      "\theight: 1em !important;\n" +
+      "\twidth: 1em !important;\n" +
+      "\tmargin: 0 .07em !important;\n" +
+      "\tvertical-align: -0.1em !important;\n" +
+      "\tbackground: none !important;\n" +
+      "\tpadding: 0 !important;\n" +
+      "}\n" +
+      "</style>\n" +
+      "\t<link rel='stylesheet' id='wp-block-library-css'  href='/wp-includes/css/dist/block-library/style.min.css' media='all' />\n" +
+      "<link rel='stylesheet' id='wp-block-library-theme-css'  href='/wp-includes/css/dist/block-library/theme.min.css' media='all' />\n" +
+      "<link rel='stylesheet' id='twenty-twenty-one-style-css'  href='/wp-content/themes/twentytwentyone/style.css' media='all' />\n" +
+      "<link rel='stylesheet' id='twenty-twenty-one-print-style-css'  href='/wp-content/themes/twentytwentyone/assets/css/print.css' media='print' />\n" +
+      "<script src='/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>\n" +
+      "<script src='/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>\n" +
+      "<script id='whp3559front.js5224-js-extra'>\n" +
+      "var whp_local_data = {\"",
+      "\"></scr' + 'ipt>' );\n" +
+      "</script>\n" +
+      "<script src='/wp-content/themes/twentytwentyone/assets/js/responsive-embeds.js' id='twenty-twenty-one-responsive-embeds-script-js'></script>\n" +
+      "<script src='/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>\n" +
+      "\t<script>\n" +
+      "\t/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener(\"",
+      "\"};\n" +
+      "</script>\n" +
+      "<script src='/wp-content/plugins/wp-security-hardening/modules/js/front.js' id='whp3559front.js5224-js'></script>\n" +
+      "<link rel=\""],
+    :name=>"wp-content",
+    :certainty=>75,
+    :regexp_compiled=>/"[^"]+\/wp-content\/[^"]+"/},
+   {:version=>["5.6.2"],
+    :regexp_compiled=>/<meta name="generator" content="WordPress ([0-9\.]+)"/,
+    :certainty=>100},
+   {:name=>"Relative /wp-content/ link", :certainty=>100},
+   {:name=>"Relative /wp-includes/ link", :certainty=>100},
+   {:name=>"Relative /wp-json/ link", :certainty=>100}]],
+ ["X-Frame-Options", [{:string=>"sameorigin", :certainty=>100}]]]
+
