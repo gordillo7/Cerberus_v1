@@ -10,14 +10,14 @@
     ],
     "sponsor": "Sponsored by Automattic - https://automattic.com/"
   },
-  "start_time": 1738318479,
-  "start_memory": 52125696,
-  "target_url": "http://10.10.143.44/",
-  "target_ip": "10.10.143.44",
-  "effective_url": "http://10.10.143.44/",
+  "start_time": 1738340954,
+  "start_memory": 52264960,
+  "target_url": "http://10.10.117.116/",
+  "target_ip": "10.10.117.116",
+  "effective_url": "http://10.10.117.116/",
   "interesting_findings": [
     {
-      "url": "http://10.10.143.44/",
+      "url": "http://10.10.117.116/",
       "to_s": "Headers",
       "type": "headers",
       "found_by": "Headers (Passive Detection)",
@@ -33,8 +33,8 @@
       ]
     },
     {
-      "url": "http://10.10.143.44/robots.txt",
-      "to_s": "robots.txt found: http://10.10.143.44/robots.txt",
+      "url": "http://10.10.117.116/robots.txt",
+      "to_s": "robots.txt found: http://10.10.117.116/robots.txt",
       "type": "robots_txt",
       "found_by": "Robots Txt (Aggressive Detection)",
       "confidence": 100,
@@ -50,8 +50,8 @@
       ]
     },
     {
-      "url": "http://10.10.143.44/xmlrpc.php",
-      "to_s": "XML-RPC seems to be enabled: http://10.10.143.44/xmlrpc.php",
+      "url": "http://10.10.117.116/xmlrpc.php",
+      "to_s": "XML-RPC seems to be enabled: http://10.10.117.116/xmlrpc.php",
       "type": "xmlrpc",
       "found_by": "Direct Access (Aggressive Detection)",
       "confidence": 100,
@@ -74,8 +74,8 @@
       ]
     },
     {
-      "url": "http://10.10.143.44/readme.html",
-      "to_s": "WordPress readme found: http://10.10.143.44/readme.html",
+      "url": "http://10.10.117.116/readme.html",
+      "to_s": "WordPress readme found: http://10.10.117.116/readme.html",
       "type": "readme",
       "found_by": "Direct Access (Aggressive Detection)",
       "confidence": 100,
@@ -90,8 +90,8 @@
       ]
     },
     {
-      "url": "http://10.10.143.44/wp-content/uploads/",
-      "to_s": "Upload directory has listing enabled: http://10.10.143.44/wp-content/uploads/",
+      "url": "http://10.10.117.116/wp-content/uploads/",
+      "to_s": "Upload directory has listing enabled: http://10.10.117.116/wp-content/uploads/",
       "type": "upload_directory_listing",
       "found_by": "Direct Access (Aggressive Detection)",
       "confidence": 100,
@@ -106,8 +106,8 @@
       ]
     },
     {
-      "url": "http://10.10.143.44/wp-cron.php",
-      "to_s": "The external WP-Cron seems to be enabled: http://10.10.143.44/wp-cron.php",
+      "url": "http://10.10.117.116/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: http://10.10.117.116/wp-cron.php",
       "type": "wp_cron",
       "found_by": "Direct Access (Aggressive Detection)",
       "confidence": 60,
@@ -132,13 +132,13 @@
     "found_by": "Emoji Settings (Passive Detection)",
     "confidence": 100,
     "interesting_entries": [
-      "http://10.10.143.44/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=5.0'"
+      "http://10.10.117.116/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=5.0'"
     ],
     "confirmed_by": {
       "Meta Generator (Passive Detection)": {
         "confidence": 60,
         "interesting_entries": [
-          "http://10.10.143.44/, Match: 'WordPress 5.0'"
+          "http://10.10.117.116/, Match: 'WordPress 5.0'"
         ]
       }
     },
@@ -159,7 +159,7 @@
       "found_by": "Wp Json Api (Aggressive Detection)",
       "confidence": 100,
       "interesting_entries": [
-        "http://10.10.143.44/wp-json/wp/v2/users/?per_page=100&page=1"
+        "http://10.10.117.116/wp-json/wp/v2/users/?per_page=100&page=1"
       ],
       "confirmed_by": {
         "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
@@ -181,7 +181,7 @@
       "found_by": "Wp Json Api (Aggressive Detection)",
       "confidence": 100,
       "interesting_entries": [
-        "http://10.10.143.44/wp-json/wp/v2/users/?per_page=100&page=1"
+        "http://10.10.117.116/wp-json/wp/v2/users/?per_page=100&page=1"
       ],
       "confirmed_by": {
         "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
@@ -224,14 +224,14 @@
   "vuln_api": {
     "error": "No WPScan API Token given, as a result vulnerability data has not been output.\nYou can get a free API token with 25 daily requests by registering at https://wpscan.com/register"
   },
-  "stop_time": 1738318499,
-  "elapsed": 19,
-  "requests_done": 703,
-  "cached_requests": 13,
-  "data_sent": 186627,
-  "data_sent_humanised": "182.253 KB",
-  "data_received": 615488,
-  "data_received_humanised": "601.062 KB",
-  "used_memory": 267190272,
-  "used_memory_humanised": "254.812 MB"
+  "stop_time": 1738340972,
+  "elapsed": 18,
+  "requests_done": 668,
+  "cached_requests": 48,
+  "data_sent": 178747,
+  "data_sent_humanised": "174.558 KB",
+  "data_received": 229759,
+  "data_received_humanised": "224.374 KB",
+  "used_memory": 266190848,
+  "used_memory_humanised": "253.859 MB"
 }

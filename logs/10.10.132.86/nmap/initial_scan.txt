@@ -1,4 +1,0 @@
-# Nmap 7.93 scan initiated Thu Jan 30 20:27:46 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG logs/10.10.132.86/nmap/initial_scan.txt 10.10.132.86
-Host: 10.10.132.86 ()	Status: Up
-Host: 10.10.132.86 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 3306/open/tcp//mysql///
-# Nmap done at Thu Jan 30 20:27:57 2025 -- 1 IP address (1 host up) scanned in 11.35 seconds
