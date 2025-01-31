@@ -1,0 +1,187 @@
+{
+  "banner": {
+    "description": "WordPress Security Scanner by the WPScan Team",
+    "version": "3.8.27",
+    "authors": [
+      "@_WPScan_",
+      "@ethicalhack3r",
+      "@erwan_lr",
+      "@firefart"
+    ],
+    "sponsor": "Sponsored by Automattic - https://automattic.com/"
+  },
+  "start_time": 1738320191,
+  "start_memory": 52035584,
+  "target_url": "http://10.10.103.26/",
+  "target_ip": "10.10.103.26",
+  "effective_url": "http://10.10.103.26/",
+  "interesting_findings": [
+    {
+      "url": "http://10.10.103.26/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "Server: Apache/2.4.18 (Ubuntu)"
+      ]
+    },
+    {
+      "url": "http://10.10.103.26/readme.html",
+      "to_s": "WordPress readme found: http://10.10.103.26/readme.html",
+      "type": "readme",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.10.103.26/wp-content/uploads/",
+      "to_s": "Upload directory has listing enabled: http://10.10.103.26/wp-content/uploads/",
+      "type": "upload_directory_listing",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.10.103.26/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: http://10.10.103.26/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "5.6.2",
+    "release_date": "2021-02-22",
+    "status": "insecure",
+    "found_by": "Rss Generator (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "http://10.10.103.26/index.php/feed/, <generator>https://wordpress.org/?v=5.6.2</generator>",
+      "http://10.10.103.26/index.php/comments/feed/, <generator>https://wordpress.org/?v=5.6.2</generator>"
+    ],
+    "confirmed_by": {
+
+    },
+    "vulnerabilities": [
+
+    ]
+  },
+  "main_theme": {
+    "slug": "twentytwentyone",
+    "location": "http://10.10.103.26/wp-content/themes/twentytwentyone/",
+    "latest_version": "2.4",
+    "last_updated": "2024-11-13T00:00:00.000Z",
+    "outdated": true,
+    "readme_url": "http://10.10.103.26/wp-content/themes/twentytwentyone/readme.txt",
+    "directory_listing": false,
+    "error_log_url": null,
+    "style_url": "http://10.10.103.26/wp-content/themes/twentytwentyone/style.css",
+    "style_name": "Twenty Twenty-One",
+    "style_uri": "https://wordpress.org/themes/twentytwentyone/",
+    "description": "Twenty Twenty-One is a blank canvas for your ideas and it makes the block editor your best brush. With new block patterns, which allow you to create a beautiful layout in a matter of seconds, this theme’s soft colors and eye-catching — yet timeless — design will let your work shine. Take it for a spin! See how Twenty Twenty-One elevates your portfolio, business website, or personal blog.",
+    "author": "the WordPress team",
+    "author_uri": "https://wordpress.org/",
+    "template": null,
+    "license": "GNU General Public License v2 or later",
+    "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "tags": "one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, block-patterns, rtl-language-support, sticky-post, threaded-comments, translation-ready",
+    "text_domain": "twentytwentyone",
+    "found_by": "Css Style In Homepage (Passive Detection)",
+    "confidence": 78,
+    "interesting_entries": [
+
+    ],
+    "confirmed_by": {
+      "Urls In Homepage (Passive Detection)": {
+        "confidence": 8,
+        "interesting_entries": [
+
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ],
+    "version": {
+      "number": "1.1",
+      "confidence": 80,
+      "found_by": "Style (Passive Detection)",
+      "interesting_entries": [
+        "http://10.10.103.26/wp-content/themes/twentytwentyone/style.css, Match: 'Version: 1.1'"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "parents": [
+
+    ]
+  },
+  "plugins": {
+
+  },
+  "themes": {
+
+  },
+  "users": {
+    "Corporation Test": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 50,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      }
+    }
+  },
+  "vuln_api": {
+    "error": "No WPScan API Token given, as a result vulnerability data has not been output.\nYou can get a free API token with 25 daily requests by registering at https://wpscan.com/register"
+  },
+  "stop_time": 1738320207,
+  "elapsed": 16,
+  "requests_done": 716,
+  "cached_requests": 9,
+  "data_sent": 192326,
+  "data_sent_humanised": "187.818 KB",
+  "data_received": 333255,
+  "data_received_humanised": "325.444 KB",
+  "used_memory": 285913088,
+  "used_memory_humanised": "272.668 MB"
+}

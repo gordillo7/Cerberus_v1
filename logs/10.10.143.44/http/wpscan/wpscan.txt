@@ -1,0 +1,237 @@
+{
+  "banner": {
+    "description": "WordPress Security Scanner by the WPScan Team",
+    "version": "3.8.27",
+    "authors": [
+      "@_WPScan_",
+      "@ethicalhack3r",
+      "@erwan_lr",
+      "@firefart"
+    ],
+    "sponsor": "Sponsored by Automattic - https://automattic.com/"
+  },
+  "start_time": 1738318479,
+  "start_memory": 52125696,
+  "target_url": "http://10.10.143.44/",
+  "target_ip": "10.10.143.44",
+  "effective_url": "http://10.10.143.44/",
+  "interesting_findings": [
+    {
+      "url": "http://10.10.143.44/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "Server: Apache/2.4.29 (Ubuntu)"
+      ]
+    },
+    {
+      "url": "http://10.10.143.44/robots.txt",
+      "to_s": "robots.txt found: http://10.10.143.44/robots.txt",
+      "type": "robots_txt",
+      "found_by": "Robots Txt (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "/wp-admin/",
+        "/wp-admin/admin-ajax.php"
+      ]
+    },
+    {
+      "url": "http://10.10.143.44/xmlrpc.php",
+      "to_s": "XML-RPC seems to be enabled: http://10.10.143.44/xmlrpc.php",
+      "type": "xmlrpc",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/XML-RPC_Pingback_API"
+        ],
+        "metasploit": [
+          "auxiliary/scanner/http/wordpress_ghost_scanner",
+          "auxiliary/dos/http/wordpress_xmlrpc_dos",
+          "auxiliary/scanner/http/wordpress_xmlrpc_login",
+          "auxiliary/scanner/http/wordpress_pingback_access"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.10.143.44/readme.html",
+      "to_s": "WordPress readme found: http://10.10.143.44/readme.html",
+      "type": "readme",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.10.143.44/wp-content/uploads/",
+      "to_s": "Upload directory has listing enabled: http://10.10.143.44/wp-content/uploads/",
+      "type": "upload_directory_listing",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.10.143.44/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: http://10.10.143.44/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "5.0",
+    "release_date": "2018-12-06",
+    "status": "insecure",
+    "found_by": "Emoji Settings (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "http://10.10.143.44/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=5.0'"
+    ],
+    "confirmed_by": {
+      "Meta Generator (Passive Detection)": {
+        "confidence": 60,
+        "interesting_entries": [
+          "http://10.10.143.44/, Match: 'WordPress 5.0'"
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ]
+  },
+  "main_theme": null,
+  "plugins": {
+
+  },
+  "themes": {
+
+  },
+  "users": {
+    "bjoel": {
+      "id": 1,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "http://10.10.143.44/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+        "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        },
+        "Login Error Messages (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "kwheel": {
+      "id": 3,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "http://10.10.143.44/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+        "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        },
+        "Login Error Messages (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "Karen Wheeler": {
+      "id": null,
+      "found_by": "Rss Generator (Aggressive Detection)",
+      "confidence": 50,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "Billy Joel": {
+      "id": null,
+      "found_by": "Rss Generator (Aggressive Detection)",
+      "confidence": 50,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      }
+    }
+  },
+  "vuln_api": {
+    "error": "No WPScan API Token given, as a result vulnerability data has not been output.\nYou can get a free API token with 25 daily requests by registering at https://wpscan.com/register"
+  },
+  "stop_time": 1738318499,
+  "elapsed": 19,
+  "requests_done": 703,
+  "cached_requests": 13,
+  "data_sent": 186627,
+  "data_sent_humanised": "182.253 KB",
+  "data_received": 615488,
+  "data_received_humanised": "601.062 KB",
+  "used_memory": 267190272,
+  "used_memory_humanised": "254.812 MB"
+}
