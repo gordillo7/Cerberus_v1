@@ -9,7 +9,7 @@ from bs4 import BeautifulSoup
 
 def run_wpscan(target_ip, output_file):
     print(f"[+] Ejecutando wpscan en {target_ip}...")
-    os.makedirs(f"logs/{target_ip}/http/wpscan", exist_ok=True)
+    os.makedirs(f"../logs/{target_ip}/http/wpscan", exist_ok=True)
 
     command = [
         "wpscan",
@@ -138,9 +138,9 @@ def process_directory_listings(input_file, output_dir):
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    output_file1 = f"logs/{target}/http/wpscan/users.txt"
+    output_file1 = f"../logs/{target}/http/wpscan/users.txt"
     output_file2 = f"wordlists/{target}/users.txt"
 
-    run_wpscan(target, f"logs/{target}/http/wpscan/wpscan.txt")
-    extract_usernames(f"logs/{target}/http/wpscan/wpscan.txt", output_file1, output_file2)
-    process_directory_listings(f"logs/{target}/http/wpscan/wpscan.txt",f"logs/{target}/http/wpscan/directory_listing_dump")
+    run_wpscan(target, f"../logs/{target}/http/wpscan/wpscan.txt")
+    extract_usernames(f"../logs/{target}/http/wpscan/wpscan.txt", output_file1, output_file2)
+    process_directory_listings(f"../logs/{target}/http/wpscan/wpscan.txt",f"../logs/{target}/http/wpscan/directory_listing_dump")

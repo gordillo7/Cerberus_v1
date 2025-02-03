@@ -1,3 +1,7 @@
 #Ignorar de momento
+#Librerias python
 requests
 bs4
+cvelib
+
+#Herramientas

@@ -5,7 +5,7 @@ import re
 
 def whatweb(target_ip, output_file):
     print(f"[+] Ejecutando whatweb en {target_ip}...")
-    os.makedirs(f"logs/{target_ip}/http/whatweb", exist_ok=True)
+    os.makedirs(f"../logs/{target_ip}/http/whatweb", exist_ok=True)
 
     command = [
         "whatweb",
@@ -49,7 +49,7 @@ def identificar_cms(archivo_tecnologias, archivo_cms):
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    tecnologias_file = f"logs/{target}/http/whatweb/tecnologias.txt"
-    cms_file = f"logs/{target}/http/whatweb/cms.txt"
+    tecnologias_file = f"../logs/{target}/http/whatweb/tecnologias.txt"
+    cms_file = f"../logs/{target}/http/whatweb/cms.txt"
     whatweb(target, tecnologias_file)
     identificar_cms(tecnologias_file, cms_file)
