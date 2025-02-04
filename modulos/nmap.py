@@ -96,13 +96,13 @@ def limpiar_reporte_nmap(target_ip):
     print(f"[+] Escaneo exhaustivo de puertos finalizado. Resultados en {archivo_salida}")
     os.remove(archivo_reporte)
 
-def run_nmap():
-    target = sys.argv[1]
-    initial_scan(target)
-    open_ports = extract_ports(target)
-    hard_scan(target, open_ports)
-    limpiar_reporte_nmap(target)
+def run_nmap(target_ip):
+    initial_scan(target_ip)
+    open_ports = extract_ports(target_ip)
+    hard_scan(target_ip, open_ports)
+    limpiar_reporte_nmap(target_ip)
 
 #Main de prueba
 if __name__ == "__main__":
-    run_nmap()
+    target = sys.argv[1]
+    run_nmap(target)

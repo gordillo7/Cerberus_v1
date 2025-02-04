@@ -6,7 +6,7 @@ from modulos.nmap import run_nmap
 
 def main():
     target = sys.argv[1]
-    run_nmap()
+    run_nmap(target)
     whatweb(target)
     identificar_cms(target)
     run_wpscan(target)

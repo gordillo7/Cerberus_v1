@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Tue Feb  4 17:23:47 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG ../logs/127.0.0.1/nmap/initial_scan.txt 127.0.0.1
+Host: 127.0.0.1 ()	Status: Up
+Host: 127.0.0.1 ()	Ports: 111/open/tcp//rpcbind///, 139/open/tcp//netbios-ssn///, 445/open/tcp//microsoft-ds///, 631/open/tcp//ipp///, 1716/open/tcp//xmsg///, 2049/open/tcp//nfs///, 33533/open/tcp/////, 34779/open/tcp/////, 43455/open/tcp/////, 46117/open/tcp/////, 59259/open/tcp/////, 63342/open/tcp/////	Ignored State: closed (65523)
+# Nmap done at Tue Feb  4 17:23:49 2025 -- 1 IP address (1 host up) scanned in 2.71 seconds

@@ -1,0 +1,15 @@
+{
+  "banner": {
+    "description": "WordPress Security Scanner by the WPScan Team",
+    "version": "3.8.27",
+    "authors": [
+      "@_WPScan_",
+      "@ethicalhack3r",
+      "@erwan_lr",
+      "@firefart"
+    ],
+    "sponsor": "Sponsored by Automattic - https://automattic.com/"
+  },
+  "scan_aborted": "The url supplied 'http://127.0.0.1/' seems to be down (Could not connect to server)",
+  "target_url": "http://127.0.0.1/"
+}
