@@ -3,7 +3,8 @@ import re
 import sys
 import os
 
-def initial_scan(target_ip, output_file):
+def initial_scan(target_ip):
+    output_file = f"../logs/{target_ip}/nmap/initial_scan.txt"
     print(f"[+] Obteniendo puertos abiertos de {target_ip}...")
     os.makedirs(f"../logs/{target_ip}/nmap", exist_ok=True)
 
@@ -32,7 +33,8 @@ def initial_scan(target_ip, output_file):
     else:
         print(f"[+] Escaneo inicial finalizado. Resultados en {output_file}")
 
-def extract_ports(file_path):
+def extract_ports(target_ip):
+    file_path = f"../logs/{target_ip}/nmap/initial_scan.txt"
     ports = []
     with open(file_path, "r") as f:
         for line in f:
@@ -49,7 +51,8 @@ def extract_ports(file_path):
                             ports.append(port_number)
     return ports
 
-def hard_scan(target_ip, ports, output_file):
+def hard_scan(target_ip, ports):
+    output_file = f"../logs/{target_ip}/nmap/ports_services_versions_temp.txt"
     print(f"[+] Escaneando puertos en detalle...")
     os.makedirs(f"../logs/{target_ip}/nmap", exist_ok=True)
 
@@ -74,7 +77,9 @@ def hard_scan(target_ip, ports, output_file):
         print("[!] Error ejecutando nmap:")
         print(result.stderr)
 
-def limpiar_reporte_nmap(archivo_reporte, archivo_salida):
+def limpiar_reporte_nmap(target_ip):
+    archivo_reporte = f"../logs/{target_ip}/nmap/ports_services_versions_temp.txt"
+    archivo_salida = f"../logs/{target_ip}/nmap/ports_services_versions.txt"
     con_linea_interes = False
 
     with open(archivo_reporte, 'r') as f:
@@ -93,13 +98,10 @@ def limpiar_reporte_nmap(archivo_reporte, archivo_salida):
 
 def run_nmap():
     target = sys.argv[1]
-    # 1. Ejecutar Nmap para escaneo de puertos abiertos
-    initial_scan(target, f"../logs/{target}/nmap/initial_scan.txt")
-    # 2. Extraer puertos
-    open_ports = extract_ports(f"../logs/{target}/nmap/initial_scan.txt")
-    # 3. Escaneo sCV de servicios
-    hard_scan(target, open_ports, f"../logs/{target}/nmap/ports_services_versions_temp.txt")
-    limpiar_reporte_nmap(f"../logs/{target}/nmap/ports_services_versions_temp.txt", "../logs/" + target + "/nmap/ports_services_versions.txt")
+    initial_scan(target)
+    open_ports = extract_ports(target)
+    hard_scan(target, open_ports)
+    limpiar_reporte_nmap(target)
 
 #Main de prueba
 if __name__ == "__main__":

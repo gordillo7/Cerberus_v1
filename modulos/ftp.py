@@ -3,6 +3,47 @@ import os
 import sys
 import io
 
+def ftp_searchsploit(target_ip):
+    print("[*] Obteniendo la versión de FTP desde el resultado de Nmap...")
+    nmap_file = f"../logs/{target_ip}/nmap/ports_services_versions.txt"
+    try:
+        with open(nmap_file, "r") as f:
+            lines = f.readlines()
+    except Exception as e:
+        print(f"[!] Error al leer el archivo {nmap_file}: {e}")
+        return
+
+    ftp_version = None
+    for line in lines:
+        # Se omite la línea de encabezado y líneas vacías
+        if line.startswith("PORT") or line.strip() == "":
+            continue
+        parts = line.split()
+        if len(parts) >= 4 and parts[2].lower() == "ftp":
+            # Se asume que la versión puede estar compuesta de más de una palabra
+            ftp_version = " ".join(parts[3:])
+            break
+
+    if ftp_version is None:
+        print("[-] No se encontró información de versión para FTP en el archivo de Nmap.")
+        return
+
+    print(f"[+] Versión de FTP encontrada: {ftp_version}")
+
+    # Se asegura que exista el directorio de logs para FTP
+    ftp_dir = f"../logs/{target_ip}/ftp"
+    os.makedirs(ftp_dir, exist_ok=True)
+    searchsploit_file = f"{ftp_dir}/searchsploit.txt"
+
+    # Se construye y ejecuta el comando searchsploit
+    cmd = f'searchsploit "{ftp_version}" -j > {searchsploit_file}'
+    print(f"[*] Ejecutando comando: {cmd}")
+    try:
+        os.system(cmd)
+        print(f"[+] Resultado de searchsploit guardado en {searchsploit_file}")
+    except Exception as e:
+        print(f"[!] Error al ejecutar searchsploit: {e}")
+
 def check_ftp_write_permission(ftp, target_ip):
     print("[*] Comprobando permisos de escritura en el FTP...")
     test_filename = "test_write_permission.txt"
@@ -15,10 +56,11 @@ def check_ftp_write_permission(ftp, target_ip):
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as rep:
             rep.write("El servidor FTP permite escritura, lo que podría permitir la subida de archivos maliciosos.")
-    except Exception as e:
-        print("[-] No se detectaron permisos de escritura o hubo un error al comprobarlos.")
+    except ftplib.error_perm:
+        print("[-] No se detectaron permisos de escritura.")
 
-def check_ftp_anonymous(target_ip, output_file):
+def check_ftp_anonymous(target_ip):
+    anonymous_file = f"../logs/{target_ip}/ftp/anonymous.txt"
     print(f"[*] Verificando acceso FTP anónimo en {target_ip}...")
     try:
         ftp = ftplib.FTP(target_ip)
@@ -29,7 +71,7 @@ def check_ftp_anonymous(target_ip, output_file):
 
         os.makedirs(f"../logs/{target_ip}/ftp", exist_ok=True)
 
-        with open(output_file, 'w') as f:
+        with open(anonymous_file, 'w') as f:
             f.write(f"Habilitado FTP anonymous login en {target_ip}")
 
         # Procedemos a descargar archivos si el acceso es exitoso
@@ -266,5 +308,5 @@ def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    anonymous_file = f"../logs/{target}/ftp/anonymous.txt"
-    check_ftp_anonymous(target, anonymous_file)
+    check_ftp_anonymous(target)
+    ftp_searchsploit(target)

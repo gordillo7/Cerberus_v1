@@ -3,14 +3,15 @@ import os
 import sys
 import re
 
-def whatweb(target_ip, output_file):
+def whatweb(target_ip):
     print(f"[+] Ejecutando whatweb en {target_ip}...")
+    tecnologias_file = f"../logs/{target_ip}/http/whatweb/tecnologias.txt"
     os.makedirs(f"../logs/{target_ip}/http/whatweb", exist_ok=True)
 
     command = [
         "whatweb",
         target_ip,
-        "--log-object", output_file
+        "--log-object", tecnologias_file
     ]
 
     result = subprocess.run(
@@ -24,13 +25,15 @@ def whatweb(target_ip, output_file):
         print("[!] Error ejecutando whatweb:")
         print(result.stderr)
     else:
-        print(f"[+] Análisis whatweb finalizado. Resultados en {output_file}")
+        print(f"[+] Análisis whatweb finalizado. Resultados en {tecnologias_file}")
 
-def identificar_cms(archivo_tecnologias, archivo_cms):
+def identificar_cms(target_ip):
+    cms_file = f"../logs/{target_ip}/http/whatweb/cms.txt"
+    tecnologias_file = f"../logs/{target_ip}/http/whatweb/tecnologias.txt"
     cms_list = ["WordPress", "Joomla", "Drupal", "Magento", "Shopify"]
     cms_detectado = "unknown"
 
-    with open(archivo_tecnologias, 'r') as f:
+    with open(tecnologias_file, 'r') as f:
         lineas = f.readlines()
 
     for cms in cms_list:
@@ -41,15 +44,13 @@ def identificar_cms(archivo_tecnologias, archivo_cms):
         if cms_detectado != "unknown":
             break
 
-    with open(archivo_cms, 'w') as f:
+    with open(cms_file, 'w') as f:
         f.write(cms_detectado + "\n")
 
-    print(f"[+] CMS detectado: {cms_detectado}. Resultados en {archivo_cms}")
+    print(f"[+] CMS detectado: {cms_detectado}. Resultados en {cms_file}")
 
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    tecnologias_file = f"../logs/{target}/http/whatweb/tecnologias.txt"
-    cms_file = f"../logs/{target}/http/whatweb/cms.txt"
-    whatweb(target, tecnologias_file)
-    identificar_cms(tecnologias_file, cms_file)
+    whatweb(target)
+    identificar_cms(target)

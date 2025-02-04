@@ -7,7 +7,8 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-def run_wpscan(target_ip, output_file):
+def run_wpscan(target_ip):
+    output_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
     print(f"[+] Ejecutando wpscan en {target_ip}...")
     os.makedirs(f"../logs/{target_ip}/http/wpscan", exist_ok=True)
 
@@ -50,8 +51,11 @@ def write_usernames(output_file, usernames):
                 file.write(username + '\n')
 
 
-def extract_usernames(input_file, output_f1, output_f2):
+def extract_usernames(target_ip):
     usernames = set()
+    input_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
+    output_file1 = f"../logs/{target_ip}/http/wpscan/users.txt"
+    output_file2 = f"wordlists/{target_ip}/users.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -65,9 +69,9 @@ def extract_usernames(input_file, output_f1, output_f2):
             usernames.add(username)
 
     if usernames:
-        print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress. Reportados en {output_f1} y {output_f2}")
-        write_usernames(output_f1, usernames)
-        write_usernames(output_f2, usernames)
+        print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress. Reportados en {output_file1} y {output_file2}")
+        write_usernames(output_file1, usernames)
+        write_usernames(output_file2, usernames)
     else:
         print("[!] No se encontraron nombres de usuario en Wordpress")
 
@@ -125,7 +129,9 @@ def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
     except requests.RequestException as e:
         print(f"[!] Error al dumpear el contenido del directorio en {url}: {e}")
 
-def process_directory_listings(input_file, output_dir):
+def process_directory_listings(target_ip):
+    input_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
+    output_dir = f"../logs/{target_ip}/http/wpscan/directory_listing_dump"
     visited_indexes = set()
     visited_files = set()
     with open(input_file, 'r') as file:
@@ -138,9 +144,6 @@ def process_directory_listings(input_file, output_dir):
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    output_file1 = f"../logs/{target}/http/wpscan/users.txt"
-    output_file2 = f"wordlists/{target}/users.txt"
-
-    run_wpscan(target, f"../logs/{target}/http/wpscan/wpscan.txt")
-    extract_usernames(f"../logs/{target}/http/wpscan/wpscan.txt", output_file1, output_file2)
-    process_directory_listings(f"../logs/{target}/http/wpscan/wpscan.txt",f"../logs/{target}/http/wpscan/directory_listing_dump")
+    run_wpscan(target)
+    extract_usernames(target)
+    process_directory_listings(target)

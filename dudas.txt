@@ -1,0 +1,4 @@
+1. De momento tengo que se guarde el output de searchsploit FTP en un log, pero nada de descargar
+el exploit e intentar probarlo, ya que hay algunos que no aplican en estos casos, como ataques
+Denial of Service, o algunos exploits que estan en .txt para realizar el PoC manualmente. ¿Qué hacemos, lo
+quedamos así o intentamos descargarlos y probarlos filtrando los que si son ejecutables de alguna manera?
