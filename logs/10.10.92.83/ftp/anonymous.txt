@@ -1,1 +1,0 @@
-Habilitado FTP anonymous login en 10.10.92.83

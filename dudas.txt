@@ -6,4 +6,4 @@ quedamos así o intentamos descargarlos y probarlos filtrando los que si son eje
 Targets:
 Blog (wp users)
 Wordpress: CVE-2021-29447 (directory listing dump)
-Docker local (ftp)
+Docker local (ftp) -> No anonymous (vegeta:bulma) y con permisos de escritura

@@ -55,7 +55,7 @@ def extract_usernames(target_ip):
     usernames = set()
     input_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
     output_file1 = f"../logs/{target_ip}/http/wpscan/users.txt"
-    output_file2 = f"wordlists/{target_ip}/users.txt"
+    output_file2 = f"../wordlists/{target_ip}/users.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:

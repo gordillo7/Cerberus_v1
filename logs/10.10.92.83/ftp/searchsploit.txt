@@ -1,9 +1,0 @@
-{
-	"SEARCH": "vsftpd 3.0.3",
-	"DB_PATH_EXPLOIT": "/usr/share/exploitdb",
-	"RESULTS_EXPLOIT": [
-		{"Title":"vsftpd 3.0.3 - Remote Denial of Service","EDB-ID":"49719","Date_Published":"2021-03-29","Date_Added":"2021-03-29","Date_Updated":"2021-10-28","Author":"xynmaps","Type":"remote","Platform":"multiple","Port":"","Verified":"1","Codes":"","Tags":"","Aliases":"","Screenshot":"","Application":"","Source":"","Path":"/usr/share/exploitdb/exploits/multiple/remote/49719.py"}
-	],
-	"DB_PATH_SHELLCODE": "/usr/share/exploitdb",
-	"RESULTS_SHELLCODE": [	]
-}

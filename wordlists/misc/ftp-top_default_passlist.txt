@@ -36,3 +36,4 @@ apc:apc
 ftpuser:password
 USER:USER
 admin:9999
+vegeta:bulma
