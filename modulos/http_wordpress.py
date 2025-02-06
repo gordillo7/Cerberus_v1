@@ -8,9 +8,9 @@ import requests
 from bs4 import BeautifulSoup
 
 def run_wpscan(target_ip):
-    output_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
+    output_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
     print(f"[+] Ejecutando wpscan en {target_ip}...")
-    os.makedirs(f"../logs/{target_ip}/http/wpscan", exist_ok=True)
+    os.makedirs(f"logs/{target_ip}/http/wpscan", exist_ok=True)
 
     command = [
         "wpscan",
@@ -53,9 +53,9 @@ def write_usernames(output_file, usernames):
 
 def extract_usernames(target_ip):
     usernames = set()
-    input_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
-    output_file1 = f"../logs/{target_ip}/http/wpscan/users.txt"
-    output_file2 = f"../wordlists/{target_ip}/users.txt"
+    input_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
+    output_file1 = f"logs/{target_ip}/http/wpscan/users.txt"
+    output_file2 = f"wordlists/{target_ip}/users.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -130,8 +130,8 @@ def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
         print(f"[!] Error al dumpear el contenido del directorio en {url}: {e}")
 
 def process_directory_listings(target_ip):
-    input_file = f"../logs/{target_ip}/http/wpscan/wpscan.txt"
-    output_dir = f"../logs/{target_ip}/http/wpscan/directory_listing_dump"
+    input_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
+    output_dir = f"logs/{target_ip}/http/wpscan/directory_listing_dump"
     visited_indexes = set()
     visited_files = set()
     with open(input_file, 'r') as file:

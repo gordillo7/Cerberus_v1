@@ -1,0 +1,8 @@
+1. CVEs mas comunes de cada CMS (Wordpress, Joomla, Drupal).
+    1.1. Filtrar vulnerabilidad plugin, themes... de Wordpress (wpscan -e vp).
+    1.2. PoCs y hacer la carpeta de pocs para futuras maquinas.
+2. Interfaz y reportes YA.
+3. Busqueda de subdominios (y tirar script para cada subdominio).
+
+a. Mostrar tiempo que ahorramos.
+b. Deepseek para seguir despues con recomendaciones...
