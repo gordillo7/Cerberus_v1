@@ -28,7 +28,7 @@ def run_wpscan(target_ip):
     )
 
     if result.returncode != 0:
-        print("[!] Error ejecutando wpscan:")
+        print(f"[!] Error ejecutando wpscan (codigo de retorno {result.returncode}):")
         print(result.stderr)
     else:
         print(f"[+] Análisis wpscan finalizado. Resultados en {output_file}")
@@ -64,9 +64,7 @@ def extract_usernames(target_ip):
     # 'data["users"]' contiene un diccionario de usuarios,
     # donde cada key es el nombre de usuario, y el value su info.
     for username, user_info in data.get("users", {}).items():
-        # Verificamos si fueron encontrados por "Wp Json Api (Aggressive Detection)"
-        if user_info.get("found_by") == "Wp Json Api (Aggressive Detection)":
-            usernames.add(username)
+        usernames.add(username)
 
     if usernames:
         print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress. Reportados en {output_file1} y {output_file2}")

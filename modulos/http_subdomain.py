@@ -2,6 +2,7 @@ import sys
 import os
 import requests
 from bs4 import BeautifulSoup
+import time
 
 def enumerate_subdomains(domain):
     query = "%25." + domain
@@ -53,4 +54,7 @@ def run(domain):
 
 if __name__ == "__main__":
     domain = sys.argv[1]
+    start_time = time.time()
     run(domain)
+    end_time = time.time()
+    print(f"[+] Tiempo de ejecución crt.sh: {end_time - start_time:.2f} segundos")

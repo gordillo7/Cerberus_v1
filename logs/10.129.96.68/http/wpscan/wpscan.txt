@@ -1,0 +1,223 @@
+{
+  "banner": {
+    "description": "WordPress Security Scanner by the WPScan Team",
+    "version": "3.8.27",
+    "authors": [
+      "@_WPScan_",
+      "@ethicalhack3r",
+      "@erwan_lr",
+      "@firefart"
+    ],
+    "sponsor": "Sponsored by Automattic - https://automattic.com/"
+  },
+  "start_time": 1738937931,
+  "start_memory": 65523712,
+  "target_url": "http://10.129.96.68/",
+  "target_ip": "10.129.96.68",
+  "effective_url": "http://10.129.96.68/",
+  "interesting_findings": [
+    {
+      "url": "http://10.129.96.68/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "Server: Apache/2.4.41 (Ubuntu)"
+      ]
+    },
+    {
+      "url": "http://10.129.96.68/xmlrpc.php",
+      "to_s": "XML-RPC seems to be enabled: http://10.129.96.68/xmlrpc.php",
+      "type": "xmlrpc",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/XML-RPC_Pingback_API"
+        ],
+        "metasploit": [
+          "auxiliary/scanner/http/wordpress_ghost_scanner",
+          "auxiliary/dos/http/wordpress_xmlrpc_dos",
+          "auxiliary/scanner/http/wordpress_xmlrpc_login",
+          "auxiliary/scanner/http/wordpress_pingback_access"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.129.96.68/readme.html",
+      "to_s": "WordPress readme found: http://10.129.96.68/readme.html",
+      "type": "readme",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.129.96.68/wp-content/uploads/",
+      "to_s": "Upload directory has listing enabled: http://10.129.96.68/wp-content/uploads/",
+      "type": "upload_directory_listing",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "http://10.129.96.68/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: http://10.129.96.68/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "5.8.1",
+    "release_date": "2021-09-09",
+    "status": "insecure",
+    "found_by": "Rss Generator (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "http://10.129.96.68/index.php/feed/, <generator>https://wordpress.org/?v=5.8.1</generator>",
+      "http://10.129.96.68/index.php/comments/feed/, <generator>https://wordpress.org/?v=5.8.1</generator>"
+    ],
+    "confirmed_by": {
+
+    },
+    "vulnerabilities": [
+
+    ]
+  },
+  "main_theme": {
+    "slug": "twentyseventeen",
+    "location": "http://10.129.96.68/wp-content/themes/twentyseventeen/",
+    "latest_version": "3.8",
+    "last_updated": "2024-11-12T00:00:00.000Z",
+    "outdated": true,
+    "readme_url": "http://10.129.96.68/wp-content/themes/twentyseventeen/readme.txt",
+    "directory_listing": false,
+    "error_log_url": null,
+    "style_url": "http://10.129.96.68/wp-content/themes/twentyseventeen/style.css?ver=20201208",
+    "style_name": "Twenty Seventeen",
+    "style_uri": "https://wordpress.org/themes/twentyseventeen/",
+    "description": "Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.",
+    "author": "the WordPress team",
+    "author_uri": "https://wordpress.org/",
+    "template": null,
+    "license": "GNU General Public License v2 or later",
+    "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "tags": "one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-patterns",
+    "text_domain": "twentyseventeen",
+    "found_by": "Css Style In Homepage (Passive Detection)",
+    "confidence": 70,
+    "interesting_entries": [
+
+    ],
+    "confirmed_by": {
+
+    },
+    "vulnerabilities": [
+
+    ],
+    "version": {
+      "number": "2.8",
+      "confidence": 80,
+      "found_by": "Style (Passive Detection)",
+      "interesting_entries": [
+        "http://10.129.96.68/wp-content/themes/twentyseventeen/style.css?ver=20201208, Match: 'Version: 2.8'"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "parents": [
+
+    ]
+  },
+  "plugins": {
+
+  },
+  "themes": {
+
+  },
+  "users": {
+    "admin": {
+      "id": null,
+      "found_by": "Rss Generator (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Wp Json Api (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+            "http://10.129.96.68/index.php/wp-json/wp/v2/users/?per_page=100&page=1"
+          ]
+        },
+        "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        },
+        "Login Error Messages (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    }
+  },
+  "vuln_api": {
+    "error": "No WPScan API Token given, as a result vulnerability data has not been output.\nYou can get a free API token with 25 daily requests by registering at https://wpscan.com/register"
+  },
+  "stop_time": 1738937945,
+  "elapsed": 14,
+  "requests_done": 665,
+  "cached_requests": 48,
+  "data_sent": 179033,
+  "data_sent_humanised": "174.837 KB",
+  "data_received": 101832,
+  "data_received_humanised": "99.445 KB",
+  "used_memory": 309260288,
+  "used_memory_humanised": "294.934 MB"
+}

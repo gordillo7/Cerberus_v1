@@ -6,3 +6,4 @@
 
 a. Mostrar tiempo que ahorramos.
 b. Deepseek para seguir despues con recomendaciones...
+c. Arreglar nombre de las carpetas de logs (las http://... se cortan y se meten dentro).

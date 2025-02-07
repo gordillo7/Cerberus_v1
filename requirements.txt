@@ -1,7 +1,9 @@
-#Ignorar de momento
 #Librerias python
 requests
 bs4
 
 #Herramientas
 serachsploit
+
+#Extras
+API_Token_de_WPScan

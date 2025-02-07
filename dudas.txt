@@ -1,0 +1,2 @@
+1. Subfinder (es en local, pero tarda mas) vs crt.sh (hay que realizar querys, dependes de la latencia
+pero va mas rapido).
