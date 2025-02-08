@@ -43,7 +43,7 @@ def save_subdomains(domain, subdomains):
     print(f"[+] Subdominios guardados en: {output_file}")
 
 
-def run(domain):
+def run_subdomain(domain):
     subdomains = enumerate_subdomains(domain)
     if subdomains:
         print(f"[+] Se encontraron {len(subdomains)} subdominios")
@@ -55,6 +55,6 @@ def run(domain):
 if __name__ == "__main__":
     domain = sys.argv[1]
     start_time = time.time()
-    run(domain)
+    run_subdomain(domain)
     end_time = time.time()
     print(f"[+] Tiempo de ejecución crt.sh: {end_time - start_time:.2f} segundos")

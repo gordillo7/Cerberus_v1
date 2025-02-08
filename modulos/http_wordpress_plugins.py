@@ -35,6 +35,8 @@ def extract_vulnerable_plugins(target_ip):
                 for cve in plugin['cves']:
                     f.write(f"  - {cve}\n")
                 f.write("\n")
+
+        shutil.copy(output_file, f"logs/{target_ip}/reporte/wordpress_vulnerable_plugins.txt")
     else:
         print("[!] No se encontraron plugins vulnerables en Wordpress")
 
@@ -119,10 +121,8 @@ def find_python_file(directory):
                 return os.path.join(root, file)
     return None
 
+"""
 def run_python_exploit(exploit_path, target_ip):
-    """
-    Ejecuta el archivo Python exploit, pasando target_ip como argumento.
-    """
     try:
         print(f"[+] Ejecutando el exploit {exploit_path} contra {target_ip}...")
         result = subprocess.run(["python", exploit_path, target_ip], capture_output=True, text=True)
@@ -133,7 +133,7 @@ def run_python_exploit(exploit_path, target_ip):
             print(result.stderr)
     except Exception as e:
         print(f"[!] Excepción al ejecutar el exploit {exploit_path}: {e}")
-
+"""
 
 def process_cve(cve, target_ip, max_repos=10):
     """
@@ -155,15 +155,15 @@ def process_cve(cve, target_ip, max_repos=10):
             continue
 
         exp_dir = f"logs/{target_ip}/http/wpscan/cve_exploits/{cve}/{repo.get('full_name').replace('/', '_')}"
-        print(f"[~] Clonando {repo_url} en {exp_dir}...")
+        print(f"[*] Clonando {repo_url} en {exp_dir}...")
         if clone_repository(repo_url, exp_dir):
+            # Borrar el .git del repositorio clonado
+            shutil.rmtree(os.path.join(exp_dir, ".git"))
             # Buscar un archivo Python en el repositorio clonado
             python_file = find_python_file(exp_dir)
             if python_file:
-                run_python_exploit(python_file, target_ip)
+                #run_python_exploit(python_file, target_ip)
                 exploit_found = True
-                # Borrar el .git del repositorio clonado
-                shutil.rmtree(os.path.join(exp_dir, ".git"))
                 break  # Se encontró y lanzó un exploit; salimos del bucle
             else:
                 print(f"[!] No se encontró archivo Python en el repositorio {repo.get('full_name')}.")
@@ -175,7 +175,7 @@ def process_cve(cve, target_ip, max_repos=10):
         print(
             f"[!] No se pudo verificar la vulnerabilidad {cve}: no se encontró un exploit Python en {max_repos} repositorios.")
 
-def main(target_ip):
+def run_wordpress_plugins(target_ip):
     # Ruta del archivo vulnerable_plugins.txt
     file_path = f"logs/{target_ip}/http/wpscan/vulnerable_plugins.txt"
     if not os.path.exists(file_path):
@@ -193,11 +193,11 @@ def main(target_ip):
         plugin_name = plugin.get("plugin_name")
         cves = plugin.get("cves", [])
         for cve in cves:
-            print(f"\n[~] Procesando CVE {cve} para el plugin '{plugin_name}'")
+            print(f"\n[*] Procesando CVE {cve} para el plugin '{plugin_name}'")
             process_cve(cve, target_ip, max_repos=10)
 
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
     extract_vulnerable_plugins(target)
-    main(target)
+    run_wordpress_plugins(target)

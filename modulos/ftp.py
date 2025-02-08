@@ -1,5 +1,6 @@
 import ftplib
 import os
+import shutil
 import sys
 import io
 
@@ -56,6 +57,7 @@ def check_ftp_write_permission(ftp, target_ip):
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as rep:
             rep.write("El servidor FTP permite escritura, lo que podría permitir la subida de archivos maliciosos.")
+        shutil.copy(report_path, f"logs/{target_ip}/reporte/ftp_escritura_perm.txt")
     except ftplib.error_perm:
         print("[-] No se detectaron permisos de escritura.")
 
@@ -74,6 +76,7 @@ def check_ftp_anonymous(target_ip):
         with open(anonymous_file, 'w') as f:
             f.write(f"Habilitado FTP anonymous login en {target_ip}")
 
+        shutil.copy(anonymous_file, f"logs/{target_ip}/reporte/ftp_anonymous.txt")
         # Procedemos a descargar archivos si el acceso es exitoso
         dump_ftp_contents(ftp, target_ip)
         ftp.quit()
@@ -108,6 +111,8 @@ def mini_bruteforce(target_ip):
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, "w") as logf:
                 logf.write(f"Credenciales FTP débiles encontradas: admin:{pwd} (obtenidas por fuerza bruta)")
+
+            shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
             dump_ftp_contents(ftp, target_ip)
             ftp.quit()
             encontrado = True
@@ -135,6 +140,7 @@ def mini_bruteforce(target_ip):
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, "w") as logf:
                 logf.write("No hay límite de intentos en el login FTP.")
+            shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_no_limite_intentos.txt")
             limite_libre = True
         else:
             print("[-] Error al probar admin:admin: ", error_msg)
@@ -194,6 +200,7 @@ def ftp_elaborate_bruteforce(target_ip):
                         with open(log_path, "w") as logf:
                             logf.write(
                                 f"Credenciales FTP débiles encontradas: {user}:{pwd} (obtenidas por fuerza bruta)")
+                        shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
                         dump_ftp_contents(ftp, target_ip)
                         ftp.quit()
                         return
@@ -225,6 +232,7 @@ def ftp_elaborate_bruteforce(target_ip):
                         with open(log_path, "w") as logf:
                             logf.write(
                                 f"Credenciales FTP débiles encontradas: {user}:{pwd} (obtenidas por fuerza bruta)")
+                        shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
                         dump_ftp_contents(ftp, target_ip)
                         ftp.quit()
                         return
@@ -249,6 +257,7 @@ def ftp_elaborate_bruteforce(target_ip):
                     os.makedirs(os.path.dirname(log_path), exist_ok=True)
                     with open(log_path, "w") as logf:
                         logf.write(f"Credenciales FTP débiles encontradas: {user}:{user} (obtenidas por fuerza bruta)")
+                    shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
                     dump_ftp_contents(ftp, target_ip)
                     ftp.quit()
                     return
@@ -277,6 +286,7 @@ def ftp_elaborate_bruteforce(target_ip):
                 os.makedirs(os.path.dirname(log_path), exist_ok=True)
                 with open(log_path, "w") as logf:
                     logf.write(f"Credenciales FTP débiles encontradas: {user}:{pwd} (obtenidas por fuerza bruta)")
+                shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
                 dump_ftp_contents(ftp, target_ip)
                 ftp.quit()
                 return

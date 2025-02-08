@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import os
 import sys
@@ -55,7 +56,6 @@ def extract_usernames(target_ip):
     usernames = set()
     input_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
     output_file1 = f"logs/{target_ip}/http/wpscan/users.txt"
-    output_file2 = f"wordlists/{target_ip}/users.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -67,9 +67,10 @@ def extract_usernames(target_ip):
         usernames.add(username)
 
     if usernames:
-        print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress. Reportados en {output_file1} y {output_file2}")
+        print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress.")
         write_usernames(output_file1, usernames)
-        write_usernames(output_file2, usernames)
+        shutil.copy(output_file1, f"wordlists/{target_ip}/users.txt")
+        shutil.copy(output_file1, f"logs/{target_ip}/reporte/wordpress_usernames.txt")
     else:
         print("[!] No se encontraron nombres de usuario en Wordpress")
 
@@ -137,6 +138,12 @@ def process_directory_listings(target_ip):
         for finding in data.get("interesting_findings", []):
             # si contiene "has listing enabled" en el campo "to_s", dumpeamos
             if "has listing enabled" in finding.get("to_s", ""):
+                # lo reportamos diciendo qque tiene directory listing en logs/target_ip/http/wpscan/directory_listing.txt
+                os.makedirs(output_dir, exist_ok=True)
+                with open(os.path.join(f"logs/{target_ip}/http/wpscan/directory_listing.txt", "directory_listing.txt"), 'a') as f:
+                    f.write(finding["url"] + "\n")
+
+                shutil.copy(f"logs/{target_ip}/http/wpscan/directory_listing.txt", f"logs/{target_ip}/reporte/wordpress_listing.txt")
                 dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
 
 # Main de prueba

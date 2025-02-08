@@ -2,6 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/logs/tenten.htb/http/wpscan/cve_exploits/2015-6668/G01d3nW01f_CVE-2015-6668" vcs="Git" />
   </component>
 </project>

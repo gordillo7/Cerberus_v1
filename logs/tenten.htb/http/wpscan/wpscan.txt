@@ -10,10 +10,10 @@
     ],
     "sponsor": "Sponsored by Automattic - https://automattic.com/"
   },
-  "start_time": 1738940588,
-  "start_memory": 65679360,
+  "start_time": 1739023387,
+  "start_memory": 65470464,
   "target_url": "http://tenten.htb/",
-  "target_ip": "10.129.69.185",
+  "target_ip": "10.129.68.189",
   "effective_url": "http://tenten.htb/",
   "interesting_findings": [
     {
@@ -1613,16 +1613,16 @@
   "vuln_api": {
     "plan": "free",
     "requests_done_during_scan": 4,
-    "requests_remaining": 16
+    "requests_remaining": 21
   },
-  "stop_time": 1738940656,
-  "elapsed": 68,
+  "stop_time": 1739023412,
+  "elapsed": 24,
   "requests_done": 717,
   "cached_requests": 11,
-  "data_sent": 187534,
-  "data_sent_humanised": "183.139 KB",
-  "data_received": 758592,
-  "data_received_humanised": "740.812 KB",
-  "used_memory": 297168896,
-  "used_memory_humanised": "283.402 MB"
+  "data_sent": 186735,
+  "data_sent_humanised": "182.358 KB",
+  "data_received": 758668,
+  "data_received_humanised": "740.887 KB",
+  "used_memory": 297119744,
+  "used_memory_humanised": "283.355 MB"
 }

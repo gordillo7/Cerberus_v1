@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 import re
 import sys
@@ -93,8 +94,9 @@ def limpiar_reporte_nmap(target_ip):
                 if re.search(r"^\d+/tcp\s+open\s", linea) or re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", linea):
                     f.write(linea)
 
-    print(f"[+] Escaneo exhaustivo de puertos finalizado. Resultados en {archivo_salida}")
+    print(f"[+] Escaneo detallado de puertos finalizado. Resultados en {archivo_salida}")
     os.remove(archivo_reporte)
+    shutil.copy(archivo_salida, f"logs/{target_ip}/reporte/nmap.txt")
 
 def run_nmap(target_ip):
     initial_scan(target_ip)

@@ -1,6 +1,7 @@
 #Librerias python
 requests
 bs4
+reportlab
 
 #Herramientas
 serachsploit
