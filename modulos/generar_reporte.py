@@ -38,10 +38,14 @@ def generar_reporte(target):
                     elements.append(Spacer(1, 8))
                     elements.append(create_nmap_table(filepath))
                     elements.append(Spacer(1, 24))
-                    elements.append(Paragraph("Vulnerabilidades", styles['Heading2']))
-                    elements.append(Spacer(1, 8))
-                else:
-                    elements.extend(create_text_paragraph(filepath))
+                    break
+
+        elements.append(Paragraph("Vulnerabilidades", styles['Heading2']))
+        elements.append(Spacer(1, 8))
+        for filename in os.listdir(reporte_dir):
+            filepath = os.path.join(reporte_dir, filename)
+            if os.path.isfile(filepath) and filename != "nmap.txt":
+                elements.extend(create_text_paragraph(filepath))
     except Exception as e:
         print(f"Error al generar el reporte: {e}")
         return
@@ -81,7 +85,7 @@ def create_text_paragraph(filepath):
     content = ""
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
         for line in file:
-            content += line.strip() + "<br/>"
+            content += f"• {line.strip()}<br/>"
     paragraph = Paragraph(content, styles['Normal'])
     return [paragraph, Spacer(1, 12)]
 

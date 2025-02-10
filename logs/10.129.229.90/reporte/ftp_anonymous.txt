@@ -1,1 +1,1 @@
-Habilitado FTP anonymous login en 10.129.229.90
+Habilitado FTP anonymous login

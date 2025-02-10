@@ -3,6 +3,34 @@ import os
 import shutil
 import sys
 import io
+import json
+
+def ftp_grep_searchsploit(target_ip):
+    print("[*] Buscando CVEs en el resultado de searchsploit...")
+    searchsploit_file = f"logs/{target_ip}/ftp/searchsploit.txt"
+    try:
+        with open(searchsploit_file, "r") as f:
+            data = json.load(f)
+    except Exception as e:
+        print(f"[!] Error al leer el archivo {searchsploit_file}: {e}")
+        return
+
+    cves = []
+    # Si result_exploit contiene algo, no hace falta la palabra cve
+    for result in data.get("RESULTS_EXPLOIT", []):
+        cve = result["Title"]
+        cves.append(cve)
+
+    if cves:
+        print(f"[+] CVEs encontrados: {', '.join(cves)}")
+        report_path = f"logs/{target_ip}/reporte/ftp_cves.txt"
+        os.makedirs(os.path.dirname(report_path), exist_ok=True)
+        with open(report_path, "w") as rep:
+            rep.write(f"----CVEs genéricos de la versión de FTP instalada----")
+            for cve in cves:
+                rep.write(f"\n{cve}")
+    else:
+        print("[-] No se encontraron CVEs en el resultado de searchsploit.")
 
 def ftp_searchsploit(target_ip):
     print("[*] Obteniendo la versión de FTP desde el resultado de Nmap...")
@@ -42,6 +70,7 @@ def ftp_searchsploit(target_ip):
     try:
         os.system(cmd)
         print(f"[+] Resultado de searchsploit guardado en {searchsploit_file}")
+        ftp_grep_searchsploit(target_ip)
     except Exception as e:
         print(f"[!] Error al ejecutar searchsploit: {e}")
 
@@ -74,7 +103,7 @@ def check_ftp_anonymous(target_ip):
         os.makedirs(f"logs/{target_ip}/ftp", exist_ok=True)
 
         with open(anonymous_file, 'w') as f:
-            f.write(f"Habilitado FTP anonymous login en {target_ip}")
+            f.write(f"Habilitado FTP anonymous login")
 
         shutil.copy(anonymous_file, f"logs/{target_ip}/reporte/ftp_anonymous.txt")
         # Procedemos a descargar archivos si el acceso es exitoso

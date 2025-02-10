@@ -2,6 +2,7 @@ import os
 import sys
 from modulos.ftp import check_ftp_anonymous, ftp_searchsploit
 from modulos.generar_reporte import generar_reporte
+from modulos.http_subdomain import run_subdomain
 from modulos.http_whatweb import whatweb, identificar_cms
 from modulos.http_wordpress import run_wpscan, extract_usernames, process_directory_listings
 from modulos.http_wordpress_plugins import extract_vulnerable_plugins, run_wordpress_plugins
@@ -18,6 +19,7 @@ def main():
     process_directory_listings(target)
     extract_vulnerable_plugins(target)
     run_wordpress_plugins(target)
+    run_subdomain(target)
     check_ftp_anonymous(target)
     ftp_searchsploit(target)
     generar_reporte(target)
