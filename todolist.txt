@@ -13,3 +13,4 @@ c. Arreglar nombre de las carpetas de logs (las http://... se cortan y se meten 
 
 Propuestas:
 - Usar IA (Deepseek) para la facilitar la explotacion de CVEs.
+- Mirar https://github.com/micro-joan/BlackStone
