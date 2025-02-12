@@ -1,2 +1,5 @@
 Wordpress Plugins:
     1. Tenten (HTB)
+
+Wordpress xmlrpc.php system.multicall Bruteforce:
+    2. Blog (THM) -> kwheel:cutiepie1
