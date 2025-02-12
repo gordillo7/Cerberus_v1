@@ -69,8 +69,8 @@ def extract_usernames(target_ip):
     if usernames:
         print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress.")
         write_usernames(output_file1, usernames)
-        shutil.copy(output_file1, f"wordlists/{target_ip}/users.txt")
-        shutil.copy(output_file1, f"logs/{target_ip}/reporte/wordpress_usernames.txt")
+        write_usernames(f"wordlists/{target_ip}/users.txt", usernames)
+        write_usernames(f"logs/{target_ip}/reporte/wordpress_usernames.txt", usernames)
     else:
         print("[!] No se encontraron nombres de usuario en Wordpress")
 
@@ -138,10 +138,10 @@ def process_directory_listings(target_ip):
         for finding in data.get("interesting_findings", []):
             # si contiene "has listing enabled" en el campo "to_s", dumpeamos
             if "has listing enabled" in finding.get("to_s", ""):
-                # lo reportamos diciendo qque tiene directory listing en logs/target_ip/http/wpscan/directory_listing.txt
+                # lo reportamos diciendo que tiene directory listing en logs/target_ip/http/wpscan/directory_listing.txt
                 os.makedirs(output_dir, exist_ok=True)
-                with open(os.path.join(f"logs/{target_ip}/http/wpscan/directory_listing.txt", "directory_listing.txt"), 'a') as f:
-                    f.write(finding["url"] + "\n")
+                with open(f"logs/{target_ip}/http/wpscan/directory_listing.txt", 'a') as f:
+                    f.write(f"Directory listing habilitado en {finding['url']}\n")
 
                 shutil.copy(f"logs/{target_ip}/http/wpscan/directory_listing.txt", f"logs/{target_ip}/reporte/wordpress_listing.txt")
                 dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)

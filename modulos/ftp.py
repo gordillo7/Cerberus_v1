@@ -271,7 +271,7 @@ def ftp_elaborate_bruteforce(target_ip):
                         print(f"[!] Error al probar {user}:{pwd} - {e}")
         print("[-] No se encontraron credenciales válidas usando listas personalizadas.")
 
-        # Nuevo bloque: Intentar usar cada usuario como contraseña (user:user)
+        # Intentar usar cada usuario como contraseña (user:user)
         if users_custom:
             print("[*] Intentando usar cada usuario como contraseña (user:user)...")
             for user in users_custom:
