@@ -17,6 +17,7 @@ def run_wpscan(target_ip):
         "wpscan",
         "--url", target_ip,
         "-e", "vp,vt,u",
+        "--no-banner",
         "--format", "json",
         "--output", output_file
     ]

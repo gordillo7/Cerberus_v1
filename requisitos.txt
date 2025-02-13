@@ -5,6 +5,7 @@ reportlab
 
 #Herramientas
 serachsploit
+joomscan
 
 #Extras
 API_Token_de_WPScan

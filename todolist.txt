@@ -1,5 +1,5 @@
-Objetivo a corto plazo (17 febrero, comienzo de practicas): sacar primera version early alfa con Wordpress,
-Joomla y Drupal (importante bruteforce a default credentials), FTP, generacion de reportes e interfaz grafica.
+Objetivo a corto plazo: sacar primera version early alfa con Wordpress, Joomla y Drupal
+(importante bruteforce a default credentials), FTP, generacion de reportes e interfaz grafica.
 
 1. CVEs mas comunes de cada CMS (Wordpress, Joomla, Drupal).
     1.1. Filtrar vulnerabilidad plugin, themes... de Wordpress (wpscan -e vp).
@@ -11,6 +11,8 @@ a. Mostrar tiempo que ahorramos.
 b. Deepseek para seguir despues con recomendaciones...
 c. Arreglar nombre de las carpetas de logs (las http://... se cortan y se meten dentro).
 d. Cambiar crt.sh por Subfinder + httpx para compreobar respuesta = 200 (subdominios).
+e. Cambiar casuistica "elif users_custom and not pwds_custom:" del ftp bruteforce para que se aplique
+aunque haya custom users y custom pwds.
 
 Propuestas:
 - Usar IA (Deepseek) para la facilitar la explotacion de CVEs.
