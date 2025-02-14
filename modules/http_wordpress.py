@@ -9,9 +9,9 @@ import requests
 from bs4 import BeautifulSoup
 
 def run_wpscan(target_ip):
-    output_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
+    output_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
     print(f"[+] Ejecutando wpscan en {target_ip}...")
-    os.makedirs(f"logs/{target_ip}/http/wpscan", exist_ok=True)
+    os.makedirs(f"logs/{target_ip}/http/wordpress", exist_ok=True)
 
     command = [
         "wpscan",
@@ -55,8 +55,8 @@ def write_usernames(output_file, usernames):
 
 def extract_usernames(target_ip):
     usernames = set()
-    input_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
-    output_file1 = f"logs/{target_ip}/http/wpscan/users.txt"
+    input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
+    output_file1 = f"logs/{target_ip}/http/wordpress/users.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -130,8 +130,8 @@ def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
         print(f"[!] Error al dumpear el contenido del directorio en {url}: {e}")
 
 def process_directory_listings(target_ip):
-    input_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
-    output_dir = f"logs/{target_ip}/http/wpscan/directory_listing_dump"
+    input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
+    output_dir = f"logs/{target_ip}/http/wordpress/directory_listing_dump"
     visited_indexes = set()
     visited_files = set()
     with open(input_file, 'r') as file:
@@ -139,12 +139,11 @@ def process_directory_listings(target_ip):
         for finding in data.get("interesting_findings", []):
             # si contiene "has listing enabled" en el campo "to_s", dumpeamos
             if "has listing enabled" in finding.get("to_s", ""):
-                # lo reportamos diciendo que tiene directory listing en logs/target_ip/http/wpscan/directory_listing.txt
                 os.makedirs(output_dir, exist_ok=True)
-                with open(f"logs/{target_ip}/http/wpscan/directory_listing.txt", 'a') as f:
+                with open(f"logs/{target_ip}/http/wordpress/directory_listing.txt", 'a') as f:
                     f.write(f"Directory listing habilitado en {finding['url']}\n")
 
-                shutil.copy(f"logs/{target_ip}/http/wpscan/directory_listing.txt", f"logs/{target_ip}/reporte/wordpress_listing.txt")
+                shutil.copy(f"logs/{target_ip}/http/wordpress/directory_listing.txt", f"logs/{target_ip}/reporte/wordpress_listing.txt")
                 dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
 
 # Main de prueba

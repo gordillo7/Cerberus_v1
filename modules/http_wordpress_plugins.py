@@ -6,8 +6,8 @@ import requests
 import shutil
 
 def extract_vulnerable_plugins(target_ip):
-    input_file = f"logs/{target_ip}/http/wpscan/wpscan.txt"
-    output_file = f"logs/{target_ip}/http/wpscan/vulnerable_plugins.txt"
+    input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
+    output_file = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -154,7 +154,7 @@ def process_cve(cve, target_ip, max_repos=10):
         if not repo_url:
             continue
 
-        exp_dir = f"logs/{target_ip}/http/wpscan/cve_exploits/{cve}/{repo.get('full_name').replace('/', '_')}"
+        exp_dir = f"logs/{target_ip}/http/wordpress/cve_exploits/{cve}/{repo.get('full_name').replace('/', '_')}"
         print(f"[*] Clonando {repo_url} en {exp_dir}...")
         if clone_repository(repo_url, exp_dir):
             # Borrar el .git del repositorio clonado
@@ -177,7 +177,7 @@ def process_cve(cve, target_ip, max_repos=10):
 
 def run_wordpress_plugins(target_ip):
     # Ruta del archivo vulnerable_plugins.txt
-    file_path = f"logs/{target_ip}/http/wpscan/vulnerable_plugins.txt"
+    file_path = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
     if not os.path.exists(file_path):
         print(f"[!] El archivo {file_path} no existe.")
         return

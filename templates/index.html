@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramienta de Pentesting</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <span class="material-icons">security</span>
+            <span>PentestTool</span>
+        </div>
+        <nav>
+            <a href="#" class="active">
+                <span class="material-icons">dashboard</span>
+                Dashboard
+            </a>
+            <a href="#">
+                <span class="material-icons">bug_report</span>
+                Vulnerabilidades
+            </a>
+            <a href="#">
+                <span class="material-icons">description</span>
+                Informes
+            </a>
+            <a href="#">
+                <span class="material-icons">settings</span>
+                Configuración
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <header>
+            <div class="search-bar">
+                <span class="material-icons">search</span>
+                <input type="text" placeholder="Buscar informes...">
+            </div>
+            <button class="new-scan-btn">
+                <span class="material-icons">add</span>
+                Nuevo Escaneo
+            </button>
+        </header>
+
+        <div class="dashboard">
+            <div class="stats-cards">
+                <div class="card">
+                    <h3>Escaneos Realizados</h3>
+                    <div class="stat">
+                        <span class="number">0</span>
+                        <span class="material-icons">analytics</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Vulnerabilidades</h3>
+                    <div class="stat">
+                        <span class="number">0</span>
+                        <span class="material-icons">warning</span>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Informes Generados</h3>
+                    <div class="stat">
+                        <span class="number">0</span>
+                        <span class="material-icons">description</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scan-section">
+                <div class="scan-form card">
+                    <h2>Nuevo Escaneo</h2>
+                    <form id="scanForm">
+                        <div class="input-group">
+                            <label>Objetivo</label>
+                            <input type="text" id="target" name="target" placeholder="IP o dominio" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Módulos</label>
+                            <div class="modules-grid">
+                                <label class="module-checkbox">
+                                    <input type="checkbox" name="modules" value="nmap">
+                                    <span class="material-icons">router</span>
+                                    Nmap
+                                </label>
+                                <label class="module-checkbox">
+                                    <input type="checkbox" name="modules" value="whatweb">
+                                    <span class="material-icons">web</span>
+                                    WhatWeb
+                                </label>
+                                <label class="module-checkbox">
+                                    <input type="checkbox" name="modules" value="wordpress">
+                                    <span class="material-icons">article</span>
+                                    WordPress
+                                </label>
+                                <label class="module-checkbox">
+                                    <input type="checkbox" name="modules" value="joomla">
+                                    <span class="material-icons">web_asset</span>
+                                    Joomla
+                                </label>
+                                <label class="module-checkbox">
+                                    <input type="checkbox" name="modules" value="ftp">
+                                    <span class="material-icons">folder</span>
+                                    FTP
+                                </label>
+                                <label class="module-checkbox">
+                                    <input type="checkbox" name="modules" value="subdomain">
+                                    <span class="material-icons">dns</span>
+                                    Subdominios
+                                </label>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span class="material-icons">play_arrow</span>
+                            Iniciar Escaneo
+                        </button>
+                    </form>
+                </div>
+
+                <div class="results card">
+                    <h2>Resultados</h2>
+                    <div id="results" class="results-content">
+                        <div class="placeholder">
+                            <span class="material-icons">science</span>
+                            <p>Los resultados del escaneo aparecerán aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

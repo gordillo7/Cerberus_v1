@@ -50,9 +50,9 @@ def run_wordpress_bruteforce(target):
     target_clean = target.replace("http://", "").replace("https://", "").rstrip("/")
 
     # Directorio para guardar logs y resultados
-    output_dir = os.path.join("logs", target_clean, "http", "http_wordpress_bruteforce")
+    output_dir = os.path.join("logs", target_clean, "http", "wordpress")
     os.makedirs(output_dir, exist_ok=True)
-    success_file = os.path.join(output_dir, "success.txt")
+    success_file = os.path.join(output_dir, "credentials.txt")
     # Se limpia el archivo de éxitos previo (si existe)
     with open(success_file, "w", encoding="utf-8") as sf:
         sf.write("")

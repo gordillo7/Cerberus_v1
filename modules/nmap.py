@@ -96,7 +96,9 @@ def limpiar_reporte_nmap(target_ip):
 
     print(f"[+] Escaneo detallado de puertos finalizado. Resultados en {archivo_salida}")
     os.remove(archivo_reporte)
-    shutil.copy(archivo_salida, f"logs/{target_ip}/reporte/nmap.txt")
+    #crea la carpeta reporte si no existe
+    os.makedirs(f"logs/{target_ip}/reporte", exist_ok=True)
+    os.system(f"cp {archivo_salida} logs/{target_ip}/reporte/nmap.txt")
 
 def run_nmap(target_ip):
     initial_scan(target_ip)
