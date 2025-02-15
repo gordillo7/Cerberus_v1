@@ -1,4 +1,4 @@
-# **PenTest Helper**
+# **Cerberus**
 
 Una herramienta diseñada para automatizar las tareas básicas de pentesting, como el escaneo de puertos, ataques de fuerza bruta y generación de reportes.
 

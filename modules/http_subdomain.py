@@ -2,7 +2,6 @@ import sys
 import os
 import requests
 from bs4 import BeautifulSoup
-import time
 
 def enumerate_subdomains(domain):
     query = "%25." + domain
@@ -43,7 +42,7 @@ def save_subdomains(domain, subdomains):
     print(f"[+] Subdominios guardados en: {output_file}")
 
 
-def run_subdomain(domain):
+def subdomain(domain):
     subdomains = enumerate_subdomains(domain)
     if subdomains:
         print(f"[+] Se encontraron {len(subdomains)} subdominios")
@@ -51,10 +50,9 @@ def run_subdomain(domain):
     else:
         print("[!] No se encontraron subdominios.")
 
+def run_http_subdomain(domain):
+    subdomain(domain)
 
 if __name__ == "__main__":
     domain = sys.argv[1]
-    start_time = time.time()
-    run_subdomain(domain)
-    end_time = time.time()
-    print(f"[+] Tiempo de ejecución crt.sh: {end_time - start_time:.2f} segundos")
+    run_http_subdomain(domain)

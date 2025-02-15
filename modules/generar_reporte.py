@@ -89,7 +89,10 @@ def create_text_paragraph(filepath):
     paragraph = Paragraph(content, styles['Normal'])
     return [paragraph, Spacer(1, 12)]
 
+def run_generar_reporte(target):
+    generar_reporte(target)
+
 # main
 if __name__ == "__main__":
     target = sys.argv[1]
-    generar_reporte(target)
+    run_generar_reporte(target)

@@ -367,8 +367,11 @@ def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
     except Exception as e:
         print(f"[!] Error al listar archivos en {remote_path}: {e}")
 
+def run_ftp(target):
+    check_ftp_anonymous(target)
+    ftp_searchsploit(target)
+
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    check_ftp_anonymous(target)
-    ftp_searchsploit(target)
+    run_ftp(target)

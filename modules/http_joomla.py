@@ -3,7 +3,7 @@ import subprocess
 import sys
 import re
 
-def run_joomscan(target_ip):
+def joomscan(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/joomla/joomscan.txt"
     print(f"[+] Ejecutando joomscan en {target_ip}...")
@@ -40,9 +40,10 @@ def run_joomscan(target_ip):
     else:
         print(f"[+] Análisis joomscan finalizado. Resultados en {output_file}")
 
+def run_http_joomla(target):
+    joomscan(target)
+
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    run_joomscan(target)
-    #extract_usernames(target)
-    #process_directory_listings(target)
+    run_http_joomla(target)

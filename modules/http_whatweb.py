@@ -49,8 +49,11 @@ def identificar_cms(target_ip):
 
     print(f"[+] CMS detectado: {cms_detectado}. Resultados en {cms_file}")
 
+def run_http_whatweb(target):
+    whatweb(target)
+    identificar_cms(target)
+
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    whatweb(target)
-    identificar_cms(target)
+    run_http_whatweb(target)

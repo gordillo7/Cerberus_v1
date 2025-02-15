@@ -33,7 +33,7 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         print("[-] WPScan: No se encontraron credenciales válidas en este intento.")
         return 0
 
-def run_wordpress_bruteforce(target):
+def wordpress_bruteforce(target):
     """
     Realiza fuerza bruta contra un sitio WordPress usando WPScan y las wordlists disponibles.
     Se ejecutan todas las casuísticas:
@@ -158,6 +158,9 @@ def run_wordpress_bruteforce(target):
         with open(success_file, "w", encoding="utf-8") as sf:
             sf.write("No se encontraron credenciales válidas en Wordpress.")
 
+def run_http_wordpress_bruteforce(target):
+    wordpress_bruteforce(target)
+
 if __name__ == "__main__":
     target = sys.argv[1]
-    run_wordpress_bruteforce(target)
+    run_http_wordpress_bruteforce(target)

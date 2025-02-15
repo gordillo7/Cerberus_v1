@@ -175,7 +175,7 @@ def process_cve(cve, target_ip, max_repos=10):
         print(
             f"[!] No se pudo verificar la vulnerabilidad {cve}: no se encontró un exploit Python en {max_repos} repositorios.")
 
-def run_wordpress_plugins(target_ip):
+def wordpress_plugins(target_ip):
     # Ruta del archivo vulnerable_plugins.txt
     file_path = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
     if not os.path.exists(file_path):
@@ -196,8 +196,11 @@ def run_wordpress_plugins(target_ip):
             print(f"\n[*] Procesando CVE {cve} para el plugin '{plugin_name}'")
             process_cve(cve, target_ip, max_repos=10)
 
+def run_http_wordpress_plugins(target_ip):
+    extract_vulnerable_plugins(target_ip)
+    wordpress_plugins(target_ip)
+
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    extract_vulnerable_plugins(target)
-    run_wordpress_plugins(target)
+    run_http_wordpress_plugins(target)

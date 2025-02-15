@@ -146,9 +146,12 @@ def process_directory_listings(target_ip):
                 shutil.copy(f"logs/{target_ip}/http/wordpress/directory_listing.txt", f"logs/{target_ip}/reporte/wordpress_listing.txt")
                 dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
 
+def run_http_wordpress(target_ip):
+    run_wpscan(target_ip)
+    extract_usernames(target_ip)
+    process_directory_listings(target_ip)
+
 # Main de prueba
 if __name__ == "__main__":
     target = sys.argv[1]
-    run_wpscan(target)
-    extract_usernames(target)
-    process_directory_listings(target)
+    run_http_wordpress(target)

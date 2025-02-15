@@ -155,6 +155,68 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Function to start a scan
+    function startScan(event, isFullScan = false) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+
+        if (isFullScan) {
+            // Add all modules for full scan
+            const allModules = document.querySelectorAll('#modules-list input[type="checkbox"]');
+            allModules.forEach(module => {
+                formData.append('modules', module.value);
+            });
+        }
+
+        terminal.show();
+        terminal.clear();
+        terminal.addMessage(`[*] Iniciando escaneo para ${formData.get('target')}`);
+
+        fetch('/fullscan', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => {
+            const reader = response.body.getReader();
+            return new ReadableStream({
+                start(controller) {
+                    function push() {
+                        reader.read().then(({ done, value }) => {
+                            if (done) {
+                                controller.close();
+                                return;
+                            }
+                            controller.enqueue(value);
+                            push();
+                        });
+                    }
+                    push();
+                }
+            });
+        })
+        .then(stream => new Response(stream))
+        .then(response => response.text())
+        .then(text => {
+            terminal.addMessage(text);
+        })
+        .catch(error => {
+            terminal.addMessage(`[!] Error: ${error.message}`);
+        });
+    }
+
+    // Handle full scan form submission
+    const fullScanForm = document.getElementById('fullScanForm');
+    if (fullScanForm) {
+        fullScanForm.addEventListener('submit', (e) => startScan(e, true));
+    }
+
+    // Handle custom scan form submission
+    const customScanForm = document.getElementById('customScanForm');
+    if (customScanForm) {
+        customScanForm.addEventListener('submit', (e) => startScan(e, false));
+    }
+
     // Inicialización
     showPage('dashboard');
     updateStats();

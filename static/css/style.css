@@ -44,6 +44,12 @@ body {
     padding: 0.7rem;
     margin-bottom: 2rem;
     border-bottom: 1px solid var(--border);
+    cursor: pointer;
+}
+
+.logo-container:hover {
+    background-color: var(--card-bg);
+    border-radius: 0.5rem;
 }
 
 .logo-text {
@@ -374,6 +380,23 @@ header {
     width: 50px;
     height: 50px;
     border-radius: 20%;
+}
+
+#scanner-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#scanner-page .card {
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 300px;
+}
+
+@media (max-width: 768px) {
+    #scanner-page .card {
+        flex: 1 1 100%;
+    }
 }
 
 @media (max-width: 768px) {
