@@ -1,2 +1,0 @@
-----CVEs genéricos de la versión de FTP instalada----
-vsftpd 3.0.3 - Remote Denial of Service

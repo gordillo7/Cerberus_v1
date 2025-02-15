@@ -13,7 +13,7 @@ def generar_reporte(target):
         print(f"Error: La carpeta {reporte_dir} no existe.")
         return
 
-    output_path = f"{reporte_dir}/{target}.pdf"
+    output_path = f"informes/{target}.pdf"
 
     # Eliminar el archivo si ya existe
     if os.path.exists(output_path):

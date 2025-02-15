@@ -1,4 +1,3 @@
-import shutil
 import subprocess
 import re
 import sys
