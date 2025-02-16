@@ -406,7 +406,7 @@ header {
 }
 
 .report-preview-container {
-    width: 100%;
+    width: 107%;
     height: 200px;         /* Altura fija */
     overflow: hidden;      /* Oculta cualquier scroll dentro */
     position: relative;

@@ -33,3 +33,5 @@ al hacer click en el, se despliegue un menu con las siguientes opciones:
         * Para este haremos una funcion en el app.py con la casuistica de ejecucion total
           (por ejemplo, nmap, si hay puerto 21 -> ftp, si no lo hay -> no ftp)
     - Escaneo personalizado (donde el usuario pueda seleccionar los modulos que quiere escanear)
+
+Hacer arreglo wordpress (si en la salida de wpscan pone retirects to y una url, que lance wpscan a esa url)

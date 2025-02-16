@@ -49,6 +49,9 @@ def extract_ports(target_ip):
                         if len(p_split) > 1 and p_split[1] == "open":
                             port_number = p_split[0].strip()
                             ports.append(port_number)
+    with open(f"logs/{target_ip}/nmap/ports.txt", "w") as f:
+        for port in ports:
+            f.write(port + "\n")
     return ports
 
 def hard_scan(target_ip, ports):
