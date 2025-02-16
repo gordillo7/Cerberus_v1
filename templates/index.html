@@ -21,7 +21,7 @@
             </a>
             <a href="#" class="nav-item" data-page="scanner">
                 <span class="material-icons">search</span>
-                Escaner
+                Scanner
             </a>
             <a href="#" class="nav-item" data-page="reports">
                 <span class="material-icons">description</span>
@@ -29,7 +29,7 @@
             </a>
             <a href="#" class="nav-item" data-page="settings">
                 <span class="material-icons">settings</span>
-                Configuración
+                Configuracion
             </a>
         </nav>
     </div>
@@ -67,7 +67,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-content">
-                            <h3>Clientes registrados</h3>
+                            <h3>Clientes escaneados</h3>
                             <div class="stat-number" id="clients-count">0</div>
                         </div>
                         <div class="stat-icon clients-icon">
@@ -101,33 +101,23 @@
                     </form>
                 </div>
                 <div class="card">
-                    <h2>Escaneo Personalizado</h2>
-                    <form id="customScanForm">
-                        <div class="input-group">
-                            <label for="customScanTarget">Objetivo</label>
-                            <input type="text" id="customScanTarget" name="target" placeholder="IP o dominio" required>
-                        </div>
-                        <div class="input-group">
-                            <label>Módulos</label>
-                            <div class="modules-grid" id="modules-list">
-                                <!-- Se llenará dinámicamente -->
-                            </div>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="material-icons">play_arrow</span>
-                            Iniciar Escaneo Personalizado
-                        </button>
-                    </form>
+                    <h2>Consola de Escaneo</h2>
+                    <div id="scan-console" class="scan-console">
+                        <div id="console-output"></div>
+                    </div>
                 </div>
             </div>
 
             <!-- Reports -->
             <div class="page" id="reports-page" style="display: none;">
-                <div class="card">
+                <div class="section-header">
                     <h2>Informes Generados</h2>
-                    <p>Aquí se mostrarán los informes generados.</p>
+                </div>
+                <div id="reports-container" class="reports-grid">
+                    <!-- Aquí se cargarán las tarjetitas de los informes -->
                 </div>
             </div>
+
 
             <!-- Settings -->
             <div class="page" id="settings-page" style="display: none;">
@@ -135,19 +125,6 @@
                     <h2>Configuración</h2>
                     <p>Aquí irán las opciones de configuración.</p>
                 </div>
-            </div>
-        </div>
-
-        <!-- Terminal de escaneo en tiempo real -->
-        <div id="scan-terminal" class="scan-terminal hidden">
-            <div class="terminal-header">
-                <h2>Escaneo en Progreso</h2>
-                <button class="minimize-btn">
-                    <span class="material-icons">remove</span>
-                </button>
-            </div>
-            <div class="terminal-content">
-                <div id="terminal-output"></div>
             </div>
         </div>
     </div>

@@ -2,7 +2,6 @@ import subprocess
 import re
 import sys
 import os
-import io
 
 def initial_scan(target_ip):
     output_file = f"logs/{target_ip}/nmap/initial_scan.txt"
@@ -104,23 +103,6 @@ def run_nmap(target_ip):
     open_ports = extract_ports(target_ip)
     hard_scan(target_ip, open_ports)
     limpiar_reporte_nmap(target_ip)
-
-class Nmap:
-    name = "Nmap"
-    description = "Módulo para escaneo de puertos y servicios usando Nmap"
-
-    def run(self, target):
-        # Redirigimos la salida estándar para capturar los prints
-        old_stdout = sys.stdout
-        sys.stdout = buffer = io.StringIO()
-        try:
-            run_nmap(target)
-        finally:
-            sys.stdout = old_stdout
-        output = buffer.getvalue()
-        if not output:
-            output = "Escaneo completado."
-        return output
 
 # Main de prueba
 if __name__ == "__main__":

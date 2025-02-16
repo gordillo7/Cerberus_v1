@@ -1,37 +1,21 @@
-from flask import Flask, render_template, request, jsonify, Response
+from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 from pathlib import Path
 import os
-import time
-import importlib
-import inspect
+import subprocess
 
 app = Flask(__name__)
 
-# Función para cargar dinámicamente los módulos y devolver sus metadatos
-def load_modules():
-    modules_list = []
-    for file in os.listdir('modules'):
-        if file.endswith('.py') and file != '__init__.py':
-            mod = importlib.import_module(f'modules.{file[:-3]}')
-            # Buscar en el módulo una clase que tenga atributos 'name' y 'description'
-            for name, obj in inspect.getmembers(mod):
-                if inspect.isclass(obj) and hasattr(obj, 'name') and hasattr(obj, 'description'):
-                    modules_list.append({
-                        'id': file[:-3],
-                        'name': obj.name,
-                        'description': obj.description
-                    })
-                    break
-    return modules_list
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
+
 @app.route('/api/stats')
 def get_stats():
     reports_count = len(list(Path('informes').glob('*.pdf')))
-    modules_count = len([f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py'])
+    modules_count = len(
+        [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generar_reporte.py' and f != 'main.py'])
     clients_count = len([d for d in os.listdir('logs') if os.path.isdir(os.path.join('logs', d))])
     return jsonify({
         'reports_count': reports_count,
@@ -39,10 +23,6 @@ def get_stats():
         'clients_count': clients_count
     })
 
-@app.route('/api/modules')
-def get_modules():
-    # Ahora load_modules() devuelve una lista de diccionarios, que es serializable a JSON
-    return jsonify(load_modules())
 
 @app.route('/api/recent-scans')
 def get_recent_scans():
@@ -52,32 +32,44 @@ def get_recent_scans():
     ]
     return jsonify(scans)
 
+@app.route('/api/reports')
+def get_reports():
+    reports = []
+    for report in Path('informes').glob('*.pdf'):
+        reports.append({'filename': report.name})
+    return jsonify(reports)
+
+@app.route('/report/<filename>')
+def view_report(filename):
+    return send_from_directory('informes', filename)
+
+
 @app.route('/fullscan', methods=['POST'])
 def fullscan():
-    target = request.form['target']
+    # Obtiene el objetivo del formulario
+    target = request.form.get('target', '').strip()
+
+    # Construye el comando para ejecutar main.py, pasando target como argumento si se proporciona
+    command = ['python', '-u', 'modules/main.py']
+    if target:
+        command.append(target)
+
+    # Ejecuta el proceso y captura la salida en tiempo real
+    process = subprocess.Popen(
+        command,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        universal_newlines=True,
+        bufsize=1
+    )
+
     def generate():
-        yield "[*] Iniciando escaneo para {}...\n".format(target)
-        # load_modules() devuelve la lista de metadatos de cada módulo
-        modules = load_modules()
-        for mod in modules:
-            mod_id = mod['id']
-            mod_name = mod['name']
-            yield "[*] Ejecutando módulo {}...\n".format(mod_name)
-            try:
-                # Importamos el módulo nuevamente usando su id
-                mod_obj = importlib.import_module(f'modules.{mod_id}')
-                for name, obj in inspect.getmembers(mod_obj):
-                    if inspect.isclass(obj) and hasattr(obj, 'run'):
-                        result = obj().run(target)
-                        yield f"[+] Resultado de {mod_name}: {result}\n"
-                        break
-            except Exception as e:
-                yield f"[!] Error al ejecutar {mod_name}: {str(e)}\n"
-            yield "[+] Módulo {} completado.\n".format(mod_name)
-        yield "[+] Escaneo completado. Generando informe...\n"
-        time.sleep(1)
-        yield "[+] Informe generado exitosamente.\n"
+        # Lee línea por línea la salida y la envía al cliente
+        for line in iter(process.stdout.readline, ''):
+            yield line
+
     return Response(generate(), mimetype='text/plain')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

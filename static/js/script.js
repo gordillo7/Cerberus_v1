@@ -4,20 +4,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const pages = document.querySelectorAll('.page');
     const pageTitle = document.querySelector('.page-title');
 
-    function showPage(pageId) {
-        pages.forEach(page => page.style.display = 'none');
-        document.getElementById(`${pageId}-page`).style.display = 'block';
-        pageTitle.textContent = pageId.charAt(0).toUpperCase() + pageId.slice(1);
-
-        navItems.forEach(item => item.classList.remove('active'));
-        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
-
-        if (pageId === 'dashboard') {
-            updateStats();
-            updateRecentScans();
-        }
-    }
-
     navItems.forEach(item => {
         item.addEventListener('click', function(e) {
             e.preventDefault();
@@ -80,31 +66,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    // Terminal de escaneo
-    const terminal = {
-        element: document.getElementById('scan-terminal'),
-        output: document.getElementById('terminal-output'),
-        show() {
-            this.element.classList.remove('hidden');
-        },
-        hide() {
-            this.element.classList.add('hidden');
-        },
-        addMessage(message) {
-            const line = document.createElement('div');
-            line.textContent = message;
-            this.output.appendChild(line);
-            this.output.scrollTop = this.output.scrollHeight;
-        },
-        clear() {
-            this.output.innerHTML = '';
-        }
-    };
-
-    document.querySelector('.minimize-btn').addEventListener('click', () => {
-        terminal.element.classList.toggle('minimized');
-    });
-
     // Cargar módulos disponibles
     function loadModules() {
         fetch('/api/modules')
@@ -121,101 +82,94 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    // Manejar el formulario de escaneo
-    const scanForm = document.getElementById('scanForm');
-    if (scanForm) {
-        scanForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
+    // Console de escaneo
+    const scanConsole = {
+        element: document.getElementById('scan-console'),
+        output: document.getElementById('console-output'),
+        addMessage(message) {
+            const line = document.createElement('div');
+            line.textContent = message;
+            this.output.appendChild(line);
+            this.element.scrollTop = this.element.scrollHeight;
+        },
+        clear() {
+            this.output.innerHTML = '';
+        }
+    };
 
-            terminal.show();
-            terminal.clear();
-            terminal.addMessage(`[*] Iniciando escaneo para ${formData.get('target')}`);
-
-            try {
-                const response = await fetch('/scan', {
-                    method: 'POST',
-                    body: formData
-                });
-
-                const reader = response.body.getReader();
-
-                while (true) {
-                    const {done, value} = await reader.read();
-                    if (done) break;
-
-                    const text = new TextDecoder().decode(value);
-                    terminal.addMessage(text);
-                }
-
-                terminal.addMessage('[+] Escaneo completado. Informe generado.');
-            } catch (error) {
-                terminal.addMessage(`[!] Error: ${error.message}`);
-            }
-        });
-    }
-
-    // Function to start a scan
-    function startScan(event, isFullScan = false) {
+    // Function to start a full scan
+    async function startFullScan(event) {
         event.preventDefault();
         const form = event.target;
         const formData = new FormData(form);
 
-        if (isFullScan) {
-            // Add all modules for full scan
-            const allModules = document.querySelectorAll('#modules-list input[type="checkbox"]');
-            allModules.forEach(module => {
-                formData.append('modules', module.value);
-            });
-        }
+        scanConsole.clear();
+        scanConsole.addMessage(`[*] Iniciando escaneo completo para ${formData.get('target')}...`);
 
-        terminal.show();
-        terminal.clear();
-        terminal.addMessage(`[*] Iniciando escaneo para ${formData.get('target')}`);
-
-        fetch('/fullscan', {
+        const response = await fetch('/fullscan', {
             method: 'POST',
             body: formData
-        })
-        .then(response => {
-            const reader = response.body.getReader();
-            return new ReadableStream({
-                start(controller) {
-                    function push() {
-                        reader.read().then(({ done, value }) => {
-                            if (done) {
-                                controller.close();
-                                return;
-                            }
-                            controller.enqueue(value);
-                            push();
-                        });
-                    }
-                    push();
-                }
-            });
-        })
-        .then(stream => new Response(stream))
-        .then(response => response.text())
-        .then(text => {
-            terminal.addMessage(text);
-        })
-        .catch(error => {
-            terminal.addMessage(`[!] Error: ${error.message}`);
         });
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let done = false;
+
+        while (!done) {
+            const { value, done: doneReading } = await reader.read();
+            done = doneReading;
+            if (value) {
+                const chunk = decoder.decode(value, { stream: true });
+                // Divide el chunk en líneas y agrega cada línea a la consola
+                const lines = chunk.split('\n');
+                lines.forEach(line => {
+                    if (line.trim() !== '') {
+                        scanConsole.addMessage(line);
+                    }
+                });
+            }
+        }
     }
 
     // Handle full scan form submission
     const fullScanForm = document.getElementById('fullScanForm');
     if (fullScanForm) {
-        fullScanForm.addEventListener('submit', (e) => startScan(e, true));
+        fullScanForm.addEventListener('submit', startFullScan);
     }
 
-    // Handle custom scan form submission
-    const customScanForm = document.getElementById('customScanForm');
-    if (customScanForm) {
-        customScanForm.addEventListener('submit', (e) => startScan(e, false));
+    function loadReports() {
+        fetch('/api/reports')
+            .then(response => response.json())
+            .then(reports => {
+                const reportsContainer = document.getElementById('reports-container');
+                reportsContainer.innerHTML = reports.map(report => `
+                    <div class="report-card" onclick="window.open('/report/${report.filename}', '_blank')">
+                      <div class="report-preview-container">
+                        <embed src="/report/${report.filename}" type="application/pdf" class="report-preview">
+                      </div>
+                      <div class="report-title">${report.filename}</div>
+                    </div>
+                `).join('');
+            });
     }
+
+    // Llamar a loadReports() al mostrar la página de informes:
+    function showPage(pageId) {
+        pages.forEach(page => page.style.display = 'none');
+        document.getElementById(`${pageId}-page`).style.display = 'block';
+        pageTitle.textContent = pageId.charAt(0).toUpperCase() + pageId.slice(1);
+
+        navItems.forEach(item => item.classList.remove('active'));
+        document.querySelector(`[data-page="${pageId}"]`).classList.add('active');
+
+        if (pageId === 'dashboard') {
+            updateStats();
+            updateRecentScans();
+        } else if (pageId === 'reports') {
+            loadReports();
+        }
+    }
+
 
     // Inicialización
     showPage('dashboard');

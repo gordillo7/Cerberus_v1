@@ -370,6 +370,63 @@ header {
     padding: 1rem;
 }
 
+.scan-console {
+    background-color: #1e1e1e;
+    color: #00ff00;
+    font-family: 'Courier New', monospace;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 5px;
+    border: 1px solid #333;
+}
+
+.scan-console div {
+    margin-bottom: 5px;
+}
+
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.report-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.report-card:hover {
+    transform: scale(1.02);
+}
+
+.report-preview-container {
+    width: 100%;
+    height: 200px;         /* Altura fija */
+    overflow: hidden;      /* Oculta cualquier scroll dentro */
+    position: relative;
+}
+
+.report-preview {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;  /* Evita la interacción (scroll, clic) dentro del embed */
+    display: block;        /* Asegura que ocupe el ancho completo */
+    border: none;          /* Por si el navegador añade bordes por defecto */
+}
+
+.report-title {
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--text);
+}
+
 #terminal-output {
     font-family: 'Courier New', monospace;
     font-size: 0.875rem;
