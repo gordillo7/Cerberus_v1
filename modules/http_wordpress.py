@@ -23,6 +23,7 @@ def run_wpscan(target_ip, domain=None):
         "--url", target_ip,
         "-e", "vp,vt,u",
         "--no-banner",
+        "--update",
         "--format", "json",
         "--output", output_file
     ]
@@ -81,7 +82,6 @@ def write_usernames(output_file, usernames):
 def extract_usernames(target_ip):
     usernames = set()
     input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
-    output_file1 = f"logs/{target_ip}/http/wordpress/users.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -94,9 +94,10 @@ def extract_usernames(target_ip):
 
     if usernames:
         print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress.")
-        write_usernames(output_file1, usernames)
+        write_usernames(f"logs/{target_ip}/http/wordpress/users.txt", usernames)
         write_usernames(f"wordlists/{target_ip}/users.txt", usernames)
         write_usernames(f"logs/{target_ip}/reporte/wordpress_usernames.txt", usernames)
+
     else:
         print("[!] No se encontraron nombres de usuario en Wordpress")
 

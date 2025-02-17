@@ -99,6 +99,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 
+    const stopScanBtn = document.getElementById('stopScanBtn');
+    if (stopScanBtn) {
+        stopScanBtn.addEventListener('click', async function() {
+            const response = await fetch('/stopscan', { method: 'POST' });
+            const data = await response.json();
+            scanConsole.addMessage(data.message);
+        });
+    }
+
+    const clearConsoleBtn = document.getElementById('clearConsoleBtn');
+    if (clearConsoleBtn) {
+      clearConsoleBtn.addEventListener('click', function() {
+        scanConsole.clear();
+      });
+    }
+
     // Function to start a full scan
     async function startFullScan(event) {
         event.preventDefault();

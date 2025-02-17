@@ -101,10 +101,22 @@
                     </form>
                 </div>
                 <div class="card">
+                  <div class="console-header">
                     <h2>Consola de Escaneo</h2>
-                    <div id="scan-console" class="scan-console">
-                        <div id="console-output"></div>
+                    <div class="console-buttons">
+                      <button type="button" id="stopScanBtn" class="cancel-btn">
+                        <span class="material-icons">stop</span>
+                        Cancelar Escaneo
+                      </button>
+                      <button type="button" id="clearConsoleBtn" class="clear-btn">
+                        <span class="material-icons">clear_all</span>
+                        Limpiar Consola
+                      </button>
                     </div>
+                  </div>
+                  <div id="scan-console" class="scan-console">
+                    <div id="console-output"></div>
+                  </div>
                 </div>
             </div>
 

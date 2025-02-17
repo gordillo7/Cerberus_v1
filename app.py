@@ -1,10 +1,9 @@
 from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 from pathlib import Path
-import os
-import subprocess
+import os, signal, subprocess
 
 app = Flask(__name__)
-
+app.current_scan_process = None
 
 @app.route('/')
 def index():
@@ -57,16 +56,11 @@ def delete_report(filename):
 
 @app.route('/fullscan', methods=['POST'])
 def fullscan():
-    # Obtiene el objetivo del formulario
     target = request.form.get('target', '').strip()
-
-    # Construye el comando para ejecutar main.py, pasando target como argumento si se proporciona
     command = ['python', '-u', 'main.py']
     if target:
         command.append(target)
-
-    # Ejecuta el proceso y captura la salida en tiempo real
-    process = subprocess.Popen(
+    app.current_scan_process = subprocess.Popen(
         command,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
@@ -75,11 +69,20 @@ def fullscan():
     )
 
     def generate():
-        # Lee línea por línea la salida y la envía al cliente
-        for line in iter(process.stdout.readline, ''):
-            yield line
-
+        try:
+            for line in iter(app.current_scan_process.stdout.readline, ''):
+                yield line
+        finally:
+            app.current_scan_process = None  # Se limpia al finalizar el escaneo
     return Response(generate(), mimetype='text/plain')
+
+@app.route('/stopscan', methods=['POST'])
+def stop_scan():
+    if app.current_scan_process is not None:
+        app.current_scan_process.send_signal(signal.SIGINT)  # Enviar señal de interrupción (Ctrl+C)
+        return jsonify({'message': 'Escaneo detenido.'})
+    else:
+        return jsonify({'message': 'No hay escaneo en curso.'}), 404
 
 
 if __name__ == '__main__':

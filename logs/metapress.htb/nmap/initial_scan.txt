@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Mon Feb 17 13:56:48 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/metapress.htb/nmap/initial_scan.txt metapress.htb
-Host: 10.129.228.95 ()	Status: Up
-Host: 10.129.228.95 ()	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///
-# Nmap done at Mon Feb 17 13:57:12 2025 -- 1 IP address (1 host up) scanned in 24.08 seconds

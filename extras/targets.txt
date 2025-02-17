@@ -1,5 +1,7 @@
-Wordpress Plugins:
-    1. Tenten (HTB)
+Wordpress (general):
+    1. MetaTwo (HTB)
+    Wordpress Plugins:
+        1. Tenten (HTB)
 
-Wordpress Bruteforce:
-    2. Blog (THM) -> kwheel:cutiepie1
+    Wordpress Bruteforce:
+        1. Blog (THM) -> kwheel:cutiepie1

@@ -250,6 +250,7 @@ header {
 }
 
 .input-group {
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
 }
 
@@ -322,6 +323,49 @@ header {
     margin-right: 0.5rem;
 }
 
+.cancel-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    background-color: var(--danger);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background-color: rgba(239, 68, 68, 0.9);
+}
+
+.clear-btn {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    background-color: var(--warning);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.clear-btn:hover {
+    background-color: rgba(245, 158, 11, 0.9);
+}
+
+.console-buttons {
+    display: flex;
+    gap: 10px;
+}
+
 .scan-terminal {
     position: fixed;
     bottom: 0;
@@ -383,6 +427,16 @@ header {
 
 .scan-console div {
     margin-bottom: 5px;
+}
+
+.console-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background-color: var(--sidebar);
+    border-radius: 0.75rem;
+    margin-bottom: 1rem;
 }
 
 .report-info {
