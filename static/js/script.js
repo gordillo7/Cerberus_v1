@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
+    /*
     // Cargar módulos disponibles
     function loadModules() {
         fetch('/api/modules')
@@ -81,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `).join('');
             });
     }
+     */
 
     // Console de escaneo
     const scanConsole = {
@@ -143,14 +145,45 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(reports => {
                 const reportsContainer = document.getElementById('reports-container');
                 reportsContainer.innerHTML = reports.map(report => `
-                    <div class="report-card" onclick="window.open('/report/${report.filename}', '_blank')">
-                      <div class="report-preview-container">
-                        <embed src="/report/${report.filename}" type="application/pdf" class="report-preview">
-                      </div>
-                      <div class="report-title">${report.filename}</div>
+                    <div class="report-card">
+                        <div class="report-preview-container" onclick="window.open('/report/${report.filename}', '_blank')">
+                            <embed src="/report/${report.filename}#page=1" type="application/pdf" class="report-preview">
+                        </div>
+                        <div class="report-info">
+                            <div class="report-title">${report.filename}</div>
+                            <button class="delete-report" data-filename="${report.filename}">
+                                <span class="material-icons">delete</span>
+                            </button>
+                        </div>
                     </div>
                 `).join('');
+
+                // Add event listeners for delete buttons
+                const deleteButtons = reportsContainer.querySelectorAll('.delete-report');
+                deleteButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        deleteReport(this.dataset.filename);
+                    });
+                });
             });
+    }
+
+    function deleteReport(filename) {
+        if (confirm(`¿Estás seguro de que quieres eliminar el informe ${filename}?`)) {
+            fetch(`/api/reports/${filename}`, { method: 'DELETE' })
+                .then(response => {
+                    if (response.ok) {
+                        loadReports();
+                        updateStats();
+                    } else {
+                        alert('Error al eliminar el informe');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al eliminar el informe');
+                });
+        }
     }
 
     // Llamar a loadReports() al mostrar la página de informes:

@@ -385,6 +385,14 @@ header {
     margin-bottom: 5px;
 }
 
+.report-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
 .reports-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -411,7 +419,6 @@ header {
     overflow: hidden;      /* Oculta cualquier scroll dentro */
     position: relative;
 }
-
 .report-preview {
     width: 100%;
     height: 100%;
@@ -419,12 +426,28 @@ header {
     display: block;        /* Asegura que ocupe el ancho completo */
     border: none;          /* Por si el navegador añade bordes por defecto */
 }
-
 .report-title {
     padding: 0.5rem;
     font-size: 1rem;
     text-align: center;
     color: var(--text);
+}
+
+.delete-report {
+    background: none;
+    border: none;
+    color: var(--danger);
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.delete-report:hover {
+    background-color: rgba(239, 68, 68, 0.1);
 }
 
 #terminal-output {

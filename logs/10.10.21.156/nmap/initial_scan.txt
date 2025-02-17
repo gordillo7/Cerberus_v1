@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Thu Feb  6 14:41:27 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/10.10.21.156/nmap/initial_scan.txt 10.10.21.156
-Host: 10.10.21.156 ()	Status: Up
-Host: 10.10.21.156 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 139/open/tcp//netbios-ssn///, 445/open/tcp//microsoft-ds///
-# Nmap done at Thu Feb  6 14:41:40 2025 -- 1 IP address (1 host up) scanned in 12.83 seconds

@@ -3,15 +3,20 @@ import subprocess
 import os
 import sys
 import json
-from urllib.parse import urljoin, urlparse
-
+import re
 import requests
+from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 
-def run_wpscan(target_ip):
+
+def run_wpscan(target_ip, domain=None):
     output_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
-    print(f"[+] Ejecutando wpscan en {target_ip}...")
+    print(f"[*] Ejecutando wpscan en {target_ip}...")
     os.makedirs(f"logs/{target_ip}/http/wordpress", exist_ok=True)
+
+    # Si se proporciona un dominio, se usa en lugar de la IP
+    if domain:
+        target_ip = domain
 
     command = [
         "wpscan",
@@ -29,11 +34,31 @@ def run_wpscan(target_ip):
         text=True
     )
 
-    if result.returncode != 0:
-        print(f"[!] Error ejecutando wpscan (codigo de retorno {result.returncode}):")
-        print(result.stderr)
+    # Intentar leer el contenido del archivo de salida
+    try:
+        with open(output_file, "r") as f:
+            content = f.read()
+    except Exception as e:
+        content = ""
+        print(f"[!] No se pudo leer el archivo de salida: {e}")
+
+    # Si se detecta la redirección, reejecutar wpscan con la nueva URL
+    if "scan_aborted" in content and "redirects to" in content:
+        print("[*] Analizando la salida para extraer la nueva URL...")
+        match = re.search(r"redirects to:?\s*(\S+)", content, re.IGNORECASE)
+        if match:
+            new_url = match.group(1).rstrip('/.')
+            print(f"[*] Nueva URL detectada: {new_url}. Reejecutando wpscan en la nueva URL...")
+            domain = new_url.replace("http://", "").replace("https://", "").rstrip("/")
+            run_wpscan(target_ip, domain)
+            return
+        else:
+            print("[!] No se pudo extraer la nueva URL para reejecutar wpscan.")
+
+    if result.stderr:
+        print(f"[!] Error al ejecutar WPScan en {target_ip}: {result.stderr}")
     else:
-        print(f"[+] Análisis wpscan finalizado. Resultados en {output_file}")
+        print(f"[+] Escaneo inicial de WordPress finalizado. Resultados guardados en {output_file}")
 
 # Función para escribir en un archivo sin sobrescribir
 def write_usernames(output_file, usernames):

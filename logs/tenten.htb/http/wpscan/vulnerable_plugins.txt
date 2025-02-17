@@ -1,8 +1,0 @@
-Plugin: job-manager
-CVE:
-  - 2015-6668
-
-Plugin: job-manager
-CVE:
-  - 2021-39336
-

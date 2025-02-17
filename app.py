@@ -15,7 +15,7 @@ def index():
 def get_stats():
     reports_count = len(list(Path('informes').glob('*.pdf')))
     modules_count = len(
-        [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generar_reporte.py' and f != 'main.py'])
+        [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generar_reporte.py'])
     clients_count = len([d for d in os.listdir('logs') if os.path.isdir(os.path.join('logs', d))])
     return jsonify({
         'reports_count': reports_count,
@@ -43,6 +43,17 @@ def get_reports():
 def view_report(filename):
     return send_from_directory('informes', filename)
 
+@app.route('/api/reports/<filename>', methods=['DELETE'])
+def delete_report(filename):
+    try:
+        report_path = Path('informes') / filename
+        if report_path.exists():
+            report_path.unlink()
+            return jsonify({'message': f'Report {filename} deleted successfully.'}), 200
+        else:
+            return jsonify({'error': 'Report not found.'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/fullscan', methods=['POST'])
 def fullscan():
@@ -50,7 +61,7 @@ def fullscan():
     target = request.form.get('target', '').strip()
 
     # Construye el comando para ejecutar main.py, pasando target como argumento si se proporciona
-    command = ['python', '-u', 'modules/main.py']
+    command = ['python', '-u', 'main.py']
     if target:
         command.append(target)
 

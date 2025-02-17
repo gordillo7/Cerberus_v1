@@ -21,6 +21,18 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
     result = subprocess.run(command, capture_output=True, text=True)
     output = result.stdout + "\n" + result.stderr
 
+    if "Scan Aborted" in output and "redirects to" in output:
+        print("[*] Analizando la salida para extraer la nueva URL...")
+        match = re.search(r"redirects to:?\s*(\S+)", output, re.IGNORECASE)
+        if match:
+            new_url = match.group(1).rstrip('/.')
+            print(f"[*] Nueva URL detectada: {new_url}. Reejecutando WPScan en la nueva URL...")
+            domain = new_url.replace("http://", "").replace("https://", "").rstrip("/")
+            return run_wpscan_attack_file(domain, usernames_file, passwords_file, success_file)
+        else:
+            print("[!] No se pudo extraer la nueva URL para reejecutar WPScan.")
+            return 0
+
     # Buscar todas las ocurrencias de éxito en el formato: [SUCCESS] - usuario / contraseña
     success_matches = re.findall(r'\[SUCCESS\]\s*-\s*(\S+)\s*/\s*(\S+)', output)
     if success_matches:
