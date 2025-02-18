@@ -1,7 +1,10 @@
+FTP (Anonymous login + dump):
+    1. Anonymous (THM)
+    2. Reel (HTB)
+
 Wordpress (general):
     1. MetaTwo (HTB)
     Wordpress Plugins:
         1. Tenten (HTB)
-
     Wordpress Bruteforce:
         1. Blog (THM) -> kwheel:cutiepie1

@@ -21,7 +21,7 @@ Propuestas:
 
 ####################################################################################################
 Bateria de tests:
-- nmap.py
+(HECHO) - nmap.py
 - ftp.py
 - http_whatweb.py
 - http_subdomain.py
