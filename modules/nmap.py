@@ -5,7 +5,7 @@ import os
 
 def initial_scan(target_ip):
     output_file = f"logs/{target_ip}/nmap/initial_scan.txt"
-    print(f"[+] Obteniendo puertos abiertos de {target_ip}...")
+    print(f"[*] Obteniendo puertos abiertos de {target_ip}...")
     os.makedirs(f"logs/{target_ip}/nmap", exist_ok=True)
 
     command = [
@@ -56,7 +56,7 @@ def extract_ports(target_ip):
 
 def hard_scan(target_ip, ports):
     output_file = f"logs/{target_ip}/nmap/ports_services_versions_temp.txt"
-    print(f"[+] Escaneando puertos en detalle...")
+    print(f"[*] Escaneando puertos en detalle...")
     os.makedirs(f"logs/{target_ip}/nmap", exist_ok=True)
 
     command = [

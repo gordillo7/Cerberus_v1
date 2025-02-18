@@ -57,7 +57,7 @@ def delete_report(filename):
 @app.route('/fullscan', methods=['POST'])
 def fullscan():
     target = request.form.get('target', '').strip()
-    command = ['python', '-u', 'main.py']
+    command = ['python3', '-u', 'main.py']
     if target:
         command.append(target)
     app.current_scan_process = subprocess.Popen(

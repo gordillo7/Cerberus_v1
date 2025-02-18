@@ -19,19 +19,16 @@ Propuestas:
 - Mirar https://github.com/micro-joan/BlackStone
 - Bot de Telegram para reporte en tiempo real.
 
-Interfaz:
-Que me añadas el logo donde te lo indico y lo adaptes para que se quede pequeño con las esquinas redondeadas arriba a la derecha. Ademas, al hacerle click al logo debe mandar a la pagina de inicio (el propio dashboard)
-En el dashboard, las 3 estadisticas que se muestran quiero que sean Informes generados, modulos disponibles y clientes registrados. Ademas, quiero que estas estadisticas se actualicen de manera dinamica. Para ello, "informes generados" se actualizara con el numero actual de informes en la carpeta informes, "modulos disponibles" se actualizara con el numero actual de modulos en la carpeta modules, y "clientes registrados" se actualizara con el numero de carpetas dentro de la carpeta logs.
-Quiero que la aplicacion tenga animaciones fluidas, visuales y modernas para cada una de las caracteristicas de la misma, por ejemplo, al recargar el dashboard, que los numeros de las estadisticas aparezcan poco a poco, o de abajo arriba, animaciones en los botones, y demas animaciones propias de una pagina moderna.
-Quiero que en la barra lateral izquierda tenga: Dashboard, Escaner (donde se encontraran todas las opciones para personalizar el escaneo), Informes (donde se encontraran todos los informes de la carpeta informes para visualizarlos) y configuracion (donde se encontraran caracteristicas para personalizar la experiencia con la aplicacion).
-Quiero que haya una pantalla de escaneo en tiempo real, donde se vaya mostrando la consola con lo que deberia ir mostrandose al ejecutar cada modulo por separado
-Quiero que lo intentes hacer de la manera mas escalable posible, es decir, que a la hora de implementar cambios, añadir nuevos modulos a la herramienta, nuevas caracteristicas, etc, sea lo mas facil posible
-
-- En la pestaña de Escaner, quiero que haya un boton que diga "Personalizar escaneo" y
-al hacer click en el, se despliegue un menu con las siguientes opciones:
-    - Escaneo completo (escaneo de todos los modulos)
-        * Para este haremos una funcion en el app.py con la casuistica de ejecucion total
-          (por ejemplo, nmap, si hay puerto 21 -> ftp, si no lo hay -> no ftp)
-    - Escaneo personalizado (donde el usuario pueda seleccionar los modulos que quiere escanear)
-
-Hacer arreglo wordpress (si en la salida de wpscan pone retirects to y una url, que lance wpscan a esa url)
+####################################################################################################
+Bateria de tests:
+- nmap.py
+- ftp.py
+- http_whatweb.py
+- http_subdomain.py
+- http_wordpress.py
+- http_wordpress_plugins.py
+- http_wordpress_bruteforce.py
+- http_joomla.py
+- generar_reporte.py
+- Test conjunto (main.py)
+####################################################################################################
