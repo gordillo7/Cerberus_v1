@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             <embed src="/report/${report.filename}#page=1" type="application/pdf" class="report-preview">
                         </div>
                         <div class="report-info">
-                            <div class="report-title">${report.filename}</div>
+                            <div class="report-title">${report.filename.length > 20 ? report.filename.substring(0, 16) + '....pdf' : report.filename}</div>
                             <button class="delete-report" data-filename="${report.filename}">
                                 <span class="material-icons">delete</span>
                             </button>

@@ -6,7 +6,7 @@ import re
 def joomscan(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/joomla/joomscan.txt"
-    print(f"[+] Ejecutando joomscan en {target_ip}...")
+    print(f"[+] Ejecutando joomscan en {target_clean}...")
 
     # Crear el directorio para guardar los logs si no existe
     os.makedirs(f"logs/{target_clean}/http/joomla", exist_ok=True)

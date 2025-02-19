@@ -21,8 +21,6 @@ def main():
     if os.path.exists(f"logs/{target_clean}/nmap/ports.txt"):
         with open(f"logs/{target_clean}/nmap/ports.txt", "r") as f:
             ports = f.read()
-            if "21" in ports:
-                run_ftp(target_clean)
             if "80" in ports:
                 run_http_subdomain(target_clean)
                 run_http_whatweb(target_clean)
@@ -33,7 +31,10 @@ def main():
                         run_http_wordpress_plugins(target_clean)
                         run_http_wordpress_bruteforce(target_clean)
                     if "Joomla" in cms:
-                        run_http_joomla(target_clean)
+                        # Se lanza con target en lugar de target_clean ya que joomscan asocia todos los dominios con http:// (dentro de la función se limpia)
+                        run_http_joomla(target)
+            if "21" in ports:
+                run_ftp(target_clean)
 
     run_generar_reporte(target_clean)
     print(f"[*] Escaneo finalizado en {time.time() - start_time:.2f} segundos.")

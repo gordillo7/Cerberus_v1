@@ -22,13 +22,13 @@ Propuestas:
 ####################################################################################################
 Bateria de tests:
 (HECHO) - nmap.py
-- ftp.py
-- http_whatweb.py
-- http_subdomain.py
+(HECHO) - ftp.py
+(HECHO) - http_whatweb.py
+(HECHO) - http_subdomain.py
+(HECHO) - http_joomla.py
 - http_wordpress.py
 - http_wordpress_plugins.py
 - http_wordpress_bruteforce.py
-- http_joomla.py
 - generar_reporte.py
 - Test conjunto (main.py)
 ####################################################################################################
