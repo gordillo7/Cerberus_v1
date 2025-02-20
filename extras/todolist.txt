@@ -26,9 +26,9 @@ Bateria de tests:
 (HECHO) - http_whatweb.py
 (HECHO) - http_subdomain.py
 (HECHO) - http_joomla.py
-- http_wordpress.py
+(HECHO) - http_wordpress.py
 - http_wordpress_plugins.py
 - http_wordpress_bruteforce.py
 - generar_reporte.py
-- Test conjunto (main.py)
+- Test conjunto (main.py e interfaz)
 ####################################################################################################

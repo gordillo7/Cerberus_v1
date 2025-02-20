@@ -38,7 +38,7 @@ def extract_vulnerable_plugins(target_ip):
 
         shutil.copy(output_file, f"logs/{target_ip}/reporte/wordpress_vulnerable_plugins.txt")
     else:
-        print("[!] No se encontraron plugins vulnerables en Wordpress")
+        print("[!] No se encontraron plugins vulnerables en WordPress")
 
 def parse_vulnerable_plugins(file_path):
     """
@@ -179,7 +179,7 @@ def wordpress_plugins(target_ip):
     # Ruta del archivo vulnerable_plugins.txt
     file_path = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
     if not os.path.exists(file_path):
-        print(f"[!] El archivo {file_path} no existe.")
+        #print(f"[!] El archivo {file_path} no existe.")
         return
 
     # Parseamos el archivo para obtener la lista de plugins y sus CVEs
