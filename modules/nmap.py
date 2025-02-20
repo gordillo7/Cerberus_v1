@@ -93,7 +93,7 @@ def limpiar_reporte_nmap(target_ip):
             if re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", linea):
                 con_linea_interes = True
             if con_linea_interes:
-                if re.search(r"^\d+/tcp\s+open\s", linea) or re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", linea):
+                if re.search(r"^\d+/tcp\s+", linea) or re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", linea):
                     f.write(linea)
 
     print(f"[+] Escaneo detallado de puertos finalizado. Resultados en {archivo_salida}")

@@ -4,7 +4,10 @@ FTP (Anonymous login + dump):
 
 Wordpress (general):
     1. MetaTwo (HTB)
+    2. cartamundi.com
     Wordpress Plugins:
         1. Tenten (HTB)
+        2. cartamundi.com
     Wordpress Bruteforce:
         1. Blog (THM) -> kwheel:cutiepie1
+        2. MetaTwo (HTB) -> manager:partylikearockstar
