@@ -54,15 +54,19 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(scans => {
                 const scansList = document.getElementById('recent-scans-list');
-                scansList.innerHTML = scans.map(scan => `
-                    <div class="scan-item">
-                        <div class="scan-info">
-                            <div class="scan-target">${scan.target}</div>
-                            <div class="scan-date">${new Date(scan.date).toLocaleString()}</div>
+                if (scans.length === 0) {
+                    scansList.innerHTML = '<div class="scan-item">No hay escaneos recientes</div>';
+                } else {
+                    scansList.innerHTML = scans.map(scan => `
+                        <div class="scan-item">
+                            <div class="scan-info">
+                                <div class="scan-target">${scan.target}</div>
+                                <div class="scan-date">${new Date(scan.date).toLocaleString()}</div>
+                            </div>
+                            <div class="scan-status ${scan.status.toLowerCase()}">${scan.status}</div>
                         </div>
-                        <div class="scan-status ${scan.status.toLowerCase()}">${scan.status}</div>
-                    </div>
-                `).join('');
+                    `).join('');
+                }
             });
     }
 
@@ -121,6 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const form = event.target;
         const formData = new FormData(form);
 
+        document.getElementById('fullScanTarget').value = '';
         scanConsole.clear();
         scanConsole.addMessage(`[*] Iniciando escaneo completo para ${formData.get('target')}...`);
 

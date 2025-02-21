@@ -127,7 +127,7 @@ header {
 .stat-card {
     background-color: var(--card-bg);
     border-radius: 0.75rem;
-    padding: 1.5rem;
+    padding: 1.1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -188,7 +188,7 @@ header {
 }
 
 .scans-list {
-    padding: 1rem;
+    padding: 0.85rem;
 }
 
 .scan-item {
@@ -236,7 +236,7 @@ header {
     color: var(--warning);
 }
 
-.scan-status.failed {
+.scan-status.aborted {
     background-color: rgba(239, 68, 68, 0.1);
     color: var(--danger);
 }

@@ -1,0 +1,261 @@
+{
+  "db_update_started": true,
+  "db_files_updated": [
+
+  ],
+  "db_update_finished": true,
+  "start_time": 1740153561,
+  "start_memory": 65847296,
+  "target_url": "https://olsmemphis.com/",
+  "target_ip": "143.198.168.17",
+  "effective_url": "https://olsmemphis.com/",
+  "interesting_findings": [
+    {
+      "url": "https://olsmemphis.com/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "Server: Apache/2.4.41 (Ubuntu)"
+      ]
+    },
+    {
+      "url": "https://olsmemphis.com/robots.txt",
+      "to_s": "robots.txt found: https://olsmemphis.com/robots.txt",
+      "type": "robots_txt",
+      "found_by": "Robots Txt (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://olsmemphis.com/readme.html",
+      "to_s": "WordPress readme found: https://olsmemphis.com/readme.html",
+      "type": "readme",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://olsmemphis.com/wp-content/mu-plugins/",
+      "to_s": "This site has 'Must Use Plugins': https://olsmemphis.com/wp-content/mu-plugins/",
+      "type": "mu_plugins",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 80,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/Must_Use_Plugins"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://olsmemphis.com/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: https://olsmemphis.com/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "6.3.5",
+    "release_date": "2024-06-24",
+    "status": "outdated",
+    "found_by": "Rss Generator (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "https://olsmemphis.com/feed/, <generator>https://wordpress.org/?v=6.3.5</generator>",
+      "https://olsmemphis.com/comments/feed/, <generator>https://wordpress.org/?v=6.3.5</generator>"
+    ],
+    "confirmed_by": {
+
+    },
+    "vulnerabilities": [
+
+    ]
+  },
+  "main_theme": {
+    "slug": "Avada-Child-Theme",
+    "location": "https://olsmemphis.com/wp-content/themes/Avada-Child-Theme/",
+    "latest_version": null,
+    "last_updated": null,
+    "outdated": false,
+    "readme_url": false,
+    "directory_listing": false,
+    "error_log_url": null,
+    "style_url": "https://olsmemphis.com/wp-content/themes/Avada-Child-Theme/style.css?ver=6.3.5",
+    "style_name": "Avada Child",
+    "style_uri": null,
+    "description": "Child theme for Avada theme",
+    "author": "ThemeFusion",
+    "author_uri": "https://theme-fusion.com",
+    "template": "Avada",
+    "license": null,
+    "license_uri": null,
+    "tags": null,
+    "text_domain": "Avada",
+    "found_by": "Css Style In Homepage (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+
+    ],
+    "confirmed_by": {
+      "Css Style In 404 Page (Passive Detection)": {
+        "confidence": 70,
+        "interesting_entries": [
+
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ],
+    "version": {
+      "number": "1.0.0",
+      "confidence": 80,
+      "found_by": "Style (Passive Detection)",
+      "interesting_entries": [
+        "https://olsmemphis.com/wp-content/themes/Avada-Child-Theme/style.css?ver=6.3.5, Match: 'Version: 1.0.0'"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "parents": [
+
+    ]
+  },
+  "plugins": {
+
+  },
+  "themes": {
+
+  },
+  "users": {
+    "elkins-endeavors": {
+      "id": null,
+      "found_by": "Author Posts - Author Pattern (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Wp Json Api (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+            "https://olsmemphis.com/wp-json/wp/v2/users/?per_page=100&page=1"
+          ]
+        },
+        "Oembed API - Author URL (Aggressive Detection)": {
+          "confidence": 90,
+          "interesting_entries": [
+            "https://olsmemphis.com/wp-json/oembed/1.0/embed?url=https://olsmemphis.com/&format=json"
+          ]
+        },
+        "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "brenda-plessinger": {
+      "id": 9,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://olsmemphis.com/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+        "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "lchudson": {
+      "id": 7,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://olsmemphis.com/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+        "Author Id Brute Forcing - Author Pattern (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "frruben": {
+      "id": 8,
+      "found_by": "Author Id Brute Forcing - Author Pattern (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      }
+    }
+  },
+  "vuln_api": {
+    "plan": "free",
+    "requests_done_during_scan": 10,
+    "requests_remaining": "Unlimited"
+  },
+  "stop_time": 1740153787,
+  "elapsed": 225,
+  "requests_done": 763,
+  "cached_requests": 15,
+  "data_sent": 210020,
+  "data_sent_humanised": "205.098 KB",
+  "data_received": 2318486,
+  "data_received_humanised": "2.211 MB",
+  "used_memory": 302800896,
+  "used_memory_humanised": "288.773 MB"
+}

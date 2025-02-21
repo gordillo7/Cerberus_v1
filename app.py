@@ -1,9 +1,11 @@
 from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 from pathlib import Path
-import os, signal, subprocess
+import os, signal, subprocess, json, datetime
 
 app = Flask(__name__)
 app.current_scan_process = None
+
+os.makedirs("logs", exist_ok=True)
 
 @app.route('/')
 def index():
@@ -25,11 +27,18 @@ def get_stats():
 
 @app.route('/api/recent-scans')
 def get_recent_scans():
-    scans = [
-        {'target': 'example.com', 'date': '2025-02-14T15:30:00', 'status': 'Completed'},
-        {'target': 'test-site.org', 'date': '2025-02-14T13:15:00', 'status': 'Failed'},
-    ]
-    return jsonify(scans)
+    log_file = Path('logs/scans.log')
+    scans = []
+    if log_file.exists():
+        with log_file.open('r') as f:
+            for line in f:
+                try:
+                    scan = json.loads(line.strip())
+                    scans.append(scan)
+                except json.JSONDecodeError:
+                    continue
+        scans.sort(key=lambda x: x.get('date', ''), reverse=True)
+    return jsonify(scans[:3])
 
 @app.route('/api/reports')
 def get_reports():
@@ -73,13 +82,24 @@ def fullscan():
             for line in iter(app.current_scan_process.stdout.readline, ''):
                 yield line
         finally:
-            app.current_scan_process = None  # Se limpia al finalizar el escaneo
+            if app.current_scan_process:
+                app.current_scan_process.stdout.close()
+                return_code = app.current_scan_process.wait()
+                status = "Completed" if return_code == 0 else "Aborted"
+                scan_record = {
+                    "target": target,
+                    "date": datetime.datetime.now().isoformat(),
+                    "status": status
+                }
+                with open("logs/scans.log", "a") as f:
+                    f.write(json.dumps(scan_record) + "\n")
+                app.current_scan_process = None
     return Response(generate(), mimetype='text/plain')
 
 @app.route('/stopscan', methods=['POST'])
 def stop_scan():
     if app.current_scan_process is not None:
-        app.current_scan_process.send_signal(signal.SIGINT)  # Enviar señal de interrupción (Ctrl+C)
+        app.current_scan_process.send_signal(signal.SIGINT)
         return jsonify({'message': 'Escaneo detenido.'})
     else:
         return jsonify({'message': 'No hay escaneo en curso.'}), 404
