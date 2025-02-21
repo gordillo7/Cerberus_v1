@@ -36,9 +36,11 @@ def save_subdomains(domain, subdomains):
     output_file = os.path.join(output_dir, "subdomains.txt")
 
     with open(output_file, "w") as f:
+        f.write(f"Se han enumerado {len(subdomains)} subdominios para {domain}\n")
         for subdomain in subdomains:
             f.write(subdomain + "\n")
 
+    os.system(f"cp {output_file} logs/{domain}/reporte/http_subdomains.txt")
     print(f"[+] Subdominios guardados en: {output_file}")
 
 

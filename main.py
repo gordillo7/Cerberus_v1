@@ -23,13 +23,16 @@ def main():
             ports = f.read()
             if "80" in ports:
                 run_http_subdomain(target_clean)
-                run_http_whatweb(target_clean)
+                # Se lanza con target en lugar de target_clean ya que whatweb asocia todos los dominios con http:// (dentro de la función se limpia)
+                run_http_whatweb(target)
                 with open(f"logs/{target_clean}/http/whatweb/cms.txt", "r") as w:
                     cms = w.read()
                     if "WordPress" in cms:
-                        run_http_wordpress(target_clean)
+                        # Se lanza con target en lugar de target_clean ya que wpscan asocia todos los dominios con http:// (dentro de la función se limpia)
+                        run_http_wordpress(target)
                         run_http_wordpress_plugins(target_clean)
-                        run_http_wordpress_bruteforce(target_clean)
+                        # Se lanza con target en lugar de target_clean ya que whatweb asocia todos los dominios con http:// (dentro de la función se limpia)
+                        run_http_wordpress_bruteforce(target)
                     if "Joomla" in cms:
                         # Se lanza con target en lugar de target_clean ya que joomscan asocia todos los dominios con http:// (dentro de la función se limpia)
                         run_http_joomla(target)
@@ -37,7 +40,7 @@ def main():
                 run_ftp(target_clean)
 
     run_generar_reporte(target_clean)
-    print(f"[*] Escaneo finalizado en {time.time() - start_time:.2f} segundos.")
+    print(f"[*] Escaneo finalizado en {int((time.time() - start_time) // 60)} minuto(s) y {int((time.time() - start_time) % 60)} segundo(s).")
 
 #Llamada a la función main
 if __name__ == "__main__":

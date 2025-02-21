@@ -4,9 +4,10 @@ import sys
 import re
 
 def whatweb(target_ip):
+    target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     print(f"[+] Ejecutando whatweb en {target_ip}...")
-    tecnologias_file = f"logs/{target_ip}/http/whatweb/tecnologias.txt"
-    os.makedirs(f"logs/{target_ip}/http/whatweb", exist_ok=True)
+    tecnologias_file = f"logs/{target_clean}/http/whatweb/tecnologias.txt"
+    os.makedirs(f"logs/{target_clean}/http/whatweb", exist_ok=True)
 
     command = [
         "whatweb",
@@ -28,8 +29,9 @@ def whatweb(target_ip):
         print(f"[+] Análisis whatweb finalizado. Resultados en {tecnologias_file}")
 
 def identificar_cms(target_ip):
-    cms_file = f"logs/{target_ip}/http/whatweb/cms.txt"
-    tecnologias_file = f"logs/{target_ip}/http/whatweb/tecnologias.txt"
+    target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
+    cms_file = f"logs/{target_clean}/http/whatweb/cms.txt"
+    tecnologias_file = f"logs/{target_clean}/http/whatweb/tecnologias.txt"
     cms_list = ["WordPress", "Joomla", "Drupal"]
     cms_detectado = "unknown"
 

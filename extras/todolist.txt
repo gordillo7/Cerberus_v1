@@ -1,34 +1,17 @@
-Objetivo a corto plazo: sacar primera version early alfa con Wordpress, Joomla y Drupal
-(importante bruteforce a default credentials), FTP, generacion de reportes e interfaz grafica.
-
 1. CVEs mas comunes de cada CMS (Wordpress, Joomla, Drupal).
     1.1. Filtrar vulnerabilidad plugin, themes... de Wordpress (wpscan -e vp).
     1.2. PoCs y hacer la carpeta de pocs para futuras maquinas.
 2. Interfaz y reportes YA.
 3. Busqueda de subdominios (y tirar script para cada subdominio).
-
-a. Mostrar tiempo que ahorramos.
-b. Deepseek para seguir despues con recomendaciones...
-c. Arreglar nombre de las carpetas de logs (las http://... se cortan y se meten dentro).
-d. Cambiar crt.sh por Subfinder + httpx para compreobar respuesta = 200 (subdominios).
-e. Cambiar casuistica "elif users_custom and not pwds_custom:" del ftp bruteforce para que se aplique
+4. Barra de progreso de los escaneos en la interfaz web.
+5. Deepseek para seguir despues con recomendaciones...
+6. Cambiar crt.sh por Subfinder + httpx para compreobar respuesta = 200 (subdominios).
+7. Cambiar casuistica "elif users_custom and not pwds_custom:" del ftp bruteforce para que se aplique
 aunque haya custom users y custom pwds.
+8. Hacer funcional la "feature" de nuevos escaneos (escaneos recientes) en la interfaz web.
+9. Pedir a Agustin la herramienta de capturar la pantalla de la web y añadirla.
 
 Propuestas:
 - Usar IA (Deepseek) para la facilitar la explotacion de CVEs.
 - Mirar https://github.com/micro-joan/BlackStone
 - Bot de Telegram para reporte en tiempo real.
-
-####################################################################################################
-Bateria de tests:
-(HECHO) - nmap.py
-(HECHO) - ftp.py
-(HECHO) - http_whatweb.py
-(HECHO) - http_subdomain.py
-(HECHO) - http_joomla.py
-(HECHO) - http_wordpress.py
-(HECHO) - http_wordpress_plugins.py
-(HECHO) - http_wordpress_bruteforce.py
-- generar_reporte.py
-- Test conjunto (main.py e interfaz)
-####################################################################################################

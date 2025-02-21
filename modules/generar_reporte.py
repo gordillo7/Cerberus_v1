@@ -85,7 +85,7 @@ def create_text_paragraph(filepath):
     content = ""
     with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
         for line in file:
-            content += f"• {line.strip()}<br/>"
+            content += f"{line.strip()}<br/>"
     paragraph = Paragraph(content, styles['Normal'])
     return [paragraph, Spacer(1, 12)]
 

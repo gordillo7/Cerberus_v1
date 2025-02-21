@@ -28,8 +28,7 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         if match:
             new_url = match.group(1).rstrip('/.')
             print(f"[*] Nueva URL detectada: {new_url}. Reejecutando WPScan en la nueva URL...")
-            domain = new_url.replace("http://", "").replace("https://", "").rstrip("/")
-            return run_wpscan_attack_file(domain, usernames_file, passwords_file, success_file)
+            return run_wpscan_attack_file(new_url, usernames_file, passwords_file, success_file)
         else:
             print("[!] No se pudo extraer la nueva URL para reejecutar WPScan.")
             return 0

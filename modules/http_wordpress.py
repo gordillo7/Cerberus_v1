@@ -10,13 +10,14 @@ from bs4 import BeautifulSoup
 
 
 def run_wpscan(target_ip, domain=None):
-    output_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
-    print(f"[*] Ejecutando wpscan en {target_ip}...")
-    os.makedirs(f"logs/{target_ip}/http/wordpress", exist_ok=True)
-
     # Si se proporciona un dominio, se usa en lugar de la IP
     if domain:
         target_ip = domain
+
+    target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
+    output_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
+    print(f"[*] Ejecutando wpscan en {target_ip}...")
+    os.makedirs(f"logs/{target_clean}/http/wordpress", exist_ok=True)
 
     command = [
         "wpscan",
@@ -50,8 +51,7 @@ def run_wpscan(target_ip, domain=None):
         if match:
             new_url = match.group(1).rstrip('/.')
             print(f"[*] Nueva URL detectada: {new_url}. Reejecutando wpscan en la nueva URL...")
-            domain = new_url.replace("http://", "").replace("https://", "").rstrip("/")
-            run_wpscan(target_ip, domain)
+            run_wpscan(target_ip, new_url)
             return
         else:
             print("[!] No se pudo extraer la nueva URL para reejecutar wpscan.")
@@ -80,8 +80,9 @@ def write_usernames(output_file, usernames):
 
 
 def extract_usernames(target_ip):
+    target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     usernames = set()
-    input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
+    input_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
 
     # Abrir y parsear el JSON de entrada
     with open(input_file, 'r', encoding='utf-8') as f:
@@ -94,9 +95,10 @@ def extract_usernames(target_ip):
 
     if usernames:
         print(f"[+] {len(usernames)} nombres de usuario encontrados en Wordpress.")
-        write_usernames(f"logs/{target_ip}/http/wordpress/users.txt", usernames)
-        write_usernames(f"wordlists/{target_ip}/users.txt", usernames)
-        write_usernames(f"logs/{target_ip}/reporte/wordpress_usernames.txt", usernames)
+        write_usernames(f"logs/{target_clean}/http/wordpress/users.txt", usernames)
+        write_usernames(f"wordlists/{target_clean}/users.txt", usernames)
+        os.system(f"echo 'Nombres de usuario encontrados en Wordpress:' > logs/{target_clean}/reporte/wordpress_usernames.txt")
+        write_usernames(f"logs/{target_clean}/reporte/wordpress_usernames.txt", usernames)
 
     else:
         print("[!] No se encontraron nombres de usuario en Wordpress")
@@ -156,8 +158,9 @@ def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
         print(f"[!] Error al dumpear el contenido del directorio en {url}: {e}")
 
 def process_directory_listings(target_ip):
-    input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
-    output_dir = f"logs/{target_ip}/http/wordpress/directory_listing_dump"
+    target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
+    input_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
+    output_dir = f"logs/{target_clean}/http/wordpress/directory_listing_dump"
     visited_indexes = set()
     visited_files = set()
     with open(input_file, 'r') as file:
@@ -166,10 +169,10 @@ def process_directory_listings(target_ip):
             # si contiene "has listing enabled" en el campo "to_s", dumpeamos
             if "has listing enabled" in finding.get("to_s", ""):
                 os.makedirs(output_dir, exist_ok=True)
-                with open(f"logs/{target_ip}/http/wordpress/directory_listing.txt", 'a') as f:
+                with open(f"logs/{target_clean}/http/wordpress/directory_listing.txt", 'a') as f:
                     f.write(f"Directory listing habilitado en {finding['url']}\n")
 
-                shutil.copy(f"logs/{target_ip}/http/wordpress/directory_listing.txt", f"logs/{target_ip}/reporte/wordpress_listing.txt")
+                shutil.copy(f"logs/{target_clean}/http/wordpress/directory_listing.txt", f"logs/{target_clean}/reporte/wordpress_listing.txt")
                 dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
 
 def run_http_wordpress(target_ip):

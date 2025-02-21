@@ -3,7 +3,6 @@ import sys
 import os
 import subprocess
 import requests
-import shutil
 
 def extract_vulnerable_plugins(target_ip):
     input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
@@ -36,7 +35,7 @@ def extract_vulnerable_plugins(target_ip):
                     f.write(f"  - {cve}\n")
                 f.write("\n")
 
-        shutil.copy(output_file, f"logs/{target_ip}/reporte/wordpress_vulnerable_plugins.txt")
+        os.system(f"cp {output_file} logs/{target_ip}/reporte/wordpress_vulnerable_plugins.txt")
     else:
         print("[!] No se encontraron plugins vulnerables en WordPress")
 
@@ -158,7 +157,7 @@ def process_cve(cve, target_ip, max_repos=10):
         print(f"[*] Clonando {repo_url} en {exp_dir}...")
         if clone_repository(repo_url, exp_dir):
             # Borrar el .git del repositorio clonado
-            shutil.rmtree(os.path.join(exp_dir, ".git"))
+            os.system(f"rm -rf {exp_dir}/.git")
             # Buscar un archivo Python en el repositorio clonado
             python_file = find_python_file(exp_dir)
             if python_file:
@@ -167,9 +166,9 @@ def process_cve(cve, target_ip, max_repos=10):
                 break  # Se encontró y lanzó un exploit; salimos del bucle
             else:
                 print(f"[!] No se encontró archivo Python en el repositorio {repo.get('full_name')}.")
-                shutil.rmtree(exp_dir)
+                os.system(f"rm -rf logs/{target_ip}/http/wordpress/cve_exploits/{cve}")
         else:
-            shutil.rmtree(exp_dir)
+            os.system(f"rm -rf logs/{target_ip}/http/wordpress/cve_exploits/{cve}")
 
     if not exploit_found:
         print(

@@ -1,4 +1,4 @@
-# Cerberus
+# Cerberus - Pentesting Web Application
 
 A simple pentesting web application built with Flask (Python) and JavaScript. It provides scanning functionality, report generation, and basic dashboard statistics.
 
@@ -49,6 +49,8 @@ A simple pentesting web application built with Flask (Python) and JavaScript. It
 - **GET /api/reports**: Retrieves a list of available PDF reports.
 - **DELETE /api/reports/<filename>**: Deletes a specific report.
 
-## License
+<br/>
 
-Distributed under an open license for demonstration purposes. Refer to `LICENSE` for details.
+<p align="center">
+  <img src="static/img/cerberus_logo.png" alt="cerberus_logo" width="100" height="100">
+</p>
