@@ -1,14 +1,11 @@
 1. CVEs mas comunes de cada CMS (Wordpress, Joomla, Drupal).
     1.1. Filtrar vulnerabilidad plugin, themes... de Wordpress (wpscan -e vp).
     1.2. PoCs y hacer la carpeta de pocs para futuras maquinas.
-2. Interfaz y reportes YA.
 3. Busqueda de subdominios (y tirar script para cada subdominio).
-4. Barra de progreso de los escaneos en la interfaz web.
 5. Deepseek para seguir despues con recomendaciones...
 6. Cambiar crt.sh por Subfinder + httpx para compreobar respuesta = 200 (subdominios).
 7. Cambiar casuistica "elif users_custom and not pwds_custom:" del ftp bruteforce para que se aplique
 aunque haya custom users y custom pwds.
-8. Hacer funcional la "feature" de nuevos escaneos (escaneos recientes) en la interfaz web.
 9. Pedir a Agustin la herramienta de capturar la pantalla de la web y añadirla.
 
 Propuestas:
