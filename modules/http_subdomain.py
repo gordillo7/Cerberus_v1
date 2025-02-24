@@ -1,42 +1,44 @@
 import sys
 import os
-import requests
-from bs4 import BeautifulSoup
+import subprocess
+import httpx
 
 def enumerate_subdomains(domain):
-    query = "%25." + domain
-    url = f"https://crt.sh/?q={query}&exclude=expired"
-    print(f"[+] Obteniendo detalles de crt.sh para el dominio: {domain}")
-
+    command = f"subfinder -d {domain} -silent"
+    print(f"[+] Ejecutando comando: {command}")
     try:
-        response = requests.get(url)
-        response.raise_for_status()
-    except requests.RequestException as e:
-        print(f"[!] Error al obtener datos de crt.sh: {e}")
+        result = subprocess.run(
+            command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"
+        )
+        if result.returncode != 0:
+            print(f"[!] Error en comando subfinder: {result.stderr}")
+            return []
+        subdomains_raw = result.stdout.strip().splitlines()
+    except Exception as e:
+        print(f"[!] Excepción durante la ejecución de subfinder: {e}")
         return []
+    valid_subdomains = []
+    for sub in subdomains_raw:
+        url = sub if sub.startswith("http://") or sub.startswith("https://") else f"http://{sub}"
+        try:
+            response = httpx.get(url, timeout=5)
+            if 200 <= response.status_code < 400:
+                valid_subdomains.append(sub)
+                print(f"[+] Subdominio válido: {sub}")
+            else:
+                print(f"[-] {sub} respondió con el código de estado {response.status_code}")
+        except httpx.RequestError:
+            print(f"[-] {sub} no pudo ser alcanzado")
 
-    print("[+] Extrayendo subdominios de la respuesta")
-    soup = BeautifulSoup(response.content, "html.parser")
-    subdomains = []
-    # Se asume que la columna 5 de la tabla contiene los dominios
-    for cell in soup.select("table tr td:nth-of-type(5)"):
-        text = cell.get_text().strip()
-        # Se ignoran las entradas con asterisco
-        if "*" not in text:
-            subdomains.append(text)
-
-    # Elimina duplicados y ordena la lista
-    unique_subdomains = sorted(set(subdomains))
-    return unique_subdomains
+    return sorted(set(valid_subdomains))
 
 
 def save_subdomains(domain, subdomains):
     output_dir = os.path.join("logs", domain, "http", "subdomain")
     os.makedirs(output_dir, exist_ok=True)
     output_file = os.path.join(output_dir, "subdomains.txt")
-
     with open(output_file, "w") as f:
-        f.write(f"Se han enumerado {len(subdomains)} subdominios para {domain}\n")
+        f.write(f"Se encontraron {len(subdomains)} subdominios para {domain}\n")
         for subdomain in subdomains:
             f.write(subdomain + "\n")
 
@@ -52,8 +54,10 @@ def subdomain(domain):
     else:
         print("[!] No se encontraron subdominios.")
 
+
 def run_http_subdomain(domain):
     subdomain(domain)
+
 
 if __name__ == "__main__":
     domain = sys.argv[1]

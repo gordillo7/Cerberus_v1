@@ -1,0 +1,53 @@
+Plugin: sitepress-multilingual-cms
+CVE:
+  - 2018-18069
+
+Plugin: sitepress-multilingual-cms
+CVE:
+  - 2020-10568
+
+Plugin: sitepress-multilingual-cms
+CVE:
+  - 2022-45072
+  - 2022-45071
+
+Plugin: sitepress-multilingual-cms
+CVE:
+  - 2022-38461
+
+Plugin: sitepress-multilingual-cms
+CVE:
+  - 2022-38974
+
+Plugin: sitepress-multilingual-cms
+CVE:
+  - 2024-6386
+
+Plugin: w3-total-cache
+CVE:
+  - 2023-5359
+
+Plugin: w3-total-cache
+CVE:
+  - 2024-12365
+
+Plugin: w3-total-cache
+CVE:
+  - 2024-12008
+
+Plugin: w3-total-cache
+CVE:
+  - 2024-12006
+
+Plugin: wordpress-seo
+CVE:
+  - 2023-40680
+
+Plugin: wordpress-seo
+CVE:
+  - 2024-4041
+
+Plugin: wordpress-seo
+CVE:
+  - 2024-4984
+

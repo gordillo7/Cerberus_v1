@@ -1,0 +1,1067 @@
+{
+  "db_update_started": true,
+  "db_files_updated": [
+
+  ],
+  "db_update_finished": true,
+  "start_time": 1740396747,
+  "start_memory": 64868352,
+  "target_url": "https://cartamundi.com/",
+  "target_ip": "79.174.129.100",
+  "effective_url": "https://cartamundi.com/en/",
+  "interesting_findings": [
+    {
+      "url": "https://cartamundi.com/en/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "server: Apache",
+        "referrer-policy: no-referrer-when-downgrade"
+      ]
+    },
+    {
+      "url": "https://cartamundi.com/wp/xmlrpc.php",
+      "to_s": "XML-RPC seems to be enabled: https://cartamundi.com/wp/xmlrpc.php",
+      "type": "xmlrpc",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/XML-RPC_Pingback_API"
+        ],
+        "metasploit": [
+          "auxiliary/scanner/http/wordpress_ghost_scanner",
+          "auxiliary/dos/http/wordpress_xmlrpc_dos",
+          "auxiliary/scanner/http/wordpress_xmlrpc_login",
+          "auxiliary/scanner/http/wordpress_pingback_access"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://cartamundi.com/wp/readme.html",
+      "to_s": "WordPress readme found: https://cartamundi.com/wp/readme.html",
+      "type": "readme",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://cartamundi.com/app/debug.log",
+      "to_s": "Debug Log found: https://cartamundi.com/app/debug.log",
+      "type": "debug_log",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://codex.wordpress.org/Debugging_in_WordPress"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://cartamundi.com/wp/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: https://cartamundi.com/wp/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "5.8.2",
+    "release_date": "2021-11-10",
+    "status": "insecure",
+    "found_by": "Emoji Settings (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "https://cartamundi.com/en/, Match: 'wp-includes\\/js\\/wp-emoji-release.min.js?ver=5.8.2'"
+    ],
+    "confirmed_by": {
+      "Meta Generator (Passive Detection)": {
+        "confidence": 60,
+        "interesting_entries": [
+          "https://cartamundi.com/en/, Match: 'WordPress 5.8.2'"
+        ]
+      }
+    },
+    "vulnerabilities": [
+      {
+        "title": "WordPress < 5.8.3 - SQL Injection via WP_Query",
+        "fixed_in": "5.8.3",
+        "references": {
+          "cve": [
+            "2022-21661"
+          ],
+          "url": [
+            "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-6676-cqfm-gw84",
+            "https://hackerone.com/reports/1378209"
+          ],
+          "wpvulndb": [
+            "7f768bcf-ed33-4b22-b432-d1e7f95c1317"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 5.8.3 - Author+ Stored XSS via Post Slugs",
+        "fixed_in": "5.8.3",
+        "references": {
+          "cve": [
+            "2022-21662"
+          ],
+          "url": [
+            "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-699q-3hj9-889w",
+            "https://hackerone.com/reports/425342",
+            "https://blog.sonarsource.com/wordpress-stored-xss-vulnerability"
+          ],
+          "wpvulndb": [
+            "dc6f04c2-7bf2-4a07-92b5-dd197e4d94c8"
+          ]
+        }
+      },
+      {
+        "title": "WordPress 4.1-5.8.2 - SQL Injection via WP_Meta_Query",
+        "fixed_in": "5.8.3",
+        "references": {
+          "cve": [
+            "2022-21664"
+          ],
+          "url": [
+            "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-jp3p-gw8h-6x86"
+          ],
+          "wpvulndb": [
+            "24462ac4-7959-4575-97aa-a6dcceeae722"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 5.8.3 - Super Admin Object Injection in Multisites",
+        "fixed_in": "5.8.3",
+        "references": {
+          "cve": [
+            "2022-21663"
+          ],
+          "url": [
+            "https://github.com/WordPress/wordpress-develop/security/advisories/GHSA-jmmq-m8p8-332h",
+            "https://hackerone.com/reports/541469"
+          ],
+          "wpvulndb": [
+            "008c21ab-3d7e-4d97-b6c3-db9d83f390a7"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 5.9.2 - Prototype Pollution in jQuery",
+        "fixed_in": "5.8.4",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/"
+          ],
+          "wpvulndb": [
+            "1ac912c1-5e29-41ac-8f76-a062de254c09"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 5.9.2 / Gutenberg < 12.7.2 - Prototype Pollution via Gutenberg’s wordpress/url package",
+        "fixed_in": "5.8.4",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/03/wordpress-5-9-2-security-maintenance-release/",
+            "https://github.com/WordPress/gutenberg/pull/39365/files"
+          ],
+          "wpvulndb": [
+            "6e61b246-5af1-4a4f-9ca8-a8c87eb2e499"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.2 - Reflected Cross-Site Scripting",
+        "fixed_in": "5.8.5",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/08/wordpress-6-0-2-security-and-maintenance-release/"
+          ],
+          "wpvulndb": [
+            "622893b0-c2c4-4ee7-9fa1-4cecef6e36be"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.2 - Authenticated Stored Cross-Site Scripting",
+        "fixed_in": "5.8.5",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/08/wordpress-6-0-2-security-and-maintenance-release/"
+          ],
+          "wpvulndb": [
+            "3b1573d4-06b4-442b-bad5-872753118ee0"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.2 - SQLi via Link API",
+        "fixed_in": "5.8.5",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/08/wordpress-6-0-2-security-and-maintenance-release/"
+          ],
+          "wpvulndb": [
+            "601b0bf9-fed2-4675-aec7-fed3156a022f"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Stored XSS via wp-mail.php",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/abf236fdaf94455e7bc6e30980cf70401003e283"
+          ],
+          "wpvulndb": [
+            "713bdc8b-ab7c-46d7-9847-305344a579c4"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Open Redirect via wp_nonce_ays",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/506eee125953deb658307bb3005417cb83f32095"
+          ],
+          "wpvulndb": [
+            "926cd097-b36f-4d26-9c51-0dfab11c301b"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Email Address Disclosure via wp-mail.php",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/5fcdee1b4d72f1150b7b762ef5fb39ab288c8d44"
+          ],
+          "wpvulndb": [
+            "c5675b59-4b1d-4f64-9876-068e05145431"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Reflected XSS via SQLi in Media Library",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/8836d4682264e8030067e07f2f953a0f66cb76cc"
+          ],
+          "wpvulndb": [
+            "cfd8b50d-16aa-4319-9c2d-b227365c2156"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - CSRF in wp-trackback.php",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/a4f9ca17fae0b7d97ff807a3c234cf219810fae0"
+          ],
+          "wpvulndb": [
+            "b60a6557-ae78-465c-95bc-a78cf74a6dd0"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Stored XSS via the Customizer",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/2ca28e49fc489a9bb3c9c9c0d8907a033fe056ef"
+          ],
+          "wpvulndb": [
+            "2787684c-aaef-4171-95b4-ee5048c74218"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Stored XSS via Comment Editing",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/89c8f7919460c31c0f259453b4ffb63fde9fa955"
+          ],
+          "wpvulndb": [
+            "02d76d8e-9558-41a5-bdb6-3957dc31563b"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Content from Multipart Emails Leaked",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/3765886b4903b319764490d4ad5905bc5c310ef8"
+          ],
+          "wpvulndb": [
+            "3f707e05-25f0-4566-88ed-d8d0aff3a872"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - SQLi in WP_Date_Query",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/d815d2e8b2a7c2be6694b49276ba3eee5166c21f"
+          ],
+          "wpvulndb": [
+            "1da03338-557f-4cb6-9a65-3379df4cce47"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Stored XSS via RSS Widget",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/929cf3cb9580636f1ae3fe944b8faf8cca420492"
+          ],
+          "wpvulndb": [
+            "58d131f5-f376-4679-b604-2b888de71c5b"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Data Exposure via REST Terms/Tags Endpoint",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/wordpress-develop/commit/ebaac57a9ac0174485c65de3d32ea56de2330d8e"
+          ],
+          "wpvulndb": [
+            "b27a8711-a0c0-4996-bd6a-01734702913e"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.0.3 - Multiple Stored XSS via Gutenberg",
+        "fixed_in": "5.8.6",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2022/10/wordpress-6-0-3-security-release/",
+            "https://github.com/WordPress/gutenberg/pull/45045/files"
+          ],
+          "wpvulndb": [
+            "f513c8f6-2e1c-45ae-8a58-36b6518e2aa9"
+          ]
+        }
+      },
+      {
+        "title": "WP <= 6.2 - Unauthenticated Blind SSRF via DNS Rebinding",
+        "fixed_in": null,
+        "references": {
+          "cve": [
+            "2022-3590"
+          ],
+          "url": [
+            "https://blog.sonarsource.com/wordpress-core-unauthenticated-blind-ssrf/"
+          ],
+          "wpvulndb": [
+            "c8814e6e-78b3-4f63-a1d3-6906a84c1f11"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.2.1 - Directory Traversal via Translation Files",
+        "fixed_in": "5.8.7",
+        "references": {
+          "cve": [
+            "2023-2745"
+          ],
+          "url": [
+            "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+          ],
+          "wpvulndb": [
+            "2999613a-b8c8-4ec0-9164-5dfe63adf6e6"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.2.1 - Thumbnail Image Update via CSRF",
+        "fixed_in": "5.8.7",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+          ],
+          "wpvulndb": [
+            "a03d744a-9839-4167-a356-3e7da0f1d532"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.2.1 - Contributor+ Stored XSS via Open Embed Auto Discovery",
+        "fixed_in": "5.8.7",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+          ],
+          "wpvulndb": [
+            "3b574451-2852-4789-bc19-d5cc39948db5"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.2.2 - Shortcode Execution in User Generated Data",
+        "fixed_in": "5.8.7",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/",
+            "https://wordpress.org/news/2023/05/wordpress-6-2-2-security-release/"
+          ],
+          "wpvulndb": [
+            "ef289d46-ea83-4fa5-b003-0352c690fd89"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.2.1 - Contributor+ Content Injection",
+        "fixed_in": "5.8.7",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/05/wordpress-6-2-1-maintenance-security-release/"
+          ],
+          "wpvulndb": [
+            "1527ebdb-18bc-4f9d-9c20-8d729a628670"
+          ]
+        }
+      },
+      {
+        "title": "WP 5.6-6.3.1 - Reflected XSS via Application Password Requests",
+        "fixed_in": "5.8.8",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "da1419cc-d821-42d6-b648-bdb3c70d91f2"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.3.2 - Denial of Service via Cache Poisoning",
+        "fixed_in": "5.8.8",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "6d80e09d-34d5-4fda-81cb-e703d0e56e4f"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.3.2 - Subscriber+ Arbitrary Shortcode Execution",
+        "fixed_in": "5.8.8",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "3615aea0-90aa-4f9a-9792-078a90af7f59"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.3.2 - Contributor+ Comment Disclosure",
+        "fixed_in": "5.8.8",
+        "references": {
+          "cve": [
+            "2023-39999"
+          ],
+          "url": [
+            "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "d35b2a3d-9b41-4b4f-8e87-1b8ccb370b9f"
+          ]
+        }
+      },
+      {
+        "title": "WP < 6.3.2 - Unauthenticated Post Author Email Disclosure",
+        "fixed_in": "5.8.8",
+        "references": {
+          "cve": [
+            "2023-5561"
+          ],
+          "url": [
+            "https://wpscan.com/blog/email-leak-oracle-vulnerability-addressed-in-wordpress-6-3-2/",
+            "https://wordpress.org/news/2023/10/wordpress-6-3-2-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "19380917-4c27-4095-abf1-eba6f913b441"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 6.4.3 - Deserialization of Untrusted Data",
+        "fixed_in": "5.8.9",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2024/01/wordpress-6-4-3-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "5e9804e5-bbd4-4836-a5f0-b4388cc39225"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 6.4.3 - Admin+ PHP File Upload",
+        "fixed_in": "5.8.9",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2024/01/wordpress-6-4-3-maintenance-and-security-release/"
+          ],
+          "wpvulndb": [
+            "a8e12fbe-c70b-4078-9015-cf57a05bdd4a"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in HTML API",
+        "fixed_in": "5.8.10",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+          ],
+          "wpvulndb": [
+            "2c63f136-4c1f-4093-9a8c-5e51f19eae28"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 6.5.5 - Contributor+ Stored XSS in Template-Part Block",
+        "fixed_in": "5.8.10",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+          ],
+          "wpvulndb": [
+            "7c448f6d-4531-4757-bff0-be9e3220bbbb"
+          ]
+        }
+      },
+      {
+        "title": "WordPress < 6.5.5 - Contributor+ Path Traversal in Template-Part Block",
+        "fixed_in": "5.8.10",
+        "references": {
+          "url": [
+            "https://wordpress.org/news/2024/06/wordpress-6-5-5/"
+          ],
+          "wpvulndb": [
+            "36232787-754a-4234-83d6-6ded5e80251c"
+          ]
+        }
+      }
+    ]
+  },
+  "main_theme": {
+    "slug": "cartamundi",
+    "location": "https://cartamundi.com/app/themes/cartamundi/",
+    "latest_version": null,
+    "last_updated": null,
+    "outdated": false,
+    "readme_url": "https://cartamundi.com/app/themes/cartamundi/README.md",
+    "directory_listing": false,
+    "error_log_url": null,
+    "style_url": "https://cartamundi.com/app/themes/cartamundi/style.css",
+    "style_name": "Cartamundi Theme",
+    "style_uri": "http://wemake.be",
+    "description": "The theme for Cartamundi sites",
+    "author": "We Make.",
+    "author_uri": "https://bitbucket.org/wemakegraphics/",
+    "template": null,
+    "license": null,
+    "license_uri": null,
+    "tags": null,
+    "text_domain": "cartamundi",
+    "found_by": "Urls In Homepage (Passive Detection)",
+    "confidence": 10,
+    "interesting_entries": [
+
+    ],
+    "confirmed_by": {
+      "Urls In 404 Page (Passive Detection)": {
+        "confidence": 4,
+        "interesting_entries": [
+
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ],
+    "version": {
+      "number": "1.2",
+      "confidence": 80,
+      "found_by": "Style (Passive Detection)",
+      "interesting_entries": [
+        "https://cartamundi.com/app/themes/cartamundi/style.css, Match: 'Version:            1.2'"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "parents": [
+
+    ]
+  },
+  "plugins": {
+    "sitepress-multilingual-cms": {
+      "slug": "sitepress-multilingual-cms",
+      "location": "https://cartamundi.com/app/plugins/sitepress-multilingual-cms/",
+      "latest_version": null,
+      "last_updated": null,
+      "outdated": false,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Urls In Homepage (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Urls In 404 Page (Passive Detection)": {
+          "confidence": 80,
+          "interesting_entries": [
+
+          ]
+        },
+        "Meta Generator (Passive Detection)": {
+          "confidence": 40,
+          "interesting_entries": [
+
+          ]
+        }
+      },
+      "vulnerabilities": [
+        {
+          "title": "WPML < 4.0 - Unauthenticated Stored Cross-Site Scripting (XSS)",
+          "fixed_in": "4.0",
+          "references": {
+            "cve": [
+              "2018-18069"
+            ],
+            "url": [
+              "https://0x62626262.wordpress.com/2018/10/08/sitepress-multilingual-cms-plugin-unauthenticated-stored-xss/"
+            ],
+            "wpvulndb": [
+              "024b43d3-1e73-47f1-81d2-ab15a6c7b0fd"
+            ]
+          }
+        },
+        {
+          "title": "WPML < 4.3.7 - Authenticated Cross Site Request Forgery leading to Remote Code Execution",
+          "fixed_in": "4.3.7",
+          "references": {
+            "cve": [
+              "2020-10568"
+            ],
+            "url": [
+              "https://medium.com/@arall/sitepress-multilingual-cms-wplugin-wpml-4-3-7-b-2-9c9486c13577"
+            ],
+            "wpvulndb": [
+              "39638389-722d-4ecf-b87c-5bca2709241b"
+            ]
+          }
+        },
+        {
+          "title": "WPML < 4.5.14 - CSRF",
+          "fixed_in": "4.5.14",
+          "references": {
+            "cve": [
+              "2022-45072",
+              "2022-45071"
+            ],
+            "wpvulndb": [
+              "8bf2529a-3fc3-47bb-959a-1f97bd6e4ec1"
+            ]
+          }
+        },
+        {
+          "title": "WPML < 4.5.11 - Subscriber+ Settings Update",
+          "fixed_in": "4.5.11",
+          "references": {
+            "cve": [
+              "2022-38461"
+            ],
+            "wpvulndb": [
+              "d4007060-aea1-4e69-bb3c-360cf2ee6e33"
+            ]
+          }
+        },
+        {
+          "title": "WPML < 4.5.11 - Subscriber+ Translation Job Status Update",
+          "fixed_in": "4.5.11",
+          "references": {
+            "cve": [
+              "2022-38974"
+            ],
+            "wpvulndb": [
+              "d8fcfbf6-6480-4cad-93cd-ae5b08ea9c7b"
+            ]
+          }
+        },
+        {
+          "title": "WPML Multilingual CMS < 4.6.1 - Reflected Cross-Site Scripting",
+          "fixed_in": "4.6.1",
+          "references": {
+            "url": [
+              "https://wpml.org/changelog/2023/03/wpml-4-6-1-important-security-update/",
+              "https://wpml.org/forums/topic/the-wpml-plugin-is-vulnerable-to-cross-site-scripting-xss-via-the-wp_lang-quer/"
+            ],
+            "wpvulndb": [
+              "b9cc519c-7ec2-42c3-9f42-01e928e12139"
+            ]
+          }
+        },
+        {
+          "title": "WPML Multilingual CMS < 4.6.13 - Contributor+ RCE via Twig Server-Side Template Injection",
+          "fixed_in": "4.6.13",
+          "references": {
+            "cve": [
+              "2024-6386"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/f7fc91cc-e529-4362-8269-bf7ee0766e1e"
+            ],
+            "wpvulndb": [
+              "41673afd-4ddd-4db8-a676-a85c3c93f9b0"
+            ]
+          }
+        }
+      ],
+      "version": {
+        "number": "3.9.3",
+        "confidence": 100,
+        "found_by": "Meta Generator (Passive Detection)",
+        "interesting_entries": [
+          "https://cartamundi.com/en/, Match: 'WPML ver:3.9.3 stt'"
+        ],
+        "confirmed_by": {
+          "Dependencies File (Aggressive Detection)": {
+            "confidence": 70,
+            "interesting_entries": [
+              "https://cartamundi.com/app/plugins/sitepress-multilingual-cms/wpml-dependencies.json, Match: '3.9.3'"
+            ]
+          }
+        }
+      }
+    },
+    "w3-total-cache": {
+      "slug": "w3-total-cache",
+      "location": "https://cartamundi.com/app/plugins/w3-total-cache/",
+      "latest_version": "2.8.5",
+      "last_updated": "2025-02-11T15:31:00.000Z",
+      "outdated": true,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Comment Debug Info (Passive Detection)",
+      "confidence": 30,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+        {
+          "title": "W3 Total Cache < 2.7.6 - Sensitive Credentials Stored in Plaintext",
+          "fixed_in": "2.7.6",
+          "references": {
+            "cve": [
+              "2023-5359"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/2d89a534-978e-4fd8-be3a-5137bdc22dc9"
+            ],
+            "wpvulndb": [
+              "fa72da03-fab6-4f28-976a-a6f8f31e3a30"
+            ]
+          }
+        },
+        {
+          "title": "W3 Total Cache < 2.8.2 - Subscriber+ Server-Side Request Forgery",
+          "fixed_in": "2.8.2",
+          "references": {
+            "cve": [
+              "2024-12365"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/196e629f-7c77-4bcb-8224-305a0108b630"
+            ],
+            "wpvulndb": [
+              "9172426f-8038-41e0-a9aa-4d0a24670bff"
+            ]
+          }
+        },
+        {
+          "title": "W3 Total Cache < 2.8.2 - Information Exposure via Log Files",
+          "fixed_in": "2.8.2",
+          "references": {
+            "cve": [
+              "2024-12008"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/8292f23c-fb17-4082-9788-f643d1bb097e"
+            ],
+            "wpvulndb": [
+              "1685ca58-1622-433b-b561-304cb9d1bc56"
+            ]
+          }
+        },
+        {
+          "title": "W3 Total Cache < 2.8.2 - Unauthenticated Plugin Deactivation and Extensions Activation/Deactivation",
+          "fixed_in": "2.8.2",
+          "references": {
+            "cve": [
+              "2024-12006"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/329ad5dc-9339-4540-aba3-f21a78a74d4b"
+            ],
+            "wpvulndb": [
+              "55419227-e2cd-4794-b058-79813b133be3"
+            ]
+          }
+        }
+      ],
+      "version": {
+        "number": "2.1.9",
+        "confidence": 100,
+        "found_by": "Readme - Stable Tag (Aggressive Detection)",
+        "interesting_entries": [
+          "https://cartamundi.com/app/plugins/w3-total-cache/readme.txt"
+        ],
+        "confirmed_by": {
+          "Readme - ChangeLog Section (Aggressive Detection)": {
+            "confidence": 50,
+            "interesting_entries": [
+              "https://cartamundi.com/app/plugins/w3-total-cache/readme.txt"
+            ]
+          }
+        }
+      }
+    },
+    "wordpress-seo": {
+      "slug": "wordpress-seo",
+      "location": "https://cartamundi.com/app/plugins/wordpress-seo/",
+      "latest_version": "24.5",
+      "last_updated": "2025-02-18T09:10:00.000Z",
+      "outdated": true,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Comment (Passive Detection)",
+      "confidence": 30,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+        {
+          "title": "Yoast SEO < 21.1 - Authenticated (Seo Manager+) Stored Cross-Site Scripting",
+          "fixed_in": "21.1",
+          "references": {
+            "cve": [
+              "2023-40680"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/385a82ff-50ad-4787-845b-fb5f639f6466"
+            ],
+            "wpvulndb": [
+              "42b355cc-d7b6-474d-8578-9c1a99b1e3c7"
+            ]
+          }
+        },
+        {
+          "title": "Yoast SEO < 22.6 - Reflected Cross-Site Scripting",
+          "fixed_in": "22.6",
+          "references": {
+            "cve": [
+              "2024-4041"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/4e04b161-3cd0-454d-869c-56f42bd8afb0"
+            ],
+            "wpvulndb": [
+              "6eb8e01b-0bc6-4ca9-b489-38f2a94c2909"
+            ]
+          }
+        },
+        {
+          "title": "Yoast SEO < 22.7 - Authenticated (Contributor+) Stored Cross-Site Scripting",
+          "fixed_in": "22.7",
+          "references": {
+            "cve": [
+              "2024-4984"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/59bcd246-ca2f-4336-9a6e-89afe873ed25"
+            ],
+            "wpvulndb": [
+              "467936e2-fe82-4cdc-afec-6782afee3e4e"
+            ]
+          }
+        }
+      ],
+      "version": {
+        "number": "17.9",
+        "confidence": 100,
+        "found_by": "Comment (Passive Detection)",
+        "interesting_entries": [
+          "https://cartamundi.com/en/, Match: 'optimized with the Yoast SEO plugin v17.9 -'"
+        ],
+        "confirmed_by": {
+          "Readme - Stable Tag (Aggressive Detection)": {
+            "confidence": 80,
+            "interesting_entries": [
+              "https://cartamundi.com/app/plugins/wordpress-seo/readme.txt"
+            ]
+          },
+          "Readme - ChangeLog Section (Aggressive Detection)": {
+            "confidence": 50,
+            "interesting_entries": [
+              "https://cartamundi.com/app/plugins/wordpress-seo/readme.txt"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "themes": {
+
+  },
+  "users": {
+    "an-christiaen": {
+      "id": 20,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://cartamundi.com/en/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "britt-janssens": {
+      "id": 18,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://cartamundi.com/en/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "editor": {
+      "id": 19,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://cartamundi.com/en/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+        "Login Error Messages (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    },
+    "wm": {
+      "id": 1,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://cartamundi.com/en/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+        "Login Error Messages (Aggressive Detection)": {
+          "confidence": 100,
+          "interesting_entries": [
+
+          ]
+        }
+      }
+    }
+  },
+  "vuln_api": {
+    "plan": "free",
+    "requests_done_during_scan": 6,
+    "requests_remaining": 13
+  },
+  "stop_time": 1740396830,
+  "elapsed": 82,
+  "requests_done": 741,
+  "cached_requests": 8,
+  "data_sent": 200032,
+  "data_sent_humanised": "195.344 KB",
+  "data_received": 1820982,
+  "data_received_humanised": "1.737 MB",
+  "used_memory": 299724800,
+  "used_memory_humanised": "285.84 MB"
+}

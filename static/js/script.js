@@ -165,28 +165,33 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(response => response.json())
             .then(reports => {
                 const reportsContainer = document.getElementById('reports-container');
-                reportsContainer.innerHTML = reports.map(report => `
-                    <div class="report-card">
-                        <div class="report-preview-container" onclick="window.open('/report/${report.filename}', '_blank')">
-                            <embed src="/report/${report.filename}#page=1" type="application/pdf" class="report-preview">
+                if (reports.length === 0) {
+                    reportsContainer.innerHTML = '<div class=\"no-reports\">No se han generado informes</div>';
+                } else {
+                    reportsContainer.innerHTML = reports.map(report => `
+                        <div class=\"report-card\">
+                            <div class=\"report-preview-container\" onclick=\"window.open('/report/${report.filename}', '_blank')\">
+                                <embed src=\"/report/${report.filename}#page=1\" type=\"application/pdf\" class=\"report-preview\">
+                            </div>
+                            <div class=\"report-info\">
+                                <div class=\"report-title\">
+                                    ${report.filename.length > 20 ? report.filename.substring(0, 16) + '....pdf' : report.filename}
+                                </div>
+                                <button class=\"delete-report\" data-filename=\"${report.filename}\">
+                                    <span class=\"material-icons\">delete</span>
+                                </button>
+                            </div>
                         </div>
-                        <div class="report-info">
-                            <div class="report-title">${report.filename.length > 20 ? report.filename.substring(0, 16) + '....pdf' : report.filename}</div>
-                            <button class="delete-report" data-filename="${report.filename}">
-                                <span class="material-icons">delete</span>
-                            </button>
-                        </div>
-                    </div>
-                `).join('');
-
-                // Add event listeners for delete buttons
-                const deleteButtons = reportsContainer.querySelectorAll('.delete-report');
-                deleteButtons.forEach(button => {
-                    button.addEventListener('click', function() {
-                        deleteReport(this.dataset.filename);
+                    `).join('');
+                    const deleteButtons = reportsContainer.querySelectorAll('.delete-report');
+                    deleteButtons.forEach(button => {
+                        button.addEventListener('click', function() {
+                            deleteReport(this.dataset.filename);
+                        });
                     });
-                });
-            });
+                }
+            })
+            .catch(error => console.error(error));
     }
 
     function deleteReport(filename) {

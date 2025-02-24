@@ -6,6 +6,8 @@ reportlab
 #Herramientas
 serachsploit
 joomscan
+go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest (añadir al PATH sus rutas)
+go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest (añadir al PATH sus rutas)
 
 #Extras
 API_Token_de_WPScan
