@@ -1,5 +1,2 @@
 Nombres de usuario encontrados en Wordpress:
-an-christiaen
-wm
-britt-janssens
-editor
+oxysilver

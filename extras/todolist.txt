@@ -1,4 +1,3 @@
-- Cambiar crt.sh por subfinder + httpx para comprobar respuesta = 200 (subdominios).
 - Ejecutar el main.py para cada subdominio encontrado.
 - Capturar pantalla web para añadirla al reporte (Cutycap).
 - Apartado en la interfaz web para APIs Tokens.
