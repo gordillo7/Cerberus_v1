@@ -2,6 +2,5 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/logs/liquiddentist.net/http/wordpress/cve_exploits/2024-8440/Abutalha1_script.lua" vcs="Git" />
   </component>
 </project>

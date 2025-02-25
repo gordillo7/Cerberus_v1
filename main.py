@@ -4,6 +4,7 @@ import time
 from modules.ftp import run_ftp
 from modules.generar_reporte import run_generar_reporte
 from modules.http_joomla import run_http_joomla
+from modules.http_screenshot import run_http_screenshot
 from modules.http_subdomain import run_http_subdomain
 from modules.http_whatweb import run_http_whatweb
 from modules.http_wordpress import run_http_wordpress
@@ -25,6 +26,7 @@ def main():
                 run_http_subdomain(target_clean)
                 # Se lanza con target en lugar de target_clean ya que whatweb asocia todos los dominios con http:// (dentro de la función se limpia)
                 run_http_whatweb(target)
+                run_http_screenshot(target_clean)
                 with open(f"logs/{target_clean}/http/whatweb/cms.txt", "r") as w:
                     cms = w.read()
                     if "WordPress" in cms:

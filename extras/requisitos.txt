@@ -3,6 +3,7 @@ requests
 bs4
 reportlab
 httpx
+pyppeteer
 
 #Herramientas
 serachsploit
