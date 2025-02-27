@@ -6,192 +6,191 @@ import io
 import json
 
 def ftp_grep_searchsploit(target_ip):
-    print("[*] Buscando CVEs en el resultado de searchsploit...")
+    print("[*] Searching for CVEs in the searchsploit output...")
     searchsploit_file = f"logs/{target_ip}/ftp/searchsploit.txt"
     try:
         with open(searchsploit_file, "r") as f:
             data = json.load(f)
     except Exception as e:
-        print(f"[!] Error al leer el archivo {searchsploit_file}: {e}")
+        print(f"[!] Error reading the file {searchsploit_file}: {e}")
         return
 
     cves = []
-    # Si result_exploit contiene algo, no hace falta la palabra cve
+    # If result_exploit contains something, the word 'cve' is not needed
     for result in data.get("RESULTS_EXPLOIT", []):
         cve = result["Title"]
         cves.append(cve)
 
     if cves:
-        print(f"[+] CVEs encontrados: {', '.join(cves)}")
-        report_path = f"logs/{target_ip}/reporte/ftp_cves.txt"
+        print(f"[+] CVEs found: {', '.join(cves)}")
+        report_path = f"logs/{target_ip}/report/ftp_cves.txt"
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as rep:
-            rep.write(f"----CVEs genéricos de la versión de FTP instalada----")
+            rep.write(f"----Generic CVEs for the installed FTP version----")
             for cve in cves:
                 rep.write(f"\n{cve}")
     else:
-        print("[-] No se encontraron CVEs en el resultado de searchsploit.")
+        print("[-] No CVEs found in the searchsploit output.")
 
 def ftp_searchsploit(target_ip):
-    print("[*] Obteniendo la versión de FTP desde el resultado de Nmap...")
+    print("[*] Obtaining the FTP version from the Nmap output...")
     nmap_file = f"logs/{target_ip}/nmap/ports_services_versions.txt"
     try:
         with open(nmap_file, "r") as f:
             lines = f.readlines()
     except Exception as e:
-        print(f"[!] Error al leer el archivo {nmap_file}: {e}")
+        print(f"[!] Error reading the file {nmap_file}: {e}")
         return
 
     ftp_version = None
     for line in lines:
-        # Se omite la línea de encabezado y líneas vacías
+        # Skip the header line and empty lines
         if line.startswith("PORT") or line.strip() == "":
             continue
         parts = line.split()
         if len(parts) >= 4 and parts[2].lower() == "ftp":
-            # Se asume que la versión puede estar compuesta de más de una palabra
+            # Assume the version may be composed of more than one word
             ftp_version = " ".join(parts[3:])
             break
 
     if ftp_version is None:
-        print("[-] No se encontró información de versión para FTP en el archivo de Nmap.")
+        print("[-] No FTP version information found in the Nmap file.")
         return
 
-    print(f"[+] Versión de FTP encontrada: {ftp_version}")
+    print(f"[+] FTP version found: {ftp_version}")
 
-    # Se asegura que exista el directorio de logs para FTP
+    # Ensure the FTP logs directory exists
     ftp_dir = f"logs/{target_ip}/ftp"
     os.makedirs(ftp_dir, exist_ok=True)
     searchsploit_file = f"{ftp_dir}/searchsploit.txt"
 
-    # Se construye y ejecuta el comando searchsploit
+    # Build and execute the searchsploit command
     cmd = f'searchsploit "{ftp_version}" -j > {searchsploit_file}'
-    print(f"[*] Ejecutando comando: {cmd}")
+    print(f"[*] Executing command: {cmd}")
     try:
         os.system(cmd)
-        print(f"[+] Resultado de searchsploit guardado en {searchsploit_file}")
+        print(f"[+] Searchsploit result saved in {searchsploit_file}")
         ftp_grep_searchsploit(target_ip)
     except Exception as e:
-        print(f"[!] Error al ejecutar searchsploit: {e}")
+        print(f"[!] Error executing searchsploit: {e}")
 
 def check_ftp_write_permission(ftp, target_ip):
-    print("[*] Comprobando permisos de escritura en el FTP...")
+    print("[*] Checking FTP write permissions...")
     test_filename = "test_write_permission.txt"
     test_content = b"prueba de permisos de escritura"
     try:
         ftp.storbinary(f"STOR {test_filename}", io.BytesIO(test_content))
         ftp.delete(test_filename)
-        print("[+] Permiso de escritura habilitado en el FTP.")
+        print("[+] Write permission enabled on FTP.")
         report_path = f"logs/{target_ip}/ftp/escritura_perm.txt"
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as rep:
-            rep.write("El servidor FTP permite escritura, lo que podría permitir la subida de archivos maliciosos.")
-        shutil.copy(report_path, f"logs/{target_ip}/reporte/ftp_escritura_perm.txt")
+            rep.write("The FTP server allows writing, which could enable the upload of malicious files.")
+        shutil.copy(report_path, f"logs/{target_ip}/report/ftp_escritura_perm.txt")
     except ftplib.error_perm:
-        print("[-] No se detectaron permisos de escritura.")
+        print("[-] Write permissions not detected.")
 
 def check_ftp_anonymous(target_ip):
     anonymous_file = f"logs/{target_ip}/ftp/anonymous.txt"
-    print(f"[*] Verificando acceso FTP anónimo en {target_ip}...")
+    print(f"[*] Checking anonymous FTP access on {target_ip}...")
     try:
         ftp = ftplib.FTP(target_ip)
         ftp.login("anonymous", "anonymous")
-        print("[+] ¡Anonymous login habilitado!")
+        print("[+] Anonymous login enabled!")
 
         check_ftp_write_permission(ftp, target_ip)
 
         os.makedirs(f"logs/{target_ip}/ftp", exist_ok=True)
 
         with open(anonymous_file, 'w') as f:
-            f.write(f"Habilitado FTP anonymous login")
+            f.write("Anonymous FTP login enabled")
 
-        shutil.copy(anonymous_file, f"logs/{target_ip}/reporte/ftp_anonymous.txt")
-        # Procedemos a descargar archivos si el acceso es exitoso
+        shutil.copy(anonymous_file, f"logs/{target_ip}/report/ftp_anonymous.txt")
+        # Proceed to download files if access is successful
         dump_ftp_contents(ftp, target_ip)
         ftp.quit()
     except ftplib.error_perm:
-        print("[-] El acceso anónimo está deshabilitado.")
-        # Iniciamos la casuística del mini-bruteforce con usuario 'admin'
+        print("[-] Anonymous access is disabled.")
+        # Start the mini-bruteforce case with user 'admin'
         mini_bruteforce(target_ip)
     except Exception as e:
-        print(f"[!] Error al conectar con FTP: {e}")
+        print(f"[!] Error connecting to FTP: {e}")
 
 def mini_bruteforce(target_ip):
-    print("[*] Iniciando mini bruteforce...")
+    print("[*] Starting mini bruteforce...")
     encontrado = False
     wordlist_path = "wordlists/misc/mini_bruteforcing_passwords.txt"
     try:
         with open(wordlist_path, 'r') as wl:
             passwords = [line.strip() for line in wl if line.strip()]
     except Exception as e:
-        print(f"[!] Error al leer el wordlist mini bruteforce: {e}")
+        print(f"[!] Error reading mini bruteforce wordlist: {e}")
         return
 
     for pwd in passwords:
         try:
             ftp = ftplib.FTP(target_ip, timeout=5)
             ftp.login("admin", pwd)
-            print(f"[+] Credenciales válidas encontradas: admin:{pwd}")
+            print(f"[+] Valid credentials found: admin:{pwd}")
 
             check_ftp_write_permission(ftp, target_ip)
 
-            # Log de credenciales débiles
+            # Log weak credentials
             log_path = f"logs/{target_ip}/ftp/credentials_found.txt"
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, "w") as logf:
-                logf.write(f"Credenciales FTP débiles encontradas: admin:{pwd} (obtenidas por fuerza bruta)")
+                logf.write(f"Weak FTP credentials found: admin:{pwd} (obtained by brute force)")
 
-            shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
+            shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
             dump_ftp_contents(ftp, target_ip)
             ftp.quit()
             encontrado = True
             break
         except ftplib.error_perm:
-            # Credenciales incorrectas; continuar con el siguiente intento
+            # Incorrect credentials; continue with the next attempt
             pass
         except Exception as e:
-            print(f"[!] Error al probar admin:{pwd} - {e}")
+            print(f"[!] Error testing admin:{pwd} - {e}")
 
-    # Tras el mini-bruteforce, probamos admin:admin para ver si estamos bloqueados
-    print("[*] Verificando limitación de intentos...")
+    # After mini-bruteforce, test admin:admin to see if we are blocked
+    print("[*] Checking for attempt limitation...")
     limite_libre = False
     try:
         ftp = ftplib.FTP(target_ip, timeout=5)
         ftp.login("admin", "admin")
-        # Si llega aquí, significa que se ha procesado el intento, aunque las credenciales sean inválidas,
-        # lo que indica que el servidor sigue respondiendo normalmente.
+        # If it reaches here, it means the attempt was processed, even if the credentials are invalid,
+        # which indicates that the server is still responding normally.
     except ftplib.error_perm as e:
         error_msg = str(e)
-        # Si el error contiene "530" (usualmente "login incorrect"), se asume que no hay bloqueo
+        # If the error contains "530" (usually "login incorrect"), it is assumed that there is no lockout
         if "530" in error_msg:
-            print("[+] No se detecta limite de intentos.")
+            print("[+] No attempt limit detected.")
             log_path = f"logs/{target_ip}/ftp/no_limite_intentos.txt"
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, "w") as logf:
-                logf.write("No hay límite de intentos en el login FTP.")
-            shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_no_limite_intentos.txt")
+                logf.write("There is no attempt limit on FTP login.")
+            shutil.copy(log_path, f"logs/{target_ip}/report/ftp_no_limite_intentos.txt")
             limite_libre = True
         else:
-            print("[-] Error al probar admin:admin: ", error_msg)
+            print("[-] Error testing admin:admin: ", error_msg)
     except Exception as e:
-        print(f"[!] Error al probar admin:admin - {e}")
+        print(f"[!] Error testing admin:admin - {e}")
 
-    # Si no se han encontrado credenciales en el mini-bruteforce y no estamos bloqueados,
-    # se inicia el bruteforce elaborado.
+    # If no credentials were found in the mini-bruteforce and we are not blocked,
+    # start the elaborate bruteforce.
     if limite_libre and not encontrado:
         ftp_elaborate_bruteforce(target_ip)
     elif not limite_libre:
-        print("[!] No se realizará el brute force elaborado debido a posible limitación de intentos.")
-
+        print("[!] Elaborate brute force will not be performed due to possible attempt limitation.")
 
 def ftp_elaborate_bruteforce(target_ip):
-    print("[*] Iniciando brute force elaborado...")
+    print("[*] Starting elaborate brute force...")
     custom_dir = f"wordlists/{target_ip}"
-    # Variables para wordlists personalizadas
+    # Variables for custom wordlists
     users_custom = []
     pwds_custom = []
 
-    # Si existe un directorio personalizado, se intenta cargar las listas
+    # If a custom directory exists, try to load the lists
     if os.path.isdir(custom_dir):
         user_file = os.path.join(custom_dir, "users.txt")
         pwd_file = os.path.join(custom_dir, "passwords.txt")
@@ -199,28 +198,28 @@ def ftp_elaborate_bruteforce(target_ip):
             try:
                 with open(user_file, 'r') as uf:
                     users_custom = [line.strip() for line in uf if line.strip()]
-                print(f"[*] Se cargaron {len(users_custom)} usuarios desde {user_file}")
+                print(f"[*] Loaded {len(users_custom)} users from {user_file}")
             except Exception as e:
-                print(f"[!] Error al leer {user_file}: {e}")
+                print(f"[!] Error reading {user_file}: {e}")
         if os.path.isfile(pwd_file):
             try:
                 with open(pwd_file, 'r') as pf:
                     pwds_custom = [line.strip() for line in pf if line.strip()]
-                print(f"[*] Se cargaron {len(pwds_custom)} contraseñas desde {pwd_file}")
+                print(f"[*] Loaded {len(pwds_custom)} passwords from {pwd_file}")
             except Exception as e:
-                print(f"[!] Error al leer {pwd_file}: {e}")
+                print(f"[!] Error reading {pwd_file}: {e}")
 
-    # Si se cargó al menos un listado personalizado, se intenta el brute force con ellos
+    # If at least one custom list is loaded, attempt brute force with them
     if users_custom or pwds_custom:
-        print("[*] Intentando combinaciones personalizadas...")
-        # Caso 1: Se tienen tanto usuarios como contraseñas
+        print("[*] Trying custom combinations...")
+        # Case 1: Both custom users and passwords are available
         if users_custom and pwds_custom:
             for user in users_custom:
                 for pwd in pwds_custom:
                     try:
                         ftp = ftplib.FTP(target_ip, timeout=5)
                         ftp.login(user, pwd)
-                        print(f"[+] Credenciales válidas encontradas: {user}:{pwd}")
+                        print(f"[+] Valid credentials found: {user}:{pwd}")
 
                         check_ftp_write_permission(ftp, target_ip)
 
@@ -228,31 +227,31 @@ def ftp_elaborate_bruteforce(target_ip):
                         os.makedirs(os.path.dirname(log_path), exist_ok=True)
                         with open(log_path, "w") as logf:
                             logf.write(
-                                f"Credenciales FTP débiles encontradas: {user}:{pwd} (obtenidas por fuerza bruta)")
-                        shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
+                                f"Weak FTP credentials found: {user}:{pwd} (obtained by brute force)")
+                        shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                         dump_ftp_contents(ftp, target_ip)
                         ftp.quit()
                         return
                     except ftplib.error_perm:
                         pass
                     except Exception as e:
-                        print(f"[!] Error al probar {user}:{pwd} - {e}")
-        # Caso 2: Se tienen usuarios personalizados pero no contraseñas
+                        print(f"[!] Error testing {user}:{pwd} - {e}")
+        # Case 2: Custom users exist but not passwords
         elif users_custom and not pwds_custom:
             default_pw_path = "wordlists/misc/ftp-passwords.txt"
             try:
                 with open(default_pw_path, 'r') as dpf:
                     pwds_custom = [line.strip() for line in dpf if line.strip()]
                 print(
-                    f"[*] Se cargaron {len(pwds_custom)} contraseñas desde {default_pw_path} para combinar con usuarios personalizados")
+                    f"[*] Loaded {len(pwds_custom)} passwords from {default_pw_path} to combine with custom users")
             except Exception as e:
-                print(f"[!] Error al leer {default_pw_path}: {e}")
+                print(f"[!] Error reading {default_pw_path}: {e}")
             for user in users_custom:
                 for pwd in pwds_custom:
                     try:
                         ftp = ftplib.FTP(target_ip, timeout=5)
                         ftp.login(user, pwd)
-                        print(f"[+] Credenciales válidas encontradas: {user}:{pwd}")
+                        print(f"[+] Valid credentials found: {user}:{pwd}")
 
                         check_ftp_write_permission(ftp, target_ip)
 
@@ -260,73 +259,73 @@ def ftp_elaborate_bruteforce(target_ip):
                         os.makedirs(os.path.dirname(log_path), exist_ok=True)
                         with open(log_path, "w") as logf:
                             logf.write(
-                                f"Credenciales FTP débiles encontradas: {user}:{pwd} (obtenidas por fuerza bruta)")
-                        shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
+                                f"Weak FTP credentials found: {user}:{pwd} (obtained by brute force)")
+                        shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                         dump_ftp_contents(ftp, target_ip)
                         ftp.quit()
                         return
                     except ftplib.error_perm:
                         pass
                     except Exception as e:
-                        print(f"[!] Error al probar {user}:{pwd} - {e}")
-        print("[-] No se encontraron credenciales válidas usando listas personalizadas.")
+                        print(f"[!] Error testing {user}:{pwd} - {e}")
+        print("[-] No valid credentials found using custom lists.")
 
-        # Intentar usar cada usuario como contraseña (user:user)
+        # Try using each user as password (user:user)
         if users_custom:
-            print("[*] Intentando usar cada usuario como contraseña (user:user)...")
+            print("[*] Trying using each user as password (user:user)...")
             for user in users_custom:
                 try:
                     ftp = ftplib.FTP(target_ip, timeout=5)
                     ftp.login(user, user)
-                    print(f"[+] Credenciales válidas encontradas: {user}:{user}")
+                    print(f"[+] Valid credentials found: {user}:{user}")
 
                     check_ftp_write_permission(ftp, target_ip)
 
                     log_path = f"logs/{target_ip}/ftp/credentials_found.txt"
                     os.makedirs(os.path.dirname(log_path), exist_ok=True)
                     with open(log_path, "w") as logf:
-                        logf.write(f"Credenciales FTP débiles encontradas: {user}:{user} (obtenidas por fuerza bruta)")
-                    shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
+                        logf.write(f"Weak FTP credentials found: {user}:{user} (obtained by brute force)")
+                    shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                     dump_ftp_contents(ftp, target_ip)
                     ftp.quit()
                     return
                 except ftplib.error_perm:
                     pass
                 except Exception as e:
-                    print(f"[!] Error al probar {user}:{user} - {e}")
+                    print(f"[!] Error testing {user}:{user} - {e}")
 
-    # Si no se obtuvieron resultados con las personalizadas (o no existen), se intenta la lista predeterminada
-    print("[*] Intentando con la lista predeterminada de FTP...")
+    # If no results were obtained with the custom lists (or none exist), try the default list
+    print("[*] Trying with the default FTP list...")
     default_users_path = "wordlists/misc/ftp-top_default_passlist.txt"
     try:
         with open(default_users_path, 'r') as df:
             combos = [line.strip() for line in df if line.strip()]
-        print(f"[*] Se cargaron {len(combos)} combos desde {default_users_path}")
+        print(f"[*] Loaded {len(combos)} combos from {default_users_path}")
         for combo in combos:
             try:
                 user, pwd = combo.split(":", 1)
                 ftp = ftplib.FTP(target_ip, timeout=5)
                 ftp.login(user, pwd)
-                print(f"[+] Credenciales válidas encontradas: {user}:{pwd}")
+                print(f"[+] Valid credentials found: {user}:{pwd}")
 
                 check_ftp_write_permission(ftp, target_ip)
 
                 log_path = f"logs/{target_ip}/ftp/credentials_found.txt"
                 os.makedirs(os.path.dirname(log_path), exist_ok=True)
                 with open(log_path, "w") as logf:
-                    logf.write(f"Credenciales FTP débiles encontradas: {user}:{pwd} (obtenidas por fuerza bruta)")
-                shutil.copy(log_path, f"logs/{target_ip}/reporte/ftp_credentials_found.txt")
+                    logf.write(f"Weak FTP credentials found: {user}:{pwd} (obtained by brute force)")
+                shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                 dump_ftp_contents(ftp, target_ip)
                 ftp.quit()
                 return
             except ftplib.error_perm:
                 pass
             except Exception as e:
-                print(f"[!] Error al probar {combo} - {e}")
+                print(f"[!] Error testing {combo} - {e}")
     except Exception as e:
-        print(f"[!] Error al leer la lista por defecto {default_users_path}: {e}")
+        print(f"[!] Error reading default list {default_users_path}: {e}")
 
-    print("[-] Bruteforce elaborado finalizado sin encontrar credenciales válidas.")
+    print("[-] Elaborate brute force finished without finding valid credentials.")
 
 
 def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
@@ -342,15 +341,15 @@ def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
         for line in file_list:
             parts = line.split()
             if len(parts) < 4:
-                continue  # Omitir líneas sin información relevante
+                continue  # Skip lines without relevant information
 
-            # Si la primera columna tiene 10 caracteres y comienza con 'd', '-' o 'l', asumimos formato Linux
+            # If the first column has 10 characters and starts with 'd', '-' or 'l', assume Linux format
             if len(parts[0]) == 10 and parts[0][0] in ["d", "-", "l"]:
-                # Casuística Linux
+                # Linux case
                 is_dir = parts[0].startswith("d")
                 name = " ".join(parts[8:])
             else:
-                # Casuística Windows
+                # Windows case
                 is_dir = parts[2].upper() == "<DIR>"
                 name = " ".join(parts[3:])
 
@@ -367,17 +366,17 @@ def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
                 try:
                     with open(local_file, "wb") as f:
                         ftp.retrbinary(f"RETR {remote_item_path}", f.write)
-                    print(f"[+] Archivo descargado: {local_file}")
+                    print(f"[+] File downloaded: {local_file}")
                 except Exception as e:
-                    print(f"[!] Error al descargar {name}: {e}")
+                    print(f"[!] Error downloading {name}: {e}")
     except Exception as e:
-        print(f"[!] Error al listar archivos en {remote_path}: {e}")
+        print(f"[!] Error listing files in {remote_path}: {e}")
 
 def run_ftp(target):
     check_ftp_anonymous(target)
     ftp_searchsploit(target)
 
-# Main de prueba
+# Main test
 if __name__ == "__main__":
     target = sys.argv[1]
     run_ftp(target)

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Navegación
+    // Navigation
     const navItems = document.querySelectorAll('.nav-item');
     const pages = document.querySelectorAll('.page');
     const pageTitle = document.querySelector('.page-title');
@@ -11,23 +11,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Botón "Nuevo Escaneo"
+    // "New Scan" Button
     document.querySelector('[data-action="new-scan"]').addEventListener('click', function() {
         showPage('scanner');
     });
 
-    // Función para actualizar las estadísticas
+    // Function to update statistics
     function updateStats() {
-    fetch('/api/stats')
-        .then(response => response.json())
-        .then(data => {
-            animateNumber('reports-count', data.reports_count);
-            animateNumber('modules-count', data.modules_count);
-            animateNumber('clients-count', data.clients_count);
-        });
+        fetch('/api/stats')
+            .then(response => response.json())
+            .then(data => {
+                animateNumber('reports-count', data.reports_count);
+                animateNumber('modules-count', data.modules_count);
+                animateNumber('clients-count', data.clients_count);
+            });
     }
 
-    // Función para animar números
+    // Function to animate numbers
     function animateNumber(elementId, final) {
         const element = document.getElementById(elementId);
         const start = parseInt(element.textContent);
@@ -48,14 +48,14 @@ document.addEventListener('DOMContentLoaded', function() {
         animate();
     }
 
-    // Función para actualizar los escaneos recientes
+    // Function to update recent scans
     function updateRecentScans() {
         fetch('/api/recent-scans')
             .then(response => response.json())
             .then(scans => {
                 const scansList = document.getElementById('recent-scans-list');
                 if (scans.length === 0) {
-                    scansList.innerHTML = '<div class="scan-item">No hay escaneos recientes</div>';
+                    scansList.innerHTML = '<div class="scan-item">No recent scans</div>';
                 } else {
                     scansList.innerHTML = scans.map(scan => `
                         <div class="scan-item">
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     /*
-    // Cargar módulos disponibles
+    // Load available modules
     function loadModules() {
         fetch('/api/modules')
             .then(response => response.json())
@@ -86,9 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 `).join('');
             });
     }
-     */
+    */
 
-    // Console de escaneo
+    // Scan console
     const scanConsole = {
         element: document.getElementById('scan-console'),
         output: document.getElementById('console-output'),
@@ -114,9 +114,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const clearConsoleBtn = document.getElementById('clearConsoleBtn');
     if (clearConsoleBtn) {
-      clearConsoleBtn.addEventListener('click', function() {
-        scanConsole.clear();
-      });
+        clearConsoleBtn.addEventListener('click', function() {
+            scanConsole.clear();
+        });
     }
 
     // Function to start a full scan
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.getElementById('fullScanTarget').value = '';
         scanConsole.clear();
-        scanConsole.addMessage(`[*] Iniciando escaneo completo para ${formData.get('target')}...`);
+        scanConsole.addMessage(`[*] Starting full scan for ${formData.get('target')}...`);
 
         const response = await fetch('/fullscan', {
             method: 'POST',
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', function() {
             done = doneReading;
             if (value) {
                 const chunk = decoder.decode(value, { stream: true });
-                // Divide el chunk en líneas y agrega cada línea a la consola
+                // Split the chunk into lines and add each line to the console
                 const lines = chunk.split('\n');
                 lines.forEach(line => {
                     if (line.trim() !== '') {
@@ -166,19 +166,19 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(reports => {
                 const reportsContainer = document.getElementById('reports-container');
                 if (reports.length === 0) {
-                    reportsContainer.innerHTML = '<div class=\"no-reports\">No se han generado informes</div>';
+                    reportsContainer.innerHTML = '<div class="no-reports">No reports have been generated</div>';
                 } else {
                     reportsContainer.innerHTML = reports.map(report => `
-                        <div class=\"report-card\">
-                            <div class=\"report-preview-container\" onclick=\"window.open('/report/${report.filename}', '_blank')\">
-                                <embed src=\"/report/${report.filename}#page=1\" type=\"application/pdf\" class=\"report-preview\">
+                        <div class="report-card">
+                            <div class="report-preview-container" onclick="window.open('/report/${report.filename}', '_blank')">
+                                <embed src="/report/${report.filename}#page=1" type="application/pdf" class="report-preview">
                             </div>
-                            <div class=\"report-info\">
-                                <div class=\"report-title\">
+                            <div class="report-info">
+                                <div class="report-title">
                                     ${report.filename.length > 20 ? report.filename.substring(0, 16) + '....pdf' : report.filename}
                                 </div>
-                                <button class=\"delete-report\" data-filename=\"${report.filename}\">
-                                    <span class=\"material-icons\">delete</span>
+                                <button class="delete-report" data-filename="${report.filename}">
+                                    <span class="material-icons">delete</span>
                                 </button>
                             </div>
                         </div>
@@ -195,24 +195,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function deleteReport(filename) {
-        if (confirm(`¿Estás seguro de que quieres eliminar el informe ${filename}?`)) {
+        if (confirm(`Are you sure you want to delete the report ${filename}?`)) {
             fetch(`/api/reports/${filename}`, { method: 'DELETE' })
                 .then(response => {
                     if (response.ok) {
                         loadReports();
                         updateStats();
                     } else {
-                        alert('Error al eliminar el informe');
+                        alert('Error deleting the report');
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('Error al eliminar el informe');
+                    alert('Error deleting the report');
                 });
         }
     }
 
-    // Llamar a loadReports() al mostrar la página de informes:
+    // Call loadReports() when showing the reports page:
     function showPage(pageId) {
         pages.forEach(page => page.style.display = 'none');
         document.getElementById(`${pageId}-page`).style.display = 'block';
@@ -229,13 +229,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-
-    // Inicialización
+    // Initialization
     showPage('dashboard');
     updateStats();
     updateRecentScans();
     loadModules();
 
-    // Actualizar estadísticas cada 30 segundos
+    // Update statistics every 30 seconds
     setInterval(updateStats, 30000);
 });

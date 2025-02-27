@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Thu Feb 27 19:40:57 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/equiptgraphics.com/nmap/initial_scan.txt equiptgraphics.com
+Host: 97.107.131.34 ()	Status: Up
+Host: 97.107.131.34 ()	Ports: 22/open/tcp//ssh///, 80/open/tcp//http///, 443/open/tcp//https///, 33060/open/tcp//mysqlx///
+# Nmap done at Thu Feb 27 19:41:29 2025 -- 1 IP address (1 host up) scanned in 31.30 seconds

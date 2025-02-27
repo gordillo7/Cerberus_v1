@@ -5,7 +5,7 @@ import os
 
 def initial_scan(target_ip):
     output_file = f"logs/{target_ip}/nmap/initial_scan.txt"
-    print(f"[*] Obteniendo puertos abiertos de {target_ip}...")
+    print(f"[*] Getting open ports for {target_ip}...")
     os.makedirs(f"logs/{target_ip}/nmap", exist_ok=True)
 
     command = [
@@ -28,10 +28,10 @@ def initial_scan(target_ip):
     )
 
     if result.returncode != 0:
-        print("[!] Error ejecutando nmap:")
+        print("[!] Error running nmap:")
         print(result.stderr)
     else:
-        print(f"[+] Escaneo inicial finalizado. Resultados en {output_file}")
+        print(f"[+] Initial scan completed. Results in {output_file}")
 
 def extract_ports(target_ip):
     file_path = f"logs/{target_ip}/nmap/initial_scan.txt"
@@ -56,7 +56,7 @@ def extract_ports(target_ip):
 
 def hard_scan(target_ip, ports):
     output_file = f"logs/{target_ip}/nmap/ports_services_versions_temp.txt"
-    print(f"[*] Escaneando puertos en detalle...")
+    print(f"[*] Scanning ports in detail...")
     os.makedirs(f"logs/{target_ip}/nmap", exist_ok=True)
 
     command = [
@@ -77,37 +77,37 @@ def hard_scan(target_ip, ports):
     )
 
     if result.returncode != 0:
-        print("[!] Error ejecutando nmap:")
+        print("[!] Error running nmap:")
         print(result.stderr)
 
-def limpiar_reporte_nmap(target_ip):
-    archivo_reporte = f"logs/{target_ip}/nmap/ports_services_versions_temp.txt"
-    archivo_salida = f"logs/{target_ip}/nmap/ports_services_versions.txt"
-    con_linea_interes = False
+def clear_report(target_ip):
+    report_file = f"logs/{target_ip}/nmap/ports_services_versions_temp.txt"
+    output_file = f"logs/{target_ip}/nmap/ports_services_versions.txt"
+    found_interesting_line = False
 
-    with open(archivo_reporte, 'r') as f:
-        lineas = f.readlines()
+    with open(report_file, 'r') as f:
+        lines = f.readlines()
 
-    with open(archivo_salida, 'w') as f:
-        for linea in lineas:
-            if re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", linea):
-                con_linea_interes = True
-            if con_linea_interes:
-                if re.search(r"^\d+/tcp\s+", linea) or re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", linea):
-                    f.write(linea)
+    with open(output_file, 'w') as f:
+        for line in lines:
+            if re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", line):
+                found_interesting_line = True
+            if found_interesting_line:
+                if re.search(r"^\d+/tcp\s+", line) or re.search(r"PORT\s+STATE\s+SERVICE\s+VERSION", line):
+                    f.write(line)
 
-    print(f"[+] Escaneo detallado de puertos finalizado. Resultados en {archivo_salida}")
-    os.remove(archivo_reporte)
-    os.makedirs(f"logs/{target_ip}/reporte", exist_ok=True)
-    os.system(f"cp {archivo_salida} logs/{target_ip}/reporte/nmap.txt")
+    print(f"[+] Detailed port scan completed. Results in {output_file}")
+    os.remove(report_file)
+    os.makedirs(f"logs/{target_ip}/report", exist_ok=True)
+    os.system(f"cp {output_file} logs/{target_ip}/report/nmap.txt")
 
 def run_nmap(target_ip):
     initial_scan(target_ip)
     open_ports = extract_ports(target_ip)
     hard_scan(target_ip, open_ports)
-    limpiar_reporte_nmap(target_ip)
+    clear_report(target_ip)
 
-# Main de prueba
+# Test main
 if __name__ == "__main__":
     target = sys.argv[1]
     run_nmap(target)

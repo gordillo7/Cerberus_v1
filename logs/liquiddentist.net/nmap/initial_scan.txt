@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Mon Feb 24 17:57:47 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/liquiddentist.net/nmap/initial_scan.txt liquiddentist.net
-Host: 67.227.211.157 ()	Status: Up
-Host: 67.227.211.157 ()	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 25/open/tcp//smtp///, 53/open/tcp//domain///, 80/open/tcp//http///, 110/open/tcp//pop3///, 143/open/tcp//imap///, 443/open/tcp//https///, 465/open/tcp//smtps///, 587/open/tcp//submission///, 993/open/tcp//imaps///, 995/open/tcp//pop3s///, 2078/open/tcp//tpcsrvr///, 2083/open/tcp//radsec///, 2087/open/tcp//eli///, 2095/open/tcp//nbx-ser///
-# Nmap done at Mon Feb 24 17:58:48 2025 -- 1 IP address (1 host up) scanned in 61.42 seconds

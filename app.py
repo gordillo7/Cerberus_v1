@@ -14,9 +14,9 @@ def index():
 
 @app.route('/api/stats')
 def get_stats():
-    reports_count = len(list(Path('informes').glob('*.pdf')))
+    reports_count = len(list(Path('reports').glob('*.pdf')))
     modules_count = len(
-        [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generar_reporte.py'])
+        [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generate_report.py'])
     clients_count = len([d for d in os.listdir('logs') if os.path.isdir(os.path.join('logs', d))])
     return jsonify({
         'reports_count': reports_count,
@@ -43,18 +43,18 @@ def get_recent_scans():
 @app.route('/api/reports')
 def get_reports():
     reports = []
-    for report in Path('informes').glob('*.pdf'):
+    for report in Path('reports').glob('*.pdf'):
         reports.append({'filename': report.name})
     return jsonify(reports)
 
 @app.route('/report/<filename>')
 def view_report(filename):
-    return send_from_directory('informes', filename)
+    return send_from_directory('reports', filename)
 
 @app.route('/api/reports/<filename>', methods=['DELETE'])
 def delete_report(filename):
     try:
-        report_path = Path('informes') / filename
+        report_path = Path('reports') / filename
         if report_path.exists():
             report_path.unlink()
             return jsonify({'message': f'Report {filename} deleted successfully.'}), 200
@@ -100,9 +100,9 @@ def fullscan():
 def stop_scan():
     if app.current_scan_process is not None:
         app.current_scan_process.send_signal(signal.SIGINT)
-        return jsonify({'message': 'Escaneo detenido.'})
+        return jsonify({'message': 'Scan aborted.'})
     else:
-        return jsonify({'message': 'No hay escaneo en curso.'}), 404
+        return jsonify({'message': 'No scan is running.'}), 404
 
 
 if __name__ == '__main__':

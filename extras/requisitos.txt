@@ -4,6 +4,7 @@ bs4
 reportlab
 httpx
 pyppeteer
+asyncio
 
 #Herramientas
 serachsploit

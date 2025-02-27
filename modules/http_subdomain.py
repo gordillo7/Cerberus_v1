@@ -4,7 +4,7 @@ import subprocess
 import httpx
 
 def get_valid_url(sub):
-    # Si el subdominio ya empieza con http:// o https://, lo prueba directamente.
+    # If the subdomain already starts with http:// or https://, test it directly.
     if sub.startswith("http://") or sub.startswith("https://"):
         schemes = [""]
     else:
@@ -21,26 +21,26 @@ def get_valid_url(sub):
 
 def enumerate_subdomains(domain):
     command = f"subfinder -d {domain} -silent"
-    print(f"[+] Ejecutando comando: {command}")
+    print(f"[+] Running command: {command}")
     try:
         result = subprocess.run(
             command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"
         )
         if result.returncode != 0:
-            print(f"[!] Error en comando subfinder: {result.stderr}")
+            print(f"[!] Error in subfinder command: {result.stderr}")
             return []
         subdomains_raw = result.stdout.strip().splitlines()
     except Exception as e:
-        print(f"[!] Excepción durante la ejecución de subfinder: {e}")
+        print(f"[!] Exception during subfinder execution: {e}")
         return []
     valid_subdomains = []
     for sub in subdomains_raw:
         url = get_valid_url(sub)
         if url:
             valid_subdomains.append(sub)
-            print(f"[+] Subdominio válido: {sub}")
+            print(f"[+] Valid subdomain: {sub}")
         else:
-            print(f"[-] {sub} no respondió con un código de estado válido")
+            print(f"[-] {sub} did not respond with a valid status code")
     return sorted(set(valid_subdomains))
 
 def save_subdomains(domain, subdomains):
@@ -48,19 +48,19 @@ def save_subdomains(domain, subdomains):
     os.makedirs(output_dir, exist_ok=True)
     output_file = os.path.join(output_dir, "subdomains.txt")
     with open(output_file, "w") as f:
-        f.write(f"Se encontraron {len(subdomains)} subdominios para {domain}\n")
+        f.write(f"Found {len(subdomains)} subdomains for {domain}\n")
         for subdomain in subdomains:
             f.write(subdomain + "\n")
-    os.system(f"cp {output_file} logs/{domain}/reporte/http_subdomains.txt")
-    print(f"[+] Subdominios guardados en: {output_file}")
+    os.system(f"cp {output_file} logs/{domain}/report/http_subdomains.txt")
+    print(f"[+] Subdomains saved in: {output_file}")
 
 def subdomain(domain):
     subdomains = enumerate_subdomains(domain)
     if subdomains:
-        print(f"[+] Se encontraron {len(subdomains)} subdominios")
+        print(f"[+] Found {len(subdomains)} subdomains")
         save_subdomains(domain, subdomains)
     else:
-        print("[!] No se encontraron subdominios.")
+        print("[!] No subdomains were found.")
 
 def run_http_subdomain(domain):
     subdomain(domain)

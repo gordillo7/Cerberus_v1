@@ -8,14 +8,14 @@ def extract_vulnerable_plugins(target_ip):
     input_file = f"logs/{target_ip}/http/wordpress/wpscan.txt"
     output_file = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
 
-    # Abrir y parsear el JSON de entrada
+    # Open and parse the input JSON
     with open(input_file, 'r', encoding='utf-8') as f:
-        data = json.load(f)  # Carga el contenido como diccionario
+        data = json.load(f)  # Load the content as a dictionary
 
     vulnerable_plugins = []
 
-    # 'data["plugins"]' contiene un diccionario de plugins,
-    # donde cada key es el nombre del plugin, y el value su info.
+    # 'data["plugins"]' contains a dictionary of plugins,
+    # where each key is the plugin name and the value is its info.
     for plugin_name, plugin_info in data.get("plugins", {}).items():
         for vulnerability in plugin_info.get("vulnerabilities", []):
             cves = vulnerability.get("references", {}).get("cve", [])
@@ -26,7 +26,7 @@ def extract_vulnerable_plugins(target_ip):
                 })
 
     if vulnerable_plugins:
-        print(f"[+] {len(vulnerable_plugins)} vulnerabilides en plugins encontradas. Reportado en {output_file}")
+        print(f"[+] {len(vulnerable_plugins)} vulnerabilities in plugins found. Reported in {output_file}")
         with open(output_file, 'w', encoding='utf-8') as f:
             for plugin in vulnerable_plugins:
                 f.write(f"Plugin: {plugin['plugin_name']}\n")
@@ -35,14 +35,14 @@ def extract_vulnerable_plugins(target_ip):
                     f.write(f"  - {cve}\n")
                 f.write("\n")
 
-        os.system(f"cp {output_file} logs/{target_ip}/reporte/wordpress_vulnerable_plugins.txt")
+        os.system(f"cp {output_file} logs/{target_ip}/report/wordpress_vulnerable_plugins.txt")
     else:
-        print("[!] No se encontraron plugins vulnerables en WordPress")
+        print("[!] No vulnerable plugins were found in WordPress")
 
 def parse_vulnerable_plugins(file_path):
     """
-    Parsea el archivo vulnerable_plugins.txt y devuelve una lista de diccionarios con el formato:
-      { "plugin_name": <nombre>, "cves": [<CVE1>, <CVE2>, ...] }
+    Parses the vulnerable_plugins.txt file and returns a list of dictionaries in the format:
+      { "plugin_name": <name>, "cves": [<CVE1>, <CVE2>, ...] }
     """
     plugins = []
     current_plugin = None
@@ -52,28 +52,28 @@ def parse_vulnerable_plugins(file_path):
             for line in f:
                 line = line.strip()
                 if line.startswith("Plugin:"):
-                    # Comienza una nueva entrada de plugin
+                    # Start a new plugin entry
                     plugin_name = line.split(":", 1)[1].strip()
                     current_plugin = {"plugin_name": plugin_name, "cves": []}
                     plugins.append(current_plugin)
                 elif line.startswith("CVE:"):
-                    # Línea informativa, se ignora
+                    # Informational line, ignore it
                     continue
                 elif line.startswith("-"):
-                    # Se espera que sea una línea con el CVE, por ejemplo: "- 2015-6668"
+                    # Expected to be a line with the CVE, e.g.: "- 2015-6668"
                     cve = line.strip("- ").strip()
                     if current_plugin is not None and cve:
                         current_plugin["cves"].append(cve)
-                # Se pueden ignorar líneas en blanco u otras
+                # Blank or other lines can be ignored
         return plugins
     except Exception as e:
-        print(f"[!] Error al parsear {file_path}: {e}")
+        print(f"[!] Error parsing {file_path}: {e}")
         return []
 
 def search_exploits_on_github(cve_id, max_repos=10):
     """
-    Realiza una búsqueda en GitHub para repositorios que contengan el CVE y la palabra 'exploit'
-    Se limita la búsqueda a 'max_repos' resultados.
+    Searches GitHub for repositories containing the CVE and the word 'exploit'
+    Limited to 'max_repos' results.
     """
     url = f"https://api.github.com/search/repositories?q={cve_id}&per_page={max_repos}"
     try:
@@ -82,37 +82,37 @@ def search_exploits_on_github(cve_id, max_repos=10):
             data = response.json()
             items = data.get("items", [])
             if items:
-                print(f"[+] Se encontraron {len(items)} repositorios para el CVE {cve_id}.")
+                print(f"[+] Found {len(items)} repositories for CVE {cve_id}.")
                 return items
             else:
-                print(f"[!] No se encontraron repositorios para el CVE {cve_id}.")
+                print(f"[!] No repositories found for CVE {cve_id}.")
                 return []
         else:
-            print(f"[!] Error en la búsqueda de GitHub para {cve_id}: Código {response.status_code}")
+            print(f"[!] Error searching GitHub for {cve_id}: Code {response.status_code}")
             return []
     except Exception as e:
-        print(f"[!] Excepción durante la búsqueda en GitHub para {cve_id}: {e}")
+        print(f"[!] Exception during GitHub search for {cve_id}: {e}")
         return []
 
 def clone_repository(repo_url, dest_dir):
     """
-    Clona el repositorio dado en el directorio destino.
+    Clones the given repository into the destination directory.
     """
     try:
         result = subprocess.run(["git", "clone", repo_url, dest_dir], capture_output=True, text=True)
         if result.returncode == 0:
-            print(f"[+] Repositorio clonado desde {repo_url}")
+            print(f"[+] Repository cloned from {repo_url}")
             return True
         else:
-            print(f"[!] Error al clonar {repo_url}: {result.stderr}")
+            print(f"[!] Error cloning {repo_url}: {result.stderr}")
             return False
     except Exception as e:
-        print(f"[!] Excepción al clonar {repo_url}: {e}")
+        print(f"[!] Exception while cloning {repo_url}: {e}")
         return False
 
 def find_python_file(directory):
     """
-    Recorre el directorio y devuelve la ruta del primer archivo .py que encuentre.
+    Traverses the directory and returns the path of the first .py file found.
     """
     for root, dirs, files in os.walk(directory):
         for file in files:
@@ -123,28 +123,28 @@ def find_python_file(directory):
 """
 def run_python_exploit(exploit_path, target_ip):
     try:
-        print(f"[+] Ejecutando el exploit {exploit_path} contra {target_ip}...")
+        print(f"[+] Running exploit {exploit_path} against {target_ip}...")
         result = subprocess.run(["python", exploit_path, target_ip], capture_output=True, text=True)
-        print("[+] Salida del exploit:")
+        print("[+] Exploit output:")
         print(result.stdout)
         if result.stderr:
-            print("[!] Errores en la ejecución del exploit:")
+            print("[!] Errors during exploit execution:")
             print(result.stderr)
     except Exception as e:
-        print(f"[!] Excepción al ejecutar el exploit {exploit_path}: {e}")
+        print(f"[!] Exception while running exploit {exploit_path}: {e}")
 """
 
 def process_cve(cve, target_ip, max_repos=10):
     """
-    Busca exploits en GitHub para el CVE dado, clona el repositorio y, en caso de encontrar un archivo .py, lo ejecuta.
-    Si en ninguno de los repositorios (hasta max_repos) se encuentra un archivo Python, informa que no se puede verificar la vulnerabilidad.
+    Searches for exploits on GitHub for the given CVE, clones the repository, and if a .py file is found, runs it.
+    If no Python file is found in any of the repositories (up to max_repos), reports that the vulnerability cannot be verified.
     """
     repos = search_exploits_on_github(cve, max_repos)
     if not repos:
-        print(f"[!] No se pudo verificar la vulnerabilidad {cve}: no se encontró ningún exploit en GitHub.")
+        print(f"[!] Could not verify vulnerability {cve}: no exploit found on GitHub.")
         return
 
-    # Ordenamos los repositorios por popularidad (stargazers_count) de forma descendente
+    # Sort repositories by popularity (stargazers_count) in descending order
     sorted_repos = sorted(repos, key=lambda repo: repo.get("stargazers_count", 0), reverse=True)
 
     exploit_found = False
@@ -154,52 +154,51 @@ def process_cve(cve, target_ip, max_repos=10):
             continue
 
         exp_dir = f"logs/{target_ip}/http/wordpress/cve_exploits/{cve}/{repo.get('full_name').replace('/', '_')}"
-        print(f"[*] Clonando {repo_url} en {exp_dir}...")
+        print(f"[*] Cloning {repo_url} into {exp_dir}...")
         if clone_repository(repo_url, exp_dir):
-            # Borrar el .git del repositorio clonado
+            # Remove the .git folder from the cloned repository
             os.system(f"rm -rf {exp_dir}/.git")
-            # Buscar un archivo Python en el repositorio clonado
+            # Search for a Python file in the cloned repository
             python_file = find_python_file(exp_dir)
             if python_file:
                 #run_python_exploit(python_file, target_ip)
                 exploit_found = True
-                break  # Se encontró y lanzó un exploit; salimos del bucle
+                break  # An exploit was found and launched; exit the loop
             else:
-                print(f"[!] No se encontró archivo Python en el repositorio {repo.get('full_name')}.")
+                print(f"[!] No Python file found in repository {repo.get('full_name')}.")
                 os.system(f"rm -rf logs/{target_ip}/http/wordpress/cve_exploits/{cve}")
         else:
             os.system(f"rm -rf logs/{target_ip}/http/wordpress/cve_exploits/{cve}")
 
     if not exploit_found:
-        print(
-            f"[!] No se pudo verificar la vulnerabilidad {cve}: no se encontró un exploit Python en {max_repos} repositorios.")
+        print(f"[!] Could not verify vulnerability {cve}: no Python exploit found in {max_repos} repositories.")
 
 def wordpress_plugins(target_ip):
-    # Ruta del archivo vulnerable_plugins.txt
+    # Path of the vulnerable_plugins.txt file
     file_path = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
     if not os.path.exists(file_path):
-        #print(f"[!] El archivo {file_path} no existe.")
+        #print(f"[!] The file {file_path} does not exist.")
         return
 
-    # Parseamos el archivo para obtener la lista de plugins y sus CVEs
+    # Parse the file to obtain the list of plugins and their CVEs
     plugins = parse_vulnerable_plugins(file_path)
     if not plugins:
-        print("[!] No se encontraron plugins vulnerables en el archivo.")
+        print("[!] No vulnerable plugins were found in the file.")
         return
 
-    # Para cada plugin y cada uno de sus CVEs, se intenta buscar y lanzar el exploit
+    # For each plugin and each of its CVEs, attempt to search and launch the exploit
     for plugin in plugins:
         plugin_name = plugin.get("plugin_name")
         cves = plugin.get("cves", [])
         for cve in cves:
-            print(f"\n[*] Procesando CVE {cve} para el plugin '{plugin_name}'")
+            print(f"\n[*] Processing CVE {cve} for plugin '{plugin_name}'")
             process_cve(cve, target_ip, max_repos=10)
 
 def run_http_wordpress_plugins(target_ip):
     extract_vulnerable_plugins(target_ip)
     wordpress_plugins(target_ip)
 
-# Main de prueba
+# Test main
 if __name__ == "__main__":
     target = sys.argv[1]
     run_http_wordpress_plugins(target)

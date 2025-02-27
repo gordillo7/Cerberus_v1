@@ -15,7 +15,7 @@ A simple pentesting web application built with Flask (Python) and JavaScript. It
 - `static/`: Holds CSS, JS, and image assets.
 - `templates/`: HTML templates for rendering pages.
 - `modules/`: Python modules used for scanning and report generation.
-- `informes/`: Stores generated PDF reports.
+- `reports/`: Stores generated PDF reports.
 - `logs/`: Contains log data for scanned targets.
 
 ## Installation
@@ -26,7 +26,7 @@ A simple pentesting web application built with Flask (Python) and JavaScript. It
    ```bash
    pip install -r requirements.txt
    ```
-4. Ensure the necessary folders (`modules`, `informes`, `logs`, `static`, `templates`) are present.
+4. Ensure the necessary folders (`modules`, `reports`, `logs`, `static`, `templates`) are present.
 
 ## Usage
 

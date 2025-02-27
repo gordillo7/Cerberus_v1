@@ -1,5 +1,4 @@
-- Capturar pantalla web para añadirla al reporte.
-- Pasar a Ingles.
+- Testing para probar que la aplicacion sigue bien despues de la traduccion.
 - Apartado en la interfaz web para APIs Tokens.
 - Reconocimiento de hosting, dns, correo que usa, DNS dumper mx records.
 - Cambiar casuistica "elif users_custom and not pwds_custom:" del ftp bruteforce para que se aplique

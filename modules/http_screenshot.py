@@ -4,56 +4,63 @@ import asyncio
 from pyppeteer import launch
 
 
-async def capture_screenshot_async(url, output_file):
-    # Lanzamos el navegador en modo headless
-    browser = await launch(headless=True)
+async def capture_screenshot_async(navigation_url, output_file):
+    browser = await launch(
+        headless=True,
+        args=[
+            '--no-sandbox',
+            '--disable-setuid-sandbox',
+            '--disable-extensions',
+            '--disable-gpu',
+            '--ignore-certificate-errors',
+            '--disable-dev-shm-usage'
+        ],
+        ignoreHTTPSErrors=True
+    )
     page = await browser.newPage()
 
-    # Cargamos la URL
-    await page.goto(url)
+    # Set a custom user agent
+    await page.setUserAgent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36")
 
-    # Capturamos la pantalla y guardamos la imagen en el archivo indicado
-    await page.screenshot({'path': output_file})
-    print(f"Captura de pantalla guardada en {output_file}.")
+    # Try with networkidle2, then fallback to domcontentloaded if necessary
+    try:
+        await page.goto(navigation_url, options={"timeout": 60000, "waitUntil": "networkidle2"})
+    except Exception as e:
+        print(f"[-] Error loading page with networkidle2: {e}")
+        try:
+            await page.goto(navigation_url, options={"timeout": 60000, "waitUntil": "domcontentloaded"})
+        except Exception as e2:
+            print(f"[-] Error loading page with domcontentloaded: {e2}")
+            await browser.close()
+            return
+
+    try:
+        await page.screenshot({'path': output_file})
+        print(f"[+] Screenshot saved in {output_file}.")
+    except Exception as e:
+        print(f"[-] Error capturing screenshot: {e}")
 
     await browser.close()
 
-
 def capture_http_screenshot(url):
-    """
-    Captura una captura de pantalla de la página web especificada utilizando pyppeteer.
-    La imagen se guarda en logs/{url}/http/screenshot.png y se copia en logs/{url}/reporte/.
-
-    Parámetros:
-      - url: URL de la página a capturar.
-
-    Retorna:
-      - True si la captura se realizó correctamente.
-    """
-    # Define la ruta del archivo de salida (asegúrate de que 'url' sea un nombre de directorio válido,
-    # por lo que si es necesario, se debe sanitizar o extraer el hostname)
+    print("[+] Capturing screenshot of the website...")
+    navigation_url = f"http://{url}"
     output_file = f"logs/{url}/http/screenshot.png"
 
-    # Aseguramos que los directorios necesarios existen
     os.makedirs(f"logs/{url}/http", exist_ok=True)
-    os.makedirs(f"logs/{url}/reporte", exist_ok=True)
 
-    # Ejecutamos la función asíncrona de pyppeteer usando el event loop de asyncio
-    asyncio.get_event_loop().run_until_complete(capture_screenshot_async(url, output_file))
+    asyncio.run(capture_screenshot_async(navigation_url, output_file))
 
-    # Copiamos la imagen en el directorio de reporte
-    os.system(f"cp logs/{url}/http/screenshot.png logs/{url}/reporte/screenshot.png")
+    if os.path.isfile(output_file):
+        os.system(f"cp logs/{url}/http/screenshot.png logs/{url}/report/http_screenshot.png")
+    else:
+        print(f"[-] Screenshot not found at {output_file}, skipping copy.")
 
     return True
-
 
 def run_http_screenshot(url):
     capture_http_screenshot(url)
 
-
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        url = sys.argv[1]
-        capture_http_screenshot(url)
-    else:
-        print("Uso: python http_screenshot.py <URL>")
+    url = sys.argv[1]
+    capture_http_screenshot(url)

@@ -6,18 +6,18 @@ import re
 def joomscan(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/joomla/joomscan.txt"
-    print(f"[+] Ejecutando joomscan en {target_clean}...")
+    print(f"[+] Running joomscan on {target_clean}...")
 
-    # Crear el directorio para guardar los logs si no existe
+    # Create the directory to store the logs if it doesn't exist
     os.makedirs(f"logs/{target_clean}/http/joomla", exist_ok=True)
 
-    # Comando básico para joomscan. Ajusta los parámetros según tus necesidades.
+    # Basic command for joomscan. Adjust the parameters as needed.
     command = [
         "joomscan",
         "-u", target_ip
     ]
 
-    # Ejecutar joomscan y capturar la salida
+    # Run joomscan and capture the output
     result = subprocess.run(
         command,
         stdout=subprocess.PIPE,
@@ -25,25 +25,25 @@ def joomscan(target_ip):
         text=True
     )
 
-    # Expresión regular para eliminar códigos ANSI
+    # Regular expression to remove ANSI codes
     ansi_escape = re.compile(r'(?:\x1B[@-_][0-?]*[ -/]*[@-~])')
     clean_output = ansi_escape.sub('', result.stdout)
 
-    # Guardar la salida limpia en el archivo de log
+    # Save the clean output to the log file
     with open(output_file, "w") as f:
         f.write(clean_output)
 
-    # Verificar si hubo errores en la ejecución
+    # Check if there were errors during execution
     if result.returncode != 0:
-        print(f"[!] Error ejecutando joomscan (código de retorno {result.returncode}):")
+        print(f"[!] Error running joomscan (return code {result.returncode}):")
         print(result.stderr)
     else:
-        print(f"[+] Análisis joomscan finalizado. Resultados en {output_file}")
+        print(f"[+] joomscan analysis finished. Results in {output_file}")
 
 def run_http_joomla(target):
     joomscan(target)
 
-# Main de prueba
+# Test main
 if __name__ == "__main__":
     target = sys.argv[1]
     run_http_joomla(target)

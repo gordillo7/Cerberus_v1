@@ -1,0 +1,5 @@
+PORT      STATE SERVICE  VERSION
+22/tcp    open  ssh      OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)
+80/tcp    open  http     Apache httpd 2.4.41
+443/tcp   open  ssl/http Apache httpd 2.4.41
+33060/tcp open  mysqlx   MySQL X protocol listener

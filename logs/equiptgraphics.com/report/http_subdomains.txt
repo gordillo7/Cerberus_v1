@@ -1,0 +1,5 @@
+Found 4 subdomains for equiptgraphics.com
+odoo-qa.apps.equiptgraphics.com
+odoo-test.apps.equiptgraphics.com
+odoo.equiptgraphics.com
+www.equiptgraphics.com

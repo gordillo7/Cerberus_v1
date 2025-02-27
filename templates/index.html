@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cerberus - Herramienta de Pentesting</title>
+    <title>Cerberus - Pentesting Tool</title>
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -25,11 +25,11 @@
             </a>
             <a href="#" class="nav-item" data-page="reports">
                 <span class="material-icons">description</span>
-                Informes
+                Reports
             </a>
             <a href="#" class="nav-item" data-page="settings">
                 <span class="material-icons">settings</span>
-                Configuracion
+                Settings
             </a>
         </nav>
     </div>
@@ -39,7 +39,7 @@
             <div class="page-title">Dashboard</div>
             <button class="new-scan-btn" data-action="new-scan">
                 <span class="material-icons">add</span>
-                Nuevo Escaneo
+                New Scan
             </button>
         </header>
 
@@ -49,7 +49,7 @@
                 <div class="stats-cards">
                     <div class="stat-card">
                         <div class="stat-content">
-                            <h3>Informes generados</h3>
+                            <h3>Generated Reports</h3>
                             <div class="stat-number" id="reports-count">0</div>
                         </div>
                         <div class="stat-icon reports-icon">
@@ -58,7 +58,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-content">
-                            <h3>Módulos disponibles</h3>
+                            <h3>Available Modules</h3>
                             <div class="stat-number" id="modules-count">0</div>
                         </div>
                         <div class="stat-icon modules-icon">
@@ -67,7 +67,7 @@
                     </div>
                     <div class="stat-card">
                         <div class="stat-content">
-                            <h3>Clientes escaneados</h3>
+                            <h3>Scanned Clients</h3>
                             <div class="stat-number" id="clients-count">0</div>
                         </div>
                         <div class="stat-icon clients-icon">
@@ -77,10 +77,10 @@
                 </div>
                 <div class="recent-scans-section">
                     <div class="section-header">
-                        <h2>Últimos Escaneos</h2>
+                        <h2>Recent Scans</h2>
                     </div>
                     <div id="recent-scans-list" class="scans-list">
-                        <!-- Se llenará dinámicamente -->
+                        <!-- Will be loaded dynamically -->
                     </div>
                 </div>
             </div>
@@ -88,29 +88,29 @@
             <!-- Scanner -->
             <div class="page" id="scanner-page" style="display: none;">
                 <div class="card">
-                    <h2>Escaneo Completo</h2>
+                    <h2>Full Scan</h2>
                     <form id="fullScanForm">
                         <div class="input-group">
-                            <label for="fullScanTarget">Objetivo</label>
-                            <input type="text" id="fullScanTarget" name="target" placeholder="IP o dominio" required>
+                            <label for="fullScanTarget">Target</label>
+                            <input type="text" id="fullScanTarget" name="target" placeholder="IP or domain" required>
                         </div>
                         <button type="submit" class="submit-btn">
                             <span class="material-icons">play_arrow</span>
-                            Iniciar Escaneo Completo
+                            Start Full Scan
                         </button>
                     </form>
                 </div>
                 <div class="card">
                   <div class="console-header">
-                    <h2>Consola de Escaneo</h2>
+                    <h2>Scan Console</h2>
                     <div class="console-buttons">
                       <button type="button" id="stopScanBtn" class="cancel-btn">
                         <span class="material-icons">stop</span>
-                        Cancelar Escaneo
+                        Cancel Scan
                       </button>
                       <button type="button" id="clearConsoleBtn" class="clear-btn">
                         <span class="material-icons">clear_all</span>
-                        Limpiar Consola
+                        Clear Console
                       </button>
                     </div>
                   </div>
@@ -123,19 +123,18 @@
             <!-- Reports -->
             <div class="page" id="reports-page" style="display: none;">
                 <div class="section-header">
-                    <h2>Informes Generados</h2>
+                    <h2>Generated Reports</h2>
                 </div>
                 <div id="reports-container" class="reports-grid">
-                    <!-- Aquí se cargarán las tarjetitas de los informes -->
+                    <!-- Report cards will be loaded here -->
                 </div>
             </div>
-
 
             <!-- Settings -->
             <div class="page" id="settings-page" style="display: none;">
                 <div class="card">
-                    <h2>Configuración</h2>
-                    <p>Aquí irán las opciones de configuración.</p>
+                    <h2>Settings</h2>
+                    <p>Settings options will go here.</p>
                 </div>
             </div>
         </div>

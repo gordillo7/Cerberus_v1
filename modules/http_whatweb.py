@@ -5,7 +5,7 @@ import re
 
 def whatweb(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
-    print(f"[+] Ejecutando whatweb en {target_ip}...")
+    print(f"[+] Running whatweb on {target_ip}...")
     tecnologias_file = f"logs/{target_clean}/http/whatweb/tecnologias.txt"
     os.makedirs(f"logs/{target_clean}/http/whatweb", exist_ok=True)
 
@@ -23,12 +23,12 @@ def whatweb(target_ip):
     )
 
     if result.returncode != 0:
-        print("[!] Error ejecutando whatweb:")
+        print("[!] Error running whatweb:")
         print(result.stderr)
     else:
-        print(f"[+] Análisis whatweb finalizado. Resultados en {tecnologias_file}")
+        print(f"[+] whatweb analysis completed. Results in {tecnologias_file}")
 
-def identificar_cms(target_ip):
+def cms_identification(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     cms_file = f"logs/{target_clean}/http/whatweb/cms.txt"
     tecnologias_file = f"logs/{target_clean}/http/whatweb/tecnologias.txt"
@@ -49,13 +49,13 @@ def identificar_cms(target_ip):
     with open(cms_file, 'w') as f:
         f.write(cms_detectado + "\n")
 
-    print(f"[+] CMS detectado: {cms_detectado}. Resultados en {cms_file}")
+    print(f"[+] CMS detected: {cms_detectado}. Results in {cms_file}")
 
 def run_http_whatweb(target):
     whatweb(target)
-    identificar_cms(target)
+    cms_identification(target)
 
-# Main de prueba
+# Test main
 if __name__ == "__main__":
     target = sys.argv[1]
     run_http_whatweb(target)
