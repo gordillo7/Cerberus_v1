@@ -2,8 +2,11 @@ import os
 import subprocess
 import sys
 import re
+from modules.http_detect_scheme import get_scheme
 
 def joomscan(target_ip):
+    scheme = get_scheme(target_ip) + "://"
+    target_ip = scheme + target_ip
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/joomla/joomscan.txt"
     print(f"[+] Running joomscan on {target_clean}...")

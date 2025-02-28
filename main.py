@@ -24,16 +24,16 @@ def main():
             ports = f.read()
             if "80" in ports:
                 run_http_subdomain(target_clean)
-                run_http_whatweb(target)
+                run_http_whatweb(target_clean)
                 run_http_screenshot(target_clean)
                 with open(f"logs/{target_clean}/http/whatweb/cms.txt", "r") as w:
                     cms = w.read()
                     if "WordPress" in cms:
-                        run_http_wordpress(target)
+                        run_http_wordpress(target_clean)
                         run_http_wordpress_plugins(target_clean)
-                        run_http_wordpress_bruteforce(target)
+                        run_http_wordpress_bruteforce(target_clean)
                     if "Joomla" in cms:
-                        run_http_joomla(target)
+                        run_http_joomla(target_clean)
             if "21" in ports:
                 run_ftp(target_clean)
 

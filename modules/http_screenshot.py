@@ -43,7 +43,7 @@ async def capture_screenshot_async(navigation_url, output_file):
     await browser.close()
 
 def capture_http_screenshot(url):
-    print("[+] Capturing screenshot of the website...")
+    print("[*] Capturing screenshot of the website...")
     navigation_url = f"http://{url}"
     output_file = f"logs/{url}/http/screenshot.png"
 

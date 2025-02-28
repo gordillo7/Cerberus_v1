@@ -21,7 +21,7 @@ def get_valid_url(sub):
 
 def enumerate_subdomains(domain):
     command = f"subfinder -d {domain} -silent"
-    print(f"[+] Running command: {command}")
+    print(f"[*] Running command: {command}")
     try:
         result = subprocess.run(
             command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"

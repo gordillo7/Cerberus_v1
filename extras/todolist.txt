@@ -1,9 +1,5 @@
-- Hacer que todos los modulos acepten target_clean en lugar de target (que dentro detecte el scheme).
-- Testing para probar que la aplicacion sigue bien despues de la traduccion y el detect_scheme.
 - Apartado en la interfaz web para APIs Tokens.
 - Reconocimiento de hosting, dns, correo que usa, DNS dumper mx records.
-- Cambiar casuistica "elif users_custom and not pwds_custom:" del ftp bruteforce para que se aplique
-aunque haya custom users y custom pwds.
 - Ejecutar el main.py para cada subdominio encontrado.
 - Usar IA (Deepseek) para la facilitar la explotacion de CVEs.
 - IA (Deepseek) para seguir despues con recomendaciones.

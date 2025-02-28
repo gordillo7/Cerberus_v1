@@ -236,8 +236,8 @@ def ftp_elaborate_bruteforce(target_ip):
                         pass
                     except Exception as e:
                         print(f"[!] Error testing {user}:{pwd} - {e}")
-        # Case 2: Custom users exist but not passwords
-        elif users_custom and not pwds_custom:
+        # Test users.txt with default passwords
+        if users_custom:
             default_pw_path = "wordlists/misc/ftp-passwords.txt"
             try:
                 with open(default_pw_path, 'r') as dpf:
@@ -268,7 +268,6 @@ def ftp_elaborate_bruteforce(target_ip):
                         pass
                     except Exception as e:
                         print(f"[!] Error testing {user}:{pwd} - {e}")
-        print("[-] No valid credentials found using custom lists.")
 
         # Try using each user as password (user:user)
         if users_custom:
@@ -293,6 +292,8 @@ def ftp_elaborate_bruteforce(target_ip):
                     pass
                 except Exception as e:
                     print(f"[!] Error testing {user}:{user} - {e}")
+
+    print("[-] No valid credentials found using custom lists.")
 
     # If no results were obtained with the custom lists (or none exist), try the default list
     print("[*] Trying with the default FTP list...")

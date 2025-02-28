@@ -1,0 +1,360 @@
+{
+  "db_update_started": true,
+  "db_files_updated": [
+
+  ],
+  "db_update_finished": true,
+  "start_time": 1740760691,
+  "start_memory": 65470464,
+  "target_url": "https://centrorotulozafra.com/",
+  "target_ip": "35.227.194.51",
+  "effective_url": "https://centrorotulozafra.com/",
+  "interesting_findings": [
+    {
+      "url": "https://centrorotulozafra.com/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "server: nginx",
+        "x-ce: 67x2",
+        "x-httpd: 1",
+        "x-cdn-c: static",
+        "x-sg-cdn: 1",
+        "x-proxy-cache: MISS",
+        "x-proxy-cache-info: 0 NC:000000 UP:",
+        "host-header: 8441280b0c35cbc1147f8ba998a563a7"
+      ]
+    },
+    {
+      "url": "https://centrorotulozafra.com/wp-content/mu-plugins/",
+      "to_s": "This site has 'Must Use Plugins': https://centrorotulozafra.com/wp-content/mu-plugins/",
+      "type": "mu_plugins",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 80,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/Must_Use_Plugins"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "6.7.2",
+    "release_date": "2025-02-11",
+    "status": "latest",
+    "found_by": "Most Common Wp Includes Query Parameter In Homepage (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "https://centrorotulozafra.com/wp-includes/css/dashicons.min.css?ver=6.7.2",
+      "https://centrorotulozafra.com/wp-includes/css/dist/block-library/style.min.css?ver=6.7.2"
+    ],
+    "confirmed_by": {
+      "Query Parameter In Install Page (Aggressive Detection)": {
+        "confidence": 30,
+        "interesting_entries": [
+          "https://centrorotulozafra.com/wp-includes/css/dashicons.min.css?ver=6.7.2"
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ]
+  },
+  "main_theme": {
+    "slug": "generatepress",
+    "location": "https://centrorotulozafra.com/wp-content/themes/generatepress/",
+    "latest_version": "3.5.1",
+    "last_updated": "2024-09-04T00:00:00.000Z",
+    "outdated": true,
+    "readme_url": false,
+    "directory_listing": false,
+    "error_log_url": null,
+    "style_url": "https://centrorotulozafra.com/wp-content/themes/generatepress/style.css",
+    "style_name": "GeneratePress",
+    "style_uri": "https://generatepress.com",
+    "description": "GeneratePress is a lightweight WordPress theme built with a focus on speed and usability. Performance is important to us, which is why a fresh GeneratePress install adds less than 10kb (gzipped) to your page size. We take full advantage of the block editor (Gutenberg), which gives you more control over creating your content. If you use page builders, GeneratePress is the right theme for you. It is completely compatible with all major page builders, including Beaver Builder and Elementor. Thanks to our emphasis on WordPress coding standards, we can boast full compatibility with all well-coded plugins, including WooCommerce. GeneratePress is fully responsive, uses valid HTML/CSS, and is translated into over 25 languages by our amazing community of users. A few of our many features include 60+ color controls, powerful dynamic typography, 5 navigation locations, 5 sidebar layouts, dropdown menus (click or hover), and 9 widget areas. Learn more and check out our powerful premium version at https://generatepress.com",
+    "author": "Tom Usborne",
+    "author_uri": "https://tomusborne.com",
+    "template": null,
+    "license": "GNU General Public License v2 or later",
+    "license_uri": "http://www.gnu.org/licenses/gpl-2.0.html",
+    "tags": "two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, buddypress, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options",
+    "text_domain": "generatepress",
+    "found_by": "Urls In Homepage (Passive Detection)",
+    "confidence": 6,
+    "interesting_entries": [
+
+    ],
+    "confirmed_by": {
+      "Urls In 404 Page (Passive Detection)": {
+        "confidence": 4,
+        "interesting_entries": [
+
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ],
+    "version": {
+      "number": "3.4.0",
+      "confidence": 80,
+      "found_by": "Style (Passive Detection)",
+      "interesting_entries": [
+        "https://centrorotulozafra.com/wp-content/themes/generatepress/style.css, Match: 'Version: 3.4.0'"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "parents": [
+
+    ]
+  },
+  "plugins": {
+    "elementor": {
+      "slug": "elementor",
+      "location": "https://centrorotulozafra.com/wp-content/plugins/elementor/",
+      "latest_version": "3.27.6",
+      "last_updated": "2025-02-18T15:16:00.000Z",
+      "outdated": true,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Urls In Homepage (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Urls In 404 Page (Passive Detection)": {
+          "confidence": 80,
+          "interesting_entries": [
+
+          ]
+        }
+      },
+      "vulnerabilities": [
+        {
+          "title": "Elementor Website Builder < 3.27.5 - Contributor+ Stored XSS",
+          "fixed_in": "3.27.5",
+          "references": {
+            "cve": [
+              "2024-13445"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/8a11e702-34d2-49ee-8762-cc3614a7950a"
+            ],
+            "wpvulndb": [
+              "25374232-2f9c-453d-bc47-124f80e67a92"
+            ]
+          }
+        }
+      ],
+      "version": {
+        "number": "3.27.0",
+        "confidence": 100,
+        "found_by": "Javascript Comment (Aggressive Detection)",
+        "interesting_entries": [
+          "https://centrorotulozafra.com/wp-content/plugins/elementor/assets/js/admin-feedback.js, Match: 'elementor - v3.27.0'"
+        ],
+        "confirmed_by": {
+          "Style Comment (Aggressive Detection)": {
+            "confidence": 60,
+            "interesting_entries": [
+              "https://centrorotulozafra.com/wp-content/plugins/elementor/assets/css/admin.min.css, Match: 'elementor - v3.27.0'"
+            ]
+          }
+        }
+      }
+    },
+    "gp-premium": {
+      "slug": "gp-premium",
+      "location": "https://centrorotulozafra.com/wp-content/plugins/gp-premium/",
+      "latest_version": null,
+      "last_updated": null,
+      "outdated": false,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Urls In Homepage (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Urls In 404 Page (Passive Detection)": {
+          "confidence": 80,
+          "interesting_entries": [
+
+          ]
+        }
+      },
+      "vulnerabilities": [
+        {
+          "title": "GP Premium < 2.4.1 - Reflected Cross-Site Scripting",
+          "fixed_in": "2.4.1",
+          "references": {
+            "cve": [
+              "2024-3469"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/1a697391-f30d-403f-9046-8fa219a49302"
+            ],
+            "wpvulndb": [
+              "0628b80c-279d-4434-839c-fb9bd26d1ad7"
+            ]
+          }
+        }
+      ],
+      "version": null
+    },
+    "menu-icons": {
+      "slug": "menu-icons",
+      "location": "https://centrorotulozafra.com/wp-content/plugins/menu-icons/",
+      "latest_version": "0.13.16",
+      "last_updated": "2024-11-12T22:24:00.000Z",
+      "outdated": true,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Urls In Homepage (Passive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+        "Urls In 404 Page (Passive Detection)": {
+          "confidence": 80,
+          "interesting_entries": [
+
+          ]
+        }
+      },
+      "vulnerabilities": [
+        {
+          "title": "Menu Icons by ThemeIsle < 0.13.14 - Authenticated (Author+) Stored Cross-Site Scripting via SVG Upload",
+          "fixed_in": "0.13.14",
+          "references": {
+            "cve": [
+              "2024-4635"
+            ],
+            "url": [
+              "https://www.wordfence.com/threat-intel/vulnerabilities/id/90284576-6570-4e4c-8eb3-743bc402ea1b"
+            ],
+            "wpvulndb": [
+              "776c230a-403a-4dca-b12c-d8e4c35c425c"
+            ]
+          }
+        }
+      ],
+      "version": {
+        "number": "0.12.5",
+        "confidence": 60,
+        "found_by": "Change Log (Aggressive Detection)",
+        "interesting_entries": [
+          "https://centrorotulozafra.com/wp-content/plugins/menu-icons/CHANGELOG.md, Match: '## v0.12.5'"
+        ],
+        "confirmed_by": {
+
+        }
+      }
+    },
+    "wordpress-seo-premium": {
+      "slug": "wordpress-seo-premium",
+      "location": "https://centrorotulozafra.com/wp-content/plugins/wordpress-seo-premium/",
+      "latest_version": "24.5",
+      "last_updated": "2025-02-18T09:43:45.000Z",
+      "outdated": false,
+      "readme_url": null,
+      "directory_listing": null,
+      "error_log_url": null,
+      "found_by": "Comment (Passive Detection)",
+      "confidence": 30,
+      "interesting_entries": [
+
+      ],
+      "confirmed_by": {
+
+      },
+      "vulnerabilities": [
+        {
+          "title": "WordPress SEO by Yoast < 2.1 - Cross-Site Scripting (XSS)",
+          "fixed_in": "2.1",
+          "references": {
+            "url": [
+              "https://yoast.com/coordinated-security-release/",
+              "https://blog.sucuri.net/2015/04/security-advisory-xss-vulnerability-affecting-multiple-wordpress-plugins.html"
+            ],
+            "wpvulndb": [
+              "42d994ec-9da9-4dd6-9d44-347becaedb3a"
+            ]
+          }
+        },
+        {
+          "title": " Yoast SEO 1.2.0-11.5 - Authenticated Stored XSS",
+          "fixed_in": "11.6",
+          "references": {
+            "cve": [
+              "2019-13478"
+            ],
+            "url": [
+              "https://gist.github.com/sybrew/2f53625104ee013d2f599ac254f635ee",
+              "https://github.com/Yoast/wordpress-seo/pull/13221",
+              "https://yoast.com/yoast-seo-11.6/"
+            ],
+            "wpvulndb": [
+              "8bc4cf95-79f7-4d92-b320-a841ab7e6a6f"
+            ]
+          }
+        }
+      ],
+      "version": null
+    }
+  },
+  "themes": {
+
+  },
+  "users": {
+    "centrodelrotuloz": {
+      "id": 1,
+      "found_by": "Wp Json Api (Aggressive Detection)",
+      "confidence": 100,
+      "interesting_entries": [
+        "https://centrorotulozafra.com/wp-json/wp/v2/users/?per_page=100&page=1"
+      ],
+      "confirmed_by": {
+
+      }
+    }
+  },
+  "vuln_api": {
+    "plan": "free",
+    "requests_done_during_scan": 9,
+    "requests_remaining": 4
+  },
+  "stop_time": 1740760760,
+  "elapsed": 68,
+  "requests_done": 760,
+  "cached_requests": 14,
+  "data_sent": 179352,
+  "data_sent_humanised": "175.148 KB",
+  "data_received": 2352592,
+  "data_received_humanised": "2.244 MB",
+  "used_memory": 337592320,
+  "used_memory_humanised": "321.953 MB"
+}

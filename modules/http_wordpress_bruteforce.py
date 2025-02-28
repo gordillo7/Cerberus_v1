@@ -3,13 +3,9 @@ import sys
 import subprocess
 import tempfile
 import re
+from modules.http_detect_scheme import get_scheme
 
 def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file):
-    """
-    Runs WPScan using usernames and passwords files and reports all valid credentials
-    found (according to the output, which must contain lines in the format:
-    [SUCCESS] - username / password).
-    """
     command = [
         "wpscan",
         "--url", target,
@@ -46,18 +42,8 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         return 0
 
 def wordpress_bruteforce(target):
-    """
-    Performs brute force against a WordPress site using WPScan and the available wordlists.
-    It executes all scenarios:
-      1. If the folder wordlists/<target_clean>/ exists:
-         - If both files (users.txt and passwords.txt) are found, they are used.
-         - If only users.txt exists, the default password list (top_wordpress_passwords.txt) is used.
-         Additionally, the scenario user:user is tested for each user.
-      2. The combined credentials list from wordlists/misc/common_credentials.txt is tried.
-    """
-    # Ensure that the target includes the scheme
-    if not target.startswith("http://") and not target.startswith("https://"):
-        target = "http://" + target
+    scheme = get_scheme(target) + "://"
+    target = scheme + target
     target_clean = target.replace("http://", "").replace("https://", "").rstrip("/")
 
     # Directory to save logs and results

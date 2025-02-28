@@ -1,0 +1,16 @@
+Plugin: elementor
+CVE:
+  - 2024-13445
+
+Plugin: gp-premium
+CVE:
+  - 2024-3469
+
+Plugin: menu-icons
+CVE:
+  - 2024-4635
+
+Plugin: wordpress-seo-premium
+CVE:
+  - 2019-13478
+
