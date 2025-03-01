@@ -1,4 +1,3 @@
-- Apartado en la interfaz web para APIs Tokens.
 - Reconocimiento de hosting, dns, correo que usa, DNS dumper mx records.
 - Ejecutar el main.py para cada subdominio encontrado.
 - Usar IA (Deepseek) para la facilitar la explotacion de CVEs.

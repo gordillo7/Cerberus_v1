@@ -1,11 +1,13 @@
 from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 from pathlib import Path
-import os, signal, subprocess, json, datetime
+from typing import cast
+import os, signal, subprocess, json, datetime, io
 
 app = Flask(__name__)
 app.current_scan_process = None
 
 os.makedirs("logs", exist_ok=True)
+os.makedirs("config", exist_ok=True)
 
 @app.route('/')
 def index():
@@ -103,6 +105,45 @@ def stop_scan():
         return jsonify({'message': 'Scan aborted.'})
     else:
         return jsonify({'message': 'No scan is running.'}), 404
+
+
+@app.route('/api/settings/wpscan-token', methods=['GET', 'POST'])
+def manage_wpscan_token():
+    config_file = Path('config/api_tokens.json')
+
+    # Create config file if it doesn't exist
+    if not config_file.exists():
+        config_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(config_file, 'w', encoding='utf-8') as f:
+            json.dump({}, cast(io.TextIOBase, f))
+
+    if request.method == 'POST':
+        data = request.get_json()
+        token = data.get('token', '').strip()
+
+        # Read existing config
+        config = {}
+        if config_file.exists():
+            with open(config_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+
+        # Update token
+        config['wpscan'] = token
+
+        # Save config
+        with open(config_file, 'w', encoding='utf-8') as f:
+            json.dump(config, cast(io.TextIOBase, f))
+
+        return jsonify({'message': 'WPScan API token saved successfully.'}), 200
+
+    else:  # GET request
+        if config_file.exists():
+            with open(config_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+            token = config.get('wpscan', '')
+        else:
+            token = ''
+        return jsonify({'token': token}), 200
 
 
 if __name__ == '__main__':

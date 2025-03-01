@@ -9,6 +9,13 @@ from urllib.parse import urljoin, urlparse
 from bs4 import BeautifulSoup
 from modules.http_detect_scheme import get_scheme
 
+def get_wpscan_api_token():
+    config_file = os.path.join('config', 'api_tokens.json')
+    if os.path.exists(config_file):
+        with open(config_file, 'r') as f:
+            config = json.load(f)
+            return config.get('wpscan', '')
+    return ''
 
 def run_wpscan(target_ip, domain=None):
     # If a domain is provided, use it instead of the IP
@@ -32,6 +39,14 @@ def run_wpscan(target_ip, domain=None):
         "--format", "json",
         "--output", output_file
     ]
+
+    # Add API token if available
+    api_token = get_wpscan_api_token()
+    if api_token:
+        command.extend(["--api-token", api_token])
+        print("[*] Using WPScan API token for enhanced scanning capabilities")
+    else:
+        print("[!] No WPScan API token found. Consider adding one in Settings for better results")
 
     result = subprocess.run(
         command,

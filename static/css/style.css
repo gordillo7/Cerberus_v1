@@ -504,6 +504,90 @@ header {
     background-color: rgba(239, 68, 68, 0.1);
 }
 
+.settings-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.settings-section h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.settings-section p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.settings-section a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.settings-section a:hover {
+  text-decoration: underline;
+}
+
+.token-input {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  color: var(--text);
+  font-family: monospace;
+}
+
+.token-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.token-set-indicator {
+  position: absolute;
+  right: 10px;
+  background-color: var(--success);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.token-input {
+  width: 100%;
+  padding-right: 80px; /* Make space for the indicator */
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.token-status {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  display: none;
+}
+
+.token-status.success {
+  display: block;
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.token-status.error {
+  display: block;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
 #terminal-output {
     font-family: 'Courier New', monospace;
     font-size: 0.875rem;
@@ -525,6 +609,16 @@ header {
 #scanner-page .card {
     flex: 1 1 calc(50% - 0.5rem);
     min-width: 300px;
+}
+
+#fullScanTarget{
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text);
+    font-family: monospace;
 }
 
 @media (max-width: 768px) {

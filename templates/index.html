@@ -92,7 +92,7 @@
                     <form id="fullScanForm">
                         <div class="input-group">
                             <label for="fullScanTarget">Target</label>
-                            <input type="text" id="fullScanTarget" name="target" placeholder="Target" required>
+                            <input type="text" id="fullScanTarget" name="target" placeholder="Enter the target" required>
                         </div>
                         <button type="submit" class="submit-btn">
                             <span class="material-icons">play_arrow</span>
@@ -133,8 +133,35 @@
             <!-- Settings -->
             <div class="page" id="settings-page" style="display: none;">
                 <div class="card">
-                    <h2>Settings</h2>
-                    <p>Settings options will go here.</p>
+                    <h2>API Tokens</h2>
+                    <p>Configure API tokens for external services used by Cerberus.</p>
+
+                    <div class="settings-section">
+                        <h3>WPScan API Token</h3>
+                        <p>Enter your WPScan API token to enable more comprehensive WordPress scanning. <a href="https://wpscan.com/api" target="_blank">Get a token</a></p>
+
+                        <form id="wpscanTokenForm">
+                            <div class="input-group">
+                                <label for="wpscanToken">WPScan API Token</label>
+                                <div class="token-input-wrapper">
+                                    <input type="text" id="wpscanToken" name="wpscan_token" placeholder="Enter your WPScan API token" class="token-input">
+                                    <span id="tokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button type="submit" class="submit-btn">
+                                    <span class="material-icons">save</span>
+                                    Save Token
+                                </button>
+                            </div>
+                        </form>
+                        <div id="tokenStatus" class="token-status"></div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>General Settings</h2>
+                    <p>Additional settings options will go here.</p>
                 </div>
             </div>
         </div>

@@ -212,6 +212,60 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // API Token Management
+    const wpscanTokenForm = document.getElementById('wpscanTokenForm');
+    const wpscanTokenInput = document.getElementById('wpscanToken');
+    const tokenSetIndicator = document.getElementById('tokenSetIndicator');
+
+    if (wpscanTokenForm) {
+        // Load saved token on page load
+        fetch('/api/settings/wpscan-token')
+            .then(response => response.json())
+            .then(data => {
+                if (data.token) {
+                    wpscanTokenInput.placeholder = data.token;
+                    tokenSetIndicator.style.display = 'inline-block';
+                }
+            })
+            .catch(error => console.error('Error loading WPScan token:', error));
+
+        // Handle token form submission
+        wpscanTokenForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const tokenStatus = document.getElementById('tokenStatus');
+
+            try {
+                const response = await fetch('/api/settings/wpscan-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ token: wpscanTokenInput.value }),
+                });
+
+                const data = await response.json();
+
+                tokenStatus.textContent = data.message;
+                tokenStatus.className = 'token-status ' + (response.ok ? 'success' : 'error');
+
+                if (response.ok) {
+                    wpscanTokenInput.placeholder = wpscanTokenInput.value;
+                    wpscanTokenInput.value = '';
+                    tokenSetIndicator.style.display = 'inline-block';
+                }
+
+                // Clear status message after 3 seconds
+                setTimeout(() => {
+                    tokenStatus.style.display = 'none';
+                }, 3000);
+            } catch (error) {
+                console.error('Error saving token:', error);
+                tokenStatus.textContent = 'An error occurred while saving the token.';
+                tokenStatus.className = 'token-status error';
+            }
+        });
+    }
+
     // Call loadReports() when showing the reports page:
     function showPage(pageId) {
         pages.forEach(page => page.style.display = 'none');
@@ -233,7 +287,6 @@ document.addEventListener('DOMContentLoaded', function() {
     showPage('dashboard');
     updateStats();
     updateRecentScans();
-    loadModules();
 
     // Update statistics every 30 seconds
     setInterval(updateStats, 30000);

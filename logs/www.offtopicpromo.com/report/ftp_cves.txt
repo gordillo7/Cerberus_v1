@@ -1,0 +1,40 @@
+----Generic CVEs for the installed FTP version----
+FreeBSD - 'ftpd / ProFTPd' Remote Command Execution
+ProFTPd - 'ftpdctl' 'pr_ctrls_connect' Local Overflow
+ProFTPd - 'mod_mysql' Authentication Bypass
+ProFTPd - 'mod_sftp' Integer Overflow Denial of Service (PoC)
+ProFTPd 1.2 - 'SIZE' Remote Denial of Service
+ProFTPd 1.2 < 1.3.0 (Linux) - 'sreplace' Remote Buffer Overflow (Metasploit)
+ProFTPd 1.2 pre1/pre2/pre3/pre4/pre5 - Remote Buffer Overflow (1)
+ProFTPd 1.2 pre1/pre2/pre3/pre4/pre5 - Remote Buffer Overflow (2)
+ProFTPd 1.2 pre6 - 'snprintf' Remote Root
+ProFTPd 1.2.0 pre10 - Remote Denial of Service
+ProFTPd 1.2.0 rc2 - Memory Leakage
+ProFTPd 1.2.10 - Remote Users Enumeration
+ProFTPd 1.2.7 < 1.2.9rc2 - Remote Code Execution / Brute Force
+ProFTPd 1.2.7/1.2.8 - '.ASCII' File Transfer Buffer Overrun
+ProFTPd 1.2.9 RC1 - 'mod_sql' SQL Injection
+ProFTPd 1.2.9 rc2 - '.ASCII' File Remote Code Execution (1)
+ProFTPd 1.2.9 rc2 - '.ASCII' File Remote Code Execution (2)
+ProFTPd 1.2.x - 'STAT' Denial of Service
+ProFTPd 1.3 - 'mod_sql' 'Username' SQL Injection
+ProFTPd 1.3.0 (OpenSUSE) - 'mod_ctrls' Local Stack Overflow
+ProFTPd 1.3.0 - 'sreplace' Remote Stack Overflow (Metasploit)
+ProFTPd 1.3.0/1.3.0a - 'mod_ctrls' 'support' Local Buffer Overflow (1)
+ProFTPd 1.3.0/1.3.0a - 'mod_ctrls' 'support' Local Buffer Overflow (2)
+ProFTPd 1.3.0/1.3.0a - 'mod_ctrls' exec-shield Local Overflow
+ProFTPd 1.3.0a - 'mod_ctrls' 'support' Local Buffer Overflow (PoC)
+ProFTPd 1.3.2 rc3 < 1.3.3b (FreeBSD) - Telnet IAC Buffer Overflow (Metasploit)
+ProFTPd 1.3.2 rc3 < 1.3.3b (Linux) - Telnet IAC Buffer Overflow (Metasploit)
+ProFTPd 1.3.3c - Compromised Source Backdoor Remote Code Execution
+ProFTPd 1.3.5 - 'mod_copy' Command Execution (Metasploit)
+ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution (2)
+ProFTPd 1.3.5 - 'mod_copy' Remote Command Execution
+ProFTPd 1.3.5 - File Copy
+ProFTPD 1.3.7a - Remote Denial of Service
+ProFTPd 1.x - 'mod_tls' Remote Buffer Overflow
+ProFTPd IAC 1.3.x - Remote Command Execution
+ProFTPd-1.3.3c - Backdoor Command Execution (Metasploit)
+WU-FTPD 2.4.2 / SCO Open Server 5.0.5 / ProFTPd 1.2 pre1 - 'realpath' Remote Buffer Overflow (1)
+WU-FTPD 2.4.2 / SCO Open Server 5.0.5 / ProFTPd 1.2 pre1 - 'realpath' Remote Buffer Overflow (2)
+WU-FTPD 2.4/2.5/2.6 / Trolltech ftpd 1.2 / ProFTPd 1.2 / BeroFTPD 1.3.4 FTP - glob Expansion
