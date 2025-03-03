@@ -8,7 +8,7 @@ from modules.http_detect_scheme import get_scheme
 def whatweb(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     print(f"[+] Running whatweb on {target_ip}...")
-    tecnologias_file = f"logs/{target_clean}/http/whatweb/tecnologias.txt"
+    tec_file = f"logs/{target_clean}/http/whatweb/tec.txt"
     os.makedirs(f"logs/{target_clean}/http/whatweb", exist_ok=True)
 
     scheme = get_scheme(target_ip) + "://"
@@ -17,7 +17,7 @@ def whatweb(target_ip):
     command = [
         "whatweb",
         target_ip,
-        "--log-object", tecnologias_file
+        "--log-object", tec_file
     ]
 
     result = subprocess.run(
@@ -31,17 +31,17 @@ def whatweb(target_ip):
         print("[!] Error running whatweb:")
         print(result.stderr)
     else:
-        print(f"[+] whatweb analysis completed. Results in {tecnologias_file}")
+        print(f"[+] whatweb analysis completed. Results in {tec_file}")
 
 
 def cms_identification(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     cms_file = f"logs/{target_clean}/http/whatweb/cms.txt"
-    tecnologias_file = f"logs/{target_clean}/http/whatweb/tecnologias.txt"
+    tec_file = f"logs/{target_clean}/http/whatweb/tec.txt"
     cms_list = ["WordPress", "Joomla", "Drupal"]
     cms_detectado = "unknown"
 
-    with open(tecnologias_file, 'r') as f:
+    with open(tec_file, 'r') as f:
         lineas = f.readlines()
 
     for cms in cms_list:
