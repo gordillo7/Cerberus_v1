@@ -1,8 +1,19 @@
 - Reconocimiento de hosting, dns, correo que usa, DNS dumper mx records.
-- Ejecutar el main.py para cada subdominio encontrado.
 - Usar IA (Deepseek) para la facilitar la explotacion de CVEs.
 - IA (Deepseek) para seguir despues con recomendaciones.
+- Ejecutar el main.py para cada subdominio encontrado.
 
 A futuro:
-- Mirar https://github.com/micro-joan/BlackStone
+- Mirar https://github.com/micro-joan/BlackStone.
 - Bot de Telegram para reporte en tiempo real (secundario).
+
+-------------------------------------------------------
+AVANCES:
+- Screenshot de la web.
+- Traduccion al ingles de la herramienta.
+- Pestaña de API Tokens en la interfaz web.
+- Versión basica de dns recon (dnsrecon).
+
+DUDAS:
+- Qué hay que reportar exactamente de la parte de reconocimiento DNS.
+- Modelo de IA a usar (ChatGPT, DeepSeek...).
