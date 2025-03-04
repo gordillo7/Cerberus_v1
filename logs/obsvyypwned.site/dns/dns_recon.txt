@@ -1,0 +1,8 @@
+[*] Checking for Zone Transfer for obsvyypwned.site name servers
+[*] Resolving SOA Record
+[-] Exception "The DNS operation timed out." while resolving SOA record.
+[-] Error while resolving SOA while using 158.49.113.21 as nameserver.
+[*] Resolving NS Records
+[*] NS Servers found:
+[*] Removing any duplicate NS server IP Addresses...
+[-] axfr: No records were returned.

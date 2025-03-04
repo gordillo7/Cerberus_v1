@@ -46,6 +46,8 @@ def generate_report(target):
             filepath = os.path.join(report_dir, filename)
             if os.path.isfile(filepath):
                 if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    elements.append(Paragraph("Website screenshot", styles['Heading3']))
+                    elements.append(Spacer(1, 8))
                     elements.append(Image(filepath, width=400, height=300))
                     elements.append(Spacer(1, 12))
                 elif filename != "nmap.txt":

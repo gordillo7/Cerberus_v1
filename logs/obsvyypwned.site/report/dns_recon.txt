@@ -1,0 +1,7 @@
+--DNS Recon Report--
+
+MX records found:
+  No MX records found.
+
+TXT records found:
+  No TXT records found.

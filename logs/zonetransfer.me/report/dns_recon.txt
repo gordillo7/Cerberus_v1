@@ -1,0 +1,55 @@
+--DNS Recon Report--
+
+MX records found:
+  [*] 	 MX @.zonetransfer.me ASPMX.L.GOOGLE.COM 64.233.184.27
+  [*] 	 MX @.zonetransfer.me ASPMX.L.GOOGLE.COM 2a00:1450:400c:c0c::1b
+  [*] 	 MX @.zonetransfer.me ALT1.ASPMX.L.GOOGLE.COM 142.250.153.26
+  [*] 	 MX @.zonetransfer.me ALT1.ASPMX.L.GOOGLE.COM 2a00:1450:4013:c16::1b
+  [*] 	 MX @.zonetransfer.me ALT2.ASPMX.L.GOOGLE.COM 142.251.9.26
+  [*] 	 MX @.zonetransfer.me ALT2.ASPMX.L.GOOGLE.COM 2a00:1450:4025:c03::1a
+  [*] 	 MX @.zonetransfer.me ASPMX2.GOOGLEMAIL.COM 142.250.153.26
+  [*] 	 MX @.zonetransfer.me ASPMX2.GOOGLEMAIL.COM 2a00:1450:4013:c16::1a
+  [*] 	 MX @.zonetransfer.me ASPMX3.GOOGLEMAIL.COM 142.251.9.27
+  [*] 	 MX @.zonetransfer.me ASPMX3.GOOGLEMAIL.COM 2a00:1450:4025:c03::1a
+  [*] 	 MX @.zonetransfer.me ASPMX4.GOOGLEMAIL.COM 142.250.150.26
+  [*] 	 MX @.zonetransfer.me ASPMX4.GOOGLEMAIL.COM 2a00:1450:4010:c1c::1b
+  [*] 	 MX @.zonetransfer.me ASPMX5.GOOGLEMAIL.COM 74.125.200.27
+  [*] 	 MX @.zonetransfer.me ASPMX5.GOOGLEMAIL.COM 2404:6800:4003:c00::1a
+  [*] 	 MX @.zonetransfer.me ASPMX.L.GOOGLE.COM 64.233.184.27
+  [*] 	 MX @.zonetransfer.me ASPMX.L.GOOGLE.COM 2a00:1450:400c:c0c::1b
+  [*] 	 MX @.zonetransfer.me ALT1.ASPMX.L.GOOGLE.COM 142.250.153.26
+  [*] 	 MX @.zonetransfer.me ALT1.ASPMX.L.GOOGLE.COM 2a00:1450:4013:c16::1b
+  [*] 	 MX @.zonetransfer.me ALT2.ASPMX.L.GOOGLE.COM 142.251.9.26
+  [*] 	 MX @.zonetransfer.me ALT2.ASPMX.L.GOOGLE.COM 2a00:1450:4025:c03::1a
+  [*] 	 MX @.zonetransfer.me ASPMX2.GOOGLEMAIL.COM 142.250.153.26
+  [*] 	 MX @.zonetransfer.me ASPMX2.GOOGLEMAIL.COM 2a00:1450:4013:c16::1a
+  [*] 	 MX @.zonetransfer.me ASPMX3.GOOGLEMAIL.COM 142.251.9.27
+  [*] 	 MX @.zonetransfer.me ASPMX3.GOOGLEMAIL.COM 2a00:1450:4025:c03::1a
+  [*] 	 MX @.zonetransfer.me ASPMX4.GOOGLEMAIL.COM 142.250.150.26
+  [*] 	 MX @.zonetransfer.me ASPMX4.GOOGLEMAIL.COM 2a00:1450:4010:c1c::1b
+  [*] 	 MX @.zonetransfer.me ASPMX5.GOOGLEMAIL.COM 74.125.200.27
+  [*] 	 MX @.zonetransfer.me ASPMX5.GOOGLEMAIL.COM 2404:6800:4003:c00::1a
+
+TXT records found:
+  [*] 	 TXT google-site-verification=tyP28J7JAUHA9fw2sHXMgcCC0I6XBmmoVi04VlMewxA
+  [*] 	 TXT 6Oa05hbUJ9xSsvYy7pApQvwCUSSGgxvrbdizjePEsZI
+  [*] 	 TXT ; ls
+  [*] 	 TXT Remember to call or email Pippa on +44 123 4567890 or pippa@zonetransfer.me when making DNS changes
+  [*] 	 TXT AbCdEfG
+  [*] 	 TXT Hi to Josh and all his class
+  [*] 	 TXT ZoneTransfer.me service provided by Robin Wood - robin@digi.ninja. See http://digi.ninja/projects/zonetransferme.php for more information.
+  [*] 	 TXT Robin Wood
+  [*] 	 TXT ' or 1=1 --
+  [*] 	 TXT () { :]}; echo ShellShocked
+  [*] 	 TXT '><script>alert('Boo')</script>
+  [*] 	 TXT google-site-verification=tyP28J7JAUHA9fw2sHXMgcCC0I6XBmmoVi04VlMewxA
+  [*] 	 TXT 6Oa05hbUJ9xSsvYy7pApQvwCUSSGgxvrbdizjePEsZI
+  [*] 	 TXT ; ls
+  [*] 	 TXT Remember to call or email Pippa on +44 123 4567890 or pippa@zonetransfer.me when making DNS changes
+  [*] 	 TXT AbCdEfG
+  [*] 	 TXT Hi to Josh and all his class
+  [*] 	 TXT ZoneTransfer.me service provided by Robin Wood - robin@digi.ninja. See http://digi.ninja/projects/zonetransferme.php for more information.
+  [*] 	 TXT Robin Wood
+  [*] 	 TXT ' or 1=1 --
+  [*] 	 TXT () { :]}; echo ShellShocked
+  [*] 	 TXT '><script>alert('Boo')</script>
