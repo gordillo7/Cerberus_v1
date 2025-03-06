@@ -1,6 +1,14 @@
 - Reconocimiento de hosting, dns, correo que usa, DNS dumper mx records.
-- Usar IA (Deepseek) para la facilitar la explotacion de CVEs.
-- IA (Deepseek) para seguir despues con recomendaciones.
+    * DMARC Records.
+    * whois.
+    * NS, MX.
+    * MX toolbox.
+    * A --> Ipinfo.
+    * osint correo electronico(inteligencex) + i have been pwned.
+- Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT)
+- Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
+    * Usar Proxy en WPscan (el parametro --proxy)
+- Meter IA.
 - Ejecutar el main.py para cada subdominio encontrado.
 
 A futuro:
@@ -9,11 +17,6 @@ A futuro:
 
 -------------------------------------------------------
 AVANCES:
-- Screenshot de la web.
-- Traduccion al ingles de la herramienta.
-- Pestaña de API Tokens en la interfaz web.
-- Versión basica de dns recon (dnsrecon).
 
 DUDAS:
-- Qué hay que reportar exactamente de la parte de reconocimiento DNS.
 - Modelo de IA a usar (ChatGPT, DeepSeek...).

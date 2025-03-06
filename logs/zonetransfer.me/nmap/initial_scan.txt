@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Tue Mar  4 13:28:46 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/zonetransfer.me/nmap/initial_scan.txt zonetransfer.me
-Host: 5.196.105.14 ()	Status: Up
-Host: 5.196.105.14 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 8080/open/tcp//http-proxy///
-# Nmap done at Tue Mar  4 13:29:13 2025 -- 1 IP address (1 host up) scanned in 26.51 seconds
