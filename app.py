@@ -107,8 +107,37 @@ def stop_scan():
         return jsonify({'message': 'No scan is running.'}), 404
 
 
+# API Token Management - Generic function
+def get_token_from_config(token_name):
+    config_file = Path('config/api_tokens.json')
+    if config_file.exists():
+        with open(config_file, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+        return config.get(token_name, '')
+    return ''
+
+# API Token Management - WPScan
 @app.route('/api/settings/wpscan-token', methods=['GET', 'POST'])
 def manage_wpscan_token():
+    return manage_token('wpscan')
+
+# API Token Management - DNSDumpster
+@app.route('/api/settings/dnsdumpster-token', methods=['GET', 'POST'])
+def manage_dnsdumpster_token():
+    return manage_token('dnsdumpster')
+
+# API Token Management - MX ToolBox
+@app.route('/api/settings/mxtoolbox-token', methods=['GET', 'POST'])
+def manage_mxtoolbox_token():
+    return manage_token('mxtoolbox')
+
+# API Token Management - APINinja Whois
+@app.route('/api/settings/apininja-token', methods=['GET', 'POST'])
+def manage_apininja_token():
+    return manage_token('apininja')
+
+# Generic token management function
+def manage_token(token_name):
     config_file = Path('config/api_tokens.json')
 
     # Create config file if it doesn't exist
@@ -128,19 +157,19 @@ def manage_wpscan_token():
                 config = json.load(f)
 
         # Update token
-        config['wpscan'] = token
+        config[token_name] = token
 
         # Save config
         with open(config_file, 'w', encoding='utf-8') as f:
             json.dump(config, cast(io.TextIOBase, f))
 
-        return jsonify({'message': 'WPScan API token saved successfully.'}), 200
+        return jsonify({'message': f'{token_name.capitalize()} API token saved successfully.'}), 200
 
     else:  # GET request
         if config_file.exists():
             with open(config_file, 'r', encoding='utf-8') as f:
                 config = json.load(f)
-            token = config.get('wpscan', '')
+            token = config.get(token_name, '')
         else:
             token = ''
         return jsonify({'token': token}), 200

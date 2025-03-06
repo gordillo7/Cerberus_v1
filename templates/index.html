@@ -133,29 +133,106 @@
             <!-- Settings -->
             <div class="page" id="settings-page" style="display: none;">
                 <div class="card">
+                    <div class="card-header" id="apiTokensHeader">
                     <h2>API Tokens</h2>
+                    <button class="toggle-btn" aria-expanded="false" aria-controls="apiTokensContent">
+                        <span class="material-icons">expand_more</span>
+                    </button>
+                    </div>
                     <p>Configure API tokens for external services used by Cerberus.</p>
 
-                    <div class="settings-section">
-                        <h3>WPScan API Token</h3>
-                        <p>Enter your WPScan API token to enable more comprehensive WordPress scanning. <a href="https://wpscan.com/api" target="_blank">Get a token</a></p>
+                    <div class="card-content" id="apiTokensContent" style="display: none;">
+                        <!-- WPScan API Token -->
+                        <div class="settings-section">
+                            <h3>WPScan API Token</h3>
+                            <p>Enter your WPScan API token to enable more comprehensive WordPress scanning. <a href="https://wpscan.com/api" target="_blank">Get a token</a></p>
 
-                        <form id="wpscanTokenForm">
-                            <div class="input-group">
-                                <label for="wpscanToken">WPScan API Token</label>
-                                <div class="token-input-wrapper">
-                                    <input type="text" id="wpscanToken" name="wpscan_token" placeholder="Enter your WPScan API token" class="token-input">
-                                    <span id="tokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                            <form id="wpscanTokenForm">
+                                <div class="input-group">
+                                    <label for="wpscanToken">WPScan API Token</label>
+                                    <div class="token-input-wrapper">
+                                        <input type="text" id="wpscanToken" name="wpscan_token" placeholder="Enter your WPScan API token" class="token-input">
+                                        <span id="wpscanTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="button-group">
-                                <button type="submit" class="submit-btn">
-                                    <span class="material-icons">save</span>
-                                    Save Token
-                                </button>
-                            </div>
-                        </form>
-                        <div id="tokenStatus" class="token-status"></div>
+                                <div class="button-group">
+                                    <button type="submit" class="submit-btn">
+                                        <span class="material-icons">save</span>
+                                        Save Token
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="wpscanTokenStatus" class="token-status"></div>
+                        </div>
+
+                        <!-- DNSDumpster API Token -->
+                        <div class="settings-section">
+                            <h3>DNSDumpster API Token</h3>
+                            <p>Enter your DNSDumpster API token for DNS reconnaissance. <a href="https://dnsdumpster.com/my-account" target="_blank">Get a token</a></p>
+
+                            <form id="dnsdumpsterTokenForm">
+                                <div class="input-group">
+                                    <label for="dnsdumpsterToken">DNSDumpster API Token</label>
+                                    <div class="token-input-wrapper">
+                                        <input type="text" id="dnsdumpsterToken" name="dnsdumpster_token" placeholder="Enter your DNSDumpster API token" class="token-input">
+                                        <span id="dnsdumpsterTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button type="submit" class="submit-btn">
+                                        <span class="material-icons">save</span>
+                                        Save Token
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="dnsdumpsterTokenStatus" class="token-status"></div>
+                        </div>
+
+                        <!-- MX ToolBox API Token -->
+                        <div class="settings-section">
+                            <h3>MX ToolBox API Token</h3>
+                            <p>Enter your MX ToolBox API token for DMARC record analysis. <a href="https://mxtoolbox.com/user/api" target="_blank">Get a token</a></p>
+
+                            <form id="mxtoolboxTokenForm">
+                                <div class="input-group">
+                                    <label for="mxtoolboxToken">MX ToolBox API Token</label>
+                                    <div class="token-input-wrapper">
+                                        <input type="text" id="mxtoolboxToken" name="mxtoolbox_token" placeholder="Enter your MX ToolBox API token" class="token-input">
+                                        <span id="mxtoolboxTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button type="submit" class="submit-btn">
+                                        <span class="material-icons">save</span>
+                                        Save Token
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="mxtoolboxTokenStatus" class="token-status"></div>
+                        </div>
+
+                        <!-- APINinja Whois Token -->
+                        <div class="settings-section">
+                            <h3>APINinja Whois API Token</h3>
+                            <p>Enter your APINinja token for domain ownership information. <a href="https://www.api-ninjas.com/profile" target="_blank">Get a token</a></p>
+
+                            <form id="apininjaTokenForm">
+                                <div class="input-group">
+                                    <label for="apininjaToken">APINinja API Token</label>
+                                    <div class="token-input-wrapper">
+                                        <input type="text" id="apininjaToken" name="apininja_token" placeholder="Enter your APINinja token" class="token-input">
+                                        <span id="apininjaTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                    </div>
+                                </div>
+                                <div class="button-group">
+                                    <button type="submit" class="submit-btn">
+                                        <span class="material-icons">save</span>
+                                        Save Token
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="apininjaTokenStatus" class="token-status"></div>
+                        </div>
                     </div>
                 </div>
 

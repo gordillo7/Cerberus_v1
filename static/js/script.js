@@ -70,24 +70,6 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
 
-    /*
-    // Load available modules
-    function loadModules() {
-        fetch('/api/modules')
-            .then(response => response.json())
-            .then(modules => {
-                const modulesGrid = document.getElementById('modules-list');
-                modulesGrid.innerHTML = modules.map(module => `
-                    <label class="module-checkbox">
-                        <input type="checkbox" name="modules" value="${module.id}">
-                        <span class="material-icons">${module.icon}</span>
-                        ${module.name}
-                    </label>
-                `).join('');
-            });
-    }
-    */
-
     // Scan console
     const scanConsole = {
         element: document.getElementById('scan-console'),
@@ -213,57 +195,64 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // API Token Management
-    const wpscanTokenForm = document.getElementById('wpscanTokenForm');
-    const wpscanTokenInput = document.getElementById('wpscanToken');
-    const tokenSetIndicator = document.getElementById('tokenSetIndicator');
+    function setupTokenForm(tokenName) {
+        const formId = `${tokenName}TokenForm`;
+        const inputId = `${tokenName}Token`;
+        const indicatorId = `${tokenName}TokenSetIndicator`;
+        const statusId = `${tokenName}TokenStatus`;
 
-    if (wpscanTokenForm) {
-        // Load saved token on page load
-        fetch('/api/settings/wpscan-token')
-            .then(response => response.json())
-            .then(data => {
-                if (data.token) {
-                    wpscanTokenInput.placeholder = data.token;
-                    tokenSetIndicator.style.display = 'inline-block';
+        const tokenForm = document.getElementById(formId);
+        const tokenInput = document.getElementById(inputId);
+        const tokenSetIndicator = document.getElementById(indicatorId);
+
+        if (tokenForm) {
+            // Load saved token on page load
+            fetch(`/api/settings/${tokenName}-token`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.token) {
+                        tokenInput.placeholder = data.token;
+                        tokenSetIndicator.style.display = 'inline-block';
+                    }
+                })
+                .catch(error => console.error(`Error loading ${tokenName} token:`, error));
+
+            // Handle token form submission
+            tokenForm.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const tokenStatus = document.getElementById(statusId);
+
+                try {
+                    const response = await fetch(`/api/settings/${tokenName}-token`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ token: tokenInput.value }),
+                    });
+
+                    const data = await response.json();
+
+                    tokenStatus.textContent = data.message;
+                    tokenStatus.className = 'token-status ' + (response.ok ? 'success' : 'error');
+
+                    if (response.ok) {
+                        tokenInput.placeholder = tokenInput.value;
+                        tokenInput.value = '';
+                        tokenSetIndicator.style.display = 'inline-block';
+                    }
+
+                    // Clear status message after 3 seconds
+                    setTimeout(() => {
+                        tokenStatus.style.display = 'none';
+                    }, 3000);
+                } catch (error) {
+                    console.error(`Error saving ${tokenName} token:`, error);
+                    tokenStatus.textContent = 'An error occurred while saving the token.';
+                    tokenStatus.className = 'token-status error';
                 }
-            })
-            .catch(error => console.error('Error loading WPScan token:', error));
-
-        // Handle token form submission
-        wpscanTokenForm.addEventListener('submit', async function(event) {
-            event.preventDefault();
-            const tokenStatus = document.getElementById('tokenStatus');
-
-            try {
-                const response = await fetch('/api/settings/wpscan-token', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ token: wpscanTokenInput.value }),
-                });
-
-                const data = await response.json();
-
-                tokenStatus.textContent = data.message;
-                tokenStatus.className = 'token-status ' + (response.ok ? 'success' : 'error');
-
-                if (response.ok) {
-                    wpscanTokenInput.placeholder = wpscanTokenInput.value;
-                    wpscanTokenInput.value = '';
-                    tokenSetIndicator.style.display = 'inline-block';
-                }
-
-                // Clear status message after 3 seconds
-                setTimeout(() => {
-                    tokenStatus.style.display = 'none';
-                }, 3000);
-            } catch (error) {
-                console.error('Error saving token:', error);
-                tokenStatus.textContent = 'An error occurred while saving the token.';
-                tokenStatus.className = 'token-status error';
-            }
-        });
+            });
+        }
     }
 
     // Call loadReports() when showing the reports page:
@@ -283,10 +272,44 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Toggle API Tokens card
+    const apiTokensHeader = document.getElementById('apiTokensHeader');
+    if (apiTokensHeader) {
+        const toggleBtn = apiTokensHeader.querySelector('.toggle-btn');
+        const apiTokensContent = document.getElementById('apiTokensContent');
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function() {
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+
+                if (expanded) {
+                    apiTokensContent.classList.remove('expanded');
+                    // Esperar a que termine la transición antes de ocultar completamente
+                    setTimeout(() => {
+                        apiTokensContent.style.display = 'none';
+                    }, 300); // Este tiempo debe ser menor que la duración de la transición
+                } else {
+                    apiTokensContent.style.display = 'block';
+                    // Pequeño retraso para asegurar que display:block se aplique primero
+                    setTimeout(() => {
+                        apiTokensContent.classList.add('expanded');
+                    }, 10);
+                }
+            });
+        }
+    }
+
     // Initialization
     showPage('dashboard');
     updateStats();
     updateRecentScans();
+
+    // Initialize all token forms
+    setupTokenForm('wpscan');
+    setupTokenForm('dnsdumpster');
+    setupTokenForm('mxtoolbox');
+    setupTokenForm('apininja');
 
     // Update statistics every 30 seconds
     setInterval(updateStats, 30000);

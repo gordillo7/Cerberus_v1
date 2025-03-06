@@ -561,6 +561,10 @@ header {
   padding-right: 80px; /* Make space for the indicator */
 }
 
+.token-input:focus {
+    outline: none;
+}
+
 .button-group {
   display: flex;
   gap: 1rem;
@@ -586,6 +590,50 @@ header {
   background-color: rgba(239, 68, 68, 0.1);
   color: var(--danger);
   border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-btn .material-icons {
+    transition: transform 0.3s;
+}
+
+.toggle-btn[aria-expanded="true"] .material-icons {
+    transform: rotate(180deg);
+}
+
+.card-content {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.card-content.expanded {
+    max-height: 100%;
+    opacity: 1;
 }
 
 #terminal-output {
