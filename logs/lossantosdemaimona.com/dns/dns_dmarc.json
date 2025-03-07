@@ -1,0 +1,86 @@
+{
+  "UID": null,
+  "ArgumentType": "domain",
+  "Command": "dmarc",
+  "IsTransitioned": false,
+  "CommandArgument": "lossantosdemaimona.com",
+  "TimeRecorded": "2025-03-07T03:21:41.4206667-06:00",
+  "ReportingNameServer": "mundored2.servidoresdominios.com",
+  "TimeToComplete": "169",
+  "RelatedIP": null,
+  "ResourceRecordType": 0,
+  "IsEmptySubDomain": false,
+  "SPF_Subaction_Detail": {
+    "Void_lookups": null,
+    "Invalid_Redirects": null,
+    "Recursive_Paths": null,
+    "Invalid_Includes": null,
+    "Deprecated_SPF_Records": null,
+    "MX_Resource_Records": null,
+    "Modifier_Ignored": null,
+    "Included_Lookups": null,
+    "Duplicate_Includes": null
+  },
+  "Records": [],
+  "IsEndpoint": false,
+  "HasSubscriptions": false,
+  "AlertgroupSubscriptionId": null,
+  "Failed": [
+    {
+      "ID": 441,
+      "Name": "DMARC Record Published",
+      "Info": "No DMARC Record found",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Record-Published?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:lossantosdemaimona.com",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    }
+  ],
+  "Warnings": [],
+  "Passed": [],
+  "Timeouts": [],
+  "Errors": [],
+  "IsError": false,
+  "Information": [],
+  "MultiInformation": [],
+  "Transcript": [
+    {
+      "Transcript": "- - - dmarc:_dmarc.lossantosdemaimona.com\r\n\r\n&emsp; 1 m.gtld-servers.net 192.55.83.30 NON-AUTH 66 ms Received 2 Referrals , rcode=NO_ERROR &emsp; lossantosdemaimona.com.\t172800\tIN\tNS\tmundored1.servidoresdominios.com,lossantosdemaimona.com.\t172800\tIN\tNS\tmundored2.servidoresdominios.com,\r\n&emsp; 2 mundored2.servidoresdominios.com 91.146.97.127 AUTH 103 ms Received 1 Referrals , rcode=NAME_ERROR &emsp; lossantosdemaimona.com.\t10800\tIN\tSOA\t mname=mundored1.servidoresdominios.com rname=plesk.mundored.com serial=1736762322,\r\nLookupServer 169ms\r\n"
+    }
+  ],
+  "MxRep": 0,
+  "EmailServiceProvider": null,
+  "DnsServiceProvider": null,
+  "DnsServiceProviderIdentifier": null,
+  "RelatedLookups": [
+    {
+      "Name": "dns lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/a/lossantosdemaimona.com",
+      "Command": "a",
+      "CommandArgument": "lossantosdemaimona.com"
+    },
+    {
+      "Name": "dns check",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dns/lossantosdemaimona.com",
+      "Command": "dns",
+      "CommandArgument": "lossantosdemaimona.com"
+    },
+    {
+      "Name": "mx lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/mx/lossantosdemaimona.com",
+      "Command": "mx",
+      "CommandArgument": "lossantosdemaimona.com"
+    },
+    {
+      "Name": "spf lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/spf/lossantosdemaimona.com",
+      "Command": "spf",
+      "CommandArgument": "lossantosdemaimona.com"
+    },
+    {
+      "Name": "dns propagation",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dmarc/lossantosdemaimona.com:all",
+      "Command": "dmarc",
+      "CommandArgument": "lossantosdemaimona.com:all"
+    }
+  ]
+}

@@ -1,0 +1,768 @@
+{
+  "a": [
+    {
+      "host": "0301004-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.57.32",
+          "ptr": "0301004-01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "0301004-02.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.57.33",
+          "ptr": "0301004-02.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "0301043-01.unex.es",
+      "ips": [
+        {
+          "asn": "",
+          "asn_name": "Reserved (Local Network)",
+          "asn_range": "",
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "10.254.216.71",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "0601006-01.unex.es",
+      "ips": [
+        {
+          "asn": "",
+          "asn_name": "Reserved (Local Network)",
+          "asn_range": "",
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "10.253.236.71",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "0602210-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.161.46",
+          "ptr": "0602210-01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "1401146-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.52.20",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "1701022-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.56.41",
+          "ptr": "1701022-01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "1701168-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.56.36",
+          "ptr": "1701168-01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "1701205-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.56.23",
+          "ptr": "1701205-01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "1701246-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.55.39",
+          "ptr": "1701246-01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "25cuieet.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.55.64",
+          "ptr": "25cuieet.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "3dcovim.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.18.44",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "8001033-01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.105.99",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "abacus.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.96.26",
+          "ptr": "abacus.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "abaqus.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.55.45",
+          "ptr": "abaqus.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "abel.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.18.110",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "acceso.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.22.6",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "acebo.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.238.32",
+          "ptr": "acebo.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "acmarcos.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.55.37",
+          "ptr": "acmarcos.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "acustica.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.118.168",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "acwap.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.115.246",
+          "ptr": "acwap.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "aficiobiblio.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.60.8",
+          "ptr": "aficiobiblio.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "aftasi.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.8.178",
+          "ptr": "aftasi.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "agbridgeba.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.33.39",
+          "ptr": "agbridgeba.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "agbridgecc.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.33.61",
+          "ptr": "agbridgecc.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "agservercc.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.33.152",
+          "ptr": "agservercc.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "aire.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.16.36",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "airoso.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.18.10",
+          "ptr": "airoso.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alagon.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.245",
+          "ptr": "alagon.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alagon2.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.241",
+          "ptr": "alagon2.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "albarregas.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.96.20",
+          "ptr": "albarregas.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alcantara.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.114.135",
+          "ptr": "alcantara.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alcantara-atm.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.98.193",
+          "ptr": "alcantara-atm.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alcazaba.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.63.6",
+          "ptr": "alcazaba.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alfresco02.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.116",
+          "ptr": "alfresco04.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alfresco03.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.110",
+          "ptr": "alfresco03.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alhambra.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.23.80",
+          "ptr": "alhambra.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "almendro.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.9.220",
+          "ptr": "almendro.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "almonte.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.8.40",
+          "ptr": "almonte.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alumni.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.114.47",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "alumnos.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.40",
+          "ptr": "alumnos.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alupruebas.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.39",
+          "ptr": "alupruebas.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "alytes.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.18.138",
+          "ptr": "alytes.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "ana.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.55.29",
+          "ptr": "ana.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "apoyorep.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.61.19",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "app.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.249",
+          "ptr": "app.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "app01.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.231",
+          "ptr": "app01.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "app02.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.17.232",
+          "ptr": "app02.unex.es"
+        }
+      ]
+    },
+    {
+      "host": "aquino.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.19.201",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "arco.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.245.23",
+          "ptr": ""
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 unex-es.mail.protection.outlook.com",
+      "ips": [
+        {
+          "asn": "8075",
+          "asn_name": "MICROSOFT-CORP-MSN-AS-BLOCK",
+          "asn_range": "52.96.0.0/12",
+          "country": "The Netherlands",
+          "country_code": "NL",
+          "ip": "52.101.73.11",
+          "ptr": "mail-am1pr04cu00103.inbound.protection.outlook.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "chico.rediris.es",
+      "ips": [
+        {
+          "asn": "55195",
+          "asn_name": "CIRA-CLOUD1, CA",
+          "asn_range": "162.219.54.0/24",
+          "country": "Canada",
+          "country_code": "CA",
+          "ip": "162.219.54.2",
+          "ptr": "ns1.d-zone.ca"
+        }
+      ]
+    },
+    {
+      "host": "pizarro.unex.es",
+      "ips": [
+        {
+          "asn": "766",
+          "asn_name": "REDIRIS RedIRIS Autonomous System, ES",
+          "asn_range": "158.49.0.0/16",
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "158.49.8.2",
+          "ptr": "pizarro.unex.es"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 836,
+  "txt": [
+    "\"v=spf1 ip4:158.49.8.2 ip4:158.49.8.11 ip4:158.49.8.12 ip4:158.49.17.55 ip4:158.49.17.56 ip4:158.49.17.65 ip4:158.49.17.25 ip4:158.49.17.42 ip4:158.49.17.43 ip4:158.49.113.145 ip4:130.206.19.0/24 include:spf.protection.outlook.com -all\"",
+    "\"atlassian-domain-verification=NhCOsbaasDx7xFJ3etjpRLc3NdtdIZ0oI8/69LdpA/7s2TlSlXWU7Z2ZPWV0tLOQ\"",
+    "\"google-site-verification=vEq-xS3ZHEWf5xVsRxA0jGOGrZ2hGluCpkIZXlWMkeY\"",
+    "\"HARICA-ywNZu8z13jAQGSOalZC\"",
+    "\"google-site-verification=Og3kqW6Hyiefva6u7PbnDAfOx0eh0xyPOK8vBcUWqNI\"",
+    "\"uex09.unex.es-35357\"",
+    "\"ZOOM_verify_vvJQmbcbFEIvHKSTUKGoLA\"",
+    "\"atlassian-sending-domain-verification=a100abf8-b49c-4c18-b14e-c565c48e0b44\"",
+    "\"uex14.unex.es-19235\"",
+    "\"apple-domain-verification=353GBlpoBLwMba0E\"",
+    "\"uex08.unex.es-13632\"",
+    "\"google-site-verification=NDI0vgsG9R8_QibcCUIjVrgrlwYHPfaWgiagW8g2xAk\"",
+    "\"uex07.unex.es-15560\"",
+    "\"@ MS=4D25F10AA6092DD50B0A50360A183096BA4F777F\""
+  ]
+}

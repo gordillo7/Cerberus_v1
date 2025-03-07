@@ -1,0 +1,154 @@
+{
+  "a": [
+    {
+      "host": "www.sabordex.com",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "82.223.0.0/16",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "sabordex.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 82.23.151.160 ",
+              "cn": "sabordex.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "sabordex.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "sabordex.com",
+              "redirect_location": "https://82.223.151.160:443/login.php",
+              "server": "nginx",
+              "title": "Servidor Sabordex"
+            },
+            "https8443": {
+              "alt_n": [
+                "sabordex.com"
+              ],
+              "cn": "sabordex.com",
+              "redirect_location": "https://82.223.151.160:8443/login.php",
+              "server": "sw-cp-server",
+              "title": "Servidor Sabordex"
+            },
+            "ip": "82.223.151.160",
+            "ssh": {
+              "banner": "SSH-2.0-OpenSSH_8.0"
+            }
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "82.223.151.160",
+          "ptr": ""
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 mx01.ionos.es",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "217.72.192.0/20",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "217.72.192.67",
+          "ptr": "mx01.kundenserver.de"
+        }
+      ]
+    },
+    {
+      "host": "10 mx00.ionos.es",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "212.227.0.0/16",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "212.227.15.41",
+          "ptr": "mx00.kundenserver.de"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "ns1022.ui-dns.org",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "217.160.80.0/22",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "217.160.83.22",
+          "ptr": "ns1022.ui-dns.org"
+        }
+      ]
+    },
+    {
+      "host": "ns1058.ui-dns.de",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "217.160.80.0/22",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "217.160.80.58",
+          "ptr": "ns1058.ui-dns.de"
+        }
+      ]
+    },
+    {
+      "host": "ns1120.ui-dns.com",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "217.160.80.0/22",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "217.160.82.120",
+          "ptr": "ns1120.ui-dns.com"
+        }
+      ]
+    },
+    {
+      "host": "ns1062.ui-dns.biz",
+      "ips": [
+        {
+          "asn": "8560",
+          "asn_name": "IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE",
+          "asn_range": "217.160.80.0/22",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "217.160.81.62",
+          "ptr": "ns1062.ui-dns.biz"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 1,
+  "txt": [
+    "\"google-site-verification=6cmhsn-7WO7xFgt90M4o40VdK_s7k4sY2E78tUXmjTA\"",
+    "\"v=spf1 include:_spf-eu.ionos.com ~all\"",
+    "\"mdwfknkjwlrfEWFAWAew51d3s1\""
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "a": [
+    {
+      "host": "admin.lossantosdemaimona.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.125 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "servidor.mundored.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "servidor.mundored.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.125"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.125",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    },
+    {
+      "host": "entradas.lossantosdemaimona.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.125 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "servidor.mundored.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "servidor.mundored.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.125"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.125",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    },
+    {
+      "host": "mail.lossantosdemaimona.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.125 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "servidor.mundored.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "servidor.mundored.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.125"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.125",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    },
+    {
+      "host": "sorteos.lossantosdemaimona.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.125 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "servidor.mundored.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "servidor.mundored.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.125"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.125",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 mail.lossantosdemaimona.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.125 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "servidor.mundored.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "servidor.mundored.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.125"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.125",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "mundored1.servidoresdominios.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.125 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "servidor.mundored.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "servidor.mundored.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.125"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.125",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    },
+    {
+      "host": "mundored2.servidoresdominios.com",
+      "ips": [
+        {
+          "asn": "198066",
+          "asn_name": "LOADING, ES",
+          "asn_range": "91.146.97.0/24",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "servidor.mundored.com",
+                "www.servidor.mundored.com"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 91.146.97.127 ",
+              "cn": "servidor.mundored.com"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "https": {
+              "alt_n": [
+                "tierradebarros.com"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "tierradebarros.com",
+              "server": "nginx",
+              "title": "Web Server"
+            },
+            "ip": "91.146.97.127"
+          },
+          "country": "Spain",
+          "country_code": "ES",
+          "ip": "91.146.97.127",
+          "ptr": "servidor.mundored.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 4,
+  "txt": [
+    "\"v=spf1 include:_spf.loading.es -all\""
+  ]
+}

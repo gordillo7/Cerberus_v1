@@ -1,0 +1,86 @@
+{
+  "UID": null,
+  "ArgumentType": "domain",
+  "Command": "dmarc",
+  "IsTransitioned": false,
+  "CommandArgument": "unex.es",
+  "TimeRecorded": "2025-03-07T02:59:52.7343091-06:00",
+  "ReportingNameServer": "sun.rediris.es",
+  "TimeToComplete": "10",
+  "RelatedIP": null,
+  "ResourceRecordType": 0,
+  "IsEmptySubDomain": false,
+  "SPF_Subaction_Detail": {
+    "Void_lookups": null,
+    "Invalid_Redirects": null,
+    "Recursive_Paths": null,
+    "Invalid_Includes": null,
+    "Deprecated_SPF_Records": null,
+    "MX_Resource_Records": null,
+    "Modifier_Ignored": null,
+    "Included_Lookups": null,
+    "Duplicate_Includes": null
+  },
+  "Records": [],
+  "IsEndpoint": false,
+  "HasSubscriptions": false,
+  "AlertgroupSubscriptionId": null,
+  "Failed": [
+    {
+      "ID": 441,
+      "Name": "DMARC Record Published",
+      "Info": "No DMARC Record found",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Record-Published?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:unex.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    }
+  ],
+  "Warnings": [],
+  "Passed": [],
+  "Timeouts": [],
+  "Errors": [],
+  "IsError": false,
+  "Information": [],
+  "MultiInformation": [],
+  "Transcript": [
+    {
+      "Transcript": "- - - dmarc:_dmarc.unex.es\r\n\r\n&emsp; 1 g.nic.es 204.61.217.1 NON-AUTH 0 ms Received 3 Referrals , rcode=NO_ERROR &emsp; unex.es.\t86400\tIN\tNS\tpizarro.unex.es,unex.es.\t86400\tIN\tNS\tsun.rediris.es,unex.es.\t86400\tIN\tNS\tchico.rediris.es,\r\n&emsp; 2 sun.rediris.es 199.184.182.1 AUTH 10 ms Received 1 Referrals , rcode=NAME_ERROR &emsp; unex.es.\t3600\tIN\tSOA\t mname=pizarro.unex.es rname=root.pizarro.unex.es serial=2025030603,\r\nLookupServer 10ms\r\n"
+    }
+  ],
+  "MxRep": 0,
+  "EmailServiceProvider": null,
+  "DnsServiceProvider": null,
+  "DnsServiceProviderIdentifier": null,
+  "RelatedLookups": [
+    {
+      "Name": "dns lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/a/unex.es",
+      "Command": "a",
+      "CommandArgument": "unex.es"
+    },
+    {
+      "Name": "dns check",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dns/unex.es",
+      "Command": "dns",
+      "CommandArgument": "unex.es"
+    },
+    {
+      "Name": "mx lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/mx/unex.es",
+      "Command": "mx",
+      "CommandArgument": "unex.es"
+    },
+    {
+      "Name": "spf lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/spf/unex.es",
+      "Command": "spf",
+      "CommandArgument": "unex.es"
+    },
+    {
+      "Name": "dns propagation",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dmarc/unex.es:all",
+      "Command": "dmarc",
+      "CommandArgument": "unex.es:all"
+    }
+  ]
+}

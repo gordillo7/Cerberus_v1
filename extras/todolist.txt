@@ -5,9 +5,13 @@
     * MX toolbox.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
-- Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT)
+        ## DNSDumpster API --> Reconocimiento de DNS (General).
+        ## MX ToolBox API --> Registro DMARC.
+        ## APINinja Whois API --> Información sobre el propietario del dominio.
+- Refinar generacion de reportes.
+- Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT).
 - Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
-    * Usar Proxy en WPscan (el parametro --proxy)
+    * Usar Proxy en WPscan (el parametro --proxy).
 - Meter IA.
 - Ejecutar el main.py para cada subdominio encontrado.
 
@@ -20,3 +24,20 @@ AVANCES:
 
 DUDAS:
 - Modelo de IA a usar (ChatGPT, DeepSeek...).
+
+Genial, ya tenemos las tres los resultados de las tres apis para poder trabajar con ello. Ahora lo siguiente que debe hacer el modulo seria obtener la informacion de los logs generados para generar un nuevo log en logs/target/reporte/dns_recon.txt, que sera lo que luego utilice el modulo de generar reporte para mostrar en el mismo la informacion mas relevante. Te voy a comentar la información que debemos extraer de los 3 json de las apis para reportarlos posteriormente.
+
+Del log "dns_dumpster.json":
+    1. Registros MX: nos interesa saber el proveedor de correo electronico del dominio (por ejemplo, si es ionos, microsoft, google, etc.)
+    2. Registros NS: nos interesa saber el proveedor de DNS del dominio (por ejemplo, si es cloudflare, godaddy, etc.). Ademas, tambien se puede reportar datos como el nombre de los servidores DNS (campo "host"), el pais donde se encuentran (campo "country").
+    3. Registros TXT: a modo de metadatos, al final del reporte se debe hacer una seccion "Extra Info" donde se reporten los registros txt, en caso de existir.
+
+Del log "dns_dmarc.json":
+    1. Hay que reportar si el registro DMARC es publico o no. En caso de que sea no publico (en Failed hay un ID 441), se reporta que el registro DMARC no se encuentra, por lo que se puede realizar un spoofing de email con ese dominio (y explica un poco que es un email spoofing y que se puede hacer con eso)
+
+Del log "dns_whois.json":
+    1. Quien registro ese dominio (el campo registrar).
+    2. Cuando fue creado y cuando expira ese dominio (campos creation_date y expiration_date (la fechas estan en unix, hay que pasarlas a formato normal)). Si el expiration_date es en menos de 3 meses, hay que reportar que el dominio expira en menos de tres meses y recomentar que se renueve cuanto antes para evitar posibles robos de dominio.
+    3. En caso de que los siguientes campos: "name": "gdpr masked", "org": "gdpr masked", "address": "gdpr masked", "city": "gdpr masked", "state": "gdpr masked", "registrant_postal_code": "gdpr masked", "country": "gdpr masked", no sean "gdrp masked" se reportan tambien ya que aportan informacion geografica del registrante del dominio.
+
+Todo esto quiero que me lo vayas reportando explicando todo bastante bien, ya que todo lo que se reporte en el archivo dns_recon.txt se sacara posteriormente en el reporte en pdf, tal cual este redactado en el dns_recon.txt, por lo que debe esta bien redactado y explicado todo.
