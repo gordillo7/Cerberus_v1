@@ -489,7 +489,7 @@
   "cname": [],
   "mx": [
     {
-      "host": "10 de-smtp-inbound-1.mimecast.com",
+      "host": "10 de-smtp-inbound-2.mimecast.com",
       "ips": [
         {
           "asn": "39588",
@@ -503,28 +503,28 @@
       ]
     },
     {
-      "host": "10 de-smtp-inbound-2.mimecast.com",
+      "host": "10 de-smtp-inbound-1.mimecast.com",
       "ips": [
         {
           "asn": "39588",
           "asn_name": "MIMECAST-DE, GB",
-          "asn_range": "194.104.108.0/23",
+          "asn_range": "194.104.110.0/23",
           "country": "Germany",
           "country_code": "DE",
-          "ip": "194.104.108.22",
-          "ptr": "de-smtp-inbound-1.mimecast.com"
+          "ip": "194.104.110.22",
+          "ptr": "de-smtp-inbound-2.mimecast.com"
         }
       ]
     }
   ],
   "ns": [
     {
-      "host": "ns5.101domain.com",
+      "host": "ns1.101domain.com",
       "ips": [
         {
           "asn": "13335",
           "asn_name": "CLOUDFLARENET",
-          "asn_range": "162.159.25.0/24",
+          "asn_range": "162.159.24.0/24",
           "banners": {
             "http": {
               "apps": [
@@ -541,17 +541,17 @@
               "server": "cloudflare",
               "title": "Direct IP access not allowed "
             },
-            "ip": "162.159.25.156"
+            "ip": "162.159.24.202"
           },
           "country": "unknown",
           "country_code": "??",
-          "ip": "162.159.25.156",
-          "ptr": "ns2.101domain.com"
+          "ip": "162.159.24.202",
+          "ptr": "ns1.101domain.com"
         }
       ]
     },
     {
-      "host": "ns1.101domain.com",
+      "host": "ns5.101domain.com",
       "ips": [
         {
           "asn": "13335",
@@ -617,11 +617,11 @@
   ],
   "total_a_recs": 15,
   "txt": [
-    "\"miro-verification=4bb046374054488e82dfccb6aeddbd03d68ea189\"",
-    "\"Z73U/pX63O9aiFP+qTsIGMLKn4C7NwZE7mAINSONeOdTGBaxyLSUC9ISuBHOHWOiFMGjgI8NNv0IfLS2FvoNfg==\"",
     "\"Sendinblue-code:9132d93907e19043a19869ccaa4adf85\"",
+    "\"Z73U/pX63O9aiFP+qTsIGMLKn4C7NwZE7mAINSONeOdTGBaxyLSUC9ISuBHOHWOiFMGjgI8NNv0IfLS2FvoNfg==\"",
+    "\"v=spf1 ip4:54.75.233.119/32 ip4:52.17.229.211/32 ip4:81.188.106.128/27 ip4:81.188.93.64/27 ip4:84.198.249.0/28 ip4:151.181.49.64/27 include:spf.messagelabs.com include:de._netblocks.mimecast.com include:spf.mandrillapp.com include:servers.mcsv.net include\" \":spf.sendinblue.com include:spf.protection.outlook.com include:_spf.salesforce.com -all\"",
+    "\"miro-verification=4bb046374054488e82dfccb6aeddbd03d68ea189\"",
     "\"google-site-verification=lg3ljNynhzx11cg3UGcYRF8MM6GY2loU2JCXknDLxas\"",
-    "\"ZA=3RwCEy8Me7/ye30JYUX5vw==\"",
-    "\"v=spf1 ip4:54.75.233.119/32 ip4:52.17.229.211/32 ip4:81.188.106.128/27 ip4:81.188.93.64/27 ip4:84.198.249.0/28 ip4:151.181.49.64/27 include:spf.messagelabs.com include:de._netblocks.mimecast.com include:spf.mandrillapp.com include:servers.mcsv.net include\" \":spf.sendinblue.com include:spf.protection.outlook.com include:_spf.salesforce.com -all\""
+    "\"ZA=3RwCEy8Me7/ye30JYUX5vw==\""
   ]
 }

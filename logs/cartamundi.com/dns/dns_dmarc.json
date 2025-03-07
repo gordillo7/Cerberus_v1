@@ -4,9 +4,9 @@
   "Command": "dmarc",
   "IsTransitioned": false,
   "CommandArgument": "cartamundi.com",
-  "TimeRecorded": "2025-03-07T02:55:26.5126711-06:00",
-  "ReportingNameServer": "ns2.101domain.com",
-  "TimeToComplete": "201",
+  "TimeRecorded": "2025-03-07T10:23:06.5013414-06:00",
+  "ReportingNameServer": "ns5.101domain.com",
+  "TimeToComplete": "102",
   "RelatedIP": null,
   "ResourceRecordType": 16,
   "IsEmptySubDomain": false,
@@ -116,7 +116,7 @@
   "MultiInformation": [],
   "Transcript": [
     {
-      "Transcript": "- - - dmarc:_dmarc.cartamundi.com\r\n\r\n&emsp; 1 b.gtld-servers.net 192.33.14.30 NON-AUTH 10 ms Received 3 Referrals , rcode=NO_ERROR &emsp; cartamundi.com.\t172800\tIN\tNS\tns1.101domain.com,cartamundi.com.\t172800\tIN\tNS\tns2.101domain.com,cartamundi.com.\t172800\tIN\tNS\tns5.101domain.com,\r\n&emsp; 2 ns2.101domain.com 162.159.25.156 AUTH 87 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.cartamundi.com.\t14400\tIN\tTXT\tv=DMARC1; p=none; sp=reject; rua=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@ag.eu.dmarcadvisor.com; ruf=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@fr.eu.dmarcadvisor.com;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 201ms\r\n"
+      "Transcript": "- - - dmarc:_dmarc.cartamundi.com\r\n\r\n&emsp; 1 j.gtld-servers.net 192.48.79.30 NON-AUTH 61 ms Received 3 Referrals , rcode=NO_ERROR &emsp; cartamundi.com.\t172800\tIN\tNS\tns1.101domain.com,cartamundi.com.\t172800\tIN\tNS\tns2.101domain.com,cartamundi.com.\t172800\tIN\tNS\tns5.101domain.com,\r\n&emsp; 2 ns5.101domain.com 162.159.24.202 AUTH 10 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.cartamundi.com.\t14400\tIN\tTXT\tv=DMARC1; p=none; sp=reject; rua=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@ag.eu.dmarcadvisor.com; ruf=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@fr.eu.dmarcadvisor.com;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 102ms\r\n"
     }
   ],
   "MxRep": 0,

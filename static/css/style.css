@@ -669,6 +669,10 @@ header {
     font-family: monospace;
 }
 
+#fullScanTarget:focus {
+    outline: none;
+}
+
 @media (max-width: 768px) {
     #scanner-page .card {
         flex: 1 1 100%;
