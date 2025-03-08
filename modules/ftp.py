@@ -77,16 +77,16 @@ def ftp_searchsploit(target_ip):
 def check_ftp_write_permission(ftp, target_ip):
     print("[*] Checking FTP write permissions...")
     test_filename = "test_write_permission.txt"
-    test_content = b"prueba de permisos de escritura"
+    test_content = b"Test file for write permission check"
     try:
         ftp.storbinary(f"STOR {test_filename}", io.BytesIO(test_content))
         ftp.delete(test_filename)
         print("[+] Write permission enabled on FTP.")
-        report_path = f"logs/{target_ip}/ftp/escritura_perm.txt"
+        report_path = f"logs/{target_ip}/ftp/write_perm.txt"
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as rep:
             rep.write("The FTP server allows writing, which could enable the upload of malicious files.")
-        shutil.copy(report_path, f"logs/{target_ip}/report/ftp_escritura_perm.txt")
+        shutil.copy(report_path, f"logs/{target_ip}/report/ftp_write_perm.txt")
     except ftplib.error_perm:
         print("[-] Write permissions not detected.")
 
@@ -165,11 +165,11 @@ def mini_bruteforce(target_ip):
         # If the error contains "530" (usually "login incorrect"), it is assumed that there is no lockout
         if "530" in error_msg:
             print("[+] No attempt limit detected.")
-            log_path = f"logs/{target_ip}/ftp/no_limite_intentos.txt"
+            log_path = f"logs/{target_ip}/ftp/no_limit.txt"
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, "w") as logf:
                 logf.write("There is no attempt limit on FTP login.")
-            shutil.copy(log_path, f"logs/{target_ip}/report/ftp_no_limite_intentos.txt")
+            shutil.copy(log_path, f"logs/{target_ip}/report/ftp_no_limit.txt")
             limite_libre = True
         else:
             print("[-] Error testing admin:admin: ", error_msg)

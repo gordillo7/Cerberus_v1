@@ -1,5 +1,19 @@
 - Refinar generacion de reportes.
+    * dns_recon.txt
+    * http_screenshot.png
+    * http_subdomains.txt
+    * nmap.txt
+    * wordpress_usernames.txt
+    * wordpress_vulnerable_plugins.txt
+    * wordpress_listing.txt
+    * wordpress_credentials.txt
+    * ftp_cves.txt
+    * ftp_write_perm.txt
+    * ftp_anonymous.txt
+    * ftp_credentials_found.txt
+    * ftp_no_limit.txt
 - Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT).
+- Reviras modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
