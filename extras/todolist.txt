@@ -13,7 +13,7 @@
     * ftp_credentials_found.txt
     * ftp_no_limit.txt
 - Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT).
-- Reviras modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
+- Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
