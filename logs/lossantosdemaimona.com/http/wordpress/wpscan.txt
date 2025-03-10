@@ -1,0 +1,178 @@
+{
+  "db_update_started": true,
+  "db_files_updated": [
+
+  ],
+  "db_update_finished": true,
+  "start_time": 1741608100,
+  "start_memory": 61280256,
+  "target_url": "https://lossantosdemaimona.com/",
+  "target_ip": "91.146.97.125",
+  "effective_url": "https://lossantosdemaimona.com/",
+  "interesting_findings": [
+    {
+      "url": "https://lossantosdemaimona.com/",
+      "to_s": "Headers",
+      "type": "headers",
+      "found_by": "Headers (Passive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "server: nginx",
+        "x-powered-by: PHP/8.0.30, PleskLin",
+        "x-tec-api-version: v1",
+        "x-tec-api-root: https://lossantosdemaimona.com/wp-json/tribe/events/v1/",
+        "x-tec-api-origin: https://lossantosdemaimona.com"
+      ]
+    },
+    {
+      "url": "https://lossantosdemaimona.com/robots.txt",
+      "to_s": "robots.txt found: https://lossantosdemaimona.com/robots.txt",
+      "type": "robots_txt",
+      "found_by": "Robots Txt (Aggressive Detection)",
+      "confidence": 100,
+      "confirmed_by": {
+
+      },
+      "references": {
+
+      },
+      "interesting_entries": [
+        "/wp-content/uploads/wc-logs/",
+        "/wp-content/uploads/woocommerce_transient_files/",
+        "/wp-content/uploads/woocommerce_uploads/",
+        "/wp-admin/",
+        "/wp-admin/admin-ajax.php"
+      ]
+    },
+    {
+      "url": "https://lossantosdemaimona.com/wp-content/mu-plugins/",
+      "to_s": "This site has 'Must Use Plugins': https://lossantosdemaimona.com/wp-content/mu-plugins/",
+      "type": "mu_plugins",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 80,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "http://codex.wordpress.org/Must_Use_Plugins"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    },
+    {
+      "url": "https://lossantosdemaimona.com/wp-cron.php",
+      "to_s": "The external WP-Cron seems to be enabled: https://lossantosdemaimona.com/wp-cron.php",
+      "type": "wp_cron",
+      "found_by": "Direct Access (Aggressive Detection)",
+      "confidence": 60,
+      "confirmed_by": {
+
+      },
+      "references": {
+        "url": [
+          "https://www.iplocation.net/defend-wordpress-from-ddos",
+          "https://github.com/wpscanteam/wpscan/issues/1299"
+        ]
+      },
+      "interesting_entries": [
+
+      ]
+    }
+  ],
+  "version": {
+    "number": "6.7.2",
+    "release_date": "2025-02-11",
+    "status": "latest",
+    "found_by": "Rss Generator (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+      "https://lossantosdemaimona.com/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>",
+      "https://lossantosdemaimona.com/comments/feed/, <generator>https://wordpress.org/?v=6.7.2</generator>"
+    ],
+    "confirmed_by": {
+
+    },
+    "vulnerabilities": [
+
+    ]
+  },
+  "main_theme": {
+    "slug": "Avada-Child-Theme",
+    "location": "https://lossantosdemaimona.com/wp-content/themes/Avada-Child-Theme/",
+    "latest_version": null,
+    "last_updated": null,
+    "outdated": false,
+    "readme_url": false,
+    "directory_listing": false,
+    "error_log_url": null,
+    "style_url": "https://lossantosdemaimona.com/wp-content/themes/Avada-Child-Theme/style.css?ver=6.7.2",
+    "style_name": "Avada Child",
+    "style_uri": null,
+    "description": "Child theme for Avada theme",
+    "author": "ThemeFusion",
+    "author_uri": "https://theme-fusion.com",
+    "template": "Avada",
+    "license": null,
+    "license_uri": null,
+    "tags": null,
+    "text_domain": "Avada",
+    "found_by": "Css Style In Homepage (Passive Detection)",
+    "confidence": 100,
+    "interesting_entries": [
+
+    ],
+    "confirmed_by": {
+      "Css Style In 404 Page (Passive Detection)": {
+        "confidence": 70,
+        "interesting_entries": [
+
+        ]
+      }
+    },
+    "vulnerabilities": [
+
+    ],
+    "version": {
+      "number": "1.0.0",
+      "confidence": 80,
+      "found_by": "Style (Passive Detection)",
+      "interesting_entries": [
+        "https://lossantosdemaimona.com/wp-content/themes/Avada-Child-Theme/style.css?ver=6.7.2, Match: 'Version: 1.0.0'"
+      ],
+      "confirmed_by": {
+
+      }
+    },
+    "parents": [
+
+    ]
+  },
+  "plugins": {
+
+  },
+  "vuln_api": {
+    "plan": "free",
+    "requests_done_during_scan": 12,
+    "requests_remaining": "Unlimited"
+  },
+  "stop_time": 1741608311,
+  "elapsed": 210,
+  "requests_done": 398,
+  "cached_requests": 10,
+  "data_sent": 94730,
+  "data_sent_humanised": "92.51 KB",
+  "data_received": 9175233,
+  "data_received_humanised": "8.75 MB",
+  "used_memory": 319913984,
+  "used_memory_humanised": "305.094 MB",
+  "scan_aborted": "Canceled by User"
+}

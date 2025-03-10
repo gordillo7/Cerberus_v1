@@ -48,7 +48,6 @@ def save_subdomains(domain, subdomains):
     os.makedirs(output_dir, exist_ok=True)
     output_file = os.path.join(output_dir, "subdomains.txt")
     with open(output_file, "w") as f:
-        f.write(f"Found {len(subdomains)} subdomains for {domain}\n")
         for subdomain in subdomains:
             f.write(subdomain + "\n")
     os.system(f"cp {output_file} logs/{domain}/report/http_subdomains.txt")

@@ -93,7 +93,7 @@ def extract_dns_dumpster_info(domain):
     # MX records extraction with asn_name as provider from first ips element
     mx_records = data.get('mx', [])
     if mx_records:
-        report.append("MX Records (Email Provider):")
+        report.append("MX Records:")
         for mx in mx_records:
             mx_host = mx.get('host', 'N/A')
             ips = mx.get('ips', [])
@@ -102,13 +102,12 @@ def extract_dns_dumpster_info(domain):
                 provider = ips[0].get('asn_name', 'Unknown')
             report.append(f"    MX Host: {mx_host}")
             report.append(f"    Email Provider: {provider}")
-    else:
-        report.append("MX Records: No MX records found.")
+        report.append("#")
 
     # NS records extraction with asn_name as provider from first ips element
     ns_records = data.get('ns', [])
     if ns_records:
-        report.append("\nNS Records (DNS Provider):")
+        report.append("NS Records:")
         for ns in ns_records:
             host = ns.get('host', 'N/A')
             ips = ns.get('ips', [])
@@ -118,18 +117,14 @@ def extract_dns_dumpster_info(domain):
                 provider = ips[0].get('asn_name', 'Unknown')
                 country = ips[0].get('country', 'Unknown')
             report.append(f"    NS Server: {host} (Provider: {provider}, Located in: {country})")
-    else:
-        report.append("NS Records: No NS records found.")
+        report.append("#")
 
-    # TXT records extraction (Extra Info)
+    # TXT records
     txt_records = data.get('txt', [])
     if txt_records:
-        report.append("\nExtra Info:")
-        report.append("    TXT Records:")
+        report.append("TXT Records:")
         for txt in txt_records:
-            report.append(f"        {txt}")
-    else:
-        report.append("\nExtra Info: No TXT records available.")
+            report.append(f"    {txt}")
 
     return "\n".join(report)
 
@@ -151,7 +146,7 @@ def extract_dmarc_info(domain):
     else:
         status_line = "A public DMARC record was found for the domain."
 
-    report.append("DMARC Record Information:")
+    report.append("DMARC Record Info:")
     report.append(f"    {status_line}")
     return "\n".join(report)
 
@@ -162,11 +157,15 @@ def extract_whois_info(domain):
     data = read_json(json_path)
 
     registrar = data.get('registrar', 'N/A')
-    report.append("Whois Record Information:")
+    report.append("Whois Info:")
     report.append(f"    Registered with: {registrar}")
 
     creation_ts = data.get('creation_date')
+    if isinstance(creation_ts, list):
+        creation_ts = creation_ts[0]
     expiration_ts = data.get('expiration_date')
+    if isinstance(expiration_ts, list):
+        expiration_ts = expiration_ts[0]
     creation_date = format_unix_timestamp(creation_ts) if creation_ts else 'Unknown'
     expiration_date = format_unix_timestamp(expiration_ts) if expiration_ts else 'Unknown'
     report.append(f"    Domain created on: {creation_date}")
@@ -199,16 +198,10 @@ def extract_whois_info(domain):
 
 def generate_dns_recon_report(domain):
     report_sections = []
-    report_sections.append("DNS Recon Report")
-    report_sections.append("========================\n")
-    report_sections.append("1. General DNS Recon:")
-    report_sections.append("-------------------------------------")
     report_sections.append(extract_dns_dumpster_info(domain))
-    report_sections.append("\n2. DMARC Record Analysis:")
-    report_sections.append("-------------------------------------------")
+    report_sections.append("#")
     report_sections.append(extract_dmarc_info(domain))
-    report_sections.append("\n3. Whois Information:")
-    report_sections.append("---------------------------------------")
+    report_sections.append("#")
     report_sections.append(extract_whois_info(domain))
 
     report_content = "\n".join(report_sections)

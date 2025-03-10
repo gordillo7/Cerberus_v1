@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Mar 10 13:25:04 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/iesdrfdezsantana.educarex.es/nmap/initial_scan.txt iesdrfdezsantana.educarex.es
+Host: 178.255.108.26 ()	Status: Up
+Host: 178.255.108.26 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///	Ignored State: filtered (65533)
+# Nmap done at Mon Mar 10 13:25:31 2025 -- 1 IP address (1 host up) scanned in 26.92 seconds

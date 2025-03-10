@@ -5,6 +5,7 @@ FTP (Anonymous login + dump):
 Wordpress (general):
     1. MetaTwo (HTB)
     2. cartamundi.com
+    3. landreport.com
     Wordpress Plugins:
         1. Tenten (HTB)
         2. cartamundi.com

@@ -177,7 +177,7 @@ def wordpress_plugins(target_ip):
     # Path of the vulnerable_plugins.txt file
     file_path = f"logs/{target_ip}/http/wordpress/vulnerable_plugins.txt"
     if not os.path.exists(file_path):
-        #print(f"[!] The file {file_path} does not exist.")
+        # print(f"[!] The file {file_path} does not exist.")
         return
 
     # Parse the file to obtain the list of plugins and their CVEs

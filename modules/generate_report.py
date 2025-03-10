@@ -119,16 +119,103 @@ def generate_report(target):
     styles = getSampleStyleSheet()
 
     try:
-        for filename in os.listdir(report_dir):
+        for filename in sorted(os.listdir(report_dir), key=lambda x: 0 if x == "nmap.txt" else 1):
             filepath = os.path.join(report_dir, filename)
             if os.path.isfile(filepath):
-                if filename == "nmap.txt":
-                    elements.append(Paragraph("Open services", styles['Title']))
-                    elements.append(Spacer(1, 12))
-                    elements.append(create_nmap_table(filepath))
-                    elements.append(Spacer(1, 24))
-                    break
+                match filename:
+                    case "nmap.txt":
+                        elements.append(Paragraph("Open services", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(create_nmap_table(filepath))
+                        elements.append(Spacer(1, 24))
+                    case "dns_recon.txt":
+                        elements.append(Paragraph("DNS Recon", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("In this section, the information associated with the domain is reported.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        # Process the file: use the first line of each section as Heading2 and the following lines until "#" as normal text
+                        with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
+                            section = []
+                            for line in file:
+                                line = line.strip()
+                                if line == "#":
+                                    if section:
+                                        elements.append(Paragraph(section[0], styles['Heading2']))
+                                        elements.append(Spacer(1, 8))
+                                        for l in section[1:]:
+                                            elements.append(Paragraph(l, styles['Normal']))
+                                        elements.append(Spacer(1, 12))
+                                    section = []
+                                else:
+                                    section.append(line)
+                            if section:
+                                elements.append(Paragraph(section[0], styles['Heading2']))
+                                elements.append(Spacer(1, 8))
+                                for l in section[1:]:
+                                    elements.append(Paragraph(l, styles['Normal']))
+                                elements.append(Spacer(1, 12))
+                    case "http_screenshot.png":
+                        elements.append(Paragraph("Website screenshot", styles['Heading1']))
+                        elements.append(Spacer(1, 8))
+                        elements.append(Image(filepath, width=400, height=300))
+                        elements.append(Spacer(1, 12))
+                    case "http_subdomains.txt":
+                        elements.append(Paragraph("Subdomains", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("In this section, the subdomains of the target are reported.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        numbered_content = ""
+                        with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
+                            for i, line in enumerate(file, 1):
+                                numbered_content += f"{i}. {line.strip()}<br/>"
+                        elements.append(Paragraph(numbered_content, styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                    case "wordpress_usernames.txt":
+                        elements.append(Paragraph("WordPress Usernames", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("This WordPress is vulnerable to user enumeration.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "wordpress_vulnerable_plugins.txt":
+                        elements.append(Paragraph("WordPress Vulnerable Plugins", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("This WordPress is vulnerable to outdated plugins.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "wordpress_listing.txt":
+                        elements.append(Paragraph("WordPress Directory Listing", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "wordpress_credentials.txt":
+                        elements.append(Paragraph("WordPress Credentials", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Valid WordPress credentials have been found.", styles['Normal']))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "ftp_cves.txt":
+                        elements.append(Paragraph("FTP Vulnerabilities", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("CVEs for the running FTP version have been found.", styles['Normal']))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "ftp_write_perm.txt":
+                        elements.append(Paragraph("FTP Write Permissions", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "ftp_anonymous.txt":
+                        elements.append(Paragraph("FTP Anonymous Login", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "ftp_credentials_found.txt":
+                        elements.append(Paragraph("FTP Credentials", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Valid FTP credentials have been found.", styles['Normal']))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "ftp_no_limit.txt":
+                        elements.append(Paragraph("FTP no attempt limit", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
 
+
+        """
         elements.append(Paragraph("Vulnerabilities", styles['Heading2']))
         elements.append(Spacer(1, 8))
         for filename in sorted(os.listdir(report_dir)):
@@ -141,6 +228,7 @@ def generate_report(target):
                     elements.append(Spacer(1, 12))
                 elif filename != "nmap.txt":
                     elements.extend(create_text_paragraph(filepath))
+        """
     except Exception as e:
         print(f"[-] Error generating report: {e}")
         return

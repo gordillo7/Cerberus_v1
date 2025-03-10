@@ -4,9 +4,9 @@ import os
 import sys
 import json
 import re
-import requests
-from urllib.parse import urljoin, urlparse
-from bs4 import BeautifulSoup
+#import requests
+#from urllib.parse import urljoin, urlparse
+#from bs4 import BeautifulSoup
 from modules.http_detect_scheme import get_scheme
 
 def get_wpscan_api_token():
@@ -117,12 +117,11 @@ def extract_usernames(target_ip):
         print(f"[+] {len(usernames)} usernames found in WordPress.")
         write_usernames(f"logs/{target_clean}/http/wordpress/users.txt", usernames)
         write_usernames(f"wordlists/{target_clean}/users.txt", usernames)
-        os.system(f"echo 'Usernames found in WordPress:' > logs/{target_clean}/report/wordpress_usernames.txt")
         write_usernames(f"logs/{target_clean}/report/wordpress_usernames.txt", usernames)
     else:
         print("[!] No usernames were found in WordPress")
 
-
+"""
 def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
     if url in visited_indexes:
         return
@@ -176,14 +175,14 @@ def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
 
     except requests.RequestException as e:
         print(f"[!] Error dumping directory content at {url}: {e}")
-
+"""
 
 def process_directory_listings(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     input_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
     output_dir = f"logs/{target_clean}/http/wordpress/directory_listing_dump"
-    visited_indexes = set()
-    visited_files = set()
+    #visited_indexes = set()
+    #visited_files = set()
     with open(input_file, 'r') as file:
         data = json.load(file)
         for finding in data.get("interesting_findings", []):
@@ -191,11 +190,11 @@ def process_directory_listings(target_ip):
             if "has listing enabled" in finding.get("to_s", ""):
                 os.makedirs(output_dir, exist_ok=True)
                 with open(f"logs/{target_clean}/http/wordpress/directory_listing.txt", 'a') as f:
-                    f.write(f"Directory listing enabled at {finding['url']}\n")
+                    f.write(f"Directory listing enabled at {finding['url']}. This could lead to information disclosure.\n")
 
                 shutil.copy(f"logs/{target_clean}/http/wordpress/directory_listing.txt",
                             f"logs/{target_clean}/report/wordpress_listing.txt")
-                dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
+                # dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
 
 
 def run_http_wordpress(target_ip):
