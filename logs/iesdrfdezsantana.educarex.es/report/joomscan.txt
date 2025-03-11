@@ -1,0 +1,22 @@
+1. Joomla Version:
+Joomla 3.10.12
+
+2. Core Vulnerability and Apache Info Files Status:
+Target Joomla core is not vulnerable
+
+3. Admin Page:
+Admin page : https://iesdrfdezsantana.educarex.es/administrator/
+
+4. Backup File:
+Backup file is found
+Path : https://iesdrfdezsantana.educarex.es/joomla.zip
+
+5. Log Files:
+error log is not found
+
+6. User Registration:
+registration is enabled
+https://iesdrfdezsantana.educarex.es/index.php?option=com_users&view=registration
+
+7. Sensitive Config Files:
+Readable config files are not found

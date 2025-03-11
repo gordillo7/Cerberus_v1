@@ -213,22 +213,47 @@ def generate_report(target):
                         elements.append(Paragraph("FTP no attempt limit", styles['Heading1']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                    case "joomscan.txt":
+                        import re
+                        elements.append(Paragraph("Joomla Scan", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("In this section, the results of the Joomla scan are reported.",
+                                                  styles['Normal']))
+                        elements.append(Spacer(1, 12))
 
+                        # Patrón para detectar encabezados en el formato "n. Texto"
+                        heading_pattern = re.compile(r'^\d+\.\s*(.+?)\s*$')
+                        current_heading = None
+                        current_content = []
+                        with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
+                            for line in file:
+                                line = line.rstrip()
+                                if not line:
+                                    # Se ignoran las líneas en blanco
+                                    continue
+                                match = heading_pattern.match(line)
+                                if match:
+                                    # Si ya había una sección en curso, la escribe en el documento
+                                    if current_heading is not None:
+                                        elements.append(Paragraph(current_heading, styles['Heading2']))
+                                        elements.append(Spacer(1, 8))
+                                        for content_line in current_content:
+                                            elements.append(Paragraph(content_line, styles['Normal']))
+                                        elements.append(Spacer(1, 12))
+                                    # Se establece el nuevo encabezado (sin el número y los dos puntos)
+                                    current_heading = match.group(1)
+                                    current_content = []
+                                else:
+                                    # La línea forma parte del contenido de la sección actual
+                                    current_content.append(line)
+                        # Escribir la última sección pendiente, si existe
+                        if current_heading is not None:
+                            elements.append(Paragraph(current_heading, styles['Heading2']))
+                            elements.append(Spacer(1, 8))
+                            for content_line in current_content:
+                                elements.append(Paragraph(content_line, styles['Normal']))
+                            elements.append(Spacer(1, 12))
 
-        """
-        elements.append(Paragraph("Vulnerabilities", styles['Heading2']))
-        elements.append(Spacer(1, 8))
-        for filename in sorted(os.listdir(report_dir)):
-            filepath = os.path.join(report_dir, filename)
-            if os.path.isfile(filepath):
-                if filename.lower().endswith(('.png', '.jpg', '.jpeg')):
-                    elements.append(Paragraph("Website screenshot", styles['Heading3']))
-                    elements.append(Spacer(1, 8))
-                    elements.append(Image(filepath, width=400, height=300))
-                    elements.append(Spacer(1, 12))
-                elif filename != "nmap.txt":
-                    elements.extend(create_text_paragraph(filepath))
-        """
     except Exception as e:
         print(f"[-] Error generating report: {e}")
         return

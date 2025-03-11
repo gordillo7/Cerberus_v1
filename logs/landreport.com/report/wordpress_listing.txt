@@ -1,2 +1,0 @@
-Directory listing enabled at https://landreport.com/wp-content/uploads/
-Directory listing enabled at https://landreport.com/wp-content/uploads/. This could lead to information disclosure.

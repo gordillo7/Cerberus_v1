@@ -1,7 +1,0 @@
-admin.lossantosdemaimona.com
-entradas.lossantosdemaimona.com
-mail.lossantosdemaimona.com
-old.lossantosdemaimona.com
-sorteos.lossantosdemaimona.com
-www.lossantosdemaimona.com
-www.old.lossantosdemaimona.com

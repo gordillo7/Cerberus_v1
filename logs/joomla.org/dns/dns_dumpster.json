@@ -1,0 +1,1664 @@
+{
+  "a": [
+    {
+      "host": "5.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "api.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "appscdn.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "appserver.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "artifacts.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "cdn.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "certification.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "ci.joomla.org",
+      "ips": [
+        {
+          "asn": "12574",
+          "asn_name": "ROUTING Franzstr. 51, 52064 Aachen, DE",
+          "asn_range": "213.160.72.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Apache HTTP Server:2.4.18"
+              ],
+              "redirect_location": "/welcome",
+              "server": "Apache/2.4.18",
+              "title": "Drone CI"
+            },
+            "https": {
+              "alt_n": [
+                "ci.joomla.org"
+              ],
+              "apps": [
+                "Apache HTTP Server:2.4.18"
+              ],
+              "cn": "ci.joomla.org",
+              "redirect_location": "/welcome",
+              "server": "Apache/2.4.18",
+              "title": "Drone CI"
+            },
+            "ip": "213.160.72.75"
+          },
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "213.160.72.75",
+          "ptr": "ci.joomla.org"
+        }
+      ]
+    },
+    {
+      "host": "community.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.29.124.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.29.124.152",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "conference.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "mail.conference.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "connect.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "contribute.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "demo.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "developer.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "docs.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.29.124.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.29.124.152",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "docs-next.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "domains.joomla.org",
+      "ips": [
+        {
+          "asn": "15456",
+          "asn_name": "INTERNETX-AS, DE",
+          "asn_range": "85.236.32.0/19",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "domains.joomla.org"
+              ],
+              "banner": "20 ProFTPD Server (ProFTPD) 85.236.53.13 ",
+              "cn": "domains.joomla.org"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx",
+              "title": "Official Joomla"
+            },
+            "https": {
+              "alt_n": [
+                "domains.joomla.org"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "domains.joomla.org",
+              "server": "nginx",
+              "title": "Official Joomla"
+            },
+            "https8443": {
+              "alt_n": [
+                "domains.joomla.org"
+              ],
+              "cn": "domains.joomla.org",
+              "redirect_location": "https://85.236.53.133:8443/login.php",
+              "server": "sw-cp-server",
+              "title": "Plesk Obsidian 18.0.60"
+            },
+            "ip": "85.236.53.133"
+          },
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "85.236.53.133",
+          "ptr": "domainshop-joomla01.ixdshop.com"
+        }
+      ]
+    },
+    {
+      "host": "downloads.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "elts.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "elts-updates.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "events.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "exam.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "extensions.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.29.124.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.29.124.155",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "batchrev.extensions.joomla.org",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "3.131.0.0/16",
+          "banners": {
+            "http": {
+              "apps": [
+                "LiteSpeed"
+              ],
+              "server": "LiteSpeed"
+            },
+            "https": {
+              "alt_n": [
+                "master-prod5.joomla.org",
+                "mail.master-prod5.joomla.org",
+                "www.master-prod5.joomla.org",
+                "cpanel.master-prod5.joomla.org",
+                "webmail.master-prod5.joomla.org",
+                "webdisk.master-prod5.joomla.org",
+                "cpcontacts.master-prod5.joomla.org",
+                "cpcalendars.master-prod5.joomla.org"
+              ],
+              "apps": [
+                "LiteSpeed"
+              ],
+              "cn": "master-prod5.joomla.org",
+              "server": "LiteSpeed",
+              "title": "Index of /"
+            },
+            "ip": "3.131.78.43"
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "3.131.78.43",
+          "ptr": "ec2-3-131-78-43.us-east-2.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "extensionscdn.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "forge.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "forum.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "sandbox.forum.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "foundation.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "framework.joomla.org",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "3.16.0.0/14",
+          "banners": {
+            "http": {
+              "apps": [
+                "Apache HTTP Server"
+              ],
+              "server": "Apache"
+            },
+            "https": {
+              "alt_n": [
+                "artifacts.joomla.org"
+              ],
+              "apps": [
+                "Apache HTTP Server"
+              ],
+              "cn": "artifacts.joomla.org",
+              "server": "Apache",
+              "title": "Index of /"
+            },
+            "ip": "3.16.176.175"
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "3.16.176.175",
+          "ptr": "ec2-3-16-176-175.us-east-2.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "help.joomla.org",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "18.216.0.0/14",
+          "banners": {
+            "http": {
+              "apps": [
+                "LiteSpeed"
+              ],
+              "server": "LiteSpeed"
+            },
+            "https": {
+              "alt_n": [
+                "conference.joomla.org"
+              ],
+              "apps": [
+                "LiteSpeed"
+              ],
+              "cn": "conference.joomla.org",
+              "server": "LiteSpeed",
+              "title": " 403 Forbidden"
+            },
+            "ip": "18.218.35.232"
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "18.218.35.232",
+          "ptr": "ec2-18-218-35-232.us-east-2.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "ideas.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "identity.joomla.org",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "18.216.0.0/14",
+          "banners": {
+            "http": {
+              "apps": [
+                "LiteSpeed"
+              ],
+              "server": "LiteSpeed"
+            },
+            "https": {
+              "alt_n": [
+                "conference.joomla.org"
+              ],
+              "apps": [
+                "LiteSpeed"
+              ],
+              "cn": "conference.joomla.org",
+              "server": "LiteSpeed",
+              "title": " 403 Forbidden"
+            },
+            "ip": "18.218.35.232"
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "18.218.35.232",
+          "ptr": "ec2-18-218-35-232.us-east-2.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "influx.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.249.0.0/19",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.249.30.37",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "internal.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "issues.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.29.124.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.29.124.158",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "jed4-extensions.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "joomla-sandbox.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.29.124.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.29.124.156",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "jsst.joomla.org",
+      "ips": [
+        {
+          "asn": "8412",
+          "asn_name": "TMA Magenta Telekom, AT",
+          "asn_range": "85.124.0.0/15",
+          "banners": {
+            "http": {
+              "server": "Varnish",
+              "title": "421 Domain not found"
+            },
+            "ip": "85.124.85.17"
+          },
+          "country": "Austria",
+          "country_code": "AT",
+          "ip": "85.124.85.17",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "launch.joomla.org",
+      "ips": [
+        {
+          "asn": "54456",
+          "asn_name": "CLOUDACCESS-NETWORK",
+          "asn_range": "199.116.76.0/24",
+          "banners": {
+            "ftp": {
+              "banner": "20 FTP Server ready. "
+            },
+            "http": {
+              "apps": [
+                "Apache HTTP Server"
+              ],
+              "server": "Apache",
+              "title": "CloudAccess.net Message"
+            },
+            "https": {
+              "alt_n": [
+                "launch.joomla.org"
+              ],
+              "apps": [
+                "Google Tag Manager",
+                "Bootstrap",
+                "Apache HTTP Server"
+              ],
+              "cn": "launch.joomla.org",
+              "server": "Apache",
+              "title": "Joomla"
+            },
+            "ip": "199.116.76.173",
+            "ssh": {
+              "banner": "SSH-2.0-OpenSSH_5.3"
+            }
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "199.116.76.173",
+          "ptr": "mxout173-76.cloudaccess.net"
+        }
+      ]
+    },
+    {
+      "host": "license.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "magazine.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "manage.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "manual.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "pw.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "repository.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.14.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.14.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "resources.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.26.0.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.26.15.15"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.26.15.15",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "sandbox-forum.joomla.org",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.67.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.67.74.86"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.67.74.86",
+          "ptr": ""
+        }
+      ]
+    },
+    {
+      "host": "certification.sandbox.joomla.org",
+      "ips": [
+        {
+          "asn": "17378",
+          "asn_name": "AS17378",
+          "asn_range": "72.29.124.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "72.29.124.156",
+          "ptr": ""
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 alt4.aspmx.l.google.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "142.250.153.0/24",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "142.250.153.27",
+          "ptr": "ea-in-f27.1e100.net"
+        }
+      ]
+    },
+    {
+      "host": "5 alt1.aspmx.l.google.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "209.85.202.0/24",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "209.85.202.27",
+          "ptr": "dg-in-f27.1e100.net"
+        }
+      ]
+    },
+    {
+      "host": "5 alt2.aspmx.l.google.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "64.233.184.0/24",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "64.233.184.26",
+          "ptr": "wa-in-f26.1e100.net"
+        }
+      ]
+    },
+    {
+      "host": "1 aspmx.l.google.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "172.253.63.0/24",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "172.253.63.26",
+          "ptr": "bi-in-f26.1e100.net"
+        }
+      ]
+    },
+    {
+      "host": "10 alt3.aspmx.l.google.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "142.250.27.0/24",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "142.250.27.27",
+          "ptr": "ra-in-f27.1e100.net"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "cory.ns.cloudflare.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.64.33.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.64.33.93"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.64.33.93",
+          "ptr": "cory.ns.cloudflare.com"
+        }
+      ]
+    },
+    {
+      "host": "maisie.ns.cloudflare.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "172.64.34.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "172.64.34.89"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "172.64.34.89",
+          "ptr": "maisie.ns.cloudflare.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 225,
+  "txt": [
+    "\"google-site-verification=7TrTF1YOtjmEurOW7v7IISpix39HBhwi2vyy_RTS1tA\"",
+    "\"google-site-verification=TUrIDZ-yYTsL-aPN1ySltQwyC3DpUNvD8N9dlsceMik\"",
+    "\"linkedin-site-verification=d6091adf-efd2-4820-84c4-3fcd89c71dfd\"",
+    "\"v=spf1 mx ip4:206.123.104.161 include:_spf.joomla.org include:_spf.google.com include:_spf.elasticemail.com ~all\"",
+    "\"brave-ledger-verification=57919b8d00439482c3f23ec893ce86250a638ee0de550c656da00318ac42fdde\""
+  ]
+}

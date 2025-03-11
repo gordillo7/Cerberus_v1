@@ -12,7 +12,7 @@
     --=[Code name : Self Challenge
     @OWASP_JoomScan , @rezesp , @Ali_Razmjo0 , @OWASP
 
-Processing https://iesdrfdezsantana.educarex.es ...
+Processing https://iesdrfdezsantana.educarex.es/ ...
 
 
 

@@ -1,17 +1,3 @@
-- Refinar generacion de reportes.
-    * (HECHO) nmap.txt
-    * (HECHO) dns_recon.txt
-    * (HECHO) http_screenshot.png
-    * (HECHO) http_subdomains.txt
-    * (HECHO) wordpress_usernames.txt
-    * (HECHO) wordpress_vulnerable_plugins.txt
-    * (HECHO) wordpress_listing.txt
-    * (HECHO) wordpress_credentials.txt
-    * (HECHO) ftp_cves.txt
-    * (HECHO) ftp_write_perm.txt
-    * (HECHO) ftp_anonymous.txt
-    * (HECHO) ftp_credentials_found.txt
-    * (HECHO) ftp_no_limit.txt
 - Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT).
 - Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
 - DNS Recon.
@@ -22,7 +8,6 @@
         ## APINinja Whois API --> Información sobre el propietario del dominio.
 - Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
     * Usar Proxy en WPscan (el parametro --proxy).
-- Seguir modulo Joomla (sacar reporte).
 - Meter IA.
 - Ejecutar el main.py para cada subdominio encontrado.
 -------------------------------------------------------

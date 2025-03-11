@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Tue Mar 11 12:53:40 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/joomla.org/nmap/initial_scan.txt joomla.org
+Host: 104.26.15.15 ()	Status: Up
+Host: 104.26.15.15 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///	Ignored State: filtered (65531)
+# Nmap done at Tue Mar 11 12:54:07 2025 -- 1 IP address (1 host up) scanned in 26.70 seconds
