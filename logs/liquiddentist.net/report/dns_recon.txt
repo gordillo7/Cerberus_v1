@@ -1,0 +1,24 @@
+MX Records:
+    MX Host: 10 liquiddentist.net
+    Email Provider: LIQUIDWEB
+#
+NS Records:
+    NS Server: ns.liquidweb.com (Provider: LIQUIDWEB, Located in: United States)
+    NS Server: ns1.liquidweb.com (Provider: LIQUIDWEB, Located in: United States)
+#
+#
+DMARC Record Info:
+    The DMARC record is not public. This implies that there is no valid DMARC record found for this domain, which could potentially allow email spoofing (the practice of forging email headers to appear as if sent from a trusted domain). It is recommended to configure a public DMARC record to enhance email security.
+#
+Whois Info:
+    Registered with: N/A
+    Domain created on: Unknown
+    Domain expires on: Unknown
+    Additional registrant details:
+        Name: N/A
+        Org: N/A
+        Address: N/A
+        City: N/A
+        State: N/A
+        Registrant_postal_code: N/A
+        Country: N/A

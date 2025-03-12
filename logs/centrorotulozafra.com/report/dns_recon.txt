@@ -1,0 +1,32 @@
+MX Records:
+    MX Host: 10 mx10.mailspamprotection.com
+    Email Provider: GOOGLE-CLOUD-PLATFORM
+    MX Host: 30 mx30.mailspamprotection.com
+    Email Provider: GOOGLE-CLOUD-PLATFORM
+    MX Host: 20 mx20.mailspamprotection.com
+    Email Provider: GOOGLE-CLOUD-PLATFORM
+#
+NS Records:
+    NS Server: ns1.siteground.net (Provider: AMAZON-02, Located in: United States)
+    NS Server: ns2.siteground.net (Provider: AMAZON-02, Located in: United States)
+#
+TXT Records:
+    "google-site-verification=aLMdNh92slw8Dtznrs9S1uwScth9BI7ZpLideg62Emw"
+    "v=spf1 +a +mx +ip4:34.175.51.223  include:centrorotulozafra.com.spf.auto.dnssmarthost.net ~all"
+#
+DMARC Record Info:
+    A public DMARC record was found for the domain.
+#
+Whois Info:
+    Registered with: tucows, inc.
+    Domain created on: 2005-06-01 10:36:38
+    Domain expires on: 2025-06-01 10:36:38
+    WARNING: The domain expires in less than three months. It is advisable to renew the domain as soon as possible to avoid potential domain hijacking.
+    Additional registrant details:
+        Name: redacted for privacy
+        Org: redacted for privacy
+        Address: redacted for privacy
+        City: redacted for privacy
+        State: es-ba
+        Registrant_postal_code: redacted for privacy
+        Country: es

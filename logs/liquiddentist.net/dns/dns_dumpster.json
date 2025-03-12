@@ -1,0 +1,181 @@
+{
+  "a": [
+    {
+      "host": "liquiddentist.net",
+      "ips": [
+        {
+          "asn": "32244",
+          "asn_name": "LIQUIDWEB",
+          "asn_range": "67.227.128.0/17",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "autoconfig.host.528revolution.com",
+                "autodiscover.host.528revolution.com",
+                "host.528revolution.com",
+                "ipv6.host.528revolution.com",
+                "mail.host.528revolution.com",
+                "www.host.528revolution.com"
+              ],
+              "banner": "20- Welcome to Pure-FTPd privsep TLS - 20-You are user number 1 of 50 alowed. 20-Local time is now 1",
+              "cn": "host.528revolution.com"
+            },
+            "http": {
+              "apps": [
+                "PHP",
+                "WooCommerce:9.1.4",
+                "Elementor:3.23.3",
+                "Apache HTTP Server",
+                "WordPress:6.7.1",
+                "MySQL"
+              ],
+              "generator": "WordPress 6.7.1",
+              "redirect_location": "https://liquiddentist.net/",
+              "server": "Apache",
+              "title": "liquiddentist "
+            },
+            "https": {
+              "alt_n": [
+                "cpanel.liquiddentist.net",
+                "cpcalendars.liquiddentist.net",
+                "cpcontacts.liquiddentist.net",
+                "liquiddentist.net",
+                "mail.liquiddentist.net",
+                "webdisk.liquiddentist.net",
+                "webmail.liquiddentist.net",
+                "www.liquiddentist.net"
+              ],
+              "apps": [
+                "WooCommerce:9.1.4",
+                "Elementor:3.23.3",
+                "Apache HTTP Server",
+                "WordPress:6.7.1",
+                "MySQL",
+                "PHP"
+              ],
+              "cn": "www.liquiddentist.net",
+              "generator": "WordPress 6.7.1",
+              "redirect_location": "https://liquiddentist.net/",
+              "server": "Apache",
+              "title": "liquiddentist "
+            },
+            "ip": "67.227.211.157",
+            "ssh": {
+              "banner": "SSH-2.0-OpenSSH_7.4"
+            }
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "67.227.211.157",
+          "ptr": "host.528revolution.com"
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 liquiddentist.net",
+      "ips": [
+        {
+          "asn": "32244",
+          "asn_name": "LIQUIDWEB",
+          "asn_range": "67.227.128.0/17",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "autoconfig.host.528revolution.com",
+                "autodiscover.host.528revolution.com",
+                "host.528revolution.com",
+                "ipv6.host.528revolution.com",
+                "mail.host.528revolution.com",
+                "www.host.528revolution.com"
+              ],
+              "banner": "20- Welcome to Pure-FTPd privsep TLS - 20-You are user number 1 of 50 alowed. 20-Local time is now 1",
+              "cn": "host.528revolution.com"
+            },
+            "http": {
+              "apps": [
+                "PHP",
+                "WooCommerce:9.1.4",
+                "Elementor:3.23.3",
+                "Apache HTTP Server",
+                "WordPress:6.7.1",
+                "MySQL"
+              ],
+              "generator": "WordPress 6.7.1",
+              "redirect_location": "https://liquiddentist.net/",
+              "server": "Apache",
+              "title": "liquiddentist "
+            },
+            "https": {
+              "alt_n": [
+                "cpanel.liquiddentist.net",
+                "cpcalendars.liquiddentist.net",
+                "cpcontacts.liquiddentist.net",
+                "liquiddentist.net",
+                "mail.liquiddentist.net",
+                "webdisk.liquiddentist.net",
+                "webmail.liquiddentist.net",
+                "www.liquiddentist.net"
+              ],
+              "apps": [
+                "WooCommerce:9.1.4",
+                "Elementor:3.23.3",
+                "Apache HTTP Server",
+                "WordPress:6.7.1",
+                "MySQL",
+                "PHP"
+              ],
+              "cn": "www.liquiddentist.net",
+              "generator": "WordPress 6.7.1",
+              "redirect_location": "https://liquiddentist.net/",
+              "server": "Apache",
+              "title": "liquiddentist "
+            },
+            "ip": "67.227.211.157",
+            "ssh": {
+              "banner": "SSH-2.0-OpenSSH_7.4"
+            }
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "67.227.211.157",
+          "ptr": "host.528revolution.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "ns.liquidweb.com",
+      "ips": [
+        {
+          "asn": "32244",
+          "asn_name": "LIQUIDWEB",
+          "asn_range": "69.16.222.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "69.16.222.254",
+          "ptr": "ns.liquidweb.com"
+        }
+      ]
+    },
+    {
+      "host": "ns1.liquidweb.com",
+      "ips": [
+        {
+          "asn": "32244",
+          "asn_name": "LIQUIDWEB",
+          "asn_range": "69.16.222.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "69.16.223.254",
+          "ptr": "ns1.liquidweb.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 1,
+  "txt": []
+}

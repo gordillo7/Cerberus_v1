@@ -1,14 +1,2 @@
-FTP (Anonymous login + dump):
-    1. Anonymous (THM)
-    2. Reel (HTB)
-
-Wordpress (general):
-    1. MetaTwo (HTB)
-    2. cartamundi.com
-    3. landreport.com
-    Wordpress Plugins:
-        1. Tenten (HTB)
-        2. cartamundi.com
-    Wordpress Bruteforce:
-        1. Blog (THM) -> kwheel:cutiepie1
-        2. MetaTwo (HTB) -> manager:partylikearockstar
+1. liquiddentist.net
+2. cartamundi.com

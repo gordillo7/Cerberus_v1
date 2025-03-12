@@ -1,0 +1,9 @@
+{
+  "db_update_started": true,
+  "db_files_updated": [
+
+  ],
+  "db_update_finished": true,
+  "scan_aborted": "Your API limit has been reached",
+  "target_url": "https://cartamundi.com/"
+}

@@ -1,0 +1,35 @@
+MX Records:
+    MX Host: 10 de-smtp-inbound-1.mimecast.com
+    Email Provider: MIMECAST-DE, GB
+    MX Host: 10 de-smtp-inbound-2.mimecast.com
+    Email Provider: MIMECAST-DE, GB
+#
+NS Records:
+    NS Server: ns2.101domain.com (Provider: CLOUDFLARENET, Located in: unknown)
+    NS Server: ns1.101domain.com (Provider: CLOUDFLARENET, Located in: unknown)
+    NS Server: ns5.101domain.com (Provider: CLOUDFLARENET, Located in: unknown)
+#
+TXT Records:
+    "google-site-verification=lg3ljNynhzx11cg3UGcYRF8MM6GY2loU2JCXknDLxas"
+    "miro-verification=4bb046374054488e82dfccb6aeddbd03d68ea189"
+    "ZA=3RwCEy8Me7/ye30JYUX5vw=="
+    "Z73U/pX63O9aiFP+qTsIGMLKn4C7NwZE7mAINSONeOdTGBaxyLSUC9ISuBHOHWOiFMGjgI8NNv0IfLS2FvoNfg=="
+    "v=spf1 ip4:54.75.233.119/32 ip4:52.17.229.211/32 ip4:81.188.106.128/27 ip4:81.188.93.64/27 ip4:84.198.249.0/28 ip4:151.181.49.64/27 include:spf.messagelabs.com include:de._netblocks.mimecast.com include:spf.mandrillapp.com include:servers.mcsv.net include" ":spf.sendinblue.com include:spf.protection.outlook.com include:_spf.salesforce.com -all"
+    "Sendinblue-code:9132d93907e19043a19869ccaa4adf85"
+#
+DMARC Record Info:
+    A public DMARC record was found for the domain.
+#
+Whois Info:
+    Registered with: https://www.101domain.com/
+    Domain created on: 1997-05-23 06:00:00
+    Domain expires on: 2025-05-24 06:00:00
+    WARNING: The domain expires in less than three months. It is advisable to renew the domain as soon as possible to avoid potential domain hijacking.
+    Additional registrant details:
+        Name: N/A
+        Org: cartamundi services nv
+        Address: visbeekstraat 22
+        City: turnhout
+        State: N/A
+        Registrant_postal_code: 2300
+        Country: be

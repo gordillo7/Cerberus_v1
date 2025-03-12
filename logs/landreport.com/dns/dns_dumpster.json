@@ -1,0 +1,141 @@
+{
+  "a": [
+    {
+      "host": "dev.landreport.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "104.21.32.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "104.21.40.167"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "104.21.40.167",
+          "ptr": ""
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 spam1.brownrice.com",
+      "ips": [
+        {
+          "asn": "14901",
+          "asn_name": "TAOSNET-NEWMEX",
+          "asn_range": "209.188.112.0/20",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "209.188.114.123",
+          "ptr": "mx1.brownrice.com"
+        }
+      ]
+    },
+    {
+      "host": "10 spam2.brownrice.com",
+      "ips": [
+        {
+          "asn": "17098",
+          "asn_name": "BROWNRICE-INTERNET-1",
+          "asn_range": "8.28.86.0/23",
+          "country": "United States",
+          "country_code": "US",
+          "ip": "8.28.87.10",
+          "ptr": "mx2.brownrice.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "val.ns.cloudflare.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "108.162.192.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "108.162.192.234"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "108.162.192.234",
+          "ptr": "val.ns.cloudflare.com"
+        }
+      ]
+    },
+    {
+      "host": "miles.ns.cloudflare.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "173.245.59.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "173.245.59.207"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "173.245.59.207",
+          "ptr": "miles.ns.cloudflare.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 1,
+  "txt": [
+    "\"google-site-verification=HlnsfOHTtXfT1f4RCly1RGvXZvX0by9ITxMHik4yub4\"",
+    "\"google-site-verification=KtqhzMlem8lEq-ncm0yX8oGb6BuszM6GDFsNQs9qFpk\"",
+    "\"google-site-verification=b175j2aJvxl9i8D_5LloHBLA7v40vX_kCkuEttUaQqY\"",
+    "\"v=spf1 a include:spf.brownrice.com ~all\"",
+    "\"google-site-verification=98SeERr27VLluggfj5NPKg-ZWbWshf3qMuMx8KsNMq4\""
+  ]
+}
