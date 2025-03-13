@@ -1,0 +1,108 @@
+Plugin: elementor
+CVE:
+  - 2024-5416
+
+Plugin: elementor
+CVE:
+  - 2024-6757
+
+Plugin: elementor
+CVE:
+  - 2024-8236
+
+Plugin: elementor
+CVE:
+  - 2024-10453
+
+Plugin: elementor
+CVE:
+  - 2024-13445
+
+Plugin: elementor
+CVE:
+  - 2024-54444
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-7092
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-8440
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-8742
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-8961
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-8979
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-8978
+
+Plugin: essential-addons-for-elementor-lite
+CVE:
+  - 2024-56063
+
+Plugin: header-footer-elementor
+CVE:
+  - 2024-10050
+
+Plugin: header-footer-elementor
+CVE:
+  - 2024-10325
+
+Plugin: header-footer-elementor
+CVE:
+  - 2024-11230
+
+Plugin: popup-maker
+CVE:
+  - 2024-10583
+
+Plugin: popup-maker
+CVE:
+  - 2025-24746
+
+Plugin: strong-testimonials
+CVE:
+  - 2024-47362
+
+Plugin: strong-testimonials
+CVE:
+  - 2025-26975
+
+Plugin: woocommerce
+CVE:
+  - 2025-26762
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-7056
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-10593
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-11223
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-11205
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-56276
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-13403
+

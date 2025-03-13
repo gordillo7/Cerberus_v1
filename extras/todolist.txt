@@ -1,13 +1,14 @@
-- Grabar vídeo y mandarlo a Andrés/Agustín (editarlo y publicarlo en YT).
+- Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
+    * Usar Proxy en WPscan (el parametro --proxy).
 - Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
+- Optimizar modulo wordpress_bruteforce para que se haga 1 solo brute con todas las listas que
+deba haber. Asi se ahorrara llamadas a la aip y se aprovechara mas el limite diario.
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
         ## DNSDumpster API --> Reconocimiento de DNS (General).
         ## MX ToolBox API --> Registro DMARC.
         ## APINinja Whois API --> Información sobre el propietario del dominio.
-- Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
-    * Usar Proxy en WPscan (el parametro --proxy).
 - Meter IA.
 - Ejecutar el main.py para cada subdominio encontrado.
 -------------------------------------------------------

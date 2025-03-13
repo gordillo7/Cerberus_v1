@@ -4,9 +4,9 @@
   "Command": "dmarc",
   "IsTransitioned": false,
   "CommandArgument": "liquiddentist.net",
-  "TimeRecorded": "2025-03-12T07:46:12.7181115-05:00",
+  "TimeRecorded": "2025-03-13T06:39:07.0254277-05:00",
   "ReportingNameServer": "ns.liquidweb.com",
-  "TimeToComplete": "228",
+  "TimeToComplete": "152",
   "RelatedIP": null,
   "ResourceRecordType": 5,
   "IsEmptySubDomain": false,
@@ -44,7 +44,7 @@
   "MultiInformation": [],
   "Transcript": [
     {
-      "Transcript": "- - - dmarc:_dmarc.liquiddentist.net\r\n\r\n&emsp; 1 l.gtld-servers.net 192.41.162.30 NON-AUTH 20 ms Received 2 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t172800\tIN\tNS\tns.liquidweb.com,liquiddentist.net.\t172800\tIN\tNS\tns1.liquidweb.com,\r\n&emsp; 2 ns1.liquidweb.com 69.16.223.254 AUTH 10 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.liquiddentist.net.\t3600\tIN\tCNAME\tliquiddentist.net,\r\n\r\n* Found CNAME on '_dmarc.liquiddentist.net' of 'liquiddentist.net'\r\n\r\n- - - dmarc:liquiddentist.net\r\n\r\n&emsp; 1 k.gtld-servers.net 192.52.178.30 NON-AUTH 30 ms Received 2 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t172800\tIN\tNS\tns.liquidweb.com,liquiddentist.net.\t172800\tIN\tNS\tns1.liquidweb.com,\r\n&emsp; 2 ns.liquidweb.com 69.16.222.254 AUTH 10 ms Received 1 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t3600\tIN\tSOA\t mname=ns.liquidweb.com rname=admin.liquidweb.com serial=2017082301,\r\nLookupServer 228ms\r\n"
+      "Transcript": "- - - dmarc:_dmarc.liquiddentist.net\r\n\r\n&emsp; 1 f.gtld-servers.net 192.35.51.30 NON-AUTH 69 ms Received 2 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t172800\tIN\tNS\tns.liquidweb.com,liquiddentist.net.\t172800\tIN\tNS\tns1.liquidweb.com,\r\n&emsp; 2 ns.liquidweb.com 69.16.222.254 AUTH 15 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.liquiddentist.net.\t3600\tIN\tCNAME\tliquiddentist.net,\r\n\r\n* Found CNAME on '_dmarc.liquiddentist.net' of 'liquiddentist.net'\r\n\r\n- - - dmarc:liquiddentist.net\r\n\r\n&emsp; 1 a.gtld-servers.net 192.5.6.30 NON-AUTH 0 ms Received 2 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t172800\tIN\tNS\tns.liquidweb.com,liquiddentist.net.\t172800\tIN\tNS\tns1.liquidweb.com,\r\n&emsp; 2 ns.liquidweb.com 69.16.222.254 AUTH 10 ms Received 1 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t3600\tIN\tSOA\t mname=ns.liquidweb.com rname=admin.liquidweb.com serial=2017082301,\r\nLookupServer 152ms\r\n"
     }
   ],
   "MxRep": 0,
