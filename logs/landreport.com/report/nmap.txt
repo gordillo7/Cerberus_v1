@@ -1,5 +1,0 @@
-PORT     STATE SERVICE  VERSION
-80/tcp   open  http     Cloudflare http proxy
-443/tcp  open  ssl/http Cloudflare http proxy
-8080/tcp open  http     Cloudflare http proxy
-8443/tcp open  ssl/http Cloudflare http proxy

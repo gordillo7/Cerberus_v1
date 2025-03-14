@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Wed Mar 12 13:32:20 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/landreport.com/nmap/initial_scan.txt landreport.com
-Host: 172.67.187.114 ()	Status: Up
-Host: 172.67.187.114 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 8080/open/tcp//http-proxy///, 8443/open/tcp//https-alt///	Ignored State: filtered (65531)
-# Nmap done at Wed Mar 12 13:32:46 2025 -- 1 IP address (1 host up) scanned in 26.57 seconds

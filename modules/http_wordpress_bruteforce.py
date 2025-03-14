@@ -50,13 +50,15 @@ def wordpress_bruteforce(target):
     output_dir = os.path.join("logs", target_clean, "http", "wordpress")
     os.makedirs(output_dir, exist_ok=True)
     success_file = os.path.join(output_dir, "credentials.txt")
-    # Clear the previous success file (if it exists)
+    # Clear previous success file (if it exists)
     with open(success_file, "w", encoding="utf-8") as sf:
         sf.write("")
 
-    total_found = 0
+    # We will use two sets to accumulate users and passwords without duplicates
+    accumulated_users = set()
+    accumulated_passwords = set()
 
-    # --- 1. Try with custom lists ---
+    # --- 1. Scenario: Custom Lists ---
     custom_dir = os.path.join("wordlists", target_clean)
     users_custom = []
     pass_custom = []
@@ -78,31 +80,29 @@ def wordpress_bruteforce(target):
             except Exception as e:
                 print(f"[!] Error reading {pass_file}: {e}")
 
-    if users_custom or pass_custom:
-        print("[*] Trying custom combinations...")
-        # Case 1: If both custom files exist
-        if users_custom and pass_custom:
-            total_found += run_wpscan_attack_file(target, user_file, pass_file, success_file)
-        # Case 2: If only custom users exist (using the default password list)
-        if users_custom:
-            default_pass_file = os.path.join("wordlists", "misc", "top_wordpress_passwords.txt")
-            if os.path.isfile(default_pass_file):
-                try:
-                    with open(default_pass_file, "r", encoding="utf-8") as f:
-                        default_passwords = [line.strip() for line in f if line.strip()]
-                    print(f"[*] Loaded {len(default_passwords)} default passwords from {default_pass_file}")
-                except Exception as e:
-                    print(f"[!] Error reading {default_pass_file}: {e}")
-                    default_passwords = []
-            else:
-                print(f"[!] Default list not found: {default_pass_file}")
-                default_passwords = []
-            if default_passwords:
-                total_found += run_wpscan_attack_file(target, user_file, default_pass_file, success_file)
-        # Additional block: Test user:user scenario
-            total_found += run_wpscan_attack_file(target, user_file, user_file, success_file)
+    # If custom users exist, add them to the accumulated users set
+    if users_custom:
+        accumulated_users.update(users_custom)
+        # For testing the user:user scenario, also add them to the passwords set
+        accumulated_passwords.update(users_custom)
+        # Additionally, if custom users exist, try to complement with the default password list
+        default_pass_file = os.path.join("wordlists", "misc", "top_wordpress_passwords.txt")
+        if os.path.isfile(default_pass_file):
+            try:
+                with open(default_pass_file, "r", encoding="utf-8") as f:
+                    default_passwords = [line.strip() for line in f if line.strip()]
+                print(f"[*] Loaded {len(default_passwords)} default passwords from {default_pass_file}")
+                accumulated_passwords.update(default_passwords)
+            except Exception as e:
+                print(f"[!] Error reading {default_pass_file}: {e}")
+        else:
+            print(f"[!] Default list not found: {default_pass_file}")
 
-    # --- 2. Try with the default combined list ---
+    # If custom passwords exist, add them to the accumulated passwords set
+    if pass_custom:
+        accumulated_passwords.update(pass_custom)
+
+    # --- 2. Scenario: Default Combined List ---
     default_combo_file = os.path.join("wordlists", "misc", "common_credentials.txt")
     if os.path.isfile(default_combo_file):
         try:
@@ -113,35 +113,41 @@ def wordpress_bruteforce(target):
             print(f"[!] Error reading {default_combo_file}: {e}")
             combos = []
         if combos:
-            # Create lists for usernames and passwords from the combos
-            usuarios = []
-            contrasenas = []
             for combo in combos:
                 if ":" in combo:
                     u, p = combo.split(":", 1)
-                    usuarios.append(u.strip())
-                    contrasenas.append(p.strip())
-
-            with tempfile.NamedTemporaryFile(mode="w", delete=False, encoding="utf-8") as tmp_users:
-                for user in usuarios:
-                    tmp_users.write(user + "\n")
-                tmp_users_file = tmp_users.name
-
-            with tempfile.NamedTemporaryFile(mode="w", delete=False, encoding="utf-8") as tmp_pass:
-                for pwd in contrasenas:
-                    tmp_pass.write(pwd + "\n")
-                tmp_pass_file = tmp_pass.name
-
-            print("[*] Testing combinations from the combined list using temporary files...")
-            total_found += run_wpscan_attack_file(target, tmp_users_file, tmp_pass_file, success_file)
-
-            # Remove temporary files
-            os.remove(tmp_users_file)
-            os.remove(tmp_pass_file)
+                    accumulated_users.add(u.strip())
+                    accumulated_passwords.add(p.strip())
         else:
             print("[!] The combined list is empty.")
     else:
         print(f"[!] Combined credentials list not found: {default_combo_file}")
+
+    # Convert sets to lists to write to temporary files
+    final_users = list(accumulated_users)
+    final_passwords = list(accumulated_passwords)
+
+    # Verify that there is data to attack with
+    if final_users and final_passwords:
+        with tempfile.NamedTemporaryFile(mode="w", delete=False, encoding="utf-8") as tmp_users:
+            for user in final_users:
+                tmp_users.write(user + "\n")
+            tmp_users_file = tmp_users.name
+
+        with tempfile.NamedTemporaryFile(mode="w", delete=False, encoding="utf-8") as tmp_pass:
+            for pwd in final_passwords:
+                tmp_pass.write(pwd + "\n")
+            tmp_pass_file = tmp_pass.name
+
+        print("[*] Running WPScan attack with the combined user and password lists...")
+        total_found = run_wpscan_attack_file(target, tmp_users_file, tmp_pass_file, success_file)
+
+        # Remove the temporary files
+        os.remove(tmp_users_file)
+        os.remove(tmp_pass_file)
+    else:
+        print("[-] No credentials lists available to run WPScan attack.")
+        total_found = 0
 
     if total_found > 0:
         print(f"[+] Brute force completed. A total of {total_found} valid credential(s) were found.")

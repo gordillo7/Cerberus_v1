@@ -1,6 +1,5 @@
 import ftplib
 import os
-#import shutil
 import sys
 import io
 import json

@@ -1,8 +1,6 @@
 - Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
     * Usar Proxy en WPscan (el parametro --proxy).
 - Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
-- Optimizar modulo wordpress_bruteforce para que se haga 1 solo brute con todas las listas que
-deba haber. Asi se ahorrara llamadas a la aip y se aprovechara mas el limite diario.
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.

@@ -3,8 +3,8 @@ MX Records:
     Email Provider: LIQUIDWEB
 #
 NS Records:
-    NS Server: ns1.liquidweb.com (Provider: LIQUIDWEB, Located in: United States)
     NS Server: ns.liquidweb.com (Provider: LIQUIDWEB, Located in: United States)
+    NS Server: ns1.liquidweb.com (Provider: LIQUIDWEB, Located in: United States)
 #
 #
 DMARC Record Info:
