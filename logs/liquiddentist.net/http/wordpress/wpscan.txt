@@ -1,11 +1,18 @@
 {
   "db_update_started": true,
   "db_files_updated": [
-    "metadata.json"
+    "metadata.json",
+    "wp_fingerprints.json",
+    "timthumbs-v3.txt",
+    "config_backups.txt",
+    "db_exports.txt",
+    "dynamic_finders.yml",
+    "LICENSE",
+    "sponsor.txt"
   ],
   "db_update_finished": true,
-  "start_time": 1741940195,
-  "start_memory": 60497920,
+  "start_time": 1742387491,
+  "start_memory": 65339392,
   "target_url": "https://liquiddentist.net/",
   "target_ip": "67.227.211.157",
   "effective_url": "https://liquiddentist.net/",
@@ -178,8 +185,8 @@
     "elementor": {
       "slug": "elementor",
       "location": "https://liquiddentist.net/wp-content/plugins/elementor/",
-      "latest_version": "3.27.7",
-      "last_updated": "2025-03-13T12:23:00.000Z",
+      "latest_version": "3.28.0",
+      "last_updated": "2025-03-17T14:28:00.000Z",
       "outdated": true,
       "readme_url": null,
       "directory_listing": null,
@@ -315,8 +322,8 @@
     "essential-addons-for-elementor-lite": {
       "slug": "essential-addons-for-elementor-lite",
       "location": "https://liquiddentist.net/wp-content/plugins/essential-addons-for-elementor-lite/",
-      "latest_version": "6.1.5",
-      "last_updated": "2025-03-13T06:28:00.000Z",
+      "latest_version": "6.1.6",
+      "last_updated": "2025-03-19T06:26:00.000Z",
       "outdated": true,
       "readme_url": null,
       "directory_listing": null,
@@ -461,8 +468,8 @@
     "header-footer-elementor": {
       "slug": "header-footer-elementor",
       "location": "https://liquiddentist.net/wp-content/plugins/header-footer-elementor/",
-      "latest_version": "2.2.1",
-      "last_updated": "2025-03-12T11:13:00.000Z",
+      "latest_version": "2.2.2",
+      "last_updated": "2025-03-18T09:42:00.000Z",
       "outdated": true,
       "readme_url": null,
       "directory_listing": null,
@@ -613,8 +620,8 @@
     "strong-testimonials": {
       "slug": "strong-testimonials",
       "location": "https://liquiddentist.net/wp-content/plugins/strong-testimonials/",
-      "latest_version": "3.2.5",
-      "last_updated": "2025-03-06T15:51:00.000Z",
+      "latest_version": "3.2.7",
+      "last_updated": "2025-03-19T10:52:00.000Z",
       "outdated": true,
       "readme_url": null,
       "directory_listing": null,
@@ -954,14 +961,14 @@
     "requests_done_during_scan": 9,
     "requests_remaining": 16
   },
-  "stop_time": 1741940360,
-  "elapsed": 165,
-  "requests_done": 736,
+  "stop_time": 1742387662,
+  "elapsed": 171,
+  "requests_done": 743,
   "cached_requests": 12,
-  "data_sent": 204117,
-  "data_sent_humanised": "199.333 KB",
-  "data_received": 15837856,
-  "data_received_humanised": "15.104 MB",
-  "used_memory": 312655872,
-  "used_memory_humanised": "298.172 MB"
+  "data_sent": 204768,
+  "data_sent_humanised": "199.969 KB",
+  "data_received": 24763535,
+  "data_received_humanised": "23.616 MB",
+  "used_memory": 321482752,
+  "used_memory_humanised": "306.59 MB"
 }
