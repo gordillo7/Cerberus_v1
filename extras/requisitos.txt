@@ -1,10 +1,12 @@
 #Librerias python
+flask
 requests
 bs4
 reportlab
 httpx
 pyppeteer
 asyncio
+mysql-connector-python
 
 #Herramientas
 serachsploit

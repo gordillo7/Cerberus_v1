@@ -1,0 +1,17 @@
+Identifying: http://167.86.117.147
+HTTP-Status: 200
+[["Country", [{:string=>"UNITED STATES", :module=>"US", :certainty=>100}]],
+ ["HTML5",
+  [{:regexp=>["<!DOCTYPE html>"],
+    :regexp_compiled=>/<!DOCTYPE html>/i,
+    :certainty=>100}]],
+ ["HTTPServer", [{:name=>"server string", :string=>"nginx", :certainty=>100}]],
+ ["IP", [{:string=>"167.86.117.147", :certainty=>100}]],
+ ["nginx",
+  [{:search=>"headers[server]",
+    :regexp=>["nginx"],
+    :regexp_compiled=>/^nginx$/,
+    :certainty=>100}]],
+ ["Title",
+  [{:name=>"page title", :string=>"Welcome to nginx!", :certainty=>100}]]]
+

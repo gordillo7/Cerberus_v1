@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Mon Mar 24 13:45:30 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/164.215.103.249/nmap/initial_scan.txt 164.215.103.249
+Host: 164.215.103.249 ()	Status: Up
+Host: 164.215.103.249 ()	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 80/open/tcp//http///, 3306/open/tcp//mysql///
+# Nmap done at Mon Mar 24 13:45:56 2025 -- 1 IP address (1 host up) scanned in 26.49 seconds
