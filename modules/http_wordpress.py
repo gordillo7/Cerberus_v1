@@ -7,7 +7,7 @@ import re
 #import requests
 #from urllib.parse import urljoin, urlparse
 #from bs4 import BeautifulSoup
-from modules.http_detect_scheme import get_scheme
+#from modules.http_detect_scheme import get_scheme
 
 def get_wpscan_api_token():
     config_file = os.path.join('config', 'api_tokens.json')
@@ -22,8 +22,8 @@ def run_wpscan(target_ip, domain=None):
     if domain:
         target_ip = domain
 
-    scheme = get_scheme(target_ip) + "://"
-    target_ip = scheme + target_ip
+    #scheme = get_scheme(target_ip) + "://"
+    target_ip = "https://" + target_ip
 
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
@@ -36,6 +36,7 @@ def run_wpscan(target_ip, domain=None):
         "-e", "vp,vt,u",
         "--no-banner",
         "--update",
+        "--proxy", "socks5://35.180.42.196:1080",
         "--format", "json",
         "--output", output_file
     ]

