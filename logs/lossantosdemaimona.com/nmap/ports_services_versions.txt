@@ -1,0 +1,17 @@
+PORT     STATE SERVICE    VERSION
+21/tcp   open  ftp        ProFTPD
+22/tcp   open  ssh        OpenSSH 7.4 (protocol 2.0)
+25/tcp   open  smtp       Postfix smtpd
+53/tcp   open  domain     Plesk Onyx BIND
+80/tcp   open  http       nginx
+106/tcp  open  tcpwrapped
+110/tcp  open  pop3       Dovecot pop3d
+143/tcp  open  imap       Dovecot imapd
+443/tcp  open  ssl/http   nginx
+465/tcp  open  ssl/smtp   Postfix smtpd
+587/tcp  open  smtp       Postfix smtpd
+993/tcp  open  ssl/imap   Dovecot imapd
+995/tcp  open  ssl/pop3   Dovecot pop3d
+3306/tcp open  mysql      MariaDB 5.5.5-10.6.19
+4190/tcp open  sieve      Dovecot Pigeonhole sieve 1.0
+8880/tcp open  cddbp-alt?

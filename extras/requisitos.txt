@@ -13,6 +13,7 @@ serachsploit
 joomscan
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest (mover del go/bin a /usr/bin)
 dnsrecon
+subfinder
 
 #Extras
 API_Token_de_WPScan

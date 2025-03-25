@@ -1,3 +1,7 @@
+- Revisar el crasheo de Dante en la EC2:
+    * Hacer script en la EC2 que reinicie el servicio de Dante si el status es 'failed'.
+- Modulo SMB (port 139/445).
+- Modulo SSH (port 22).
 - Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
     * Usar Proxy en WPscan (el parametro --proxy).
         # (HECHO) http_wordpress.py.

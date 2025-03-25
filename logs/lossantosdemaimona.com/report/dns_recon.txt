@@ -1,0 +1,19 @@
+MX Records:
+    MX Host: 10 mail.lossantosdemaimona.com
+    Email Provider: LOADING, ES
+#
+NS Records:
+    NS Server: mundored2.servidoresdominios.com (Provider: LOADING, ES, Located in: Spain)
+    NS Server: mundored1.servidoresdominios.com (Provider: LOADING, ES, Located in: Spain)
+#
+TXT Records:
+    "v=spf1 include:_spf.loading.es -all"
+#
+DMARC Record Info:
+    The DMARC record is not public. This implies that there is no valid DMARC record found for this domain, which could potentially allow email spoofing (the practice of forging email headers to appear as if sent from a trusted domain). It is recommended to configure a public DMARC record to enhance email security.
+#
+Whois Info:
+    Registered with: grupo loading systems, sl
+    Domain created on: 2003-08-12 10:20:11
+    Domain expires on: 2025-08-12 10:20:11
+    No additional registrant information available (or masked for privacy).

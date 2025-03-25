@@ -1,0 +1,20 @@
+Plugin: mailpoet
+CVE:
+  - 2019-11843
+
+Plugin: mailpoet
+CVE:
+  - 2024-10103
+
+Plugin: mailpoet
+CVE:
+  - 2024-12743
+
+Plugin: revslider
+CVE:
+  - 2024-37449
+
+Plugin: revslider
+CVE:
+  - 2024-8107
+
