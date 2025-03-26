@@ -28,5 +28,8 @@ A futuro:
 AVANCES:
 
 DUDAS:
-- Modelo de IA a usar (ChatGPT, DeepSeek...).
-- Modulo de fuzzing web (en entornos reales muchas redirecciones, etc).??
+- Modulo de fuzzing web (en entornos reales muchas redirecciones, etc)??.
+- Road plan (desarrollo de 2 meses, hasta junio, y en junio empezar la memoria).
+- Que es lo siguiente ha hacer?
+- Meter IA ya??
+    # Modelo de IA a usar (ChatGPT, DeepSeek...).
