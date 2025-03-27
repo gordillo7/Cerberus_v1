@@ -1,16 +1,15 @@
-- Revisar el crasheo de Dante en la EC2:
-    * Hacer script en la EC2 que reinicie el servicio de Dante si el status es 'failed'.
-- Modulo SMB (port 139/445).
 - Modulo SSH (port 22).
+- Modulo SMB (port 139/445).
+- Modulo para usar Nikto/Nuclei en la web (port 80).
+### HACER BUEN TESTING.
+- Testing del modulo mysql (port 3306).
+- Modulo de fuzzing web. (A revisar si lo vamos a meter o no es necesario).
+- Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
 - Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
     * Usar Proxy en WPscan (el parametro --proxy).
         # (HECHO) http_wordpress.py.
         # (HECHO) http_wordpress_bruteforce.py.
         # ftp.py.
-- Modulo mysql (port 3306).
-- Modulo de fuzzing web. (A revisar si lo vamos a meter o no es necesario).
-- Empezar documentacion.
-- Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
@@ -18,14 +17,16 @@
         ## MX ToolBox API --> Registro DMARC.
         ## APINinja Whois API --> Información sobre el propietario del dominio.
 - Meter IA.
+- Mejorar generación de PDFs.
 - Ejecutar el main.py para cada subdominio encontrado.
-- Desplegar herramienta en AWS (crear otra cuenta y desplegarlo en otra instancia).
 -------------------------------------------------------
-A futuro:
-- Mirar https://github.com/micro-joan/BlackStone.
-- Bot de Telegram para reporte en tiempo real (secundario).
+Secundario:
+- Desplegar herramienta en AWS (crear otra cuenta y desplegarlo en otra instancia).
+- Bot de Telegram para reporte en tiempo real.
 -------------------------------------------------------
 AVANCES:
+- Modulo mysql.
+- EC2 Proxy.
 
 DUDAS:
 - Modulo de fuzzing web (en entornos reales muchas redirecciones, etc)??.

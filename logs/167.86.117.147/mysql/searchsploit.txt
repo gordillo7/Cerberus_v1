@@ -1,7 +1,0 @@
-{
-	"SEARCH": "MySQL 8.0.40-0ubuntu0.20.04.1",
-	"DB_PATH_EXPLOIT": "/usr/share/exploitdb",
-	"RESULTS_EXPLOIT": [	],
-	"DB_PATH_SHELLCODE": "/usr/share/exploitdb",
-	"RESULTS_SHELLCODE": [	]
-}

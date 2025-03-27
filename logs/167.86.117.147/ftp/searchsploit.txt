@@ -1,7 +1,0 @@
-{
-	"SEARCH": "vsftpd 3.0.5",
-	"DB_PATH_EXPLOIT": "/usr/share/exploitdb",
-	"RESULTS_EXPLOIT": [	],
-	"DB_PATH_SHELLCODE": "/usr/share/exploitdb",
-	"RESULTS_SHELLCODE": [	]
-}

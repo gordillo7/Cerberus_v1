@@ -1,0 +1,236 @@
+Plugin: addons-for-divi
+CVE:
+  - 2023-33999
+
+Plugin: addons-for-divi
+CVE:
+  - 2024-5892
+
+Plugin: addons-for-divi
+CVE:
+  - 2025-0353
+
+Plugin: awesome-weather
+CVE:
+  - 2021-24474
+
+Plugin: awesome-weather
+CVE:
+  - 2023-4944
+
+Plugin: cf7-styler-for-divi
+CVE:
+  - 2023-33999
+
+Plugin: contact-form-7
+CVE:
+  - 2014-2265
+
+Plugin: contact-form-7
+CVE:
+  - 2018-20979
+
+Plugin: contact-form-7
+CVE:
+  - 2020-35489
+
+Plugin: contact-form-7
+CVE:
+  - 2023-6449
+
+Plugin: contact-form-7
+CVE:
+  - 2024-2242
+
+Plugin: contact-form-7
+CVE:
+  - 2024-4704
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2019-25143
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2023-4013
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-1622
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-1621
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-1620
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-1619
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-1624
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-1623
+
+Plugin: gdpr-cookie-compliance
+CVE:
+  - 2025-2205
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2020-9459
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24147
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24146
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24145
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24149
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24687
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24716
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24946
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-24925
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2021-25046
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2022-0364
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2022-27848
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2022-30533
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2023-1400
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2023-4021
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2024-5441
+
+Plugin: modern-events-calendar-lite
+CVE:
+  - 2024-6522
+
+Plugin: table-of-contents-plus
+CVE:
+  - 2022-4479
+
+Plugin: table-of-contents-plus
+CVE:
+  - 2023-44473
+
+Plugin: table-of-contents-plus
+CVE:
+  - 2024-5578
+
+Plugin: table-of-contents-plus
+CVE:
+  - 2024-49250
+
+Plugin: wordpress-popular-posts
+CVE:
+  - 2021-42362
+
+Plugin: wordpress-popular-posts
+CVE:
+  - 2021-20746
+
+Plugin: wordpress-popular-posts
+CVE:
+  - 2021-36872
+
+Plugin: wordpress-popular-posts
+CVE:
+  - 2022-43468
+
+Plugin: wordpress-popular-posts
+CVE:
+  - 2023-45607
+
+Plugin: wordpress-popular-posts
+CVE:
+  - 2024-11733
+
+Plugin: wow-carousel-for-divi-lite
+CVE:
+  - 2023-33999
+
+Plugin: wow-carousel-for-divi-lite
+CVE:
+  - 2025-0350
+
+Plugin: wpforms-lite
+CVE:
+  - 2020-10385
+
+Plugin: wpforms-lite
+CVE:
+  - 2023-30500
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-3649
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-7056
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-10593
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-11223
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-11205
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-56276
+
+Plugin: wpforms-lite
+CVE:
+  - 2024-13403
+

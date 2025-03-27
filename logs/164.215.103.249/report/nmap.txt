@@ -1,5 +1,0 @@
-PORT     STATE SERVICE VERSION
-21/tcp   open  ftp     Pure-FTPd
-22/tcp   open  ssh     OpenSSH 7.4 (protocol 2.0)
-80/tcp   open  http    nginx
-3306/tcp open  mysql   MySQL 5.7.44-log

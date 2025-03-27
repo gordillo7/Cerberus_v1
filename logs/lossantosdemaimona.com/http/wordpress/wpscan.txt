@@ -4,8 +4,8 @@
 
   ],
   "db_update_finished": true,
-  "start_time": 1742842243,
-  "start_memory": 66420736,
+  "start_time": 1743092973,
+  "start_memory": 67215360,
   "target_url": "https://lossantosdemaimona.com/",
   "target_ip": "91.146.97.125",
   "effective_url": "https://lossantosdemaimona.com/",
@@ -390,16 +390,16 @@
   "vuln_api": {
     "plan": "free",
     "requests_done_during_scan": 13,
-    "requests_remaining": 0
+    "requests_remaining": "Unlimited"
   },
-  "stop_time": 1742842534,
-  "elapsed": 291,
+  "stop_time": 1743093231,
+  "elapsed": 257,
   "requests_done": 765,
   "cached_requests": 14,
   "data_sent": 181660,
   "data_sent_humanised": "177.402 KB",
-  "data_received": 12205083,
-  "data_received_humanised": "11.64 MB",
-  "used_memory": 300326912,
-  "used_memory_humanised": "286.414 MB"
+  "data_received": 12181551,
+  "data_received_humanised": "11.617 MB",
+  "used_memory": 322203648,
+  "used_memory_humanised": "307.277 MB"
 }

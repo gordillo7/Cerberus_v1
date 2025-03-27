@@ -4,9 +4,9 @@
   "Command": "dmarc",
   "IsTransitioned": false,
   "CommandArgument": "lossantosdemaimona.com",
-  "TimeRecorded": "2025-03-24T13:49:19.6184567-05:00",
+  "TimeRecorded": "2025-03-27T11:28:12.8239877-05:00",
   "ReportingNameServer": "mundored2.servidoresdominios.com",
-  "TimeToComplete": "124",
+  "TimeToComplete": "176",
   "RelatedIP": null,
   "ResourceRecordType": 0,
   "IsEmptySubDomain": false,
@@ -34,7 +34,7 @@
   "MultiInformation": [],
   "Transcript": [
     {
-      "Transcript": "- - - dmarc:_dmarc.lossantosdemaimona.com\r\n\r\n&emsp; 1 k.gtld-servers.net 192.52.178.30 NON-AUTH 26 ms Received 2 Referrals , rcode=NO_ERROR &emsp; lossantosdemaimona.com.\t172800\tIN\tNS\tmundored1.servidoresdominios.com,lossantosdemaimona.com.\t172800\tIN\tNS\tmundored2.servidoresdominios.com,\r\n&emsp; 2 mundored2.servidoresdominios.com 91.146.97.127 AUTH 97 ms Received 1 Referrals , rcode=NAME_ERROR &emsp; lossantosdemaimona.com.\t10800\tIN\tSOA\t mname=mundored1.servidoresdominios.com rname=plesk.mundored.com serial=1741957130,\r\nLookupServer 124ms\r\n"
+      "Transcript": "- - - dmarc:_dmarc.lossantosdemaimona.com\r\n\r\n&emsp; 1 i.gtld-servers.net 192.43.172.30 NON-AUTH 77 ms Received 2 Referrals , rcode=NO_ERROR &emsp; lossantosdemaimona.com.\t172800\tIN\tNS\tmundored1.servidoresdominios.com,lossantosdemaimona.com.\t172800\tIN\tNS\tmundored2.servidoresdominios.com,\r\n&emsp; 2 mundored2.servidoresdominios.com 91.146.97.127 AUTH 98 ms Received 1 Referrals , rcode=NAME_ERROR &emsp; lossantosdemaimona.com.\t10800\tIN\tSOA\t mname=mundored1.servidoresdominios.com rname=plesk.mundored.com serial=1741957130,\r\nLookupServer 176ms\r\n"
     }
   ],
   "MxRep": 0,
