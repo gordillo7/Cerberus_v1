@@ -123,7 +123,6 @@ def mysql_searchsploit(target):
         if line.startswith("PORT") or line.strip() == "":
             continue
         parts = line.split()
-        # Look for port 3306 and service mysql (case-insensitive check)
         if len(parts) >= 4 and parts[0].startswith("3306") and "mysql" in parts[2].lower():
             mysql_version = " ".join(parts[3:])
             break

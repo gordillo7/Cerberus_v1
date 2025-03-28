@@ -36,7 +36,7 @@ def run_wpscan(target_ip, domain=None):
         "-e", "vp,vt,u",
         "--no-banner",
         "--update",
-        "--proxy", "socks5://35.180.42.196:1080",
+        # "--proxy", "socks5://35.180.42.196:1080",
         "--format", "json",
         "--output", output_file
     ]
