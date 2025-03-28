@@ -1,7 +1,8 @@
+- Cambiar proxy EC2 por VPN local.
 - Modulo SSH (port 22).
 - Modulo SMB (port 139/445).
 - Modulo para usar Nikto/Nuclei en la web (port 80).
-### HACER BUEN TESTING.
+### HACER BUEN TESTING/REVISION/LIMPIEZA/MEJORA DE TODOS LOS MODULOS.
 - Testing del modulo mysql (port 3306).
 - Modulo de fuzzing web. (A revisar si lo vamos a meter o no es necesario).
 - Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
@@ -26,9 +27,10 @@ Secundario:
 -------------------------------------------------------
 AVANCES:
 - Modulo mysql.
-- EC2 Proxy.
+- EC2 Proxy --> Cambiado por VPN Local.
 
 DUDAS:
+- Problemas con EC2 Proxy.
 - Modulo de fuzzing web (en entornos reales muchas redirecciones, etc)??.
 - Road plan (desarrollo de 2 meses, hasta junio, y en junio empezar la memoria).
 - Que es lo siguiente ha hacer?

@@ -84,7 +84,6 @@ def check_ftp_write_permission(ftp, target_ip):
         os.makedirs(os.path.dirname(report_path), exist_ok=True)
         with open(report_path, "w") as rep:
             rep.write("The FTP server allows writing, which could enable the upload of malicious files.")
-        #shutil.copy(report_path, f"logs/{target_ip}/report/ftp_write_perm.txt")
         os.system("cp " + report_path + " logs/" + target_ip + "/report/ftp_write_perm.txt")
     except ftplib.error_perm:
         print("[-] Write permissions not detected.")
@@ -104,7 +103,6 @@ def check_ftp_anonymous(target_ip):
         with open(anonymous_file, 'w') as f:
             f.write("Anonymous FTP login enabled")
 
-        #shutil.copy(anonymous_file, f"logs/{target_ip}/report/ftp_anonymous.txt")
         os.system("cp " + anonymous_file + " logs/" + target_ip + "/report/ftp_anonymous.txt")
         # Proceed to download files if access is successful
         dump_ftp_contents(ftp, target_ip)
@@ -141,7 +139,6 @@ def mini_bruteforce(target_ip):
             with open(log_path, "w") as logf:
                 logf.write(f"Weak FTP credentials found: admin:{pwd} (obtained by brute force)")
 
-            #shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
             os.system("cp " + log_path + " logs/" + target_ip + "/report/ftp_credentials_found.txt")
             dump_ftp_contents(ftp, target_ip)
             ftp.quit()
@@ -170,7 +167,6 @@ def mini_bruteforce(target_ip):
             os.makedirs(os.path.dirname(log_path), exist_ok=True)
             with open(log_path, "w") as logf:
                 logf.write("There is no attempt limit on FTP login.")
-            #shutil.copy(log_path, f"logs/{target_ip}/report/ftp_no_limit.txt")
             os.system("cp " + log_path + " logs/" + target_ip + "/report/ftp_no_limit.txt")
             limite_libre = True
         else:
@@ -230,7 +226,6 @@ def ftp_elaborate_bruteforce(target_ip):
                         with open(log_path, "w") as logf:
                             logf.write(
                                 f"Weak FTP credentials found: {user}:{pwd} (obtained by brute force)")
-                        #shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                         os.system("cp " + log_path + " logs/" + target_ip + "/report/ftp_credentials_found.txt")
                         dump_ftp_contents(ftp, target_ip)
                         ftp.quit()
@@ -263,7 +258,6 @@ def ftp_elaborate_bruteforce(target_ip):
                         with open(log_path, "w") as logf:
                             logf.write(
                                 f"Weak FTP credentials found: {user}:{pwd} (obtained by brute force)")
-                        #shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                         os.system("cp " + log_path + " logs/" + target_ip + "/report/ftp_credentials_found.txt")
                         dump_ftp_contents(ftp, target_ip)
                         ftp.quit()
@@ -288,7 +282,6 @@ def ftp_elaborate_bruteforce(target_ip):
                     os.makedirs(os.path.dirname(log_path), exist_ok=True)
                     with open(log_path, "w") as logf:
                         logf.write(f"Weak FTP credentials found: {user}:{user} (obtained by brute force)")
-                    #shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                     os.system("cp " + log_path + " logs/" + target_ip + "/report/ftp_credentials_found.txt")
                     dump_ftp_contents(ftp, target_ip)
                     ftp.quit()
@@ -320,7 +313,6 @@ def ftp_elaborate_bruteforce(target_ip):
                 os.makedirs(os.path.dirname(log_path), exist_ok=True)
                 with open(log_path, "w") as logf:
                     logf.write(f"Weak FTP credentials found: {user}:{pwd} (obtained by brute force)")
-                #shutil.copy(log_path, f"logs/{target_ip}/report/ftp_credentials_found.txt")
                 os.system("cp " + log_path + " logs/" + target_ip + "/report/ftp_credentials_found.txt")
                 dump_ftp_contents(ftp, target_ip)
                 ftp.quit()
