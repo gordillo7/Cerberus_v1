@@ -1,0 +1,1 @@
+# Hydra v9.5 run at 2025-03-29 12:49:25 on localhost ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/localhost/ssh/hydra_default_output.txt -f localhost ssh)

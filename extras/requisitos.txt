@@ -7,7 +7,6 @@ httpx
 pyppeteer
 asyncio
 mysql-connector-python
-paramiko
 
 #Herramientas
 serachsploit

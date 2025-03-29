@@ -11,6 +11,7 @@ from modules.http_wordpress import run_http_wordpress
 from modules.http_wordpress_bruteforce import run_http_wordpress_bruteforce
 from modules.http_wordpress_plugins import run_http_wordpress_plugins
 from modules.nmap import run_nmap
+from modules.ssh import run_ssh
 
 
 def main():
@@ -40,6 +41,8 @@ def main():
                         run_http_joomla(target_clean)
             if "21" in ports:
                 run_ftp(target_clean)
+            if "22" in ports:
+                run_ssh(target_clean)
             if "3306" in ports:
                 run_db_mysql(target_clean)
 

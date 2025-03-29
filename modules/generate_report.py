@@ -263,6 +263,16 @@ def generate_report(target):
                         elements.append(Spacer(1, 12))
                         elements.append(Paragraph("CVEs for the running MySQL version have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                    case "ssh_credentials_found.txt":
+                        elements.append(Paragraph("SSH Credentials", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Valid SSH credentials have been found.", styles['Normal']))
+                        elements.extend(create_text_paragraph(filepath))
+                    case "ssh_cves.txt":
+                        elements.append(Paragraph("SSH Vulnerabilities", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("CVEs for the running SSH version have been found.", styles['Normal']))
+                        elements.extend(create_text_paragraph(filepath))
 
     except Exception as e:
         print(f"[-] Error generating report: {e}")

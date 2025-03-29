@@ -1,4 +1,4 @@
-- Modulo SSH (port 22).
+- Modulo SSH (port 22) --> TESTEAR.
 - Modulo SMB (port 139/445).
 - Modulo para usar Nikto/Nuclei en la web (port 80).
 - Cambiar proxy EC2 por VPN local.????

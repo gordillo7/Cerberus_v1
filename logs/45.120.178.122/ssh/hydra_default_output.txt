@@ -1,0 +1,1 @@
+# Hydra v9.5 run at 2025-03-29 12:35:49 on 45.120.178.122 ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/45.120.178.122/ssh/hydra_default_output.txt -f 45.120.178.122 ssh)

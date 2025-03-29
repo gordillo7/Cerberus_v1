@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Sat Mar 29 12:44:47 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/localhost/nmap/initial_scan.txt localhost
+Host: 127.0.0.1 ()	Status: Up
+Host: 127.0.0.1 ()	Ports: 22/open/tcp//ssh///, 5000/open/tcp//upnp///, 39203/open/tcp/////, 63342/open/tcp/////	Ignored State: closed (65531)
+# Nmap done at Sat Mar 29 12:44:48 2025 -- 1 IP address (1 host up) scanned in 0.82 seconds
