@@ -253,16 +253,6 @@ def generate_report(target):
                             for content_line in current_content:
                                 elements.append(Paragraph(content_line, styles['Normal']))
                             elements.append(Spacer(1, 12))
-                    case "mysql_credentials_found.txt":
-                        elements.append(Paragraph("MySQL Credentials", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
-                        elements.append(Paragraph("Valid MySQL credentials have been found.", styles['Normal']))
-                        elements.extend(create_text_paragraph(filepath))
-                    case "mysql_cves.txt":
-                        elements.append(Paragraph("MySQL Vulnerabilities", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
-                        elements.append(Paragraph("CVEs for the running MySQL version have been found.", styles['Normal']))
-                        elements.extend(create_text_paragraph(filepath))
                     case "ssh_credentials_found.txt":
                         elements.append(Paragraph("SSH Credentials", styles['Heading1']))
                         elements.append(Spacer(1, 12))

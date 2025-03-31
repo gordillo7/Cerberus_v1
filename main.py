@@ -1,5 +1,4 @@
 import os, sys, time, ipaddress
-from modules.db_mysql import run_db_mysql
 from modules.dns_recon import run_dns_recon
 from modules.ftp import run_ftp
 from modules.generate_report import run_generate_report
@@ -43,8 +42,6 @@ def main():
                 run_ftp(target_clean)
             if "22" in ports:
                 run_ssh(target_clean)
-            if "3306" in ports:
-                run_db_mysql(target_clean)
 
     run_generate_report(target_clean)
     print(f"[*] Scan finished in {int((time.time() - start_time) // 60)} minute(s) and {int((time.time() - start_time) % 60)} second(s).")

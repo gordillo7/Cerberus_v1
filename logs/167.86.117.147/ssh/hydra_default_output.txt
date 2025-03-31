@@ -1,5 +1,0 @@
-# Hydra v9.5 run at 2025-03-29 12:18:48 on 167.86.117.147 ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/167.86.117.147/ssh/hydra_default_output.txt -f 167.86.117.147 ssh)
-# Hydra v9.5 run at 2025-03-29 12:26:31 on 167.86.117.147 ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/167.86.117.147/ssh/hydra_default_output.txt -f 167.86.117.147 ssh)
-# Hydra v9.5 run at 2025-03-29 12:29:17 on 167.86.117.147 ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/167.86.117.147/ssh/hydra_default_output.txt -f 167.86.117.147 ssh)
-# Hydra v9.5 run at 2025-03-29 12:29:31 on 167.86.117.147 ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/167.86.117.147/ssh/hydra_default_output.txt -f 167.86.117.147 ssh)
-# Hydra v9.5 run at 2025-03-29 12:29:36 on 167.86.117.147 ssh (hydra -C wordlists/misc/common_credentials.txt -s 22 -o logs/167.86.117.147/ssh/hydra_default_output.txt -f 167.86.117.147 ssh)

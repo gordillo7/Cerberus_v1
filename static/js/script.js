@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
     setupTokenForm('dnsdumpster');
     setupTokenForm('mxtoolbox');
     setupTokenForm('apininja');
+    setupTokenForm('intelx');
 
     // Update statistics every 30 seconds
     setInterval(updateStats, 30000);

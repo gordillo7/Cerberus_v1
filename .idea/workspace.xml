@@ -5,16 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt">
+      <change afterPath="$PROJECT_DIR$/modules/osint_mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/api_tokens.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/api_tokens.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extras/requisitos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/requisitos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extras/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/todolist.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/ssh/hydra_default_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/ssh/searchsploit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/ssh/hydra_default_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/ssh/searchsploit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/ssh/hydra_custom_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/ssh/hydra_default_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost/ssh/searchsploit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/nmap.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/db_mysql.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/generate_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generate_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/ssh.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ssh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlists/misc/mysql-betterdefaultpasslist.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="FlaskConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform)); sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo, NoAppException&#10;for module in [&quot;main.py&quot;, &quot;wsgi.py&quot;, &quot;app.py&quot;]:&#10;    try: locals().update(ScriptInfo(app_import_path=module, create_app=None).load_app().make_shell_context()); print(&quot;\nFlask App: %s&quot; % app.import_name); break&#10;    except NoAppException: pass">
     <envs>
@@ -57,9 +94,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Flask server.Flask (app.py).executor": "Run",
+    "Flask server.TFG.executor": "Run",
     "Python.app.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "deletionFromPopupRequiresConfirmation": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/home/superpekka782/PycharmProjects/TFG/modules",
     "node.js.detected.package.eslint": "true",
@@ -77,57 +116,22 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="TFG" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="TFG" type="Python.FlaskServer">
       <module name="TFG" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="launchJavascriptDebuger" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="TFG" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.app" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -169,7 +173,10 @@
       <workItem from="1743157143908" duration="93000" />
       <workItem from="1743184078044" duration="97000" />
       <workItem from="1743244792234" duration="175000" />
-      <workItem from="1743244986344" duration="6255000" />
+      <workItem from="1743244986344" duration="6315000" />
+      <workItem from="1743403516982" duration="1634000" />
+      <workItem from="1743405259735" duration="1413000" />
+      <workItem from="1743407488630" duration="8405000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -211,7 +218,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743156531512</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1743251267394</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743251267394</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,6 +238,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFG$app.coverage" NAME="app Coverage Results" MODIFIED="1743244825472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1743245742052" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1743405383454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1743416802280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

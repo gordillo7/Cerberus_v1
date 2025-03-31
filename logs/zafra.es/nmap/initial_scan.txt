@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Sat Mar 29 12:04:47 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/zafra.es/nmap/initial_scan.txt zafra.es
-Host: 35.214.206.198 ()	Status: Up
-Host: 35.214.206.198 ()	Ports: 21/open/tcp//ftp///, 25/open/tcp//smtp///, 80/open/tcp//http///, 110/open/tcp//pop3///, 143/open/tcp//imap///, 443/open/tcp//https///, 465/open/tcp//smtps///, 587/open/tcp//submission///, 993/open/tcp//imaps///, 995/open/tcp//pop3s///, 2525/open/tcp//ms-v-worlds///, 3306/open/tcp//mysql///, 5432/open/tcp//postgresql///, 18765/open/tcp/////
-# Nmap done at Sat Mar 29 12:05:18 2025 -- 1 IP address (1 host up) scanned in 31.14 seconds

@@ -1,23 +1,24 @@
-- Modulo SSH (port 22) --> TESTEAR.
-- Modulo SMB (port 139/445).
-- Modulo para usar Nikto/Nuclei en la web (port 80).
-- Cambiar proxy EC2 por VPN local.????
-- Revisar wordlists (eliminar las innecesarias y usar mas "common_credentials.txt")
-### HACER BUEN TESTING/REVISION/LIMPIEZA/MEJORA DE TODOS LOS MODULOS.
-- Testing del modulo mysql (port 3306).
-- Modulo de fuzzing web. (A revisar si lo vamos a meter o no es necesario).
-- Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
-- Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
-    * Usar Proxy en WPscan (el parametro --proxy).
-        # (HECHO) http_wordpress.py.
-        # (HECHO) http_wordpress_bruteforce.py.
-        # ftp.py.
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
         ## DNSDumpster API --> Reconocimiento de DNS (General).
         ## MX ToolBox API --> Registro DMARC.
         ## APINinja Whois API --> Información sobre el propietario del dominio.
+- Modulo SSH (port 22) --> TESTEAR.
+- Modulo SMB (port 139/445).
+- Modulo para usar Nikto/Nuclei en la web (port 80).
+- Meter la opcion de proxy como opcional.
+- Revisar wordlists (eliminar las innecesarias y usar mas "common_credentials.txt")
+### HACER BUEN TESTING/REVISION/LIMPIEZA/MEJORA DE TODOS LOS MODULOS.
+- Modulo de fuzzing web --> Hacerlo con FeroxBuster.
+    # FeroxBuster para fuzzing. Comparar gobuster/ferxbuster/etc para comparar tiempo de respuesta...
+- Comparacion de multiples herramientas de cara a la memoria.
+- Revisar modulo ftp.py para optimizarlo (quitar los shutil copy, etc).
+- Usar máquina AWS como proxy para evitar bloqueos ((revoult) aws capa gratuita).
+    * Usar Proxy en WPscan (el parametro --proxy).
+        # (HECHO) http_wordpress.py.
+        # (HECHO) http_wordpress_bruteforce.py.
+        # ftp.py.
 - Meter IA.
 - Mejorar generación de PDFs.
 - Ejecutar el main.py para cada subdominio encontrado.
@@ -27,13 +28,9 @@ Secundario:
 - Bot de Telegram para reporte en tiempo real.
 -------------------------------------------------------
 AVANCES:
-- Modulo mysql.
 
 DUDAS:
 - Problemas con EC2 Proxy.
 - Como hacemos la funcionalidad de proxy?? VPN es muy dificil de configurar.
-- Modulo de fuzzing web (en entornos reales muchas redirecciones, etc)??.
-- Road plan (desarrollo de 2 meses, hasta junio, y en junio empezar la memoria).
-- Que es lo siguiente ha hacer?
-- Meter IA ya??
-    # Modelo de IA a usar (ChatGPT, DeepSeek...).
+
+SIGUIENTE:

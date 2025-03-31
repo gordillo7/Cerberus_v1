@@ -136,6 +136,11 @@ def manage_mxtoolbox_token():
 def manage_apininja_token():
     return manage_token('apininja')
 
+# API Token Management - IntelligenceX
+@app.route('/api/settings/intelx-token', methods=['GET', 'POST'])
+def manage_intelx_token():
+    return manage_token('intelx')
+
 # Generic token management function
 def manage_token(token_name):
     config_file = Path('config/api_tokens.json')

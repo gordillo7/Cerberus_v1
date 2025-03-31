@@ -6,7 +6,7 @@ reportlab
 httpx
 pyppeteer
 asyncio
-mysql-connector-python
+pip install intelx (Intelx)
 
 #Herramientas
 serachsploit
