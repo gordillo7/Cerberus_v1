@@ -5,41 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt">
-      <change afterPath="$PROJECT_DIR$/modules/osint_mail.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/api_tokens.json" beforeDir="false" afterPath="$PROJECT_DIR$/config/api_tokens.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extras/requisitos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/requisitos.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extras/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/todolist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/nmap/initial_scan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/nmap/ports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/nmap/ports_services_versions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/report/nmap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/ssh/hydra_default_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/167.86.117.147/ssh/searchsploit.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/nmap/initial_scan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/nmap/ports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/nmap/ports_services_versions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/report/nmap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/ssh/hydra_default_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/45.120.178.122/ssh/searchsploit.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/nmap/initial_scan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/nmap/ports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/nmap/ports_services_versions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/report/nmap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/ssh/hydra_custom_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/ssh/hydra_default_output.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/localhost/ssh/searchsploit.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/initial_scan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/ports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/ports_services_versions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/nmap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/db_mysql.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/generate_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generate_report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordlists/misc/mysql-betterdefaultpasslist.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/unex.es/dns/email_osint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/osint_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/osint_mail.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,25 +59,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask server.Flask (app.py).executor": "Run",
-    "Flask server.TFG.executor": "Run",
-    "Python.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/superpekka782/PycharmProjects/TFG/modules",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.TFG.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/superpekka782/PycharmProjects/TFG/modules&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/modules" />
@@ -176,7 +144,11 @@
       <workItem from="1743244986344" duration="6315000" />
       <workItem from="1743403516982" duration="1634000" />
       <workItem from="1743405259735" duration="1413000" />
-      <workItem from="1743407488630" duration="8405000" />
+      <workItem from="1743407488630" duration="8444000" />
+      <workItem from="1743432953729" duration="4311000" />
+      <workItem from="1743489597108" duration="1085000" />
+      <workItem from="1743502189228" duration="685000" />
+      <workItem from="1743502973357" duration="1264000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -226,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743251267394</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1743422765667</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743422765667</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
