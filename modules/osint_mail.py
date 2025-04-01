@@ -13,7 +13,6 @@ def get_intelx_api_token():
             return config.get('intelx', '')
     return ''
 
-
 def search_records(target):
     api_key = get_intelx_api_token()
     ix = intelx(api_key)
@@ -29,9 +28,9 @@ def search_records(target):
     output_file = os.path.join(output_dir, "records.json")
 
     with open(output_file, 'w', encoding='utf-8') as f:
-        f.write(results)
-    print(f"Records saved to {output_file}")
+        json.dump(results, f, indent=4, ensure_ascii=False)
 
+    print(f"Records saved to {output_file}")
 
 def search_emails(target):
     # Re-initialize the API with your API key
@@ -52,23 +51,24 @@ def search_emails(target):
     found_emails = set()
 
     for record in records:
-        systemid = record.get("systemid")
+        sid = record.get("storageid")
         bucket = record.get("bucket")
-        ctype = record.get("type") or record.get("ctype", 1)
-        mediatype = record.get("media", 24)  # Default to text file
+        ctype = record.get("type")
+        mediatype = record.get("media", 24)
 
-        if not systemid or not bucket:
+        if not sid or not bucket:
             continue
 
         try:
             # Retrieve file content using FILE_VIEW
-            content = ix.FILE_VIEW(ctype, mediatype, systemid, bucket=bucket)
+            content = ix.FILE_VIEW(ctype=ctype, mediatype=mediatype, sid=sid, bucket=bucket)
             # Extract email addresses using a regular expression
-            emails = re.findall(r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", content)
+            pattern = rf"[a-zA-Z0-9_.+-]+@{re.escape(target)}"
+            emails = re.findall(pattern, content)
             for email in emails:
                 found_emails.add(email)
         except Exception as e:
-            print(f"Error processing record {systemid}: {e}")
+            print(f"Error processing record {sid}: {e}")
 
     # Save the found email addresses to emails.txt
     output_file = os.path.join("logs", target, "dns", "emails.txt")
@@ -78,8 +78,15 @@ def search_emails(target):
 
     print(f"Found {len(found_emails)} email addresses. Results saved to {output_file}")
 
+def run_osint_mail(target):
+    token = get_intelx_api_token()
+    if not token:
+        print("[*] IntelX API token not found, skipping functionality.")
+        return
+    search_records(target)
+    search_emails(target)
+
 
 if __name__ == "__main__":
     target = sys.argv[1]
-    search_records(target)
-    search_emails(target)
+    run_osint_mail(target)

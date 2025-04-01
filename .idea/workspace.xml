@@ -148,7 +148,8 @@
       <workItem from="1743432953729" duration="4311000" />
       <workItem from="1743489597108" duration="1085000" />
       <workItem from="1743502189228" duration="685000" />
-      <workItem from="1743502973357" duration="1264000" />
+      <workItem from="1743502973357" duration="2034000" />
+      <workItem from="1743525918236" duration="1855000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -206,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743422765667</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1743508818930</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1743508818930</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
