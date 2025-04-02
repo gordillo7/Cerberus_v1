@@ -1,3 +1,14 @@
+ROADMAP GENERAL:
+- Modulo osint_email.py.
+- Modulo Nikto/Nuclei.
+- Modulo fuzzing web con FeroxBuster.
+- Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
+- Bateria de tests, revision y optimizacion de codigo, comprobar que Cerberus esta a punto.
+- Meter IA.
+- Generacion de reportes.
+- Hacer script de autoinstall para instalar dependencias.
+
+IDEAS:
 - DNS Recon.
     * A --> Ipinfo.
     * osint correo electronico(inteligencex) + i have been pwned.
@@ -22,15 +33,13 @@
 - Meter IA.
 - Mejorar generación de PDFs.
 - Ejecutar el main.py para cada subdominio encontrado.
--------------------------------------------------------
-Secundario:
+
+SECUNDARIO:
 - Desplegar herramienta en AWS (crear otra cuenta y desplegarlo en otra instancia).
 - Bot de Telegram para reporte en tiempo real.
--------------------------------------------------------
+
 AVANCES:
 
 DUDAS:
-- Problemas con EC2 Proxy.
-- Como hacemos la funcionalidad de proxy?? VPN es muy dificil de configurar.
 
 SIGUIENTE:

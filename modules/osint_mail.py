@@ -1,8 +1,10 @@
+"""guardar correos pwneados en logs"""
 import json
 import os
 import sys
 import re
 from intelxapi import intelx
+from leakcheck import LeakCheckAPI_Public
 
 
 def get_intelx_api_token():
@@ -21,6 +23,7 @@ def search_records(target):
     # Define the buckets to search in
     search_buckets = ["leaks.public.wikileaks", "leaks.public.general", "dumpster", "documents.public.scihub"]
     # Search for records with the target email (prefiing with "@") and limit to 10 results
+    print("[+] Searching for leaked email addresses...")
     results = ix.search(f"@{target}", maxresults=10, buckets=search_buckets)
 
     output_dir = os.path.join("logs", target, "dns")
@@ -30,7 +33,7 @@ def search_records(target):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(results, f, indent=4, ensure_ascii=False)
 
-    print(f"Records saved to {output_file}")
+    print(f"[+] Records saved to {output_file}")
 
 def search_emails(target):
     # Re-initialize the API with your API key
@@ -50,6 +53,8 @@ def search_emails(target):
     records = data.get("records", [])
     found_emails = set()
 
+    print("[+] Extracting email addresses from records...")
+
     for record in records:
         sid = record.get("storageid")
         bucket = record.get("bucket")
@@ -68,7 +73,7 @@ def search_emails(target):
             for email in emails:
                 found_emails.add(email)
         except Exception as e:
-            print(f"Error processing record {sid}: {e}")
+            print(f"[-] Error processing record {sid}: {e}")
 
     # Save the found email addresses to emails.txt
     output_file = os.path.join("logs", target, "dns", "emails.txt")
@@ -76,12 +81,27 @@ def search_emails(target):
         for email in found_emails:
             f.write(email + "\n")
 
-    print(f"Found {len(found_emails)} email addresses. Results saved to {output_file}")
+    print(f"[+] Found {len(found_emails)} email addresses. Results saved to {output_file}")
+
+def search_emails_leakcheck(target):
+    public_api = LeakCheckAPI_Public()
+    emails_file = os.path.join("logs", target, "dns", "emails.txt")
+    if not os.path.exists(emails_file):
+        print("[-] emails.txt file not found.")
+        return
+    with open(emails_file, 'r', encoding='utf-8') as f:
+        emails = [line.strip() for line in f if line.strip()]
+    for email in emails:
+        try:
+            result = public_api.lookup(query=email)
+            print(f"[+] Result for {email}: {result}")
+        except Exception as e:
+            print(f"[-] Error for {email}: {e}")
 
 def run_osint_mail(target):
     token = get_intelx_api_token()
     if not token:
-        print("[*] IntelX API token not found, skipping functionality.")
+        print("[-] IntelX API token not found, skipping functionality.")
         return
     search_records(target)
     search_emails(target)
@@ -89,4 +109,5 @@ def run_osint_mail(target):
 
 if __name__ == "__main__":
     target = sys.argv[1]
-    run_osint_mail(target)
+    #run_osint_mail(target)
+    search_emails_leakcheck(target)
