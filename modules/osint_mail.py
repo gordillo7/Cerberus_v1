@@ -1,4 +1,4 @@
-"""guardar correos pwneados en logs"""
+"""guardar correos pwneados en logs y sacar reporte"""
 import json
 import os
 import sys
@@ -23,7 +23,7 @@ def search_records(target):
     # Define the buckets to search in
     search_buckets = ["leaks.public.wikileaks", "leaks.public.general", "dumpster", "documents.public.scihub"]
     # Search for records with the target email (prefiing with "@") and limit to 10 results
-    print("[+] Searching for leaked email addresses...")
+    print("[*] Searching for leaked email addresses...")
     results = ix.search(f"@{target}", maxresults=10, buckets=search_buckets)
 
     output_dir = os.path.join("logs", target, "dns")
@@ -91,12 +91,17 @@ def search_emails_leakcheck(target):
         return
     with open(emails_file, 'r', encoding='utf-8') as f:
         emails = [line.strip() for line in f if line.strip()]
+    pwned_results = {}
     for email in emails:
         try:
             result = public_api.lookup(query=email)
+            pwned_results[email] = result
             print(f"[+] Result for {email}: {result}")
         except Exception as e:
             print(f"[-] Error for {email}: {e}")
+    output_file = os.path.join("logs", target, "dns", "emails_pwned.json")
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(pwned_results, f, indent=4, ensure_ascii=False)
 
 def run_osint_mail(target):
     token = get_intelx_api_token()
@@ -109,5 +114,5 @@ def run_osint_mail(target):
 
 if __name__ == "__main__":
     target = sys.argv[1]
-    #run_osint_mail(target)
+    run_osint_mail(target)
     search_emails_leakcheck(target)
