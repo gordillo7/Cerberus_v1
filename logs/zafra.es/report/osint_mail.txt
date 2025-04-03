@@ -1,0 +1,15 @@
+A total of 4 email addresses were found for the target 'zafra.es':
+industria@zafra.es
+pp@zafra.es
+zafra@zafra.es
+psoe@zafra.es
+
+Out of these, 2 have been pwned in various security breaches:
+
+- pp@zafra.es has been pwned in 3 breach(es).
+  Compromised fields: password, profile_name, dob, username, first_name.
+  Breaches: Zoosk.com (2011-01), Badoo.com (2013-07), Twitter.com (scraping data) (2022-01).
+
+- psoe@zafra.es has been pwned in 3 breach(es).
+  Compromised fields: password, first_name, dob.
+  Breaches: Zoosk.com (2011-01), Badoo.com (2013-07).

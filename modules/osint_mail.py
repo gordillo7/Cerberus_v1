@@ -1,4 +1,3 @@
-"""guardar correos pwneados en logs y sacar reporte"""
 import json
 import os
 import sys
@@ -103,6 +102,61 @@ def search_emails_leakcheck(target):
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(pwned_results, f, indent=4, ensure_ascii=False)
 
+def generate_osint_mail_report(target):
+    dns_dir = os.path.join("logs", target, "dns")
+    report_dir = os.path.join("logs", target, "report")
+    os.makedirs(report_dir, exist_ok=True)
+
+    emails_file = os.path.join(dns_dir, "emails.txt")
+    if os.path.exists(emails_file):
+        with open(emails_file, "r", encoding="utf-8") as f:
+            emails = [line.strip() for line in f if line.strip()]
+    else:
+        emails = []
+    num_emails = len(emails)
+
+    pwned_file = os.path.join(dns_dir, "emails_pwned.json")
+    if os.path.exists(pwned_file):
+        with open(pwned_file, "r", encoding="utf-8") as f:
+            pwned_data = json.load(f)
+    else:
+        pwned_data = {}
+
+    pwned_emails = []
+    for email, details in pwned_data.items():
+        if details.get("success") and details.get("found", 0) > 0:
+            pwned_emails.append((email, details))
+    num_pwned = len(pwned_emails)
+
+    report_lines = []
+    report_lines.append(f"A total of {num_emails} email addresses were found for the target '{target}':")
+    report_lines.extend(emails)
+    report_lines.append("")
+    report_lines.append(f"Out of these, {num_pwned} have been pwned in various security breaches:")
+    report_lines.append("")
+    for email, details in pwned_emails:
+        found = details.get("found", 0)
+        fields = details.get("fields", [])
+        sources = details.get("sources", [])
+        sources_str = []
+        for src in sources:
+            name = src.get("name", "Unknown")
+            date = src.get("date", "")
+            if date:
+                sources_str.append(f"{name} ({date})")
+            else:
+                sources_str.append(name)
+        report_lines.append(f"- {email} has been pwned in {found} breach(es).")
+        report_lines.append(f"  Compromised fields: {', '.join(fields)}.")
+        report_lines.append(f"  Breaches: {', '.join(sources_str)}.")
+        report_lines.append("")
+
+    report_text = "\n".join(report_lines)
+
+    report_file = os.path.join(report_dir, "osint_mail.txt")
+    with open(report_file, "w", encoding="utf-8") as f:
+        f.write(report_text)
+
 def run_osint_mail(target):
     token = get_intelx_api_token()
     if not token:
@@ -110,9 +164,10 @@ def run_osint_mail(target):
         return
     search_records(target)
     search_emails(target)
+    search_emails_leakcheck(target)
+    generate_osint_mail_report(target)
 
 
 if __name__ == "__main__":
     target = sys.argv[1]
     run_osint_mail(target)
-    search_emails_leakcheck(target)

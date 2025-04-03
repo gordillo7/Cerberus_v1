@@ -1,5 +1,4 @@
 ROADMAP GENERAL:
-- Modulo osint_email.py.
 - Modulo Nikto/Nuclei.
 - Modulo fuzzing web con FeroxBuster.
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
@@ -7,6 +6,13 @@ ROADMAP GENERAL:
 - Meter IA.
 - Generacion de reportes.
 - Hacer script de autoinstall para instalar dependencias.
+
+AVANCES:
+- Modulo osint_email.py.
+
+DUDAS:
+
+SIGUIENTE:
 
 IDEAS:
 - DNS Recon.
@@ -37,9 +43,3 @@ IDEAS:
 SECUNDARIO:
 - Desplegar herramienta en AWS (crear otra cuenta y desplegarlo en otra instancia).
 - Bot de Telegram para reporte en tiempo real.
-
-AVANCES:
-
-DUDAS:
-
-SIGUIENTE:

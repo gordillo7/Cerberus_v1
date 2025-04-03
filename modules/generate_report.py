@@ -263,6 +263,12 @@ def generate_report(target):
                         elements.append(Spacer(1, 12))
                         elements.append(Paragraph("CVEs for the running SSH version have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                    case "osint_mail.txt":
+                        elements.append(Paragraph("OSINT Mail", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("In this section, the email addresses found are reported.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
 
     except Exception as e:
         print(f"[-] Error generating report: {e}")

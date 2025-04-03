@@ -1,0 +1,78 @@
+{
+    "peter.donies@cartamundi.com": {
+        "success": true,
+        "found": 1,
+        "fields": [
+            "country",
+            "first_name",
+            "address",
+            "zip",
+            "city",
+            "last_name",
+            "phone",
+            "province"
+        ],
+        "sources": [
+            {
+                "name": "Pureincubation.com",
+                "date": "2024-08"
+            }
+        ]
+    },
+    "Nora.Fiebig@cartamundi.com": {
+        "success": true,
+        "found": 1,
+        "fields": [
+            "password"
+        ],
+        "sources": [
+            {
+                "name": "MySpace.com",
+                "date": "2008-07"
+            }
+        ]
+    },
+    "kristien.camps@cartamundi.com": {
+        "success": true,
+        "found": 4,
+        "fields": [
+            "password",
+            "dob",
+            "country",
+            "username",
+            "last_name",
+            "first_name"
+        ],
+        "sources": [
+            {
+                "name": "Badoo.com",
+                "date": "2013-07"
+            },
+            {
+                "name": "Deezer.com",
+                "date": "2019-09"
+            }
+        ]
+    },
+    "lander.verboven@cartamundi.com": {
+        "success": true,
+        "found": 2,
+        "fields": [
+            "city",
+            "username",
+            "name",
+            "country",
+            "state"
+        ],
+        "sources": [
+            {
+                "name": "Apollo",
+                "date": "2018-07"
+            },
+            {
+                "name": "Canva.com",
+                "date": "2019-05"
+            }
+        ]
+    }
+}

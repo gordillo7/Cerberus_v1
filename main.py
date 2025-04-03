@@ -10,6 +10,7 @@ from modules.http_wordpress import run_http_wordpress
 from modules.http_wordpress_bruteforce import run_http_wordpress_bruteforce
 from modules.http_wordpress_plugins import run_http_wordpress_plugins
 from modules.nmap import run_nmap
+from modules.osint_mail import run_osint_mail
 from modules.ssh import run_ssh
 
 
@@ -23,6 +24,7 @@ def main():
         ipaddress.ip_address(target_clean)
     except ValueError:
         run_dns_recon(target_clean)
+        run_osint_mail(target_clean)
     if os.path.exists(f"logs/{target_clean}/nmap/ports.txt"):
         with open(f"logs/{target_clean}/nmap/ports.txt", "r") as f:
             ports = f.read()
