@@ -1,5 +1,5 @@
 ROADMAP GENERAL:
-- Modulo Nikto/Nuclei.
+- Modulo webscan con Nuclei.
 - Modulo fuzzing web con FeroxBuster.
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
 - Bateria de tests, revision y optimizacion de codigo, comprobar que Cerberus esta a punto.
@@ -15,16 +15,8 @@ DUDAS:
 SIGUIENTE:
 
 IDEAS:
-- DNS Recon.
-    * A --> Ipinfo.
-    * osint correo electronico(inteligencex) + i have been pwned.
-        ## DNSDumpster API --> Reconocimiento de DNS (General).
-        ## MX ToolBox API --> Registro DMARC.
-        ## APINinja Whois API --> Información sobre el propietario del dominio.
 - Modulo SSH (port 22) --> TESTEAR.
 - Modulo SMB (port 139/445).
-- Modulo para usar Nikto/Nuclei en la web (port 80).
-- Meter la opcion de proxy como opcional.
 - Revisar wordlists (eliminar las innecesarias y usar mas "common_credentials.txt")
 ### HACER BUEN TESTING/REVISION/LIMPIEZA/MEJORA DE TODOS LOS MODULOS.
 - Modulo de fuzzing web --> Hacerlo con FeroxBuster.
@@ -41,5 +33,4 @@ IDEAS:
 - Ejecutar el main.py para cada subdominio encontrado.
 
 SECUNDARIO:
-- Desplegar herramienta en AWS (crear otra cuenta y desplegarlo en otra instancia).
 - Bot de Telegram para reporte en tiempo real.
