@@ -1,5 +1,4 @@
 ROADMAP GENERAL:
-- Eliminar los subdominios que empiezan por "www" en el modulo http_subdomain.py.
 - Modulo webscan con Nuclei.
 - Modulo fuzzing web con FeroxBuster.
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
