@@ -13,6 +13,7 @@ AVANCES:
 - Modulo osint_email.py.
 
 DUDAS:
+- Implementación de Chatbot por cada target usando la API de Gemini?
 
 SIGUIENTE:
 
