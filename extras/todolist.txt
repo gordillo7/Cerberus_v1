@@ -4,9 +4,10 @@ ROADMAP GENERAL:
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
 - Meter la opción de escaneo exahustivo (Nuclei con todos los subdominios) como opcional (hacer una opcion en la GUI).
 - Bateria de tests, revision y optimizacion de codigo, comprobar que Cerberus esta a punto.
-- Meter IA.
+- Meter IA (API de Gemini).
 - Generacion de reportes.
 - Hacer script de autoinstall para instalar dependencias.
+- [Si da tiempo] Chatbot por cada target escaneado con la API de Gemini.
 
 AVANCES:
 - Modulo osint_email.py.
