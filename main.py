@@ -5,6 +5,7 @@ from modules.generate_report import run_generate_report
 from modules.http_joomla import run_http_joomla
 from modules.http_screenshot import run_http_screenshot
 from modules.http_subdomain import run_http_subdomain
+from modules.http_webscan import run_http_webscan
 from modules.http_whatweb import run_http_whatweb
 from modules.http_wordpress import run_http_wordpress
 from modules.http_wordpress_bruteforce import run_http_wordpress_bruteforce
@@ -22,6 +23,7 @@ def main():
     run_nmap(target_clean)
     try:
         ipaddress.ip_address(target_clean)
+    # Target is a domain
     except ValueError:
         run_dns_recon(target_clean)
         run_osint_mail(target_clean)
@@ -30,6 +32,7 @@ def main():
             ports = f.read()
             if "80" in ports:
                 run_http_subdomain(target_clean)
+                run_http_webscan(target_clean)
                 run_http_whatweb(target_clean)
                 run_http_screenshot(target_clean)
                 with open(f"logs/{target_clean}/http/whatweb/cms.txt", "r") as w:
@@ -49,6 +52,5 @@ def main():
     print(f"[*] Scan finished in {int((time.time() - start_time) // 60)} minute(s) and {int((time.time() - start_time) % 60)} second(s).")
 
 
-#Llamada a la función main
 if __name__ == "__main__":
     main()

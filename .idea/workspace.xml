@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extras/requisitos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/requisitos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extras/targets.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/targets.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extras/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/todolist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/scans.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scans.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generate_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generate_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_detect_scheme.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_detect_scheme.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_fuzzing.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_fuzzing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/http_webscan.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_webscan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/osint_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/osint_mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/cartamundi.com.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/unex.es.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlists/cartamundi.com/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlists/misc/fuzzing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wordlists/misc/fuzzing.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +168,8 @@
       <workItem from="1743680215471" duration="31000" />
       <workItem from="1743680823447" duration="1375000" />
       <workItem from="1743748795357" duration="6052000" />
-      <workItem from="1744007577992" duration="13537000" />
+      <workItem from="1744007577992" duration="13794000" />
+      <workItem from="1744093324946" duration="11904000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -247,7 +259,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743757355723</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1744029088853</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1744029088853</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -270,7 +290,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1743752310718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1744007597812" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1744110860066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TFG$app.coverage" NAME="app Coverage Results" MODIFIED="1743244825472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

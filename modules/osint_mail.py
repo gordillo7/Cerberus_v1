@@ -115,6 +115,9 @@ def generate_osint_mail_report(target):
         emails = []
     num_emails = len(emails)
 
+    if num_emails == 0:
+        return
+
     pwned_file = os.path.join(dns_dir, "emails_pwned.json")
     if os.path.exists(pwned_file):
         with open(pwned_file, "r", encoding="utf-8") as f:
@@ -132,7 +135,7 @@ def generate_osint_mail_report(target):
     report_lines.append(f"A total of {num_emails} email addresses were found for the target '{target}':")
     report_lines.extend(emails)
     report_lines.append("")
-    report_lines.append(f"Out of these, {num_pwned} have been pwned in various security breaches:")
+    report_lines.append(f"Out of these, {num_pwned} have been pwned in various security breaches")
     report_lines.append("")
     for email, details in pwned_emails:
         found = details.get("found", 0)

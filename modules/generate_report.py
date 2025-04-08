@@ -269,6 +269,12 @@ def generate_report(target):
                         elements.append(Paragraph("In this section, the email addresses found are reported.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                    case "nuclei_webscan.txt":
+                        elements.append(Paragraph("Web Scan", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("In this section, the results of the web scan are reported.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
 
     except Exception as e:
         print(f"[-] Error generating report: {e}")

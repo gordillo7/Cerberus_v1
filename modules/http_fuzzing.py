@@ -1,45 +1,7 @@
-import subprocess
-import sys
-
-def fuzzing(target):
-    # Define the wordlist path
-    wordlist = "wordlists/misc/fuzzing.txt"
-
-    # Ensure the target URL is well-formed (adds trailing slash if missing)
-    if not target.endswith("/"):
-        target += "/"
-
-    # Build the gobuster command as a list
-    command = [
-        "gobuster",
-        "dir",
-        "-u",
-        target,
-        "-w",
-        wordlist,
-        "-t", "120",
-        "-o", f"logs/{target}/http/fuzzing.txt",
-        "-f",
-        "-q",
-        "-z"
-    ]
-
-    print(f"[*] Running gobuster on {target} ...")
-    result = subprocess.run(
-        command,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.PIPE,
-        text=True
-    )
-
-    if result.returncode != 0:
-        print(f"[!] Error executing gobuster: {result.stderr}")
-    else:
-        print(result.stdout)
-
-def run_http_fuzzing(target):
-    fuzzing(target)
-
-if __name__ == "__main__":
-    target = sys.argv[1]
-    run_http_fuzzing(target)
+"""Usar Feroxbuster para realizar el modulo de fuzzing web
+    # Ponerle un timeout, por ejemplo 5 minutos y si el escaneo
+    tarda mas de esos 5 minutos, cortarlo y quedarnos con los resultados
+    hasta ese momento.
+    # Controlar http y https mediante http_detect_scheme.py, ya que feroxbuster
+    asigna https por defecto si se le pasa el target sin schema (revisar el modulo
+    http_detect_scheme.py ya que creo que no funciona correctamente)"""

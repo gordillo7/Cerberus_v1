@@ -1,5 +1,4 @@
 ROADMAP GENERAL:
-- Modulo webscan con Nuclei.
 - Modulo fuzzing web con FeroxBuster.
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
 - Meter la opción de escaneo exahustivo (Nuclei con todos los subdominios) como opcional (hacer una opcion en la GUI).
@@ -11,6 +10,7 @@ ROADMAP GENERAL:
 
 AVANCES:
 - Modulo osint_email.py.
+- Modulo webscan con Nuclei.
 
 DUDAS:
 - Implementación de Chatbot por cada target usando la API de Gemini?

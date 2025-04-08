@@ -9,8 +9,6 @@ def get_scheme(url):
     if parsed.scheme:
         return parsed.scheme
 
-    # Run "curl -I" command to fetch headers
-    # Note: Using '-L' can follow redirects if needed; remove it if unnecessary.
     command = ["curl", "-I", url]
     try:
         result = subprocess.run(command, capture_output=True, text=True, timeout=10)

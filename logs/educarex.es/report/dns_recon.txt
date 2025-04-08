@@ -1,0 +1,49 @@
+MX Records:
+    MX Host: 30 alt4.aspmx.l.google.com
+    Email Provider: GOOGLE
+    MX Host: 20 alt2.aspmx.l.google.com
+    Email Provider: GOOGLE
+    MX Host: 20 alt1.aspmx.l.google.com
+    Email Provider: GOOGLE
+    MX Host: 30 alt3.aspmx.l.google.com
+    Email Provider: GOOGLE
+    MX Host: 10 aspmx.l.google.com
+    Email Provider: GOOGLE
+#
+NS Records:
+    NS Server: ns7.acens.net (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: ns1.acens.net (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: srvadmefficientipagr.gobex.pri (Provider: Unknown, Located in: Unknown)
+    NS Server: srvefficientipmor.educarex.pri (Provider: Unknown, Located in: Unknown)
+    NS Server: ns1.dominioabsoluto.com (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: srvcpdefficientipagr.gobex.pri (Provider: Unknown, Located in: Unknown)
+    NS Server: srvadmefficientipmor.gobex.pri (Provider: Unknown, Located in: Unknown)
+    NS Server: srvcpdefficientipmor.gobex.pri (Provider: Unknown, Located in: Unknown)
+    NS Server: ns2.acens.net (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: ns2.dominioabsoluto.com (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: ns3.acens.net (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: srvefficientipagr.educarex.pri (Provider: Unknown, Located in: Unknown)
+    NS Server: ip90.dominioabsoluto.com (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+    NS Server: ns4.acens.net (Provider: ACENS_AS Spain Hosting, housing and VPN services, ES, Located in: Spain)
+#
+TXT Records:
+    "v=spf1 include:_spf.google.com ~all"
+    "*.educarex.es - 902587113"
+    "google-site-verification=CufUk3a2a2iZwnSoUPE-oVhKGF1rNl12HzKzquUw0dw"
+    "google-site-verification=teySI3u3OQH_VzdKzIwqcJbEMwPmrmTHVaqjYbrvUhg"
+#
+DMARC Record Info:
+    A public DMARC record was found for the domain.
+#
+Whois Info:
+    Registered with: N/A
+    Domain created on: Unknown
+    Domain expires on: Unknown
+    Additional registrant details:
+        Name: N/A
+        Org: N/A
+        Address: N/A
+        City: N/A
+        State: N/A
+        Registrant_postal_code: N/A
+        Country: N/A
