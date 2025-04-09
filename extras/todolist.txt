@@ -5,7 +5,7 @@ ROADMAP GENERAL:
 - Bateria de tests, revision y optimizacion de codigo, comprobar que Cerberus esta a punto.
 - Meter IA (API de Gemini).
 - Grandes cambios en la interfaz.
-- [Si da tiempo] Chatbot por cada target escaneado con la API de Gemini.
+- Chatbot por cada target escaneado con la API de Gemini.
 - Generacion de reportes.
 - Hacer script de autoinstall para instalar dependencias.
 
@@ -14,7 +14,6 @@ AVANCES:
 - Modulo webscan con Nuclei.
 
 DUDAS:
-- Implementación de Chatbot por cada target usando la API de Gemini?
 
 SIGUIENTE:
 

@@ -1,4 +1,0 @@
-# Nmap 7.94SVN scan initiated Tue Apr  8 13:26:57 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG logs/educarex.es/nmap/initial_scan.txt educarex.es
-Host: 178.255.108.23 ()	Status: Up
-Host: 178.255.108.23 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 1720/open/tcp//h323q931///, 4500/open/tcp//sae-urn///
-# Nmap done at Tue Apr  8 13:27:23 2025 -- 1 IP address (1 host up) scanned in 26.38 seconds

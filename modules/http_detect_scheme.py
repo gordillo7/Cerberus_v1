@@ -1,12 +1,16 @@
 import sys
 import requests
 
-
 def get_scheme(url):
-    target = "http://" + url
-    req = requests.get(target)
-    return req.url.split(":")[0]
-
+    try:
+        requests.get(f"https://{url}", timeout=5)
+        return "https"
+    except requests.exceptions.RequestException:
+        try:
+            requests.get(f"http://{url}", timeout=5)
+            return "http"
+        except requests.exceptions.RequestException:
+            return None
 
 if __name__ == "__main__":
     domain = sys.argv[1]

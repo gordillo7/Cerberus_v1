@@ -1,5 +1,0 @@
-PORT     STATE SERVICE   VERSION
-80/tcp   open  http      Apache httpd
-443/tcp  open  ssl/http  Apache httpd
-1720/tcp open  h323q931?
-4500/tcp open  sae-urn?
