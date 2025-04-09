@@ -18,7 +18,8 @@ def run_feroxbuster(target_ip):
         "feroxbuster",
         "--url", full_target,
         "--wordlist", "wordlists/misc/fuzzing.txt",
-        "--depth", "2",
+        # "--depth", "2",
+        "--depth", "1",
         "--silent",
         "--no-state",
         "--json",
@@ -31,7 +32,7 @@ def run_feroxbuster(target_ip):
         subprocess.run(cmd, check=True, timeout=180, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"[+] Feroxbuster results saved to: {output_file}")
     except subprocess.TimeoutExpired:
-        print("[*] Feroxbuster scan exceeded 5 minutes and has been terminated.")
+        print("[*] Feroxbuster scan exceeded 3 minutes and has been terminated.")
         print(f"[+] Partial results are preserved in {output_file}")
     except subprocess.CalledProcessError as e:
         print(f"[-] Feroxbuster encountered an execution error: {e}")

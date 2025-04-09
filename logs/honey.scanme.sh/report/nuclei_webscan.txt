@@ -1,0 +1,3223 @@
+================================================================================
+Vulnerability: Nordex NC2  - Cross-Site Scripting
+Severity: medium
+CVE: cve-2015-6477
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Nordex NC2 contains a cross-site scripting vulnerability which allows an attacker to execute arbitrary script code in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+
+References:
+- https://seclists.org/fulldisclosure/2015/Dec/117
+- https://ics-cert.us-cert.gov/advisories/ICSA-15-286-01
+- https://nvd.nist.gov/vuln/detail/CVE-2015-6477
+- http://packetstormsecurity.com/files/135068/Nordex-Control-2-NC2-SCADA-16-Cross-Site-Scripting.html
+- http://seclists.org/fulldisclosure/2015/Dec/117
+================================================================================
+
+================================================================================
+Vulnerability: Timesheet Next Gen <=1.5.3 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2019-1010287
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Timesheet Next Gen 1.5.3 and earlier is vulnerable to cross-site scripting that allows an attacker to execute arbitrary HTML and JavaScript code via a "redirect" parameter. The component is: Web login form: login.php, lines 40 and 54. The attack vector is: reflected XSS, victim may click the malicious url.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement.
+
+
+Remediation:
+Upgrade to a patched version of Timesheet Next Gen (1.5.4 or above) that properly sanitizes user input to prevent XSS attacks.
+
+
+References:
+- http://www.mdh-tz.info/
+- https://sourceforge.net/p/tsheetx/discussion/779083/thread/7fcb52f696/
+- https://sourceforge.net/p/tsheetx/code/497/tree/branches/legacy/login.php#l40
+- https://nvd.nist.gov/vuln/detail/CVE-2019-1010287
+- https://github.com/merlinepedra25/nuclei-templates
+================================================================================
+
+================================================================================
+Vulnerability: Seagate BlackArmor NAS - Command Injection
+Severity: critical
+CVE: cve-2014-3206
+CWE: cwe-20
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Seagate BlackArmor NAS allows remote attackers to execute arbitrary code via the session parameter to localhost/backupmgt/localJob.php or the auth_name parameter to localhost/backupmgmt/pre_connect_check.php.
+
+Impact:
+Successful exploitation of this vulnerability allows an attacker to execute arbitrary commands with the privileges of the affected device, potentially leading to unauthorized access, data loss, or further compromise of the network.
+
+
+Remediation:
+Apply the latest firmware update provided by Seagate to patch the command injection vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2014-3206
+- https://www.exploit-db.com/exploits/33159
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Seagate BlackArmor NAS - Command Injection
+Severity: critical
+CVE: cve-2014-3206
+CWE: cwe-20
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Seagate BlackArmor NAS allows remote attackers to execute arbitrary code via the session parameter to localhost/backupmgt/localJob.php or the auth_name parameter to localhost/backupmgmt/pre_connect_check.php.
+
+Impact:
+Successful exploitation of this vulnerability allows an attacker to execute arbitrary commands with the privileges of the affected device, potentially leading to unauthorized access, data loss, or further compromise of the network.
+
+
+Remediation:
+Apply the latest firmware update provided by Seagate to patch the command injection vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2014-3206
+- https://www.exploit-db.com/exploits/33159
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: WordPress Sitemap by click5 <1.0.36 - Missing Authorization
+Severity: high
+CVE: cve-2022-0952
+CWE: cwe-352
+Host: honey.scanme.sh - Port: 443
+
+Description:
+WordPress Sitemap by click5 plugin before 1.0.36 is susceptible to missing authorization. The plugin does not have authorization or CSRF checks when updating options via a REST endpoint and does not ensure that the option to be updated belongs to the plugin. An attacker can possibly obtain sensitive information, modify data, and/or execute unauthorized administrative operations in the context of the affected site.
+
+
+Impact:
+An attacker can exploit this vulnerability to gain unauthorized access to sensitive information.
+
+
+Remediation:
+Update to the latest version of the WordPress Sitemap plugin by click5 (1.0.36 or higher) to fix the missing authorization issue.
+
+
+References:
+- https://wpscan.com/vulnerability/0f694961-afab-44f9-846c-e80a0f6c768b
+- https://nvd.nist.gov/vuln/detail/CVE-2022-0952
+- https://github.com/ARPSyndicate/kenzer-templates
+- https://github.com/RandomRobbieBF/CVE-2022-0952
+- https://github.com/nomi-sec/PoC-in-GitHub
+================================================================================
+
+================================================================================
+Vulnerability: H3C SSL VPN <=2022-07-10 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2022-35416
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+H3C SSL VPN 2022-07-10 and prior contains a cookie-based cross-site scripting vulnerability in wnm/login/login.json svpnlang.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser, potentially leading to session hijacking, data theft, or other malicious activities.
+
+
+Remediation:
+Apply the latest security patch or upgrade to a version of H3C SSL VPN that is not affected by this vulnerability.
+
+
+References:
+- https://github.com/advisories/GHSA-9x76-78gc-r3m9
+- https://github.com/Docker-droid/H3C_SSL_VPN_XSS
+- https://nvd.nist.gov/vuln/detail/CVE-2022-35416
+- https://github.com/ARPSyndicate/kenzer-templates
+- https://github.com/bughunter0xff/recon-scanner
+================================================================================
+
+================================================================================
+Vulnerability: NETGEAR WNAP320 Access Point Firmware - Remote Command Injection
+Severity: critical
+CVE: cve-2016-1555
+CWE: cwe-77
+Host: honey.scanme.sh - Port: 443
+
+Description:
+NETGEAR WNAP320 Access Point Firmware version 2.0.3 could allow an unauthenticated, remote attacker to perform command injection attacks against an affected device.
+
+Impact:
+Successful exploitation of this vulnerability allows remote attackers to execute arbitrary commands on the affected device.
+
+
+Remediation:
+Apply the latest firmware update provided by NETGEAR to mitigate this vulnerability.
+
+
+References:
+- https://github.com/nobodyatall648/Netgear-WNAP320-Firmware-Version-2.0.3-RCE
+- https://nvd.nist.gov/vuln/detail/CVE-2016-1555
+- https://kb.netgear.com/30480/CVE-2016-1555-Notification?cid=wmt_netgear_organic
+- http://seclists.org/fulldisclosure/2016/Feb/112
+- http://packetstormsecurity.com/files/135956/D-Link-Netgear-FIRMADYNE-Command-Injection-Buffer-Overflow.html
+================================================================================
+
+================================================================================
+Vulnerability: LogonTracer <=1.2.0 - Remote Command Injection
+Severity: critical
+CVE: cve-2018-16167
+CWE: cwe-78
+Host: honey.scanme.sh - Port: 443
+
+Description:
+LogonTracer 1.2.0 and earlier allows remote attackers to execute arbitrary OS commands via unspecified vectors.
+
+Impact:
+Successful exploitation of this vulnerability allows remote attackers to execute arbitrary commands on the target system.
+
+
+Remediation:
+Upgrade LogonTracer to a version higher than 1.2.0.
+
+
+References:
+- https://www.exploit-db.com/exploits/49918
+- https://nvd.nist.gov/vuln/detail/CVE-2018-16167
+- https://jvn.jp/en/vu/JVNVU98026636/index.html
+- https://github.com/JPCERTCC/LogonTracer/releases/tag/v1.2.1
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: mongo-express Remote Code Execution
+Severity: critical
+CVE: cve-2019-10758
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+mongo-express before 0.54.0 is vulnerable to remote code execution via endpoints that uses the `toBSON` method and misuse the `vm` dependency to perform `exec` commands in a non-safe environment.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary code on the affected system.
+
+
+Remediation:
+Upgrade mongo-express to version 0.54.0 or higher.
+
+References:
+- https://github.com/vulhub/vulhub/tree/master/mongo-express/CVE-2019-10758
+- https://nvd.nist.gov/vuln/detail/CVE-2019-10758
+- https://snyk.io/vuln/SNYK-JS-MONGOEXPRESS-473215
+- https://github.com/CLincat/vulcat
+- https://github.com/MelanyRoob/Goby
+================================================================================
+
+================================================================================
+Vulnerability: Oracle Fusion Middleware Weblogic Server - Remote OS Command Execution
+Severity: high
+CVE: cve-2017-3506
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Oracle WebLogic Server component of Oracle Fusion Middleware (Web Services) versions 10.3.6.0, 12.1.3.0, 12.2.1.0, 12.2.1.1 and 12.2.1.2 is susceptible to a difficult to exploit vulnerability that could allow unauthenticated attackers with network access via HTTP to compromise Oracle WebLogic Server.
+
+Impact:
+Successful exploitation of this vulnerability allows an attacker to execute arbitrary commands on the target system.
+
+
+Remediation:
+Apply the necessary patches or updates provided by Oracle to fix this vulnerability.
+
+
+References:
+- https://hackerone.com/reports/810778
+- https://nvd.nist.gov/vuln/detail/CVE-2017-3506
+- http://www.oracle.com/technetwork/security-advisory/cpuapr2017-3236618.html
+- http://www.securitytracker.com/id/1038296
+- https://github.com/CVEDB/top
+================================================================================
+
+================================================================================
+Vulnerability: Atlassian Jira IconURIServlet - Cross-Site Scripting/Server-Side Request Forgery
+Severity: medium
+CVE: cve-2017-9506
+CWE: cwe-918
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Atlassian Jira IconUriServlet of the OAuth Plugin from version 1.3.0 before version 1.9.12 and from version 2.0.0 before version 2.0.4 contains a cross-site scripting vulnerability which allows remote attackers to access the content of internal network resources and/or perform an attack via Server Side Request Forgery.
+
+Impact:
+Successful exploitation of these vulnerabilities could lead to unauthorized access, data theft, and potential server-side attacks.
+
+
+Remediation:
+Apply the latest security patches provided by Atlassian to mitigate these vulnerabilities.
+
+
+References:
+- http://dontpanic.42.nl/2017/12/there-is-proxy-in-your-atlassian.html
+- https://ecosystem.atlassian.net/browse/OAUTH-344
+- https://medium.com/bugbountywriteup/piercing-the-veil-server-side-request-forgery-to-niprnet-access-171018bca2c3
+- https://nvd.nist.gov/vuln/detail/CVE-2017-9506
+- https://github.com/d4n-sec/d4n-sec.github.io
+================================================================================
+
+================================================================================
+Vulnerability: Pandora FMS 7.0NG - Remote Command Injection
+Severity: high
+CVE: cve-2019-20224
+CWE: cwe-78
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Pandora FMS 7.0NG allows remote authenticated users to execute arbitrary OS commands via shell metacharacters in the ip_src parameter in an index.php?operation/netflow/nf_live_view request.
+
+
+Impact:
+Successful exploitation of this vulnerability can lead to unauthorized remote code execution, potentially compromising the entire system.
+
+
+Remediation:
+This issue has been fixed in Pandora FMS 7.0 NG 742.
+
+References:
+- https://shells.systems/pandorafms-v7-0ng-authenticated-remote-code-execution-cve-2019-20224/
+- https://gist.github.com/mhaskar/2153d66a0928492d76b799ba13b9e3f9
+- https://nvd.nist.gov/vuln/detail/CVE-2019-20224
+- https://drive.google.com/file/d/1DkWR5MylzeNr20jmHXTaAIJmf3YN-lnO/view
+- https://pandorafms.com/downloads/solved-pandorafms-742.mp4
+================================================================================
+
+================================================================================
+Vulnerability: Oracle Business Intelligence/XML Publisher - XML External Entity Injection
+Severity: high
+CVE: cve-2019-2616
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Oracle Business Intelligence and XML Publisher 11.1.1.9.0 / 12.2.1.3.0 / 12.2.1.4.0 are vulnerable to an XML external entity injection attack.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to read arbitrary files on the server or conduct server-side request forgery (SSRF) attacks.
+
+
+Remediation:
+Apply the necessary patches or updates provided by Oracle to fix this vulnerability.
+
+
+References:
+- https://www.exploit-db.com/exploits/46729
+- http://www.oracle.com/technetwork/security-advisory/cpuapr2019-5072813.html
+- https://nvd.nist.gov/vuln/detail/CVE-2019-2616
+- https://github.com/ARPSyndicate/kenzer-templates
+- https://github.com/Ostorlab/KEV
+================================================================================
+
+================================================================================
+Vulnerability: TOTOLINK Realtek SD Routers - Remote Command Injection
+Severity: high
+CVE: cve-2019-19824
+CWE: cwe-78
+Host: honey.scanme.sh - Port: 443
+
+Description:
+TOTOLINK Realtek SDK based routers may allow an authenticated attacker to execute arbitrary OS commands via the sysCmd parameter to the boafrm/formSysCmd URI, even if the GUI (syscmd.htm) is not available. This allows for full control over the device's internals. This affects A3002RU through 2.0.0, A702R through 2.1.3, N301RT through 2.1.6, N302R through 3.4.0, N300RT through 3.4.0, N200RE through 4.0.0, N150RT through 3.4.0, and N100RE through 3.4.0.
+
+
+Impact:
+Successful exploitation of this vulnerability allows remote attackers to execute arbitrary commands on the affected device.
+
+
+Remediation:
+Apply the latest firmware update provided by the vendor to fix the vulnerability.
+
+
+References:
+- https://sploit.tech/2019/12/16/Realtek-TOTOLINK.html
+- https://cybersecurity.att.com/blogs/labs-research/att-alien-labs-finds-new-golang-malwarebotenago-targeting-millions-of-routers-and-iot-devices-with-more-than-30-exploits
+- https://nvd.nist.gov/vuln/detail/CVE-2019-19824
+- https://sploit.tech
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Oracle Business Intelligence Publisher - XML External Entity Injection
+Severity: high
+CVE: cve-2019-2767
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Oracle Business Intelligence Publisher is vulnerable to an XML external entity injection attack. The supported versions affected are 11.1.1.9.0, 12.2.1.3.0 and 12.2.1.4.0. This easily exploitable vulnerability allows unauthenticated attackers with network access via HTTP to compromise BI Publisher.
+
+Impact:
+An attacker can exploit this vulnerability to gain unauthorized access to sensitive information or disrupt the availability of the system.
+
+
+Remediation:
+Apply the latest security patches provided by Oracle to fix this vulnerability.
+
+
+References:
+- https://www.exploit-db.com/exploits/46729
+- http://www.oracle.com/technetwork/security-advisory/cpujul2019-5072835.html
+- https://nvd.nist.gov/vuln/detail/CVE-2019-2767
+- https://github.com/ARPSyndicate/kenzer-templates
+- https://github.com/vah13/Oracle-BI-bugs
+================================================================================
+
+================================================================================
+Vulnerability: Jira <8.4.0 - Server-Side Request Forgery
+Severity: medium
+CVE: cve-2019-8451
+CWE: cwe-918
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Jira before 8.4.0 is susceptible to server-side request forgery. The /plugins/servlet/gadgets/makeRequest resource contains a logic bug in the JiraWhitelist class, which can allow an attacker to access the content of internal network resources and thus modify data, and/or execute unauthorized operations.
+
+Impact:
+Successful exploitation of this vulnerability can lead to unauthorized access to internal resources, data leakage, and potential remote code execution.
+
+
+Remediation:
+Upgrade Jira to version 8.4.0 or later to mitigate the SSRF vulnerability.
+
+
+References:
+- https://www.tenable.com/blog/cve-2019-8451-proof-of-concept-available-for-server-side-request-forgery-ssrf-vulnerability-in
+- https://jira.atlassian.com/browse/JRASERVER-69793
+- https://hackerone.com/reports/713900
+- https://nvd.nist.gov/vuln/detail/CVE-2019-8451
+- https://github.com/merlinepedra/nuclei-templates
+================================================================================
+
+================================================================================
+Vulnerability: Barco/AWIND OEM Presentation Platform - Remote Command Injection
+Severity: critical
+CVE: cve-2019-3929
+CWE: cwe-78, cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Crestron AM-100 firmware 1.6.0.2, Crestron AM-101 firmware 2.7.0.1, Barco wePresent WiPG-1000P firmware 2.3.0.10, Barco wePresent WiPG-1600W before firmware 2.4.1.19, Extron ShareLink 200/250 firmware 2.0.3.4, Teq AV IT WIPS710 firmware 1.1.0.7, SHARP PN-L703WA firmware 1.4.2.3, Optoma WPS-Pro firmware 1.0.0.5, Blackbox HD WPS firmware 1.0.0.5, InFocus LiteShow3 firmware 1.0.16, and InFocus LiteShow4 2.0.0.7 are vulnerable to command injection via the file_transfer.cgi HTTP endpoint. A remote, unauthenticated attacker can use this vulnerability to execute operating system commands as root.
+
+Impact:
+Successful exploitation of this vulnerability could lead to unauthorized remote code execution, potentially compromising the confidentiality, integrity, and availability of the affected system.
+
+
+Remediation:
+Apply the latest security patches or updates provided by the vendor to mitigate this vulnerability.
+
+
+References:
+- http://packetstormsecurity.com/files/152715/Barco-AWIND-OEM-Presentation-Platform-Unauthenticated-Remote-Command-Injection.html
+- https://www.exploit-db.com/exploits/46786/
+- https://nvd.nist.gov/vuln/detail/CVE-2019-3929
+- https://www.tenable.com/security/research/tra-2019-20
+- http://packetstormsecurity.com/files/155948/Barco-WePresent-file_transfer.cgi-Command-Injection.html
+================================================================================
+
+================================================================================
+Vulnerability: Sophos UTM Preauth - Remote Code Execution
+Severity: critical
+CVE: cve-2020-25223
+CWE: cwe-78
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Sophos SG UTMA WebAdmin is susceptible to a remote code execution vulnerability in versions before v9.705 MR5, v9.607 MR7, and v9.511 MR11.
+
+Impact:
+Successful exploitation of this vulnerability could lead to remote code execution, allowing attackers to take control of the affected system.
+
+
+Remediation:
+Apply the latest security patches provided by Sophos to mitigate the vulnerability.
+
+
+References:
+- https://www.atredis.com/blog/2021/8/18/sophos-utm-cve-2020-25223
+- https://community.sophos.com/b/security-blog/posts/advisory-resolved-rce-in-sg-utm-webadmin-cve-2020-25223
+- https://nvd.nist.gov/vuln/detail/CVE-2020-25223
+- https://community.sophos.com/b/security-blog
+- https://cwe.mitre.org/data/definitions/78.html
+================================================================================
+
+================================================================================
+Vulnerability: Selea Targa IP OCR-ANPR Camera - Unauthenticated SSRF
+Severity: high
+CVE: N/A
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Unauthenticated Server-Side Request Forgery (SSRF) vulnerability exists in the Selea ANPR camera within several functionalities. The application parses user supplied data in the POST JSON parameters 'ipnotify_address' and 'url' to construct an image request or check DNS for IP notification. Since no validation is carried out on the parameters, an attacker can specify an external domain and force the application to make an HTTP request to an arbitrary destination host. This can be used by an external attacker for example to bypass firewalls and initiate a service and network enumeration on the internal network through the affected application.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.zeroscience.mk/en/vulnerabilities/ZSL-2021-5617.php
+================================================================================
+
+================================================================================
+Vulnerability: SSRF due to misconfiguration in OAuth
+Severity: medium
+CVE: N/A
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Sends a POST request with the endpoint "/connect/register" to check external Interaction with multiple POST parameters.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://portswigger.net/research/hidden-oauth-attack-vectors
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Fuzzing Parameters - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Mida eFramework - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Mida eFramework contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.exploit-db.com/exploits/48768
+================================================================================
+
+================================================================================
+Vulnerability: Hashicorp Consul Services API - Remote Code Execution
+Severity: critical
+CVE: N/A
+CWE: cwe-77
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Hashicorp Consul Services API is vulnerable to an attack that can be leveraged to perform remote command execution on Consul nodes.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.exploit-db.com/exploits/46074
+================================================================================
+
+================================================================================
+Vulnerability: Generic Blind XXE
+Severity: high
+CVE: N/A
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+This template detects Generic Blind XXE.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: XMLRPC Pingback SSRF
+Severity: high
+CVE: N/A
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+XMLRPC Pingback leads to SSRF.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://hackerone.com/reports/406387
+================================================================================
+
+================================================================================
+Vulnerability: Weak Cipher Suites Detection
+Severity: low
+CVE: N/A
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+A weak cipher is defined as an encryption/decryption algorithm that uses a key of insufficient length. Using an insufficient length for a key in an encryption/decryption algorithm opens up the possibility (or probability) that the encryption scheme could be broken.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
+- http://ciphersuite.info
+================================================================================
+
+================================================================================
+Vulnerability: Weak Cipher Suites Detection
+Severity: low
+CVE: N/A
+CWE: N/A
+Host: honey.scanme.sh - Port: 443
+
+Description:
+A weak cipher is defined as an encryption/decryption algorithm that uses a key of insufficient length. Using an insufficient length for a key in an encryption/decryption algorithm opens up the possibility (or probability) that the encryption scheme could be broken.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.acunetix.com/vulnerabilities/web/tls-ssl-weak-cipher-suites/
+- http://ciphersuite.info
+================================================================================
+
+================================================================================
+Vulnerability: Adminer <=4.8.0 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-29625
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Adminer 4.6.1 to 4.8.0 contains a cross-site scripting vulnerability which affects users of MySQL, MariaDB, PgSQL, and SQLite in browsers without CSP when Adminer uses a `pdo_` extension to communicate with the database (it is used if the native extensions are not enabled).
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into the Adminer interface, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+This vulnerability is patched in version 4.8.1. As workarounds, one can use a browser supporting strict CSP or enable the native PHP extensions (e.g. `mysqli`) or disable displaying PHP errors (`display_errors`).
+
+References:
+- https://sourceforge.net/p/adminer/bugs-and-features/797/
+- https://github.com/vrana/adminer/commit/4043092ec2c0de2258d60a99d0c5958637d051a7
+- https://nvd.nist.gov/vuln/detail/CVE-2021-29625
+- https://github.com/vrana/adminer/security/advisories/GHSA-2v82-5746-vwqc
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: SquirrelMail 1.4.x - Folder Name Cross-Site Scripting
+Severity: medium
+CVE: cve-2004-0519
+CWE: nvd-cwe-other
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Multiple cross-site scripting (XSS) vulnerabilities in SquirrelMail 1.4.2 allow remote attackers to execute arbitrary script and possibly steal authentication information via multiple attack vectors, including the mailbox parameter in compose.php.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, phishing attacks, or defacement of the SquirrelMail interface.
+
+
+Remediation:
+Upgrade to the latest version.
+
+References:
+- https://www.exploit-db.com/exploits/24068
+- http://security.gentoo.org/glsa/glsa-200405-16.xml
+- ftp://patches.sgi.com/support/free/security/advisories/20040604-01-U.asc
+- http://distro.conectiva.com.br/atualizacoes/?id=a&anuncio=000858
+- http://marc.info/?l=bugtraq&m=108334862800260
+================================================================================
+
+================================================================================
+Vulnerability: Tiki Wiki CMS Groupware 7.0 Cross-Site Scripting
+Severity: medium
+CVE: cve-2011-4336
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Tiki Wiki CMS Groupware 7.0 is vulnerable to cross-site scripting via the GET "ajax" parameter to snarf_ajax.php.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2011-4336
+- https://seclists.org/bugtraq/2011/Nov/140
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: TileServer GL <=3.0.0 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-15500
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+TileServer GL through 3.0.0 is vulnerable to reflected cross-site scripting via server.js  because the content of the key GET parameter is reflected unsanitized in an HTTP response for the application's main page.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement.
+
+
+Remediation:
+Upgrade TileServer GL to a version higher than 3.0.0 or apply the vendor-provided patch to fix the XSS vulnerability.
+
+
+References:
+- https://github.com/maptiler/tileserver-gl/issues/461
+- http://packetstormsecurity.com/files/162193/Tileserver-gl-3.0.0-Cross-Site-Scripting.html
+- https://nvd.nist.gov/vuln/detail/CVE-2020-15500
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: AppServ Open Project <=2.5.10 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2008-2398
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+AppServ Open Project 2.5.10 and earlier contains a cross-site scripting vulnerability in index.php which allows remote attackers to inject arbitrary web script or HTML via the appservlang parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement of the affected website.
+
+
+Remediation:
+Upgrade to a patched version of AppServ Open Project (>=2.5.11) or apply the necessary security patches provided by the vendor.
+
+
+References:
+- https://exchange.xforce.ibmcloud.com/vulnerabilities/42546
+- http://securityreason.com/securityalert/3896
+- https://nvd.nist.gov/vuln/detail/CVE-2008-2398
+================================================================================
+
+================================================================================
+Vulnerability: OptiLink ONT1GEW GPON Remote Code Execution
+Severity: critical
+CVE: N/A
+CWE: cwe-77
+Host: honey.scanme.sh - Port: 443
+
+Description:
+OptiLink is susceptible to remote code execution vulnerabilities which could allow an authenticated, remote attacker to perform command injection attacks against an affected device.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://packetstormsecurity.com/files/162993/OptiLink-ONT1GEW-GPON-2.1.11_X101-Remote-Code-Execution.html
+- https://www.fortinet.com/blog/threat-research/the-ghosts-of-mirai
+================================================================================
+
+================================================================================
+Vulnerability: Mirai - Remote Command Injection
+Severity: critical
+CVE: N/A
+CWE: cwe-77
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Mirai is susceptible to an unknown exploit that targets the login CGI script, where a key parameter is not properly sanitized leading to a command injection vulnerability.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.fortinet.com/blog/threat-research/the-ghosts-of-mirai
+================================================================================
+
+================================================================================
+Vulnerability: Hotel Druid 3.0.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-37833
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Hotel Druid 3.0.2 contains a cross-site scripting vulnerability in multiple pages which allows for arbitrary execution of JavaScript commands.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement.
+
+
+Remediation:
+To remediate this issue, it is recommended to implement proper input validation and sanitization techniques to prevent the execution of malicious scripts.
+
+
+References:
+- https://github.com/dievus/CVE-2021-37833
+- https://www.hoteldruid.com
+- https://nvd.nist.gov/vuln/detail/CVE-2021-37833
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Opensis-Classic 8.0 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-40542
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Opensis-Classic Version 8.0 is affected by cross-site scripting. An unauthenticated user can inject and execute JavaScript code through the link_url parameter in Ajax_url_encode.php.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement of the affected application.
+
+
+Remediation:
+To mitigate this vulnerability, it is recommended to apply the latest security patches or updates provided by the vendor.
+
+
+References:
+- https://github.com/OS4ED/openSIS-Classic/issues/189
+- https://nvd.nist.gov/vuln/detail/CVE-2021-40542
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: twitter-server Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-35774
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+twitter-server before 20.12.0 is vulnerable to cross-site scripting in some configurations. The vulnerability exists in the administration panel of twitter-server in the histograms component via server/handler/HistogramQueryHandler.scala.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of the victim's browser, potentially leading to session hijacking, data theft, or defacement.
+
+
+Remediation:
+Apply the latest security patches or updates provided by Twitter to mitigate the XSS vulnerability.
+
+
+References:
+- https://advisory.checkmarx.net/advisory/CX-2020-4287
+- https://nvd.nist.gov/vuln/detail/CVE-2020-35774
+- https://github.com/twitter/twitter-server/commit/e0aeb87e89a6e6c711214ee2de0dd9f6e5f9cb6c
+- https://github.com/twitter/twitter-server/compare/twitter-server-20.10.0...twitter-server-20.12.0
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: WordPress FoodBakery <2.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-24389
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+WordPress FoodBakery before 2.2 contains an unauthenticated reflected cross-site scripting vulnerability. It does not properly sanitize the foodbakery_radius parameter before outputting it back in the response.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into the affected website, leading to potential data theft, session hijacking, or defacement.
+
+
+Remediation:
+Update the WordPress FoodBakery plugin to version 2.2 or later to mitigate this vulnerability.
+
+
+References:
+- https://wpscan.com/vulnerability/23b8b8c4-cded-4887-a021-5f3ea610213b
+- https://nvd.nist.gov/vuln/detail/CVE-2021-24389
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Global Domains International - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Sites hosted by Global Domains International, Inc. have cross-site scripting and directory traversal vulnerabilities.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://cxsecurity.com/issue/WLB-2018020247
+- https://packetstormsecurity.com/files/126545/Global-Domains-International-Cross-Site-Scripting-Traversal.html
+================================================================================
+
+================================================================================
+Vulnerability: JavaMelody - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+JavaMelody contains a cross-site scripting vulnerability via the monitoring parameter. An attacker can execute arbitrary script in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://github.com/Hurdano/JavaMelody-XSS
+- https://github.com/javamelody/javamelody/pull/555
+================================================================================
+
+================================================================================
+Vulnerability: Cloudron 6.2 Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-40868
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+In Cloudron 6.2, the returnTo parameter on the login page is vulnerable to cross-site scripting.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to potential data theft or unauthorized actions.
+
+
+Remediation:
+Upgrade to Cloudron 6.3 or higher.
+
+References:
+- https://packetstormsecurity.com/files/164255/Cloudron-6.2-Cross-Site-Scripting.html
+- https://nvd.nist.gov/vuln/detail/CVE-2021-40868
+- https://packetstormsecurity.com/files/164183/Cloudron-6.2-Cross-Site-Scripting.html
+- https://www.cloudron.io/
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Top 38 Parameters - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Mara CMS  7.5 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-24223
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Mara CMS 7.5 allows reflected cross-site scripting in contact.php via the theme or pagetheme parameters.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version of Mara CMS or apply the vendor-provided patch to fix the XSS vulnerability.
+
+
+References:
+- https://www.exploit-db.com/exploits/48777
+- https://sourceforge.net/projects/maracms/
+- https://sourceforge.net/projects/maracms/files/MaraCMS75.zip/download
+- https://nvd.nist.gov/vuln/detail/CVE-2020-24223
+- https://github.com/Elsfa7-110/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: sar2html 3.2.1 - Remote Command Injection
+Severity: critical
+CVE: N/A
+CWE: cwe-77
+Host: honey.scanme.sh - Port: 443
+
+Description:
+SAR2HTML could allow a remote attacker to execute arbitrary commands on the system via a command injection flaw in the index.php script. By sending specially-crafted commands, an attacker could exploit this vulnerability to execute arbitrary commands on the system.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.exploit-db.com/exploits/49344
+================================================================================
+
+================================================================================
+Vulnerability: Top 38 Parameters - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Zimbra Collaboration Suite - Server-Side Request Forgery
+Severity: critical
+CVE: cve-2020-7796
+CWE: cwe-918
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Zimbra Collaboration Suite (ZCS) allows remote unauthenticated attackers to cause the product to include content returned by third-party servers and use it as its own code.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.adminxe.com/2183.html
+- https://nvd.nist.gov/vuln/detail/CVE-2020-7796
+- https://wiki.zimbra.com/wiki/Zimbra_Releases/8.8.15/P7
+================================================================================
+
+================================================================================
+Vulnerability: Top 38 Parameters - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cross-site scripting was discovered via a search for reflected parameter values in the server response via GET-requests.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+N/A
+================================================================================
+
+================================================================================
+Vulnerability: Bitrix24 <=20.0.0 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-13483
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Web Application Firewall in Bitrix24 up to and including 20.0.0 allows XSS via the items[ITEMS][ID] parameter to the components/bitrix/mobileapp.list/ajax.php/ URI.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to a patched version of Bitrix24 (version >20.0.0) to mitigate this vulnerability.
+
+
+References:
+- https://gist.github.com/mariuszpoplwski/ca6258cf00c723184ebd2228ba81f558
+- https://twitter.com/brutelogic/status/1483073170827628547
+- https://nvd.nist.gov/vuln/detail/CVE-2020-13483
+- https://github.com/afinepl/research
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Jenzabar 9.2x-9.2.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-26723
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Jenzabar 9.2.x through 9.2.2 contains a cross-site scripting vulnerability. It allows /ics?tool=search&query.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patch or upgrade to a non-vulnerable version of Jenzabar 9.2x-9.2.2.
+
+
+References:
+- http://packetstormsecurity.com/files/161303/Jenzabar-9.2.2-Cross-Site-Scripting.html
+- https://gist.github.com/Y0ung-DST/d1b6b65be6248b0ffc2b2f2120deb205
+- https://jenzabar.com/blog
+- https://y0ungdst.medium.com/xss-in-jenzabar-cve-2021-26723-a0749231328
+- https://nvd.nist.gov/vuln/detail/CVE-2021-26723
+================================================================================
+
+================================================================================
+Vulnerability: myfactory FMS  -  Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-42565
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+myfactory.FMS before 7.1-912 allows cross-site scripting via the UID parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of a user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2021-42565
+- https://www.redteam-pentesting.de/en/advisories/rt-sa-2021-001/-cross-site-scripting-in-myfactory-fms
+- https://www.redteam-pentesting.de/advisories/rt-sa-2021-001
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Netsweeper 4.0.9 - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Netsweeper 4.0.9 contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://packetstormsecurity.com/files/download/133034/netsweeper-issues.tgz
+- https://www.exploit-db.com/exploits/37930
+================================================================================
+
+================================================================================
+Vulnerability: myfactory FMS  -  Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-42565
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+myfactory.FMS before 7.1-912 allows cross-site scripting via the UID parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of a user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2021-42565
+- https://www.redteam-pentesting.de/en/advisories/rt-sa-2021-001/-cross-site-scripting-in-myfactory-fms
+- https://www.redteam-pentesting.de/advisories/rt-sa-2021-001
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Cofax <=2.0RC3 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2005-4385
+CWE: nvd-cwe-other
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cofax 2.0 RC3 and earlier contains a cross-site scripting vulnerability in search.htm which allows remote attackers to inject arbitrary web script or HTML via the searchstring parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to a version of Cofax that is not affected by this vulnerability or apply the necessary patches provided by the vendor.
+
+
+References:
+- http://pridels0.blogspot.com/2005/12/cofax-xss-vuln.html
+- https://nvd.nist.gov/vuln/detail/CVE-2005-4385
+- http://www.vupen.com/english/advisories/2005/2977
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: JustWriting  -  Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-41467
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+A cross-site scripting vulnerability in application/controllers/dropbox.php in JustWriting 1.0.0 and below allow remote attackers to inject arbitrary web script or HTML via the challenge parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+
+References:
+- https://github.com/hjue/JustWriting/issues/106
+- https://nvd.nist.gov/vuln/detail/CVE-2021-41467
+- https://github.com/hjue/JustWriting/
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Xinuo Openserver 5/6 - Cross-Site scripting
+Severity: medium
+CVE: cve-2020-25495
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Xinuo (formerly SCO) Openserver versions 5 and 6 allows remote attackers to inject arbitrary web script or HTML tag via the parameter 'section' and is vulnerable to reflected cross-site scripting.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary scripts or steal sensitive information from users.
+
+
+Remediation:
+Apply the latest security patches or updates provided by Xinuo to fix the XSS vulnerability.
+
+
+References:
+- https://www.exploit-db.com/exploits/49300
+- https://github.com/Ramikan/Vulnerabilities/blob/master/SCO%20Openserver%20XSS%20%26%20HTML%20Injection%20vulnerability
+- http://packetstormsecurity.com/files/160634/SCO-Openserver-5.0.7-Cross-Site-Scripting.html
+- https://nvd.nist.gov/vuln/detail/CVE-2020-25495
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: EPrints 3.4.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-26475
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+EPrints 3.4.2 contains a reflected cross-site scripting vulnerability via the cgi/cal URI.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or upgrade to a newer version of EPrints that addresses this vulnerability.
+
+
+References:
+- https://github.com/grymer/CVE/blob/master/eprints_security_review.pdf
+- https://files.eprints.org/2548/
+- https://nvd.nist.gov/vuln/detail/CVE-2021-26475
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Sickbeard - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Sickbeard contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://sickbeard.com/
+- https://github.com/midgetspy/Sick-Beard
+================================================================================
+
+================================================================================
+Vulnerability: CHIYU TCP/IP Converter - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-31250
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+CHIYU BF-430, BF-431 and BF-450M TCP/IP Converter devices contain a cross-site scripting vulnerability due to a lack of sanitization of the input on the components man.cgi, if.cgi, dhcpc.cgi, and ppp.cgi.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+To mitigate this vulnerability, ensure that all user-supplied input is properly validated and sanitized before being rendered in web pages.
+
+
+References:
+- https://gitbook.seguranca-informatica.pt/cve-and-exploits/cves/chiyu-iot-devices#cve-2021-31250
+- https://www.chiyu-tech.com/msg/message-Firmware-update-87.htm
+- https://seguranca-informatica.pt/dancing-in-the-iot-chiyu-devices-vulnerable-to-remote-attacks/
+- https://nvd.nist.gov/vuln/detail/CVE-2021-31250
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Magento Server Mass Importer - Cross-Site Scripting
+Severity: medium
+CVE: cve-2015-2068
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Magento Server Mass Importer plugin contains multiple cross-site scripting vulnerabilities which allow remote attackers to inject arbitrary web script or HTML via the (1) profile parameter to web/magmi.php or (2) QUERY_STRING to web/magmi_import_run.php.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement of the affected Magento server.
+
+
+Remediation:
+Apply the latest security patches provided by Magento to fix the XSS vulnerability in the Server Mass Importer module.
+
+
+References:
+- https://www.exploit-db.com/exploits/35996
+- http://packetstormsecurity.com/files/130250/Magento-Server-MAGMI-Cross-Site-Scripting-Local-File-Inclusion.html
+- https://nvd.nist.gov/vuln/detail/CVE-2015-2068
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: WordPress Plugin Flexible Custom Post Type < 0.1.7 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2011-5106
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+A cross-site scripting vulnerability in edit-post.php in the Flexible Custom Post Type plugin before 0.1.7 for WordPress allows remote attackers to inject arbitrary web script or HTML via the id parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft or unauthorized actions.
+
+
+Remediation:
+Update to the latest version of the plugin (version 0.1.8 or higher) which includes a fix for this vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2011-5106
+- https://wordpress.org/plugins/flexible-custom-post-type/#developers
+- http://plugins.trac.wordpress.org/changeset?reponame=&new=466252%40flexible-custom-post-type&old=465583%40flexible-custom-post-type
+- http://wordpress.org/extend/plugins/flexible-custom-post-type/changelog/
+- https://exchange.xforce.ibmcloud.com/vulnerabilities/71415
+================================================================================
+
+================================================================================
+Vulnerability: Jenkins build-metrics 1.3 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2019-10475
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Jenkins build-metrics 1.3 is vulnerable to a reflected cross-site scripting vulnerability that allows attackers to inject arbitrary HTML and JavaScript into the web pages the plugin provides.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary scripts in the context of the victim's browser, leading to potential data theft or unauthorized actions.
+
+
+Remediation:
+Upgrade to a patched version of the Jenkins build-metrics plugin or apply the necessary fixes provided by the vendor.
+
+
+References:
+- https://jenkins.io/security/advisory/2019-10-23/#SECURITY-1490
+- http://www.openwall.com/lists/oss-security/2019/10/23/2
+- http://packetstormsecurity.com/files/155200/Jenkins-Build-Metrics-1.3-Cross-Site-Scripting.html
+- https://nvd.nist.gov/vuln/detail/CVE-2019-10475
+- https://github.com/reph0r/poc-exp
+================================================================================
+
+================================================================================
+Vulnerability: Apache ActiveMQ <=5.15.5 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-8006
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Apache ActiveMQ versions 5.0.0 to 5.15.5 are vulnerable to cross-site scripting via the web based administration console on the queue.jsp page. The root cause of this issue is improper data filtering of the QueueFilter parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade Apache ActiveMQ to a version higher than 5.15.5 or apply the necessary patches provided by the vendor.
+
+
+References:
+- http://activemq.apache.org/security-advisories.data/CVE-2018-8006-announcement.txt
+- https://lists.apache.org/thread.html/2b5c0039197a4949f29e1e2c9441ab38d242946b966f61c110808bcc@%3Ccommits.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/fcbe6ad00f1de142148c20d813fae3765dc4274955e3e2f3ca19ff7b@%3Cdev.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/a859563f05fbe7c31916b3178c2697165bd9bbf5a65d1cf62aef27d2@%3Ccommits.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/03f91b1fb85686a848cee6b90112cf6059bd1b21b23bacaa11a962e1@%3Cdev.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/3f1e41bc9153936e065ca3094bd89ff8167ad2d39ac0b410f24382d2@%3Cgitbox.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/c0ec53b72b3240b187afb1cf67e4309a9e5f607282010aa196734814@%3Cgitbox.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/rb698ed085f79e56146ca24ab359c9ef95846618675ea1ef402e04a6d@%3Ccommits.activemq.apache.org%3E
+- https://lists.apache.org/thread.html/r946488fb942fd35c6a6e0359f52504a558ed438574a8f14d36d7dcd7@%3Ccommits.activemq.apache.org%3E
+- https://nvd.nist.gov/vuln/detail/CVE-2018-8006
+================================================================================
+
+================================================================================
+Vulnerability: Qcubed - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Qcubed contains a cross-site scripting vulnerability which allows a remote attacker to inject arbitrary JavaScript via the /assets/php/_devtools/installer/step_2.php endpoint and the installation_path parameter.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://github.com/qcubed/qcubed/issues/1230
+================================================================================
+
+================================================================================
+Vulnerability: WebPort 1.19.1 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2019-12461
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Web Port 1.19.1 is vulnerable to cross-site scripting via the /log type parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version of WebPort (1.19.2 or higher) which includes a fix for this vulnerability.
+
+
+References:
+- https://github.com/EmreOvunc/WebPort-v1.19.1-Reflected-XSS
+- https://webport.se/nedladdningar/
+- https://github.com/EmreOvunc/WebPort-v1.19.1-Reflected-XSS/
+- https://emreovunc.com/blog/en/WebPort-Reflected-XSS-02.png
+- https://nvd.nist.gov/vuln/detail/CVE-2019-12461
+================================================================================
+
+================================================================================
+Vulnerability: Planon <Live Build 41 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-18570
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Planon before Live Build 41 is vulnerable to cross-site scripting.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary scripts in the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest patch or upgrade to a non-vulnerable version of Planon Live Build.
+
+
+References:
+- https://www2.deloitte.com/de/de/pages/risk/articles/planon-cross-site-scripting.html
+- https://nvd.nist.gov/vuln/detail/CVE-2018-18570
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Fortinet FortiOS <=5.2.3 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2015-1880
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Fortinet FortiOS 5.2.x before 5.2.3 contains a cross-site scripting vulnerability in the SSL VPN login page which allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade Fortinet FortiOS to a version higher than 5.2.3 to mitigate this vulnerability.
+
+
+References:
+- https://www.c2.lol/articles/xss-in-fortigates-ssl-vpn-login-page
+- http://www.fortiguard.com/advisory/FG-IR-15-005/
+- https://nvd.nist.gov/vuln/detail/CVE-2015-1880
+- http://www.securitytracker.com/id/1032261
+- http://www.securitytracker.com/id/1032262
+================================================================================
+
+================================================================================
+Vulnerability: CLink Office 2.0 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-6171
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+CLink Office 2.0 is vulnerable to cross-site scripting in the index page of the management console and allows remote attackers to inject arbitrary web script or HTML via the lang parameter.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to inject malicious scripts into web pages viewed by users, leading to potential data theft, session hijacking, or defacement.
+
+
+Remediation:
+Apply the latest security patches or updates provided by the vendor to fix this vulnerability.
+
+
+References:
+- https://www.deepcode.ca/index.php/2020/04/07/cve-2020-xss-in-clink-office-v2/
+- https://nvd.nist.gov/vuln/detail/CVE-2020-6171
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: NeDi 1.9C - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-14413
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+NeDi 1.9C is vulnerable to cross-site scripting because of an incorrect implementation of sanitize() in inc/libmisc.php. This function attempts to escape the SCRIPT tag from user-controllable values, but can be easily bypassed, as demonstrated by an onerror attribute of an IMG element as a Devices-Config.php?sta= value.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to a patched version of NeDi or apply the vendor-supplied patch to mitigate this vulnerability.
+
+
+References:
+- https://gist.github.com/farid007/8db2ab5367ba00e87f9479b32d46fea8
+- https://nvd.nist.gov/vuln/detail/CVE-2020-14413
+- https://github.com/ARPSyndicate/kenzer-templates
+- https://github.com/Elsfa7-110/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Moodle Jsmol - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-80
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Moodle contains a cross-site scripting vulnerability via the Jsmol plugin and may also be susceptible to local file inclusion or server-side-request forgery. An attacker can execute arbitrary script in the browser of an unsuspecting user and steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.dionach.com/blog/moodle-jmol-plugin-multiple-vulnerabilities/
+================================================================================
+
+================================================================================
+Vulnerability: Adobe Coldfusion <=8.0.1 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2009-1872
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Adobe ColdFusion Server 8.0.1 and earlier contain multiple cross-site scripting vulnerabilities which allow remote attackers to inject arbitrary web script or HTML via (1) the startRow parameter to administrator/logviewer/searchlog.cfm, or the query string to (2) wizards/common/_logintowizard.cfm, (3) wizards/common/_authenticatewizarduser.cfm, or (4) administrator/enter.cfm.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade Adobe Coldfusion to a version higher than 8.0.1 or apply the necessary patches provided by the vendor.
+
+
+References:
+- https://www.tenable.com/cve/CVE-2009-1872
+- http://www.adobe.com/support/security/bulletins/apsb09-12.html
+- http://www.dsecrg.com/pages/vul/show.php?id=122
+- https://nvd.nist.gov/vuln/detail/CVE-2009-1872
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Tiki Wiki CMS Groupware 5.2 - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Tiki Wiki CMS Groupware 5.2 contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://packetstormsecurity.com/files/94255/Tiki-Wiki-CMS-Groupware-5.2-Cross-Site-Scripting.html
+- https://www.exploit-db.com/exploits/15174
+================================================================================
+
+================================================================================
+Vulnerability: Tiki Wiki CMS Groupware 5.2 - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Tiki Wiki CMS Groupware 5.2 contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://packetstormsecurity.com/files/94255/Tiki-Wiki-CMS-Groupware-5.2-Cross-Site-Scripting.html
+- https://www.exploit-db.com/exploits/15174
+================================================================================
+
+================================================================================
+Vulnerability: Netsweeper 4.0.4 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2014-9607
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+A cross-site scripting vulnerability in remotereporter/load_logfiles.php in Netsweeper 4.0.3 and 4.0.4 allows remote attackers to inject arbitrary web script or HTML via the url parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the targeted user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or updates provided by the vendor to mitigate this vulnerability.
+
+
+References:
+- https://packetstormsecurity.com/files/download/133034/netsweeper-issues.tgz
+- https://nvd.nist.gov/vuln/detail/CVE-2014-9607
+- http://packetstormsecurity.com/files/133034/Netsweeper-Bypass-XSS-Redirection-SQL-Injection-Execution.html
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Pascom CPS Server-Side Request Forgery
+Severity: critical
+CVE: cve-2021-45967
+CWE: cwe-22
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Pascom versions before 7.20 packaged with Cloud Phone System contain a known server-side request forgery vulnerability.
+
+Impact:
+The vulnerability can result in unauthorized access to sensitive data or systems, potentially leading to further exploitation or compromise.
+
+
+Remediation:
+Apply the latest security patches or updates provided by Pascom to fix the Server-Side Request Forgery vulnerability (CVE-2021-45967).
+
+
+References:
+- https://kerbit.io/research/read/blog/4
+- https://www.pascom.net/doc/en/release-notes/
+- https://tutorialboy24.blogspot.com/2022/03/the-story-of-3-bugs-that-lead-to.html
+- https://www.pascom.net/doc/en/release-notes/pascom19/
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: SPIP <3.1.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2016-7981
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+SPIP 3.1.2 and earlier contains a cross-site scripting vulnerability in valider_xml.php which allows remote attackers to inject arbitrary web script or HTML via the var_url parameter in a valider_xml action.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser.
+
+
+Remediation:
+Upgrade SPIP to version 3.1.2 or later to mitigate this vulnerability.
+
+
+References:
+- https://core.spip.net/projects/spip/repository/revisions/23202
+- https://core.spip.net/projects/spip/repository/revisions/23201
+- https://core.spip.net/projects/spip/repository/revisions/23200
+- https://nvd.nist.gov/vuln/detail/CVE-2016-7981
+- http://www.openwall.com/lists/oss-security/2016/10/05/17
+================================================================================
+
+================================================================================
+Vulnerability: D-Link Central WifiManager - Server-Side Request Forgery
+Severity: high
+CVE: cve-2018-15517
+CWE: cwe-918
+Host: honey.scanme.sh - Port: 443
+
+Description:
+D-Link Central WifiManager is susceptible to server-side request forgery. The MailConnect feature on D-Link Central WiFiManager CWM-100 1.03 r0098 devices is intended to check a connection to an SMTP server but actually allows outbound TCP to any port on any IP address, as demonstrated by an index.php/System/MailConnect/host/127.0.0.1/port/22/secure/ URI. This can undermine accountability of where scan or connections actually came from and or bypass the FW etc. This can be automated via script or using a browser.
+
+Impact:
+Successful exploitation of this vulnerability could lead to unauthorized access to internal resources, data leakage, and potential compromise of the entire network.
+
+
+Remediation:
+Apply the latest security patches or updates provided by D-Link to fix the SSRF vulnerability in Central WifiManager.
+
+
+References:
+- http://hyp3rlinx.altervista.org/advisories/DLINK-CENTRAL-WIFI-MANAGER-CWM-100-SERVER-SIDE-REQUEST-FORGERY.txt
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15517
+- http://seclists.org/fulldisclosure/2018/Nov/28
+- http://packetstormsecurity.com/files/150243/D-LINK-Central-WifiManager-CWM-100-1.03-r0098-Server-Side-Request-Forgery.html
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Podcast Channels < 0.28 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2014-4544
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Podcast Channels WordPress plugin was affected by an unauthenticated reflected cross-site scripting security vulnerability.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the affected website, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Update to the latest version of the Podcast Channels plugin (0.28 or higher) to fix this vulnerability.
+
+
+References:
+- https://wpscan.com/vulnerability/72a5a0e1-e720-45a9-b9d4-ee3144939abb
+- https://nvd.nist.gov/vuln/detail/CVE-2014-4544
+- http://codevigilant.com/disclosure/wp-plugin-podcast-channels-a3-cross-site-scripting-xss
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: ManageEngine Firewall Analyzer 7.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2012-4889
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Multiple cross-site scripting vulnerabilities in ManageEngine Firewall Analyzer 7.2 allow remote attackers to inject arbitrary web script or HTML via the (1) subTab or (2) tab parameter to createAnomaly.do; (3) url, (4) subTab, or (5) tab parameter to mindex.do; (6) tab parameter to index2.do; or (7) port parameter to syslogViewer.do.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the affected user's browser.
+
+
+Remediation:
+Apply the latest security patch or upgrade to a newer version of ManageEngine Firewall Analyzer.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2012-4889
+- http://packetstormsecurity.org/files/111474/VL-437.txt
+- http://www.vulnerability-lab.com/get_content.php?id=437
+- https://exchange.xforce.ibmcloud.com/vulnerabilities/74538
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Cyberoam NetGenie Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-38702
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Cyberoam NetGenie C0101B1-20141120-NG11VO devices through 2021-08-14 are susceptible to reflected cross-site scripting via the 'u' parameter of ft.php.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of a victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or firmware updates provided by the vendor to mitigate this vulnerability.
+
+
+References:
+- https://seclists.org/fulldisclosure/2021/Aug/20
+- https://nvd.nist.gov/vuln/detail/CVE-2021-38702
+- http://www.cyberoamworks.com/NetGenie-Home.asp
+- http://packetstormsecurity.com/files/163859/Cyberoam-NetGenie-Cross-Site-Scripting.html
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Dolibarr <7.0.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-10095
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Dolibarr before 7.0.2  is vulnerable to cross-site scripting and allows remote attackers to inject arbitrary web script or HTML via the foruserlogin parameter to adherents/cartes/carte.php.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to Dolibarr version 7.0.2 or later to mitigate this vulnerability.
+
+
+References:
+- https://sysdream.com/news/lab/2018-05-21-cve-2018-10095-dolibarr-xss-injection-vulnerability/
+- https://github.com/Dolibarr/dolibarr/commit/1dc466e1fb687cfe647de4af891720419823ed56
+- https://github.com/Dolibarr/dolibarr/blob/7.0.2/ChangeLog
+- https://nvd.nist.gov/vuln/detail/CVE-2018-10095
+- http://www.openwall.com/lists/oss-security/2018/05/21/3
+================================================================================
+
+================================================================================
+Vulnerability: Siemens SIMATIC S7-1200 CPU - Cross-Site Scripting
+Severity: medium
+CVE: cve-2014-2908
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+A cross-site scripting vulnerability in the integrated web server on Siemens SIMATIC S7-1200 CPU devices 2.x and 3.x allows remote attackers to inject arbitrary web script or HTML via unspecified vectors.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the affected user's browser.
+
+
+Remediation:
+Upgrade to v4.0 or later.
+
+References:
+- https://www.exploit-db.com/exploits/44687
+- https://cert-portal.siemens.com/productcert/pdf/ssa-892012.pdf
+- https://nvd.nist.gov/vuln/detail/CVE-2014-2908
+- http://ics-cert.us-cert.gov/advisories/ICSA-14-114-02
+- http://www.siemens.com/innovation/pool/de/forschungsfelder/siemens_security_advisory_ssa-892012.pdf
+================================================================================
+
+================================================================================
+Vulnerability: Netsweeper 4.0.8 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2014-9606
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Multiple cross-site scripting vulnerabilities in Netsweeper before 3.1.10, 4.0.x before 4.0.9, and 4.1.x before 4.1.2 allow remote attackers to inject arbitrary web script or HTML via the (1) server parameter to remotereporter/load_logfiles.php, (2) customctid parameter to webadmin/policy/category_table_ajax.php, (3) urllist parameter to webadmin/alert/alert.php, (4) QUERY_STRING to webadmin/ajaxfilemanager/ajax_get_file_listing.php, or (5) PATH_INFO to webadmin/policy/policy_table_ajax.php/.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the targeted user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or updates provided by the vendor to mitigate this vulnerability.
+
+
+References:
+- https://packetstormsecurity.com/files/download/133034/netsweeper-issues.tgz
+- https://nvd.nist.gov/vuln/detail/CVE-2014-9606
+- http://packetstormsecurity.com/files/133034/Netsweeper-Bypass-XSS-Redirection-SQL-Injection-Execution.html
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: SquirrelMail 1.2.6/1.2.7 - Cross-Site Scripting
+Severity: high
+CVE: cve-2002-1131
+CWE: cwe-80
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Virtual Keyboard plugin for SquirrelMail 1.2.6/1.2.7 is prone to a cross-site scripting vulnerability because it fails to properly sanitize user-supplied input.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the victim's browser, potentially leading to session hijacking, data theft, or other malicious activities.
+
+
+Remediation:
+Upgrade to a patched version of SquirrelMail or apply the necessary security patches to mitigate the XSS vulnerability.
+
+
+References:
+- http://www.redhat.com/support/errata/RHSA-2002-204.html
+- http://www.debian.org/security/2002/dsa-191
+- http://sourceforge.net/project/shownotes.php?group_id=311&release_id=110774
+- https://www.exploit-db.com/exploits/21811
+- https://nvd.nist.gov/vuln/detail/CVE-2002-1131
+================================================================================
+
+================================================================================
+Vulnerability: PacsOne Server <7.1.1 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-29164
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+PacsOne Server (PACS Server In One Box) below 7.1.1 is vulnerable to cross-site scripting.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary scripts in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to PacsOne Server version 7.1.1 or later to mitigate this vulnerability.
+
+
+References:
+- https://gist.github.com/leommxj/0a32afeeaac960682c5b7c9ca8ed070d
+- https://pacsone.net/download.htm
+- https://nvd.nist.gov/vuln/detail/CVE-2020-29164
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Zoho manageengine - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-12998
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Zoho manageengine is vulnerable to reflected cross-site scripting. This impacts  Zoho ManageEngine Netflow Analyzer before build 123137, Network Configuration Manager before build 123128, OpManager before build 123148, OpUtils before build 123161, and Firewall Analyzer before build 123147 via the parameter 'operation' to /servlet/com.adventnet.me.opmanager.servlet.FailOverHelperServlet.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the affected user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patch or update provided by Zoho ManageEngine to fix the XSS vulnerability.
+
+
+References:
+- https://github.com/unh3x/just4cve/issues/10
+- http://packetstormsecurity.com/files/148635/Zoho-ManageEngine-13-13790-build-XSS-File-Read-File-Deletion.html
+- https://nvd.nist.gov/vuln/detail/CVE-2018-12998
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: TurboCRM - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+TurboCRM contains a cross-site scripting vulnerability which allows a remote attacker to inject arbitrary JavaScript into the response returned by the application.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://gist.github.com/pikpikcu/9689c5220abbe04d4927ffa660241b4a
+================================================================================
+
+================================================================================
+Vulnerability: Zarafa WebApp <=2.0.1.47791 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2019-7219
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Zarafa WebApp 2.0.1.47791 and earlier contains an unauthenticated reflected cross-site scripting vulnerability. An attacker can execute arbitrary script code in the browser of an unsuspecting user in the context of the affected site.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+This is a discontinued product. The issue was fixed in later versions. However, some former Zarafa WebApp customers use the related Kopano product instead.
+
+References:
+- https://github.com/verifysecurity/CVE-2019-7219
+- https://stash.kopano.io/repos?visibility=public
+- https://nvd.nist.gov/vuln/detail/CVE-2019-7219
+- https://github.com/Elsfa7-110/kenzer-templates
+- https://github.com/merlinepedra25/nuclei-templates
+================================================================================
+
+================================================================================
+Vulnerability: AWStats 6.95/7.0 - 'awredir.pl' Cross-Site Scripting
+Severity: medium
+CVE: cve-2012-4547
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+AWStats is prone to multiple cross-site scripting vulnerabilities because the application fails to properly sanitize user-supplied input.
+
+Impact:
+Allows remote attackers to inject arbitrary web script or HTML via the 'url' parameter.
+
+
+Remediation:
+N/A
+
+References:
+- https://www.exploit-db.com/exploits/36164
+- https://nvd.nist.gov/vuln/detail/CVE-2012-4547
+- http://awstats.sourceforge.net/docs/awstats_changelog.txt
+- http://openwall.com/lists/oss-security/2012/10/29/7
+- http://openwall.com/lists/oss-security/2012/10/26/1
+================================================================================
+
+================================================================================
+Vulnerability: WordPress Supsystic Contact Form <1.7.15 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-24276
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+WordPress Supsystic Contact Form plugin before 1.7.15 contains a cross-site scripting vulnerability. It does not sanitize the tab parameter of its options page before outputting it in an attribute.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the victim's browser, leading to potential session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Update to the latest version of the WordPress Supsystic Contact Form plugin (1.7.15 or higher) to mitigate this vulnerability.
+
+
+References:
+- https://wpscan.com/vulnerability/1301123c-5e63-432a-ab90-3221ca532d9c
+- http://packetstormsecurity.com/files/164308/WordPress-Contact-Form-1.7.14-Cross-Site-Scripting.html
+- https://nvd.nist.gov/vuln/detail/CVE-2021-24276
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Frontend Uploader <= 0.9.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2014-9444
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+The Frontend Uploader WordPress plugin prior to v.0.9.2 was affected by an unauthenticated Cross-Site Scripting security vulnerability.
+
+Impact:
+Allows remote attackers to inject arbitrary web script or HTML via a crafted file name, leading to potential session hijacking, defacement, or data theft.
+
+
+Remediation:
+Update to the latest version of the Frontend Uploader plugin (0.9.2) or apply the vendor-supplied patch to fix the vulnerability.
+
+
+References:
+- https://wpscan.com/vulnerability/f0739b1e-22dc-4ca6-ad83-a0e80228e3c7
+- https://nvd.nist.gov/vuln/detail/CVE-2014-9444
+- http://packetstormsecurity.com/files/129749/WordPress-Frontend-Uploader-0.9.2-Cross-Site-Scripting.html
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: IceWarp WebMail 11.4.5.0 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2020-27982
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+IceWarp WebMail 11.4.5.0 is vulnerable to cross-site scripting via the language parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patch or upgrade to a non-vulnerable version of IceWarp WebMail.
+
+
+References:
+- https://packetstormsecurity.com/files/159763/Icewarp-WebMail-11.4.5.0-Cross-Site-Scripting.html
+- https://cxsecurity.com/issue/WLB-2020100161
+- https://nvd.nist.gov/vuln/detail/CVE-2020-27982
+- http://packetstormsecurity.com/files/159763/Icewarp-WebMail-11.4.5.0-Cross-Site-Scripting.html
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: OEcms 3.1 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-12095
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+OEcms 3.1 is vulnerable to reflected cross-site scripting via the mod parameter of info.php.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest patch or upgrade to a newer version of OEcms to fix the XSS vulnerability.
+
+
+References:
+- https://www.exploit-db.com/exploits/44895
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-12095
+- https://cxsecurity.com/issue/WLB-2018060092
+- https://nvd.nist.gov/vuln/detail/CVE-2018-12095
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Django Debug Page - Cross-Site Scripting
+Severity: medium
+CVE: cve-2017-12794
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Django 1.10.x before 1.10.8 and 1.11.x before 1.11.5 has HTML autoescaping disabled in a portion of the template for the technical 500 debug page. We detected that right circumstances (DEBUG=True) are present to allow a cross-site scripting attack.
+
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to potential session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to a patched version of Django or apply the necessary security patches provided by the Django project.
+
+
+References:
+- https://twitter.com/sec715/status/1406779605055270914
+- https://nvd.nist.gov/vuln/detail/CVE-2017-12794
+- https://www.djangoproject.com/weblog/2017/sep/05/security-releases/
+- http://web.archive.org/web/20211207172022/https://securitytracker.com/id/1039264
+- http://www.securitytracker.com/id/1039264
+================================================================================
+
+================================================================================
+Vulnerability: Canvas LMS v2020-07-29 - Blind Server-Side Request Forgery
+Severity: medium
+CVE: cve-2020-5775
+CWE: cwe-918
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Canvas version 2020-07-29 is susceptible to blind server-side request forgery. An attacker can cause Canvas to perform HTTP GET requests to arbitrary domains and thus potentially access sensitive information, modify data, and/or execute unauthorized operations.
+
+Impact:
+Successful exploitation of this vulnerability can lead to unauthorized access to internal resources, data leakage, and potential remote code execution.
+
+
+Remediation:
+Apply the latest security patches provided by Canvas LMS to mitigate the vulnerability.
+
+
+References:
+- https://www.tenable.com/security/research/tra-2020-49
+- https://nvd.nist.gov/vuln/detail/CVE-2020-5775
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Graphite <=1.1.5 - Server-Side Request Forgery
+Severity: high
+CVE: cve-2017-18638
+CWE: cwe-918
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Graphite's send_email in graphite-web/webapp/graphite/composer/views.py in versions up to 1.1.5 is vulnerable to server-side request forgery (SSR)F. The vulnerable SSRF endpoint can be used by an attacker to have the Graphite web server request any resource. The response to this SSRF request is encoded into an image file and then sent to an email address that can be supplied by the attacker. Thus, an attacker can exfiltrate any information.
+
+
+Impact:
+An attacker can exploit this vulnerability to access internal resources, potentially leading to unauthorized access, data leakage, or further attacks.
+
+
+Remediation:
+Upgrade to a patched version of Graphite (>=1.1.6) or apply the necessary security patches.
+
+
+References:
+- http://blog.orange.tw/2017/07/how-i-chained-4-vulnerabilities-on.html
+- https://github.com/graphite-project/graphite-web/issues/2008
+- https://github.com/advisories/GHSA-vfj6-275q-4pvm
+- https://nvd.nist.gov/vuln/detail/CVE-2017-18638
+- https://github.com/graphite-project/graphite-web/pull/2499
+================================================================================
+
+================================================================================
+Vulnerability: ClinicCases 7.3.3 Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-38704
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+ClinicCases 7.3.3 is susceptible to multiple reflected cross-site scripting vulnerabilities that could allow unauthenticated attackers to introduce arbitrary JavaScript by crafting a malicious URL. This can result in account takeover via session token theft.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of the victim's browser, leading to potential data theft, session hijacking, or defacement of the affected website.
+
+
+Remediation:
+To mitigate this vulnerability, it is recommended to implement proper input validation and sanitization techniques to prevent the execution of malicious scripts.
+
+
+References:
+- https://github.com/sudonoodle/CVE-2021-38704
+- https://nvd.nist.gov/vuln/detail/CVE-2021-38704
+- https://github.com/judsonmitchell/ClinicCases/releases
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: myfactory FMS  -  Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-42566
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+myfactory.FMS before 7.1-912 allows cross-site scripting via the Error parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of a victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2021-42566
+- https://www.redteam-pentesting.de/en/advisories/rt-sa-2021-001/-cross-site-scripting-in-myfactory-fms
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-42566
+- https://www.redteam-pentesting.de/advisories/rt-sa-2021-001
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Magmi 0.7.22 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2017-7391
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Magmi 0.7.22 contains a cross-site scripting vulnerability due to insufficient filtration of user-supplied data (prefix) passed to the magmi-git-master/magmi/web/ajax_gettime.php URL.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to a patched version of Magmi or apply the necessary security patches to mitigate the XSS vulnerability.
+
+
+References:
+- https://github.com/dweeves/magmi-git/issues/522
+- https://github.com/dweeves/magmi-git/releases/download/0.7.22/magmi_full_0.7.22.zip
+- https://github.com/dweeves/magmi-git/pull/525
+- https://nvd.nist.gov/vuln/detail/CVE-2017-7391
+- https://github.com/d4n-sec/d4n-sec.github.io
+================================================================================
+
+================================================================================
+Vulnerability: myfactory FMS  -  Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-42566
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+myfactory.FMS before 7.1-912 allows cross-site scripting via the Error parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of a victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Upgrade to the latest version to mitigate this vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2021-42566
+- https://www.redteam-pentesting.de/en/advisories/rt-sa-2021-001/-cross-site-scripting-in-myfactory-fms
+- https://cve.mitre.org/cgi-bin/cvename.cgi?name=2021-42566
+- https://www.redteam-pentesting.de/advisories/rt-sa-2021-001
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
+
+================================================================================
+Vulnerability: Knowage Suite 7.3 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-30213
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Knowage Suite 7.3 contains an unauthenticated reflected cross-site scripting vulnerability. An attacker can inject arbitrary web script in '/servlet/AdapterHTTP' via the 'targetService' parameter.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute malicious scripts in the context of the victim's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or updates provided by the vendor to fix the XSS vulnerability in Knowage Suite 7.3.
+
+
+References:
+- https://github.com/piuppi/Proof-of-Concepts/blob/main/Engineering/XSS-KnowageSuite7-3_unauth.md
+- https://nvd.nist.gov/vuln/detail/CVE-2021-30213
+- https://github.com/piuppi/Proof-of-Concepts
+- https://github.com/ARPSyndicate/cvemon
+- https://github.com/ARPSyndicate/kenzer-templates
+================================================================================
+
+================================================================================
+Vulnerability: Blackboard - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Blackboard contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://help.blackboard.com/Community_Engagement/Administrator/Release_Notes
+================================================================================
+
+================================================================================
+Vulnerability: Blackboard - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Blackboard contains a cross-site scripting vulnerability. An attacker can execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://help.blackboard.com/Community_Engagement/Administrator/Release_Notes
+================================================================================
+
+================================================================================
+Vulnerability: Discourse - Cross-Site Scripting
+Severity: high
+CVE: N/A
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Discourse contains a cross-site scripting vulnerability. An attacker can execute arbitrary script and thus steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.cvedetails.com/vulnerability-list/vendor_id-20185/product_id-57316/opxss-1/Discourse-Discourse.html
+- https://github.com/discourse/discourse/security/advisories/GHSA-xhmc-9jwm-wqph
+================================================================================
+
+================================================================================
+Vulnerability: Fortinet FortiOS - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-13380
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Fortinet FortiOS 6.0.0 to 6.0.4, 5.6.0 to 5.6.7, 5.4.0 to 5.4.12, 5.2 and below versions under SSL VPN web portal are vulnerable to cross-site scripting and allows attacker to execute unauthorized malicious script code via the error or message handling parameters.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the targeted user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or updates provided by Fortinet to fix this vulnerability.
+
+
+References:
+- https://blog.orange.tw/2019/08/attacking-ssl-vpn-part-2-breaking-the-fortigate-ssl-vpn.html
+- https://fortiguard.com/advisory/FG-IR-18-383
+- https://fortiguard.com/advisory/FG-IR-20-230
+- https://nvd.nist.gov/vuln/detail/CVE-2018-13380
+- https://github.com/merlinepedra25/nuclei-templates
+================================================================================
+
+================================================================================
+Vulnerability: Fortinet FortiOS - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-13380
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+Fortinet FortiOS 6.0.0 to 6.0.4, 5.6.0 to 5.6.7, 5.4.0 to 5.4.12, 5.2 and below versions under SSL VPN web portal are vulnerable to cross-site scripting and allows attacker to execute unauthorized malicious script code via the error or message handling parameters.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the targeted user's browser, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or updates provided by Fortinet to fix this vulnerability.
+
+
+References:
+- https://blog.orange.tw/2019/08/attacking-ssl-vpn-part-2-breaking-the-fortigate-ssl-vpn.html
+- https://fortiguard.com/advisory/FG-IR-18-383
+- https://fortiguard.com/advisory/FG-IR-20-230
+- https://nvd.nist.gov/vuln/detail/CVE-2018-13380
+- https://github.com/merlinepedra25/nuclei-templates
+================================================================================
+
+================================================================================
+Vulnerability: SquirrelMail Address Add 1.4.2 - Cross-Site Scripting
+Severity: medium
+CVE: N/A
+CWE: cwe-80
+Host: honey.scanme.sh - Port: 443
+
+Description:
+SquirrelMail Address Add 1.4.2 plugin contains a cross-site scripting vulnerability. It fails to properly sanitize user-supplied input, thus allowing an attacker to execute arbitrary script in the browser of an unsuspecting user in the context of the affected site. This can allow the attacker to steal cookie-based authentication credentials and launch other attacks.
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.exploit-db.com/exploits/26305
+================================================================================
+
+================================================================================
+Vulnerability: EPrints 3.4.2 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2021-26702
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+EPrints 3.4.2 contains a reflected cross-site scripting vulnerability in the dataset parameter to the cgi/dataset_ dictionary URI.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the context of the victim's browser, leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Apply the latest security patches or upgrade to a newer version of EPrints that addresses this vulnerability.
+
+
+References:
+- https://github.com/grymer/CVE/blob/master/eprints_security_review.pdf
+- https://files.eprints.org/2548/
+- https://nvd.nist.gov/vuln/detail/CVE-2021-26702
+- https://github.com/ARPSyndicate/kenzer-templates
+- https://github.com/grymer/CVE
+================================================================================
+
+================================================================================
+Vulnerability: WordPress wpForo Forum <= 1.4.11 - Cross-Site Scripting
+Severity: medium
+CVE: cve-2018-11709
+CWE: cwe-79
+Host: honey.scanme.sh - Port: 443
+
+Description:
+WordPress wpForo Forum plugin before 1.4.12 for WordPress allows unauthenticated reflected cross-site scripting via the URI.
+
+Impact:
+Successful exploitation of this vulnerability could allow an attacker to execute arbitrary script code in the context of the affected website, potentially leading to session hijacking, defacement, or theft of sensitive information.
+
+
+Remediation:
+Update to the latest version of the wpForo Forum plugin (1.4.11) or apply the vendor-provided patch to fix the vulnerability.
+
+
+References:
+- https://nvd.nist.gov/vuln/detail/CVE-2018-11709
+- https://wordpress.org/plugins/wpforo/#developers
+- https://wpvulndb.com/vulnerabilities/9090
+- https://blog.dewhurstsecurity.com/2018/06/01/wp-foro-wordpress-plugin-xss-vulnerability.html
+- https://github.com/ARPSyndicate/cvemon
+================================================================================
