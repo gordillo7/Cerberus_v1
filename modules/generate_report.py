@@ -275,6 +275,12 @@ def generate_report(target):
                         elements.append(Paragraph("In this section, the results of the web scan are reported.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                    case "fuzzing.txt":
+                        elements.append(Paragraph("Fuzzing", styles['Heading1']))
+                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("In this section, the results of the fuzzing scan are reported.", styles['Normal']))
+                        elements.append(Spacer(1, 12))
+                        elements.extend(create_text_paragraph(filepath))
 
     except Exception as e:
         print(f"[-] Error generating report: {e}")

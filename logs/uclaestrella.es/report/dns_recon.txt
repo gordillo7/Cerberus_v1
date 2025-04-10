@@ -1,0 +1,28 @@
+MX Records:
+    MX Host: 10 mx.uclaestrella.es
+    Email Provider: ARUBA-ASN, IT
+#
+NS Records:
+    NS Server: dns.technorail.com (Provider: ARUBA-ASN, IT, Located in: Italy)
+    NS Server: dns4.arubadns.cz (Provider: INTERNET-CZ Ktis 2, 384 03 Ktis, CZ, Located in: Czechia)
+    NS Server: dns2.technorail.com (Provider: ARUBA-ASN, IT, Located in: Italy)
+    NS Server: dns3.arubadns.net (Provider: ARUBA-ASN, IT, Located in: Italy)
+#
+TXT Records:
+    "v=spf1 include:_spf.aruba.it ~all"
+#
+DMARC Record Info:
+    A public DMARC record was found for the domain.
+#
+Whois Info:
+    Registered with: N/A
+    Domain created on: Unknown
+    Domain expires on: Unknown
+    Additional registrant details:
+        Name: N/A
+        Org: N/A
+        Address: N/A
+        City: N/A
+        State: N/A
+        Registrant_postal_code: N/A
+        Country: N/A

@@ -1,11 +1,10 @@
 ROADMAP GENERAL:
-- Modulo fuzzing web con FeroxBuster.
+- Bateria de tests, revision y optimizacion de codigo, comprobar que Cerberus esta a punto.
+- Grandes cambios en la interfaz.
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
 - Meter la opción de escaneo exahustivo (Nuclei con todos los subdominios, feroxbuster depth 2)
   como opcional (hacer una opcion en la GUI).
-- Bateria de tests, revision y optimizacion de codigo, comprobar que Cerberus esta a punto.
 - Meter IA (API de Gemini).
-- Grandes cambios en la interfaz.
 - Chatbot con preguntas predefinidas por cada target escaneado con la API de Gemini.
 - Generacion de reportes.
 - Hacer script de autoinstall para instalar dependencias.
@@ -13,6 +12,7 @@ ROADMAP GENERAL:
 AVANCES:
 - Modulo osint_email.py.
 - Modulo webscan con Nuclei.
+- Modulo fuzzing web con FeroxBuster.
 
 DUDAS:
 

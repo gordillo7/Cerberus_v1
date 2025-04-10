@@ -1,0 +1,4 @@
+# Nmap 7.94SVN scan initiated Thu Apr 10 13:07:55 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG logs/puebladesanchoperez.com/nmap/initial_scan.txt puebladesanchoperez.com
+Host: 91.146.97.125 ()	Status: Up
+Host: 91.146.97.125 ()	Ports: 21/open/tcp//ftp///, 22/open/tcp//ssh///, 53/open/tcp//domain///, 80/open/tcp//http///, 110/open/tcp//pop3///, 143/open/tcp//imap///, 443/open/tcp//https///, 465/open/tcp//smtps///, 587/open/tcp//submission///, 993/open/tcp//imaps///, 995/open/tcp//pop3s///, 1720/open/tcp//h323q931///, 3306/open/tcp//mysql///, 8443/open/tcp//https-alt///, 8880/open/tcp//cddbp-alt///
+# Nmap done at Thu Apr 10 13:08:18 2025 -- 1 IP address (1 host up) scanned in 23.13 seconds

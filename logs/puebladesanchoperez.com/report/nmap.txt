@@ -1,0 +1,16 @@
+PORT     STATE SERVICE       VERSION
+21/tcp   open  ftp           ProFTPD
+22/tcp   open  ssh           OpenSSH 7.4 (protocol 2.0)
+53/tcp   open  domain        (unknown banner: none)
+80/tcp   open  http          nginx
+110/tcp  open  pop3          Dovecot pop3d
+143/tcp  open  imap          Dovecot imapd
+443/tcp  open  ssl/http      nginx
+465/tcp  open  ssl/smtp      Postfix smtpd
+587/tcp  open  smtp          Postfix smtpd
+993/tcp  open  ssl/imap      Dovecot imapd
+995/tcp  open  ssl/pop3      Dovecot pop3d
+1720/tcp open  h323q931?
+3306/tcp open  mysql         MySQL 5.5.5-10.6.19-MariaDB
+8443/tcp open  ssl/https-alt sw-cp-server
+8880/tcp open  cddbp-alt?

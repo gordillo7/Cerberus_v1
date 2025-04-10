@@ -2,6 +2,7 @@ import os, sys, time, ipaddress
 from modules.dns_recon import run_dns_recon
 from modules.ftp import run_ftp
 from modules.generate_report import run_generate_report
+from modules.http_fuzzing import run_http_fuzzing
 from modules.http_joomla import run_http_joomla
 from modules.http_screenshot import run_http_screenshot
 from modules.http_subdomain import run_http_subdomain
@@ -35,6 +36,7 @@ def main():
                 run_http_webscan(target_clean)
                 run_http_whatweb(target_clean)
                 run_http_screenshot(target_clean)
+                run_http_fuzzing(target_clean)
                 with open(f"logs/{target_clean}/http/whatweb/cms.txt", "r") as w:
                     cms = w.read()
                     if "WordPress" in cms:

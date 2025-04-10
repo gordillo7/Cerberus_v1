@@ -1,0 +1,23 @@
+MX Records:
+    MX Host: 10 mx1.loading.es
+    Email Provider: LOADING, ES
+    MX Host: 30 mx3.loading.es
+    Email Provider: LOADING, ES
+    MX Host: 20 mx2.loading.es
+    Email Provider: LOADING, ES
+#
+NS Records:
+    NS Server: mundored2.servidoresdominios.com (Provider: LOADING, ES, Located in: Spain)
+    NS Server: mundored1.servidoresdominios.com (Provider: LOADING, ES, Located in: Spain)
+#
+TXT Records:
+    "v=spf1 include:_spf.loading.es -all"
+#
+DMARC Record Info:
+    A public DMARC record was found for the domain.
+#
+Whois Info:
+    Registered with: grupo loading systems, sl
+    Domain created on: 2024-09-19 08:08:06
+    Domain expires on: 2025-09-19 08:08:06
+    No additional registrant information available (or masked for privacy).

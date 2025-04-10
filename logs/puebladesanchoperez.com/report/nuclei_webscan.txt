@@ -1,0 +1,62 @@
+================================================================================
+Vulnerability: SSH Diffie-Hellman Modulus <= 1024 Bits
+Severity: low
+CVE: N/A
+CWE: N/A
+Host: puebladesanchoperez.com:22 - Port: 22
+
+Description:
+SSH weak algorithms are outdated cryptographic methods that pose security risks. Identifying and disabling these vulnerable algorithms is crucial for enhancing the overall security of SSH connections.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://access.redhat.com/solutions/4278651
+================================================================================
+
+================================================================================
+Vulnerability: SSH Server CBC Mode Ciphers Enabled
+Severity: low
+CVE: N/A
+CWE: N/A
+Host: puebladesanchoperez.com:22 - Port: 22
+
+Description:
+"SSH Server CBC Mode Ciphers Enabled" signifies that the SSH server supports Cipher Block Chaining (CBC) mode ciphers, which are known for potential vulnerabilities. This configuration poses a security risk, and it's recommended to disable CBC ciphers in favor of more secure alternatives for enhanced protection during data transmission.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.tenable.com/plugins/nessus/70658
+================================================================================
+
+================================================================================
+Vulnerability: SSH Weak Key Exchange Algorithms Enabled
+Severity: low
+CVE: N/A
+CWE: N/A
+Host: puebladesanchoperez.com:22 - Port: 22
+
+Description:
+SSH Weak Key Exchange Algorithms Enabled indicates that the SSH server or client is configured to allow the use of less secure key exchange methods, posing a potential security risk during the establishment of secure connections. It's crucial to update configurations to prioritize stronger key exchange algorithms.
+
+
+Impact:
+N/A
+
+Remediation:
+N/A
+
+References:
+- https://www.tenable.com/plugins/nessus/153953
+================================================================================

@@ -6,11 +6,7 @@ def get_scheme(url):
         requests.get(f"https://{url}", timeout=5)
         return "https"
     except requests.exceptions.RequestException:
-        try:
-            requests.get(f"http://{url}", timeout=5)
-            return "http"
-        except requests.exceptions.RequestException:
-            return None
+        return "http"
 
 if __name__ == "__main__":
     domain = sys.argv[1]

@@ -1,0 +1,112 @@
+{
+    "records": [
+        {
+            "systemid": "0fb0f6e0-3a47-4de3-bae9-3713c1e1bfb3",
+            "owner": "00000000-0000-0000-0000-000000000000",
+            "storageid": "025f821d1830edcc1ec0d6024baba80d420ecef8685fd27130f03e28c886a86f4592b0903dfe1c9968a8d826dc64f573b3bc2fb8c289ceba3f493544231f68bb",
+            "instore": true,
+            "size": 4194301,
+            "accesslevel": 0,
+            "type": 1,
+            "media": 24,
+            "added": "2021-04-14T05:41:41.064565Z",
+            "date": "2021-04-14T05:41:40.635252Z",
+            "name": "mx records 361M.rar/fdns_mx_6.txt [Part 385 of 513]",
+            "description": "",
+            "xscore": 58,
+            "simhash": 618478689871178508,
+            "bucket": "leaks.public.general",
+            "keyvalues": null,
+            "tags": null,
+            "relations": [
+                {
+                    "target": "eebd9844-ae80-45e8-80cf-5fe6bb342919",
+                    "relation": 8
+                }
+            ],
+            "accesslevelh": "Public",
+            "mediah": "Text File",
+            "simhashh": "0895471772ebab0c",
+            "typeh": "Text",
+            "tagsh": null,
+            "randomid": "414278a1-d64e-433e-927e-c284ce539e7f",
+            "bucketh": "Leaks » Public » General",
+            "indexfile": "71274cbd35361bb3a3b187bedb1ae90d4a5ac61cb75e09482f46f45366ed7cbfe5a177a1d6c4a861e5704c70479bf58e139c432901c2fd69481ef4acfdb97a52",
+            "historyfile": "",
+            "perfectmatch": false,
+            "group": "71274cbd35361bb3a3b187bedb1ae90d4a5ac61cb75e09482f46f45366ed7cbfe5a177a1d6c4a861e5704c70479bf58e139c432901c2fd69481ef4acfdb97a52"
+        },
+        {
+            "systemid": "5631d8ba-ff14-40d8-b8e3-97aa35b11774",
+            "owner": "00000000-0000-0000-0000-000000000000",
+            "storageid": "40aa9a6e03f85e461b0d6a847d4c49d14e1830bd370c918dcc2ea4810d230ff1c71259af17063216abf0343ba421a960f9e9a375fe515856e7b5ca275780e6b1",
+            "instore": true,
+            "size": 4194291,
+            "accesslevel": 0,
+            "type": 1,
+            "media": 24,
+            "added": "2019-12-27T18:09:54.225494Z",
+            "date": "2019-12-27T18:09:33.962971Z",
+            "name": "Exploit.in/68.txt [Part 18 of 91]",
+            "description": "",
+            "xscore": 66,
+            "simhash": 15623206017195157900,
+            "bucket": "leaks.public.general",
+            "keyvalues": null,
+            "tags": null,
+            "relations": [
+                {
+                    "target": "0404b22d-e61d-4472-833f-05d30fb34abe",
+                    "relation": 7
+                }
+            ],
+            "accesslevelh": "Public",
+            "mediah": "Text File",
+            "simhashh": "d8d0c718eba9a98c",
+            "typeh": "Text",
+            "tagsh": null,
+            "randomid": "cfbf5adf-6b20-4a84-8c4b-afa51b169831",
+            "bucketh": "Leaks » Public » General",
+            "indexfile": "00794dfcd13e55b7d916fe6808fd380386f5091489229ce7fa3ffc2c5696776639061466bcb74de317db943fc2d02a3430a9245f5dc77945f2e1f4ce694c7332",
+            "historyfile": "",
+            "perfectmatch": false,
+            "group": "00794dfcd13e55b7d916fe6808fd380386f5091489229ce7fa3ffc2c5696776639061466bcb74de317db943fc2d02a3430a9245f5dc77945f2e1f4ce694c7332"
+        },
+        {
+            "systemid": "efd822ac-17b0-4361-ae34-4dcb9e796896",
+            "owner": "00000000-0000-0000-0000-000000000000",
+            "storageid": "bca9bf726ebbfd65813f2fbfd04cbb3995cf996c42982c1da597048418363101d547fe83e372c3c897c0ccb045609d6e79a569d681a3cb25374d13cf774cfc65",
+            "instore": true,
+            "size": 4194302,
+            "accesslevel": 0,
+            "type": 1,
+            "media": 24,
+            "added": "2019-12-03T18:19:13.467205Z",
+            "date": "2019-12-03T18:18:38.958037Z",
+            "name": "linkedin.txt [Part 197 of 2708]",
+            "description": "",
+            "xscore": 62,
+            "simhash": 10332310106481473469,
+            "bucket": "leaks.public.general",
+            "keyvalues": null,
+            "tags": null,
+            "relations": [
+                {
+                    "target": "5e0c51cb-8b29-4076-9051-e1917b52f8e7",
+                    "relation": 7
+                }
+            ],
+            "accesslevelh": "Public",
+            "mediah": "Text File",
+            "simhashh": "8f63bd4c8601b7bd",
+            "typeh": "Text",
+            "tagsh": null,
+            "randomid": "012fef2a-0957-408c-8c03-0b621eccd9d8",
+            "bucketh": "Leaks » Public » General",
+            "indexfile": "26b92bb5a390c01c784ecdc4697965f282dea068ce9155feba39e43fe649598c8ec6be5f22fe974cdd3351668557e4c19efee72935d25ba26f57986cc0a5a77f",
+            "historyfile": "",
+            "perfectmatch": false,
+            "group": "26b92bb5a390c01c784ecdc4697965f282dea068ce9155feba39e43fe649598c8ec6be5f22fe974cdd3351668557e4c19efee72935d25ba26f57986cc0a5a77f"
+        }
+    ]
+}
