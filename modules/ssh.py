@@ -11,7 +11,7 @@ def log_result(target, content):
     os.system("cp " + log_path + " logs/" + target + "/report/ssh_credentials_found.txt")
 
 def ssh_bruteforce(target, port: int = 22):
-    print("[*] Starting SSH brute force on port 22...")
+    print("[*] Starting SSH bruteforce...")
     found = False
     valid_credentials = None
 
@@ -96,7 +96,7 @@ def ssh_bruteforce(target, port: int = 22):
         print("[-] No valid SSH credentials found.")
 
 def ssh_grep_searchsploit(target):
-    print("[*] Searching for CVEs in the searchsploit output...")
+    print("[*] Searching for CVEs...")
     searchsploit_file = f"logs/{target}/ssh/searchsploit.txt"
     try:
         with open(searchsploit_file, "r") as f:
@@ -122,7 +122,7 @@ def ssh_grep_searchsploit(target):
         print("[-] No CVEs found in the searchsploit output.")
 
 def ssh_searchsploit(target):
-    print("[*] Retrieving SSH version from Nmap output...")
+    print("[*] Retrieving SSH version...")
     nmap_file = f"logs/{target}/nmap/ports_services_versions.txt"
     try:
         with open(nmap_file, "r") as f:
@@ -145,22 +145,24 @@ def ssh_searchsploit(target):
         return
 
     print(f"[+] SSH version found: {ssh_version}")
+    print("[*] Searching for CVEs...")
 
     ssh_dir = f"logs/{target}/ssh"
     os.makedirs(ssh_dir, exist_ok=True)
     searchsploit_file = f"{ssh_dir}/searchsploit.txt"
     cmd = f'searchsploit "{ssh_version}" -j > {searchsploit_file}'
-    print(f"[*] Executing command: {cmd}")
     try:
         os.system(cmd)
-        print(f"[+] Searchsploit result saved in {searchsploit_file}")
+        print(f"[+] Results saved in {searchsploit_file}")
         ssh_grep_searchsploit(target)
     except Exception as e:
         print(f"[!] Error executing searchsploit: {e}")
 
 def run_ssh(target):
+    print(f"[*] Running SSH module...")
     ssh_bruteforce(target)
     ssh_searchsploit(target)
+    print("[+] SSH module completed.")
 
 if __name__ == "__main__":
     run_ssh(sys.argv[1])

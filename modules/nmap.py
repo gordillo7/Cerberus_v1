@@ -102,10 +102,12 @@ def clear_report(target_ip):
     os.system(f"cp {output_file} logs/{target_ip}/report/nmap.txt")
 
 def run_nmap(target_ip):
+    print("[*] Running nmap module...")
     initial_scan(target_ip)
     open_ports = extract_ports(target_ip)
     hard_scan(target_ip, open_ports)
     clear_report(target_ip)
+    print(f"[+] Nmap module completed.")
 
 # Test main
 if __name__ == "__main__":

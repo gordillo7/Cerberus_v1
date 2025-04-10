@@ -102,7 +102,6 @@ def run_webscan(target):
     with open(temp_list_file, "w", encoding="utf-8") as f:
         for sub in subdomains:
             f.write(sub + "\n")
-    print(f"[+] Temporary subdomains list created at {temp_list_file}")
     """
     # Build nuclei command
     nuclei_results_file = os.path.join(output_dir, "nuclei_results.json")
@@ -118,25 +117,23 @@ def run_webscan(target):
         "-s", "low,medium,high,critical,unknown",
         "-je", nuclei_results_file
     ]
-    print("[*] Running Nuclei...")
     try:
         subprocess.run(cmd, capture_output=True, text=True)
-        print(f"[+] Nuclei results saved to {nuclei_results_file}")
+        print(f"[+] Web scan results saved to {nuclei_results_file}")
     except Exception as e:
         print(f"[-] Error running Nuclei: {e}")
 
     """# Remove temporary file
     try:
         os.remove(temp_list_file)
-        print("[+] Temporary file removed.")
     except Exception as e:
         print(f"[-] Error removing temporary file: {e}")"""
 
 def run_http_webscan(target):
-    print(f"[*] Starting web scan for {target}...")
+    print(f"[*] Starting web scan module")
     run_webscan(target)
     generate_nuclei_report(target)
-    print("[+] Web scan completed.")
+    print("[+] Web scan module completed.")
 
 if __name__ == "__main__":
     target = sys.argv[1]

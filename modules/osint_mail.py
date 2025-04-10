@@ -161,6 +161,7 @@ def generate_osint_mail_report(target):
         f.write(report_text)
 
 def run_osint_mail(target):
+    print("[*] Running OSINT Mail module...")
     token = get_intelx_api_token()
     if not token:
         print("[-] IntelX API token not found, skipping functionality.")
@@ -169,6 +170,7 @@ def run_osint_mail(target):
     search_emails(target)
     search_emails_leakcheck(target)
     generate_osint_mail_report(target)
+    print("[+] OSINT Mail module completed.")
 
 
 if __name__ == "__main__":

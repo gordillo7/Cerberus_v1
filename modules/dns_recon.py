@@ -23,7 +23,6 @@ def save_result(domain, filename, content):
 
 
 def run_dnsdumpster(domain):
-    print("[*] Running DNSDumpster...")
     token = get_api_token('dnsdumpster')
     url = f'https://api.dnsdumpster.com/domain/{domain}'
     headers = {'X-API-Key': token}
@@ -36,7 +35,6 @@ def run_dnsdumpster(domain):
 
 
 def run_mxtoolbox(domain):
-    print("[*] Running DMARC lookup...")
     token = get_api_token('mxtoolbox')
     url = f'https://api.mxtoolbox.com/api/v1/lookup/dmarc/{domain}'
     headers = {
@@ -52,7 +50,6 @@ def run_mxtoolbox(domain):
 
 
 def run_apininja(domain):
-    print("[*] Running Whois lookup...")
     token = get_api_token('apininja')
     url = f'https://api.api-ninjas.com/v1/whois?domain={domain}'
     headers = {'X-Api-Key': token}
@@ -214,10 +211,12 @@ def generate_dns_recon_report(domain):
 
 
 def run_dns_recon(domain):
+    print("[*] Running DNS Recon module...")
     run_dnsdumpster(domain)
     run_mxtoolbox(domain)
     run_apininja(domain)
     generate_dns_recon_report(domain)
+    print("[+] DNS Recon module completed.")
 
 
 if __name__ == '__main__':

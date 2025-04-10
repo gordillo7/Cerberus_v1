@@ -21,7 +21,6 @@ def get_valid_url(sub):
 
 def enumerate_subdomains(domain):
     command = f"subfinder -d {domain} -silent"
-    print(f"[*] Running command: {command}")
     try:
         result = subprocess.run(
             command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding="utf-8"
@@ -62,7 +61,9 @@ def subdomain(domain):
         print("[!] No subdomains were found.")
 
 def run_http_subdomain(domain):
+    print("[*] Running subdomain enumeration module...")
     subdomain(domain)
+    print("[*] Subdomain enumeration module completed.")
 
 if __name__ == "__main__":
     domain = sys.argv[1]

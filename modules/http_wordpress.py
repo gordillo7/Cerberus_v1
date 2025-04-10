@@ -1,12 +1,8 @@
-import shutil
 import subprocess
 import os
 import sys
 import json
 import re
-#import requests
-#from urllib.parse import urljoin, urlparse
-#from bs4 import BeautifulSoup
 from modules.http_detect_scheme import get_scheme
 
 def get_wpscan_api_token():
@@ -27,7 +23,6 @@ def run_wpscan(target_ip, domain=None):
 
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
-    print(f"[*] Running wpscan on {target_ip}...")
     os.makedirs(f"logs/{target_clean}/http/wordpress", exist_ok=True)
 
     command = [
@@ -70,7 +65,7 @@ def run_wpscan(target_ip, domain=None):
         match = re.search(r"redirects to:?\s*(\S+)", content, re.IGNORECASE)
         if match:
             new_url = match.group(1).rstrip('/.')
-            print(f"[*] New URL detected: {new_url}. Re-running wpscan on the new URL...")
+            print(f"[+] New URL detected: {new_url}. Re-running on the new URL...")
             run_wpscan(target_ip, new_url)
             return
         else:
@@ -79,7 +74,7 @@ def run_wpscan(target_ip, domain=None):
     if result.stderr:
         print(f"[!] Error running WPScan on {target_ip}: {result.stderr}")
     else:
-        print(f"[+] Initial WordPress scan completed. Results saved in {output_file}")
+        print(f"[+] WordPress scan completed. Results saved in {output_file}")
 
 
 # Function to write to a file without overwriting
@@ -122,86 +117,27 @@ def extract_usernames(target_ip):
     else:
         print("[!] No usernames were found in WordPress")
 
-"""
-def dump_directory_listing(url, output_dir, visited_indexes, visited_files):
-    if url in visited_indexes:
-        return
 
-    visited_indexes.add(url)
-    print(f"[*] Analyzing directory: {url}")
-
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-
-        soup = BeautifulSoup(response.text, 'html.parser')
-        links = soup.find_all('a')
-
-        for link in links:
-            href = link.get('href')
-            if not href or href in ['/', '../']:
-                continue
-
-            full_url = urljoin(url, href)
-
-            parsed_url = urlparse(full_url)
-            if parsed_url.query:
-                # If the URL contains a query (e.g., ?C=N;O=D), ignore it
-                continue
-
-            if href.endswith('/'):
-                # It's another directory
-                if full_url not in visited_indexes:
-                    dump_directory_listing(full_url, output_dir, visited_indexes, visited_files)
-            else:
-                # Assume it's a file
-                if full_url in visited_files:
-                    continue
-                visited_files.add(full_url)
-
-                # Build the local path
-                path = parsed_url.path.lstrip('/')
-                local_path = os.path.join(output_dir, path)
-                os.makedirs(os.path.dirname(local_path), exist_ok=True)
-
-                try:
-                    file_response = requests.get(full_url)
-                    file_response.raise_for_status()
-                    with open(local_path, 'wb') as f:
-                        f.write(file_response.content)
-                    print(f"[+] File saved: {local_path}")
-
-                except Exception as e:
-                    print(f"[!] Error downloading {full_url}: {e}")
-
-    except requests.RequestException as e:
-        print(f"[!] Error dumping directory content at {url}: {e}")
-"""
-
-def process_directory_listings(target_ip):
+def directory_listing(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     input_file = f"logs/{target_clean}/http/wordpress/wpscan.txt"
-    output_dir = f"logs/{target_clean}/http/wordpress/directory_listing_dump"
-    #visited_indexes = set()
-    #visited_files = set()
     with open(input_file, 'r') as file:
         data = json.load(file)
         for finding in data.get("interesting_findings", []):
-            # If it contains "has listing enabled" in the "to_s" field, dump the directory
+            # If it contains "has listing enabled" in the "to_s" field, report it
             if "has listing enabled" in finding.get("to_s", ""):
-                os.makedirs(output_dir, exist_ok=True)
                 with open(f"logs/{target_clean}/http/wordpress/directory_listing.txt", 'a') as f:
                     f.write(f"Directory listing enabled at {finding['url']}. This could lead to information disclosure.\n")
 
-                shutil.copy(f"logs/{target_clean}/http/wordpress/directory_listing.txt",
-                            f"logs/{target_clean}/report/wordpress_listing.txt")
-                # dump_directory_listing(finding["url"], output_dir, visited_indexes, visited_files)
+                os.system("cp " + f"logs/{target_clean}/http/wordpress/directory_listing.txt" + f" logs/{target_clean}/report/wordpress_listing.txt")
 
 
 def run_http_wordpress(target_ip):
+    print("[*] Running WordPress module...")
     run_wpscan(target_ip)
     extract_usernames(target_ip)
-    process_directory_listings(target_ip)
+    directory_listing(target_ip)
+    print("[+] WordPress module completed.")
 
 
 # Test main

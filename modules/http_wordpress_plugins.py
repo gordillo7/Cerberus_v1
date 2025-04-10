@@ -120,20 +120,6 @@ def find_python_file(directory):
                 return os.path.join(root, file)
     return None
 
-"""
-def run_python_exploit(exploit_path, target_ip):
-    try:
-        print(f"[+] Running exploit {exploit_path} against {target_ip}...")
-        result = subprocess.run(["python", exploit_path, target_ip], capture_output=True, text=True)
-        print("[+] Exploit output:")
-        print(result.stdout)
-        if result.stderr:
-            print("[!] Errors during exploit execution:")
-            print(result.stderr)
-    except Exception as e:
-        print(f"[!] Exception while running exploit {exploit_path}: {e}")
-"""
-
 def process_cve(cve, target_ip, max_repos=10):
     """
     Searches for exploits on GitHub for the given CVE, clones the repository, and if a .py file is found, runs it.
@@ -195,8 +181,10 @@ def wordpress_plugins(target_ip):
             process_cve(cve, target_ip, max_repos=10)
 
 def run_http_wordpress_plugins(target_ip):
+    print("[*] Running WordPress Plugins module...")
     extract_vulnerable_plugins(target_ip)
     wordpress_plugins(target_ip)
+    print("[+] WordPress Plugins module completed.")
 
 # Test main
 if __name__ == "__main__":

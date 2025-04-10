@@ -372,8 +372,10 @@ def dump_ftp_contents(ftp, target_ip, remote_path="/", local_path=None):
         print(f"[!] Error listing files in {remote_path}: {e}")
 
 def run_ftp(target):
+    print("[*] Running FTP module...")
     check_ftp_anonymous(target)
     ftp_searchsploit(target)
+    print("[+] FTP module completed.")
 
 # Main test
 if __name__ == "__main__":

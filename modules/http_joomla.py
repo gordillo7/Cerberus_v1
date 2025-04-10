@@ -9,7 +9,6 @@ def joomscan(target_ip):
     target_ip = scheme + target_ip
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     output_file = f"logs/{target_clean}/http/joomla/joomscan.txt"
-    print(f"[+] Running joomscan on {target_clean}...")
 
     # Create the directory to store the logs if it doesn't exist
     os.makedirs(f"logs/{target_clean}/http/joomla", exist_ok=True)
@@ -41,7 +40,7 @@ def joomscan(target_ip):
         print(f"[!] Error running joomscan (return code {result.returncode}):")
         print(result.stderr)
     else:
-        print(f"[+] joomscan analysis finished. Results in {output_file}")
+        print(f"[+] Joomla analysis finished. Results in {output_file}")
 
 
 def extract_joomscan_report(target_ip):
@@ -109,14 +108,16 @@ def extract_joomscan_report(target_ip):
     try:
         with open(output_path, "w") as outfile:
             outfile.write(final_report)
-        print(f"[+] joomscan report saved in {output_path}")
+        print(f"[+] Joomla log saved in {output_path}")
     except Exception as e:
         print(f"[-] Error writing report: {e}")
 
 
 def run_http_joomla(target):
+    print("[*] Running Joomla module...")
     joomscan(target)
     extract_joomscan_report(target)
+    print("[+] Joomla module completed.")
 
 # Test main
 if __name__ == "__main__":

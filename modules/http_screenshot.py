@@ -43,7 +43,6 @@ async def capture_screenshot_async(navigation_url, output_file):
     await browser.close()
 
 def capture_http_screenshot(url):
-    print("[*] Capturing screenshot of the website...")
     navigation_url = f"http://{url}"
     output_file = f"logs/{url}/http/screenshot.png"
 
@@ -59,7 +58,9 @@ def capture_http_screenshot(url):
     return True
 
 def run_http_screenshot(url):
+    print("[*] Running web screenshot module...")
     capture_http_screenshot(url)
+    print("[*] Web screenshot module completed.")
 
 if __name__ == '__main__':
     url = sys.argv[1]

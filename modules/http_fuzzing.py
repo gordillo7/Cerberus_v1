@@ -26,13 +26,12 @@ def run_feroxbuster(target_ip):
         "-o", output_file
     ]
 
-    print(f"[*] Starting directory fuzzing with Feroxbuster on {full_target}")
     try:
         # 180 seconds (3 minutes) timeout
         subprocess.run(cmd, check=True, timeout=180, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-        print(f"[+] Feroxbuster results saved to: {output_file}")
+        print(f"[+] Fuzzing results saved to: {output_file}")
     except subprocess.TimeoutExpired:
-        print("[*] Feroxbuster scan exceeded 3 minutes and has been terminated.")
+        print("[*] Fuzzing scan exceeded 3 minutes and has been terminated.")
         print(f"[+] Partial results are preserved in {output_file}")
     except subprocess.CalledProcessError as e:
         print(f"[-] Feroxbuster encountered an execution error: {e}")
@@ -89,15 +88,15 @@ def generate_fuzz_report(target_ip):
     try:
         with open(report_file, "w", encoding="utf-8") as rf:
             rf.write("\n".join(report_lines))
-        print(f"[+] Fuzz report saved to: {report_file}")
+        print(f"[+] Fuzzing log saved to: {report_file}")
     except Exception as e:
         print(f"[-] Error writing fuzzing report: {e}")
 
 def run_http_fuzzing(target_ip):
-    print(f"[*] Running HTTP fuzzing module for {target_ip}...")
+    print(f"[*] Running web fuzzing module...")
     run_feroxbuster(target_ip)
     generate_fuzz_report(target_ip)
-    print("[+] HTTP fuzzing completed.")
+    print("[+] Web fuzzing module completed.")
 
 if __name__ == "__main__":
     target_ip = sys.argv[1]
