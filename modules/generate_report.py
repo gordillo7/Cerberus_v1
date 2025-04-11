@@ -221,7 +221,6 @@ def generate_report(target):
                                                   styles['Normal']))
                         elements.append(Spacer(1, 12))
 
-                        # Patrón para detectar encabezados en el formato "n. Texto"
                         heading_pattern = re.compile(r'^\d+\.\s*(.+?)\s*$')
                         current_heading = None
                         current_content = []
@@ -229,24 +228,19 @@ def generate_report(target):
                             for line in file:
                                 line = line.rstrip()
                                 if not line:
-                                    # Se ignoran las líneas en blanco
                                     continue
                                 match = heading_pattern.match(line)
                                 if match:
-                                    # Si ya había una sección en curso, la escribe en el documento
                                     if current_heading is not None:
                                         elements.append(Paragraph(current_heading, styles['Heading2']))
                                         elements.append(Spacer(1, 8))
                                         for content_line in current_content:
                                             elements.append(Paragraph(content_line, styles['Normal']))
                                         elements.append(Spacer(1, 12))
-                                    # Se establece el nuevo encabezado (sin el número y los dos puntos)
                                     current_heading = match.group(1)
                                     current_content = []
                                 else:
-                                    # La línea forma parte del contenido de la sección actual
                                     current_content.append(line)
-                        # Escribir la última sección pendiente, si existe
                         if current_heading is not None:
                             elements.append(Paragraph(current_heading, styles['Heading2']))
                             elements.append(Spacer(1, 8))

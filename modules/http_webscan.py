@@ -28,7 +28,7 @@ def generate_nuclei_report(target):
         print("[-] No vulnerabilities found in the Nuclei results.")
         return
 
-    # Build the report with visual formatting
+    # Build the report
     report_lines = []
     divider = "=" * 80
     for entry in results:
@@ -123,7 +123,7 @@ def run_webscan(target):
     except Exception as e:
         print(f"[-] Error running Nuclei: {e}")
 
-    """# Remove temporary file
+    """
     try:
         os.remove(temp_list_file)
     except Exception as e:

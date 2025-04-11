@@ -1,3 +1,0 @@
-PORT     STATE SERVICE VERSION
-22/tcp   open  ssh     OpenSSH 8.2p1 Ubuntu 4ubuntu0.12 (Ubuntu Linux; protocol 2.0)
-5000/tcp open  http    Gunicorn 20.0.4

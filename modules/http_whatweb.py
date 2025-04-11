@@ -60,7 +60,7 @@ def run_http_whatweb(target):
     print("[*] Running CMS identification module...")
     whatweb(target)
     cms_identification(target)
-    print("[+] CMS identification completed.")
+    print("[+] CMS identification module completed.")
 
 # Test main
 if __name__ == "__main__":

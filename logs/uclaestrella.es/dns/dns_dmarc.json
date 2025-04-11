@@ -4,9 +4,9 @@
   "Command": "dmarc",
   "IsTransitioned": false,
   "CommandArgument": "uclaestrella.es",
-  "TimeRecorded": "2025-04-10T06:57:54.7078486-05:00",
-  "ReportingNameServer": "dns.technorail.com",
-  "TimeToComplete": "479",
+  "TimeRecorded": "2025-04-11T03:50:59.9438749-05:00",
+  "ReportingNameServer": "dns4.arubadns.cz",
+  "TimeToComplete": "570",
   "RelatedIP": null,
   "ResourceRecordType": 16,
   "IsEmptySubDomain": false,
@@ -100,13 +100,13 @@
   "MultiInformation": [],
   "Transcript": [
     {
-      "Transcript": "- - - dmarc:_dmarc.uclaestrella.es\r\n\r\n&emsp; 1 c.nic.es 194.0.34.53 NON-AUTH 0 ms Received 4 Referrals , rcode=NO_ERROR &emsp; uclaestrella.es.\t86400\tIN\tNS\tdns.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns2.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns3.arubadns.net,uclaestrella.es.\t86400\tIN\tNS\tdns4.arubadns.cz,\r\n&emsp; 2 dns.technorail.com 94.177.210.13 AUTH 116 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.uclaestrella.es.\t3600\tIN\tTXT\tv=DMARC1; p=none; adkim=r; aspf=r;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 479ms\r\n"
+      "Transcript": "- - - dmarc:_dmarc.uclaestrella.es\r\n\r\n&emsp; 1 h.nic.es 194.0.33.53 NON-AUTH 26 ms Received 4 Referrals , rcode=NO_ERROR &emsp; uclaestrella.es.\t86400\tIN\tNS\tdns.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns2.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns3.arubadns.net,uclaestrella.es.\t86400\tIN\tNS\tdns4.arubadns.cz,\r\n&emsp; 2 dns4.arubadns.cz 81.2.216.238 AUTH 109 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.uclaestrella.es.\t3600\tIN\tTXT\tv=DMARC1; p=none; adkim=r; aspf=r;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 570ms\r\n"
     }
   ],
   "MxRep": 0,
   "EmailServiceProvider": null,
-  "DnsServiceProvider": "Aruba S.p.A. [IT]",
-  "DnsServiceProviderIdentifier": "technorail.com",
+  "DnsServiceProvider": "ArubaIT",
+  "DnsServiceProviderIdentifier": "arubadns.cz",
   "RelatedLookups": [
     {
       "Name": "dns lookup",

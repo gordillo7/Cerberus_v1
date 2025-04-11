@@ -7,12 +7,9 @@ ROADMAP GENERAL:
 - Meter IA (API de Gemini).
 - Chatbot con preguntas predefinidas por cada target escaneado con la API de Gemini.
 - Generacion de reportes.
-- Hacer script de autoinstall para instalar dependencias.
+- [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
 AVANCES:
-- Modulo osint_email.py.
-- Modulo webscan con Nuclei.
-- Modulo fuzzing web con FeroxBuster.
 
 DUDAS:
 

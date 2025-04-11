@@ -16,7 +16,7 @@ nmap
 curl
 wpscan (ruby)
 serachsploit (git clone + enlace simbolico)
-joomscan (git clone + alias para joomscan)
+joomscan (git clone + seguir los pasos de la documentacion en latex)
 subfinder (go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest (mover del go/bin a /usr/bin))
 nuclei (go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest (mover del go/bin a /usr/bin))
 feroxbuster (curl -sL https://raw.githubusercontent.com/epi052/feroxbuster/main/install-nix.sh | sudo bash -s /usr/bin)

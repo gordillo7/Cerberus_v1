@@ -1,0 +1,21 @@
+1. Joomla Version
+Joomla 3.4.3
+
+2. Core Vulnerability
+Joomla! 3.2.x < 3.4.4 - SQL Injection
+EDB : https://www.exploit-db.com/exploits/38534/
+
+3. Admin Page
+Admin page : https://uclaestrella.es/administrator/
+
+4. Backup File
+Backup files are not found
+
+5. Log Files
+error log is not found
+
+6. User Registration
+Not found
+
+7. Sensitive Config Files
+Readable config files are not found

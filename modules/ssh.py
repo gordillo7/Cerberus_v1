@@ -96,7 +96,6 @@ def ssh_bruteforce(target, port: int = 22):
         print("[-] No valid SSH credentials found.")
 
 def ssh_grep_searchsploit(target):
-    print("[*] Searching for CVEs...")
     searchsploit_file = f"logs/{target}/ssh/searchsploit.txt"
     try:
         with open(searchsploit_file, "r") as f:

@@ -13,10 +13,10 @@ def joomscan(target_ip):
     # Create the directory to store the logs if it doesn't exist
     os.makedirs(f"logs/{target_clean}/http/joomla", exist_ok=True)
 
-    # Basic command for joomscan. Adjust the parameters as needed.
     command = [
         "joomscan",
-        "-u", target_ip
+        "-u", target_ip,
+        "-nr"
     ]
 
     # Run joomscan and capture the output

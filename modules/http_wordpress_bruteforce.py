@@ -53,7 +53,7 @@ def wordpress_bruteforce(target):
     with open(success_file, "w", encoding="utf-8") as sf:
         sf.write("")
 
-    # We will use two sets to accumulate users and passwords without duplicates
+    # Use two sets to accumulate users and passwords without duplicates
     accumulated_users = set()
     accumulated_passwords = set()
 

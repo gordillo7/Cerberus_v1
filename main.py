@@ -30,7 +30,7 @@ def main():
         run_osint_mail(target_clean)
     if os.path.exists(f"logs/{target_clean}/nmap/ports.txt"):
         with open(f"logs/{target_clean}/nmap/ports.txt", "r") as f:
-            ports = f.read()
+            ports = f.read().splitlines()
             if "80" in ports:
                 run_http_subdomain(target_clean)
                 run_http_webscan(target_clean)

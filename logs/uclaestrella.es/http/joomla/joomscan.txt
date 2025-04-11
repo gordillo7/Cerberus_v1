@@ -1,0 +1,106 @@
+
+    ____  _____  _____  __  __  ___   ___    __    _  _ 
+   (_  _)(  _  )(  _  )(  \/  )/ __) / __)  /__\  ( \( )
+  .-_)(   )(_)(  )(_)(  )    ( \__ \( (__  /(__)\  )  ( 
+  \____) (_____)(_____)(_/\/\_)(___/ \___)(__)(__)(_)\_)
+			(1337.today)
+   
+    --=[OWASP JoomScan
+    +---++---==[Version : 0.0.7
+    +---++---==[Update Date : [2018/09/23]
+    +---++---==[Authors : Mohammad Reza Espargham , Ali Razmjoo
+    --=[Code name : Self Challenge
+    @OWASP_JoomScan , @rezesp , @Ali_Razmjo0 , @OWASP
+
+Processing https://uclaestrella.es ...
+
+
+
+[+] FireWall Detector
+[++] Firewall not detected
+
+[+] Detecting Joomla Version
+[++] Joomla 3.4.3
+
+[+] Core Joomla Vulnerability
+[++] Joomla! 3.2.x < 3.4.4 - SQL Injection
+EDB : https://www.exploit-db.com/exploits/38534/
+
+Joomla! Core Remote Privilege Escalation Vulnerability
+CVE : CVE-2016-9838
+EDB : https://www.exploit-db.com/exploits/41157/
+
+Joomla! Core Cross Site Scripting Vulnerability
+CVE : CVE-2015-6939
+http://packetstormsecurity.com/files/133907/Joomla-CMS-3.4.3-Cross-Site-Scripting.html
+https://developer.joomla.org/security-centre/626-20150908-core-xss-vulnerability.html
+
+Joomla! Core Security Bypass Vulnerability
+CVE : CVE-2015-7859
+https://developer.joomla.org/security-centre/629-20151002-core-acl-violations.html
+
+Joomla! Directory Traversal Vulnerability
+CVE : CVE-2015-8565
+https://developer.joomla.org/security-centre/635-20151214-core-directory-traversal-2.html
+
+Joomla! Directory Traversal Vulnerability
+CVE : CVE-2015-8564
+https://developer.joomla.org/security-centre/634-20151214-core-directory-traversal.html
+
+Joomla! Core Cross Site Request Forgery Vulnerability
+CVE : CVE-2015-8563
+https://developer.joomla.org/security-centre/633-20151214-core-csrf-hardening.html
+
+Joomla! Information Disclosure Vulnerability
+CVE : CVE-2016-9837
+https://developer.joomla.org/security-centre/666-20161203-core-information-disclosure.html
+
+PHPMailer Remote Code Execution Vulnerability
+CVE : CVE-2016-10033
+https://www.rapid7.com/db/modules/exploit/multi/http/phpmailer_arg_injection
+https://github.com/opsxcq/exploit-CVE-2016-10033
+EDB : https://www.exploit-db.com/exploits/40969/
+
+PPHPMailer Incomplete Fix Remote Code Execution Vulnerability
+CVE : CVE-2016-10045
+https://www.rapid7.com/db/modules/exploit/multi/http/phpmailer_arg_injection
+EDB : https://www.exploit-db.com/exploits/40969/
+
+
+
+[+] Checking apache info/status files
+[++] Readable info/status files are not found
+
+[+] admin finder
+[++] Admin page : https://uclaestrella.es/administrator/
+
+[+] Checking robots.txt existing
+[++] robots.txt is found
+path : https://uclaestrella.es/robots.txt 
+
+Interesting path found from robots.txt
+https://uclaestrella.es/joomla/administrator/
+https://uclaestrella.es/administrator/
+https://uclaestrella.es/bin/
+https://uclaestrella.es/cache/
+https://uclaestrella.es/cli/
+https://uclaestrella.es/components/
+https://uclaestrella.es/includes/
+https://uclaestrella.es/installation/
+https://uclaestrella.es/language/
+https://uclaestrella.es/layouts/
+https://uclaestrella.es/libraries/
+https://uclaestrella.es/logs/
+https://uclaestrella.es/modules/
+https://uclaestrella.es/plugins/
+https://uclaestrella.es/tmp/
+
+
+[+] Finding common backup files name
+[++] Backup files are not found
+
+[+] Finding common log files name
+[++] error log is not found
+
+[+] Checking sensitive config.php.x file
+[++] Readable config files are not found

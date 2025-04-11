@@ -1,4 +1,0 @@
-# Nmap 7.94SVN scan initiated Thu Apr 10 13:39:40 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG logs/10.10.11.62/nmap/initial_scan.txt 10.10.11.62
-Host: 10.10.11.62 ()	Status: Up
-Host: 10.10.11.62 ()	Ports: 22/open/tcp//ssh///, 5000/open/tcp//upnp///
-# Nmap done at Thu Apr 10 13:39:50 2025 -- 1 IP address (1 host up) scanned in 10.01 seconds

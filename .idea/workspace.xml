@@ -4,7 +4,67 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt" />
+    <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_25,_8_41_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_4_25__8_41__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extras/requisitos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/requisitos.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extras/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/todolist.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/10.10.11.62/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/10.10.11.62/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/10.10.11.62/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/10.10.11.62/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/10.10.11.62/ssh/searchsploit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/puebladesanchoperez.com/report/nuclei_webscan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/scans.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scans.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/fuzzing/fuzz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/whatweb/cms.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/whatweb/tec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/fuzzing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/http_screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/osint_mail.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generate_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generate_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_joomla.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_joomla.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_webscan.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_webscan.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_whatweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_whatweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_wordpress_bruteforce.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_wordpress_bruteforce.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_wordpress_plugins.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_wordpress_plugins.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/ssh.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/ssh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/10.10.11.62.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/cartamundi.com.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/scanme.nmap.org.pdf" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,6 +213,9 @@
       <workItem from="1744007577992" duration="13794000" />
       <workItem from="1744093324946" duration="11973000" />
       <workItem from="1744193044234" duration="7613000" />
+      <workItem from="1744266701445" duration="11507000" />
+      <workItem from="1744353230135" duration="2174000" />
+      <workItem from="1744355409441" duration="6642000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -266,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744200564426</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1744287202787</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1744287202787</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,8 +359,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="Completar todolist.txt" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1743752310718" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1744110860066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744355422212" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1744266934081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TFG$app.coverage" NAME="app Coverage Results" MODIFIED="1743244825472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
