@@ -80,7 +80,6 @@ def search_exploits_on_github(cve_id, max_repos=10):
                 print(f"[!] No repositories found for CVE {cve_id}.")
                 return []
         else:
-            print(f"[!] Error searching GitHub for {cve_id}: Code {response.status_code}")
             return []
     except Exception as e:
         print(f"[!] Exception during GitHub search for {cve_id}: {e}")
@@ -109,7 +108,6 @@ def find_python_file(directory):
 def process_cve(cve, target_ip, max_repos=10):
     repos = search_exploits_on_github(cve, max_repos)
     if not repos:
-        print(f"[!] Could not verify vulnerability {cve}: no exploit found on GitHub.")
         return
 
     # Sort repositories by popularity (stargazers_count) in descending order

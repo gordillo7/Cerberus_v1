@@ -1,0 +1,76 @@
+{
+  "UID": null,
+  "ArgumentType": "domain",
+  "Command": "dmarc",
+  "IsTransitioned": false,
+  "CommandArgument": "liquiddentist.net",
+  "TimeRecorded": "2025-04-12T05:15:21.4168475-05:00",
+  "ReportingNameServer": "ns.liquidweb.com",
+  "TimeToComplete": "115",
+  "RelatedIP": null,
+  "ResourceRecordType": 5,
+  "IsEmptySubDomain": false,
+  "SPF_Subaction_Detail": null,
+  "Records": [],
+  "IsEndpoint": false,
+  "HasSubscriptions": false,
+  "AlertgroupSubscriptionId": null,
+  "Failed": [
+    {
+      "ID": 441,
+      "Name": "DMARC Record Published",
+      "Info": "No DMARC Record found",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Record-Published?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:liquiddentist.net",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    }
+  ],
+  "Warnings": [],
+  "Passed": [],
+  "Timeouts": [],
+  "Errors": [],
+  "IsError": false,
+  "Information": [],
+  "MultiInformation": [],
+  "Transcript": [
+    {
+      "Transcript": "- - - dmarc:_dmarc.liquiddentist.net\r\n\r\n&emsp; 1 e.gtld-servers.net 192.12.94.30 NON-AUTH 5 ms Received 2 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t172800\tIN\tNS\tns.liquidweb.com,liquiddentist.net.\t172800\tIN\tNS\tns1.liquidweb.com,\r\n&emsp; 2 ns1.liquidweb.com 69.16.223.254 AUTH 7 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.liquiddentist.net.\t3600\tIN\tCNAME\tliquiddentist.net,\r\n\r\n* Found CNAME on '_dmarc.liquiddentist.net' of 'liquiddentist.net'\r\n\r\n- - - dmarc:liquiddentist.net\r\n\r\n&emsp; 1 h.gtld-servers.net 192.54.112.30 NON-AUTH 65 ms Received 2 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t172800\tIN\tNS\tns.liquidweb.com,liquiddentist.net.\t172800\tIN\tNS\tns1.liquidweb.com,\r\n&emsp; 2 ns.liquidweb.com 69.16.222.254 AUTH 8 ms Received 1 Referrals , rcode=NO_ERROR &emsp; liquiddentist.net.\t3600\tIN\tSOA\t mname=ns.liquidweb.com rname=admin.liquidweb.com serial=2017082301,\r\nLookupServer 115ms\r\n"
+    }
+  ],
+  "MxRep": 0,
+  "EmailServiceProvider": null,
+  "DnsServiceProvider": null,
+  "DnsServiceProviderIdentifier": null,
+  "RelatedLookups": [
+    {
+      "Name": "dns lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/a/liquiddentist.net",
+      "Command": "a",
+      "CommandArgument": "liquiddentist.net"
+    },
+    {
+      "Name": "dns check",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dns/liquiddentist.net",
+      "Command": "dns",
+      "CommandArgument": "liquiddentist.net"
+    },
+    {
+      "Name": "mx lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/mx/liquiddentist.net",
+      "Command": "mx",
+      "CommandArgument": "liquiddentist.net"
+    },
+    {
+      "Name": "spf lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/spf/liquiddentist.net",
+      "Command": "spf",
+      "CommandArgument": "liquiddentist.net"
+    },
+    {
+      "Name": "dns propagation",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dmarc/liquiddentist.net:all",
+      "Command": "dmarc",
+      "CommandArgument": "liquiddentist.net:all"
+    }
+  ]
+}

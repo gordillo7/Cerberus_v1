@@ -1,0 +1,11 @@
+{
+	"SEARCH": "Pure-FTPd",
+	"DB_PATH_EXPLOIT": "/usr/share/exploitdb",
+	"RESULTS_EXPLOIT": [
+		{"Title":"Pure-FTPd - External Authentication Bash Environment Variable Code Injection (Metasploit)","EDB-ID":"34862","Date_Published":"2014-10-02","Date_Added":"2014-10-02","Date_Updated":"2014-10-02","Author":"Metasploit","Type":"remote","Platform":"linux","Port":"21","Verified":"1","Codes":"CVE-2014-7910;OSVDB-112004;CVE-2014-7227;CVE-2014-7196;CVE-2014-7169;CVE-2014-62771;CVE-2014-6271;CVE-2014-3671;CVE-2014-3659","Tags":"Metasploit Framework (MSF)","Aliases":"","Screenshot":"","Application":"","Source":"","Path":"/usr/share/exploitdb/exploits/linux/remote/34862.rb"},
+		{"Title":"Pure-FTPd 1.0.21 (CentOS 6.2 / Ubuntu 8.04) - Null Pointer Dereference Crash (PoC)","EDB-ID":"20479","Date_Published":"2012-08-13","Date_Added":"2012-08-13","Date_Updated":"2012-08-13","Author":"kingcope","Type":"dos","Platform":"linux","Port":"","Verified":"0","Codes":"OSVDB-85447","Tags":"","Aliases":"","Screenshot":"","Application":"","Source":"","Path":"/usr/share/exploitdb/exploits/linux/dos/20479.pl"},
+		{"Title":"Pure-FTPd 1.0.48 - Remote Denial of Service","EDB-ID":"49105","Date_Published":"2020-11-26","Date_Added":"2020-11-26","Date_Updated":"2020-11-26","Author":"xynmaps","Type":"dos","Platform":"multiple","Port":"","Verified":"0","Codes":"","Tags":"","Aliases":"","Screenshot":"","Application":"","Source":"","Path":"/usr/share/exploitdb/exploits/multiple/dos/49105.py"}
+	],
+	"DB_PATH_SHELLCODE": "/usr/share/exploitdb",
+	"RESULTS_SHELLCODE": [	]
+}

@@ -1,0 +1,142 @@
+{
+  "UID": null,
+  "ArgumentType": "domain",
+  "Command": "dmarc",
+  "IsTransitioned": false,
+  "CommandArgument": "embutidosmorato.com",
+  "TimeRecorded": "2025-04-12T04:29:35.9169356-05:00",
+  "ReportingNameServer": "ns2.siteground.net",
+  "TimeToComplete": "94",
+  "RelatedIP": null,
+  "ResourceRecordType": 16,
+  "IsEmptySubDomain": false,
+  "SPF_Subaction_Detail": null,
+  "Records": [
+    "v=DMARC1; p=none; aspf=r; adkim=r;"
+  ],
+  "IsEndpoint": false,
+  "HasSubscriptions": false,
+  "AlertgroupSubscriptionId": null,
+  "Failed": [],
+  "Warnings": [
+    {
+      "ID": 197,
+      "Name": "DMARC Policy Not Enabled",
+      "Info": "DMARC Quarantine/Reject policy not enabled",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Policy-Not-Enabled?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:embutidosmorato.com",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    }
+  ],
+  "Passed": [
+    {
+      "ID": 441,
+      "Name": "DMARC Record Published",
+      "Info": "DMARC Record found",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Record-Published?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:embutidosmorato.com",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 463,
+      "Name": "DMARC Syntax Check",
+      "Info": "The record is valid",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Syntax-Check?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:embutidosmorato.com",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 504,
+      "Name": "DMARC External Validation",
+      "Info": "All external domains in your DMARC record are giving permission to send them DMARC reports.",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-External-Validation?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:embutidosmorato.com",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 505,
+      "Name": "DMARC Multiple Records",
+      "Info": "Multiple DMARC records corrected to a single record.",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Multiple-Records?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:embutidosmorato.com",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    }
+  ],
+  "Timeouts": [],
+  "Errors": [],
+  "IsError": false,
+  "Information": [
+    {
+      "Tag": "",
+      "TagValue": "",
+      "Name": "record",
+      "Description": "v=DMARC1; p=none; aspf=r; adkim=r;"
+    },
+    {
+      "Tag": "v",
+      "TagValue": "DMARC1",
+      "Name": "Version",
+      "Description": "Identifies the record retrieved as a DMARC record. It must be the first tag in the list."
+    },
+    {
+      "Tag": "p",
+      "TagValue": "none",
+      "Name": "Policy",
+      "Description": "Policy to apply to email that fails the DMARC test. Valid values can be &#39;none&#39;, &#39;quarantine&#39;, or &#39;reject&#39;."
+    },
+    {
+      "Tag": "aspf",
+      "TagValue": "r",
+      "Name": "Alignment Mode SPF",
+      "Description": "Indicates whether strict or relaxed SPF Identifier Alignment mode is required by the Domain Owner. Valid values can be &#39;r&#39; (relaxed) or &#39;s&#39; (strict mode)."
+    },
+    {
+      "Tag": "adkim",
+      "TagValue": "r",
+      "Name": "Alignment Mode DKIM",
+      "Description": "Indicates whether strict or relaxed DKIM Identifier Alignment mode is required by the Domain Owner. Valid values can be &#39;r&#39; (relaxed) or &#39;s&#39; (strict mode)."
+    }
+  ],
+  "MultiInformation": [],
+  "Transcript": [
+    {
+      "Transcript": "- - - dmarc:_dmarc.embutidosmorato.com\r\n\r\n&emsp; 1 g.gtld-servers.net 192.42.93.30 NON-AUTH 69 ms Received 2 Referrals , rcode=NO_ERROR &emsp; embutidosmorato.com.\t172800\tIN\tNS\tns1.siteground.net,embutidosmorato.com.\t172800\tIN\tNS\tns2.siteground.net,\r\n&emsp; 2 ns2.siteground.net 99.83.229.113 AUTH 11 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.embutidosmorato.com.\t86400\tIN\tTXT\tv=DMARC1; p=none; aspf=r; adkim=r;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 94ms\r\n"
+    }
+  ],
+  "MxRep": 0,
+  "EmailServiceProvider": null,
+  "DnsServiceProvider": null,
+  "DnsServiceProviderIdentifier": null,
+  "RelatedLookups": [
+    {
+      "Name": "dns lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/a/embutidosmorato.com",
+      "Command": "a",
+      "CommandArgument": "embutidosmorato.com"
+    },
+    {
+      "Name": "dns check",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dns/embutidosmorato.com",
+      "Command": "dns",
+      "CommandArgument": "embutidosmorato.com"
+    },
+    {
+      "Name": "mx lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/mx/embutidosmorato.com",
+      "Command": "mx",
+      "CommandArgument": "embutidosmorato.com"
+    },
+    {
+      "Name": "spf lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/spf/embutidosmorato.com",
+      "Command": "spf",
+      "CommandArgument": "embutidosmorato.com"
+    },
+    {
+      "Name": "dns propagation",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dmarc/embutidosmorato.com:all",
+      "Command": "dmarc",
+      "CommandArgument": "embutidosmorato.com:all"
+    }
+  ]
+}

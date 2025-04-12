@@ -1,0 +1,4 @@
+# Nmap 7.95 scan initiated Sat Apr 12 11:15:56 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/centrorotulozafra.com/nmap/initial_scan.txt centrorotulozafra.com
+Host: 34.160.81.203 ()	Status: Up
+Host: 34.160.81.203 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///	Ignored State: filtered (65533)
+# Nmap done at Sat Apr 12 11:16:22 2025 -- 1 IP address (1 host up) scanned in 26.82 seconds

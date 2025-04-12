@@ -1,0 +1,8 @@
+A total of 1 email addresses were found for the target 'embutidosmorato.com':
+amorato@embutidosmorato.com
+
+Out of these, 1 have been pwned in various security breaches
+
+- amorato@embutidosmorato.com has been pwned in 3 breach(es).
+  Compromised fields: password, first_name.
+  Breaches: Sfguard (2021-01).

@@ -1,0 +1,141 @@
+{
+  "a": [
+    {
+      "host": "webmail.embutidosmorato.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "35.214.128.0/17",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "it43.siteground.eu"
+              ],
+              "banner": "20-# 20-Please upload your web files to the public_html directory. 20-Note that leters are case sens",
+              "cn": "it43.siteground.eu"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx"
+            },
+            "https": {
+              "alt_n": [
+                "it43.siteground.eu"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "it43.siteground.eu",
+              "server": "nginx"
+            },
+            "ip": "35.214.223.124"
+          },
+          "country": "The Netherlands",
+          "country_code": "NL",
+          "ip": "35.214.223.124",
+          "ptr": "124.223.214.35.bc.googleusercontent.com"
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "0 embutidosmorato.com",
+      "ips": [
+        {
+          "asn": "15169",
+          "asn_name": "GOOGLE",
+          "asn_range": "35.214.128.0/17",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "it43.siteground.eu"
+              ],
+              "banner": "20-# 20-Please upload your web files to the public_html directory. 20-Note that leters are case sens",
+              "cn": "it43.siteground.eu"
+            },
+            "http": {
+              "apps": [
+                "Nginx"
+              ],
+              "server": "nginx"
+            },
+            "https": {
+              "alt_n": [
+                "it43.siteground.eu"
+              ],
+              "apps": [
+                "Nginx"
+              ],
+              "cn": "it43.siteground.eu",
+              "server": "nginx"
+            },
+            "ip": "35.214.223.124"
+          },
+          "country": "The Netherlands",
+          "country_code": "NL",
+          "ip": "35.214.223.124",
+          "ptr": "124.223.214.35.bc.googleusercontent.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "ns1.siteground.net",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "75.2.64.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Amazon ELB",
+                "Amazon Web Services"
+              ],
+              "server": "awselb/2.0"
+            },
+            "ip": "75.2.77.104"
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "75.2.77.104",
+          "ptr": "ac4b097dbd0dd6307.awsglobalaccelerator.com"
+        }
+      ]
+    },
+    {
+      "host": "ns2.siteground.net",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "99.83.224.0/20",
+          "banners": {
+            "http": {
+              "apps": [
+                "Amazon ELB",
+                "Amazon Web Services"
+              ],
+              "server": "awselb/2.0"
+            },
+            "ip": "99.83.229.113"
+          },
+          "country": "United States",
+          "country_code": "US",
+          "ip": "99.83.229.113",
+          "ptr": "ac4b097dbd0dd6307.awsglobalaccelerator.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 1,
+  "txt": [
+    "\"v=spf1 +a +a:it43.siteground.eu include:_spf.google.com  +mx include:embutidosmorato.com.spf.auto.dnssmarthost.net ~all\""
+  ]
+}

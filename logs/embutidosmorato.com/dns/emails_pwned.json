@@ -1,0 +1,16 @@
+{
+    "amorato@embutidosmorato.com": {
+        "success": true,
+        "found": 3,
+        "fields": [
+            "password",
+            "first_name"
+        ],
+        "sources": [
+            {
+                "name": "Sfguard",
+                "date": "2021-01"
+            }
+        ]
+    }
+}

@@ -130,7 +130,7 @@ def run_webscan(target):
         print(f"[-] Error removing temporary file: {e}")"""
 
 def run_http_webscan(target):
-    print(f"[*] Starting web scan module")
+    print(f"[*] Running web scan module")
     run_webscan(target)
     generate_nuclei_report(target)
     print("[+] Web scan module completed.")
