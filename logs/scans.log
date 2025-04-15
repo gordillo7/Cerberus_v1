@@ -18,3 +18,6 @@
 {"target": "http://lasbarandas.com/", "date": "2025-04-12T11:52:03.749886", "status": "Aborted"}
 {"target": "http://lasbarandas.com/", "date": "2025-04-12T12:00:29.420915", "status": "Aborted"}
 {"target": "liquiddentist.net", "date": "2025-04-12T12:33:07.247050", "status": "Completed"}
+{"target": "https://liquiddentist.net/", "date": "2025-04-13T13:13:19.739207", "status": "Aborted"}
+{"target": "example.com", "date": "2025-04-14T17:11:48.358277", "status": "Aborted"}
+{"target": "zafra.es", "date": "2025-04-15T19:12:22.117647", "status": "Completed"}

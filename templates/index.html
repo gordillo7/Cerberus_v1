@@ -6,264 +6,454 @@
     <title>Cerberus - Pentesting Tool</title>
     <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
 </head>
-<body>
-    <div class="sidebar">
-        <div class="logo-container" onclick="location.href='/'">
-            <img src="{{ url_for('static', filename='img/cerberus_logo.png') }}" alt="Cerberus Logo" id="app-logo">
-            <span class="logo-text">Cerberus</span>
-        </div>
-        <nav>
-            <a href="#" class="nav-item active" data-page="dashboard">
-                <span class="material-icons">dashboard</span>
-                Dashboard
-            </a>
-            <a href="#" class="nav-item" data-page="scanner">
-                <span class="material-icons">search</span>
-                Scanner
-            </a>
-            <a href="#" class="nav-item" data-page="reports">
-                <span class="material-icons">description</span>
-                Reports
-            </a>
-            <a href="#" class="nav-item" data-page="settings">
-                <span class="material-icons">settings</span>
-                Settings
-            </a>
-        </nav>
+<body class="dark-theme">
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="logo-container" onclick="location.href='/'">
+                    <img src="{{ url_for('static', filename='img/cerberus_logo.png') }}" alt="Cerberus Logo" id="app-logo">
+                    <span class="logo-text">Cerberus</span>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span class="material-icons-round">menu</span>
+                </button>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <span class="material-icons-round">dashboard</span>
+                    <span class="nav-text">Dashboard</span>
+                </a>
+                <a href="#" class="nav-item" data-page="projects">
+                    <span class="material-icons-round">folder</span>
+                    <span class="nav-text">Projects</span>
+                </a>
+                <a href="#" class="nav-item" data-page="scanner">
+                    <span class="material-icons-round">search</span>
+                    <span class="nav-text">Scanner</span>
+                </a>
+                <a href="#" class="nav-item" data-page="reports">
+                    <span class="material-icons-round">description</span>
+                    <span class="nav-text">Reports</span>
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <span class="material-icons-round">settings</span>
+                    <span class="nav-text">Settings</span>
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span class="material-icons-round">security</span>
+                    </div>
+                    <div class="sidebar-footer-last">
+                        <div class="user-details">
+                            <span class="user-name">Cerberus v0.5</span>
+                            <span class="user-role">Pentesting Tool</span>
+                        </div>
+                        <div class="toggle-btn-div">
+                            <button id="toggleSidebar" class="toggle-sidebar-btn" aria-label="Toggle sidebar">
+                                <span class="material-icons-round">chevron_left</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content" id="mainContent">
+            <header class="top-header">
+                <div class="header-left">
+                    <h1 class="page-title">Dashboard</h1>
+                </div>
+                <div class="header-right">
+                    <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle theme">
+                        <span class="material-icons-round" id="themeIcon">dark_mode</span>
+                    </button>
+                </div>
+            </header>
+
+            <div id="page-content">
+                <!-- Dashboard -->
+                <div class="page" id="dashboard-page">
+                    <div class="stats-cards">
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <h3>Generated Reports</h3>
+                                <div class="stat-number" id="reports-count">0</div>
+                            </div>
+                            <div class="stat-icon reports-icon">
+                                <span class="material-icons-round">description</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <h3>Available Modules</h3>
+                                <div class="stat-number" id="modules-count">0</div>
+                            </div>
+                            <div class="stat-icon modules-icon">
+                                <span class="material-icons-round">extension</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <h3>Scanned Clients</h3>
+                                <div class="stat-number" id="clients-count">0</div>
+                            </div>
+                            <div class="stat-icon clients-icon">
+                                <span class="material-icons-round">groups</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="recent-scans-section">
+                        <div class="section-header">
+                            <h2>Recent Scans</h2>
+                        </div>
+                        <div id="recent-scans-list" class="scans-list">
+                            <!-- Will be loaded dynamically -->
+                            <div class="skeleton-loader">
+                                <div class="skeleton-item"></div>
+                                <div class="skeleton-item"></div>
+                                <div class="skeleton-item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div class="page" id="projects-page" style="display: none;">
+                    <div class="projects-list-header">
+                        <button class="new-project-btn" id="newProjectBtn" aria-label="Create new project">
+                            <span class="material-icons-round">add</span>
+                            New Project
+                        </button>
+                    </div>
+
+                    <div class="projects-grid" id="projects-grid">
+                        <!-- Projects will be loaded here -->
+                        <div class="skeleton-loader">
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                        </div>
+                    </div>
+
+                    <div id="project-details" class="project-details" style="display: none;">
+                        <div class="project-header">
+                            <div>
+                                <h2 id="project-name">Project Name</h2>
+                                <div class="project-target">
+                                    <span>Target:</span>
+                                    <code id="scan-target">example.com</code>
+                                </div>
+                            </div>
+                            <button class="back-to-projects-btn" id="backToProjectsBtn">
+                                <span class="material-icons-round">arrow_back</span>
+                                Back to Projects
+                            </button>
+                        </div>
+
+                        <div class="project-tabs">
+                            <div class="tab-header">
+                                <button class="tab-btn active" data-tab="scanner">
+                                    <span class="material-icons-round">search</span>
+                                    Scanner
+                                </button>
+                                <button class="tab-btn" data-tab="reports">
+                                    <span class="material-icons-round">description</span>
+                                    Reports
+                                </button>
+                                <button class="tab-btn" data-tab="chatbot">
+                                    <span class="material-icons-round">chat</span>
+                                    Chatbot
+                                </button>
+                            </div>
+
+                            <div class="tab-content">
+                                <!-- Scanner Tab -->
+                                <div class="tab-pane active" id="scanner-tab">
+                                    <div class="card project-target-card">
+                                        <h2>Target Configuration</h2>
+                                        <div class="target-config">
+                                            <div>
+                                                <p>Current Target</p>
+                                                <code id="project-target-display">example.com</code>
+                                            </div>
+                                            <button class="start-scan-btn" id="startProjectScanBtn">
+                                                <span class="material-icons-round">play_arrow</span>
+                                                Start Scan
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="console-header">
+                                            <h2>Scan Console</h2>
+                                            <div class="console-buttons">
+                                                <button type="button" id="stopProjectScanBtn" class="cancel-btn">
+                                                    <span class="material-icons-round">stop</span>
+                                                    Cancel Scan
+                                                </button>
+                                                <button type="button" id="clearProjectConsoleBtn" class="clear-btn">
+                                                    <span class="material-icons-round">clear_all</span>
+                                                    Clear Console
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div id="project-scan-console" class="scan-console">
+                                            <div id="project-console-output"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Reports Tab -->
+                                <div class="tab-pane" id="reports-tab">
+                                    <div class="section-header">
+                                        <h2>Project Reports</h2>
+                                    </div>
+                                    <div id="project-reports-container" class="reports-grid">
+                                        <!-- Project reports will be loaded here -->
+                                    </div>
+                                </div>
+
+                                <!-- Chatbot Tab -->
+                                <div class="tab-pane" id="chatbot-tab">
+                                    <div class="chatbot-container">
+                                        <div class="chat-messages" id="chat-messages">
+                                            <div class="message bot-message">
+                                                <div class="message-avatar">
+                                                    <span class="material-icons-round">smart_toy</span>
+                                                </div>
+                                                <div class="message-content">
+                                                    <p>Hello! This is the Cerberus AI assistant. In the future, I'll be able to help you analyze security findings and answer questions about your target. This feature is coming soon!</p>
+                                                    <span class="message-time">12:00 PM</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-input">
+                                            <input type="text" id="chat-input-field" placeholder="Type your message...">
+                                            <button id="send-message-btn">
+                                                <span class="material-icons-round">send</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scanner -->
+                <div class="page" id="scanner-page" style="display: none;">
+                    <div class="scanner-grid">
+                        <div class="card target-card">
+                            <h2>Target Configuration</h2>
+                            <form id="fullScanForm">
+                                <div class="input-group">
+                                    <label for="fullScanTarget">Target</label>
+                                    <input type="text" id="fullScanTarget" name="target" placeholder="Enter the target" required>
+                                </div>
+                                <button type="submit" class="submit-btn">
+                                    <span class="material-icons-round">play_arrow</span>
+                                    Start Full Scan
+                                </button>
+                            </form>
+                        </div>
+                        <div class="card console-card">
+                            <div class="console-header">
+                                <h2>Scan Console</h2>
+                                <div class="console-buttons">
+                                    <button type="button" id="stopScanBtn" class="cancel-btn">
+                                        <span class="material-icons-round">stop</span>
+                                        Cancel Scan
+                                    </button>
+                                    <button type="button" id="clearConsoleBtn" class="clear-btn">
+                                        <span class="material-icons-round">clear_all</span>
+                                        Clear Console
+                                    </button>
+                                </div>
+                            </div>
+                            <div id="scan-console" class="scan-console">
+                                <div id="console-output"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reports -->
+                <div class="page" id="reports-page" style="display: none;">
+                    <div id="reports-container" class="reports-grid">
+                        <!-- Report cards will be loaded here -->
+                        <div class="skeleton-loader">
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                            <div class="skeleton-item"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings -->
+                <div class="page" id="settings-page" style="display: none;">
+                    <div class="settings-grid">
+                        <div class="card settings-card">
+                            <div class="card-header">
+                                <h2>API Tokens</h2>
+                                <button class="toggle-btn" aria-expanded="false" aria-controls="apiTokensContent">
+                                    <span class="material-icons-round">expand_more</span>
+                                </button>
+                            </div>
+                            <p>Configure API tokens for external services used by Cerberus.</p>
+
+                            <div class="card-content" id="apiTokensContent">
+                                <!-- WPScan API Token -->
+                                <div class="settings-section">
+                                    <h3>WPScan API Token</h3>
+                                    <p>Enter your WPScan API token to enable more comprehensive WordPress scanning. <a href="https://wpscan.com/api" target="_blank">Get a token</a></p>
+
+                                    <form id="wpscanTokenForm">
+                                        <div class="input-group">
+                                            <label for="wpscanToken">WPScan API Token</label>
+                                            <div class="token-input-wrapper">
+                                                <input type="text" id="wpscanToken" name="wpscan_token" placeholder="Enter your WPScan API token" class="token-input">
+                                                <span id="wpscanTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="submit" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Token
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="wpscanTokenStatus" class="token-status"></div>
+                                </div>
+
+                                <!-- DNSDumpster API Token -->
+                                <div class="settings-section">
+                                    <h3>DNSDumpster API Token</h3>
+                                    <p>Enter your DNSDumpster API token for DNS reconnaissance. <a href="https://dnsdumpster.com/my-account" target="_blank">Get a token</a></p>
+
+                                    <form id="dnsdumpsterTokenForm">
+                                        <div class="input-group">
+                                            <label for="dnsdumpsterToken">DNSDumpster API Token</label>
+                                            <div class="token-input-wrapper">
+                                                <input type="text" id="dnsdumpsterToken" name="dnsdumpster_token" placeholder="Enter your DNSDumpster API token" class="token-input">
+                                                <span id="dnsdumpsterTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="submit" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Token
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="dnsdumpsterTokenStatus" class="token-status"></div>
+                                </div>
+
+                                <!-- MX ToolBox API Token -->
+                                <div class="settings-section">
+                                    <h3>MX ToolBox API Token</h3>
+                                    <p>Enter your MX ToolBox API token for DMARC record analysis. <a href="https://mxtoolbox.com/user/api" target="_blank">Get a token</a></p>
+
+                                    <form id="mxtoolboxTokenForm">
+                                        <div class="input-group">
+                                            <label for="mxtoolboxToken">MX ToolBox API Token</label>
+                                            <div class="token-input-wrapper">
+                                                <input type="text" id="mxtoolboxToken" name="mxtoolbox_token" placeholder="Enter your MX ToolBox API token" class="token-input">
+                                                <span id="mxtoolboxTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="submit" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Token
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="mxtoolboxTokenStatus" class="token-status"></div>
+                                </div>
+
+                                <!-- APINinja Whois Token -->
+                                <div class="settings-section">
+                                    <h3>APINinja Whois API Token</h3>
+                                    <p>Enter your APINinja token for domain ownership information. <a href="https://www.api-ninjas.com/profile" target="_blank">Get a token</a></p>
+
+                                    <form id="apininjaTokenForm">
+                                        <div class="input-group">
+                                            <label for="apininjaToken">APINinja API Token</label>
+                                            <div class="token-input-wrapper">
+                                                <input type="text" id="apininjaToken" name="apininja_token" placeholder="Enter your APINinja token" class="token-input">
+                                                <span id="apininjaTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="submit" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Token
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="apininjaTokenStatus" class="token-status"></div>
+                                </div>
+
+                                <!-- IntelX Token -->
+                                <div class="settings-section">
+                                    <h3>IntelligenceX API Token</h3>
+                                    <p>Enter your IntelX token for filtered domain data. <a href="https://intelx.io/account" target="_blank">Get a token</a></p>
+
+                                    <form id="intelxTokenForm">
+                                        <div class="input-group">
+                                            <label for="intelxToken">IntelX API Token</label>
+                                            <div class="token-input-wrapper">
+                                                <input type="text" id="intelxToken" name="intelx_token" placeholder="Enter your IntelX token" class="token-input">
+                                                <span id="intelxTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="submit" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Token
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="intelxTokenStatus" class="token-status"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <div class="main-content">
-        <header>
-            <div class="page-title">Dashboard</div>
-            <button class="new-scan-btn" data-action="new-scan">
-                <span class="material-icons">add</span>
-                New Scan
-            </button>
-        </header>
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toastContainer"></div>
 
-        <div id="page-content">
-            <!-- Dashboard -->
-            <div class="page" id="dashboard-page">
-                <div class="stats-cards">
-                    <div class="stat-card">
-                        <div class="stat-content">
-                            <h3>Generated Reports</h3>
-                            <div class="stat-number" id="reports-count">0</div>
-                        </div>
-                        <div class="stat-icon reports-icon">
-                            <span class="material-icons">description</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-content">
-                            <h3>Available Modules</h3>
-                            <div class="stat-number" id="modules-count">0</div>
-                        </div>
-                        <div class="stat-icon modules-icon">
-                            <span class="material-icons">extension</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-content">
-                            <h3>Scanned Clients</h3>
-                            <div class="stat-number" id="clients-count">0</div>
-                        </div>
-                        <div class="stat-icon clients-icon">
-                            <span class="material-icons">groups</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="recent-scans-section">
-                    <div class="section-header">
-                        <h2>Recent Scans</h2>
-                    </div>
-                    <div id="recent-scans-list" class="scans-list">
-                        <!-- Will be loaded dynamically -->
-                    </div>
-                </div>
+    <!-- Create Project Modal -->
+    <div id="createProjectModal" class="modal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Project</h2>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
             </div>
-
-            <!-- Scanner -->
-            <div class="page" id="scanner-page" style="display: none;">
-                <div class="card">
-                    <h2>Full Scan</h2>
-                    <form id="fullScanForm">
-                        <div class="input-group">
-                            <label for="fullScanTarget">Target</label>
-                            <input type="text" id="fullScanTarget" name="target" placeholder="Enter the target" required>
-                        </div>
-                        <button type="submit" class="submit-btn">
-                            <span class="material-icons">play_arrow</span>
-                            Start Full Scan
-                        </button>
-                    </form>
+            <form id="createProjectForm">
+                <div class="input-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" name="name" placeholder="Company Website Audit" required>
                 </div>
-                <div class="card">
-                  <div class="console-header">
-                    <h2>Scan Console</h2>
-                    <div class="console-buttons">
-                      <button type="button" id="stopScanBtn" class="cancel-btn">
-                        <span class="material-icons">stop</span>
-                        Cancel Scan
-                      </button>
-                      <button type="button" id="clearConsoleBtn" class="clear-btn">
-                        <span class="material-icons">clear_all</span>
-                        Clear Console
-                      </button>
-                    </div>
-                  </div>
-                  <div id="scan-console" class="scan-console">
-                    <div id="console-output"></div>
-                  </div>
+                <div class="input-group">
+                    <label for="projectTarget">Target</label>
+                    <input type="text" id="projectTarget" name="target" placeholder="example.com" required>
                 </div>
-            </div>
-
-            <!-- Reports -->
-            <div class="page" id="reports-page" style="display: none;">
-                <div class="section-header">
-                    <h2>Generated Reports</h2>
+                <div class="modal-footer">
+                    <button type="button" class="cancel-modal-btn">Cancel</button>
+                    <button type="submit" class="submit-btn">Create Project</button>
                 </div>
-                <div id="reports-container" class="reports-grid">
-                    <!-- Report cards will be loaded here -->
-                </div>
-            </div>
-
-            <!-- Settings -->
-            <div class="page" id="settings-page" style="display: none;">
-                <div class="card">
-                    <div class="card-header" id="apiTokensHeader">
-                    <h2>API Tokens</h2>
-                    <button class="toggle-btn" aria-expanded="false" aria-controls="apiTokensContent">
-                        <span class="material-icons">expand_more</span>
-                    </button>
-                    </div>
-                    <p>Configure API tokens for external services used by Cerberus.</p>
-
-                    <div class="card-content" id="apiTokensContent" style="display: none;">
-                        <!-- WPScan API Token -->
-                        <div class="settings-section">
-                            <h3>WPScan API Token</h3>
-                            <p>Enter your WPScan API token to enable more comprehensive WordPress scanning. <a href="https://wpscan.com/api" target="_blank">Get a token</a></p>
-
-                            <form id="wpscanTokenForm">
-                                <div class="input-group">
-                                    <label for="wpscanToken">WPScan API Token</label>
-                                    <div class="token-input-wrapper">
-                                        <input type="text" id="wpscanToken" name="wpscan_token" placeholder="Enter your WPScan API token" class="token-input">
-                                        <span id="wpscanTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <button type="submit" class="submit-btn">
-                                        <span class="material-icons">save</span>
-                                        Save Token
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="wpscanTokenStatus" class="token-status"></div>
-                        </div>
-
-                        <!-- DNSDumpster API Token -->
-                        <div class="settings-section">
-                            <h3>DNSDumpster API Token</h3>
-                            <p>Enter your DNSDumpster API token for DNS reconnaissance. <a href="https://dnsdumpster.com/my-account" target="_blank">Get a token</a></p>
-
-                            <form id="dnsdumpsterTokenForm">
-                                <div class="input-group">
-                                    <label for="dnsdumpsterToken">DNSDumpster API Token</label>
-                                    <div class="token-input-wrapper">
-                                        <input type="text" id="dnsdumpsterToken" name="dnsdumpster_token" placeholder="Enter your DNSDumpster API token" class="token-input">
-                                        <span id="dnsdumpsterTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <button type="submit" class="submit-btn">
-                                        <span class="material-icons">save</span>
-                                        Save Token
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="dnsdumpsterTokenStatus" class="token-status"></div>
-                        </div>
-
-                        <!-- MX ToolBox API Token -->
-                        <div class="settings-section">
-                            <h3>MX ToolBox API Token</h3>
-                            <p>Enter your MX ToolBox API token for DMARC record analysis. <a href="https://mxtoolbox.com/user/api" target="_blank">Get a token</a></p>
-
-                            <form id="mxtoolboxTokenForm">
-                                <div class="input-group">
-                                    <label for="mxtoolboxToken">MX ToolBox API Token</label>
-                                    <div class="token-input-wrapper">
-                                        <input type="text" id="mxtoolboxToken" name="mxtoolbox_token" placeholder="Enter your MX ToolBox API token" class="token-input">
-                                        <span id="mxtoolboxTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <button type="submit" class="submit-btn">
-                                        <span class="material-icons">save</span>
-                                        Save Token
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="mxtoolboxTokenStatus" class="token-status"></div>
-                        </div>
-
-                        <!-- APINinja Whois Token -->
-                        <div class="settings-section">
-                            <h3>APINinja Whois API Token</h3>
-                            <p>Enter your APINinja token for domain ownership information. <a href="https://www.api-ninjas.com/profile" target="_blank">Get a token</a></p>
-
-                            <form id="apininjaTokenForm">
-                                <div class="input-group">
-                                    <label for="apininjaToken">APINinja API Token</label>
-                                    <div class="token-input-wrapper">
-                                        <input type="text" id="apininjaToken" name="apininja_token" placeholder="Enter your APINinja token" class="token-input">
-                                        <span id="apininjaTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <button type="submit" class="submit-btn">
-                                        <span class="material-icons">save</span>
-                                        Save Token
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="apininjaTokenStatus" class="token-status"></div>
-                        </div>
-
-                        <!-- IntelX Token -->
-                        <div class="settings-section">
-                            <h3>IntelligenceX API Token</h3>
-                            <p>Enter your IntelX token for filtered domain data. <a href="https://intelx.io/account" target="_blank">Get a token</a></p>
-
-                            <form id="intelxTokenForm">
-                                <div class="input-group">
-                                    <label for="intelxToken">IntelX API Token</label>
-                                    <div class="token-input-wrapper">
-                                        <input type="text" id="intelxToken" name="intelx_token" placeholder="Enter your IntelX token" class="token-input">
-                                        <span id="intelxTokenSetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
-                                    </div>
-                                </div>
-                                <div class="button-group">
-                                    <button type="submit" class="submit-btn">
-                                        <span class="material-icons">save</span>
-                                        Save Token
-                                    </button>
-                                </div>
-                            </form>
-                            <div id="intelxTokenStatus" class="token-status"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h2>General Settings</h2>
-                    <p>Configure extra settings for Cerberus.</p>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 

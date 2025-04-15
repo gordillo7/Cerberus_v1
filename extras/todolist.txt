@@ -1,5 +1,11 @@
 ROADMAP GENERAL:
-- Grandes cambios en la interfaz.
+- Conectar los reports normales con los de proyecto.
+- No diferenciar entre Project Scan y Scan.
+- Que un report no pise a otro (multiples reportes para un unico target).
+- Funcionalidad de lupa para buscar Projects (Asi ademas se cubre el hueco de la izquierda
+  del boton "New Project").
+- Refinar Pestaña Reports en Projects (la de Reports normal esta bien).
+
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
 - Meter la opción de escaneo exahustivo (Nuclei con todos los subdominios, feroxbuster depth 2)
   como opcional (hacer una opcion en la GUI).

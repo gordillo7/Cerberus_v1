@@ -8,6 +8,8 @@ app.current_scan_process = None
 
 os.makedirs("logs", exist_ok=True)
 os.makedirs("config", exist_ok=True)
+os.makedirs("projects", exist_ok=True)
+
 
 @app.route('/')
 def index():
@@ -42,6 +44,7 @@ def get_recent_scans():
         scans.sort(key=lambda x: x.get('date', ''), reverse=True)
     return jsonify(scans[:3])
 
+
 @app.route('/api/reports')
 def get_reports():
     reports = []
@@ -49,9 +52,11 @@ def get_reports():
         reports.append({'filename': report.name})
     return jsonify(reports)
 
+
 @app.route('/report/<filename>')
 def view_report(filename):
     return send_from_directory('reports', filename)
+
 
 @app.route('/api/reports/<filename>', methods=['DELETE'])
 def delete_report(filename):
@@ -64,6 +69,7 @@ def delete_report(filename):
             return jsonify({'error': 'Report not found.'}), 404
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
 
 @app.route('/fullscan', methods=['POST'])
 def fullscan():
@@ -96,7 +102,9 @@ def fullscan():
                 with open("logs/scans.log", "a") as f:
                     f.write(json.dumps(scan_record) + "\n")
                 app.current_scan_process = None
+
     return Response(generate(), mimetype='text/plain')
+
 
 @app.route('/stopscan', methods=['POST'])
 def stop_scan():
@@ -116,30 +124,36 @@ def get_token_from_config(token_name):
         return config.get(token_name, '')
     return ''
 
+
 # API Token Management - WPScan
 @app.route('/api/settings/wpscan-token', methods=['GET', 'POST'])
 def manage_wpscan_token():
     return manage_token('wpscan')
+
 
 # API Token Management - DNSDumpster
 @app.route('/api/settings/dnsdumpster-token', methods=['GET', 'POST'])
 def manage_dnsdumpster_token():
     return manage_token('dnsdumpster')
 
+
 # API Token Management - MX ToolBox
 @app.route('/api/settings/mxtoolbox-token', methods=['GET', 'POST'])
 def manage_mxtoolbox_token():
     return manage_token('mxtoolbox')
+
 
 # API Token Management - APINinja Whois
 @app.route('/api/settings/apininja-token', methods=['GET', 'POST'])
 def manage_apininja_token():
     return manage_token('apininja')
 
+
 # API Token Management - IntelligenceX
 @app.route('/api/settings/intelx-token', methods=['GET', 'POST'])
 def manage_intelx_token():
     return manage_token('intelx')
+
 
 # Generic token management function
 def manage_token(token_name):
@@ -178,6 +192,93 @@ def manage_token(token_name):
         else:
             token = ''
         return jsonify({'token': token}), 200
+
+
+# Projects API
+@app.route('/api/projects', methods=['GET'])
+def get_projects():
+    projects = []
+    projects_dir = Path('projects')
+    projects_dir.mkdir(exist_ok=True)
+
+    for project_file in projects_dir.glob('*.json'):
+        with open(project_file, 'r') as f:
+            project = json.load(f)
+            projects.append(project)
+
+    return jsonify(projects)
+
+
+@app.route('/api/projects', methods=['POST'])
+def create_project():
+    data = request.json
+    name = data.get('name')
+    target = data.get('target')
+
+    if not name or not target:
+        return jsonify({'error': 'Name and target are required'}), 400
+
+    project_id = str(datetime.datetime.now().timestamp()).replace('.', '')
+    project = {
+        'id': project_id,
+        'name': name,
+        'target': target,
+        'created_at': datetime.datetime.now().strftime('%Y-%m-%d')
+    }
+
+    project_file = Path(f'projects/{project_id}.json')
+    with open(project_file, 'w') as f:
+        json.dump(project, f)
+
+    # Create project reports directory
+    project_reports_dir = Path(f'projects/{project_id}/reports')
+    project_reports_dir.mkdir(parents=True, exist_ok=True)
+
+    return jsonify(project), 201
+
+
+@app.route('/api/projects/<project_id>', methods=['DELETE'])
+def delete_project(project_id):
+    project_file = Path(f'projects/{project_id}.json')
+
+    if not project_file.exists():
+        return jsonify({'error': 'Project not found'}), 404
+
+    # Delete project file
+    project_file.unlink()
+
+    # Delete project directory if it exists
+    project_dir = Path(f'projects/{project_id}')
+    if project_dir.exists():
+        import shutil
+        shutil.rmtree(project_dir)
+
+    return jsonify({'message': 'Project deleted successfully'}), 200
+
+
+@app.route('/api/projects/<project_id>/reports', methods=['GET'])
+def get_project_reports(project_id):
+    reports_dir = Path(f'projects/{project_id}/reports')
+    reports_dir.mkdir(parents=True, exist_ok=True)
+
+    reports = []
+    for report in reports_dir.glob('*.pdf'):
+        reports.append({'filename': report.name})
+
+    return jsonify(reports)
+
+
+@app.route('/api/projects/<project_id>/reports/<filename>', methods=['DELETE'])
+def delete_project_report(project_id, filename):
+    try:
+        report_path = Path(f'projects/{project_id}/reports') / filename
+        if report_path.exists():
+            report_path.unlink()
+            return jsonify({'message': f'Report {filename} deleted successfully.'}), 200
+        else:
+            return jsonify({'error': 'Report not found.'}), 404
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 
 if __name__ == '__main__':
