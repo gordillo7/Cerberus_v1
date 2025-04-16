@@ -1,1 +1,0 @@
-There is no attempt limit on FTP login.

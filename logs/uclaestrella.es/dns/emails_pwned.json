@@ -3,8 +3,8 @@
         "success": true,
         "found": 2,
         "fields": [
-            "origin",
-            "password"
+            "password",
+            "origin"
         ],
         "sources": [
             {

@@ -50,7 +50,11 @@ def main():
             if "22" in ports:
                 run_ssh(target_clean)
 
-    run_generate_report(target_clean)
+    # Check if the '-p' parameter is present and pass it to run_generate_report if so
+    if "-p" in sys.argv:
+        run_generate_report(target_clean, "-p")
+    else:
+        run_generate_report(target_clean)
     print(f"[*] Scan finished in {int((time.time() - start_time) // 60)} minute(s) and {int((time.time() - start_time) % 60)} second(s).")
 
 

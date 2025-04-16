@@ -1,6 +1,7 @@
 from flask import Flask, render_template, jsonify, request, Response, send_from_directory
 from pathlib import Path
 from typing import cast
+import shutil
 import os, signal, subprocess, json, datetime, io
 
 app = Flask(__name__)
@@ -77,6 +78,8 @@ def fullscan():
     command = ['python3', '-u', 'main.py']
     if target:
         command.append(target)
+        if request.form.get('scanType') == 'project':
+            command.append('-p')
     app.current_scan_process = subprocess.Popen(
         command,
         stdout=subprocess.PIPE,
@@ -102,7 +105,6 @@ def fullscan():
                 with open("logs/scans.log", "a") as f:
                     f.write(json.dumps(scan_record) + "\n")
                 app.current_scan_process = None
-
     return Response(generate(), mimetype='text/plain')
 
 
@@ -250,7 +252,6 @@ def delete_project(project_id):
     # Delete project directory if it exists
     project_dir = Path(f'projects/{project_id}')
     if project_dir.exists():
-        import shutil
         shutil.rmtree(project_dir)
 
     return jsonify({'message': 'Project deleted successfully'}), 200
@@ -266,6 +267,11 @@ def get_project_reports(project_id):
         reports.append({'filename': report.name})
 
     return jsonify(reports)
+
+@app.route('/projects/<project_id>/reports/<filename>')
+def view_project_report(project_id, filename):
+    directory = os.path.join("projects", project_id, "reports")
+    return send_from_directory(directory, filename)
 
 
 @app.route('/api/projects/<project_id>/reports/<filename>', methods=['DELETE'])

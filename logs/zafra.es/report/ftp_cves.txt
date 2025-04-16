@@ -1,4 +1,0 @@
-
-Pure-FTPd - External Authentication Bash Environment Variable Code Injection (Metasploit)
-Pure-FTPd 1.0.21 (CentOS 6.2 / Ubuntu 8.04) - Null Pointer Dereference Crash (PoC)
-Pure-FTPd 1.0.48 - Remote Denial of Service

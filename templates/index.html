@@ -81,20 +81,20 @@
                     <div class="stats-cards">
                         <div class="stat-card">
                             <div class="stat-content">
-                                <h3>Generated Reports</h3>
-                                <div class="stat-number" id="reports-count">0</div>
-                            </div>
-                            <div class="stat-icon reports-icon">
-                                <span class="material-icons-round">description</span>
-                            </div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-content">
                                 <h3>Available Modules</h3>
                                 <div class="stat-number" id="modules-count">0</div>
                             </div>
                             <div class="stat-icon modules-icon">
                                 <span class="material-icons-round">extension</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-content">
+                                <h3>Generated Reports</h3>
+                                <div class="stat-number" id="reports-count">0</div>
+                            </div>
+                            <div class="stat-icon reports-icon">
+                                <span class="material-icons-round">description</span>
                             </div>
                         </div>
                         <div class="stat-card">
@@ -125,6 +125,12 @@
                 <!-- Projects -->
                 <div class="page" id="projects-page" style="display: none;">
                     <div class="projects-list-header">
+                        <div class="search-container">
+                            <div class="search-input-wrapper">
+                                <span class="material-icons-round search-icon">search</span>
+                                <label for="projectSearchInput"></label><input type="text" id="projectSearchInput" placeholder="Search for projects..." class="search-input">
+                            </div>
+                        </div>
                         <button class="new-project-btn" id="newProjectBtn" aria-label="Create new project">
                             <span class="material-icons-round">add</span>
                             New Project
@@ -210,9 +216,6 @@
 
                                 <!-- Reports Tab -->
                                 <div class="tab-pane" id="reports-tab">
-                                    <div class="section-header">
-                                        <h2>Project Reports</h2>
-                                    </div>
                                     <div id="project-reports-container" class="reports-grid">
                                         <!-- Project reports will be loaded here -->
                                     </div>
@@ -233,7 +236,7 @@
                                             </div>
                                         </div>
                                         <div class="chat-input">
-                                            <input type="text" id="chat-input-field" placeholder="Type your message...">
+                                            <label for="chat-input-field"></label><input type="text" id="chat-input-field" placeholder="Type your message...">
                                             <button id="send-message-btn">
                                                 <span class="material-icons-round">send</span>
                                             </button>
@@ -257,7 +260,7 @@
                                 </div>
                                 <button type="submit" class="submit-btn">
                                     <span class="material-icons-round">play_arrow</span>
-                                    Start Full Scan
+                                    Start Scan
                                 </button>
                             </form>
                         </div>

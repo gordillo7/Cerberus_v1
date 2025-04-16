@@ -226,8 +226,17 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const response = await fetch("/stopscan", { method: "POST" })
         const data = await response.json()
-        scanConsole.addMessage(data.message || "[*] Scan stopped successfully")
-        showToast("warning", "Scan Aborted", "The scan has been stopped")
+
+        if (response.status === 200) {
+          scanConsole.addMessage(data.message || "[*] Scan stopped successfully")
+          showToast("warning", "Scan Aborted", "The scan has been stopped")
+        } else if (response.status === 404) {
+          scanConsole.addMessage(data.message || "[*] No scan is running")
+          showToast("warning", "No Scan Running", data.message)
+        } else {
+          scanConsole.addMessage(data.error || "[!] Error: Failed to stop the scan")
+          showToast("error", "Error", data.error || "Failed to stop the scan")
+        }
       } catch (error) {
         console.error("Error stopping scan:", error)
         scanConsole.addMessage("[!] Error: Failed to stop the scan")
@@ -251,12 +260,21 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         const response = await fetch("/stopscan", { method: "POST" })
         const data = await response.json()
-        projectScanConsole.addMessage(data.message || "[*] Project scan stopped successfully")
-        showToast("warning", "Project Scan Aborted", "The project scan has been stopped")
+
+        if (response.status === 200) {
+          projectScanConsole.addMessage(data.message || "[*] Scan stopped successfully")
+          showToast("warning", "Scan Aborted", "The Scan has been stopped")
+        } else if (response.status === 404) {
+          projectScanConsole.addMessage(data.message || "[*] No scan is running")
+          showToast("warning", "No Scan Running", data.message)
+        } else {
+          projectScanConsole.addMessage(data.error || "[!] Error: Failed to stop the scan")
+          showToast("error", "Error", data.error || "Failed to stop the scan")
+        }
       } catch (error) {
-        console.error("Error stopping project scan:", error)
-        projectScanConsole.addMessage("[!] Error: Failed to stop the project scan")
-        showToast("error", "Error", "Failed to stop the project scan")
+        console.error("Error stopping scan:", error)
+        projectScanConsole.addMessage("[!] Error: Failed to stop the scan")
+        showToast("error", "Error", "Failed to stop the scan")
       }
     })
   }
@@ -265,7 +283,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (clearProjectConsoleBtn) {
     clearProjectConsoleBtn.addEventListener("click", () => {
       projectScanConsole.clear()
-      showToast("info", "Console Cleared", "The project scan console has been cleared")
+      showToast("info", "Console Cleared", "The scan console has been cleared")
     })
   }
 
@@ -326,10 +344,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = document.getElementById("scan-target").textContent
     const formData = new FormData()
     formData.append("target", target)
+    formData.append("scanType", "project")
 
     projectScanConsole.clear()
     projectScanConsole.addMessage(`[*] Starting full scan for ${target}...`)
-    showToast("info", "Project Scan Started", `Starting scan for project target: ${target}`)
+    showToast("info", "Scan Started", `Starting scan for project target: ${target}`)
 
     try {
       const response = await fetch("/fullscan", {
@@ -360,17 +379,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      showToast("success", "Project Scan Completed", `Scan for ${target} has finished`)
+      showToast("success", "Scan Completed", `Scan for ${target} has finished`)
 
       // Refresh project reports if we're on the reports tab
       if (document.querySelector('.tab-btn[data-tab="reports"]').classList.contains("active")) {
         loadProjectReports(currentProject.id)
       }
     } catch (error) {
-      console.error("Error during project scan:", error)
+      console.error("Error during scan:", error)
       projectScanConsole.addMessage(`[!] Error: ${error.message}`)
-      showToast("error", "Scan Error", "An error occurred during the project scan")
-
+      showToast("error", "Scan Error", "An error occurred during the scan")
     }
   }
 
@@ -463,8 +481,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (reports.length === 0) {
           projectReportsContainer.innerHTML = `
             <div class="empty-state">
-              <h2>No Reports Yet</h2>
-              <p>Run a scan to generate security reports for this project.</p>
+              <p>No Reports Yet</p>
             </div>
           `
         } else {
@@ -472,7 +489,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .map(
               (report) => `
                 <div class="report-card">
-                  <div class="report-preview-container" onclick="window.open('/report/${report.filename}', '_blank')">
+                  <div class="report-preview-container" onclick="window.open('/projects/${projectId}/reports/${report.filename}', '_blank')">
                     <span class="material-icons-round report-icon">description</span>
                     <div class="report-view-overlay">
                       <span class="material-icons-round">visibility</span>
@@ -573,13 +590,6 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch((error) => {
         console.error("Error loading projects:", error)
-        // Fallback for demo if API doesn't exist yet
-        projects = [
-          { id: "1", name: "Company Website", target: "example.com", created_at: "2023-05-15" },
-          { id: "2", name: "E-commerce Platform", target: "shop.example.org", created_at: "2023-06-22" },
-          { id: "3", name: "Blog Site", target: "blog.example.com", created_at: "2023-07-10" },
-        ]
-        renderProjects()
       })
   }
 
@@ -610,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="project-card-content">
                 <div class="project-card-target">
                   <span class="project-card-target-label">Target:</span>
-                  <span class="project-card-target-value">${project.target}</span>
+                  <span class="project-card-target-value" title="${project.target}">${truncateUrl(project.target)}</span>
                 </div>
                 <div class="project-card-date">Created: ${project.created_at}</div>
               </div>
@@ -928,6 +938,90 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   }
 
+  // Truncate URLs
+  function truncateUrl(url, maxLength = 20) {
+    if (url.length <= maxLength) return url;
+
+    return url.substring(0, maxLength - 3) + '...';
+  }
+
+  // Project search functionality
+  function setupProjectSearch() {
+    const searchInput = document.getElementById("projectSearchInput");
+    if (!searchInput) return;
+
+    searchInput.addEventListener("input", function() {
+      const searchTerm = this.value.toLowerCase().trim();
+      filterProjects(searchTerm);
+    });
+  }
+
+  function filterProjects(searchTerm) {
+    if (!searchTerm) {
+      renderProjects(); // Show all projects if search is empty
+      return;
+    }
+
+    const filteredProjects = projects.filter(project =>
+      project.name.toLowerCase().includes(searchTerm) ||
+      project.target.toLowerCase().includes(searchTerm)
+    );
+
+    const projectsGrid = document.getElementById("projects-grid");
+    if (!projectsGrid) return;
+
+    if (filteredProjects.length === 0) {
+      projectsGrid.innerHTML = `
+        <div class="empty-state">
+          <p>No projects matching "${searchTerm}" were found</p>
+        </div>
+      `;
+    } else {
+      projectsGrid.innerHTML = filteredProjects
+        .map(
+          (project) => `
+            <div class="project-card ${currentProject && currentProject.id === project.id ? "active" : ""}" data-project-id="${project.id}">
+              <div class="project-card-header">
+                <div class="project-card-title">${project.name}</div>
+                <div class="project-card-actions">
+                  <button class="project-card-action delete" data-project-id="${project.id}" aria-label="Delete project">
+                    <span class="material-icons-round">delete</span>
+                  </button>
+                </div>
+              </div>
+              <div class="project-card-content">
+                <div class="project-card-target">
+                  <span class="project-card-target-label">Target:</span>
+                  <span class="project-card-target-value" title="${project.target}">${truncateUrl(project.target)}</span>
+                </div>
+                <div class="project-card-date">Created: ${project.created_at}</div>
+              </div>
+            </div>
+          `,
+        )
+        .join("");
+
+      // Add event listeners to project cards
+      document.querySelectorAll(".project-card").forEach((card) => {
+        card.addEventListener("click", function (e) {
+          if (!e.target.closest('.project-card-action')) {
+            const projectId = this.dataset.projectId;
+            selectProject(projectId);
+          }
+        });
+      });
+
+      // Add event listeners to delete buttons
+      document.querySelectorAll(".project-card-action.delete").forEach((button) => {
+        button.addEventListener("click", function (e) {
+          e.stopPropagation();
+          const projectId = this.dataset.projectId;
+          deleteProject(projectId);
+        });
+      });
+    }
+  }
+
   // Toast notifications
   function showToast(type, title, message) {
     const toastContainer = document.getElementById("toastContainer")
@@ -1027,6 +1121,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loadReports()
     } else if (pageId === "projects") {
       loadProjects()
+      setupProjectSearch()
     }
 
     // Close mobile sidebar after navigation

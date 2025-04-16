@@ -10,6 +10,8 @@ pyppeteer
 asyncio
 pip install intelx (Intelx)
 leakcheck
+re
+shutil
 
 #Herramientas
 nmap

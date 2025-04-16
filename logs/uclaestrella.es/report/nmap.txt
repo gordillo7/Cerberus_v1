@@ -1,5 +1,4 @@
 PORT     STATE SERVICE   VERSION
 80/tcp   open  http      aruba-proxy
 443/tcp  open  ssl/https aruba-proxy
-1720/tcp open  h323q931?
 2222/tcp open  ssh       OpenSSH 8.2p1 Ubuntu 4ubuntu0.11 (Ubuntu Linux; protocol 2.0)

@@ -21,3 +21,6 @@
 {"target": "https://liquiddentist.net/", "date": "2025-04-13T13:13:19.739207", "status": "Aborted"}
 {"target": "example.com", "date": "2025-04-14T17:11:48.358277", "status": "Aborted"}
 {"target": "zafra.es", "date": "2025-04-15T19:12:22.117647", "status": "Completed"}
+{"target": "uclaestrella.es", "date": "2025-04-16T12:27:41.648504", "status": "Completed"}
+{"target": "test.test", "date": "2025-04-16T13:29:28.353930", "status": "Aborted"}
+{"target": "test.test", "date": "2025-04-16T13:29:47.824301", "status": "Aborted"}

@@ -32,27 +32,13 @@
           "asn_range": "62.149.128.0/19",
           "country": "Italy",
           "country_code": "IT",
-          "ip": "62.149.128.72",
-          "ptr": "mxd4.aruba.it"
+          "ip": "62.149.128.163",
+          "ptr": "mxd2.aruba.it"
         }
       ]
     }
   ],
   "ns": [
-    {
-      "host": "dns4.arubadns.cz",
-      "ips": [
-        {
-          "asn": "24806",
-          "asn_name": "INTERNET-CZ Ktis 2, 384 03 Ktis, CZ",
-          "asn_range": "81.2.192.0/18",
-          "country": "Czechia",
-          "country_code": "CZ",
-          "ip": "81.2.216.238",
-          "ptr": "dns4.arubadns.cz"
-        }
-      ]
-    },
     {
       "host": "dns2.technorail.com",
       "ips": [
@@ -64,6 +50,20 @@
           "country_code": "IT",
           "ip": "95.110.136.8",
           "ptr": "dns2.technorail.com"
+        }
+      ]
+    },
+    {
+      "host": "dns4.arubadns.cz",
+      "ips": [
+        {
+          "asn": "24806",
+          "asn_name": "INTERNET-CZ Ktis 2, 384 03 Ktis, CZ",
+          "asn_range": "81.2.192.0/18",
+          "country": "Czechia",
+          "country_code": "CZ",
+          "ip": "81.2.216.238",
+          "ptr": "dns4.arubadns.cz"
         }
       ]
     },

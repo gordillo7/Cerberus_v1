@@ -3,8 +3,10 @@ from reportlab.lib import colors
 from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, Image, PageBreak
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from datetime import datetime
-import os, sys
+import os, sys, json
 
+def sanitize(target):
+    return target.replace("http://", "").replace("https://", "").rstrip("/")
 
 def create_cover_page(target):
     styles = getSampleStyleSheet()
@@ -100,15 +102,44 @@ def draw_header_footer(canvas, doc):
     canvas.restoreState()
 
 
-def generate_report(target):
+def generate_report(target, flag=None):
     report_dir = f"logs/{target}/report"
     if not os.path.exists(report_dir):
         print(f"[-] Error: The folder {report_dir} does not exist.")
         return
 
-    output_path = f"reports/{target}.pdf"
-    if os.path.exists(output_path):
-        os.remove(output_path)
+    if flag == "-p":
+        found_project = None
+        projects_dir = "projects"
+        for filename in os.listdir(projects_dir):
+            if filename.endswith(".json"):
+                filepath = os.path.join(projects_dir, filename)
+                with open(filepath, "r", encoding="utf-8") as f:
+                    project = json.load(f)
+                if sanitize(project.get("target", "")) == target:
+                    found_project = project
+                    break
+        if not found_project:
+            print(f"[-] Error: No projects found for {target}")
+            return
+        project_id = found_project["id"]
+        base_report_dir = os.path.join("projects", project_id, "reports")
+        os.makedirs(base_report_dir, exist_ok=True)
+
+        import re
+        pattern = re.compile(r"v(\d+)" + re.escape(target) + r"\.pdf$")
+        existing_versions = []
+        for fname in os.listdir(base_report_dir):
+            match = pattern.match(fname)
+            if match:
+                existing_versions.append(int(match.group(1)))
+        max_version = max(existing_versions) if existing_versions else 0
+        version = max_version + 1
+        output_path = os.path.join(base_report_dir, f"v{version}{target}.pdf")
+    else:
+        output_path = f"reports/{target}.pdf"
+        if os.path.exists(output_path):
+            os.remove(output_path)
 
     doc = SimpleDocTemplate(output_path, pagesize=letter)
     elements = []
@@ -289,10 +320,13 @@ def generate_report(target):
         print(f"[-] Error saving report: {e}")
 
 
-def run_generate_report(target):
-    generate_report(target)
+def run_generate_report(target, flag=None):
+    generate_report(target, flag)
 
 
 if __name__ == "__main__":
     target = sys.argv[1]
-    run_generate_report(target)
+    if len(sys.argv) > 2 and sys.argv[2] == "-p":
+        run_generate_report(target, "-p")
+    else:
+        run_generate_report(target)

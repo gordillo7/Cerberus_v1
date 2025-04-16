@@ -5,44 +5,114 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_25,_12_01_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_6_4_25__12_01__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/TFG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TFG.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_4_25,_18_07_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_8_4_25__18_07__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extras/requisitos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/requisitos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extras/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/todolist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/dns/dns_dmarc.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/dns/dns_dumpster.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/dns/dns_whois.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/dns/emails.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/dns/emails_pwned.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/dns/records.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/ftp/no_limit.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/ftp/searchsploit.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/http/fuzzing/fuzz.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/http/screenshot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/http/subdomain/subdomains.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/http/webscan/nuclei_results.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/http/whatweb/cms.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/http/whatweb/tec.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/nmap/initial_scan.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/nmap/ports.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/nmap/ports_services_versions.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/dns_recon.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/ftp_cves.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/ftp_no_limit.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/http_screenshot.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/http_subdomains.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/nmap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/embutidosmorato.com/report/osint_mail.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/nmap/initial_scan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/liquiddentist.net/nmap/initial_scan.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/http/fuzzing/fuzz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/http/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/http/whatweb/cms.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/http/whatweb/tec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/report/http_screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/centrorotulozafra.com/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/example.com/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/ftp/searchsploit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/fuzzing/fuzz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/whatweb/cms.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/whatweb/tec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/wordpress/credentials.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/wordpress/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/wordpress/vulnerable_plugins.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/http/wordpress/wpscan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/ftp_cves.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/fuzzing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/http_screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/wordpress_usernames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/report/wordpress_vulnerable_plugins.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/ssh/hydra_custom_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/ssh/hydra_default_output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/liquiddentist.net/ssh/searchsploit.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/scans.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scans.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/centrorotulozafra.com.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/embutidosmorato.com.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dmarc.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dmarc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dumpster.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dumpster.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/emails_pwned.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/emails_pwned.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/records.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/records.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/fuzzing/fuzz.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/http/fuzzing/fuzz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/http/screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/whatweb/tec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/http/whatweb/tec.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/initial_scan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/initial_scan.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports_services_versions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports_services_versions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/dns_recon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/dns_recon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/fuzzing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/fuzzing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/http_screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/http_screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/nmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/nmap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/osint_mail.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/osint_mail.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/ftp/no_limit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/ftp/searchsploit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/fuzzing/fuzz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/whatweb/cms.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/http/whatweb/tec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/ftp_cves.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/ftp_no_limit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/http_screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/zafra.es/report/osint_mail.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/generate_report.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/generate_report.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1744735112503407.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1744737423582619.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/liquiddentist.net.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/uclaestrella.es.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports/zafra.es.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/wordlists/liquiddentist.net/users.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +154,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -98,27 +168,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask server.Flask (app.py).executor": "Run",
-    "Flask server.TFG.executor": "Run",
-    "Python.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "deletionFromPopupRequiresConfirmation": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/superpekka782/PycharmProjects/TFG/logs",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "/home/superpekka782/PycharmProjects/TFG/frontend/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
+    &quot;Flask server.TFG.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/superpekka782/PycharmProjects/TFG/logs&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/superpekka782/PycharmProjects/TFG/frontend/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/logs" />
@@ -132,6 +202,24 @@
       <recent name="$PROJECT_DIR$/backend" />
       <recent name="$PROJECT_DIR$/old" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="TFG" type="Python.FlaskServer">
+      <module name="TFG" />
+      <option name="target" value="$PROJECT_DIR$/app.py" />
+      <option name="targetType" value="PATH" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -199,7 +287,12 @@
       <workItem from="1744621082337" duration="2970000" />
       <workItem from="1744624441006" duration="7567000" />
       <workItem from="1744632141227" duration="11537000" />
-      <workItem from="1744726679341" duration="10576000" />
+      <workItem from="1744726679341" duration="10900000" />
+      <workItem from="1744794016714" duration="6614000" />
+      <workItem from="1744800662768" duration="32000" />
+      <workItem from="1744800704340" duration="144000" />
+      <workItem from="1744800857535" duration="602000" />
+      <workItem from="1744801558536" duration="8471000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -321,7 +414,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744287202787</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1744737543188</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1744737543188</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,7 +445,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFG$app.coverage" NAME="app Coverage Results" MODIFIED="1743244825472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744736184208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1744540997407" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1744799780664" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1744816948529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
 </project>

@@ -4,5 +4,5 @@ club@uclaestrella.es
 Out of these, 1 have been pwned in various security breaches
 
 - club@uclaestrella.es has been pwned in 2 breach(es).
-  Compromised fields: origin, password.
+  Compromised fields: password, origin.
   Breaches: LinkedIn.com (2012-05), Stealer Logs.
