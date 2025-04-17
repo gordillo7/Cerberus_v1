@@ -19,10 +19,10 @@ def index():
 
 @app.route('/api/stats')
 def get_stats():
-    reports_count = len(list(Path('reports').glob('*.pdf')))
+    reports_count = len(list(Path('reports').glob('*.pdf'))) + len(list(Path('projects').glob('*/reports/*.pdf')))
     modules_count = len(
         [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generate_report.py'])
-    clients_count = len([d for d in os.listdir('logs') if os.path.isdir(os.path.join('logs', d))])
+    clients_count = len([project for project in os.listdir('projects') if os.path.isdir(os.path.join('projects', project))])
     return jsonify({
         'reports_count': reports_count,
         'modules_count': modules_count,

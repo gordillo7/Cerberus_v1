@@ -1,10 +1,4 @@
 ROADMAP GENERAL:
-- Recargar los proyectos al crear uno nuevo.
-- Cambiar estadisticas (cambiar "Scanned Clients" por "Projects" y "Generated Reports"
-  por el numero de reportes en la carpeta reports + los reportes de cada project).
-
-- Revisar el codigo nuevo.
-
 - Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
 - Meter la opción de escaneo exahustivo (Nuclei con todos los subdominios, feroxbuster depth 2)
   como opcional (hacer una opcion en la GUI).
@@ -14,16 +8,15 @@ ROADMAP GENERAL:
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
 AVANCES:
+- Mejora de la interfaz grafica.
+- Funcionalidad de "Projects".
 
 DUDAS:
 
 SIGUIENTE:
 
 IDEAS:
-- Modulo SSH (port 22) --> TESTEAR.
 - Modulo SMB (port 139/445).
-- Revisar wordlists (eliminar las innecesarias y usar mas "common_credentials.txt")
-### HACER BUEN TESTING/REVISION/LIMPIEZA/MEJORA DE TODOS LOS MODULOS.
 - Modulo de fuzzing web --> Hacerlo con FeroxBuster.
     # FeroxBuster para fuzzing. Comparar gobuster/ferxbuster/etc para comparar tiempo de respuesta...
 - Comparacion de multiples herramientas de cara a la memoria.
@@ -32,8 +25,6 @@ IDEAS:
         # (HECHO) http_wordpress.py.
         # (HECHO) http_wordpress_bruteforce.py.
         # ftp.py.
-- Meter IA.
-- Mejorar generación de PDFs.
 - Ejecutar el main.py para cada subdominio encontrado.
 
 SECUNDARIO:

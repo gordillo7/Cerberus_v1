@@ -1068,7 +1068,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toast.remove()
     })
 
-    // Auto-remove toast after 3 seconds
+    // Auto-remove toast after 2.5 seconds
     setTimeout(() => {
       if (document.getElementById(`toast-${toastId}`)) {
         toast.classList.add("fade-out")
@@ -1105,7 +1105,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Call loadReports() when showing the reports page:
+  // Show Page
   function showPage(pageId) {
     pages.forEach((page) => (page.style.display = "none"))
     document.getElementById(`${pageId}-page`).style.display = "block"
