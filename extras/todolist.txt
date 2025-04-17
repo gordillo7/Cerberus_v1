@@ -1,7 +1,4 @@
 ROADMAP GENERAL:
-- Mejorar botones en general (colocarlos mejor).
-- Soporte para los nuevos botones en el modo claro de la interfaz.
-- Cambiar el estilo del scrollbar.
 - Recargar los proyectos al crear uno nuevo.
 - Cambiar estadisticas (cambiar "Scanned Clients" por "Projects" y "Generated Reports"
   por el numero de reportes en la carpeta reports + los reportes de cada project).

@@ -1582,6 +1582,44 @@ code {
   scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
 }
 
+/* Light Theme */
+.light-theme .new-project-btn,
+.light-theme .start-scan-btn,
+.light-theme .submit-btn {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+.light-theme .new-project-btn:hover,
+.light-theme .start-scan-btn:hover,
+.light-theme .submit-btn:hover {
+  background-color: #0f172a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.light-theme .cancel-btn,
+.light-theme .clear-btn {
+  color: #1e293b;
+  border: 1px solid #1e293b;
+}
+
+.light-theme .cancel-btn:hover,
+.light-theme .clear-btn:hover {
+  background-color: rgba(30, 41, 59, 0.05);
+}
+
+.light-theme ::-webkit-scrollbar-thumb {
+  background: rgba(30, 41, 59, 0.2);
+}
+
+.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 41, 59, 0.3);
+}
+
+.light-theme * {
+  scrollbar-color: rgba(30, 41, 59, 0.2) transparent;
+}
+
 /* Animations */
 @keyframes fadeIn {
   from {
