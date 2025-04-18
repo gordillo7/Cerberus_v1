@@ -80,6 +80,8 @@ def fullscan():
         command.append(target)
         if request.form.get('scanType') == 'project':
             command.append('-p')
+        if request.form.get('comprehensive') == 'true':
+            command.append('-ex')
     app.current_scan_process = subprocess.Popen(
         command,
         stdout=subprocess.PIPE,

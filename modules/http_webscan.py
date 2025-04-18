@@ -79,38 +79,10 @@ References:
 
 
 def run_webscan(target):
-    """subdomains = []
-    subdomains_file = os.path.join("logs", target, "http", "subdomain", "subdomains.txt")
-    if not os.path.exists(subdomains_file):
-        print(f"[-] Subdomains file not found")
-    else:
-        print("[*] Reading subdomains...")
-        with open(subdomains_file, "r", encoding="utf-8") as f:
-            subdomains = [line.strip() for line in f if line.strip()]
-
-    # Add target domain if not present
-    if target not in subdomains:
-        subdomains.append(target)"""
-
     # Create directory for webscan results
     output_dir = os.path.join("logs", target, "http", "webscan")
     os.makedirs(output_dir, exist_ok=True)
-
-    """
-    # Create temporary file with complete list of subdomains
-    temp_list_file = os.path.join(output_dir, "temp_subdomains.txt")
-    with open(temp_list_file, "w", encoding="utf-8") as f:
-        for sub in subdomains:
-            f.write(sub + "\n")
-    """
-    # Build nuclei command
     nuclei_results_file = os.path.join(output_dir, "nuclei_results.json")
-    """cmd = [
-        "nuclei",
-        "-l", temp_list_file,
-        "-s", "low,medium,high,critical,unknown",
-        "-je", nuclei_results_file
-    ]"""
     cmd = [
         "nuclei",
         "-u", target,
@@ -123,18 +95,61 @@ def run_webscan(target):
     except Exception as e:
         print(f"[-] Error running Nuclei: {e}")
 
-    """
+def run_webscan_ex(target):
+    subdomains = []
+    subdomains_file = os.path.join("logs", target, "http", "subdomain", "subdomains.txt")
+    if not os.path.exists(subdomains_file):
+        print("[-] Subdomains file not found, proceeding with the target URL.")
+    else:
+        print("[*] Reading subdomains...")
+        with open(subdomains_file, "r", encoding="utf-8") as f:
+            subdomains = [line.strip() for line in f if line.strip()]
+
+    if target not in subdomains:
+        subdomains.append(target)
+
+    output_dir = os.path.join("logs", target, "http", "webscan")
+    os.makedirs(output_dir, exist_ok=True)
+    temp_list_file = os.path.join(output_dir, "temp_subdomains.txt")
+    with open(temp_list_file, "w", encoding="utf-8") as f:
+        for sub in subdomains:
+            f.write(sub + "\n")
+
+    nuclei_results_file = os.path.join(output_dir, "nuclei_results.json")
+    cmd = [
+        "nuclei",
+        "-l", temp_list_file,
+        "-s", "low,medium,high,critical,unknown",
+        "-je", nuclei_results_file
+    ]
+    try:
+        subprocess.run(cmd, capture_output=True, text=True)
+        print(f"[+] Web scan results saved to {nuclei_results_file}")
+    except Exception as e:
+        print(f"[-] Error running Nuclei: {e}")
+
     try:
         os.remove(temp_list_file)
     except Exception as e:
-        print(f"[-] Error removing temporary file: {e}")"""
+        print(f"[-] Error removing temporary file: {e}")
 
-def run_http_webscan(target):
+def run_http_webscan(target, ex_mode=False):
     print(f"[*] Running web scan module")
-    run_webscan(target)
+    if ex_mode:
+        run_webscan_ex(target)
+    else:
+        run_webscan(target)
     generate_nuclei_report(target)
     print("[+] Web scan module completed.")
 
 if __name__ == "__main__":
-    target = sys.argv[1]
-    run_http_webscan(target)
+    args = sys.argv[1:]
+    ex_mode = False
+    if "-ex" in args:
+        ex_mode = True
+        args.remove("-ex")
+    if not args:
+        print("[-] Target not provided")
+        sys.exit(1)
+    target = args[0]
+    run_http_webscan(target, ex_mode)

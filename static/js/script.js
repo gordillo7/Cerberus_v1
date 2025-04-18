@@ -293,11 +293,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const form = event.target
     const formData = new FormData(form)
     const target = formData.get("target")
+    const isComprehensive = document.getElementById("comprehensiveScan").checked
 
     document.getElementById("fullScanTarget").value = ""
     scanConsole.clear()
     scanConsole.addMessage(`[*] Starting full scan for ${target}...`)
     showToast("info", "Scan Started", `Starting full scan for ${target}`)
+
+    if (isComprehensive) {
+      formData.append("comprehensive", "true")
+    }
 
     try {
       const response = await fetch("/fullscan", {
@@ -342,9 +347,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to start a project scan
   async function startProjectScan() {
     const target = document.getElementById("scan-target").textContent
+    const isComprehensive = document.getElementById("projectComprehensiveScan").checked
     const formData = new FormData()
     formData.append("target", target)
     formData.append("scanType", "project")
+
+    if (isComprehensive) {
+      formData.append("comprehensive", "true")
+    }
 
     projectScanConsole.clear()
     projectScanConsole.addMessage(`[*] Starting full scan for ${target}...`)
@@ -522,7 +532,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Delete report
   function deleteReport(filename) {
-    const sure = confirm(`Are you sure you want to delete the report ${filename}?`);
+    const sure = confirm(`Are you sure you want to delete the report ${filename}?`)
     if (sure) {
       fetch(`/api/reports/${filename}`, { method: "DELETE" })
         .then((response) => {
@@ -545,7 +555,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Delete project report
   function deleteProjectReport(filename, projectId) {
-    const sure = confirm(`Are you sure you want to delete the report ${filename}?`);
+    const sure = confirm(`Are you sure you want to delete the report ${filename}?`)
     if (sure) {
       fetch(`/api/projects/${projectId}/reports/${filename}`, { method: "DELETE" })
         .then((response) => {
@@ -708,7 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Delete a project
   function deleteProject(projectId) {
-    const sure = confirm("Are you sure you want to delete this project?");
+    const sure = confirm("Are you sure you want to delete this project?")
     if (!sure) return
 
     showToast("info", "Deleting Project", "Deleting project...")
@@ -940,42 +950,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Truncate URLs
   function truncateUrl(url, maxLength = 20) {
-    if (url.length <= maxLength) return url;
+    if (url.length <= maxLength) return url
 
-    return url.substring(0, maxLength - 3) + '...';
+    return url.substring(0, maxLength - 3) + '...'
   }
 
   // Project search functionality
   function setupProjectSearch() {
-    const searchInput = document.getElementById("projectSearchInput");
-    if (!searchInput) return;
+    const searchInput = document.getElementById("projectSearchInput")
+    if (!searchInput) return
 
     searchInput.addEventListener("input", function() {
-      const searchTerm = this.value.toLowerCase().trim();
-      filterProjects(searchTerm);
-    });
+      const searchTerm = this.value.toLowerCase().trim()
+      filterProjects(searchTerm)
+    })
   }
 
   function filterProjects(searchTerm) {
     if (!searchTerm) {
-      renderProjects(); // Show all projects if search is empty
-      return;
+      renderProjects() // Show all projects if search is empty
+      return
     }
 
     const filteredProjects = projects.filter(project =>
       project.name.toLowerCase().includes(searchTerm) ||
       project.target.toLowerCase().includes(searchTerm)
-    );
+    )
 
-    const projectsGrid = document.getElementById("projects-grid");
-    if (!projectsGrid) return;
+    const projectsGrid = document.getElementById("projects-grid")
+    if (!projectsGrid) return
 
     if (filteredProjects.length === 0) {
       projectsGrid.innerHTML = `
         <div class="empty-state">
           <p>No projects matching "${searchTerm}" were found</p>
         </div>
-      `;
+      `
     } else {
       projectsGrid.innerHTML = filteredProjects
         .map(
@@ -999,26 +1009,26 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           `,
         )
-        .join("");
+        .join("")
 
       // Add event listeners to project cards
       document.querySelectorAll(".project-card").forEach((card) => {
         card.addEventListener("click", function (e) {
           if (!e.target.closest('.project-card-action')) {
-            const projectId = this.dataset.projectId;
-            selectProject(projectId);
+            const projectId = this.dataset.projectId
+            selectProject(projectId)
           }
-        });
-      });
+        })
+      })
 
       // Add event listeners to delete buttons
       document.querySelectorAll(".project-card-action.delete").forEach((button) => {
         button.addEventListener("click", function (e) {
-          e.stopPropagation();
-          const projectId = this.dataset.projectId;
-          deleteProject(projectId);
-        });
-      });
+          e.stopPropagation()
+          const projectId = this.dataset.projectId
+          deleteProject(projectId)
+        })
+      })
     }
   }
 

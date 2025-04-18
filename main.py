@@ -33,10 +33,16 @@ def main():
             ports = f.read().splitlines()
             if "80" in ports:
                 run_http_subdomain(target_clean)
-                run_http_webscan(target_clean)
+                if "-ex" in sys.argv:
+                    run_http_webscan(target_clean, True)
+                else:
+                    run_http_webscan(target_clean, False)
                 run_http_whatweb(target_clean)
                 run_http_screenshot(target_clean)
-                run_http_fuzzing(target_clean)
+                if "-ex" in sys.argv:
+                    run_http_fuzzing(target_clean, True)
+                else:
+                    run_http_fuzzing(target_clean, False)
                 with open(f"logs/{target_clean}/http/whatweb/cms.txt", "r") as w:
                     cms = w.read()
                     if "WordPress" in cms:

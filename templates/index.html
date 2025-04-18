@@ -187,10 +187,16 @@
                                                 <p>Current Target</p>
                                                 <code id="project-target-display">example.com</code>
                                             </div>
-                                            <button class="start-scan-btn" id="startProjectScanBtn">
-                                                <span class="material-icons-round">play_arrow</span>
-                                                Start Scan
-                                            </button>
+                                            <div class="scan-options">
+                                                <label class="checkbox-container">
+                                                    <input type="checkbox" id="projectComprehensiveScan" name="comprehensive">
+                                                    <span class="checkbox-label">Comprehensive Scan</span>
+                                                </label>
+                                                <button class="start-scan-btn" id="startProjectScanBtn">
+                                                    <span class="material-icons-round">play_arrow</span>
+                                                    Start Scan
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -258,10 +264,16 @@
                                     <label for="fullScanTarget">Target</label>
                                     <input type="text" id="fullScanTarget" name="target" placeholder="Enter the target" required>
                                 </div>
-                                <button type="submit" class="submit-btn">
-                                    <span class="material-icons-round">play_arrow</span>
-                                    Start Scan
-                                </button>
+                                <div class="scan-options">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="comprehensiveScan" name="comprehensive">
+                                        <span class="checkbox-label">Comprehensive Scan</span>
+                                    </label>
+                                    <button type="submit" class="submit-btn">
+                                        <span class="material-icons-round">play_arrow</span>
+                                        Start Scan
+                                    </button>
+                                </div>
                             </form>
                         </div>
                         <div class="card console-card">

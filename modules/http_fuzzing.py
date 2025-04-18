@@ -5,7 +5,7 @@ import json
 from modules.http_detect_scheme import get_scheme
 
 
-def run_feroxbuster(target_ip):
+def run_feroxbuster(target_ip, ex_mode=False):
     # Detect HTTP/HTTPS scheme and build the full URL
     scheme = get_scheme(target_ip) + "://"
     full_target = scheme + target_ip
@@ -14,12 +14,12 @@ def run_feroxbuster(target_ip):
     os.makedirs(fuzz_dir, exist_ok=True)
     output_file = os.path.join(fuzz_dir, "fuzz.json")
 
+    depth_value = "2" if ex_mode else "1"
     cmd = [
         "feroxbuster",
         "--url", full_target,
         "--wordlist", "wordlists/misc/fuzzing.txt",
-        # "--depth", "2",
-        "--depth", "1",
+        "--depth", depth_value,
         "--silent",
         "--no-state",
         "--json",
@@ -92,12 +92,20 @@ def generate_fuzz_report(target_ip):
     except Exception as e:
         print(f"[-] Error writing fuzzing report: {e}")
 
-def run_http_fuzzing(target_ip):
+def run_http_fuzzing(target_ip, ex_mode=False):
     print(f"[*] Running web fuzzing module...")
-    run_feroxbuster(target_ip)
+    run_feroxbuster(target_ip, ex_mode)
     generate_fuzz_report(target_ip)
     print("[+] Web fuzzing module completed.")
 
 if __name__ == "__main__":
-    target_ip = sys.argv[1]
-    run_http_fuzzing(target_ip)
+    args = sys.argv[1:]
+    ex_mode = False
+    if "-ex" in args:
+        ex_mode = True
+        args.remove("-ex")
+    if not args:
+        print("[-] Target not provided")
+        sys.exit(1)
+    target_ip = args[0]
+    run_http_fuzzing(target_ip, ex_mode)
