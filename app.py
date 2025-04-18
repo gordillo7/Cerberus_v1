@@ -288,6 +288,31 @@ def delete_project_report(project_id, filename):
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+# Proxy Configuration
+@app.route('/api/settings/proxy-config', methods=['GET', 'POST'])
+def manage_proxy_config():
+    config_file = Path('config/proxy.json')
+
+    # Create config directory if it doesn't exist
+    config_file.parent.mkdir(parents=True, exist_ok=True)
+
+    if request.method == 'POST':
+        data = request.get_json()
+
+        # Write config to file
+        with open(config_file, 'w', encoding='utf-8') as f:
+            json.dump(data, f, indent=4)
+
+        return jsonify({'message': 'Proxy configuration saved successfully.'}), 200
+
+    else:  # GET request
+        if config_file.exists():
+            with open(config_file, 'r', encoding='utf-8') as f:
+                config = json.load(f)
+            return jsonify(config), 200
+        else:
+            return jsonify({'enabled': False}), 200
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

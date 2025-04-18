@@ -1,12 +1,5 @@
 ROADMAP GENERAL:
-- Meter la opcion de proxy como opcional (hacer una opcion en la GUI).
-  # En la pestaña de "Settings", hacer una card de proxy configuration.
-    * IP.
-    * Port.
-    * Socks5?? Investigar mas tipos de proxy.
-  # Compabilidad con:
-    * http_wordpress.py (similar a la de feroxbuster).
-    * http_wordpress_bruteforce.py (similar a la de feroxbuster).
+- Testear funcionalidad de "Proxy".
 - Meter IA (API de Gemini).
 - Chatbot con preguntas predefinidas por cada target escaneado con la API de Gemini.
 - Generacion de reportes.
@@ -16,6 +9,7 @@ AVANCES:
 - Mejora de la interfaz grafica.
 - Funcionalidad de "Projects".
 - Opcion de "Comprehensive scan" (Nuclei con todos los subdominios, feroxbuster depth 2).
+- Opcion de "Proxy" en la pestaña de "Settings" (compatible con WPScan).
 
 DUDAS:
 

@@ -13,6 +13,19 @@ def get_wpscan_api_token():
             return config.get('wpscan', '')
     return ''
 
+def get_proxy_argument():
+    proxy_config_path = os.path.join("config", "proxy.json")
+    if os.path.exists(proxy_config_path):
+        with open(proxy_config_path, "r", encoding="utf-8") as f:
+            config = json.load(f)
+        if config.get("enabled", False):
+            protocol = config.get("protocol", "http")
+            host = config.get("host", "")
+            port = config.get("port", "")
+            if host and port:
+                return ["--proxy", f"{protocol}://{host}:{port}"]
+    return []
+
 def run_wpscan(target_ip, domain=None):
     # If a domain is provided, use it instead of the IP
     if domain:
@@ -31,10 +44,13 @@ def run_wpscan(target_ip, domain=None):
         "-e", "vp,vt,u",
         "--no-banner",
         "--update",
-        # "--proxy", "socks5://35.180.42.196:1080",
         "--format", "json",
         "--output", output_file
     ]
+
+    proxy_args = get_proxy_argument()
+    if proxy_args:
+        command.extend(proxy_args)
 
     # Add API token if available
     api_token = get_wpscan_api_token()

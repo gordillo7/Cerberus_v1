@@ -3,7 +3,21 @@ import sys
 import subprocess
 import tempfile
 import re
+import json
 from modules.http_detect_scheme import get_scheme
+
+def get_proxy_argument():
+    proxy_config_path = os.path.join("config", "proxy.json")
+    if os.path.exists(proxy_config_path):
+        with open(proxy_config_path, "r", encoding="utf-8") as f:
+            config = json.load(f)
+        if config.get("enabled", False):
+            protocol = config.get("protocol", "http")
+            host = config.get("host", "")
+            port = config.get("port", "")
+            if host and port:
+                return ["--proxy", f"{protocol}://{host}:{port}"]
+    return []
 
 def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file):
     command = [
@@ -12,9 +26,13 @@ def run_wpscan_attack_file(target, usernames_file, passwords_file, success_file)
         "--usernames", usernames_file,
         "--passwords", passwords_file,
         "--no-banner",
-        # "--proxy", "socks5://35.180.42.196:1080",
         "--update"
     ]
+
+    proxy_args = get_proxy_argument()
+    if proxy_args:
+        command.extend(proxy_args)
+
     result = subprocess.run(command, capture_output=True, text=True)
     output = result.stdout + "\n" + result.stderr
 

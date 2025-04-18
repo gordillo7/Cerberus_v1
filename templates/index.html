@@ -438,6 +438,57 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Proxy Configuration Card -->
+                        <div class="card settings-card">
+                            <div class="card-header">
+                                <h2>Proxy Configuration</h2>
+                                <button class="toggle-btn" aria-expanded="false" aria-controls="proxyConfigContent">
+                                    <span class="material-icons-round">expand_more</span>
+                                </button>
+                            </div>
+                            <p>Configure proxy settings for network connections.</p>
+
+                            <div class="card-content" id="proxyConfigContent">
+                                <div class="settings-section">
+                                    <h3>Proxy Settings</h3>
+                                    <p>Enable and configure proxy settings for all network connections.</p>
+
+                                    <div class="proxy-toggle-container">
+                                        <label class="switch">
+                                            <input type="checkbox" id="proxyToggle">
+                                            <span class="slider round"></span>
+                                        </label>
+                                        <span class="proxy-toggle-label">Use Proxy</span>
+                                        <span id="proxyStatusIndicator" class="proxy-status-indicator" style="display: none;">Proxy Configured</span>
+                                    </div>
+
+                                    <div id="proxyConfigForm" style="display: none; margin-top: 1rem;">
+                                        <div class="input-group">
+                                            <label for="proxyProtocol">Protocol</label>
+                                            <select id="proxyProtocol" class="proxy-input">
+                                                <option value="http">HTTP</option>
+                                                <option value="socks5">SOCKS5</option>
+                                            </select>
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="proxyHost">IP Address</label>
+                                            <input type="text" id="proxyHost" placeholder="Enter IP address (e.g. 10.0.1.1)" class="proxy-input">
+                                        </div>
+                                        <div class="input-group">
+                                            <label for="proxyPort">Port</label>
+                                            <input type="text" id="proxyPort" placeholder="Enter port number (e.g. 8080)" class="proxy-input">
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="button" id="saveProxyBtn" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Configuration
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div id="proxyConfigStatus" class="token-status" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

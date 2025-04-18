@@ -1114,6 +1114,163 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     }
   }
+  
+  // Proxy Configuration
+  function setupProxyConfiguration() {
+    const proxyToggle = document.getElementById("proxyToggle")
+    const proxyConfigForm = document.getElementById("proxyConfigForm")
+    const proxyStatusIndicator = document.getElementById("proxyStatusIndicator")
+    const saveProxyBtn = document.getElementById("saveProxyBtn")
+    const proxyConfigStatus = document.getElementById("proxyConfigStatus")
+    const proxyProtocol = document.getElementById("proxyProtocol")
+    const proxyHost = document.getElementById("proxyHost")
+    const proxyPort = document.getElementById("proxyPort")
+
+    if (!proxyToggle || !proxyConfigForm) return
+
+    // Load saved proxy configuration
+    fetch("/api/settings/proxy-config")
+      .then(response => response.json())
+      .then(data => {
+        if (data.enabled) {
+          proxyToggle.checked = true
+          proxyConfigForm.style.display = "block"
+          proxyStatusIndicator.style.display = "inline-block"
+          
+          // Fill form with saved values
+          proxyProtocol.value = data.protocol || "http"
+          proxyHost.value = data.host || ""
+          proxyPort.value = data.port || ""
+        }
+      })
+      .catch(error => {
+        console.error("Error loading proxy configuration:", error)
+      })
+
+    // Toggle proxy configuration form
+    proxyToggle.addEventListener("change", function() {
+      if (this.checked) {
+        proxyConfigForm.style.display = "block"
+      } else {
+        proxyConfigForm.style.display = "none"
+        proxyStatusIndicator.style.display = "none"
+        
+        // If proxy is disabled, clear the configuration
+        fetch("/api/settings/proxy-config", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ enabled: false }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (proxyConfigStatus) {
+            proxyConfigStatus.textContent = "Proxy disabled successfully"
+            proxyConfigStatus.className = "token-status success"
+            proxyConfigStatus.style.display = "block"
+            
+            setTimeout(() => {
+              proxyConfigStatus.style.display = "none"
+            }, 3000)
+          }
+          showToast("info", "Proxy Disabled", "Proxy configuration has been disabled")
+        })
+        .catch(error => {
+          console.error("Error disabling proxy:", error)
+          showToast("error", "Error", "Failed to disable proxy configuration")
+        })
+      }
+    })
+
+    // Save proxy configuration
+    if (saveProxyBtn) {
+      saveProxyBtn.addEventListener("click", function() {
+        const protocol = proxyProtocol.value
+        const host = proxyHost.value.trim()
+        const port = proxyPort.value.trim()
+        
+        if (!host) {
+          showToast("error", "Validation Error", "IP address is required")
+          return
+        }
+        
+        if (!port) {
+          showToast("error", "Validation Error", "Port number is required")
+          return
+        }
+        
+        const proxyConfig = {
+          enabled: true,
+          protocol,
+          host,
+          port
+        }
+        
+        fetch("/api/settings/proxy-config", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(proxyConfig),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (proxyConfigStatus) {
+            proxyConfigStatus.textContent = data.message || "Proxy configuration saved successfully"
+            proxyConfigStatus.className = "token-status success"
+            proxyConfigStatus.style.display = "block"
+            
+            setTimeout(() => {
+              proxyConfigStatus.style.display = "none"
+            }, 3000)
+          }
+          
+          proxyStatusIndicator.style.display = "inline-block"
+          showToast("success", "Proxy Configured", "Proxy configuration has been saved")
+        })
+        .catch(error => {
+          console.error("Error saving proxy configuration:", error)
+          
+          if (proxyConfigStatus) {
+            proxyConfigStatus.textContent = "An error occurred while saving the proxy configuration."
+            proxyConfigStatus.className = "token-status error"
+            proxyConfigStatus.style.display = "block"
+          }
+          
+          showToast("error", "Error", "Failed to save proxy configuration")
+        })
+      })
+    }
+  }
+
+  // Toggle Proxy Configuration card
+  const proxyConfigHeader = document.querySelectorAll(".card-header")[1]
+  if (proxyConfigHeader) {
+    const toggleBtn = proxyConfigHeader.querySelector(".toggle-btn")
+    const proxyConfigContent = document.getElementById("proxyConfigContent")
+
+    if (toggleBtn && proxyConfigContent) {
+      toggleBtn.addEventListener("click", function () {
+        const expanded = this.getAttribute("aria-expanded") === "true"
+        this.setAttribute("aria-expanded", !expanded)
+
+        if (expanded) {
+          proxyConfigContent.classList.remove("expanded")
+          // Wait for transition to complete before hiding
+          setTimeout(() => {
+            proxyConfigContent.style.display = "none"
+          }, 300)
+        } else {
+          proxyConfigContent.style.display = "block"
+          // Small delay to ensure display:block is applied first
+          setTimeout(() => {
+            proxyConfigContent.classList.add("expanded")
+          }, 10)
+        }
+      })
+    }
+  }
 
   // Show Page
   function showPage(pageId) {
@@ -1146,6 +1303,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTokenForm("mxtoolbox")
   setupTokenForm("apininja")
   setupTokenForm("intelx")
+  
+  // Initialize proxy configuration
+  setupProxyConfiguration()
 
   // Initialization
   showPage("dashboard")
