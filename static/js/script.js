@@ -1245,7 +1245,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Toggle Proxy Configuration card
-  const proxyConfigHeader = document.querySelectorAll(".card-header")[1]
+  const proxyConfigHeader = document.querySelectorAll(".card-header")[2]
   if (proxyConfigHeader) {
     const toggleBtn = proxyConfigHeader.querySelector(".toggle-btn")
     const proxyConfigContent = document.getElementById("proxyConfigContent")
@@ -1270,6 +1270,77 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       })
     }
+  }
+
+  // Setup Gemini token form
+  function setupGeminiTokenForm() {
+    const form = document.getElementById("geminiApiKeyForm");
+    const input = document.getElementById("geminiApiKey");
+    const tokenStatus = document.getElementById("geminiApiKeyStatus");
+    const tokenSetIndicator = document.getElementById("geminiApiKeySetIndicator");
+
+    if (form && input) {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const token = input.value.trim();
+        if (!token) return;
+
+        try {
+          const response = await fetch("/api/settings/gemini-token", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ token })
+          });
+          const data = await response.json();
+          if (response.ok) {
+            input.value = "";
+            input.placeholder = "••••••••••••••••••••••••••";
+            tokenSetIndicator.style.display = "inline-block";
+            tokenStatus.textContent = data.message || "Token saved successfully";
+            tokenStatus.className = "token-status success";
+          } else {
+            tokenStatus.textContent = data.error || "Error saving token";
+            tokenStatus.className = "token-status error";
+          }
+          tokenStatus.style.display = "block";
+          setTimeout(() => {
+            tokenStatus.style.display = "none";
+          }, 3000);
+        } catch (error) {
+          console.error("Error saving Gemini token:", error);
+          tokenStatus.textContent = "An error occurred while saving the token.";
+          tokenStatus.className = "token-status error";
+          tokenStatus.style.display = "block";
+        }
+      });
+    }
+  }
+
+  // Toggle Gemini API card
+  const geminiToggleBtn = document.querySelector("button.toggle-btn[aria-controls='geminiApiContent']");
+  const geminiContent = document.getElementById("geminiApiContent");
+
+  if (geminiToggleBtn && geminiContent) {
+    geminiToggleBtn.addEventListener("click", function () {
+      const expanded = this.getAttribute("aria-expanded") === "true";
+      this.setAttribute("aria-expanded", !expanded);
+
+      if (expanded) {
+        geminiContent.classList.remove("expanded");
+        // Wait for transition to complete before hiding
+        setTimeout(() => {
+          geminiContent.style.display = "none";
+        }, 300);
+      } else {
+        geminiContent.style.display = "block";
+        // Small delay to ensure display:block is applied first
+        setTimeout(() => {
+          geminiContent.classList.add("expanded");
+        }, 10);
+      }
+    });
   }
 
   // Show Page
@@ -1303,6 +1374,9 @@ document.addEventListener("DOMContentLoaded", () => {
   setupTokenForm("mxtoolbox")
   setupTokenForm("apininja")
   setupTokenForm("intelx")
+
+  // Initialize Gemini token form
+  setupGeminiTokenForm()
   
   // Initialize proxy configuration
   setupProxyConfiguration()

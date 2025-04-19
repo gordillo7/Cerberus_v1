@@ -159,7 +159,7 @@ def manage_intelx_token():
     return manage_token('intelx')
 
 
-# Generic token management function
+# Token management function
 def manage_token(token_name):
     config_file = Path('config/api_tokens.json')
 
@@ -312,6 +312,35 @@ def manage_proxy_config():
             return jsonify(config), 200
         else:
             return jsonify({'enabled': False}), 200
+
+
+@app.route("/api/settings/gemini-token", methods=["GET", "POST"])
+def manage_gemini_token():
+    config_file = Path('config/gemini_token.json')
+    if request.method == "POST":
+        data = request.get_json()
+        token = data.get("token")
+        if not token:
+            return jsonify({"error": "Token is required"}), 400
+
+        token_data = {"gemini_api_key": token}
+        os.makedirs("config", exist_ok=True)
+        try:
+            with open(config_file, "w") as f:
+                json.dump(token_data, f)
+        except Exception as e:
+            return jsonify({"error": f"Error saving token: {e}"}), 500
+
+        return jsonify({"message": "Gemini API token saved successfully"}), 200
+    else:
+        # GET method: return token if already set
+        if config_file.exists():
+            with open(config_file, "r") as f:
+                token_data = json.load(f)
+            token = token_data.get("gemini_api_key", "")
+        else:
+            token = ""
+        return jsonify({"token": token}), 200
 
 
 if __name__ == '__main__':

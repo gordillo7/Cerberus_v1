@@ -312,6 +312,7 @@
                 <!-- Settings -->
                 <div class="page" id="settings-page" style="display: none;">
                     <div class="settings-grid">
+                        <!-- API Tokens Card -->
                         <div class="card settings-card">
                             <div class="card-header">
                                 <h2>API Tokens</h2>
@@ -438,6 +439,39 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- Gemini API Card -->
+                        <div class="card settings-card">
+                            <div class="card-header">
+                                <h2>Cerberus AI Chatbot</h2>
+                                <button class="toggle-btn" aria-expanded="false" aria-controls="geminiApiContent">
+                                    <span class="material-icons-round">expand_more</span>
+                                </button>
+                            </div>
+                            <p>Configure Cerberus AI Chatbot powered by Gemini.</p>
+                            <div class="card-content" id="geminiApiContent">
+                                <div class="settings-section">
+                                    <h3>Gemini API Token</h3>
+                                    <p>Enter your Gemini API token to enable the AI chatbot feature. <a href="https://aistudio.google.com/" target="_blank">Get a token</a></p>
+
+                                    <form id="geminiApiKeyForm">
+                                        <div class="input-group">
+                                            <label for="geminiApiKey">Gemini API Key</label>
+                                            <div class="token-input-wrapper">
+                                                <input type="text" id="geminiApiKey" name="gemini_api_key" placeholder="Enter your Gemini API key" class="token-input">
+                                                <span id="geminiApiKeySetIndicator" class="token-set-indicator" style="display: none;">Token Set</span>
+                                            </div>
+                                        </div>
+                                        <div class="button-group">
+                                            <button type="submit" class="submit-btn">
+                                                <span class="material-icons-round">save</span>
+                                                Save Token
+                                            </button>
+                                        </div>
+                                    </form>
+                                    <div id="geminiApiKeyStatus" class="token-status" style="display: none;"></div>
+                                </div>
+                            </div>
+                        </div>
                         <!-- Proxy Configuration Card -->
                         <div class="card settings-card">
                             <div class="card-header">
@@ -451,7 +485,7 @@
                             <div class="card-content" id="proxyConfigContent">
                                 <div class="settings-section">
                                     <h3>Proxy Settings</h3>
-                                    <p>Enable and configure proxy settings for all network connections.</p>
+                                    <p>Enable and configure proxy settings for network connections.</p>
 
                                     <div class="proxy-toggle-container">
                                         <label class="switch">

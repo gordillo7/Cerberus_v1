@@ -1,5 +1,8 @@
 ROADMAP GENERAL:
 - Chatbot IA con preguntas predefinidas por cada proyecto (API de Gemini).
+    # Que aparezca "Token Set" y los puntos en el placeholder al igual que
+      el resto de tokens (el app.py ya esta adaptado para esto, faltaria
+      el script.js).
 - Generacion de reportes.
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
