@@ -1,0 +1,153 @@
+{
+  "UID": null,
+  "ArgumentType": "domain",
+  "Command": "dmarc",
+  "IsTransitioned": false,
+  "CommandArgument": "cartamundi.es",
+  "TimeRecorded": "2025-04-19T05:49:07.3127289-05:00",
+  "ReportingNameServer": "ns1.101domain.com",
+  "TimeToComplete": "384",
+  "RelatedIP": null,
+  "ResourceRecordType": 5,
+  "IsEmptySubDomain": false,
+  "SPF_Subaction_Detail": null,
+  "Records": [
+    "v=DMARC1; p=reject; sp=reject; rua=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@ag.eu.dmarcadvisor.com; ruf=mailto:728ec9044bda281@for.dmarcanalyzer.com, mailto:sbatx4b6@fr.eu.dmarcadvisor.com; fo=1;"
+  ],
+  "IsEndpoint": false,
+  "HasSubscriptions": false,
+  "AlertgroupSubscriptionId": null,
+  "Failed": [],
+  "Warnings": [],
+  "Passed": [
+    {
+      "ID": 441,
+      "Name": "DMARC Record Published",
+      "Info": "DMARC Record found",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Record-Published?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:cartamundi.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 463,
+      "Name": "DMARC Syntax Check",
+      "Info": "The record is valid",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Syntax-Check?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:cartamundi.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 504,
+      "Name": "DMARC External Validation",
+      "Info": "All external domains in your DMARC record are giving permission to send them DMARC reports.",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-External-Validation?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:cartamundi.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 505,
+      "Name": "DMARC Multiple Records",
+      "Info": "Multiple DMARC records corrected to a single record.",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Multiple-Records?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:cartamundi.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 197,
+      "Name": "DMARC Policy Not Enabled",
+      "Info": "DMARC Quarantine/Reject policy enabled",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Policy-Not-Enabled?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:cartamundi.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    }
+  ],
+  "Timeouts": [],
+  "Errors": [],
+  "IsError": false,
+  "Information": [
+    {
+      "Tag": "",
+      "TagValue": "",
+      "Name": "record",
+      "Description": "v=DMARC1; p=reject; sp=reject; rua=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@ag.eu.dmarcadvisor.com; ruf=mailto:728ec9044bda281@for.dmarcanalyzer.com, mailto:sbatx4b6@fr.eu.dmarcadvisor.com; fo=1;"
+    },
+    {
+      "Tag": "v",
+      "TagValue": "DMARC1",
+      "Name": "Version",
+      "Description": "Identifies the record retrieved as a DMARC record. It must be the first tag in the list."
+    },
+    {
+      "Tag": "p",
+      "TagValue": "reject",
+      "Name": "Policy",
+      "Description": "Policy to apply to email that fails the DMARC test. Valid values can be &#39;none&#39;, &#39;quarantine&#39;, or &#39;reject&#39;."
+    },
+    {
+      "Tag": "sp",
+      "TagValue": "reject",
+      "Name": "Sub-domain Policy",
+      "Description": "Requested Mail Receiver policy for all subdomains. Valid values can be &#39;none&#39;, &#39;quarantine&#39;, or &#39;reject&#39;."
+    },
+    {
+      "Tag": "rua",
+      "TagValue": "mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@ag.eu.dmarcadvisor.com",
+      "Name": "Receivers",
+      "Description": "Addresses to which aggregate feedback is to be sent. Comma separated plain-text list of DMARC URIs."
+    },
+    {
+      "Tag": "ruf",
+      "TagValue": "mailto:728ec9044bda281@for.dmarcanalyzer.com, mailto:sbatx4b6@fr.eu.dmarcadvisor.com",
+      "Name": "Forensic Receivers",
+      "Description": "Addresses to which message-specific failure information is to be reported. Comma separated plain-text list of DMARC URIs."
+    },
+    {
+      "Tag": "fo",
+      "TagValue": "1",
+      "Name": "Forensic Reporting",
+      "Description": "Provides requested options for generation of failure reports. Valid values are any combination of characters &#39;01ds&#39; seperated by &#39;:&#39;."
+    }
+  ],
+  "MultiInformation": [],
+  "Transcript": [
+    {
+      "Transcript": "- - - dmarc:_dmarc.cartamundi.es\r\n\r\n&emsp; 1 c.nic.es 194.0.34.53 NON-AUTH 0 ms Received 2 Referrals , rcode=NO_ERROR &emsp; cartamundi.es.\t86400\tIN\tNS\tns1.101domain.com,cartamundi.es.\t86400\tIN\tNS\tns2.101domain.com,\r\n&emsp; 2 ns1.101domain.com 162.159.24.202 AUTH 72 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.cartamundi.es.\t14400\tIN\tCNAME\tREJECT.DMARC.CARTAMUNDI.COM,\r\n\r\n* Found CNAME on '_dmarc.cartamundi.es' of 'REJECT.DMARC.CARTAMUNDI.COM'\r\n\r\n- - - dmarc:REJECT.DMARC.CARTAMUNDI.COM\r\n\r\n&emsp; 1 k.gtld-servers.net 192.52.178.30 NON-AUTH 22 ms Received 3 Referrals , rcode=NO_ERROR &emsp; cartamundi.com.\t172800\tIN\tNS\tns1.101domain.com,cartamundi.com.\t172800\tIN\tNS\tns2.101domain.com,cartamundi.com.\t172800\tIN\tNS\tns5.101domain.com,\r\n&emsp; 2 ns1.101domain.com 162.159.24.202 AUTH 110 ms Received 1 Answers , rcode=NO_ERROR &emsp; reject.dmarc.cartamundi.com.\t14400\tIN\tTXT\tv=DMARC1; p=reject; sp=reject; rua=mailto:728ec9044bda281@rep.dmarcanalyzer.com, mailto:sbatx4b6@ag.eu.dmarcadvisor.com; ruf=mailto:728ec9044bda281@for.dmarcanalyzer.com, mailto:sbatx4b6@fr.eu.dmarcadvisor.com; fo=1;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 384ms\r\n"
+    }
+  ],
+  "MxRep": 0,
+  "EmailServiceProvider": null,
+  "DnsServiceProvider": null,
+  "DnsServiceProviderIdentifier": null,
+  "RelatedLookups": [
+    {
+      "Name": "dns lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/a/cartamundi.es",
+      "Command": "a",
+      "CommandArgument": "cartamundi.es"
+    },
+    {
+      "Name": "dns check",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dns/cartamundi.es",
+      "Command": "dns",
+      "CommandArgument": "cartamundi.es"
+    },
+    {
+      "Name": "mx lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/mx/cartamundi.es",
+      "Command": "mx",
+      "CommandArgument": "cartamundi.es"
+    },
+    {
+      "Name": "spf lookup",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/spf/cartamundi.es",
+      "Command": "spf",
+      "CommandArgument": "cartamundi.es"
+    },
+    {
+      "Name": "dns propagation",
+      "URL": "https://mxtoolbox.com/api/v1/lookup/dmarc/cartamundi.es:all",
+      "Command": "dmarc",
+      "CommandArgument": "cartamundi.es:all"
+    }
+  ]
+}

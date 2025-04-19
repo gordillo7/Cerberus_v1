@@ -1,7 +1,5 @@
 ROADMAP GENERAL:
-- Testear funcionalidad de "Proxy".
-- Meter IA (API de Gemini).
-- Chatbot con preguntas predefinidas por cada target escaneado con la API de Gemini.
+- Chatbot IA con preguntas predefinidas por cada proyecto (API de Gemini).
 - Generacion de reportes.
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 

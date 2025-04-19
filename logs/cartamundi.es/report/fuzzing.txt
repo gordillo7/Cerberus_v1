@@ -1,0 +1,8 @@
+Found 7 valid URLs
+URL: https://cartamundi.es/
+URL: https://cartamundi.es/app
+URL: https://cartamundi.es/rss
+URL: https://cartamundi.es/javascript
+URL: https://cartamundi.es/app/plugins
+URL: https://cartamundi.es/app/cache
+URL: https://cartamundi.es/app/uploads

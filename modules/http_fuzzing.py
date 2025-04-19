@@ -26,12 +26,13 @@ def run_feroxbuster(target_ip, ex_mode=False):
         "-o", output_file
     ]
 
+    # If ex_mode is enabled, timeout is 10 minutes, otherwise 3 minutes
+    timeout_value = 600 if ex_mode else 180
     try:
-        # 180 seconds (3 minutes) timeout
-        subprocess.run(cmd, check=True, timeout=180, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        subprocess.run(cmd, check=True, timeout=timeout_value, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         print(f"[+] Fuzzing results saved to: {output_file}")
     except subprocess.TimeoutExpired:
-        print("[*] Fuzzing scan exceeded 3 minutes and has been terminated.")
+        print(f"[*] Fuzzing scan exceeded {timeout_value} seconds and has been terminated.")
         print(f"[+] Partial results are preserved in {output_file}")
     except subprocess.CalledProcessError as e:
         print(f"[-] Feroxbuster encountered an execution error: {e}")

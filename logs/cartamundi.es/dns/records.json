@@ -1,0 +1,40 @@
+{
+    "records": [
+        {
+            "systemid": "bcf62d01-6b14-4d82-a562-da28f0cde548",
+            "owner": "00000000-0000-0000-0000-000000000000",
+            "storageid": "d19f356dbefd98272ebc800b8bbbc0c44d24e003271da3d7a34a22f71c0037154a9b0d8df04e393d74cdca11d2254581425647b9414e3f425ba66308149474f8",
+            "instore": true,
+            "size": 4194289,
+            "accesslevel": 0,
+            "type": 1,
+            "media": 24,
+            "added": "2021-04-14T05:42:38.529396Z",
+            "date": "2021-04-14T05:42:38.038184Z",
+            "name": "mx records 361M.rar/fdns_mx_7.txt [Part 39 of 491]",
+            "description": "",
+            "xscore": 57,
+            "simhash": 1743140542021773732,
+            "bucket": "leaks.public.general",
+            "keyvalues": null,
+            "tags": null,
+            "relations": [
+                {
+                    "target": "eebd9844-ae80-45e8-80cf-5fe6bb342919",
+                    "relation": 8
+                }
+            ],
+            "accesslevelh": "Public",
+            "mediah": "Text File",
+            "simhashh": "1830e11660ca29a4",
+            "typeh": "Text",
+            "tagsh": null,
+            "randomid": "cd95452b-34ae-43f3-8444-7ba395c821a1",
+            "bucketh": "Leaks » Public » General",
+            "indexfile": "71274cbd35361bb3a3b187bedb1ae90d4a5ac61cb75e09482f46f45366ed7cbfe5a177a1d6c4a861e5704c70479bf58e139c432901c2fd69481ef4acfdb97a52",
+            "historyfile": "",
+            "perfectmatch": false,
+            "group": "71274cbd35361bb3a3b187bedb1ae90d4a5ac61cb75e09482f46f45366ed7cbfe5a177a1d6c4a861e5704c70479bf58e139c432901c2fd69481ef4acfdb97a52"
+        }
+    ]
+}

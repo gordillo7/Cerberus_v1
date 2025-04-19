@@ -297,8 +297,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("fullScanTarget").value = ""
     scanConsole.clear()
-    scanConsole.addMessage(`[*] Starting full scan for ${target}...`)
-    showToast("info", "Scan Started", `Starting full scan for ${target}`)
+    scanConsole.addMessage(`[*] Starting scan for ${target}...`)
+    showToast("info", "Scan Started", `Starting scan for ${target}`)
 
     if (isComprehensive) {
       formData.append("comprehensive", "true")
@@ -357,7 +357,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     projectScanConsole.clear()
-    projectScanConsole.addMessage(`[*] Starting full scan for ${target}...`)
+    projectScanConsole.addMessage(`[*] Starting scan for ${target}...`)
     showToast("info", "Scan Started", `Starting scan for project target: ${target}`)
 
     try {
