@@ -1,8 +1,5 @@
 ROADMAP GENERAL:
-- Chatbot IA con preguntas predefinidas por cada proyecto (API de Gemini).
-    # Que aparezca "Token Set" y los puntos en el placeholder al igual que
-      el resto de tokens (el app.py ya esta adaptado para esto, faltaria
-      el script.js).
+- Chatbot IA por cada proyecto (API de Gemini).
 - Generacion de reportes.
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
@@ -11,6 +8,7 @@ AVANCES:
 - Funcionalidad de "Projects".
 - Opcion de "Comprehensive scan" (Nuclei con todos los subdominios, feroxbuster depth 2).
 - Opcion de "Proxy" en la pestaña de "Settings" (compatible con WPScan).
+- Inicio Chatbot IA (obtener token, elegir modelo: flash 2.0, card para token en "Settings").
 
 DUDAS:
 

@@ -846,6 +846,8 @@ document.addEventListener("DOMContentLoaded", () => {
       tokenForm.addEventListener("submit", async (event) => {
         event.preventDefault()
         const tokenStatus = document.getElementById(statusId)
+        const token = tokenInput.value.trim()
+        if (!token) return
 
         try {
           const response = await fetch(`/api/settings/${tokenName}-token`, {
@@ -853,7 +855,7 @@ document.addEventListener("DOMContentLoaded", () => {
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ token: tokenInput.value }),
+            body: JSON.stringify({ token: token }),
           })
 
           const data = await response.json()
@@ -1274,16 +1276,28 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Setup Gemini token form
   function setupGeminiTokenForm() {
-    const form = document.getElementById("geminiApiKeyForm");
-    const input = document.getElementById("geminiApiKey");
-    const tokenStatus = document.getElementById("geminiApiKeyStatus");
-    const tokenSetIndicator = document.getElementById("geminiApiKeySetIndicator");
+    const form = document.getElementById("geminiApiKeyForm")
+    const input = document.getElementById("geminiApiKey")
+    const tokenStatus = document.getElementById("geminiApiKeyStatus")
+    const tokenSetIndicator = document.getElementById("geminiApiKeySetIndicator")
 
-    if (form && input) {
+    if (form && input && tokenSetIndicator) {
+      // Load saved token on page load
+      fetch("/api/settings/gemini-token")
+      .then(response => response.json())
+      .then(data => {
+        if (data.token && data.token.trim() !== "") {
+          input.placeholder = "••••••••••••••••••••••••••"
+          tokenSetIndicator.style.display = "inline-block"
+        }
+      })
+      .catch((error) => console.error("Error loading Gemini token:", error))
+
+      // Handle token form submission
       form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        const token = input.value.trim();
-        if (!token) return;
+        event.preventDefault()
+        const token = input.value.trim()
+        if (!token) return
 
         try {
           const response = await fetch("/api/settings/gemini-token", {
@@ -1292,55 +1306,58 @@ document.addEventListener("DOMContentLoaded", () => {
               "Content-Type": "application/json"
             },
             body: JSON.stringify({ token })
-          });
-          const data = await response.json();
+          })
+          const data = await response.json()
           if (response.ok) {
-            input.value = "";
-            input.placeholder = "••••••••••••••••••••••••••";
-            tokenSetIndicator.style.display = "inline-block";
-            tokenStatus.textContent = data.message || "Token saved successfully";
-            tokenStatus.className = "token-status success";
+            input.value = ""
+            input.placeholder = "••••••••••••••••••••••••••"
+            tokenSetIndicator.style.display = "inline-block"
+            tokenStatus.textContent = data.message || "Token saved successfully"
+            tokenStatus.className = "token-status success"
+            showToast("success", "Token Saved", `Gemini API token has been saved`)
           } else {
-            tokenStatus.textContent = data.error || "Error saving token";
-            tokenStatus.className = "token-status error";
+            tokenStatus.textContent = data.error || "Error saving token"
+            tokenStatus.className = "token-status error"
+            showToast("error", "Error", `Failed to save Gemini API token`)
           }
-          tokenStatus.style.display = "block";
+          tokenStatus.style.display = "block"
           setTimeout(() => {
-            tokenStatus.style.display = "none";
-          }, 3000);
+            tokenStatus.style.display = "none"
+          }, 3000)
         } catch (error) {
-          console.error("Error saving Gemini token:", error);
-          tokenStatus.textContent = "An error occurred while saving the token.";
-          tokenStatus.className = "token-status error";
-          tokenStatus.style.display = "block";
+          console.error("Error saving Gemini token:", error)
+          tokenStatus.textContent = "An error occurred while saving the token."
+          tokenStatus.className = "token-status error"
+          tokenStatus.style.display = "block"
+          showToast("error", "Error", `Failed to save Gemini API token`)
         }
-      });
+      })
     }
   }
 
   // Toggle Gemini API card
-  const geminiToggleBtn = document.querySelector("button.toggle-btn[aria-controls='geminiApiContent']");
-  const geminiContent = document.getElementById("geminiApiContent");
+  const geminiToggleBtn = document.querySelector("button.toggle-btn[aria-controls='geminiApiContent']")
+  const geminiContent = document.getElementById("geminiApiContent")
 
   if (geminiToggleBtn && geminiContent) {
     geminiToggleBtn.addEventListener("click", function () {
-      const expanded = this.getAttribute("aria-expanded") === "true";
-      this.setAttribute("aria-expanded", !expanded);
+      const expanded = this.getAttribute("aria-expanded") === "true"
+      this.setAttribute("aria-expanded", !expanded)
 
       if (expanded) {
-        geminiContent.classList.remove("expanded");
+        geminiContent.classList.remove("expanded")
         // Wait for transition to complete before hiding
         setTimeout(() => {
-          geminiContent.style.display = "none";
-        }, 300);
+          geminiContent.style.display = "none"
+        }, 300)
       } else {
-        geminiContent.style.display = "block";
+        geminiContent.style.display = "block"
         // Small delay to ensure display:block is applied first
         setTimeout(() => {
-          geminiContent.classList.add("expanded");
-        }, 10);
+          geminiContent.classList.add("expanded")
+        }, 10)
       }
-    });
+    })
   }
 
   // Show Page

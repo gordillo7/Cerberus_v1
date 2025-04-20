@@ -801,7 +801,7 @@ code {
   background-color: var(--surface-1);
   border-radius: var(--border-radius-lg);
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--border);
   transition: transform var(--transition-fast), box-shadow var(--transition-fast);
