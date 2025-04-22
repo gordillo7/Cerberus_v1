@@ -22,7 +22,7 @@ def get_stats():
     reports_count = len(list(Path('reports').glob('*.pdf'))) + len(list(Path('projects').glob('*/reports/*.pdf')))
     modules_count = len(
         [f for f in os.listdir('modules') if f.endswith('.py') and f != '__init__.py' and f != 'generate_report.py'])
-    clients_count = len([project for project in os.listdir('projects') if os.path.isdir(os.path.join('projects', project))])
+    clients_count = len([f for f in os.listdir('projects') if f.endswith('.json')])
     return jsonify({
         'reports_count': reports_count,
         'modules_count': modules_count,
