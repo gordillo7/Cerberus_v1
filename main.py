@@ -28,11 +28,11 @@ def main():
     except ValueError:
         run_dns_recon(target_clean)
         run_osint_mail(target_clean)
+        run_http_subdomain(target_clean)
     if os.path.exists(f"logs/{target_clean}/nmap/ports.txt"):
         with open(f"logs/{target_clean}/nmap/ports.txt", "r") as f:
             ports = f.read().splitlines()
             if "80" in ports:
-                run_http_subdomain(target_clean)
                 if "-ex" in sys.argv:
                     run_http_webscan(target_clean, True)
                 else:
