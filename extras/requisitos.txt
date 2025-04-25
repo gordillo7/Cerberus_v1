@@ -12,6 +12,9 @@ pip install intelx (Intelx)
 leakcheck
 re
 shutil
+pip install -q -U google-generativeai
+from PyPDF2 import PdfReader
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> (html)
 
 #Herramientas
 nmap

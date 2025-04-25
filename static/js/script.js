@@ -674,6 +674,20 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("scan-target").textContent = currentProject.target
     document.getElementById("project-target-display").textContent = currentProject.target
 
+    const chatMessages = document.getElementById("chat-messages")
+    if (chatMessages) {
+      chatMessages.innerHTML = `
+        <div class="message bot-message">
+          <div class="message-avatar">
+            <span class="material-icons-round">smart_toy</span>
+          </div>
+          <div class="message-content">
+            <p>Hello! I'm Orthrus, your AI assistant. I can help you analyze security findings and answer questions about your target. How can I assist you today?</p>
+          </div>
+        </div>
+      `
+    }
+
     // Reset to scanner tab
     document.querySelectorAll(".tab-btn").forEach((btn) => btn.classList.remove("active"))
     document.querySelectorAll(".tab-pane").forEach((pane) => pane.classList.remove("active"))
@@ -901,9 +915,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function sendMessage() {
     const message = chatInput.value.trim()
-    if (!message) return
+    if (!message || !currentProject || !currentProject.id) return
 
-    // Add user message to chat
     const time = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
     chatMessages.innerHTML += `
       <div class="message user-message">
@@ -920,22 +933,45 @@ document.addEventListener("DOMContentLoaded", () => {
     chatInput.value = ""
     chatMessages.scrollTop = chatMessages.scrollHeight
 
-    // Simulate bot response
-    setTimeout(() => {
-      const botTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-      chatMessages.innerHTML += `
-        <div class="message bot-message">
-          <div class="message-avatar">
-            <span class="material-icons-round">smart_toy</span>
+    fetch(`/api/projects/${currentProject.id}/chat`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message })
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const html = marked.parse(data.response || "*No response.*")
+        const botTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+        chatMessages.innerHTML += `
+          <div class="message bot-message">
+            <div class="message-avatar">
+              <span class="material-icons-round">smart_toy</span>
+            </div>
+            <div class="message-content">
+              <p>${html}</p>
+              <span class="message-time">${botTime}</span>
+            </div>
           </div>
-          <div class="message-content">
-            <p>I'm sorry, the AI assistant is not fully implemented yet. This feature will be available in a future update!</p>
-            <span class="message-time">${botTime}</span>
+        `
+        chatMessages.scrollTop = chatMessages.scrollHeight
+      })
+      .catch((err) => {
+        console.error("Error:", err)
+        const botTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
+        chatMessages.innerHTML += `
+          <div class="message bot-message">
+            <div class="message-avatar">
+              <span class="material-icons-round">smart_toy</span>
+            </div>
+            <div class="message-content">
+              <p>Error processing your request.</p>
+              <span class="message-time">${botTime}</span>
+            </div>
           </div>
-        </div>
-      `
-      chatMessages.scrollTop = chatMessages.scrollHeight
-    }, 1000)
+        `
+      })
   }
 
   if (sendButton) {

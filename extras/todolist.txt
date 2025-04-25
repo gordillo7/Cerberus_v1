@@ -4,11 +4,6 @@ ROADMAP GENERAL:
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
 AVANCES:
-- Mejora de la interfaz grafica.
-- Funcionalidad de "Projects".
-- Opcion de "Comprehensive scan" (Nuclei con todos los subdominios, feroxbuster depth 2).
-- Opcion de "Proxy" en la pestaña de "Settings" (compatible con WPScan).
-- Inicio Chatbot IA (obtener token, elegir modelo: flash 2.0, card para token en "Settings").
 
 DUDAS:
 

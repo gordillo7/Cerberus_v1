@@ -2,7 +2,9 @@ from flask import Flask, render_template, jsonify, request, Response, send_from_
 from pathlib import Path
 from typing import cast
 import shutil
-import os, signal, subprocess, json, datetime, io
+import os, signal, subprocess, json, datetime, io, re
+import google.generativeai as genai
+from PyPDF2 import PdfReader
 
 app = Flask(__name__)
 app.current_scan_process = None
@@ -341,6 +343,81 @@ def manage_gemini_token():
         else:
             token = ""
         return jsonify({"token": token}), 200
+
+def get_gemini_key():
+    config_file = Path('config/gemini_token.json')
+    if config_file.exists():
+        with open(config_file, "r") as f:
+            token_data = json.load(f)
+        return token_data.get("gemini_api_key", "")
+    return ""
+
+@app.route("/api/projects/<project_id>/chat", methods=["POST"])
+def project_chat(project_id):
+    user_input = request.json.get("message", "").strip()
+    if not user_input:
+        return jsonify({"error": "Empty message"}), 400
+
+    gemini_key = get_gemini_key()
+    if not gemini_key:
+        return jsonify({"error": "Gemini API key not set"}), 400
+
+    genai.configure(api_key=gemini_key)
+
+    project_file = Path(f"projects/{project_id}.json")
+    if not project_file.exists():
+        return jsonify({"error": "Project not found"}), 404
+
+    with open(project_file, 'r') as f:
+        project_data = json.load(f)
+
+    target = project_data.get("target", "").replace("/", "").replace(":", "")
+    if not target:
+        return jsonify({"error": "Target not found for project"}), 400
+
+    # Last report versioning
+    base_report_dir = Path(f"projects/{project_id}/reports")
+    pattern = re.compile(r"v(\d+)" + re.escape(target) + r"\.pdf$")
+    existing_versions = []
+
+    for fname in os.listdir(base_report_dir):
+        match = pattern.match(fname)
+        if match:
+            existing_versions.append((int(match.group(1)), fname))
+
+    if not existing_versions:
+        return jsonify({"error": "No versioned reports found for this project."}), 404
+
+    latest_version, latest_filename = max(existing_versions, key=lambda x: x[0])
+    latest_report_path = base_report_dir / latest_filename
+
+    context = ""
+    try:
+        reader = PdfReader(str(latest_report_path))
+        text = "\n".join([page.extract_text() for page in reader.pages if page.extract_text()])
+        context += f"\n\n--- Report: {latest_filename} ---\n{text[:3000]}"
+    except Exception as e:
+        return jsonify({"error": f"Failed to read PDF: {e}"}), 500
+
+    prompt = f"""
+You are a cybersecurity assistant integrated into an auditing tool. Below is the content of the latest report generated for this project:
+
+{context}
+
+The user has asked the following about the target or its weaknesses:
+\"{user_input}\"
+
+Provide a useful and detailed response.
+"""
+
+    try:
+        model = genai.GenerativeModel("gemini-2.0-flash")
+        response = model.generate_content(prompt)
+        return jsonify({"response": response.text})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
 
 
 if __name__ == '__main__':
