@@ -395,7 +395,7 @@ def project_chat(project_id):
     try:
         reader = PdfReader(str(latest_report_path))
         text = "\n".join([page.extract_text() for page in reader.pages if page.extract_text()])
-        context += f"\n\n--- Report: {latest_filename} ---\n{text[:3000]}"
+        context += f"\n\n--- Report: {latest_filename} ---\n{text[:10000]}"
     except Exception as e:
         return jsonify({"error": f"Failed to read PDF: {e}"}), 500
 

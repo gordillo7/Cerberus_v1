@@ -933,6 +933,20 @@ document.addEventListener("DOMContentLoaded", () => {
     chatInput.value = ""
     chatMessages.scrollTop = chatMessages.scrollHeight
 
+    const loadingMessageId = `loading-msg-${Date.now()}`
+    chatMessages.innerHTML += `
+      <div class="message bot-message" id="${loadingMessageId}">
+        <div class="message-avatar">
+          <span class="material-icons-round">smart_toy</span>
+        </div>
+        <div class="message-content typing-indicator">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
+    `
+    chatMessages.scrollTop = chatMessages.scrollHeight
+
+
     fetch(`/api/projects/${currentProject.id}/chat`, {
       method: "POST",
       headers: {
@@ -942,19 +956,22 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const html = marked.parse(data.response || "*No response.*")
+        const html = marked.parse(data.response || "**No reports found for this target. Run a scan first.**")
         const botTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
-        chatMessages.innerHTML += `
-          <div class="message bot-message">
+
+        const loadingEl = document.getElementById(loadingMessageId)
+        if (loadingEl) {
+          loadingEl.innerHTML = `
             <div class="message-avatar">
               <span class="material-icons-round">smart_toy</span>
             </div>
             <div class="message-content">
-              <p>${html}</p>
+              <div>${html}</div>
               <span class="message-time">${botTime}</span>
             </div>
-          </div>
-        `
+          `
+        }
+
         chatMessages.scrollTop = chatMessages.scrollHeight
       })
       .catch((err) => {

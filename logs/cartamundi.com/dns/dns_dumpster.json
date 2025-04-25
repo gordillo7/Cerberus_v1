@@ -1,0 +1,627 @@
+{
+  "a": [
+    {
+      "host": "auth1.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.141",
+          "ptr": "81-188-106-141.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "cardgamemaker.cartamundi.com",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "52.30.0.0/15",
+          "banners": {
+            "http": {
+              "apps": [
+                "Nginx:1.18.0"
+              ],
+              "server": "nginx/1.18.0",
+              "title": "Cartamundi Digital"
+            },
+            "https": {
+              "alt_n": [
+                "boerdereis.be",
+                "deboerdereis.be",
+                "fermidables.be",
+                "lesfermidables.be",
+                "www.boerdereis.be",
+                "www.deboerdereis.be",
+                "www.fermidables.be",
+                "www.lesfermidables.be"
+              ],
+              "apps": [
+                "Nginx:1.18.0"
+              ],
+              "cn": "boerdereis.be",
+              "redirect_location": "http://www.deboerdereis.be//",
+              "server": "nginx/1.18.0",
+              "title": "301 Moved Permanently"
+            },
+            "ip": "52.30.229.144"
+          },
+          "country": "Ireland",
+          "country_code": "IE",
+          "ip": "52.30.229.144",
+          "ptr": "ec2-52-30-229-144.eu-west-1.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "customplayingcards.cartamundi.com",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "52.30.0.0/15",
+          "banners": {
+            "http": {
+              "apps": [
+                "Nginx:1.18.0"
+              ],
+              "server": "nginx/1.18.0",
+              "title": "Cartamundi Digital"
+            },
+            "https": {
+              "alt_n": [
+                "boerdereis.be",
+                "deboerdereis.be",
+                "fermidables.be",
+                "lesfermidables.be",
+                "www.boerdereis.be",
+                "www.deboerdereis.be",
+                "www.fermidables.be",
+                "www.lesfermidables.be"
+              ],
+              "apps": [
+                "Nginx:1.18.0"
+              ],
+              "cn": "boerdereis.be",
+              "redirect_location": "http://www.deboerdereis.be//",
+              "server": "nginx/1.18.0",
+              "title": "301 Moved Permanently"
+            },
+            "ip": "52.30.229.144"
+          },
+          "country": "Ireland",
+          "country_code": "IE",
+          "ip": "52.30.229.144",
+          "ptr": "ec2-52-30-229-144.eu-west-1.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "files.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "banners": {
+            "ftp": {
+              "alt_n": [
+                "*.cartamundi.com",
+                "files.cartamundi.com",
+                "fs.cartamundi.com",
+                "remote.cartamundi.com",
+                "webapproval.cartamundi.com",
+                "sharefile.cartamundi.com",
+                "monitor.cartamundi.com",
+                "owa.cartamundi.com",
+                "mail.cartamundi.com",
+                "autodiscover.cartamundi.com",
+                "cartamundi.com"
+              ],
+              "banner": "20-Cartamundi FileTransfer Server v15.5 ready. 20- 20-UNAUTHORIZED ACES IS FORBIDEN 20-AND WIL BE PR",
+              "cn": "*.cartamundi.com"
+            },
+            "ftp990": {
+              "alt_n": [
+                "*.cartamundi.com",
+                "files.cartamundi.com",
+                "fs.cartamundi.com",
+                "remote.cartamundi.com",
+                "webapproval.cartamundi.com",
+                "sharefile.cartamundi.com",
+                "monitor.cartamundi.com",
+                "owa.cartamundi.com",
+                "mail.cartamundi.com",
+                "autodiscover.cartamundi.com",
+                "cartamundi.com"
+              ],
+              "banner": "20-Cartamundi FileTransfer Server v15.5 ready. 20- 20-UNAUTHORIZED ACES IS FORBIDEN 20-AND WIL BE PR",
+              "cn": "*.cartamundi.com"
+            },
+            "https": {
+              "alt_n": [
+                "*.cartamundi.com",
+                "files.cartamundi.com",
+                "fs.cartamundi.com",
+                "remote.cartamundi.com",
+                "webapproval.cartamundi.com",
+                "sharefile.cartamundi.com",
+                "monitor.cartamundi.com",
+                "owa.cartamundi.com",
+                "mail.cartamundi.com",
+                "autodiscover.cartamundi.com",
+                "cartamundi.com"
+              ],
+              "cn": ".cartamundi.com",
+              "server": "Serv-U/15.5.0.107",
+              "title": "WebClient"
+            },
+            "ip": "81.188.106.139",
+            "ssh": {
+              "banner": "SSH-2.0-2.0"
+            }
+          },
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.139",
+          "ptr": "81-188-106-139.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "fs.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.156",
+          "ptr": "81-188-106-156.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "info.cartamundi.com",
+      "ips": [
+        {
+          "asn": "34762",
+          "asn_name": "COMBELL-AS, BE",
+          "asn_range": "79.174.128.0/21",
+          "banners": {
+            "http": {
+              "apps": [
+                "WordPress:5.8.2",
+                "MySQL",
+                "PHP",
+                "Apache HTTP Server",
+                "Yoast SEO:17.9",
+                "ZURB Foundation",
+                "W3 Total Cache",
+                "WPML:3.9.3"
+              ],
+              "generator": "WordPress 5.8.2",
+              "redirect_location": "http://www.cartamundi.com/our-locations",
+              "server": "Apache",
+              "title": "302 Found"
+            },
+            "https": {
+              "alt_n": [
+                "cartamundi.com",
+                "www.cartamundi.com"
+              ],
+              "apps": [
+                "WordPress:5.8.2",
+                "MySQL",
+                "PHP",
+                "Apache HTTP Server",
+                "Yoast SEO:17.9",
+                "ZURB Foundation",
+                "W3 Total Cache",
+                "WPML:3.9.3"
+              ],
+              "cn": "cartamundi.com",
+              "generator": "WordPress 5.8.2",
+              "redirect_location": "http://www.cartamundi.com/our-locations",
+              "server": "Apache",
+              "title": "302 Found"
+            },
+            "ip": "79.174.129.100"
+          },
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "79.174.129.100",
+          "ptr": "79.174.129.100.static.hosted.by.combell.com"
+        }
+      ]
+    },
+    {
+      "host": "mail.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.136",
+          "ptr": "81-188-106-136.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "owa.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.136",
+          "ptr": "81-188-106-136.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "qr.cartamundi.com",
+      "ips": [
+        {
+          "asn": "34762",
+          "asn_name": "COMBELL-AS, BE",
+          "asn_range": "79.174.128.0/21",
+          "banners": {
+            "http": {
+              "apps": [
+                "WordPress:5.8.2",
+                "MySQL",
+                "PHP",
+                "Apache HTTP Server",
+                "Yoast SEO:17.9",
+                "ZURB Foundation",
+                "W3 Total Cache",
+                "WPML:3.9.3"
+              ],
+              "generator": "WordPress 5.8.2",
+              "redirect_location": "http://www.cartamundi.com/our-locations",
+              "server": "Apache",
+              "title": "302 Found"
+            },
+            "https": {
+              "alt_n": [
+                "cartamundi.com",
+                "www.cartamundi.com"
+              ],
+              "apps": [
+                "WordPress:5.8.2",
+                "MySQL",
+                "PHP",
+                "Apache HTTP Server",
+                "Yoast SEO:17.9",
+                "ZURB Foundation",
+                "W3 Total Cache",
+                "WPML:3.9.3"
+              ],
+              "cn": "cartamundi.com",
+              "generator": "WordPress 5.8.2",
+              "redirect_location": "http://www.cartamundi.com/our-locations",
+              "server": "Apache",
+              "title": "302 Found"
+            },
+            "ip": "79.174.129.100"
+          },
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "79.174.129.100",
+          "ptr": "79.174.129.100.static.hosted.by.combell.com"
+        }
+      ]
+    },
+    {
+      "host": "remote.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "banners": {
+            "https": {
+              "alt_n": [
+                "*.cartamundi.com",
+                "files.cartamundi.com",
+                "fs.cartamundi.com",
+                "remote.cartamundi.com",
+                "webapproval.cartamundi.com",
+                "sharefile.cartamundi.com",
+                "monitor.cartamundi.com",
+                "owa.cartamundi.com",
+                "mail.cartamundi.com",
+                "autodiscover.cartamundi.com",
+                "cartamundi.com"
+              ],
+              "apps": [
+                "Microsoft HTTPAPI:2.0"
+              ],
+              "cn": ".cartamundi.com",
+              "server": "ScreenConnect/24.2.11.9022-3841635541 Microsoft-HTTPAPI/2.0",
+              "title": "ConnectWise ScreenConnect Remote Sup"
+            },
+            "ip": "81.188.106.145"
+          },
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.145",
+          "ptr": "81-188-106-145.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "sharefile.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.156",
+          "ptr": "81-188-106-156.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "verenigingen.cartamundi.com",
+      "ips": [
+        {
+          "asn": "16509",
+          "asn_name": "AMAZON-02",
+          "asn_range": "52.208.0.0/13",
+          "banners": {
+            "http": {
+              "apps": [
+                "Nginx:1.18.0"
+              ],
+              "server": "nginx/1.18.0",
+              "title": "Test Page for the Nginx HTTP Server "
+            },
+            "https": {
+              "apps": [
+                "Apache HTTP Server"
+              ]
+            },
+            "ip": "52.209.167.170"
+          },
+          "country": "Ireland",
+          "country_code": "IE",
+          "ip": "52.209.167.170",
+          "ptr": "ec2-52-209-167-170.eu-west-1.compute.amazonaws.com"
+        }
+      ]
+    },
+    {
+      "host": "webapproval.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.148",
+          "ptr": "81-188-106-148.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "webmail.cartamundi.com",
+      "ips": [
+        {
+          "asn": "3257",
+          "asn_name": "GTT-BACKBONE GTT",
+          "asn_range": "81.188.0.0/16",
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "81.188.106.136",
+          "ptr": "81-188-106-136.easynet.be"
+        }
+      ]
+    },
+    {
+      "host": "www.cartamundi.com",
+      "ips": [
+        {
+          "asn": "34762",
+          "asn_name": "COMBELL-AS, BE",
+          "asn_range": "79.174.128.0/21",
+          "banners": {
+            "http": {
+              "apps": [
+                "WordPress:5.8.2",
+                "MySQL",
+                "PHP",
+                "Apache HTTP Server",
+                "Yoast SEO:17.9",
+                "ZURB Foundation",
+                "W3 Total Cache",
+                "WPML:3.9.3"
+              ],
+              "generator": "WordPress 5.8.2",
+              "redirect_location": "http://www.cartamundi.com/our-locations",
+              "server": "Apache",
+              "title": "302 Found"
+            },
+            "https": {
+              "alt_n": [
+                "cartamundi.com",
+                "www.cartamundi.com"
+              ],
+              "apps": [
+                "WordPress:5.8.2",
+                "MySQL",
+                "PHP",
+                "Apache HTTP Server",
+                "Yoast SEO:17.9",
+                "ZURB Foundation",
+                "W3 Total Cache",
+                "WPML:3.9.3"
+              ],
+              "cn": "cartamundi.com",
+              "generator": "WordPress 5.8.2",
+              "redirect_location": "http://www.cartamundi.com/our-locations",
+              "server": "Apache",
+              "title": "302 Found"
+            },
+            "ip": "79.174.129.100"
+          },
+          "country": "Belgium",
+          "country_code": "BE",
+          "ip": "79.174.129.100",
+          "ptr": "79.174.129.100.static.hosted.by.combell.com"
+        }
+      ]
+    }
+  ],
+  "cname": [],
+  "mx": [
+    {
+      "host": "10 de-smtp-inbound-1.mimecast.com",
+      "ips": [
+        {
+          "asn": "39588",
+          "asn_name": "MIMECAST-DE, GB",
+          "asn_range": "194.104.110.0/23",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "194.104.110.22",
+          "ptr": "de-smtp-inbound-2.mimecast.com"
+        }
+      ]
+    },
+    {
+      "host": "10 de-smtp-inbound-2.mimecast.com",
+      "ips": [
+        {
+          "asn": "39588",
+          "asn_name": "MIMECAST-DE, GB",
+          "asn_range": "194.104.108.0/23",
+          "country": "Germany",
+          "country_code": "DE",
+          "ip": "194.104.108.22",
+          "ptr": "de-smtp-inbound-1.mimecast.com"
+        }
+      ]
+    }
+  ],
+  "ns": [
+    {
+      "host": "ns1.101domain.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "162.159.24.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "162.159.24.202"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "162.159.24.202",
+          "ptr": "ns1.101domain.com"
+        }
+      ]
+    },
+    {
+      "host": "ns2.101domain.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "162.159.25.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "162.159.25.156"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "162.159.25.156",
+          "ptr": "ns2.101domain.com"
+        }
+      ]
+    },
+    {
+      "host": "ns5.101domain.com",
+      "ips": [
+        {
+          "asn": "13335",
+          "asn_name": "CLOUDFLARENET",
+          "asn_range": "162.159.24.0/24",
+          "banners": {
+            "http": {
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "http8080": {
+              "alt_n": [],
+              "apps": [
+                "Cloudflare"
+              ],
+              "server": "cloudflare",
+              "title": "Direct IP access not allowed "
+            },
+            "ip": "162.159.24.202"
+          },
+          "country": "unknown",
+          "country_code": "??",
+          "ip": "162.159.24.202",
+          "ptr": "ns1.101domain.com"
+        }
+      ]
+    }
+  ],
+  "total_a_recs": 15,
+  "txt": [
+    "\"ZA=3RwCEy8Me7/ye30JYUX5vw==\"",
+    "\"Z73U/pX63O9aiFP+qTsIGMLKn4C7NwZE7mAINSONeOdTGBaxyLSUC9ISuBHOHWOiFMGjgI8NNv0IfLS2FvoNfg==\"",
+    "\"google-site-verification=lg3ljNynhzx11cg3UGcYRF8MM6GY2loU2JCXknDLxas\"",
+    "\"miro-verification=4bb046374054488e82dfccb6aeddbd03d68ea189\"",
+    "\"Sendinblue-code:9132d93907e19043a19869ccaa4adf85\"",
+    "\"v=spf1 ip4:54.75.233.119/32 ip4:52.17.229.211/32 ip4:81.188.106.128/27 ip4:81.188.93.64/27 ip4:84.198.249.0/28 ip4:151.181.49.64/27 include:de._netblocks.mimecast.com include:spf.mandrillapp.com include:servers.mcsv.net include:spf.sendinblue.com include:\" \"spf.protection.outlook.com include:_spf.salesforce.com -all\""
+  ]
+}

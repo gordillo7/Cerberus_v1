@@ -1,0 +1,27 @@
+A total of 8 email addresses were found for the target 'cartamundi.com':
+bart.brosens@cartamundi.com
+luc.van.gestel@cartamundi.com
+stijn.vankerckhoven@cartamundi.com
+Nora.Fiebig@cartamundi.com
+mateusz.magdziarz@cartamundi.com
+kristien.camps@cartamundi.com
+peter.donies@cartamundi.com
+lander.verboven@cartamundi.com
+
+Out of these, 4 have been pwned in various security breaches
+
+- Nora.Fiebig@cartamundi.com has been pwned in 1 breach(es).
+  Compromised fields: password.
+  Breaches: MySpace.com (2008-07).
+
+- kristien.camps@cartamundi.com has been pwned in 4 breach(es).
+  Compromised fields: country, first_name, dob, username, last_name, password.
+  Breaches: Deezer.com (2019-09), Badoo.com (2013-07).
+
+- peter.donies@cartamundi.com has been pwned in 1 breach(es).
+  Compromised fields: first_name, province, address, last_name, country, phone, city, zip.
+  Breaches: Pureincubation.com (2024-08).
+
+- lander.verboven@cartamundi.com has been pwned in 2 breach(es).
+  Compromised fields: state, country, name, city, username.
+  Breaches: Canva.com (2019-05), Apollo (2018-07).
