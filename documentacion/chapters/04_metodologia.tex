@@ -1,27 +1,95 @@
 \chapter{\methodologyname}
-1. Escaneo de puertos y servicios: Nmap, obteniendo los puestos abiertos del objetivo, los servicios que se encuentran corriendo en esos puertos y la version de los mismos.
-En caso de tratarse de un dominio en lugar de una direccion IP: 2. reconocimiento de DNS con 3 herramientas: dnsdumpster (para obtener informacion de los registros DNS principales (mx, para los proveedores de correo, ns, para los provedores de DNS y txt, para obtener metainformacion de los dominios)), mxtoolbox (para obtener informacion sobre el registro DMARC, que permite proteger el dominio de ataques de email spoofing) y apininja (para ejecutar "whois" y obtener informacion sobre la creacion del dominio, propietario, fecha de expiracion del mismo y mas metainformacion). 
-3. Osint de direcciones de correo: mediante 2 herramientas: IntelligenceX (para obtener direcciones de correo electronico asociadas al dominio que han sido filtradas) y leakcheck (para comprobar, en caso de que se haya obtenido alguna direccion de correo, si ha sido expuesta en alguna brecha de seguridad y que campos han sido expuestos y en que brecha en caso de que haya sido expuesta).
-4. Enumeracion de subdominios, mediante la herramienta subfinder, la cual permite obtener subdominios asociados a un dominio usando diferentes motores de busqueda. Tras la enumeracion de subdominios, se utiliza "httpx" para comprobar si los subdominios encontrados estan activos, comprobando el codigo de respuesta de los mismos.
-Tras esto, se procede a la evaluacion de los puertos abiertos. En caso de tener el puerto 80 abierto:
-5. Escaneo de vulnerabilidades web mediante nuclei, la cual permite escanear el objetivo en busca de vulnerabilidades web y debilidades. En la herramienta implementada en este trabajo se ofrece una opcion "escaneo exhaustivo", la cual al seleccionarla lanza nuclei para todos los subdominios activos enumerados en la fase de enumeracion de subdominios, ademas del propio objetivo. Si esta opcion no se selecciona, la herramienta por defecto lanza nuclei solo para el objetivo.
-6. Deteccion de "CMS" mediante la herramienta "WhatWeb", la cual permite detectar el CMS utilizado por la web del objetivo, en caso de tener.
-7. Captura de pantalla del sitio web, usando "pyppeteer", una libreria de python que permite interactuar con el navegador "headless" de Google Chrome. Esto permite obtener una captura de pantalla del sitio web la cual sera adjuntada al reporte final.
-8. Enumeracion de directorios y archivos, mediante la herramienta "feroxbuster", la cual permite enumerar directorios y archivos en el sitio web del objetivo. Esta herramienta permite obtener una lista de directorios que pueden ser de interes para el auditor. Al activar la opcion de "escaneo exhaustivo", feroxbuster es lanzado en recursividad de nivel 2, lo que permite enumerar directorios dentro de otros. Por defecto, si no se selecciona la opcion de "escaneo exhaustivo" feroxbuster es lanzado en recursividad de nivel 1, la cual solamente enumera directorios en la raiz del sitio web.
-Tras esto, se evalua el "CMS" detectado en la fase de deteccion de CMS. En caso de tratarse de Wordpress:
-9. Enumeracion de wordpress, mediante la herramienta "WPScan". En esta fase se utiliza WPScan para realizar una enumeracion de debilidades, usuarios y plugins del sitio wordpress. Los usuarios enumerados seran guardados en una wordlist que se usara en posteriores fases de la herramienta para la realizacion de ataques de fuerza bruta (comprobacion de credenciales debiles). Por otra parte, para los plugins enumerados, se comprobara si existe algun repositorio publico con el CVE en Github. En caso de existir, el repositorio se clonara a la maquina desde donde se lanza la herramienta.
-10. Fuerza bruta de credenciales en Wordpress, mediante la herramienta "WPScan". En esta fase se utiliza WPScan para realizar un ataque de fuerza bruta, principalmente aprovechandose del recurso xmlrpc, el cual permite realizar este tipo de ataques de manera mas efectiva, evitando medidas de seguridad como captchas o si el recurso "wp-login.php" esta protegido. Para realizar la fuerza bruta, se utiliza la wordlist generada en la fase de enumeracion de usuarios, en caso de existir. En caso de no existir ningun usuario enumerado en el objetivo, se utiliza una wordlist por defecto con las credenciales mas comunes.
-En caso de que el "CMS" detectado sea Joomla:
-11. Enumeracion de Joomla, mediante la herramienta "Joomscan". En esta fase se utiliza Joomscan para realizar una enumeracion de vulnerabilidades y debilidades comunes en sitios Joomla, tales como vulnerabilidades de la version instalada, archivos de backup publicos, archivos de configuracion, etc.
-Por otra parte, en caso de que el puerto 21 este abierto, este puerto es comunmente utilizado para FTP, un servicio que permite transferir archivos entre maquinas. En caso de que el puerto 21 este abierto:
-12. Enumeracion FTP, mediante la libreria de python "ftplib". En esta fase se realiza un reconocimiento completo del servicio FTP. Se comprueba si tiene anonymous login habilitado, lo cual permitiria acceder al servidor FTP sin necesidad de credenciales. Se realiza una fuerza bruta de credenciales, utilizando wordlists personalizadas en caso de haber enumerado usuarios en fases anteriores, como en la de wordpress, o en caso de no haber enumerado ningun usuario, se utiliza una wordlist por defecto con las credenciales mas comunes. En caso de obtener acceso al servidor FTP, se comprueba si se tienen permisos de escritura y, ademas, se vuelca a la maquina local todo el contenido almacenado en el servidor. Ademas, tambien se utiliza la herramienta "searchsploit" para comprobar si existe alguna vulnerabilidad para la version del servicio FTP que esta corriendo.
-Por otro lado, en caso de que el puerto 22 este abierto, este puerto es comunmente utilizado para SSH, un servicio que permite acceder a la consola de la maquina de manera remota. En caso de que el puerto 22 este abierto:
-13. Reconocimiento SSH. En esta fase se realiza un reconocimiento del servicio SSH. En ella, se realizara una fuerza bruta al servicio SSH mediante la herramienta "hydra". La metodologia de fuerza bruta sera la misma que se usa en fases anteriores, utilizando wordlists personalizadas en caso de existir, y en caso contrario utilizando wordlists por defecto. Ademas, se utilizara la herramienta "searchsploit" para comprobar si existe alguna vulnerabilidad para la version del servicio SSH que esta corriendo.
+La herramienta implementada sigue un flujo de trabajo definido que automatiza de forma secuencial las tareas más relevantes en la fase de reconocimiento de una auditoría de seguridad. A continuación, se describen detalladamente cada una de las fases.
 
-14. Finalmente, se generara un reporte pdf con todos los resultados anteriores, facilitando al auditor la tarea de documentar el proceso de auditoria, ademas de ofrecer la informacion de manera estructurada y clara. Ademas, en caso de que el escaneo sea realizado desde un proyecto creado en la herramienta, los reportes generados seran versionados, permitiendo al auditor tener un control de los cambios realizados en el objetivo y la evolucion del mismo.
+\section{Escaneo de puertos y servicios}
 
-Ademas de esto, la herramienta implementa funcionalidades extras como:
-- Un sistema de inteligencia artificial basado en modelos generativos, el cual permite al auditor interactuar con el contexto del escaneo para obtener recomendaciones especificas o definir proximos pasos segun las debilidades detectadas.
-- Modo de "escaneo exhaustivo", el cual permite al auditor realizar un escaneo mas profundo de los objetivos, lanzando las herramientas en recursividad y obteniendo resultados mas completos. Este modo permite obtener una mayor cantidad de informacion, pero tambien realentiza el escaneo.
-- Configuracion de proxy: el usuario puede configurar un proxy desde la pestaña "Settings" de la interfaz grafica, el cual sera utilizado por WPScan para realizar tanto el escaneo de vulnerabilidades como la fuerza bruta. Esto ayudar a evitar bloqueos por parte del objetivo.
-- Sistema de proyectos: el usuario puede crear proyectos desde la pestaña "Projects" de la interfaz grafica, facilitando la gestion de los objetivos y permitiendo tener un control de los cambios realizados en un objetivo, ya que los reportes generados por escaneos desde un proyecto seran versionados.
+La primera fase consiste en la ejecución de un escaneo con \texttt{Nmap}, una herramienta ampliamente utilizada en entornos profesionales. Nmap permite identificar los puertos abiertos en el objetivo, los servicios que están corriendo sobre esos puertos y la versión específica de dichos servicios. Esta información resulta crítica para detectar superficies expuestas, planificar el resto del análisis y orientar futuras fases como la enumeración de vulnerabilidades o fuerza bruta de credenciales.
+
+\section{Enumeración de dominio}
+
+En caso de que el objetivo introducido sea un dominio (en lugar de una dirección IP), se activan tres módulos adicionales que permiten obtener información detallada sobre el mismo.
+
+\subsection{Reconocimiento DNS}
+
+Este módulo se encarga de realizar un reconocimiento pasivo del dominio, recopilando información pública y registros DNS. Se utilizan varias herramientas para llevar a cabo esta tarea:
+
+\begin{itemize}
+  \item \texttt{dnsdumpster}: Se encarga de consultar y visualizar registros DNS del dominio, como \texttt{MX} (servidores de correo), \texttt{NS} (servidores de nombres) y \texttt{TXT} (configuraciones SPF, DKIM, etc).
+  \item \texttt{mxtoolbox}: Se utiliza para consultar el registro \texttt{DMARC}, que proporciona mecanismos de protección ante ataques de suplantación de identidad vía correo electrónico.
+  \item \texttt{API Ninja (WHOIS)}: Ejecuta consultas WHOIS para obtener información relacionada con la propiedad del dominio, fechas de creación y expiración, y otros datos relevantes.
+\end{itemize}
+
+\subsection{OSINT de direcciones de correo electrónico}
+
+Tras el análisis DNS, se ejecuta un módulo de OSINT para obtener direcciones de correo electrónico asociadas al dominio, y verificar si estas han sido filtradas en alguna brecha de seguridad:
+
+\begin{itemize}
+  \item \texttt{IntelligenceX}: Busca direcciones de correo filtradas asociadas al dominio en bases de datos públicas.
+  \item \texttt{LeakCheck}: Comprueba si las direcciones encontradas han sido expuestas, en qué brechas concretas, y qué información fue filtrada. Esta herramienta fue elegida tras descartar alternativas como "Have I Been Pwned" o "DeHashed", que requerían suscripción o tenían limitaciones excesivas.
+\end{itemize}
+
+\subsection{Enumeración de subdominios}
+
+Para ampliar la superficie de ataque, se ejecuta \texttt{Subfinder}, una herramienta que utiliza múltiples fuentes para obtener subdominios asociados al dominio objetivo. Posteriormente, se lanza \texttt{Httpx} para verificar cuáles de ellos están activos, comprobando su código de respuesta HTTP.
+
+\section{Reconocimiento web}
+
+Si se detecta que el puerto 80 está abierto, se lanzan una serie de modulos para realizar un reconocimiento exhaustivo del servicio web.
+
+\subsection{Escaneo de vulnerabilidades web}
+
+Se procede a escanear el objetivo con \texttt{Nuclei}, una herramienta moderna, flexible y en constante actualización. Permite identificar vulnerabilidades comunes y debilidades en aplicaciones web. Si el usuario activa el modo de \textit{escaneo exhaustivo}, Nuclei se ejecutará también sobre todos los subdominios encontrados anteriormente.
+
+\subsection{Detección de CMS}
+
+Se utiliza \texttt{WhatWeb} para identificar si el sitio web analizado utiliza un gestor de contenidos (CMS) como WordPress o Joomla. Esta detección permite habilitar fases específicas posteriores, optimizadas para cada plataforma.
+
+\subsection{Captura de pantalla del sitio web}
+
+Para documentar visualmente el estado del objetivo, se emplea la librería \texttt{pyppeteer}, que interactúa con el navegador "headless" de Chrome para tomar una captura del sitio web. Esta imagen se incluye en el informe final.
+
+\subsection{Enumeración de directorios y archivos}
+
+En esta fase se utiliza \texttt{Feroxbuster}, una herramienta moderna con alto rendimiento, recursividad automática y gran capacidad de gestión de respuestas HTTP. Permite enumerar rutas y archivos ocultos que puedan resultar de interés para el auditor. Si se activa el modo de escaneo exhaustivo, la herramienta realiza una recursividad de nivel 2, enumerando directorios dentro de otros.
+
+\subsection{Reconocimiento de WordPress}
+
+Si el CMS detectado es WordPress, se lanza \texttt{WPScan} para enumerar:
+\begin{itemize}
+  \item Usuarios del sitio, que se almacenan en una wordlist para fases posteriores.
+  \item Plugins instalados, que se cruzan con bases de datos públicas para buscar CVEs. Si existe un exploit público en GitHub, se clona automáticamente.
+\end{itemize}
+
+En caso de disponer de usuarios enumerados, se lanza un ataque de fuerza bruta mediante \texttt{WPScan}, apuntando al recurso \texttt{xmlrpc.php}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se encontraron usuarios, se utiliza una wordlist por defecto con credenciales comunes.
+
+\subsection{Reconocimiento de Joomla}
+
+Si se detecta Joomla como CMS, se ejecuta \texttt{Joomscan}, que analiza vulnerabilidades conocidas, archivos de configuración expuestos, copias de seguridad accesibles, y posibles fallos asociados a versiones antiguas del sistema.
+
+\section{Enumeración del servicio FTP}
+
+Si el puerto 21 (FTP) está abierto, se utiliza la librería \texttt{ftplib} para interactuar con el servicio. Se comprueba:
+\begin{itemize}
+  \item Si permite login anónimo.
+  \item Si existen credenciales válidas (mediante fuerza bruta).
+  \item Si se obtienen permisos de lectura/escritura.
+  \item Se descarga el contenido del servidor y se analiza con \texttt{Searchsploit} por si existen vulnerabilidades relacionadas con la versión del servicio.
+\end{itemize}
+
+\section{Reconocimiento del servicio SSH}
+
+Si el puerto 22 está abierto, se lanza un ataque de fuerza bruta con \texttt{Hydra}. Inicialmente se consideró la librería \texttt{paramiko}, pero fue descartada por no estar diseñada para este propósito. Se utilizan las mismas wordlists generadas anteriormente si existen usuarios. Además, se analiza la versión del servicio con \texttt{Searchsploit} para comprobar posibles vulnerabilidades conocidas.
+
+\section{Generación de reportes}
+
+Una vez finalizado el análisis, la herramienta genera un informe en formato PDF con toda la información recopilada, organizada de forma clara y estructurada. Si el escaneo se ha realizado dentro de un proyecto, el informe se versiona automáticamente, permitiendo mantener un historial completo de auditorías sobre el mismo objetivo.
+
+\section{Funcionalidades adicionales}
+
+\begin{itemize}
+  \item \textbf{Asistente de IA}: El sistema integra un modelo generativo (Gemini) que permite al usuario consultar recomendaciones, próximos pasos, análisis de resultados o dudas específicas basadas en el escaneo realizado.
+  \item \textbf{Modo de escaneo exhaustivo}: Amplía la profundidad del análisis activando opciones avanzadas en varias fases. Proporciona más información, aunque incrementa el tiempo total del escaneo.
+  \item \textbf{Configuración de proxy}: El usuario puede configurar manualmente un proxy desde la interfaz gráfica, útil para evadir bloqueos y especialmente integrado con herramientas como \texttt{WPScan}.
+  \item \textbf{Sistema de gestión de proyectos}: Desde la interfaz, el usuario puede crear y gestionar proyectos, permitiendo mantener informes versionados, comparar resultados y documentar la evolución del objetivo.
+\end{itemize}
+
