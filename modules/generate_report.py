@@ -155,23 +155,23 @@ def generate_report(target, flag=None):
             if os.path.isfile(filepath):
                 match filename:
                     case "nmap.txt":
-                        elements.append(Paragraph("Open services", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Open services", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(create_nmap_table(filepath))
                         elements.append(Spacer(1, 24))
                     case "dns_recon.txt":
-                        elements.append(Paragraph("DNS Recon", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("DNS Recon", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("In this section, the information associated with the domain is reported.", styles['Normal']))
-                        elements.append(Spacer(1, 12))
-                        # Process the file: use the first line of each section as Heading2 and the following lines until "#" as normal text
+                        elements.append(Spacer(1, 10))
+                        # Process the file: use the first line of each section as Heading3 and the following lines until "#" as normal text
                         with open(filepath, 'r', encoding='utf-8', errors='ignore') as file:
                             section = []
                             for line in file:
                                 line = line.strip()
                                 if line == "#":
                                     if section:
-                                        elements.append(Paragraph(section[0], styles['Heading2']))
+                                        elements.append(Paragraph(section[0], styles['Heading3']))
                                         elements.append(Spacer(1, 8))
                                         for l in section[1:]:
                                             elements.append(Paragraph(l, styles['Normal']))
@@ -180,19 +180,19 @@ def generate_report(target, flag=None):
                                 else:
                                     section.append(line)
                             if section:
-                                elements.append(Paragraph(section[0], styles['Heading2']))
+                                elements.append(Paragraph(section[0], styles['Heading3']))
                                 elements.append(Spacer(1, 8))
                                 for l in section[1:]:
                                     elements.append(Paragraph(l, styles['Normal']))
-                                elements.append(Spacer(1, 12))
+                                elements.append(Spacer(1, 24))
                     case "http_screenshot.png":
-                        elements.append(Paragraph("Website screenshot", styles['Heading1']))
+                        elements.append(Paragraph("Website screenshot", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
                         elements.append(Spacer(1, 8))
                         elements.append(Image(filepath, width=400, height=300))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Spacer(1, 24))
                     case "http_subdomains.txt":
-                        elements.append(Paragraph("Subdomains", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Subdomains", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("In this section, the subdomains of the target are reported.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         numbered_content = ""
@@ -200,54 +200,63 @@ def generate_report(target, flag=None):
                             for i, line in enumerate(file, 1):
                                 numbered_content += f"{i}. {line.strip()}<br/>"
                         elements.append(Paragraph(numbered_content, styles['Normal']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Spacer(1, 24))
                     case "wordpress_usernames.txt":
-                        elements.append(Paragraph("WordPress Usernames", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
-                        elements.append(Paragraph("This WordPress is vulnerable to user enumeration.", styles['Normal']))
+                        elements.append(Paragraph("WordPress Usernames", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
+                        elements.append(Paragraph("This WordPress is vulnerable to user enumeration. These usernames have been enumerated.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "wordpress_vulnerable_plugins.txt":
-                        elements.append(Paragraph("WordPress Vulnerable Plugins", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("WordPress Vulnerable Plugins", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("This WordPress is vulnerable to outdated plugins.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "wordpress_listing.txt":
-                        elements.append(Paragraph("WordPress Directory Listing", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("WordPress Directory Listing", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "wordpress_credentials.txt":
-                        elements.append(Paragraph("WordPress Credentials", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("WordPress Credentials", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("Valid WordPress credentials have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "ftp_cves.txt":
-                        elements.append(Paragraph("FTP Vulnerabilities", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("FTP Vulnerabilities", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("CVEs for the running FTP version have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "ftp_write_perm.txt":
-                        elements.append(Paragraph("FTP Write Permissions", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("FTP Write Permissions", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "ftp_anonymous.txt":
-                        elements.append(Paragraph("FTP Anonymous Login", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("FTP Anonymous Login", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "ftp_credentials_found.txt":
-                        elements.append(Paragraph("FTP Credentials", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("FTP Credentials", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("Valid FTP credentials have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "ftp_no_limit.txt":
-                        elements.append(Paragraph("FTP no attempt limit", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("FTP no attempt limit", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "joomscan.txt":
                         import re
-                        elements.append(Paragraph("Joomla Scan", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Joomla Scan", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("In this section, the results of the Joomla scan are reported.",
                                                   styles['Normal']))
                         elements.append(Spacer(1, 12))
@@ -263,7 +272,7 @@ def generate_report(target, flag=None):
                                 match = heading_pattern.match(line)
                                 if match:
                                     if current_heading is not None:
-                                        elements.append(Paragraph(current_heading, styles['Heading2']))
+                                        elements.append(Paragraph(current_heading, styles['Heading3']))
                                         elements.append(Spacer(1, 8))
                                         for content_line in current_content:
                                             elements.append(Paragraph(content_line, styles['Normal']))
@@ -273,39 +282,45 @@ def generate_report(target, flag=None):
                                 else:
                                     current_content.append(line)
                         if current_heading is not None:
-                            elements.append(Paragraph(current_heading, styles['Heading2']))
+                            elements.append(Paragraph(current_heading, styles['Heading3']))
                             elements.append(Spacer(1, 8))
                             for content_line in current_content:
                                 elements.append(Paragraph(content_line, styles['Normal']))
                             elements.append(Spacer(1, 12))
+                        elements.append(Spacer(1, 24))
                     case "ssh_credentials_found.txt":
-                        elements.append(Paragraph("SSH Credentials", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("SSH Credentials", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("Valid SSH credentials have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "ssh_cves.txt":
-                        elements.append(Paragraph("SSH Vulnerabilities", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("SSH Vulnerabilities", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("CVEs for the running SSH version have been found.", styles['Normal']))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "osint_mail.txt":
-                        elements.append(Paragraph("OSINT Mail", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("OSINT Mail", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("In this section, the email addresses found are reported.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "nuclei_webscan.txt":
-                        elements.append(Paragraph("Web Scan", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Web Scan", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("In this section, the results of the web scan are reported.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
                     case "fuzzing.txt":
-                        elements.append(Paragraph("Fuzzing", styles['Heading1']))
-                        elements.append(Spacer(1, 12))
+                        elements.append(Paragraph("Fuzzing", ParagraphStyle('Heading1Centered', parent=styles['Heading1'], alignment=1)))
+                        elements.append(Spacer(1, 8))
                         elements.append(Paragraph("In this section, the results of the fuzzing scan are reported.", styles['Normal']))
                         elements.append(Spacer(1, 12))
                         elements.extend(create_text_paragraph(filepath))
+                        elements.append(Spacer(1, 24))
 
     except Exception as e:
         print(f"[-] Error generating report: {e}")

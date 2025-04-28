@@ -386,7 +386,7 @@ def project_chat(project_id):
             existing_versions.append((int(match.group(1)), fname))
 
     if not existing_versions:
-        return jsonify({"error": "No versioned reports found for this project."}), 404
+        return jsonify({"error": "No reports found for this project."}), 404
 
     latest_version, latest_filename = max(existing_versions, key=lambda x: x[0])
     latest_report_path = base_report_dir / latest_filename

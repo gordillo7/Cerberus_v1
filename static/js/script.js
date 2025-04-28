@@ -956,7 +956,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const html = marked.parse(data.response || "**No reports found for this target. Run a scan first.**")
+        const html = marked.parse(data.response || data.error)
         const botTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })
 
         const loadingEl = document.getElementById(loadingMessageId)
