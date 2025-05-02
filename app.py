@@ -201,24 +201,20 @@ def manage_token(token_name):
 
 
 # Projects API
-@app.route('/api/projects', methods=['GET'])
-def get_projects():
-    projects = []
+@app.route('/api/projects', methods=['GET', 'POST'])
+def projects():
     projects_dir = Path('projects')
     projects_dir.mkdir(exist_ok=True)
 
-    for project_file in projects_dir.glob('*.json'):
-        with open(project_file, 'r') as f:
-            project = json.load(f)
-            projects.append(project)
+    if request.method == 'GET':
+        projects = []
+        for project_file in projects_dir.glob('*.json'):
+            with open(project_file, 'r') as f:
+                projects.append(json.load(f))
+        return jsonify(projects), 200
 
-    return jsonify(projects)
-
-
-@app.route('/api/projects', methods=['POST'])
-def create_project():
-    data = request.json
-    name = data.get('name')
+    data = request.json or {}
+    name   = data.get('name')
     target = data.get('target')
 
     if not name or not target:
@@ -232,13 +228,11 @@ def create_project():
         'created_at': datetime.datetime.now().strftime('%Y-%m-%d')
     }
 
-    project_file = Path(f'projects/{project_id}.json')
+    project_file = projects_dir / f'{project_id}.json'
     with open(project_file, 'w') as f:
         json.dump(project, f)
 
-    # Create project reports directory
-    project_reports_dir = Path(f'projects/{project_id}/reports')
-    project_reports_dir.mkdir(parents=True, exist_ok=True)
+    (projects_dir / project_id / 'reports').mkdir(parents=True, exist_ok=True)
 
     return jsonify(project), 201
 
@@ -417,6 +411,139 @@ Provide a useful and detailed response.
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+@app.route("/api/projects/<project_id>/next_offensive", methods=["POST"])
+def generate_next_offensive(project_id):
+    gemini_key = get_gemini_key()
+    if not gemini_key:
+        return jsonify({"error": "Gemini API key not set"}), 400
+    genai.configure(api_key=gemini_key)
+
+    project_file = Path(f"projects/{project_id}.json")
+    if not project_file.exists():
+        return jsonify({"error": "Project not found"}), 404
+
+    with open(project_file, "r") as f:
+        pdata = json.load(f)
+    target = pdata.get("target", "").replace("/", "").replace(":", "")
+
+    reports_dir = Path(f"projects/{project_id}/reports")
+    pattern = re.compile(r"v(\d+)" + re.escape(target) + r"\.pdf$")
+    versions = [
+        (int(m.group(1)), f) for f in os.listdir(reports_dir)
+        if (m := pattern.match(f))
+    ]
+    if not versions:
+        return jsonify({"error": "No reports found"}), 404
+
+    latest_report = reports_dir / max(versions, key=lambda x: x[0])[1]
+
+    try:
+        reader = PdfReader(str(latest_report))
+        text = "\n".join(
+            p.extract_text() for p in reader.pages if p.extract_text()
+        )[:10000]
+    except Exception as e:
+        return jsonify({"error": f"PDF read failed: {e}"}), 500
+
+    prompt = f"""
+You are an offensive‑security assistant. Given the last pentest report (below),
+list the concrete next steps an attacker/red‑teamer would carry out
+to escalate the audit. Use short markdown subsections (###) and bullet points.
+
+--- BEGIN REPORT EXCERPT ---
+{text}
+--- END REPORT EXCERPT ---
+"""
+    try:
+        model = genai.GenerativeModel("gemini-2.0-flash")
+        md = model.generate_content(prompt).text.strip()
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    proj_dir = Path(f"projects/{project_id}")
+    proj_dir.mkdir(exist_ok=True)
+    md_path = proj_dir / "next_offensive.md"
+    with open(md_path, "w", encoding="utf‑8") as f:
+        f.write(md)
+
+    return jsonify({"message": "Next steps generated"}), 201
+
+@app.route("/projects/<project_id>/next_offensive.md", methods=["GET", "HEAD"])
+def get_next_offensive_md(project_id):
+    proj_dir = Path(f"projects/{project_id}")
+    md_path  = proj_dir / "next_offensive.md"
+
+    if not md_path.exists():
+        return "", 404
+
+    return send_from_directory(str(proj_dir), "next_offensive.md")
+
+@app.route("/api/projects/<project_id>/next_defensive", methods=["POST"])
+def generate_next_defensive(project_id):
+    gemini_key = get_gemini_key()
+    if not gemini_key:
+        return jsonify({"error": "Gemini API key not set"}), 400
+    genai.configure(api_key=gemini_key)
+
+    project_file = Path(f"projects/{project_id}.json")
+    if not project_file.exists():
+        return jsonify({"error": "Project not found"}), 404
+
+    with open(project_file, "r") as f:
+        pdata = json.load(f)
+    target = pdata.get("target", "").replace("/", "").replace(":", "")
+
+    reports_dir = Path(f"projects/{project_id}/reports")
+    pattern = re.compile(r"v(\d+)" + re.escape(target) + r"\.pdf$")
+    versions = [
+        (int(m.group(1)), f) for f in os.listdir(reports_dir)
+        if (m := pattern.match(f))
+    ]
+    if not versions:
+        return jsonify({"error": "No reports found"}), 404
+
+    latest_report = reports_dir / max(versions, key=lambda x: x[0])[1]
+
+    try:
+        reader = PdfReader(str(latest_report))
+        text = "\n".join(
+            p.extract_text() for p in reader.pages if p.extract_text()
+        )[:10000]
+    except Exception as e:
+        return jsonify({"error": f"PDF read failed: {e}"}), 500
+
+    prompt = f"""
+You are a defensive security assistant. Given the last pentest report (below),
+propose concrete defensive actions to mitigate, fix, or harden the system
+against the weaknesses found. Use short markdown subsections (###) and bullet points.
+
+--- BEGIN REPORT EXCERPT ---
+{text}
+--- END REPORT EXCERPT ---
+"""
+    try:
+        model = genai.GenerativeModel("gemini-2.0-flash")
+        md = model.generate_content(prompt).text.strip()
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+    proj_dir = Path(f"projects/{project_id}")
+    proj_dir.mkdir(exist_ok=True)
+    md_path = proj_dir / "next_deffensive.md"
+    with open(md_path, "w", encoding="utf‑8") as f:
+        f.write(md)
+
+    return jsonify({"message": "Next steps generated"}), 201
+
+@app.route("/projects/<project_id>/next_defensive.md", methods=["GET", "HEAD"])
+def get_next_defensive_md(project_id):
+    proj_dir = Path(f"projects/{project_id}")
+    md_path  = proj_dir / "next_defensive.md"
+
+    if not md_path.exists():
+        return "", 404
+
+    return send_from_directory(str(proj_dir), "next_defensive.md")
 
 
 

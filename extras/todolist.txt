@@ -1,12 +1,13 @@
 ROADMAP GENERAL:
 - Generacion de reporte resumido con IA.
-    # Boton generar resumen siguientes pasos (Offensive).
-    # Boton de como solucionar los problemas encontrados (Deffensive).
+    # Boton de como solucionar los problemas encontrados (Deffensive). --> Falta implementar la conexion en el script.js.
+- Mejora y limpieza del código.
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
 AVANCES:
 - Chatbot IA por cada proyecto (API de Gemini).
 - Mejorar generacion de reportes.
+- Boton generar resumen siguientes pasos (Offensive).
 
 DUDAS:
 

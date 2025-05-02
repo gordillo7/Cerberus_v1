@@ -579,6 +579,11 @@ code {
 }
 
 /* Projects Page */
+.project-name-container{
+  display: flex;
+  gap: 1rem;
+}
+
 .project-target-card{
   margin-top: 10px;
 }
@@ -1250,6 +1255,8 @@ code {
 .chat-input {
   display: flex;
   padding: 1rem;
+  gap: 1rem;
+  align-items: center;
   background-color: var(--surface-1);
   border-top: 1px solid var(--border);
 }
@@ -1577,6 +1584,17 @@ code {
   font-size: 0.75rem;
   font-weight: 500;
 }
+
+/* IA generation */
+.round-action-btn, .indicator-btn{
+  width:32px;height:32px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--primary);color:#fff;border:none;
+  transition:transform var(--transition-fast);
+}
+.round-action-btn:hover, .indicator-btn:hover{transform:scale(1.1);}
+.indicator-btn{background:var(--primary);}
+
 
 /* Toggle Switch */
 .switch {

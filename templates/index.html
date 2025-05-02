@@ -149,7 +149,15 @@
                     <div id="project-details" class="project-details" style="display: none;">
                         <div class="project-header">
                             <div>
-                                <h2 id="project-name">Project Name</h2>
+                                <div class="project-name-container">
+                                    <h2 id="project-name">Project Name</h2>
+                                    <button id="nextOffensiveIndicator" class="indicator-btn" title="View next offensive steps" style="display:none">
+                                        <span class="material-icons-round">bolt</span>
+                                    </button>
+                                    <button id="nextDefensiveIndicator" class="indicator-btn" title="View next defensive steps" style="display:none">
+                                        <span class="material-icons-round">shield</span>
+                                    </button>
+                                </div>
                                 <div class="project-target">
                                     <span>Target:</span>
                                     <code id="scan-target">example.com</code>
@@ -242,6 +250,12 @@
                                         </div>
                                         <div class="chat-input">
                                             <label for="chat-input-field"></label><input type="text" id="chat-input-field" placeholder="Type your message...">
+                                            <button id="generate-next-btn" class="round-action-btn" title="Generate offensive next steps">
+                                                <span class="material-icons-round">bolt</span>
+                                            </button>
+                                            <button id="generate-next-def-btn" class="round-action-btn" title="Generate defensive next steps">
+                                                <span class="material-icons-round">shield</span>
+                                            </button>
                                             <button id="send-message-btn">
                                                 <span class="material-icons-round">send</span>
                                             </button>
