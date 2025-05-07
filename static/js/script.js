@@ -1042,13 +1042,13 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     chatMessages.scrollTop = chatMessages.scrollHeight;
 
-    showToast('info', 'Generating', 'Generating next offensive steps...');
+    showToast('info', 'Generating', 'Generating offensive steps...');
     try {
         const res = await fetch(`/api/projects/${projectId}/next_offensive`, { method: 'POST' });
         const data = await res.json();
         const loadingEl = document.getElementById(loadingMessageId);
         if (res.ok) {
-            showToast('success', 'Done', 'Next offensive steps generated');
+            showToast('success', 'Done', 'Offensive steps generated');
             checkNextOffensiveAvailable();
 
             if (loadingEl) {
@@ -1057,7 +1057,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       <span class="material-icons-round">smart_toy</span>
                     </div>
                     <div class="message-content fade-in">
-                      <p>Next offensive steps generated. Click the icon next to project name to view them.</p>
+                      <p>Offensive steps generated. Click the icon next to project name to view them.</p>
                       <span class="message-time">${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
                     </div>
                 `;
@@ -1106,7 +1106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     header.className = "modal-header";
 
     const title = document.createElement('h2');
-    title.textContent = "Next Offensive Steps";
+    title.textContent = "Offensive Steps";
     title.style = `
       font-size: 1.5rem;
       font-weight: 600;
@@ -1156,6 +1156,147 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById('nextOffensiveIndicator')?.addEventListener('click', showNextOffensiveModal);
 
   // Defensive next steps
+  function checkNextDefensiveAvailable() {
+      if (!currentProject || !currentProject.id) return;
+      const url = `/projects/${currentProject.id}/next_defensive.md`;
+      fetch(url, { method: "HEAD" })
+      .then((response) => {
+          document.getElementById('nextDefensiveIndicator').style.display = response.ok ? 'flex' : 'none';
+      })
+      .catch((error) => {
+          console.error("Error checking next defensive availability:", error);
+      });
+  }
+  async function generateNextDefensive() {
+      if (!currentProject || !currentProject.id) return;
+      const projectId = currentProject.id;
+      const btn = document.getElementById('generate-next-def-btn');
+      btn.disabled = true;
+
+      const chatMessages = document.getElementById("chat-messages");
+      const loadingMessageId = `loading-msg-${Date.now()}`;
+      chatMessages.innerHTML += `
+          <div class="message bot-message" id="${loadingMessageId}">
+              <div class="message-avatar">
+                  <span class="material-icons-round">smart_toy</span>
+              </div>
+              <div class="message-content typing-indicator">
+                  <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+              </div>
+          </div>
+      `;
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+
+      showToast('info', 'Generating', 'Generating defensive steps...');
+      try {
+          const res = await fetch(`/api/projects/${projectId}/next_defensive`, { method: 'POST' });
+          const data = await res.json();
+          const loadingEl = document.getElementById(loadingMessageId);
+          if (res.ok) {
+              showToast('success', 'Done', 'Defensive steps generated');
+              checkNextDefensiveAvailable();
+
+              if (loadingEl) {
+                  loadingEl.innerHTML = `
+                      <div class="message-avatar">
+                          <span class="material-icons-round">smart_toy</span>
+                      </div>
+                      <div class="message-content fade-in">
+                          <p>Defensive steps generated. Click the icon next to project name to view them.</p>
+                          <span class="message-time">${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
+                      </div>
+                  `;
+              }
+          } else {
+              if (loadingEl) loadingEl.remove();
+              showToast('error', 'Error', data.error || 'Failed to generate next steps');
+          }
+      } catch (err) {
+          console.error(err);
+          showToast('error', 'Error', 'Request failed');
+      } finally {
+          btn.disabled = false;
+      }
+  }
+  document.getElementById('generate-next-def-btn')?.addEventListener('click', generateNextDefensive);
+  function showNextDefensiveModal() {
+      if (!currentProject || !currentProject.id) return;
+
+      const projectId = currentProject.id;
+
+      const overlay = document.createElement('div');
+      overlay.id = 'nextDefensiveOverlay';
+      overlay.style = `
+          position: fixed; top:0; left:0; width:100%; height:100%;
+          background: rgba(0,0,0,0.5); backdrop-filter: blur(4px);
+          display:flex; align-items:center; justify-content:center; z-index:2000;
+          animation: fadeIn 0.5s ease;
+      `;
+
+      const container = document.createElement('div');
+      container.style = `
+          position: relative; background: var(--surface-1); color: var(--text-primary);
+          padding: 1.5rem 2rem;
+          border-radius: var(--border-radius-lg);
+          max-width: 800px;
+          max-height: 80%;
+          overflow-y: auto;
+          animation: slideUp 0.5s ease;
+          box-shadow: var(--shadow-lg);
+      `;
+
+      const header = document.createElement('div');
+      header.className = "modal-header";
+
+      const title = document.createElement('h2');
+      title.textContent = "Defensive Steps";
+      title.style = `
+          font-size: 1.5rem;
+          font-weight: 600;
+          background: linear-gradient(90deg, var(--primary) 0%, #9f7aea 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          margin: 0;
+      `;
+
+      const closeBtn = document.createElement('button');
+      closeBtn.textContent = '×';
+      closeBtn.className = "close-modal";
+      closeBtn.addEventListener('click', () => document.body.removeChild(overlay));
+
+      header.appendChild(title);
+      header.appendChild(closeBtn);
+      container.appendChild(header);
+
+      const content = document.createElement('div');
+      content.style = "line-height: 1.7; font-size: 1rem; color: var(--text-primary); margin-top: 1rem;";
+
+      container.appendChild(content);
+      overlay.appendChild(container);
+      document.body.appendChild(overlay);
+
+      fetch(`/projects/${projectId}/next_defensive.md`)
+          .then(res => res.text())
+          .then(md => {
+              content.innerHTML = marked.parse(md);
+
+              const lists = content.querySelectorAll("ul, ol");
+              lists.forEach(list => {
+                  list.style.margin = "1rem 0";
+                  list.style.paddingLeft = "1.5rem";
+              });
+
+              const items = content.querySelectorAll("li");
+              items.forEach(li => {
+                  li.style.marginBottom = "0.5rem";
+              });
+          })
+          .catch(() => {
+              content.innerHTML = `<p>Could not load defensive steps.</p>`;
+          });
+  }
+  document.getElementById('nextDefensiveIndicator')?.addEventListener('click', showNextDefensiveModal);
 
 
 

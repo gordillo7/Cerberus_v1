@@ -529,7 +529,7 @@ against the weaknesses found. Use short markdown subsections (###) and bullet po
 
     proj_dir = Path(f"projects/{project_id}")
     proj_dir.mkdir(exist_ok=True)
-    md_path = proj_dir / "next_deffensive.md"
+    md_path = proj_dir / "next_defensive.md"
     with open(md_path, "w", encoding="utf‑8") as f:
         f.write(md)
 
