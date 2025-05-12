@@ -1,0 +1,120 @@
+Plugin: bellows-accordion-menu
+CVE:
+  - 2023-5164
+
+Plugin: contact-form-7
+CVE:
+  - 2023-6449
+
+Plugin: contact-form-7
+CVE:
+  - 2024-2242
+
+Plugin: contact-form-7
+CVE:
+  - 2024-4704
+
+Plugin: contact-form-7
+CVE:
+  - 2025-3247
+
+Plugin: js_composer
+CVE:
+  - 2023-31213
+
+Plugin: js_composer
+CVE:
+  - 2024-1841
+
+Plugin: js_composer
+CVE:
+  - 2024-1842
+
+Plugin: js_composer
+CVE:
+  - 2024-1805
+
+Plugin: js_composer
+CVE:
+  - 2024-1840
+
+Plugin: js_composer
+CVE:
+  - 2024-5265
+
+Plugin: js_composer
+CVE:
+  - 2024-5708
+
+Plugin: js_composer
+CVE:
+  - 2024-5709
+
+Plugin: revslider
+CVE:
+  - 2023-2359
+
+Plugin: revslider
+CVE:
+  - 2023-47772
+
+Plugin: revslider
+CVE:
+  - 2023-47784
+
+Plugin: revslider
+CVE:
+  - 2023-6528
+
+Plugin: revslider
+CVE:
+  - 2024-2306
+
+Plugin: revslider
+CVE:
+  - 2024-4092
+
+Plugin: revslider
+CVE:
+  - 2024-4581
+
+Plugin: revslider
+CVE:
+  - 2024-4637
+
+Plugin: revslider
+CVE:
+  - 2024-34444
+
+Plugin: revslider
+CVE:
+  - 2024-34443
+
+Plugin: revslider
+CVE:
+  - 2024-37449
+
+Plugin: revslider
+CVE:
+  - 2024-8107
+
+Plugin: Ultimate_VC_Addons
+CVE:
+  - 2024-5254
+
+Plugin: Ultimate_VC_Addons
+CVE:
+  - 2024-5255
+
+Plugin: Ultimate_VC_Addons
+CVE:
+  - 2024-5252
+
+Plugin: Ultimate_VC_Addons
+CVE:
+  - 2024-5253
+
+Plugin: Ultimate_VC_Addons
+CVE:
+  - 2024-5251
+

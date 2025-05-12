@@ -365,7 +365,7 @@ def project_chat(project_id):
     with open(project_file, 'r') as f:
         project_data = json.load(f)
 
-    target = project_data.get("target", "").replace("/", "").replace(":", "")
+    target = project_data.get("target", "").replace("http://", "").replace("https://", "").rstrip("/")
     if not target:
         return jsonify({"error": "Target not found for project"}), 400
 
@@ -424,7 +424,7 @@ def generate_next_offensive(project_id):
 
     with open(project_file, "r") as f:
         pdata = json.load(f)
-    target = pdata.get("target", "").replace("/", "").replace(":", "")
+    target = pdata.get("target", "").replace("http://", "").replace("https://", "").rstrip("/")
 
     reports_dir = Path(f"projects/{project_id}/reports")
     pattern = re.compile(r"v(\d+)" + re.escape(target) + r"\.pdf$")
@@ -449,6 +449,8 @@ def generate_next_offensive(project_id):
 You are an offensive‑security assistant. Given the last pentest report (below),
 list the concrete next steps an attacker/red‑teamer would carry out
 to escalate the audit. Use short markdown subsections (###) and bullet points.
+Do not add an introduction or conclusion, just list the actions.
+Sort them from highest to lowest priority.
 
 --- BEGIN REPORT EXCERPT ---
 {text}
@@ -491,7 +493,7 @@ def generate_next_defensive(project_id):
 
     with open(project_file, "r") as f:
         pdata = json.load(f)
-    target = pdata.get("target", "").replace("/", "").replace(":", "")
+    target = pdata.get("target", "").replace("http://", "").replace("https://", "").rstrip("/")
 
     reports_dir = Path(f"projects/{project_id}/reports")
     pattern = re.compile(r"v(\d+)" + re.escape(target) + r"\.pdf$")
@@ -516,6 +518,8 @@ def generate_next_defensive(project_id):
 You are a defensive security assistant. Given the last pentest report (below),
 propose concrete defensive actions to mitigate, fix, or harden the system
 against the weaknesses found. Use short markdown subsections (###) and bullet points.
+Do not add an introduction or conclusion, just list the actions.
+Sort them from highest to lowest priority.
 
 --- BEGIN REPORT EXCERPT ---
 {text}

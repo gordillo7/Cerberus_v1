@@ -1,0 +1,7 @@
+{
+	"SEARCH": "OpenSSH 8.0 (protocol 2.0)",
+	"DB_PATH_EXPLOIT": "/opt/exploitdb",
+	"RESULTS_EXPLOIT": [	],
+	"DB_PATH_SHELLCODE": "/opt/exploitdb",
+	"RESULTS_SHELLCODE": [	]
+}

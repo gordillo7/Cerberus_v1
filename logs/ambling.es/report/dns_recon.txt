@@ -1,0 +1,29 @@
+MX Records:
+    MX Host: 10 mx.serviciodecorreo.es
+    Email Provider: IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE
+#
+NS Records:
+    NS Server: dns22.servidoresdns.net (Provider: IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE, Located in: Spain)
+    NS Server: dns21.servidoresdns.net (Provider: IONOS-AS This is the joint network for IONOS, Fasthosts, Arsys, 1&1 Mail and Media and 1&1 Telecom. Formerly known as 1&1 Internet SE., DE, Located in: Spain)
+#
+TXT Records:
+    "v=spf1 include:_spf.serviciodecorreo.es include:spf.protection.outlook.com ~all"
+    "google-site-verification=teRl21xHdDY_cwZCYG9tARwho2EMXoWwdVh4t9O6hes"
+    "202411200251145jnqk2jfmfe4lafw0toyx5pkt0zaac2m8l0vm47ygt0yemql7r"
+    "google-site-verification=qOx8sJ3krxP953sxi92vbow4yUGR3rrSjmOVQbo3idg"
+#
+DMARC Record Info:
+    The DMARC record is not public. This implies that there is no valid DMARC record found for this domain, which could potentially allow email spoofing (the practice of forging email headers to appear as if sent from a trusted domain). It is recommended to configure a public DMARC record to enhance email security.
+#
+Whois Info:
+    Registered with: N/A
+    Domain created on: Unknown
+    Domain expires on: Unknown
+    Additional registrant details:
+        Name: N/A
+        Org: N/A
+        Address: N/A
+        City: N/A
+        State: N/A
+        Registrant_postal_code: N/A
+        Country: N/A

@@ -8,10 +8,80 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/extras/todolist.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/todolist.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/1744798504332823/next_deffensive.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/projects/1744798504332823/next_offensive.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/fuzzing/fuzz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/whatweb/cms.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/whatweb/tec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/credentials.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/cve_exploits/2024-6386/argendo_CVE-2024-6386/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/cve_exploits/2024-6386/argendo_CVE-2024-6386/poc/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/cve_exploits/2024-6386/argendo_CVE-2024-6386/poc/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/cve_exploits/2024-6386/argendo_CVE-2024-6386/poc/sploit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/cve_exploits/2024-6386/argendo_CVE-2024-6386/poc_example.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/vulnerable_plugins.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/http/wordpress/wpscan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/fuzzing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/http_screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/osint_mail.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/wordpress_usernames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.com/report/wordpress_vulnerable_plugins.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/dns/dns_dmarc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/dns/dns_dumpster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/dns/dns_whois.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/dns/emails.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/dns/emails_pwned.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/dns/records.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/fuzzing/fuzz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/subdomain/subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/webscan/nuclei_results.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/whatweb/cms.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/whatweb/tec.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/wordpress/credentials.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/wordpress/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/wordpress/vulnerable_plugins.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/http/wordpress/wpscan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/nmap/initial_scan.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/nmap/ports.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/nmap/ports_services_versions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/dns_recon.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/fuzzing.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/http_screenshot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/http_subdomains.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/nmap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/wordpress_usernames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/cartamundi.es/report/wordpress_vulnerable_plugins.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/scans.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scans.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/http_whatweb.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/http_whatweb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/osint_mail.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/osint_mail.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1744798504332823/next_defensive.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/1744798504332823/next_defensive.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1744903623007445.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745059631351794.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745059631351794/next_defensive.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745059631351794/next_offensive.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745059631351794/reports/v1cartamundi.es.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745579255082874.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745579255082874/next_offensive.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/1745579255082874/reports/v1cartamundi.com.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlists/cartamundi.com/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlists/cartamundi.es/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wordlists/misc/ftp-passwords.txt" beforeDir="false" afterPath="$PROJECT_DIR$/wordlists/misc/ftp-passwords.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +92,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -77,7 +148,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/gordillo7/PycharmProjects/TFG&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/gordillo7/PycharmProjects/TFG/static/js&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -89,6 +160,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/modules" />
     </key>
   </component>
@@ -101,7 +173,7 @@
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
@@ -177,7 +249,9 @@
       <workItem from="1746007992358" duration="183000" />
       <workItem from="1746008179674" duration="5536000" />
       <workItem from="1746167170097" duration="17139000" />
-      <workItem from="1746617954267" duration="1864000" />
+      <workItem from="1746617954267" duration="2098000" />
+      <workItem from="1746686335341" duration="6527000" />
+      <workItem from="1747031265806" duration="14069000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -355,7 +429,15 @@
       <option name="project" value="LOCAL" />
       <updated>1746186967940</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1746619854601</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1746619854601</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +461,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFG$generate_report.coverage" NAME="generate_report Coverage Results" MODIFIED="1745825306514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1745825667228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1746618988333" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1747044021207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/TFG$app.coverage" NAME="app Coverage Results" MODIFIED="1743244825472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

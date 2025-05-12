@@ -1,6 +1,6 @@
 ROADMAP GENERAL:
-- Script de lanzamiento automatico de escaneo.
-- Mejora y limpieza del código.
+- [Si da tiempo] Script de lanzamiento automatico de escaneo.
+- [Si da tiempo] Mejora y limpieza del código (principalmente script.js).
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
 AVANCES:

@@ -1,3 +1,4 @@
+import json
 import subprocess
 import os
 import sys
@@ -37,6 +38,7 @@ def cms_identification(target_ip):
     target_clean = target_ip.replace("http://", "").replace("https://", "").rstrip("/")
     cms_file = f"logs/{target_clean}/http/whatweb/cms.txt"
     tec_file = f"logs/{target_clean}/http/whatweb/tec.txt"
+    fuzz_file = f"logs/{target_clean}/http/fuzzing/fuzz.json"
     cms_list = ["WordPress", "Joomla", "Drupal"]
     cms_detectado = "unknown"
 
@@ -50,6 +52,23 @@ def cms_identification(target_ip):
                 break
         if cms_detectado != "unknown":
             break
+
+    if cms_detectado.lower() == "unknown" and os.path.exists(fuzz_file):
+        try:
+            with open(fuzz_file, "r", encoding="utf-8") as f:
+                for line in f:
+                    try:
+                        data = json.loads(line)
+                    except json.JSONDecodeError:
+                        continue
+                    path = data.get("path", "")
+                    if path.startswith("/"):
+                        path = path[1:]
+                    if path.startswith("wp-"):
+                        cms_detectado = "WordPress"
+                        break
+        except Exception as e:
+            print(f"[!] Error opening {fuzz_file}: {e}")
 
     with open(cms_file, 'w') as f:
         f.write(cms_detectado + "\n")

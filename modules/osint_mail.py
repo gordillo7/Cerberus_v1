@@ -151,7 +151,7 @@ def generate_osint_mail_report(target):
                 sources_str.append(name)
         report_lines.append(f"- {email} has been pwned in {found} breach(es).")
         report_lines.append(f"  Compromised fields: {', '.join(fields)}.")
-        report_lines.append(f"  Breaches: {', '.join(sources_str)}.")
+        report_lines.append(f"  Breaches: {', '.join(sources_str) if sources_str else 'N/A'}.")
         report_lines.append("")
 
     report_text = "\n".join(report_lines)

@@ -1,4 +1,0 @@
-# Nmap 7.95 scan initiated Sat Apr 19 12:48:21 2025 as: /usr/lib/nmap/nmap --privileged -p- --open --min-rate 5000 -n -Pn -oG logs/cartamundi.es/nmap/initial_scan.txt cartamundi.es
-Host: 79.174.129.100 ()	Status: Up
-Host: 79.174.129.100 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///	Ignored State: filtered (65533)
-# Nmap done at Sat Apr 19 12:48:47 2025 -- 1 IP address (1 host up) scanned in 26.75 seconds

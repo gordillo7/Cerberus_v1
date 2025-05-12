@@ -1,0 +1,8 @@
+A total of 1 email addresses were found for the target 'ambling.es':
+rguzman@ambling.es
+
+Out of these, 1 have been pwned in various security breaches
+
+- rguzman@ambling.es has been pwned in 1 breach(es).
+  Compromised fields: password.
+  Breaches: N/A.
