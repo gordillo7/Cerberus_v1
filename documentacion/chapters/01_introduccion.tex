@@ -1,44 +1,14 @@
 \chapter{\introductionname}
-Esta plantilla sirve como ejemplo de TFE. Las secciones son las que están en la normativa, aunque si el tutor lo considera se puede cambiar la estructura. Esta sección la aprovechamos para introducir brevemente \LaTeX.
-\par
+En el ámbito de la ciberseguridad, el reconocimiento constituye una de las fases más importantes y decisivas dentro de una auditoría de seguridad o prueba de penetración. Esta fase inicial tiene como objetivo recopilar la máxima cantidad de información posible sobre el objetivo a analizar, ya sea una dirección IP, un dominio o una URL concreta. A partir de estos datos, el auditor puede identificar servicios expuestos, tecnologías empleadas y potenciales vectores de ataque, sentando así las bases para etapas más avanzadas como la explotación o escalado de privilegios.
 
-\section{Secciones}
-Las secciones se crean con \textit{section}. Las subsecciones y subsubsecciones con \textit{subsection} y \textit{subsubsection}, respectivamente. Si se desea que alguna subsección en concreto no salga en el índice se pueden usar los mismos comandos añadiéndoles un asterisco al final (\textit{subsection*} y \textit{subsubsection*}).
-\par
-\lipsum[1][1-4]
-\subsection{una subsección}
-\lipsum[1][1]
-\subsection{otra subsección}
-\lipsum[1][2]
-\subsubsection{subsubsecciones}
-¡Por defecto las subsubsecciones no aparecen en el índice! Este comportamiento se puede cambiar, pero lo recomendable es organizar los capítulos en 3 niveles para facilitar la lectura.
+A pesar de su importancia, las tareas asociadas al reconocimiento suelen ser repetitivas, tediosas y propensas a errores si se realizan manualmente. Además, muchas de las herramientas empleadas requieren conocimientos técnicos, uso de línea de comandos y un esfuerzo considerable para gestionar los resultados obtenidos. Este escenario genera una necesidad clara de soluciones que permitan automatizar este proceso, reducir los tiempos de ejecución y facilitar la gestión de la información recopilada.
 
-\section{Citas y referencias}
-Para citar un texto hay que incluirlo en el fichero \textit{LocalBibliography.bib} de esta plantilla. Una vez hecho se puede referenciar usando el comando \textit{cite}~\cite{LaTeX_tutorials}.
-Para referenciar imágenes, secciones o tablas se usa el comando~\textit{autoref}. Por ejemplo~\autoref{fig:logoEpcc} o~\autoref{sec:objetivos}.
-\par
-Para facilitar la lectura, cuando se insertan citas y referencias es conveniente insertar un carácter de espacio sin salto de línea \textit{\~} antes del comando de cita o referencia.
+El presente Trabajo de Fin de Grado surge como respuesta a esta problemática. Se ha desarrollado una herramienta que automatiza de forma integral las tareas fundamentales de reconocimiento en una auditoría de seguridad, integrando distintas utilidades especializadas en un único entorno con interfaz gráfica. Esta solución permite realizar desde escaneos de puertos y servicios hasta la enumeración de subdominios, identificación de vulnerabilidades web, detección de CMS y análisis de servicios como FTP o SSH. Además, la herramienta permite interactuar con un sistema de inteligencia artificial basado en modelos generativos, que facilita la interpretación de resultados y la propuesta de acciones posteriores.
 
+La herramienta está diseñada con una arquitectura modular y escalable, lo que permite incorporar nuevas funcionalidades de forma sencilla. Entre las funcionalidades añadidas destacan también la generación automática y versionada de informes, la configuración de escaneos exhaustivos, la personalización del entorno mediante proxies y un sistema de proyectos que organiza los análisis por objetivo.
 
-\section{Imágenes}
-Las imágenes se insertan así:
+Durante el desarrollo se han evaluado múltiples alternativas tecnológicas, priorizando aquellas que ofrecieran un equilibrio entre rendimiento, actualización activa, facilidad de integración y compatibilidad. Herramientas como Nmap, Subfinder, Nuclei, WPScan o Feroxbuster han sido seleccionadas tras un análisis comparativo, mientras que otras como Nikto, Gobuster o Paramiko fueron descartadas por distintos motivos técnicos o de eficiencia.
 
-\begin{figure}[H]
-\centering
-% Importante ajustar la anchura o altura de la imagen para que encaje en la página
-\includegraphics[width=0.6\textwidth]{pictures/logoepcc.pdf}
-\caption[Logo EPCC]{Logo EPCC.\\Fuente: \url{https://politecnica.unex.es}}
-\label{fig:logoEpcc}
-\end{figure}
+La metodología seguida en el desarrollo de este trabajo se basa en la definición clara de un flujo de análisis, dividido en fases específicas que se adaptan dinámicamente al tipo de objetivo definido. Cada fase fue diseñada, implementada y validada individualmente, integrándola después dentro de un sistema completo con gestión web y generación de resultados centralizados. Todo ello ha sido acompañado por una interfaz amigable que permite a cualquier usuario lanzar auditorías estructuradas sin necesidad de conocimientos avanzados en ciberseguridad.
 
-\section{Código}
-El código se puede insertar así: 
-% linenos indica si se muestra el número de línea
-\begin{minted}[linenos=false]{bash}
-echo "Este es un ejemplo de cómo se inserta código con la plantilla de Trabajo Fin de Estudios de la Escuela Politécnica de Cáceres"
-\end{minted}
-
-También se puede seleccionar desde un fichero, por ejemplo:
-%\inputminted[firstline=1,lastline=7]{cpp}{code/example.cpp}
-
-Los lenguajes reconocidos para marcar se pueden consultar en \url{https://pygments.org/docs/lexers/}. Aunque depende del tipo de trabajo, se recomienda incluir código sólo en anexos.
+El resultado es una herramienta funcional, útil y extensible, capaz de reducir significativamente el tiempo y la carga de trabajo durante la fase de reconocimiento, facilitando así el proceso de auditoría y mejorando la calidad del análisis desde las primeras etapas.

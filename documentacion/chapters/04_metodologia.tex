@@ -42,7 +42,7 @@ Se procede a escanear el objetivo con \texttt{Nuclei}, una herramienta moderna, 
 
 \subsection{Detección de CMS}
 
-Se utiliza \texttt{WhatWeb} para identificar si el sitio web analizado utiliza un gestor de contenidos (CMS) como WordPress o Joomla. Esta detección permite habilitar fases específicas posteriores, optimizadas para cada plataforma.
+Se utiliza \texttt{WhatWeb} para identificar si el sitio web analizado utiliza un gestor de contenidos (CMS) como WordPress o Joomla. Esta detección permite habilitar fases específicas posteriores, optimizadas para cada plataforma. Además, en caso de que WhatWeb no pueda identificar CMS, se revisa si alguno de los directorios enumerados empieza por \texttt{wp-} para determinar si se trata de un sitio WordPress.
 
 \subsection{Captura de pantalla del sitio web}
 
@@ -96,3 +96,8 @@ Una vez finalizado el análisis, la herramienta genera un informe en formato PDF
   \item \textbf{Programación de escaneos}: La herramienta permite programar escaneos automáticos a horas específicas, facilitando la planificación y ejecución de auditorías.
 \end{itemize}
 
+Extra: si se quiere lanzar desde consola, basta con ejecutar el archivo \texttt{main.py} (python3 main.py <target> [-p] [-ex]). Se le pueden especificar los siguientes parámetros:
+\begin{itemize}
+  \item \texttt{-p}: Asocia el escaneo a un proyecto existente, permitiendo mantener un historial de auditorías sobre el mismo objetivo.
+  \item \texttt{-ex}: Activa el modo de escaneo exhaustivo.
+\end{itemize}
