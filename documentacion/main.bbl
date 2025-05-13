@@ -1,3 +1,36 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{anderson1972a}
+James~P. Anderson.
+\newblock Computer security technology planning study, volume 1.
+\newblock Technical report, U.S. Air Force Electronic Systems Division, 1972.
+\newblock Informe pionero sobre planificación y análisis de seguridad informática.
+\newblock URL: \url{https://csrc.nist.gov/files/pubs/conference/1998/10/08/proceedings-of-the-21st-nissc-1998/final/docs/early-cs-papers/ande72a.pdf}.
+
+\bibitem{anderson1972b}
+James~P. Anderson.
+\newblock Computer security technology planning study, volume 2.
+\newblock Technical report, U.S. Air Force Electronic Systems Division, 1972.
+\newblock Continuación técnica del estudio sobre seguridad de sistemas informáticos.
+\newblock URL: \url{https://csrc.nist.rip/publications/history/ande72.pdf}.
+
+\bibitem{satanTool1995}
+Dan Farmer and Wietse Venema.
+\newblock Satan - security administrator tool for analyzing networks, 1995.
+\newblock Primera herramienta de análisis de vulnerabilidades semiautomática.
+\newblock URL: \url{https://packetstormsecurity.com/files/21679/SATAN.html}.
+
+\bibitem{osstmm}
+ISECOM.
+\newblock Osstmm – open source security testing methodology manual, 2020.
+\newblock Metodología de auditoría de seguridad.
+\newblock URL: \url{https://www.isecom.org/OSSTMM.3.pdf}.
+
+\bibitem{owaspTestingGuide}
+{OWASP Foundation}.
+\newblock {\em OWASP Testing Guide v4}.
+\newblock Open Web Application Security Project, 2014.
+\newblock Guía metodológica para pruebas de seguridad.
+\newblock URL: \url{https://owasp.org/www-project-testing/}.
 
 \end{thebibliography}

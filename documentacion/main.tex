@@ -6,8 +6,14 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{pifont}
+\usepackage{etoolbox}
+
 \newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
 \newcommand{\xmark}{\textcolor{red}{\ding{55}}}
+
+\newenvironment{parskipenv}{%
+  \parskip=10pt  % espacio entre párrafos
+}{}
 
 % Rellenar con los datos del estudiante y el trabajo
 \estudiante{David Gordillo Burrero}{Grado}{Ingeniería Informática en Ingeniería del Software}

@@ -1,4 +1,55 @@
 \chapter{\stateoftheartname}
+\newpage
+\begin{parskipenv}
+\section{Evolución de las auditorías de seguridad}
+
+Las auditorías de seguridad informática surgieron como una respuesta directa al crecimiento exponencial de las redes informáticas y a la necesidad de proteger la información en entornos corporativos y gubernamentales. A medida que las tecnologías digitales comenzaron a formar parte de infraestructuras críticas y operaciones empresariales a gran escala, también aumentaron los incidentes relacionados con accesos no autorizados, robo de información, interrupciones de servicio y ataques maliciosos. 
+
+El concepto de auditoría de seguridad se consolidó a finales de los años 70 y principios de los 80, coincidiendo con la adopción masiva de sistemas informáticos interconectados. Durante este periodo, se desarrollaron algunos de los primeros estudios sistemáticos sobre cómo evaluar la seguridad de sistemas informáticos ante accesos no autorizados o comportamientos anómalos. Un ejemplo temprano es el informe \emph{Computer Security Technology Planning Study} elaborado por James P. Anderson en 1972 \cite{anderson1972a} \cite{anderson1972b}, considerado uno de los documentos fundacionales en la definición de objetivos y estrategias para el análisis técnico de la seguridad.
+
+Durante los años 90, con la expansión global de Internet, surgieron las primeras metodologías estructuradas de auditoría como respuesta a nuevas amenazas, especialmente enfocadas en proteger servidores web, sistemas de correo y bases de datos. Herramientas como \texttt{SATAN} (Security Administrator Tool for Analyzing Networks), lanzada en 1995, marcaron un hito como una de las primeras aplicaciones orientadas a la detección de vulnerabilidades de red de forma semiautomática \cite{satanTool1995}.
+
+En paralelo, comenzaron a popularizarse los conceptos de ``penetration testing'' (pruebas de penetración) y ``ethical hacking'', que planteaban escenarios controlados de ataque con el fin de identificar debilidades antes de que pudieran ser explotadas por actores maliciosos. Con el tiempo, este enfoque evolucionó en metodologías más completas, como OSSTMM (Open Source Security Testing Methodology Manual) \cite{osstmm} o OWASP Testing Guide \cite{owaspTestingGuide}, que establecieron marcos de referencia para evaluar sistemas desde una perspectiva técnica y organizada.
+
+Actualmente, las auditorías de seguridad constituyen una práctica esencial dentro de la ciberseguridad defensiva y ofensiva. Su objetivo no se limita únicamente a identificar vulnerabilidades, sino también a priorizarlas, documentarlas y proponer soluciones antes de que puedan ser explotadas en un entorno real. La creciente complejidad de los entornos IT y la aparición de nuevos vectores de ataque han motivado la evolución constante de estas auditorías hacia modelos más automatizados, escalables y adaptables a distintos perfiles de organización.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En el ámbito de la seguridad ofensiva y el reconocimiento automatizado, existen diversas soluciones que permiten identificar vulnerabilidades en sistemas y aplicaciones expuestas a Internet. No obstante, muchas de estas plataformas están orientadas a escenarios muy concretos (como la supervisión web) o a entornos corporativos centrados en la supervisión continua de activos expuestos. En este apartado se analizan tres herramientas ampliamente reconocidas: \textbf{ProjectDiscovery Cloud}, \textbf{Intruder.io} y \textbf{Detectify}, comparándolas con la solución propuesta en este trabajo.
+
+La Tabla~\ref{tabla:comparativa_estado_arte} resume las funcionalidades clave de cada plataforma, diferenciando los aspectos más relevantes desde el punto de vista técnico y funcional.
+
+\begin{itemize}
+
+  \item \textbf{Escaneo de puertos y servicios}: Todas las plataformas analizadas permiten identificar puertos abiertos y servicios activos como parte de su evaluación inicial. Sin embargo, la solución propuesta permite también extraer versiones específicas de servicios, información fundamental para la posterior correlación con vulnerabilidades mediante bases de datos como CVE y \texttt{Searchsploit}.
+
+  \item \textbf{Enumeración de subdominios}: La detección de subdominios es una funcionalidad presente en todas las plataformas. En el caso de la herramienta propuesta, esta se complementa con un análisis de actividad mediante códigos de respuesta HTTP, permitiendo centrar los esfuerzos en aquellos subdominios efectivamente activos.
+
+  \item \textbf{Reconocimiento DNS}: Únicamente Detectify y la solución propuesta incluyen un módulo de reconocimiento DNS detallado. En este último caso, se extraen registros clave como \texttt{MX}, \texttt{NS} y \texttt{TXT}, así como consultas WHOIS y análisis del registro DMARC, elementos fundamentales para evaluar riesgos asociados a la infraestructura de correo electrónico y configuración de dominio.
+
+  \item \textbf{Escaneo específico por CMS}: Aunque Detectify incluye pruebas específicas en función del CMS detectado (como WordPress o Joomla), la herramienta desarrollada va más allá al integrar módulos especializados con herramientas como \texttt{WPScan} y \texttt{Joomscan}, permitiendo una enumeración completa de usuarios, plugins, configuraciones inseguras y ejecución de ataques de fuerza bruta controlados.
+
+  \item \textbf{Escaneo de vulnerabilidades web}: Todas las plataformas comparadas incluyen funcionalidades de detección de vulnerabilidades web. En la herramienta propuesta, esta tarea se realiza mediante \texttt{Nuclei}, una solución altamente configurable y con una base de plantillas actualizadas por la comunidad, lo que proporciona gran cobertura ante nuevas amenazas.
+
+  \item \textbf{Reconocimiento específico de servicios (FTP/SSH)}: Este es uno de los aspectos diferenciadores más importantes de la solución propuesta. Ninguna de las herramientas comerciales analizadas realiza reconocimiento detallado de servicios tradicionales como FTP o SSH. La herramienta desarrollada permite detectar acceso anónimo en FTP, realizar fuerza bruta de credenciales y comprobar permisos de escritura, además de analizar la versión del servicio para detectar posibles vulnerabilidades conocidas.
+
+  \item \textbf{OSINT sobre direcciones de correo}: La solución presentada incorpora un módulo específico de OSINT para direcciones de correo, utilizando herramientas como \texttt{IntelligenceX} y \texttt{LeakCheck}, que permiten detectar correos filtrados y confirmar si han sido comprometidos en brechas públicas. Este tipo de análisis no está disponible en las otras plataformas.
+
+  \item \textbf{Gestión de proyectos y objetivos}: Todas las herramientas permiten la gestión de activos y escaneos, aunque la solución propuesta incluye además control de versiones de los informes generados, facilitando la trazabilidad de la evolución del objetivo en el tiempo.
+
+  \item \textbf{Generación de reportes versionados}: Si bien todas las plataformas generan informes técnicos, sólo la solución propuesta incorpora \textbf{versionado automático}, permitiendo al auditor mantener un historial detallado de cada escaneo y sus resultados.
+
+  \item \textbf{IA integrada para asistencia y análisis}: Otra característica diferencial clave. La herramienta desarrollada integra un sistema de inteligencia artificial basado en modelos generativos que permite al usuario interactuar con el contexto del escaneo, realizar consultas técnicas, recibir recomendaciones o planificar próximos pasos. Detectify, por su parte, ha comenzado a incorporar sistemas de IA como “Alfred”, pero de manera mucho más cerrada y orientada exclusivamente a pruebas automatizadas, sin interacción contextual.
+
+  \item \textbf{Interfaz web y ejecución por CLI}: Todas las herramientas evaluadas cuentan con una interfaz gráfica. Sin embargo, solo la solución propuesta y ProjectDiscovery Cloud permiten lanzar escaneos también desde línea de comandos, lo que facilita su integración en flujos automatizados o entornos técnicos avanzados.
+
+  \item \textbf{Servicio gratuito}: Tanto la solución propuesta como ProjectDiscovery Cloud ofrecen versiones gratuitas. En el caso de Intruder.io y Detectify, las funcionalidades básicas requieren de suscripciones comerciales.
+
+\end{itemize}
+
+En conclusión, aunque todas las plataformas analizadas ofrecen capacidades destacadas para el reconocimiento y análisis de activos, la herramienta desarrollada en este trabajo se diferencia por su enfoque integral, modular, y por incorporar funcionalidades muy específicas de auditoría ofensiva (como reconocimiento de servicios, OSINT, fuerza bruta o asistencia mediante IA), lo que la posiciona como una solución altamente flexible y enfocada en un uso técnico realista y completo.
+
+
 
 \begin{table}[H]
 \centering
@@ -9,29 +60,29 @@
 \hline
 Escaneo de puertos y servicios       & \cmark & \cmark & \cmark & \cmark \\
 \hline
-Enumeración de subdominios       & \cmark & \cmark & \cmark & \cmark \\
+Enumeración de subdominios          & \cmark & \cmark & \cmark & \cmark \\
 \hline
-Reconocimiento DNS         & \cmark & \xmark & \xmark & \xmark \\
+Reconocimiento DNS                  & \cmark & \xmark & \xmark & \cmark \\
 \hline
-Escaneo específico por CMS        & \cmark & \cmark & \cmark & \cmark \\
+Escaneo específico por CMS          & \cmark & \xmark & \xmark & \cmark \\
 \hline
-Escaneo de vulnerabilidades web        & \cmark & \cmark & \cmark & \cmark \\
+Escaneo de vulnerabilidades web     & \cmark & \cmark & \cmark & \cmark \\
 \hline
-Reconocimiento específico de servicios        & \cmark & \cmark & \cmark & \cmark \\
+Reconocimiento específico de servicios & \cmark & \xmark & \xmark & \xmark \\
 \hline
-OSINT sobre direcciones de correo        & \cmark & \xmark & \xmark & \xmark \\
+OSINT sobre direcciones de correo   & \cmark & \xmark & \xmark & \xmark \\
 \hline
 Gestión de proyectos/objetivos      & \cmark & \cmark & \cmark & \cmark \\
 \hline
-Generación de reportes versionados              & \cmark & \xmark & \cmark & \cmark \\
+Generación de reportes versionados  & \cmark & \xmark & \cmark & \cmark \\
 \hline
-IA integrada para asistencia y análisis             & \cmark & \xmark & \xmark & \xmark \\
+IA integrada para asistencia y análisis & \cmark & \xmark & \xmark & \cmark \\
 \hline
 Interfaz web                        & \cmark & \cmark & \cmark & \cmark \\
 \hline
-Ejecución por CLI                        & \cmark & \cmark & \cmark & \cmark \\
+Ejecución por CLI                   & \cmark & \cmark & \xmark & \xmark \\
 \hline
-Servicio gratuito           & \cmark & \cmark & \xmark & \xmark \\
+Servicio gratuito                   & \cmark & \cmark & \xmark & \xmark \\
 \hline
 \end{tabular}%
 }
@@ -41,11 +92,9 @@ Servicio gratuito           & \cmark & \cmark & \xmark & \xmark \\
 
 
 
-ProjectDiscovery.io: https://cloud.projectdiscovery.io/
-
-De pago:
 \begin{itemize}
+    \item ProjectDiscovery Cloud: https://cloud.projectdiscovery.io/: plataforma que permite realizar escaneos automaticos a targets. Es la mas parecida a la propuesta presentada. 
     \item Intruder.io: https://intruder.io/
     \item Detectify: https://detectify.com/
 \end{itemize}
-
+\end{parskipenv}
