@@ -1,17 +1,38 @@
 \chapter{\introductionname}
 \newpage
 \begin{parskipenv}
-En el ámbito de la ciberseguridad, el reconocimiento constituye una de las fases más importantes y decisivas dentro de una auditoría de seguridad o prueba de penetración. Esta fase inicial tiene como objetivo recopilar la máxima cantidad de información posible sobre el objetivo a analizar, ya sea una dirección IP, un dominio o una URL concreta. A partir de estos datos, el auditor puede identificar servicios expuestos, tecnologías empleadas y potenciales vectores de ataque, sentando así las bases para etapas más avanzadas como la explotación o escalado de privilegios.
+En el ámbito de la ciberseguridad, el \textbf{reconocimiento} constituye una de las fases más importantes dentro de una \textbf{auditoría}. Esta fase inicial tiene como objetivo recopilar la máxima cantidad de información posible sobre el objetivo a analizar \cite{mitre}. A partir de estos datos, el auditor puede identificar servicios expuestos, tecnologías empleadas y potenciales vectores de ataque, sentando así las bases para etapas más avanzadas como la explotación o escalación de privilegios.
 
-A pesar de su importancia, las tareas asociadas al reconocimiento suelen ser repetitivas, tediosas y propensas a errores si se realizan manualmente. Además, muchas de las herramientas empleadas requieren conocimientos técnicos, uso de línea de comandos y un esfuerzo considerable para gestionar los resultados obtenidos. Este escenario genera una necesidad clara de soluciones que permitan automatizar este proceso, reducir los tiempos de ejecución y facilitar la gestión de la información recopilada.
+A pesar de su importancia, las tareas asociadas al reconocimiento suelen ser \textbf{repetitivas}, tediosas y propensas a errores si se realizan manualmente. Además, muchas de las herramientas empleadas requieren conocimientos técnicos, uso de línea de comandos y un esfuerzo considerable para gestionar los resultados obtenidos. Este escenario genera una necesidad clara de soluciones que permitan automatizar este proceso, reducir los tiempos de ejecución y facilitar la gestión de la información recopilada.
 
-El presente Trabajo de Fin de Grado surge como respuesta a esta problemática. Se ha desarrollado una herramienta que automatiza de forma integral las tareas fundamentales de reconocimiento en una auditoría de seguridad, integrando distintas utilidades especializadas en un único entorno con interfaz gráfica. Esta solución permite realizar desde escaneos de puertos y servicios hasta la enumeración de subdominios, identificación de vulnerabilidades web, detección de CMS y análisis de servicios como FTP o SSH. Además, la herramienta permite interactuar con un sistema de inteligencia artificial basado en modelos generativos, que facilita la interpretación de resultados y la propuesta de acciones posteriores.
+El presente Trabajo de Fin de Grado surge como respuesta a esta problemática. Se ha desarrollado una herramienta que \textbf{automatiza} las tareas fundamentales de reconocimiento en una auditoría de seguridad, integrando distintas utilidades en un único entorno con \textbf{interfaz gráfica}. Esta solución permite realizar desde escaneos de puertos y servicios hasta la enumeración de subdominios, identificación de vulnerabilidades web, detección de CMS y análisis de servicios como FTP o SSH. Además, la herramienta permite interactuar con un sistema de \textbf{inteligencia artificial} basado en modelos generativos, que facilita la interpretación de resultados y la propuesta de acciones posteriores.
 
-La herramienta está diseñada con una arquitectura modular y escalable, lo que permite incorporar nuevas funcionalidades de forma sencilla. Entre las funcionalidades añadidas destacan también la generación automática y versionada de informes, la configuración de escaneos exhaustivos, la personalización del entorno mediante proxies y un sistema de proyectos que organiza los análisis por objetivo.
+Entre las funcionalidades añadidas destacan también la generación automática y versionada de \textbf{informes}, la configuración de escaneos exhaustivos, la personalización del entorno mediante proxies y un sistema de proyectos que organiza los análisis por objetivo.
 
-Durante el desarrollo se han evaluado múltiples alternativas tecnológicas, priorizando aquellas que ofrecieran un equilibrio entre rendimiento, actualización activa, facilidad de integración y compatibilidad. Herramientas como Nmap, Subfinder, Nuclei, WPScan o Feroxbuster han sido seleccionadas tras un análisis comparativo, mientras que otras como Nikto, Gobuster o Paramiko fueron descartadas por distintos motivos técnicos o de eficiencia.
+La herramienta está diseñada con una arquitectura \textbf{modular y escalable}, lo que permite incorporar en un futuro nuevas funcionalidades de forma sencilla. Esto la convierte en una solución con \textbf{capacidad para seguir evolucionando} y ampliándose mediante la integración de nuevos módulos que permitan cubrir un mayor número de servicios y casos de uso.
 
-La metodología seguida en el desarrollo de este trabajo se basa en la definición clara de un flujo de análisis, dividido en fases específicas que se adaptan dinámicamente al tipo de objetivo definido. Cada fase fue diseñada, implementada y validada individualmente, integrándola después dentro de un sistema completo con gestión web y generación de resultados centralizados. Todo ello ha sido acompañado por una interfaz amigable que permite a cualquier usuario lanzar auditorías estructuradas sin necesidad de conocimientos avanzados en ciberseguridad.
+Durante el desarrollo se han evaluado múltiples alternativas tecnológicas, priorizando aquellas que ofrecieran un equilibrio entre rendimiento, actualización activa, facilidad de integración y compatibilidad. Herramientas como Nmap, Subfinder, Nuclei, WPScan o Feroxbuster han sido seleccionadas tras un análisis comparativo, mientras que otras como Nikto, Gobuster o Paramiko fueron descartadas por distintos motivos técnicos.
 
-El resultado es una herramienta funcional, útil y extensible, capaz de reducir significativamente el tiempo y la carga de trabajo durante la fase de reconocimiento, facilitando así el proceso de auditoría y mejorando la calidad del análisis desde las primeras etapas.
+El resultado es una herramienta funcional, útil y extensible, capaz de \textbf{reducir significativamente el tiempo} y la carga de trabajo durante la fase de reconocimiento, agilizando así el proceso de auditoría y mejorando la calidad del análisis desde las primeras etapas.
+
+\section{Estructura del documento}
+
+Este documento se encuentra estructurado en siete capítulos, además de las correspondientes referencias bibliográficas. A continuación, se describe brevemente el contenido de cada uno de ellos:
+
+\begin{itemize}
+    \item El \textbf{Capítulo 2} recoge los objetivos que se pretenden alcanzar con el desarrollo de la herramienta propuesta.
+    
+    \item El \textbf{Capítulo 3} presenta el estado del arte, en el que se analizan las principales herramientas existentes en el ámbito del reconocimiento automatizado y se identifican sus principales limitaciones.
+    
+    \item El \textbf{Capítulo 4} describe la metodología seguida para el desarrollo de la herramienta, justificando la elección de cada tecnología empleada y explicando el flujo de trabajo que se implementa durante el proceso de reconocimiento.
+    
+    \item El \textbf{Capítulo 5} detalla el proceso de implementación de la herramienta, desde el diseño de su arquitectura hasta la integración de sus distintos módulos.
+    
+    \item El \textbf{Capítulo 6} recoge los resultados obtenidos a partir de las pruebas realizadas sobre distintos escenarios, evaluando la eficacia de la herramienta y el cumplimiento de los objetivos definidos.
+    
+    \item El \textbf{Capítulo 7} expone las conclusiones extraídas del trabajo, así como posibles líneas futuras de mejora y ampliación del sistema desarrollado.
+    
+    \item Finalmente, se incluyen las \textbf{referencias bibliográficas} consultadas a lo largo del proyecto. % Y posible Anexo??
+\end{itemize}
+
 \end{parskipenv}

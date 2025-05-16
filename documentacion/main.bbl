@@ -1,4 +1,10 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{mitre}
+{MITRE Attack}.
+\newblock Reconnaissance, 2020.
+\newblock Táctica de reconocimiento en el marco ATTaCK de MITRE.
+\newblock URL: \url{https://attack.mitre.org/tactics/TA0043/}.
 
 \bibitem{anderson1972a}
 James~P. Anderson.
@@ -55,5 +61,12 @@ ISECOM.
   2024.
 \newblock Plataforma de escaneo web basada en inteligencia colectiva.
 \newblock URL: \url{https://detectify.com/}.
+
+\bibitem{0day}
+{INCIBE}.
+\newblock ¿qué es una vulnerabilidad zero day?, 2020.
+\newblock Publicación de INCIBE sobre vulnerabilidades de día cero.
+\newblock URL:
+  \url{https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day}.
 
 \end{thebibliography}
