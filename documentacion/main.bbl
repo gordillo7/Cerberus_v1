@@ -1,26 +1,22 @@
 \begin{thebibliography}{10}
 
-\bibitem{mitre}
-{MITRE Attack}.
-\newblock Reconnaissance, 2020.
-\newblock Táctica de reconocimiento en el marco ATTaCK de MITRE.
+\bibitem{recon}
+Reconnaissance, 2020.
+\newblock Fase de reconocimiento en auditorías de seguridad.
 \newblock URL: \url{https://attack.mitre.org/tactics/TA0043/}.
 
 \bibitem{anderson1972a}
 James~P. Anderson.
 \newblock Computer security technology planning study, volume 1.
 \newblock Technical report, U.S. Air Force Electronic Systems Division, 1972.
-\newblock Informe pionero sobre planificación y análisis de seguridad
-  informática, volumen 1.
-\newblock URL:
-  \url{https://csrc.nist.gov/files/pubs/conference/1998/10/08/proceedings-of-the-21st-nissc-1998/final/docs/early-cs-papers/ande72a.pdf}.
+\newblock Informe pionero sobre planificación y análisis de seguridad informática, volumen 1.
+\newblock URL: \url{https://csrc.nist.gov/files/pubs/conference/1998/10/08/proceedings-of-the-21st-nissc-1998/final/docs/early-cs-papers/ande72a.pdf}.
 
 \bibitem{anderson1972b}
 James~P. Anderson.
 \newblock Computer security technology planning study, volume 2.
 \newblock Technical report, U.S. Air Force Electronic Systems Division, 1972.
-\newblock Informe pionero sobre planificación y análisis de seguridad
-  informática, volumen 2.
+\newblock Informe pionero sobre planificación y análisis de seguridad informática, volumen 2.
 \newblock URL: \url{https://csrc.nist.rip/publications/history/ande72.pdf}.
 
 \bibitem{satanTool1995}
@@ -30,18 +26,14 @@ Dan Farmer and Wietse Venema.
 \newblock URL: \url{http://www.porcupine.org/satan}.
 
 \bibitem{osstmm}
-ISECOM.
-\newblock Osstmm – open source security testing methodology manual, 2020.
-\newblock Metodología de auditoría de seguridad.
-\newblock URL: \url{https://www.isecom.org/OSSTMM.3.pdf}.
+Isecom - institute for security and open methodologies.
+\newblock Sitio web oficial de ISECOM.
+\newblock URL: \url{https://www.isecom.org}.
 
-\bibitem{owaspTestingGuide}
-{OWASP Foundation}.
-\newblock {\em OWASP Testing Guide v4}.
-\newblock Open Web Application Security Project, 2014.
-\newblock Guía metodológica para pruebas de seguridad.
-\newblock URL:
-  \url{https://owasp.org/www-project-web-security-testing-guide/assets/archive/OWASP_Testing_Guide_v4.pdf}.
+\bibitem{owasp}
+Open web application security project (owasp), 2001.
+\newblock Sitio web oficial de OWASP.
+\newblock URL: \url{https://owasp.org}.
 
 \bibitem{projectdiscovery}
 {ProjectDiscovery}.
@@ -57,8 +49,7 @@ ISECOM.
 
 \bibitem{detectify}
 {Detectify AB}.
-\newblock Detectify - web vulnerability scanner powered by ethical hackers,
-  2024.
+\newblock Detectify - web vulnerability scanner powered by ethical hackers, 2024.
 \newblock Plataforma de escaneo web basada en inteligencia colectiva.
 \newblock URL: \url{https://detectify.com/}.
 
@@ -66,7 +57,24 @@ ISECOM.
 {INCIBE}.
 \newblock ¿qué es una vulnerabilidad zero day?, 2020.
 \newblock Publicación de INCIBE sobre vulnerabilidades de día cero.
-\newblock URL:
-  \url{https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day}.
+\newblock URL: \url{https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day}.
+
+\bibitem{owaspMethodology}
+{OWASP Foundation}.
+\newblock {\em OWASP Web Security Testing Guide v4.2}, 2020.
+\newblock Metodología en el marco de OWASP.
+\newblock URL: \url{https://owasp.org/www-project-web-security-testing-guide/v42/}.
+
+\bibitem{mitreMethodology}
+{MITRE Corporation}.
+\newblock {\em MITRE ATTACK}, 2015.
+\newblock Metodología en el marco de MITRE ATTACK.
+\newblock URL: \url{https://attack.mitre.org/}.
+
+\bibitem{osstmmMethodology}
+{Pete Herzog}.
+\newblock {\em OSSTMM – Open Source Security Testing Methodology Manual}, 2001.
+\newblock Metodología en el marco de OSSTMM.
+\newblock URL: \url{https://www.isecom.org/OSSTMM.3.pdf}.
 
 \end{thebibliography}

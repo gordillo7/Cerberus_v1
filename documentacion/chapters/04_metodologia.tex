@@ -1,104 +1,78 @@
 \chapter{\methodologyname}
 \newpage
-La herramienta implementada sigue un flujo de trabajo definido que automatiza de forma secuencial las tareas más relevantes en la fase de reconocimiento de una auditoría de seguridad. A continuación, se describen detalladamente cada una de las fases.
+Tal y como se ha mencionado en capítulos anteriores, la fase de reconocimiento constituye un componente fundamental dentro de cualquier auditoría de seguridad. Su correcta ejecución permite identificar activos expuestos, tecnologías empleadas y posibles vectores de ataque. Por este motivo, resulta esencial contar con una metodología adecuada que permita abordar esta fase de forma eficiente, estructurada y efectiva.
 
-\section{Escaneo de puertos y servicios}
+\section{Estudio de la fase de reconocimiento}
 
-La primera fase consiste en la ejecución de un escaneo con \texttt{Nmap}, una herramienta ampliamente utilizada en entornos profesionales. Nmap permite identificar los puertos abiertos en el objetivo, los servicios que están corriendo sobre esos puertos y la versión específica de dichos servicios. Esta información resulta crítica para detectar superficies expuestas, planificar el resto del análisis y orientar futuras fases como la enumeración de vulnerabilidades o fuerza bruta de credenciales.
+La fase de reconocimiento en una auditoría de seguridad consiste en el conjunto de técnicas empleadas para recopilar, de forma activa o pasiva, información relevante sobre un objetivo. Dicha información puede incluir aspectos como servicios expuestos, dominios relacionados, tecnologías utilizadas, direcciones de correo filtradas o configuraciones vulnerables. Esta etapa inicial es crucial, ya que establece las bases para el resto del proceso de auditoría: a partir de estos datos se pueden identificar posibles vectores de ataque, evaluar superficies expuestas y priorizar futuras acciones ofensivas o defensivas.
 
-\section{Enumeración de dominio}
+Al tratarse de una fase con un alto grado de repetitividad y lógica condicional (por ejemplo, “si el puerto 21 está abierto, normalmente asociado al servicio \texttt{FTP}, comprobar acceso anónimo”), es especialmente adecuada para ser automatizada. Automatizarla no solo ahorra tiempo y esfuerzo humano, sino que mejora la consistencia y trazabilidad de los resultados obtenidos, al aplicar siempre el mismo flujo metodológico ante situaciones similares.
 
-En caso de que el objetivo introducido sea un dominio (en lugar de una dirección IP), se activan tres módulos adicionales que permiten obtener información detallada sobre el mismo.
+\subsection{Metodologías de referencia}
 
-\subsection{Reconocimiento DNS}
-
-Este módulo se encarga de realizar un reconocimiento pasivo del dominio, recopilando información pública y registros DNS. Se utilizan varias herramientas para llevar a cabo esta tarea:
+Para establecer un marco sólido sobre el cual diseñar el flujo de reconocimiento implementado, se han estudiado tres metodologías ampliamente aceptadas en el ámbito de la ciberseguridad:
 
 \begin{itemize}
-  \item \texttt{dnsdumpster}: Se encarga de consultar y visualizar registros DNS del dominio, como \texttt{MX} (servidores de correo), \texttt{NS} (servidores de nombres) y \texttt{TXT} (configuraciones SPF, DKIM, etc).
-  \item \texttt{mxtoolbox}: Se utiliza para consultar el registro \texttt{DMARC}, que proporciona mecanismos de protección ante ataques de suplantación de identidad vía correo electrónico.
-  \item \texttt{API Ninja (WHOIS)}: Ejecuta consultas WHOIS para obtener información relacionada con la propiedad del dominio, fechas de creación y expiración, y otros datos relevantes.
+  \item \textbf{OWASP Web Security Testing Guide (WSTG)} \cite{owaspMethodology}: guía enfocada a la seguridad de aplicaciones web. Incluye en sus primeras fases una serie de pruebas relacionadas con la recolección de información (como descubrimiento de subdominios, fingerprinting de tecnologías, análisis de DNS o WHOIS). Su orientación a entornos web y enfoque sistemático la convierten en una referencia especialmente útil para este proyecto.
+
+  \item \textbf{MITRE ATTACK Framework} \cite{mitreMethodology}: base de conocimiento que documenta técnicas utilizadas por profesionales en el mundo real. La táctica de \textit{Reconnaissance} incluye técnicas como escaneo activo, recolección de DNS, WHOIS lookup, entre otras. Su grado de detalle la convierten en una fuente ideal para este proyecto.
+
+  \item \textbf{OSSTMM (Open Source Security Testing Methodology Manual)} \cite{osstmmMethodology}: metodología de auditoría que organiza el análisis por canales de interacción y define la enumeración como una parte esencial del proceso de reconocimiento. Aunque es más generalista y menos enfocada al entorno web, proporciona una base de conocimientos sólida.
 \end{itemize}
 
-\subsection{OSINT de direcciones de correo electrónico}
+\subsection{Enfoque adoptado en este trabajo}
 
-Tras el análisis DNS, se ejecuta un módulo de OSINT para obtener direcciones de correo electrónico asociadas al dominio, y verificar si estas han sido filtradas en alguna brecha de seguridad:
+Las tres metodologías han sido consideradas como referencia durante el diseño de la herramienta, y en cierto modo, se han aplicado facetas de todas ellas. No obstante, el enfoque metodológico seguido no se ha adherido estrictamente a ninguna de ellas de forma literal. En su lugar, se ha optado por una aplicación flexible, combinando lo más relevante de cada marco con criterios prácticos derivados de la experiencia técnica y del objetivo del proyecto.
+
+Concretamente, el diseño del flujo de reconocimiento se apoya principalmente en las directrices del marco OWASP, dada su orientación clara a entornos web, y en la estructura del marco MITRE ATTACK, por su nivel de detalle y organización táctica. La herramienta incorpora fases descritas en ambos marcos, como el fingerprinting de tecnologías, el escaneo de vulnerabilidades web o la recopilación de información DNS y WHOIS.
+
+Sin embargo, también se han añadido tareas no descritas explícitamente en dichos marcos, como el escaneo de puertos y servicios o el análisis de servicios específicos, por considerarse elementos fundamentales en un reconocimiento técnico completo. Del mismo modo, algunas técnicas presentes en ATTACK o OSSTMM han sido descartadas por no ajustarse al alcance funcional de esta herramienta.
+
+Las fases implementadas se documentan con mayor detalle en los apartados siguientes, donde se describen las herramientas y tecnologías utilizadas en cada etapa, así como el flujo metodológico exacto que sigue la herramienta.
+
+
+%\section{Análisis y elección de herramientas}
+%\subsection{Criterios de selección}
+%\subsection{Comparativa de herramientas consideradas}
+%\begin{itemize}
+%    \item Tabla comparativa (como la del estado del arte) por categoría de herramienta.
+%\end{itemize}
+\section{Análisis y elección de herramientas}
+La elección de herramientas adecuadas resulta clave para garantizar la eficacia, eficiencia y fiabilidad. En el desarrollo de este proyecto, se han analizado diversas alternativas tecnológicas disponibles para cada una de las tareas que conforman la fase de reconocimiento, valorando sus prestaciones, grado de actualización, facilidad de integración, rendimiento y adecuación al flujo metodológico propuesto.
+
+Este apartado presenta, en primer lugar, los criterios que han guiado la selección de dichas herramientas. Posteriormente, se comparan distintas opciones consideradas para cada funcionalidad, justificando la decisión final adoptada en cada caso.
+
+\subsection{Criterios de selección}
+Para la elección de la herramienta más adecuada en cada una de las fases del reconocimiento, se han definido una serie de criterios con el fin de asegurar su alineación con los objetivos de la solución desarrollada. Estos criterios se han priorizado en función de su relevancia dentro del contexto del proyecto, siendo los siguientes, ordenados de mayor a menor importancia:
 
 \begin{itemize}
-  \item \texttt{IntelligenceX}: Busca direcciones de correo filtradas asociadas al dominio en bases de datos públicas.
-  \item \texttt{LeakCheck}: Comprueba si las direcciones encontradas han sido expuestas, en qué brechas concretas, y qué información fue filtrada. Esta herramienta fue elegida tras descartar alternativas como "Have I Been Pwned" o "DeHashed", que requerían suscripción o tenían limitaciones excesivas.
+    \item \textbf{Actualización activa}: Se priorizan herramientas con desarrollo activo y mantenimiento continuo, así como con una comunidad de usuarios que contribuya regularmente a su evolución.
+    
+    \item \textbf{Grado de popularidad}: Se valora el uso extendido y el reconocimiento de la herramienta en entornos profesionales.
+    
+    \item \textbf{Facilidad de integración}: Se seleccionan herramientas que puedan integrarse de manera sencilla en el flujo de ejecución de la solución, preferiblemente aquellas que ofrezcan soporte en línea de comandos, salida en formatos tratables (JSON, CSV) o APIs.
+    
+    \item \textbf{Rendimiento}: Se evalúa la eficiencia en el uso de recursos y la velocidad de ejecución.
+    
+    \item \textbf{Flexibilidad}: Se prefieren herramientas que permitan ajustes de configuración, modo de ejecución, profundidad de análisis y adaptación a distintos escenarios de uso.
+    
+    \item \textbf{Documentación}: Se considera importante la existencia de una documentación clara, actualizada y accesible, que facilite tanto su uso como su integración y mantenimiento.
 \end{itemize}
 
-\subsection{Enumeración de subdominios}
+A partir de estos criterios, se ha llevado a cabo un análisis exhaustivo de las distintas alternativas disponibles para cada etapa del reconocimiento. Las decisiones adoptadas, así como las herramientas finalmente seleccionadas, se presentan y justifican en los apartados siguientes.
 
-Para ampliar la superficie de ataque, se ejecuta \texttt{Subfinder}, una herramienta que utiliza múltiples fuentes para obtener subdominios asociados al dominio objetivo. Posteriormente, se lanza \texttt{Httpx} para verificar cuáles de ellos están activos, comprobando su código de respuesta HTTP.
+\subsection{Comparativa de herramientas consideradas}
+%% Breve introducción??
 
-\section{Reconocimiento web}
 
-Si se detecta que el puerto 80 está abierto, se lanzan una serie de modulos para realizar un reconocimiento exhaustivo del servicio web.
+%\section{Diseño de la arquitectura de la herramienta}
+%\begin{itemize}
+%    \item Explicación de arquitectura modular y escalable.
+%    \item Figura con esquema de componentes (Figura~\ref{fig:arquitectura}).
+%\end{itemize}
 
-\subsection{Escaneo de vulnerabilidades web}
-
-Se procede a escanear el objetivo con \texttt{Nuclei}, una herramienta moderna, flexible y en constante actualización. Permite identificar vulnerabilidades comunes y debilidades en aplicaciones web. Si el usuario activa el modo de \textit{escaneo exhaustivo}, Nuclei se ejecutará también sobre todos los subdominios encontrados anteriormente.
-
-\subsection{Detección de CMS}
-
-Se utiliza \texttt{WhatWeb} para identificar si el sitio web analizado utiliza un gestor de contenidos (CMS) como WordPress o Joomla. Esta detección permite habilitar fases específicas posteriores, optimizadas para cada plataforma. Además, en caso de que WhatWeb no pueda identificar CMS, se revisa si alguno de los directorios enumerados empieza por \texttt{wp-} para determinar si se trata de un sitio WordPress.
-
-\subsection{Captura de pantalla del sitio web}
-
-Para documentar visualmente el estado del objetivo, se emplea la librería \texttt{pyppeteer}, que interactúa con el navegador "headless" de Chrome para tomar una captura del sitio web. Esta imagen se incluye en el informe final.
-
-\subsection{Enumeración de directorios y archivos}
-
-En esta fase se utiliza \texttt{Feroxbuster}, una herramienta moderna con alto rendimiento, recursividad automática y gran capacidad de gestión de respuestas HTTP. Permite enumerar rutas y archivos ocultos que puedan resultar de interés para el auditor. Si se activa el modo de escaneo exhaustivo, la herramienta realiza una recursividad de nivel 2, enumerando directorios dentro de otros.
-
-\subsection{Reconocimiento de WordPress}
-
-Si el CMS detectado es WordPress, se lanza \texttt{WPScan} para enumerar:
-\begin{itemize}
-  \item Usuarios del sitio, que se almacenan en una wordlist para fases posteriores.
-  \item Plugins instalados, que se cruzan con bases de datos públicas para buscar CVEs. Si existe un exploit público en GitHub, se clona automáticamente.
-\end{itemize}
-
-En caso de disponer de usuarios enumerados, se lanza un ataque de fuerza bruta mediante \texttt{WPScan}, apuntando al recurso \texttt{xmlrpc.php}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se encontraron usuarios, se utiliza una wordlist por defecto con credenciales comunes.
-
-\subsection{Reconocimiento de Joomla}
-
-Si se detecta Joomla como CMS, se ejecuta \texttt{Joomscan}, que analiza vulnerabilidades conocidas, archivos de configuración expuestos, copias de seguridad accesibles, y posibles fallos asociados a versiones antiguas del sistema.
-
-\section{Enumeración del servicio FTP}
-
-Si el puerto 21 (FTP) está abierto, se utiliza la librería \texttt{ftplib} para interactuar con el servicio. Se comprueba:
-\begin{itemize}
-  \item Si permite login anónimo.
-  \item Si existen credenciales válidas (mediante fuerza bruta).
-  \item Si se obtienen permisos de lectura/escritura.
-  \item Se descarga el contenido del servidor y se analiza con \texttt{Searchsploit} por si existen vulnerabilidades relacionadas con la versión del servicio.
-\end{itemize}
-
-\section{Reconocimiento del servicio SSH}
-
-Si el puerto 22 está abierto, se lanza un ataque de fuerza bruta con \texttt{Hydra}. Inicialmente se consideró la librería \texttt{paramiko}, pero fue descartada por no estar diseñada para este propósito. Se utilizan las mismas wordlists generadas anteriormente si existen usuarios. Además, se analiza la versión del servicio con \texttt{Searchsploit} para comprobar posibles vulnerabilidades conocidas.
-
-\section{Generación de reportes}
-
-Una vez finalizado el análisis, la herramienta genera un informe en formato PDF con toda la información recopilada, organizada de forma clara y estructurada. Si el escaneo se ha realizado dentro de un proyecto, el informe se versiona automáticamente, permitiendo mantener un historial completo de auditorías sobre el mismo objetivo.
-
-\section{Funcionalidades adicionales}
-
-\begin{itemize}
-  \item \textbf{Asistente de IA}: El sistema integra un modelo generativo (Gemini) que permite al usuario consultar recomendaciones, próximos pasos, análisis de resultados o dudas específicas basadas en el escaneo realizado.
-  \item \textbf{Generación de siguientes pasos con IA}: A partir de los resultados obtenidos, el modelo generativo sugiere los próximos pasos a seguir, facilitando la planificación de la auditoría.
-  \item \textbf{Sugerencias de soluciones con IA}: El modelo generativo ofrece recomendaciones sobre posibles soluciones a las vulnerabilidades detectadas.
-  \item \textbf{Modo de escaneo exhaustivo}: Amplía la profundidad del análisis activando opciones avanzadas en varias fases. Proporciona más información, aunque incrementa el tiempo total del escaneo.
-  \item \textbf{Configuración de proxy}: El usuario puede configurar manualmente un proxy desde la interfaz gráfica, útil para evadir bloqueos y especialmente integrado con herramientas como \texttt{WPScan}.
-  \item \textbf{Sistema de gestión de proyectos}: Desde la interfaz, el usuario puede crear y gestionar proyectos, permitiendo mantener informes versionados, comparar resultados y documentar la evolución del objetivo.
-  \item \textbf{Programación de escaneos}: La herramienta permite programar escaneos automáticos a horas específicas, facilitando la planificación y ejecución de auditorías.
-\end{itemize}
-
-Extra: si se quiere lanzar desde consola, basta con ejecutar el archivo \texttt{main.py} (python3 main.py <target> [-p] [-ex]). Se le pueden especificar los siguientes parámetros:
-\begin{itemize}
-  \item \texttt{-p}: Asocia el escaneo a un proyecto existente, permitiendo mantener un historial de auditorías sobre el mismo objetivo.
-  \item \texttt{-ex}: Activa el modo de escaneo exhaustivo.
-\end{itemize}
+%\section{Flujo metodológico de ejecución}
+%\begin{itemize}
+%    \item Flujo paso a paso con figura de resumen (Figura~\ref{fig:flujo}).
+%    \item Posibles configuraciones: escaneo por consola, interfaz gráfica, escaneo exhaustivo.
+%\end{itemize}
