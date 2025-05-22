@@ -1,5 +1,6 @@
 \chapter{\methodologyname}
 \newpage
+\begin{parskipenv}
 Tal y como se ha mencionado en capítulos anteriores, la fase de reconocimiento constituye un componente fundamental dentro de cualquier auditoría de seguridad. Su correcta ejecución permite identificar activos expuestos, tecnologías empleadas y posibles vectores de ataque. Por este motivo, resulta esencial contar con una metodología adecuada que permita abordar esta fase de forma eficiente, estructurada y efectiva.
 
 \section{Estudio de la fase de reconocimiento}
@@ -45,14 +46,14 @@ Este apartado presenta, en primer lugar, los criterios que han guiado la selecci
 \subsection{Criterios de selección}
 Para la elección de la herramienta más adecuada en cada una de las fases del reconocimiento, se han definido una serie de criterios con el fin de asegurar su alineación con los objetivos de la solución desarrollada. Estos criterios se han priorizado en función de su relevancia dentro del contexto del proyecto, siendo los siguientes, ordenados de mayor a menor importancia:
 
-\begin{itemize}
-    \item \textbf{Actualización activa}: Se priorizan herramientas con desarrollo activo y mantenimiento continuo, así como con una comunidad de usuarios que contribuya regularmente a su evolución.
-    
-    \item \textbf{Grado de popularidad}: Se valora el uso extendido y el reconocimiento de la herramienta en entornos profesionales.
+\begin{itemize}    
+    \item \textbf{Grado de reconocimiento}: Se valora el uso extendido y el reconocimiento de la herramienta en entornos profesionales.
     
     \item \textbf{Facilidad de integración}: Se seleccionan herramientas que puedan integrarse de manera sencilla en el flujo de ejecución de la solución, preferiblemente aquellas que ofrezcan soporte en línea de comandos, salida en formatos tratables (JSON, CSV) o APIs.
     
     \item \textbf{Rendimiento}: Se evalúa la eficiencia en el uso de recursos y la velocidad de ejecución.
+    
+    \item \textbf{Actualización activa}: Se priorizan herramientas con desarrollo activo y mantenimiento continuo, así como con una comunidad de usuarios que contribuya regularmente a su evolución.
     
     \item \textbf{Flexibilidad}: Se prefieren herramientas que permitan ajustes de configuración, modo de ejecución, profundidad de análisis y adaptación a distintos escenarios de uso.
     
@@ -62,8 +63,118 @@ Para la elección de la herramienta más adecuada en cada una de las fases del r
 A partir de estos criterios, se ha llevado a cabo un análisis exhaustivo de las distintas alternativas disponibles para cada etapa del reconocimiento. Las decisiones adoptadas, así como las herramientas finalmente seleccionadas, se presentan y justifican en los apartados siguientes.
 
 \subsection{Comparativa de herramientas consideradas}
-%% Breve introducción??
+Una vez definidos los criterios de selección, en este apartado se presenta la toma de decisiones llevada a cabo para la elección de cada una de las herramientas de las distintas fases.
 
+\subsubsection*{Escaneo de puertos y servicios}
+Para la etapa de escaneo de puertos y servicios se ha seleccionado \textbf{Nmap} \cite{nmap}, una de las herramientas más consolidadas y ampliamente utilizadas en el ámbito de la ciberseguridad. Su elección fue clara debido a su reconocimiento como estándar para el descubrimiento de puertos abiertos, detección de servicios y recopilación de información sobre los sistemas analizados.
+
+Nmap destaca por su robustez, su comunidad activa de usuarios, la disponibilidad de documentación extensa y su versatilidad para adaptarse a distintos niveles de profundidad en el análisis. Además, permite realizar detección de versiones y ejecución de scripts específicos mediante su motor NSE (Nmap Scripting Engine), funcionalidades que otras alternativas no alcanzan al mismo nivel.
+
+Durante el proceso de selección se valoraron también otras herramientas como \textbf{Masscan} \cite{masscan}, reconocida por su velocidad de escaneo en redes de gran tamaño, pero que no ofrece detección de servicios ni análisis detallado. Asimismo, se consideró \textbf{RustScan} \cite{rustscan}, una herramienta moderna que destaca por su rapidez y eficiencia, pero que no cuenta con la misma consolidación ni comunidad que Nmap.
+
+La Tabla~\ref{tabla:comparativa_escaneo_puertos} resume la comparativa entre estas tres herramientas aplicando los criterios definidos anteriormente.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|*{6}{c|}}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{Nmap}        & \starthree & \starthree & \startwo & \starthree & \starthree & \starthree \\
+\hline
+\textbf{Masscan}     & \startwo   & \startwo   & \starthree & \startwo & \starone   & \starone \\
+\hline
+\textbf{RustScan}    & \startwo   & \starthree & \starthree & \starthree & \startwo   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para escaneo de puertos y servicios.}
+\label{tabla:comparativa_escaneo_puertos}
+\end{table}
+
+Teniendo en cuenta esto, \textbf{Nmap} ha sido la opción seleccionada para cubrir esta fase, por ser la herramienta más completa, consolidada y adecuada para los objetivos del proyecto.
+
+\subsubsection*{Reconocimiento DNS}
+La etapa de reconocimiento DNS tiene como objetivo recopilar la mayor cantidad de información posible relacionada con la infraestructura DNS del objetivo. Para ello se han utilizado tres herramientas, cada una especializada en una funcionalidad específica:
+
+\begin{itemize}
+    \item \textbf{DNSdumpster} \cite{dnsdumpster}: empleada para consultar y visualizar registros DNS públicos del dominio, incluyendo registros \texttt{MX} (servidores de correo), \texttt{NS} (servidores de nombres) y \texttt{TXT} (configuraciones SPF, DKIM, etc.).
+    
+    \item \textbf{MXToolbox} \cite{mxtoolbox}: utilizada específicamente para la consulta del registro \texttt{DMARC}, el cual proporciona mecanismos de protección frente a ataques de suplantación de identidad mediante correo electrónico (\textit{email spoofing} \cite{emailspoofing}).
+    
+    \item \textbf{API Ninja (WHOIS)} \cite{apininja_whois}: empleada para realizar consultas WHOIS y obtener información sobre la propiedad del dominio, la fecha de creación y expiración, así como otros datos administrativos relevantes.
+\end{itemize}
+
+Durante el proceso de selección de estas herramientas, se consideraron varias alternativas que ofrecían funcionalidades similares.
+
+En primer lugar, se necesitaba una herramienta que permitiera consultar registros DNS públicos. En este caso se optó por \textbf{DNSdumpster}, que destaca por su facilidad de uso e integración gracias a la amplia capa gratuita que ofrece su API. Aunque existen otras herramientas como \textbf{dnsrecon} o \textbf{dnsenum}, se descartaron por las siguientes razones:
+
+\begin{itemize}
+    \item \textbf{dnsrecon} \cite{dnsrecon}: ofrece buenos resultados, pero su integración en la herramienta resultaba menos práctica, ya que no genera salidas en formatos estructurados como JSON.
+    
+    \item \textbf{dnsenum} \cite{dnsenum}: no proporciona tanta información como DNSdumpster y presenta un mantenimiento limitado, con escasa actividad reciente en su desarrollo.
+    
+    \item \textbf{Amass} \cite{amass}: una herramienta potente y moderna, pero con una integración algo más compleja.
+\end{itemize}
+
+La Tabla~\ref{tabla:comparativa_dns} resume la comparativa entre estas herramientas siguiendo los criterios definidos anteriormente.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{DNSdumpster} & \startwo & \starthree   & \starthree   & \starthree   & \starthree   & \starthree \\
+\hline
+\textbf{Dnsrecon}    & \startwo   & \starone   & \startwo   & \startwo   & \startwo   & \starthree \\
+\hline
+\textbf{Dnsenum}     & \startwo   & \starone   & \startwo   & \starone   & \startwo   & \starthree \\
+\hline
+\textbf{Amass}       & \startwo   & \startwo   & \starthree   & \startwo & \starthree   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para reconocimiento de registros DNS.}
+\label{tabla:comparativa_dns}
+\end{table}
+
+La facilidad de integración, la amplia capa gratuita de su API y la calidad de la información obtenida llevaron a seleccionar \textbf{DNSdumpster} como la herramienta más adecuada para cumplir esta función.
+
+Otra parte fundamental dentro del reconocimiento DNS es la consulta del registro \texttt{DMARC}. El mantenimiento y la monitorización de este registro son aspectos clave para garantizar la autenticidad del dominio y protegerlo frente a ataques de suplantación de identidad mediante correo electrónico.
+
+Para esta tarea se optó por utilizar \textbf{MXToolbox} debido a su simplicidad de uso y a la disponibilidad de su funcionalidad DMARC a través de una API para realizar la consulta. Aunque existen otras plataformas como \textbf{EasyDMARC} \cite{easydmarc}, estas no ofrecen una API pública, lo que complica su integración en flujos automatizados como el propuesto en esta herramienta.
+
+El número de herramientas con esta funcionalidad específica y con capacidad de integración es muy limitado, lo que llevó a seleccionar \textbf{MXToolbox} como la opción más adecuada.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Alternativas API Ninja (WHOIS): whois de cli (no es tan integrable, puesto que el output no se puede exportar en formatos como json o csv). Alternativas web como https://who.is no ofrecen un api publica,
+%lo que complica la integración. De entre las herramientas que ofrecen API, la seleccionada fue la funcionalidad de WHOIS de API Ninja por tener la capa gratuita de api mas completa. Alternativas como https://who.is/
+%que tambien ofrecen una capa gratuita de API esta más limitada <insertar tabla comparativa>.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Escaneo de puertos y servicios: (HECHO) 1. Nmap
+%Reconocimiento DNS: (HECHO) 2. dnsdumpster, (HECHO) 3. mxtoolbox, 4. API Ninja (WHOIS)
+%OSINT correos: 5. IntelligenceX, 6. LeakCheck
+%Enumeracion de subdominios: 7. Subfinder, 8. HTTPX
+%Escaneo de vulnerabilidades web: 9. Nuclei
+%Deteccion de CMS: 10. WhatWeb
+%Captura de pantalla de la web: 11. Pyppeteer
+%Enumeración de directorios y archivos web (Fuzzing): 12. Feroxbuster
+%Reconocimiento WordPress: 13. WPScan
+%Reconocimiento Joomla: 14. Joomscan
+%Enumeración FTP: 15. FTPlib, 16. Searchsploit (para versiones vulnerables)
+%Enumeración SSH: 17. Hydra (para bruteforce), 18. Searchsploit (para versiones vulnerables)
+%Generación de reportes: 19. Reportlab
+%Asistente de IA: 20. Gemini
 
 %\section{Diseño de la arquitectura de la herramienta}
 %\begin{itemize}
@@ -76,3 +187,6 @@ A partir de estos criterios, se ha llevado a cabo un análisis exhaustivo de las
 %    \item Flujo paso a paso con figura de resumen (Figura~\ref{fig:flujo}).
 %    \item Posibles configuraciones: escaneo por consola, interfaz gráfica, escaneo exhaustivo.
 %\end{itemize}
+
+%Añadir bibliografía correspondiente.
+\end{parskipenv}

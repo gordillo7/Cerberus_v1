@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.24)  19 MAY 2025 13:11
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.24)  22 MAY 2025 14:05
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -928,25 +928,25 @@ LaTeX Info: Redefining \% on input line 12.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-Package hyperref Info: Link coloring ON on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+Package hyperref Info: Link coloring ON on input line 28.
  (./main.out) (./main.out)
 \@outlinefile=\write7
 \openout7 = `main.out'.
@@ -977,7 +977,7 @@ Package caption Info: changepage package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 
-Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 23.
+Package todonotes Warning: The length marginparwidth is less than 2cm and will most likely cause issues with the appearance of inserted todonotes. The issue can be solved by adding a line like \setlength {\marginparwidth }{2cm} prior to loading the todonotes package. on input line 28.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1013,12 +1013,12 @@ Package todonotes Warning: The length marginparwidth is less than 2cm and will m
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
+LaTeX Info: Redefining \. on input line 28.
+LaTeX Info: Redefining \% on input line 28.
 <pictures/logouex.pdf, id=131, 597.50829pt x 845.0471pt>
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 29.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 34.
 (pdftex.def)             Requested size: 53.10786pt x 75.11525pt.
 
 
@@ -1026,10 +1026,10 @@ pdfTeX warning: pdflatex (file ./pictures/logoepcc.pdf): PDF inclusion: found PD
 <pictures/logoepcc.pdf, id=132, 1505.625pt x 1111.15125pt>
 File: pictures/logoepcc.pdf Graphic file (type pdf)
 <use pictures/logoepcc.pdf>
-Package pdftex.def Info: pictures/logoepcc.pdf  used on input line 29.
+Package pdftex.def Info: pictures/logoepcc.pdf  used on input line 34.
 (pdftex.def)             Requested size: 95.41084pt x 70.42073pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+Underfull \hbox (badness 10000) in paragraph at lines 34--34
 
  []
 
@@ -1039,14 +1039,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--29
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./pictures/logouex.pdf> <./pictures/logoepcc.pdf>]
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 43.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 48.
 (pdftex.def)             Requested size: 53.10786pt x 75.11525pt.
 File: pictures/logoepcc.pdf Graphic file (type pdf)
 <use pictures/logoepcc.pdf>
-Package pdftex.def Info: pictures/logoepcc.pdf  used on input line 43.
+Package pdftex.def Info: pictures/logoepcc.pdf  used on input line 48.
 (pdftex.def)             Requested size: 95.41084pt x 70.42073pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 43--43
+Underfull \hbox (badness 10000) in paragraph at lines 48--48
 
  []
 
@@ -1054,23 +1054,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 43--43
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.43 \contraportadaTFE{tutor = Tutor}
+l.48 \contraportadaTFE{tutor = Tutor}
                                       [1
 
 ]
-Underfull \hbox (badness 2600) in paragraph at lines 51--52
+Underfull \hbox (badness 2600) in paragraph at lines 56--57
 []\OT1/cmr/m/n/12 En el pre-sen-te tra-ba-jo se ha de-sa-rro-lla-do una he-rra-mien-ta orien-ta-da a la
  []
 
 [1
 
 ]
-Underfull \hbox (badness 1147) in paragraph at lines 62--63
+Underfull \hbox (badness 1147) in paragraph at lines 67--68
 []\OT1/cmr/m/n/12 The pro-po-sed so-lu-tion in-te-gra-tes se-ve-ral tools and tech-ni-ques wi-dely used in
  []
 
 
-Underfull \hbox (badness 1067) in paragraph at lines 64--65
+Underfull \hbox (badness 1067) in paragraph at lines 69--70
 \OT1/cmr/m/n/12 mo-dels, which allows users to in-ter-act with the scan con-text to re-cei-ve spe-ci-fic
  []
 
@@ -1078,7 +1078,7 @@ Underfull \hbox (badness 1067) in paragraph at lines 64--65
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.69 \newpage
+l.74 \newpage
               [2
 
 ] (./main.toc
@@ -1360,13 +1360,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [14]
-LaTeX Info: Redefining \. on input line 124.
-LaTeX Info: Redefining \% on input line 124.
-LaTeX Info: Redefining \. on input line 124.
-LaTeX Info: Redefining \% on input line 124.
+LaTeX Info: Redefining \. on input line 125.
+LaTeX Info: Redefining \% on input line 125.
+LaTeX Info: Redefining \. on input line 125.
+LaTeX Info: Redefining \% on input line 125.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 124.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 125.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -1402,13 +1402,13 @@ Cap\'{\i }tulo 4.
 (./main.mtc4) [17
 
 ]
-LaTeX Info: Redefining \. on input line 17.
-LaTeX Info: Redefining \% on input line 17.
-LaTeX Info: Redefining \. on input line 17.
-LaTeX Info: Redefining \% on input line 17.
+LaTeX Info: Redefining \. on input line 18.
+LaTeX Info: Redefining \% on input line 18.
+LaTeX Info: Redefining \. on input line 18.
+LaTeX Info: Redefining \% on input line 18.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 17.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 18.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -1436,17 +1436,34 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [19]
-Underfull \hbox (badness 2828) in paragraph at lines 49--50
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+LaTeX Info: Redefining \. on input line 50.
+LaTeX Info: Redefining \% on input line 50.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 50.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[20]
+Underfull \hbox (badness 2828) in paragraph at lines 56--57
 []\OT1/cmr/bx/n/12 Actualizaci^^Son ac-ti-va\OT1/cmr/m/n/12 : Se prio-ri-zan he-rra-mien-tas con de-sa-rro-llo ac-ti-vo y
  []
 
-LaTeX Info: Redefining \. on input line 54.
-LaTeX Info: Redefining \% on input line 54.
-LaTeX Info: Redefining \. on input line 54.
-LaTeX Info: Redefining \% on input line 54.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
+LaTeX Info: Redefining \. on input line 67.
+LaTeX Info: Redefining \% on input line 67.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 54.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 67.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1455,7 +1472,61 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[20]) (./chapters/05_implementacion_y_desarrollo.tex
+[21]
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+LaTeX Info: Redefining \. on input line 97.
+LaTeX Info: Redefining \% on input line 97.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 97.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+Underfull \hbox (badness 1052) in paragraph at lines 111--112
+[]\OT1/cmr/m/n/12 Durante el pro-ce-so de se-lec-ci^^Son de es-tas he-rra-mien-tas, se con-si-de-ra-ron va-rias
+ []
+
+LaTeX Info: Redefining \. on input line 114.
+LaTeX Info: Redefining \% on input line 114.
+LaTeX Info: Redefining \. on input line 114.
+LaTeX Info: Redefining \% on input line 114.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 114.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
+LaTeX Info: Redefining \. on input line 152.
+LaTeX Info: Redefining \% on input line 152.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 152.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]) (./chapters/05_implementacion_y_desarrollo.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
@@ -1472,25 +1543,25 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21]
+[25]
 Cap\'{\i }tulo 5.
 Package minitoc Info: I0006
 (minitoc)             main.mtc5 is empty on input line 1.
-) (./chapters/06_resultados.tex [22
+) (./chapters/06_resultados.tex [26
 
 ]
 Cap\'{\i }tulo 6.
 Package minitoc Info: I0006
 (minitoc)             main.mtc6 is empty on input line 1.
-) (./chapters/07_conclusiones_y_trabajos_futuros.tex [23
+) (./chapters/07_conclusiones_y_trabajos_futuros.tex [27
 
 ]
 Cap\'{\i }tulo 7.
 Package minitoc Info: I0006
 (minitoc)             main.mtc7 is empty on input line 1.
-) [24
+) [28
 
-] [25
+] [29
 
 
 
@@ -1506,15 +1577,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--5
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 6--154
+Underfull \hbox (badness 10000) in paragraph at lines 6--159
 
  []
 
-[26
+[30
 
-] (./main.bbl [27
+] (./main.bbl [31
 
-]) [28]
+] [32]) [33]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the main.maf file.
@@ -1529,21 +1600,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 605D454F942E247A6778F2FBDBE0F7B5;4343.
+(rerunfilecheck)             Checksum: 0B195C7D9F11B93FE76A5C2782730FB5;4345.
  ) 
 Here is how much of TeX's memory you used:
- 34514 strings out of 474222
- 674995 string characters out of 5748733
- 1938975 words of memory out of 5000000
- 56017 multiletter control sequences out of 15000+600000
+ 34558 strings out of 474222
+ 675545 string characters out of 5748733
+ 1939975 words of memory out of 5000000
+ 56041 multiletter control sequences out of 15000+600000
  568803 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,20n,121p,807b,810s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (36 pages, 237460 bytes).
+Output written on main.pdf (41 pages, 251840 bytes).
 PDF statistics:
- 449 PDF objects out of 1000 (max. 8388607)
- 371 compressed objects within 4 object streams
- 79 named destinations out of 1000 (max. 500000)
+ 520 PDF objects out of 1000 (max. 8388607)
+ 436 compressed objects within 5 object streams
+ 99 named destinations out of 1000 (max. 500000)
  319 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,8 @@
 \begin{thebibliography}{10}
 
 \bibitem{recon}
-Reconnaissance, 2020.
+{MITRE ATTACK}.
+\newblock Reconnaissance, 2020.
 \newblock Fase de reconocimiento en auditorías de seguridad.
 \newblock URL: \url{https://attack.mitre.org/tactics/TA0043/}.
 
@@ -26,12 +27,14 @@ Dan Farmer and Wietse Venema.
 \newblock URL: \url{http://www.porcupine.org/satan}.
 
 \bibitem{osstmm}
-Isecom - institute for security and open methodologies.
+ISECOM.
+\newblock Isecom - institute for security and open methodologies.
 \newblock Sitio web oficial de ISECOM.
 \newblock URL: \url{https://www.isecom.org}.
 
 \bibitem{owasp}
-Open web application security project (owasp), 2001.
+OWASP Foundation.
+\newblock Open web application security project (owasp), 2001.
 \newblock Sitio web oficial de OWASP.
 \newblock URL: \url{https://owasp.org}.
 
@@ -76,5 +79,71 @@ Open web application security project (owasp), 2001.
 \newblock {\em OSSTMM – Open Source Security Testing Methodology Manual}, 2001.
 \newblock Metodología en el marco de OSSTMM.
 \newblock URL: \url{https://www.isecom.org/OSSTMM.3.pdf}.
+
+\bibitem{nmap}
+{Nmap Project}.
+\newblock Nmap - network mapper, 1997.
+\newblock Sitio web oficial de Nmap, herramienta de escaneo de puertos y servicios.
+\newblock URL: \url{https://nmap.org}.
+
+\bibitem{masscan}
+Robert Graham.
+\newblock Masscan: Mass ip port scanner.
+\newblock Repositorio oficial en GitHub del escáner de puertos Masscan.
+\newblock URL: \url{https://github.com/robertdavidgraham/masscan}.
+
+\bibitem{rustscan}
+Bee-San.
+\newblock Rustscan: The modern port scanner.
+\newblock Repositorio oficial en GitHub del escáner de puertos RustScan.
+\newblock URL: \url{https://github.com/bee-san/RustScan}.
+
+\bibitem{dnsdumpster}
+HackerTarget.com.
+\newblock Dnsdumpster - online dns reconnaissance tool.
+\newblock Herramienta para visualización de registros DNS.
+\newblock URL: \url{https://dnsdumpster.com/}.
+
+\bibitem{mxtoolbox}
+Inc. MXToolbox.
+\newblock Mxtoolbox.
+\newblock Herramienta para análisis de registros DNS.
+\newblock URL: \url{https://mxtoolbox.com/}.
+
+\bibitem{emailspoofing}
+{Wikipedia contributors}.
+\newblock Email spoofing.
+\newblock Definición del término "Email spoofing".
+\newblock URL: \url{https://es.wikipedia.org/wiki/Email_spoofing}.
+
+\bibitem{apininja_whois}
+API Ninjas.
+\newblock Whois api - api ninjas.
+\newblock API REST para realizar consultas WHOIS sobre nombres de dominio.
+\newblock URL: \url{https://www.api-ninjas.com/api/whois}.
+
+\bibitem{dnsrecon}
+Carlos Perez.
+\newblock dnsrecon - dns enumeration script.
+\newblock Script para enumeración y análisis de registros DNS.
+\newblock URL: \url{https://github.com/darkoperator/dnsrecon}.
+
+\bibitem{dnsenum}
+Filip Waeytens.
+\newblock dnsenum - multithreaded perl script to enumerate dns information.
+\newblock Script para descubrimiento de información DNS.
+\newblock URL: \url{https://github.com/fwaeytens/dnsenum}.
+
+\bibitem{amass}
+OWASP Foundation.
+\newblock Amass - in-depth dns enumeration and attack surface mapping.
+\newblock Herramienta para mapeo de superficie de ataque.
+\newblock URL: \url{https://github.com/owasp-amass/amass}.
+
+\bibitem{easydmarc}
+EasyDMARC.
+\newblock Easydmarc – your dmarc journey made simple.
+\newblock Plataforma de validación de registro DMARC.
+\newblock URL: \url{https://easydmarc.com/}.
 
 \end{thebibliography}
