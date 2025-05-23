@@ -146,4 +146,65 @@ EasyDMARC.
 \newblock Plataforma de validación de registro DMARC.
 \newblock URL: \url{https://easydmarc.com/}.
 
+\bibitem{whoisweb}
+Who.is.
+\newblock Domain name information lookup.
+\newblock Herramienta para realizar consultas WHOIS de dominios.
+\newblock URL: \url{https://who.is/}.
+
+\bibitem{whoisxmlapi}
+WhoisXML API.
+\newblock Whoisxml api.
+\newblock API para realizar consultas WHOIS.
+\newblock URL: \url{https://es.whoisxmlapi.com/}.
+
+\bibitem{intelligencex}
+IntelligenceX.io.
+\newblock Intelligencex.
+\newblock Buscador OSINT para datos filtrados, archivos expuestos y metadatos de dominios.
+\newblock URL: \url{https://intelx.io/}.
+
+\bibitem{leakcheck}
+LeakCheck.io.
+\newblock Leakcheck - find out if your credentials have been compromised.
+\newblock Web de consulta de correos electrónicos comprometidos en filtraciones públicas.
+\newblock URL: \url{https://leakcheck.io/}.
+
+\bibitem{hibp}
+Have I~Been Pwned?
+\newblock Have i been pwned? - check if your email has been compromised in a data breach.
+\newblock Web de consulta de correos electrónicos comprometidos en filtraciones públicas.
+\newblock URL: \url{https://haveibeenpwned.com/}.
+
+\bibitem{breachdirectory}
+BreachDirectory.org.
+\newblock Breachdirectory - check if your email or username was compromised.
+\newblock Web de consulta de correos electrónicos comprometidos en filtraciones públicas.
+\newblock URL: \url{https://breachdirectory.org/}.
+
+\bibitem{subfinder}
+ProjectDiscovery.
+\newblock Subfinder - subdomain discovery tool.
+\newblock Herramienta de enumeración de subdominios a partir de fuentes públicas.
+\newblock URL: \url{https://github.com/projectdiscovery/subfinder}.
+
+\bibitem{httpx}
+ProjectDiscovery.
+\newblock Httpx - fast and multi-purpose http toolkit.
+\newblock Herramienta para validación de hosts vía HTTP.
+\newblock URL: \url{https://github.com/projectdiscovery/httpx}.
+
+\bibitem{crtsh}
+Sectigo Limited.
+\newblock crt.sh - certificate search.
+\newblock Buscador de certificados SSL/TLS para identificación de subdominios.
+\newblock URL: \url{https://crt.sh/}.
+
+\bibitem{redteam}
+Carlos Cilleruelo.
+\newblock ¿qué es red team en ciberseguridad?
+\newblock 2024.
+\newblock Artículo sobre el rol del Red Team en el ámbito de la ciberseguridad.
+\newblock URL: \url{https://keepcoding.io/blog/que-es-red-team-en-ciberseguridad/}.
+
 \end{thebibliography}

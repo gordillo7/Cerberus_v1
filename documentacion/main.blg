@@ -8,44 +8,46 @@ Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: LocalBibliography.bib
-You've used 24 entries,
+Warning--empty journal in redteam
+You've used 34 entries,
             2616 wiz_defined-function locations,
-            711 strings with 8420 characters,
-and the built_in function-call counts, 6355 in all, are:
-= -- 656
-> -- 124
+            757 strings with 9828 characters,
+and the built_in function-call counts, 8923 in all, are:
+= -- 911
+> -- 175
 < -- 0
-+ -- 49
-- -- 25
-* -- 97
-:= -- 758
-add.period$ -- 98
-call.type$ -- 24
-change.case$ -- 23
++ -- 69
+- -- 35
+* -- 130
+:= -- 1046
+add.period$ -- 139
+call.type$ -- 34
+change.case$ -- 33
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 176
-empty$ -- 885
-format.name$ -- 25
-if$ -- 1976
+cite$ -- 35
+duplicate$ -- 249
+empty$ -- 1252
+format.name$ -- 35
+if$ -- 2781
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 0
-newline$ -- 149
-num.names$ -- 24
-pop$ -- 275
+int.to.str$ -- 34
+missing$ -- 1
+newline$ -- 210
+num.names$ -- 34
+pop$ -- 401
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 582
+skip$ -- 816
 stack$ -- 0
 substring$ -- 0
-swap$ -- 25
+swap$ -- 34
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 24
-width$ -- 26
-write$ -- 285
+warning$ -- 1
+while$ -- 34
+width$ -- 36
+write$ -- 397
+(There was 1 warning)

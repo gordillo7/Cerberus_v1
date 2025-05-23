@@ -153,18 +153,140 @@ Para esta tarea se optó por utilizar \textbf{MXToolbox} debido a su simplicidad
 
 El número de herramientas con esta funcionalidad específica y con capacidad de integración es muy limitado, lo que llevó a seleccionar \textbf{MXToolbox} como la opción más adecuada.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Para finalizar el reconocimiento DNS, se requería de una herramienta capaz de realizar consultas WHOIS. Esta funcionalidad es esencial para obtener información sobre la propiedad del dominio, fechas de creación y expiración, así como otros datos que pueden resultar útiles en fases posteriores de análisis.
 
-%Alternativas API Ninja (WHOIS): whois de cli (no es tan integrable, puesto que el output no se puede exportar en formatos como json o csv). Alternativas web como https://who.is no ofrecen un api publica,
-%lo que complica la integración. De entre las herramientas que ofrecen API, la seleccionada fue la funcionalidad de WHOIS de API Ninja por tener la capa gratuita de api mas completa. Alternativas como https://who.is/
-%que tambien ofrecen una capa gratuita de API esta más limitada <insertar tabla comparativa>.
+Durante el proceso de evaluación se analizaron diferentes alternativas, entre las cuales destacan las siguientes:
+
+\begin{itemize}
+    \item \textbf{Comando \texttt{whois}}: herramienta disponible desde línea de comandos. Fue descartada debido a que su salida no es fácilmente tratable (por ejemplo, no permite exportar directamente en formatos como JSON o CSV), lo que dificulta su integración en flujos de trabajo automatizados.
+
+    \item \textbf{Who.is} \cite{whoisweb}: plataforma web que permite realizar consultas manuales a través de su interfaz gráfica. No ofrece una API pública, por lo que resulta inviable para una solución automatizada.
+
+    \item \textbf{WhoisXML API} \cite{whoisxmlapi}: solución con una API REST bien estructurada y documentada. No obstante, su capa gratuita es bastante limitada en cuanto a número de consultas, lo que redujo su viabilidad para el contexto del proyecto.
+\end{itemize}
+
+Finalmente, se optó por la funcionalidad WHOIS de \textbf{API Ninja} \cite{apininja_whois}, que ofrece una API REST con una capa gratuita muy completa, respuestas en formato JSON y una integración sencilla. Estas características la convierten en una solución ideal para la herramienta desarrollada.
+
+La Tabla~\ref{tabla:comparativa_whois} resume la comparativa entre las principales opciones evaluadas.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{API Ninja (WHOIS)} & \startwo   & \starthree & \starthree & \starthree & \starthree & \starthree \\
+\hline
+\textbf{CLI \texttt{whois}} & \starthree & \starone   & \starthree & \startwo   & \starone   & \starone   \\
+\hline
+\textbf{Who.is}             & \startwo   & \starone   & \starthree & \starthree   & \starone   & \startwo   \\
+\hline
+\textbf{WhoisXML API}       & \startwo & \starthree   & \starthree & \starthree & \startwo   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para consultas WHOIS.}
+\label{tabla:comparativa_whois}
+\end{table}
+
+\subsubsection*{OSINT de correos electrónicos}
+La herramienta incorpora una fase de OSINT centrada en el análisis de direcciones de correo electrónico asociadas al dominio objetivo. Este análisis permite identificar exposiciones de correos en bases de datos filtradas, lo que puede revelar vectores de ataque adicionales como credenciales comprometidas, datos personales o relaciones con otros servicios.
+
+Para llevar a cabo esta tarea, se ha optado por combinar dos herramientas:
+
+\begin{itemize}
+  \item \textbf{IntelligenceX} \cite{intelligencex}: encargada de obtener direcciones de correo electrónico relacionadas con el dominio analizado a partir de bases de datos públicas y documentos expuestos. Su funcionalidad resulta clave para automatizar la recopilación inicial de correos que podrían haber sido filtrados.
+
+  \item \textbf{LeakCheck} \cite{leakcheck}: utilizada para comprobar si las direcciones encontradas han sido comprometidas en alguna brecha de seguridad conocida. La herramienta devuelve información detallada sobre la filtración y los datos expuestos.
+\end{itemize}
+
+En el caso de \textbf{IntelligenceX}, no se identificaron alternativas que ofrecieran una funcionalidad equivalente de forma gratuita y con una API pública abierta, por lo que se optó por ésta.
+
+Para la verificación de brechas se evaluaron diferentes opciones. Las principales alternativas a \textbf{LeakCheck} fueron:
+
+\begin{itemize}
+  \item \textbf{Have I Been Pwned (HIBP)} \cite{hibp}: ampliamente reconocida como referencia en este ámbito, pero su API requiere una suscripción de pago, lo que dificulta su integración en la herramienta.
+
+  \item \textbf{BreachDirectory y similares} \cite{breachdirectory}: plataformas que ofrecen servicios similares a HIBP, pero con APIs gratuitas, aunque con un número de consultas muy limitado.
+\end{itemize}
+
+Finalmente, se optó por \textbf{LeakCheck}, ya que ofrece una API gratuita con un número de consultas adecuado para el contexto del proyecto. Además, su integración es sencilla y proporciona información sobre las brechas de seguridad en las que se han visto comprometidos los correos electrónicos analizados.
+
+La Tabla~\ref{tabla:comparativa_osint_correos} presenta una comparativa de estas tres soluciones según los criterios definidos para el proyecto.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{LeakCheck}        & \startwo   & \starthree & \starthree & \starthree   & \starthree & \starthree \\
+\hline
+\textbf{Have I Been Pwned} & \starthree & \startwo   & \starthree & \starthree & \startwo   & \starthree \\
+\hline
+\textbf{BreachDirectory y similares}          & \startwo & \startwo   & \starthree & \starthree & \startwo   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para verificación de correos electrónicos filtrados.}
+\label{tabla:comparativa_osint_correos}
+\end{table}
+
+\subsubsection*{Enumeración de subdominios}
+Esta etapa tiene como objetivo identificar subdominios asociados al dominio principal del objetivo. Esta fase permite ampliar la superficie de ataque y descubrir servicios que pueden no estar expuestos de forma directa o evidente.
+
+Para llevar a cabo esta tarea, se ha optado por combinar dos herramientas:
+
+\begin{itemize}
+    \item \textbf{Subfinder} \cite{subfinder}: herramienta de código abierto desarrollada por ProjectDiscovery, que permite enumerar subdominios a partir de múltiples fuentes públicas, como motores de búsqueda, certificados SSL, DNS y archivos históricos.
+
+    \item \textbf{HTTPX} \cite{httpx}: utilizada para verificar la validez de los subdominios identificados por Subfinder. Esta herramienta permite comprobar si los subdominios están activos mediante peticiones HTTP, validando así su accesibilidad real.
+\end{itemize}
+
+Durante el proceso de evaluación se consideraron otras alternativas, como \textbf{crt.sh} \cite{crtsh}, un buscador de certificados SSL que permite identificar subdominios registrados en certificados públicos. No obstante, esta opción fue descartada debido a la falta de una API pública, lo que dificultaba su integración en flujos de análisis automatizados.
+
+La Tabla~\ref{tabla:comparativa_subdominios} presenta una comparativa entre las principales opciones evaluadas para la enumeración de subdominios.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{Subfinder} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
+\hline
+\textbf{crt.sh}    & \startwo   & \starone   & \startwo   & \startwo   & \starone   & \startwo \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para enumeración de subdominios.}
+\label{tabla:comparativa_subdominios}
+\end{table}
+
+El alto reconocimiento por parte de la comunidad \textit{Red Team} \cite{redteam}, junto con su versatilidad y facilidad de integración, llevaron a seleccionar \textbf{Subfinder} como la herramienta principal para la enumeración de subdominios. 
+
+Por su parte, se eligió \textbf{HTTPX} para verificar la validez de los subdominios identificados, al formar parte de la misma suite de herramientas de ProjectDiscovery, contar con una biblioteca en Python fácilmente integrable y ofrecer un rendimiento elevado en tareas de validación HTTP.
+
+\subsubsection*{Escaneo de vulnerabilidades web}
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %Escaneo de puertos y servicios: (HECHO) 1. Nmap
-%Reconocimiento DNS: (HECHO) 2. dnsdumpster, (HECHO) 3. mxtoolbox, 4. API Ninja (WHOIS)
-%OSINT correos: 5. IntelligenceX, 6. LeakCheck
-%Enumeracion de subdominios: 7. Subfinder, 8. HTTPX
+%Reconocimiento DNS: (HECHO) 2. dnsdumpster, (HECHO) 3. mxtoolbox, (HECHO) 4. API Ninja (WHOIS)
+%OSINT correos: (HECHO) 5. IntelligenceX, (HECHO) 6. LeakCheck
+%Enumeracion de subdominios: (HECHO) 7. Subfinder, (HECHO) 8. HTTPX
 %Escaneo de vulnerabilidades web: 9. Nuclei
 %Deteccion de CMS: 10. WhatWeb
 %Captura de pantalla de la web: 11. Pyppeteer
