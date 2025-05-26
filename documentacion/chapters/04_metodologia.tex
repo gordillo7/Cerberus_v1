@@ -277,8 +277,151 @@ El alto reconocimiento por parte de la comunidad \textit{Red Team} \cite{redteam
 Por su parte, se eligió \textbf{HTTPX} para verificar la validez de los subdominios identificados, al formar parte de la misma suite de herramientas de ProjectDiscovery, contar con una biblioteca en Python fácilmente integrable y ofrecer un rendimiento elevado en tareas de validación HTTP.
 
 \subsubsection*{Escaneo de vulnerabilidades web}
+La etapa de escaneo de vulnerabilidades web tiene como objetivo detectar debilidades presentes en los servicios web identificados. Para esta fase se ha seleccionado \textbf{Nuclei} \cite{nuclei}, una herramienta de código abierto desarrollada por ProjectDiscovery que permite identificar vulnerabilidades en aplicaciones web mediante el uso de plantillas altamente personalizables. Estas plantillas, escritas en YAML, cubren desde pruebas de seguridad básicas hasta la detección de configuraciones erróneas, vulnerabilidades específicas de versiones, fallos en encabezados HTTP, entre otros.
 
+Durante el proceso de selección se valoraron algunas alternativas, entre las cuales se analizó \textbf{Nikto} \cite{nikto}, una herramienta clásica para análisis de servidores web. Sin embargo, esta opción fue descartada al no ofrecer el mismo nivel de modularidad, flexibilidad ni personalización que Nuclei. Además, su base de pruebas está orientada a configuraciones obsoletas y su desarrollo es menos activo.
 
+La Tabla~\ref{tabla:comparativa_webscan} muestra la comparativa entre ambas herramientas según los criterios definidos.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{Nuclei} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
+\hline
+\textbf{Nikto}  & \startwo   & \startwo   & \startwo   & \startwo   & \starone   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para escaneo de vulnerabilidades web.}
+\label{tabla:comparativa_webscan}
+\end{table}
+
+No se estudiaron más opciones ya que desde el inicio se consideró prioritaria la integración de \textbf{Nuclei} debido a su auge actual, su rendimiento y su gran comunidad de usuarios en constante crecimiento.
+
+\subsubsection*{Detección de CMS}
+Para la detección del sistema de gestión de contenidos (CMS) utilizado por el sitio web se ha seleccionado \textbf{WhatWeb} \cite{whatweb}, una herramienta ampliamente reconocida que permite identificar tecnologías utilizadas en una página web, incluyendo el CMS y otros frameworks comunes. Esta fase resulta clave, ya que en función del CMS detectado se activan módulos específicos orientados a su análisis y explotación.
+
+Al igual que en la fase de escaneo de vulnerabilidades web, desde el inicio del desarrollo se consideró prioritaria la elección de \textbf{WhatWeb} debido a su amplio reconocimiento en la comunidad de ciberseguridad, su rendimiento y su facilidad de integración mediante línea de comandos.
+
+No obstante, se evaluaron también otras alternativas, entre ellas:
+
+\begin{itemize}
+    \item \textbf{CMSeeK} \cite{cmseek}: herramienta especializada en detección de CMS. A pesar de su enfoque, fue descartada por su menor flexibilidad, su limitada documentación y su falta de mantenimiento reciente.
+
+    \item \textbf{Wappalyzer (CLI)} \cite{wappalyzercli}: versión en línea de comandos del conocido motor utilizado en su extensión de navegador. Si bien la versión web cuenta con un alto grado de precisión y popularidad, su implementación en CLI presenta menor soporte, menos documentación y una comunidad de usuarios significativamente más reducida.
+\end{itemize}
+
+La Tabla~\ref{tabla:comparativa_cms} resume la comparativa entre estas herramientas según los criterios definidos en el proyecto.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{WhatWeb}       & \starthree & \starthree & \starthree & \starone & \starthree & \starthree \\
+\hline
+\textbf{CMSeeK}        & \starone   & \startwo   & \startwo   & \starone & \startwo & \startwo \\
+\hline
+\textbf{Wappalyzer CLI}& \startwo   & \startwo   & \startwo   & \startwo & \startwo & \starone \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para la detección de CMS.}
+\label{tabla:comparativa_cms}
+\end{table}
+
+Por tanto, se optó por \textbf{WhatWeb} como herramienta principal para la detección de CMS, debido a su integración sencilla, alto grado de reconocimiento y buen rendimiento en entornos automatizados.
+
+\subsubsection*{Captura de pantalla del sitio web}
+La herramienta incorpora una fase en la que se realiza una captura de pantalla del sitio web analizado, con el objetivo de documentar visualmente su apariencia y adjuntarla en el informe generado. Esta funcionalidad es especialmente útil, ya que permite conservar evidencia visual del estado del sitio en el momento del análisis.
+
+Para llevar a cabo esta tarea se ha seleccionado \textbf{Pyppeteer} \cite{pyppeteer}, una biblioteca de Python que permite controlar navegadores basados en Chrome en modo headless. Pyppeteer ofrece un entorno ligero, rápido y centrado en tareas como la renderización y la captura, lo que la hace ideal para flujos automatizados de reconocimiento.
+
+Durante el proceso de evaluación también se consideró el uso de \textbf{Selenium} \cite{selenium}, una herramienta muy popular para la automatización de navegadores. Sin embargo, fue descartada debido a su mayor peso y a que está más orientada a pruebas funcionales complejas, lo cual excede las necesidades de esta fase.
+
+La Tabla~\ref{tabla:comparativa_screenshot} muestra una comparativa entre ambas soluciones según los criterios definidos.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{Pyppeteer} & \startwo   & \starthree & \starthree & \startwo   & \startwo   & \starthree \\
+\hline
+\textbf{Selenium}  & \starthree & \starthree   & \starone   & \starthree & \starthree & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para la captura automatizada de sitios web.}
+\label{tabla:comparativa_screenshot}
+\end{table}
+
+Se optó por utilizar \textbf{Pyppeteer} como herramienta principal para la captura de pantalla del sitio web debido a su mejor rendimiento para realizar esta tarea comparado con \textbf{Selenium}.
+
+\subsubsection*{Enumeración de directorios y archivos web}
+Durante esta fase se busca identificar rutas ocultas, recursos sensibles y directorios accesibles en la estructura web del objetivo. Para ello se ha seleccionado \textbf{Feroxbuster} \cite{feroxbuster}, una herramienta moderna, con alto rendimiento, recursividad y excelente manejo de respuestas HTTP y redirecciones. Su salida estructurada y su integración mediante CLI la hacen especialmente adecuada para procesos automatizados.
+
+Se evaluaron otras alternativas que ofrecían funcionalidades similares:
+
+\begin{itemize}
+    \item \textbf{Gobuster} \cite{gobuster}: una de las herramientas más conocidas, desarrollada en Go. Aunque eficiente, no ofrece soporte de recursividad automática y su rendimiento es inferior al de otras opciones más modernas. Además, es una alternativa más obsoleta en comparación con el resto de herramientas.
+
+    \item \textbf{Dirsearch} \cite{dirsearch}: herramienta desarrollada en Python, altamente configurable y en constante mantenimiento. Ofrece unas prestaciones similares a las de \textbf{Feroxbuster}.
+
+    \item \textbf{FFUF} \cite{ffuf}: herramienta muy potente y veloz desarrollada en Go, con salida en JSON, ideal para tareas de fuzzing de directorios y parámetros. Aunque comparable en prestaciones, se priorizó \textbf{Feroxbuster} por su mayor enfoque a la enumeración recursiva de rutas y mayor adopción en entornos Red Team.
+\end{itemize}
+
+La Tabla~\ref{tabla:comparativa_dir_enum} muestra la comparativa de estas herramientas según los criterios establecidos.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{Feroxbuster} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
+\hline
+\textbf{FFUF}        & \starthree   & \starthree & \starthree & \starthree & \startwo   & \starthree \\
+\hline
+\textbf{Dirsearch}   & \starthree   & \starthree & \starthree   & \startwo & \starthree & \starthree \\
+\hline
+\textbf{Gobuster}    & \starthree & \starthree   & \startwo   & \starone   & \starone   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para enumeración de directorios y archivos web.}
+\label{tabla:comparativa_dir_enum}
+\end{table}
+
+Por todo lo anterior, se optó por \textbf{Feroxbuster} como la herramienta principal para la enumeración de directorios y archivos web. Aunque tiene prestaciones muy similares a \textbf{Dirsearch}, se eligió por ofrecer mejores resultados en las pruebas de rendimiento realizadas.
+
+\subsubsection*{Reconocimiento WordPress}
+La unica alternativa valorada es \textbf{WPScan} \cite{wpscan}, no tiene competencia directa en el ámbito de WordPress.
+
+Si el CMS detectado es WordPress, se lanza \textbf{WPScan} para enumerar:
+\begin{itemize}
+  \item Usuarios del sitio, que se almacenan en una wordlist para fases posteriores.
+  \item Plugins instalados, que se cruzan con bases de datos públicas para buscar CVEs. Si existe un exploit público en GitHub, se clona automáticamente.
+\end{itemize}
+
+En caso de disponer de usuarios enumerados, se lanza un ataque de fuerza bruta mediante \textbf{WPScan}, apuntando al recurso \texttt{xmlrpc.php}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se encontraron usuarios, se utiliza una wordlist por defecto con credenciales comunes.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -287,10 +430,10 @@ Por su parte, se eligió \textbf{HTTPX} para verificar la validez de los subdomi
 %Reconocimiento DNS: (HECHO) 2. dnsdumpster, (HECHO) 3. mxtoolbox, (HECHO) 4. API Ninja (WHOIS)
 %OSINT correos: (HECHO) 5. IntelligenceX, (HECHO) 6. LeakCheck
 %Enumeracion de subdominios: (HECHO) 7. Subfinder, (HECHO) 8. HTTPX
-%Escaneo de vulnerabilidades web: 9. Nuclei
-%Deteccion de CMS: 10. WhatWeb
-%Captura de pantalla de la web: 11. Pyppeteer
-%Enumeración de directorios y archivos web (Fuzzing): 12. Feroxbuster
+%Escaneo de vulnerabilidades web: (HECHO) 9. Nuclei
+%Deteccion de CMS: (HECHO) 10. WhatWeb
+%Captura de pantalla de la web: (HECHO) 11. Pyppeteer
+%Enumeración de directorios y archivos web (Fuzzing): (HECHO) 12. Feroxbuster
 %Reconocimiento WordPress: 13. WPScan
 %Reconocimiento Joomla: 14. Joomscan
 %Enumeración FTP: 15. FTPlib, 16. Searchsploit (para versiones vulnerables)
@@ -311,4 +454,6 @@ Por su parte, se eligió \textbf{HTTPX} para verificar la validez de los subdomi
 %\end{itemize}
 
 %Añadir bibliografía correspondiente.
+
+%Corregir 1. Introduccion, 2. Objetivos y 3. Estado del arte siguiendo correcciones de Andrés.
 \end{parskipenv}

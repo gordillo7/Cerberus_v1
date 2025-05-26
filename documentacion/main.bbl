@@ -202,9 +202,80 @@ Sectigo Limited.
 
 \bibitem{redteam}
 Carlos Cilleruelo.
-\newblock ¿qué es red team en ciberseguridad?
-\newblock 2024.
+\newblock ¿qué es red team en ciberseguridad?, 2024.
 \newblock Artículo sobre el rol del Red Team en el ámbito de la ciberseguridad.
 \newblock URL: \url{https://keepcoding.io/blog/que-es-red-team-en-ciberseguridad/}.
+
+\bibitem{nuclei}
+ProjectDiscovery.
+\newblock Nuclei.
+\newblock Herramienta de escaneo de vulnerabilidades web.
+\newblock URL: \url{https://github.com/projectdiscovery/nuclei}.
+
+\bibitem{nikto}
+Sullo.
+\newblock Nikto - web server scanner.
+\newblock Herramienta de escaneo de vulnerabilidades web.
+\newblock URL: \url{https://github.com/sullo/nikto}.
+
+\bibitem{whatweb}
+Andrew~Horton (urbanadventurer).
+\newblock Whatweb - next generation web scanner.
+\newblock Herramienta para detección de tecnologías web y CMS.
+\newblock URL: \url{https://github.com/urbanadventurer/WhatWeb}.
+
+\bibitem{cmseek}
+Tuhinshubhra.
+\newblock Cmseek - cms detection and exploitation suite.
+\newblock Herramienta de detección de CMS.
+\newblock URL: \url{https://github.com/Tuhinshubhra/CMSeeK}.
+
+\bibitem{wappalyzercli}
+Gokulapap.
+\newblock Wappalyzer cli.
+\newblock Versión CLI de Wappalyzer para detección de tecnologías web.
+\newblock URL: \url{https://github.com/gokulapap/wappalyzer-cli}.
+
+\bibitem{pyppeteer}
+Pyppeteer Contributors.
+\newblock Pyppeteer - headless chrome/chromium automation library.
+\newblock Librería Python para automatizar navegadores en modo headless.
+\newblock URL: \url{https://pypi.org/project/pyppeteer/}.
+
+\bibitem{selenium}
+Selenium Contributors.
+\newblock Selenium - official python bindings for selenium webdriver.
+\newblock Librería utilizada para la automatización de navegadores web.
+\newblock URL: \url{https://pypi.org/project/selenium/}.
+
+\bibitem{feroxbuster}
+epi052.
+\newblock Feroxbuster - a fast, simple, recursive content discovery tool written in rust.
+\newblock Herramienta para enumeración de contenido web.
+\newblock URL: \url{https://github.com/epi052/feroxbuster}.
+
+\bibitem{gobuster}
+OJ~Reeves.
+\newblock Gobuster.
+\newblock Herramienta para enumeración de contenido web.
+\newblock URL: \url{https://github.com/OJ/gobuster}.
+
+\bibitem{dirsearch}
+Mauro Soria.
+\newblock dirsearch - web path discovery.
+\newblock Herramienta para enumeración de contenido web.
+\newblock URL: \url{https://github.com/maurosoria/dirsearch}.
+
+\bibitem{ffuf}
+FFUF Contributors.
+\newblock Ffuf.
+\newblock Herramienta para enumeración de contenido web.
+\newblock URL: \url{https://github.com/ffuf/ffuf}.
+
+\bibitem{wpscan}
+WPScan Team.
+\newblock Wpscan - wordpress security scanner.
+\newblock Herramienta especializada en el análisis de vulnerabilidades y enumeración en sitios WordPress.
+\newblock URL: \url{https://wpscan.com/}.
 
 \end{thebibliography}
