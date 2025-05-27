@@ -413,15 +413,113 @@ La Tabla~\ref{tabla:comparativa_dir_enum} muestra la comparativa de estas herram
 Por todo lo anterior, se optó por \textbf{Feroxbuster} como la herramienta principal para la enumeración de directorios y archivos web. Aunque tiene prestaciones muy similares a \textbf{Dirsearch}, se eligió por ofrecer mejores resultados en las pruebas de rendimiento realizadas.
 
 \subsubsection*{Reconocimiento WordPress}
-La unica alternativa valorada es \textbf{WPScan} \cite{wpscan}, no tiene competencia directa en el ámbito de WordPress.
+En esta fase se analiza el CMS detectado previamente. Si se trata de un sitio \textbf{WordPress}, se activa un módulo específico que emplea la herramienta \textbf{WPScan} \cite{wpscan}.
 
-Si el CMS detectado es WordPress, se lanza \textbf{WPScan} para enumerar:
+Se utiliza ésta para llevar a cabo un reconocimiento avanzado del sitio WordPress, incluyendo:
+
 \begin{itemize}
-  \item Usuarios del sitio, que se almacenan en una wordlist para fases posteriores.
-  \item Plugins instalados, que se cruzan con bases de datos públicas para buscar CVEs. Si existe un exploit público en GitHub, se clona automáticamente.
+  \item \textbf{Enumeración de usuarios}: los usuarios enumerados se almacenan en una \textit{wordlist} para su uso en fases posteriores, como ataques de fuerza bruta.
+  \item \textbf{Enumeración de \textit{directory listing}}: se identifican rutas que permiten listar directorios y archivos, lo que puede revelar información sensible o configuraciones expuestas.
+  \item \textbf{Enumeración de plugins}: los plugins instalados se analizan para identificar posibles vulnerabilidades (CVEs). Si se encuentra un exploit público asociado en GitHub, se clona automáticamente para facilitar su análisis posterior.
 \end{itemize}
 
-En caso de disponer de usuarios enumerados, se lanza un ataque de fuerza bruta mediante \textbf{WPScan}, apuntando al recurso \texttt{xmlrpc.php}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se encontraron usuarios, se utiliza una wordlist por defecto con credenciales comunes.
+En caso de que se hayan identificado usuarios, se lanza un ataque de fuerza bruta mediante el propio \textbf{WPScan}, aprovechando el recurso \texttt{xmlrpc.php}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se ha podido enumerar ningún usuario, se utiliza una lista por defecto con credenciales comunes.
+
+Se evaluó el panorama de herramientas disponibles para reconocimiento específico de sitios WordPress. Tras este estudio, se concluyó que \textbf{WPScan} no tiene actualmente una competencia directa que ofrezca un conjunto de funcionalidades tan completo y actualizado. Es, por tanto, la opción más sólida y especializada para llevar a cabo esta fase.
+
+\subsubsection*{Reconocimiento Joomla}
+Si el CMS detectado es \textbf{Joomla}, se activa un módulo específico que emplea la herramienta \textbf{JoomScan} \cite{joomscan}. Esta herramienta, desarrollada por la OWASP Foundation, permite llevar a cabo un análisis específico de sitios Joomla, identificando vulnerabilidades conocidas y configuraciones inseguras.
+
+Entre las funcionalidades más relevantes que realiza este módulo se incluyen:
+
+\begin{itemize}
+    \item Detección de la versión del CMS y comprobación de vulnerabilidades asociadas.
+    \item Identificación de archivos de configuración expuestos y copias de seguridad accesibles.
+    \item Análisis de configuraciones comunes que pueden representar un riesgo de seguridad.
+\end{itemize}
+
+Al igual que en el caso de WPScan, se optó por \textbf{JoomScan} debido a su especialización en este CMS y a la falta de herramientas equivalentes que ofrezcan un conjunto de funcionalidades tan completo y específico.
+
+\subsubsection*{Enumeración del servicio FTP}
+En caso de que el puerto 21 se encuentre abierto en el objetivo, la herramienta activa un módulo específico para la enumeración del servicio \textbf{FTP}. Esta fase tiene como objetivo identificar posibles accesos abiertos, credenciales débiles o mal configuradas, así como contenido sensible accesible desde el servidor.
+
+Para ello, se emplea la librería de Python \textbf{ftplib} \cite{ftplib}. Ésta permite una interacción directa con el servicio FTP de forma sencilla y eficiente. Con ella se realizan las siguientes acciones:
+
+\begin{itemize}
+  \item Se comprueba si el servidor permite acceso mediante login anónimo.
+  \item Se realiza un ataque de fuerza bruta con credenciales comunes o personalizadas, en caso de que se hayan enumerado usuarios previamente.
+  \item Se verifican permisos de lectura y escritura, en caso de acceso exitoso.
+  \item Descarga automatizada del contenido almacenado en el servidor, si es accesible.
+\end{itemize}
+
+Durante el estudio de diferentes alternativas no se identificaron herramientas similares a \textbf{ftplib} que ofrecieran el mismo nivel de integración y simplicidad para tareas de automatización. Su inclusión directa en el ecosistema de Python y su facilidad de uso la convierten en la opción más adecuada para esta fase del reconocimiento.
+
+Además, se realiza un análisis de la versión del servicio FTP con el objetivo de detectar vulnerabilidades conocidas. Para ello se utiliza \textbf{SearchSploit} \cite{searchsploit}, una herramienta ampliamente reconocida en el ámbito del pentesting, que permite buscar exploits públicos y pruebas de concepto asociadas a versiones concretas de software. 
+
+No se contemplaron herramientas alternativas a \textbf{SearchSploit}, ya que constituye un estándar de facto para la consulta de vulnerabilidades, especialmente útil en contextos donde se busca una solución rápida.
+
+\subsubsection*{Enumeración del servicio SSH}
+En caso de que el puerto 22 (SSH) se encuentre accesible, la herramienta activa un módulo específico para el reconocimiento de este servicio. Para ello, se ha seleccionado la herramienta \textbf{Hydra} \cite{hydra}, ampliamente reconocida en el ámbito del pentesting por su flexibilidad y soporte para múltiples protocolos.
+
+Inicialmente se consideró el uso de \textbf{Paramiko} \cite{paramiko}, una librería de Python orientada a la gestión de conexiones SSH. No obstante, fue descartada tras comprobar que no está diseñada para realizar ataques de fuerza bruta. Su arquitectura orientada a sesiones estables y autenticación segura generaba errores al lanzar múltiples intentos de login consecutivos.
+
+La Tabla~\ref{tabla:comparativa_ssh} presenta la comparativa entre ambas soluciones evaluadas.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{Hydra}     & \starthree & \startwo   & \startwo & \startwo & \startwo & \startwo \\
+\hline
+\textbf{Paramiko}  & \starone   & \starthree & \starone   & \startwo & \startwo   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para fuerza bruta SSH.}
+\label{tabla:comparativa_ssh}
+\end{table}
+
+Por tratarse de un estándar de facto en ataques de fuerza bruta a servicios de red, se optó finalmente por \textbf{Hydra}.
+
+Adicionalmente, la versión del servicio SSH detectada se analiza mediante \textbf{SearchSploit}, con el objetivo de identificar vulnerabilidades públicas asociadas y comprobar si existen exploits conocidos que puedan ser aprovechados.
+
+\subsubsection*{Generación de informes}
+Para la generación de informes se utiliza la librería de Python \textbf{ReportLab} \cite{reportlab}, que permite crear documentos PDF desde cero con un alto grado de personalización y control sobre el diseño del contenido. Esta funcionalidad resulta clave en el contexto del proyecto, ya que los informes generados deben incluir texto estructurado, tablas, imágenes (como capturas de pantalla) y separadores visuales entre secciones.
+
+Se consideró también la opción de utilizar la librería \textbf{fpdf2} \cite{fpdf2}, una versión moderna y mejorada del clásico FPDF, orientada a la generación de documentos PDF de forma sencilla y estructurada.
+
+Ambas herramientas ofrecen un enfoque programático desde Python, sin necesidad de plantillas HTML externas, y permiten trabajar con texto, estilos, tablas e imágenes. Sin embargo, existen diferencias significativas en cuanto al nivel de control y flexibilidad que ofrecen.
+
+La Tabla~\ref{tabla:comparativa_pdf} muestra una comparativa entre ambas librerías según los criterios establecidos.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|c|c|c|c|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Librería} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
+\hline
+\textbf{ReportLab} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
+\hline
+\textbf{fpdf2}     & \startwo   & \starthree & \starthree & \starthree & \startwo   & \starthree \\
+\hline
+\end{tabular}%
+}
+\caption{Comparativa de herramientas para generación de informes PDF.}
+\label{tabla:comparativa_pdf}
+\end{table}
+
+Finalmente, se optó por \textbf{ReportLab} como la solución más adecuada debido a su reconocimiento en la comunidad, mayor control sobre el diseño y capacidad para generar documentos más complejos con mayor facilidad, especialmente al integrar elementos visuales como capturas de pantalla.
+
+\subsubsection*{Asistente de IA}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -434,11 +532,11 @@ En caso de disponer de usuarios enumerados, se lanza un ataque de fuerza bruta m
 %Deteccion de CMS: (HECHO) 10. WhatWeb
 %Captura de pantalla de la web: (HECHO) 11. Pyppeteer
 %Enumeración de directorios y archivos web (Fuzzing): (HECHO) 12. Feroxbuster
-%Reconocimiento WordPress: 13. WPScan
-%Reconocimiento Joomla: 14. Joomscan
-%Enumeración FTP: 15. FTPlib, 16. Searchsploit (para versiones vulnerables)
-%Enumeración SSH: 17. Hydra (para bruteforce), 18. Searchsploit (para versiones vulnerables)
-%Generación de reportes: 19. Reportlab
+%Reconocimiento WordPress: (HECHO) 13. WPScan
+%Reconocimiento Joomla: (HECHO) 14. Joomscan
+%Enumeración FTP: (HECHO) 15. FTPlib, (HECHO) 16. Searchsploit (para versiones vulnerables)
+%Enumeración SSH: (HECHO) 17. Hydra (para bruteforce), (HECHO) 18. Searchsploit (para versiones vulnerables)
+%Generación de reportes: (HECHO) 19. Reportlab
 %Asistente de IA: 20. Gemini
 
 %\section{Diseño de la arquitectura de la herramienta}

@@ -278,4 +278,46 @@ WPScan Team.
 \newblock Herramienta especializada en el análisis de vulnerabilidades y enumeración en sitios WordPress.
 \newblock URL: \url{https://wpscan.com/}.
 
+\bibitem{joomscan}
+OWASP Foundation.
+\newblock Owasp joomscan - joomla vulnerability scanner.
+\newblock Herramienta especializada en el escaneo de sitios Joomla.
+\newblock URL: \url{https://github.com/OWASP/joomscan}.
+
+\bibitem{ftplib}
+Python~Software Foundation.
+\newblock ftplib — ftp protocol client.
+\newblock Librería de Python para interactuar con servidores FTP.
+\newblock URL: \url{https://docs.python.org/es/3/library/ftplib.html}.
+
+\bibitem{searchsploit}
+Exploit Database.
+\newblock Searchsploit - the manual.
+\newblock Herramienta de línea de comandos para buscar exploits públicos.
+\newblock URL: \url{https://www.exploit-db.com/searchsploit}.
+
+\bibitem{hydra}
+Van Hauser.
+\newblock Hydra.
+\newblock Herramienta de fuerza bruta para servicios de red.
+\newblock URL: \url{https://github.com/vanhauser-thc/thc-hydra}.
+
+\bibitem{paramiko}
+Paramiko Organization.
+\newblock Paramiko - a python implementation of sshv2.
+\newblock Librería Python para la implementación del protocolo SSHv2.
+\newblock URL: \url{https://www.paramiko.org/}.
+
+\bibitem{reportlab}
+ReportLab Inc.
+\newblock Reportlab.
+\newblock Librería de Python para la generación de documentos PDF.
+\newblock URL: \url{https://docs.reportlab.com/}.
+
+\bibitem{fpdf2}
+Fpdf2 Contributors.
+\newblock fpdf2 - simple and fast pdf generation for python.
+\newblock Librería de Python para la generación de documentos PDF.
+\newblock URL: \url{https://pypi.org/project/fpdf2/}.
+
 \end{thebibliography}
