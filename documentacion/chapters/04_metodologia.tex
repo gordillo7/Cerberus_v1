@@ -518,26 +518,43 @@ La Tabla~\ref{tabla:comparativa_pdf} muestra una comparativa entre ambas librer�
 
 Finalmente, se optó por \textbf{ReportLab} como la solución más adecuada debido a su reconocimiento en la comunidad, mayor control sobre el diseño y capacidad para generar documentos más complejos con mayor facilidad, especialmente al integrar elementos visuales como capturas de pantalla.
 
-\subsubsection*{Asistente de IA}
+\subsubsection*{Asistente de inteligencia artificial}
+La herramienta incorpora un agente de asistencia basado en inteligencia artificial, diseñado para complementar el análisis técnico mediante la generación de recomendaciones y respuestas contextualizadas a partir de los resultados del escaneo. Este asistente se basa en un modelo generativo de lenguaje natural y permite al usuario:
 
+\begin{itemize}
+  \item \textbf{Consultar recomendaciones o dudas}: el usuario puede plantear preguntas sobre el análisis realizado, como vulnerabilidades detectadas, resultados obtenidos o interpretación de configuraciones.
+  \item \textbf{Planificar próximos pasos}: el modelo sugiere acciones futuras en función del contexto del objetivo y del tipo de debilidades encontradas.
+  \item \textbf{Proponer soluciones técnicas}: el asistente ofrece alternativas para mitigar o resolver los problemas de seguridad identificados.
+\end{itemize}
+
+Para implementar esta funcionalidad se evaluaron diversas opciones de modelos de lenguaje, priorizando aquellos que ofrecieran una API con capa gratuita. Entre las alternativas consideradas se encontraban:
+
+\begin{itemize}
+  \item \textbf{Gemini (Google)} \cite{gemini}: modelo de lenguaje avanzado con una API gratuita muy completa, ideal para el contexto del proyecto.
+  \item \textbf{Mistral} \cite{mistral}: ofrece diferentes modelos muy completos, pero la capa gratuita de su API es mucho más limitada que la de \textbf{Gemini}.
+  \item \textbf{GPT-4 / GPT-3.5 (OpenAI)} \cite{openai}: modelos de referencia en la industria por su precisión y potencia, pero sin capa gratuita en su API oficial.
+  \item \textbf{DeepSeek} \cite{deepseek}: plataforma emergente con modelos avanzados, pero sin plan gratuito en su API.
+\end{itemize}
+
+Finalmente se optó por usar \textbf{Gemini}, ya que, junto con \textbf{Mistral}, eran las únicas alternativas que contaban con una API con capa gratuita. Sin embargo, la de \textbf{Mistral} es mucho más limitada, con un máximo de 128.000 tokens frente a los 1.000.000 de \textbf{Gemini}.
+
+En cuanto al modelo, se optó por integrar \textbf{Gemini Flash 2.0} debido a que:
+
+\begin{itemize}
+  \item Ofrece una \textbf{capa gratuita}, sin necesidad de suscripción comercial.
+  \item Soporta hasta \textbf{1.000.000 de tokens por minuto (TPM)}, lo que permite múltiples interacciones sin cuellos de botella.
+  \item Permite hasta \textbf{1.500 solicitudes por día (RPD)} y \textbf{15 solicitudes por minuto (RPM)}, más que suficiente para el contexto del proyecto.
+  \item Toda la generación (input/output) es \textbf{gratuita}, lo que elimina barreras de acceso económico.
+\end{itemize}
+
+El modelo no incluye integración con \textit{Google Search}, y como es habitual en este tipo de servicios, los datos enviados pueden ser utilizados para mejorar el modelo de forma anónima.
+
+Por su equilibrio entre capacidad, coste cero, integración sencilla y rendimiento, \textbf{Gemini Flash 2.0} se posiciona como la opción ideal para el asistente inteligente de la herramienta.
+
+\section{Diseño de la arquitectura de la herramienta}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Escaneo de puertos y servicios: (HECHO) 1. Nmap
-%Reconocimiento DNS: (HECHO) 2. dnsdumpster, (HECHO) 3. mxtoolbox, (HECHO) 4. API Ninja (WHOIS)
-%OSINT correos: (HECHO) 5. IntelligenceX, (HECHO) 6. LeakCheck
-%Enumeracion de subdominios: (HECHO) 7. Subfinder, (HECHO) 8. HTTPX
-%Escaneo de vulnerabilidades web: (HECHO) 9. Nuclei
-%Deteccion de CMS: (HECHO) 10. WhatWeb
-%Captura de pantalla de la web: (HECHO) 11. Pyppeteer
-%Enumeración de directorios y archivos web (Fuzzing): (HECHO) 12. Feroxbuster
-%Reconocimiento WordPress: (HECHO) 13. WPScan
-%Reconocimiento Joomla: (HECHO) 14. Joomscan
-%Enumeración FTP: (HECHO) 15. FTPlib, (HECHO) 16. Searchsploit (para versiones vulnerables)
-%Enumeración SSH: (HECHO) 17. Hydra (para bruteforce), (HECHO) 18. Searchsploit (para versiones vulnerables)
-%Generación de reportes: (HECHO) 19. Reportlab
-%Asistente de IA: 20. Gemini
 
 %\section{Diseño de la arquitectura de la herramienta}
 %\begin{itemize}

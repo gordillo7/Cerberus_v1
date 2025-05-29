@@ -320,4 +320,28 @@ Fpdf2 Contributors.
 \newblock Librería de Python para la generación de documentos PDF.
 \newblock URL: \url{https://pypi.org/project/fpdf2/}.
 
+\bibitem{gemini}
+Google.
+\newblock Gemini api.
+\newblock Documentación oficial de la API Gemini.
+\newblock URL: \url{https://ai.google.dev/gemini-api/docs/}.
+
+\bibitem{mistral}
+Mistral.
+\newblock Mistral api.
+\newblock Documentación oficial de la API de Mistral.
+\newblock URL: \url{https://docs.mistral.ai/}.
+
+\bibitem{openai}
+OpenAI.
+\newblock Openai api.
+\newblock Documentación oficial de la API de OpenAI.
+\newblock URL: \url{https://platform.openai.com/docs/}.
+
+\bibitem{deepseek}
+DeepSeek.
+\newblock Deepseek api.
+\newblock Documentación oficial de la API de DeepSeek.
+\newblock URL: \url{https://api-docs.deepseek.com/}.
+
 \end{thebibliography}
