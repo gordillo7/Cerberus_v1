@@ -17,7 +17,6 @@
 \contentsline {section}{\numberline {4.2}Análisis y elección de herramientas}{20}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Criterios de selección}{20}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Comparativa de herramientas consideradas}{22}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Diseño de la arquitectura de la herramienta}{39}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Implementación y desarrollo}{40}{chapter.5}%
 \contentsline {chapter}{\numberline {6}Resultados}{41}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{42}{chapter.7}%
