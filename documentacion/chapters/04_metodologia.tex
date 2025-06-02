@@ -423,7 +423,7 @@ Se utiliza ésta para llevar a cabo un reconocimiento avanzado del sitio WordPre
   \item \textbf{Enumeración de plugins}: los plugins instalados se analizan para identificar posibles vulnerabilidades (CVEs). Si se encuentra un exploit público asociado en GitHub, se clona automáticamente para facilitar su análisis posterior.
 \end{itemize}
 
-En caso de que se hayan identificado usuarios, se lanza un ataque de fuerza bruta mediante el propio \textbf{WPScan}, aprovechando el recurso \texttt{xmlrpc.php}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se ha podido enumerar ningún usuario, se utiliza una lista por defecto con credenciales comunes.
+En caso de que se hayan identificado usuarios, se lanza un ataque de fuerza bruta mediante el propio \textbf{WPScan}, aprovechando el recurso \texttt{xmlrpc.php} \cite{xmlrpc}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se ha podido enumerar ningún usuario, se utiliza una lista por defecto con credenciales comunes.
 
 Se evaluó el panorama de herramientas disponibles para reconocimiento específico de sitios WordPress. Tras este estudio, se concluyó que \textbf{WPScan} no tiene actualmente una competencia directa que ofrezca un conjunto de funcionalidades tan completo y actualizado. Es, por tanto, la opción más sólida y especializada para llevar a cabo esta fase.
 
@@ -551,15 +551,82 @@ El modelo no incluye integración con \textit{Google Search}, y como es habitual
 
 Por su equilibrio entre capacidad, coste cero, integración sencilla y rendimiento, \textbf{Gemini Flash 2.0} se posiciona como la opción ideal para el asistente inteligente de la herramienta.
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Flujo metodológico de ejecución}
+El flujo metodológico seguido por la herramienta desarrollada se estructura en distintas fases que se ejecutan de forma secuencial o condicional, en función de las características del objetivo introducido y de los servicios detectados durante el escaneo. A continuación, se describen cada una de estas fases.
 
-%\section{Flujo metodológico de ejecución}
-%\begin{itemize}
-%    \item Flujo paso a paso con figura de resumen (Figura~\ref{fig:flujo}).
-%    \item Posibles configuraciones: escaneo por consola, interfaz gráfica, escaneo exhaustivo.
-%\end{itemize}
+\subsection{Escaneo de puertos y servicios}
+Se inicia con la ejecución de \texttt{Nmap}, con el objetivo de identificar los puertos abiertos del objetivo, los servicios en ejecución sobre dichos puertos y sus versiones.
 
-%Añadir bibliografía correspondiente.
+\subsection{Enumeración del dominio}
+En caso de que el objetivo sea un dominio (y no una dirección IP), se lanzan tres fases específicas.
 
-%Corregir 1. Introduccion, 2. Objetivos y 3. Estado del arte siguiendo correcciones de Andrés.
+\subsubsection*{Reconocimiento DNS}
+Se realiza un reconocimiento pasivo del dominio, recopilando información pública y registros DNS. Se utilizan varias herramientas para llevar a cabo esta tarea:
+
+\begin{itemize}
+  \item Consulta de registros DNS mediante \texttt{DNSdumpster}, obteniendo información como registros \texttt{MX}, \texttt{NS} y \texttt{TXT}.
+  \item Análisis del registro \texttt{DMARC} a través de \texttt{MXToolbox}, útil para detectar posibles vectores de ataques relacionados con \textit{email spoofing}.
+  \item Consulta WHOIS utilizando la API de \texttt{API Ninja}, lo que permite recuperar datos como propietario del dominio, fechas de creación y expiración, y otra metainformación.
+\end{itemize}
+
+\subsubsection*{OSINT de direcciones de correo electrónico}
+Se extraen direcciones asociadas al dominio a través de \texttt{IntelligenceX}, y posteriormente se verifica si han sido expuestas en brechas de seguridad mediante \texttt{LeakCheck}.
+
+\subsubsection*{Enumeración de subdominios}
+Se utiliza \texttt{Subfinder} para obtener subdominios vinculados al dominio objetivo. Posteriormente, se emplea \texttt{HTTPX} para validar cuáles de ellos están activos, comprobando el código de estado HTTP.
+
+\subsection{Reconocimiento web}
+Si se detecta que el puerto 80 está abierto, se lanzan una serie de modulos para realizar un reconocimiento exhaustivo del servicio web.
+
+\subsubsection*{Escaneo de vulnerabilidades web}
+Se lanza \texttt{Nuclei} para buscar vulnerabilidades en la aplicación web. Si se activa el modo de \textit{escaneo exhaustivo}, también se escanean todos los subdominios activos descubiertos.
+
+\subsubsection*{Detección del CMS}
+Se ejecuta \texttt{WhatWeb} para identificar si el sitio utiliza algún gestor de contenidos (WordPress, Joomla, etc.).
+
+\subsubsection*{Captura de pantalla}
+Se genera una captura visual del sitio web utilizando \texttt{Pyppeteer}, la cual será incluida en el informe final.
+
+\subsubsection*{Enumeración de directorios y archivos}
+Se utiliza \texttt{Feroxbuster} para descubrir rutas y archivos accesibles. En modo exhaustivo se lanza con recursividad de nivel 2, mientras que en modo normal se limita a nivel 1.
+
+\subsubsection*{Reconocimiento WordPress}
+Si el CMS detectado es WordPress, se emplea \texttt{WPScan} para:
+\begin{itemize}
+  \item Enumerar usuarios y plugins instalados.
+  \item Consultar posibles CVEs asociados a los plugins.
+  \item Descargar automáticamente exploits si están disponibles públicamente en GitHub.
+\end{itemize}
+
+\subsubsection*{Fuerza bruta en WordPress}
+Se lanza un ataque sobre \texttt{xmlrpc.php} mediante \texttt{WPScan}. Se utilizan las credenciales enumeradas en la fase anterior o, en su defecto, una lista por defecto con credenciales comunes.
+
+\subsubsection*{Reconocimiento Joomla}
+Si se detecta Joomla, se utiliza \texttt{Joomscan} para identificar vulnerabilidades específicas de este CMS, configuraciones inseguras, copias de seguridad accesibles o archivos sensibles.
+
+\subsection{Reconocimiento FTP}
+Si el puerto 21 está abierto, se utiliza \texttt{ftplib} para:
+\begin{itemize}
+  \item Verificar si el login anónimo está habilitado.
+  \item Realizar fuerza bruta con wordlists (personalizadas o por defecto).
+  \item Comprobar permisos de lectura/escritura y descargar archivos.
+  \item Consultar vulnerabilidades conocidas mediante \texttt{Searchsploit}.
+\end{itemize}
+
+\subsection{Reconocimiento SSH}
+Si el puerto 22 está abierto, se utiliza \texttt{Hydra} para realizar un ataque de fuerza bruta, utilizando las credenciales obtenidas anteriormente o una wordlist genérica. También se consulta \texttt{Searchsploit} para comprobar vulnerabilidades de versión.
+
+\subsection{Generación del informe}
+Finalmente, se genera un informe PDF estructurado con todos los resultados obtenidos, incluyendo capturas, tablas y secciones organizadas por fase. En caso de que el escaneo se haya realizado dentro de un proyecto, el informe se versiona automáticamente, permitiendo mantener un histórico de auditorías por objetivo.
+
+\section{Figura resumen del flujo de ejecución}
+La Figura~\ref{fig:diagrama_flujo_herramienta} muestra un esquema general del flujo metodológico que sigue la herramienta desarrollada.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{pictures/diagramaHerramienta.png}
+\caption{Flujo metodológico de ejecución de la herramienta.}
+\label{fig:diagrama_flujo_herramienta}
+\end{figure}
+
 \end{parskipenv}

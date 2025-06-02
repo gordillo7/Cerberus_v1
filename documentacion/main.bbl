@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{fases_auditoria}
+Carlos Cilleruelo.
+\newblock Fases de un pentest, 2024.
+\newblock Artículo sobre las fases de una auditoría de seguridad informática.
+\newblock URL: \url{https://keepcoding.io/blog/fases-de-un-pentest-ciberseguridad/}.
+
 \bibitem{recon}
 {MITRE ATTACK}.
 \newblock Reconnaissance, 2020.
@@ -10,17 +16,14 @@
 James~P. Anderson.
 \newblock Computer security technology planning study, volume 1.
 \newblock Technical report, U.S. Air Force Electronic Systems Division, 1972.
-\newblock Informe pionero sobre planificación y análisis de seguridad
-  informática, volumen 1.
-\newblock URL:
-  \url{https://csrc.nist.gov/files/pubs/conference/1998/10/08/proceedings-of-the-21st-nissc-1998/final/docs/early-cs-papers/ande72a.pdf}.
+\newblock Informe pionero sobre planificación y análisis de seguridad informática, volumen 1.
+\newblock URL: \url{https://csrc.nist.gov/files/pubs/conference/1998/10/08/proceedings-of-the-21st-nissc-1998/final/docs/early-cs-papers/ande72a.pdf}.
 
 \bibitem{anderson1972b}
 James~P. Anderson.
 \newblock Computer security technology planning study, volume 2.
 \newblock Technical report, U.S. Air Force Electronic Systems Division, 1972.
-\newblock Informe pionero sobre planificación y análisis de seguridad
-  informática, volumen 2.
+\newblock Informe pionero sobre planificación y análisis de seguridad informática, volumen 2.
 \newblock URL: \url{https://csrc.nist.rip/publications/history/ande72.pdf}.
 
 \bibitem{satanTool1995}
@@ -55,8 +58,7 @@ OWASP Foundation.
 
 \bibitem{detectify}
 {Detectify AB}.
-\newblock Detectify - web vulnerability scanner powered by ethical hackers,
-  2024.
+\newblock Detectify - web vulnerability scanner powered by ethical hackers, 2024.
 \newblock Plataforma de escaneo web basada en inteligencia colectiva.
 \newblock URL: \url{https://detectify.com/}.
 
@@ -64,15 +66,13 @@ OWASP Foundation.
 {INCIBE}.
 \newblock ¿qué es una vulnerabilidad zero day?, 2020.
 \newblock Publicación de INCIBE sobre vulnerabilidades de día cero.
-\newblock URL:
-  \url{https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day}.
+\newblock URL: \url{https://www.incibe.es/ciudadania/blog/que-es-una-vulnerabilidad-zero-day}.
 
 \bibitem{owaspMethodology}
 {OWASP Foundation}.
 \newblock {\em OWASP Web Security Testing Guide v4.2}, 2020.
 \newblock Metodología en el marco de OWASP.
-\newblock URL:
-  \url{https://owasp.org/www-project-web-security-testing-guide/v42/}.
+\newblock URL: \url{https://owasp.org/www-project-web-security-testing-guide/v42/}.
 
 \bibitem{mitreMethodology}
 {MITRE Corporation}.
@@ -82,16 +82,14 @@ OWASP Foundation.
 
 \bibitem{osstmmMethodology}
 {Pete Herzog}.
-\newblock {\em OSSTMM – Open Source Security Testing Methodology Manual},
-  2001.
+\newblock {\em OSSTMM – Open Source Security Testing Methodology Manual}, 2001.
 \newblock Metodología en el marco de OSSTMM.
 \newblock URL: \url{https://www.isecom.org/OSSTMM.3.pdf}.
 
 \bibitem{nmap}
 {Nmap Project}.
 \newblock Nmap - network mapper, 1997.
-\newblock Sitio web oficial de Nmap, herramienta de escaneo de puertos y
-  servicios.
+\newblock Sitio web oficial de Nmap, herramienta de escaneo de puertos y servicios.
 \newblock URL: \url{https://nmap.org}.
 
 \bibitem{masscan}
@@ -169,37 +167,31 @@ WhoisXML API.
 \bibitem{intelligencex}
 IntelligenceX.io.
 \newblock Intelligencex.
-\newblock Buscador OSINT para datos filtrados, archivos expuestos y metadatos
-  de dominios.
+\newblock Buscador OSINT para datos filtrados, archivos expuestos y metadatos de dominios.
 \newblock URL: \url{https://intelx.io/}.
 
 \bibitem{leakcheck}
 LeakCheck.io.
 \newblock Leakcheck - find out if your credentials have been compromised.
-\newblock Web de consulta de correos electrónicos comprometidos en
-  filtraciones públicas.
+\newblock Web de consulta de correos electrónicos comprometidos en filtraciones públicas.
 \newblock URL: \url{https://leakcheck.io/}.
 
 \bibitem{hibp}
 Have I~Been Pwned?
-\newblock Have i been pwned? - check if your email has been compromised in a
-  data breach.
-\newblock Web de consulta de correos electrónicos comprometidos en
-  filtraciones públicas.
+\newblock Have i been pwned? - check if your email has been compromised in a data breach.
+\newblock Web de consulta de correos electrónicos comprometidos en filtraciones públicas.
 \newblock URL: \url{https://haveibeenpwned.com/}.
 
 \bibitem{breachdirectory}
 BreachDirectory.org.
 \newblock Breachdirectory - check if your email or username was compromised.
-\newblock Web de consulta de correos electrónicos comprometidos en
-  filtraciones públicas.
+\newblock Web de consulta de correos electrónicos comprometidos en filtraciones públicas.
 \newblock URL: \url{https://breachdirectory.org/}.
 
 \bibitem{subfinder}
 ProjectDiscovery.
 \newblock Subfinder - subdomain discovery tool.
-\newblock Herramienta de enumeración de subdominios a partir de fuentes
-  públicas.
+\newblock Herramienta de enumeración de subdominios a partir de fuentes públicas.
 \newblock URL: \url{https://github.com/projectdiscovery/subfinder}.
 
 \bibitem{httpx}
@@ -217,10 +209,8 @@ Sectigo Limited.
 \bibitem{redteam}
 Carlos Cilleruelo.
 \newblock ¿qué es red team en ciberseguridad?, 2024.
-\newblock Artículo sobre el rol del Red Team en el ámbito de la
-  ciberseguridad.
-\newblock URL:
-  \url{https://keepcoding.io/blog/que-es-red-team-en-ciberseguridad/}.
+\newblock Artículo sobre el rol del Red Team en el ámbito de la ciberseguridad.
+\newblock URL: \url{https://keepcoding.io/blog/que-es-red-team-en-ciberseguridad/}.
 
 \bibitem{nuclei}
 ProjectDiscovery.
@@ -266,8 +256,7 @@ Selenium Contributors.
 
 \bibitem{feroxbuster}
 epi052.
-\newblock Feroxbuster - a fast, simple, recursive content discovery tool
-  written in rust.
+\newblock Feroxbuster - a fast, simple, recursive content discovery tool written in rust.
 \newblock Herramienta para enumeración de contenido web.
 \newblock URL: \url{https://github.com/epi052/feroxbuster}.
 
@@ -292,9 +281,14 @@ FFUF Contributors.
 \bibitem{wpscan}
 WPScan Team.
 \newblock Wpscan - wordpress security scanner.
-\newblock Herramienta especializada en el análisis de vulnerabilidades y
-  enumeración en sitios WordPress.
+\newblock Herramienta especializada en el análisis de vulnerabilidades y enumeración en sitios WordPress.
 \newblock URL: \url{https://wpscan.com/}.
+
+\bibitem{xmlrpc}
+Raiola Networks.
+\newblock Xmlrpc.php de wordpress ¿que es y como protegerlo?
+\newblock Artículo sobre XMLRPC.PHP de WordPress.
+\newblock URL: \url{https://raiolanetworks.com/blog/xmlrpc-php-de-wordpress-que-es-y-como-protegerlo/}.
 
 \bibitem{joomscan}
 OWASP Foundation.

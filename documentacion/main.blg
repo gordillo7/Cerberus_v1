@@ -1,53 +1,51 @@
-This is BibTeX, Version 0.99d
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
 Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: main.aux
-Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrturl.bst
-Reallocating 'name_of_file' (item size: 1) to 22 items.
-Reallocating 'glb_str_end' (item size: 4) to 20 items.
-Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
-Reallocating 'global_strs' (item size: 1) to 4000000 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
-Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: LocalBibliography.bib
-You've used 57 entries,
+You've used 59 entries,
             2616 wiz_defined-function locations,
-            865 strings with 12686 characters,
-and the built_in function-call counts, 14750 in all, are:
-= -- 1484
-> -- 289
+            874 strings with 13043 characters,
+and the built_in function-call counts, 15271 in all, are:
+= -- 1537
+> -- 299
 < -- 0
-+ -- 115
-- -- 58
-* -- 197
-:= -- 1684
-add.period$ -- 230
-call.type$ -- 57
-change.case$ -- 56
++ -- 119
+- -- 60
+* -- 204
+:= -- 1742
+add.period$ -- 238
+call.type$ -- 59
+change.case$ -- 58
 chr.to.int$ -- 0
-cite$ -- 57
-duplicate$ -- 407
-empty$ -- 2107
-format.name$ -- 58
-if$ -- 4620
+cite$ -- 59
+duplicate$ -- 421
+empty$ -- 2182
+format.name$ -- 60
+if$ -- 4784
 int.to.chr$ -- 0
-int.to.str$ -- 57
+int.to.str$ -- 59
 missing$ -- 0
-newline$ -- 347
-num.names$ -- 57
-pop$ -- 703
+newline$ -- 359
+num.names$ -- 59
+pop$ -- 728
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 1343
+skip$ -- 1391
 stack$ -- 0
 substring$ -- 0
-swap$ -- 58
+swap$ -- 60
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 57
-width$ -- 59
-write$ -- 649
+while$ -- 59
+width$ -- 61
+write$ -- 672

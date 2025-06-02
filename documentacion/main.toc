@@ -1,26 +1,34 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Introducción}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Estructura del documento}{3}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Objetivos}{5}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Subobjetivos específicos}{6}{section.2.1}%
-\contentsline {chapter}{\numberline {3}Estado del Arte}{8}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Evolución de las auditorías de seguridad}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Herramientas de reconocimiento automatizado}{10}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}ProjectDiscovery Cloud}{11}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Intruder.io}{12}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Detectify}{14}{subsection.3.2.3}%
-\contentsline {section}{\numberline {3.3}Comparativa de las soluciones analizadas}{15}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Metodología}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Estudio de la fase de reconocimiento}{18}{section.4.1}%
-\contentsline {subsection}{\numberline {4.1.1}Metodologías de referencia}{18}{subsection.4.1.1}%
-\contentsline {subsection}{\numberline {4.1.2}Enfoque adoptado en este trabajo}{19}{subsection.4.1.2}%
-\contentsline {section}{\numberline {4.2}Análisis y elección de herramientas}{20}{section.4.2}%
-\contentsline {subsection}{\numberline {4.2.1}Criterios de selección}{20}{subsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.2.2}Comparativa de herramientas consideradas}{22}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {5}Implementación y desarrollo}{40}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Resultados}{41}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{42}{chapter.7}%
-\contentsline {chapter}{Anexos}{43}{section*.32}%
-\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{44}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Sección de anexo}{44}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{45}{section*.33}%
+\contentsline {section}{\numberline {1.1}Estructura del documento}{5}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Objetivos}{7}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Subobjetivos específicos}{8}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Estado del Arte}{10}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Evolución de las auditorías de seguridad}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Herramientas de reconocimiento automatizado}{12}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}ProjectDiscovery Cloud}{13}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Intruder.io}{14}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Detectify}{16}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}Comparativa de las soluciones analizadas}{17}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Metodología}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Estudio de la fase de reconocimiento}{20}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Metodologías de referencia}{20}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Enfoque adoptado en este trabajo}{21}{subsection.4.1.2}%
+\contentsline {section}{\numberline {4.2}Análisis y elección de herramientas}{22}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Criterios de selección}{22}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Comparativa de herramientas consideradas}{24}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}Flujo metodológico de ejecución}{41}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Escaneo de puertos y servicios}{41}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Enumeración del dominio}{42}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Reconocimiento web}{43}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Reconocimiento FTP}{44}{subsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.3.5}Reconocimiento SSH}{44}{subsection.4.3.5}%
+\contentsline {subsection}{\numberline {4.3.6}Generación del informe}{45}{subsection.4.3.6}%
+\contentsline {section}{\numberline {4.4}Figura resumen del flujo de ejecución}{45}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Implementación y desarrollo}{46}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Resultados}{47}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{48}{chapter.7}%
+\contentsline {chapter}{Anexos}{49}{section*.44}%
+\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{50}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Sección de anexo}{50}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{51}{section*.45}%
