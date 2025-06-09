@@ -70,7 +70,7 @@ pip install -r requirements.txt
 ## 📸 Screenshot
 
 <p align="center">
-  <img src="static/img/demo1.jpg" alt="demo_image" width="100" height="100">
+  <img src="static/img/demo1.jpg" alt="demo_image">
 </p>
 
 ## 🙋‍♂️ Author
