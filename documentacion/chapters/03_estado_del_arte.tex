@@ -80,6 +80,45 @@ Detectify ofrece una experiencia potente y pulida en el ámbito web, especialmen
 
 Otro aspecto relevante es que Detectify no ofrece una capa gratuita, lo que lo posiciona claramente como una solución orientada a clientes corporativos con necesidades específicas y presupuesto disponible.
 
+\subsection{Propuesta desarrollada}
+La herramienta desarrollada en este Trabajo de Fin de Grado nace con el objetivo de cubrir de forma integral y automatizada la fase de reconocimiento dentro de una auditoría de seguridad. Para ello, se ha diseñado un sistema modular, flexible y extensible que agrupa múltiples funcionalidades bajo una única interfaz, permitiendo al auditor realizar análisis técnicos avanzados sin necesidad de recurrir a múltiples herramientas independientes.
+
+A continuación se detallan sus principales capacidades:
+
+\begin{itemize}
+  \item \textbf{Escaneo de puertos y servicios}: utiliza \texttt{Nmap} para detectar puertos abiertos, servicios en ejecución y versiones asociadas.
+  \item \textbf{Reconocimiento DNS}: integra herramientas como \texttt{DNSdumpster}, \texttt{MXToolbox} y \texttt{API Ninja (WHOIS)} para obtener información completa sobre registros DNS, políticas de correo (\texttt{DMARC}), y datos administrativos del dominio.
+  \item \textbf{OSINT sobre correos electrónicos}: combina \texttt{IntelligenceX} y \texttt{LeakCheck} para localizar posibles direcciones de correo filtradas y verificar su aparición en brechas de seguridad públicas.
+  \item \textbf{Enumeración de subdominios}: mediante \texttt{Subfinder} y \texttt{HTTPX}, identifica subdominios expuestos y verifica su disponibilidad mediante solicitudes HTTP.
+  \item \textbf{Escaneo de vulnerabilidades web}: emplea \texttt{Nuclei}, tanto sobre el dominio principal como sobre los subdominios (si se activa el modo exhaustivo).
+  \item \textbf{Detección de CMS}: con \texttt{WhatWeb}, identifica si el sitio web utiliza un gestor de contenidos (como WordPress o Joomla), para adaptar las siguientes fases del análisis.
+  \item \textbf{Reconocimiento específico por CMS}:
+    \begin{itemize}
+        \item \textbf{WordPress}: utiliza \texttt{WPScan} para detectar usuarios, plugins instalados y vulnerabilidades conocidas. También lanza ataques de fuerza bruta sobre \texttt{xmlrpc.php}.
+        \item \textbf{Joomla}: ejecuta \texttt{Joomscan} para identificar vulnerabilidades específicas del CMS, archivos expuestos y configuraciones inseguras.
+    \end{itemize}
+  \item \textbf{Enumeración de directorios y archivos}: lanza \texttt{Feroxbuster} para realizar \textit{fuzzing} de rutas web. Si se activa el modo exhaustivo, incrementa la recursividad para profundizar el análisis.
+  \item \textbf{Reconocimiento de servicios específicos}:
+    \begin{itemize}
+        \item \textbf{FTP}: analiza si permite acceso anónimo, realiza fuerza bruta con \texttt{ftplib}, verifica permisos y descarga el contenido disponible.
+        \item \textbf{SSH}: realiza ataques de fuerza bruta con \texttt{Hydra} y utiliza \texttt{Searchsploit} para identificar vulnerabilidades según la versión detectada.
+    \end{itemize}
+  \item \textbf{Captura de pantalla del sitio web}: mediante \texttt{Pyppeteer}, captura una imagen del sitio web objetivo, útil para documentar su estado en los informes.
+  \item \textbf{Generación de informes}: crea documentos PDF automáticos con los resultados del análisis, integrando capturas, tablas y hallazgos organizados por fases.
+  \item \textbf{Gestión de proyectos}: permite crear, guardar y versionar escaneos asociados a un mismo objetivo, lo que facilita el seguimiento de la evolución del sistema a lo largo del tiempo.
+  \item \textbf{Interfaz gráfica}: proporciona una interfaz intuitiva desde la cual se pueden gestionar proyectos, lanzar escaneos y consultar resultados, sin necesidad de conocimientos técnicos avanzados.
+  \item \textbf{Ejecución por consola}: también puede ejecutarse vía terminal, permitiendo su integración en otros flujos o entornos automatizados. Ofrece parámetros como \texttt{-p} para asociar un escaneo a un proyecto y \texttt{-ex} para activar el modo exhaustivo.
+  \item \textbf{Modo de escaneo exhaustivo}: activa configuraciones más profundas para ciertos módulos, como lanzar \texttt{Nuclei} sobre todos los subdominios o aumentar la recursividad de \texttt{Feroxbuster}.
+  \item \textbf{Configuración de proxy}: desde la interfaz gráfica se puede definir un proxy personalizado que será utilizado por herramientas compatibles como \texttt{WPScan}, reduciendo así el riesgo de bloqueos por parte de los servicios analizados.
+  \item \textbf{Asistente de IA}: integra un modelo generativo (\texttt{Gemini}) que permite al usuario:
+    \begin{itemize}
+        \item \textbf{Consultar recomendaciones y próximos pasos}: basados en los resultados del escaneo.
+        \item \textbf{Obtener sugerencias de soluciones}: adaptadas a las vulnerabilidades detectadas.
+    \end{itemize}
+\end{itemize}
+
+Esta combinación de funcionalidades técnicas, automatización, opciones de ejecución y asistencia mediante inteligencia artificial posiciona a la herramienta como una solución diferencial frente a otras propuestas existentes.
+
 \section{Comparativa de las soluciones analizadas}
 La Tabla~\ref{tabla:comparativa_estado_arte} resume las capacidades clave de cada herramienta comparada, destacando tanto las funcionalidades comunes como las características diferenciales que aporta la solución desarrollada.
 
@@ -124,27 +163,5 @@ La Tabla~\ref{tabla:comparativa_estado_arte} resume las capacidades clave de cad
 \end{table}
 
 Tras revisar las principales plataformas orientadas al reconocimiento automatizado en auditorías de seguridad, se observa que, si bien ofrecen soluciones potentes en distintos aspectos, presentan limitaciones significativas en cuanto a personalización, cobertura de vectores no web, o interacción con los resultados obtenidos. Estas carencias evidencian la necesidad de desarrollar herramientas más flexibles y adaptadas a un análisis técnico más profundo, como la que se propone en este trabajo.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%Para la corrección propuesta por Andrés
-
-%Características adicionales de la herramienta:
-%\begin{itemize}
-%  \item \textbf{Asistente de IA}: El sistema integra un modelo generativo (Gemini) que permite al usuario consultar recomendaciones, próximos pasos, análisis de resultados o dudas específicas basadas en el escaneo realizado.
-%  \begin{itemize}
-%    \item \textbf{Generación de siguientes pasos con IA}: A partir de los resultados obtenidos, el modelo generativo sugiere los próximos pasos a seguir, facilitando la planificación de la auditoría.
-%    \item \textbf{Sugerencias de soluciones con IA}: El modelo generativo ofrece recomendaciones sobre posibles soluciones a las vulnerabilidades detectadas.
-%  \end{itemize}
-%  \item \textbf{Escaneo por consola}: basta con ejecutar el archivo \texttt{main.py} (python3 main.py <target> [-p] [-ex]). Se le pueden especificar los siguientes parámetros:
-%    \begin{itemize}
-%      \item \texttt{-p}: Asocia el escaneo a un proyecto existente, permitiendo mantener un historial de auditorías sobre el mismo objetivo.
-%      \item \texttt{-ex}: Activa el modo de escaneo exhaustivo.
-%    \end{itemize}
-%    \item \textbf{Interfaz gráfica}: Desde la interfaz, el usuario puede crear y gestionar proyectos, permitiendo mantener informes versionados, comparar resultados y documentar la evolución del objetivo.
-%    \item \textbf{Escaneo exhaustivo}: Amplía la profundidad del análisis activando opciones avanzadas en varias fases. Proporciona más información, aunque incrementa el tiempo total del escaneo. En concreto, hace que el modulo de webscan lance Nuclei para todos los subdominios enumerados y que el modulo de fuzzing lance Feroxbuster con profundidad nuvel 2.
-%    \item \textbf{Configuración de proxy}: El usuario puede configurar manualmente un proxy desde la interfaz gráfica, útil para evadir bloqueos. La herramienta lo integra para que WPScan lo use.
-%\end{itemize}
-
 
 \end{parskipenv}
