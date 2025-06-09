@@ -551,6 +551,36 @@ El modelo no incluye integración con \textit{Google Search}, y como es habitual
 
 Por su equilibrio entre capacidad, coste cero, integración sencilla y rendimiento, \textbf{Gemini Flash 2.0} se posiciona como la opción ideal para el asistente inteligente de la herramienta.
 
+\section{Resumen de herramientas utilizadas}
+A continuación se presenta un resumen de las herramientas utilizadas en la propuesta.
+
+\begin{itemize}
+  \item \textbf{Escaneo de puertos y servicios}: \texttt{Nmap}
+  \item \textbf{Reconocimiento DNS}: \texttt{DNSdumpster}, \texttt{MXToolbox} y \texttt{API Ninja (WHOIS)}
+  \item \textbf{Email OSINT}: \texttt{IntelligenceX} y \texttt{LeakCheck}
+  \item \textbf{Enumeración de subdominios}: \texttt{Subfinder} y \texttt{HTTPX}
+  \item \textbf{Escaneo de vulnerabilidades web}: \texttt{Nuclei}
+  \item \textbf{Detección de CMS}: \texttt{WhatWeb}
+  \item \textbf{Captura de pantalla web}: \texttt{Pyppeteer}
+  \item \textbf{Enumeración de directorios y archivos web}: \texttt{Feroxbuster}
+  \item \textbf{Reconocimiento WordPress}: \texttt{WPScan}
+  \item \textbf{Reconocimiento Joomla}: \texttt{Joomscan}
+  \item \textbf{Reconocimiento FTP}: \texttt{ftplib} y \texttt{Searchsploit}
+  \item \textbf{Reconocimiento SSH}: \texttt{Hydra} y \texttt{Searchsploit}
+  \item \textbf{Generación de informe}: \texttt{ReportLab}
+  \item \textbf{Asistente de IA}: \texttt{Gemini Flash 2.0}
+\end{itemize}
+
+La Figura~\ref{fig:herramientas_utilizadas} muestra un esquema visual con el resumen de las herramientas utilizadas en cada fase:
+
+\begin{figure}[H]
+\centering
+\hspace*{-1.4cm}
+\includegraphics[width=1.17\textwidth]{pictures/herramientasUtilizadas.png}
+\caption{Figura resumen de las herramientas utilizadas en la propuesta.}
+\label{fig:herramientas_utilizadas}
+\end{figure}
+
 \section{Flujo metodológico de ejecución}
 El flujo metodológico seguido por la herramienta desarrollada se estructura en distintas fases que se ejecutan de forma secuencial o condicional, en función de las características del objetivo introducido y de los servicios detectados durante el escaneo. A continuación, se describen cada una de estas fases.
 
@@ -624,7 +654,8 @@ La Figura~\ref{fig:diagrama_flujo_herramienta} muestra un esquema general del fl
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{pictures/diagramaHerramienta.png}
+\hspace*{-5.5cm}
+\includegraphics[width=1.7\textwidth]{pictures/diagramaHerramienta.png}
 \caption{Flujo metodológico de ejecución de la herramienta.}
 \label{fig:diagrama_flujo_herramienta}
 \end{figure}

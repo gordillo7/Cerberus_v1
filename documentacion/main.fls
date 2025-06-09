@@ -1149,6 +1149,15 @@ INPUT ./pictures/logouex.pdf
 INPUT ./pictures/logouex.pdf
 INPUT pictures/logouex.pdf
 INPUT ./pictures/logouex.pdf
+INPUT ./pictures/herramientasUtilizadas.png
+INPUT ./pictures/herramientasUtilizadas.png
+INPUT pictures/herramientasUtilizadas.png
+INPUT ./pictures/herramientasUtilizadas.png
+INPUT ./pictures/herramientasUtilizadas.png
+INPUT ./pictures/logouex.pdf
+INPUT ./pictures/logouex.pdf
+INPUT pictures/logouex.pdf
+INPUT ./pictures/logouex.pdf
 INPUT ./pictures/logouex.pdf
 INPUT ./pictures/logouex.pdf
 INPUT pictures/logouex.pdf
@@ -1166,6 +1175,10 @@ INPUT ./pictures/diagramaHerramienta.png
 INPUT pictures/diagramaHerramienta.png
 INPUT ./pictures/diagramaHerramienta.png
 INPUT ./pictures/diagramaHerramienta.png
+INPUT ./pictures/logouex.pdf
+INPUT ./pictures/logouex.pdf
+INPUT pictures/logouex.pdf
+INPUT ./pictures/logouex.pdf
 INPUT ./chapters/05_implementacion_y_desarrollo.tex
 INPUT chapters/05_implementacion_y_desarrollo.tex
 INPUT ./chapters/05_implementacion_y_desarrollo.tex

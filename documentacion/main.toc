@@ -18,18 +18,19 @@
 \contentsline {section}{\numberline {4.2}Análisis y elección de herramientas}{24}{section.4.2}%
 \contentsline {subsection}{\numberline {4.2.1}Criterios de selección}{24}{subsection.4.2.1}%
 \contentsline {subsection}{\numberline {4.2.2}Comparativa de herramientas consideradas}{26}{subsection.4.2.2}%
-\contentsline {section}{\numberline {4.3}Flujo metodológico de ejecución}{43}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Escaneo de puertos y servicios}{43}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Enumeración del dominio}{44}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Reconocimiento web}{45}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Reconocimiento FTP}{46}{subsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.3.5}Reconocimiento SSH}{46}{subsection.4.3.5}%
-\contentsline {subsection}{\numberline {4.3.6}Generación del informe}{47}{subsection.4.3.6}%
-\contentsline {section}{\numberline {4.4}Figura resumen del flujo de ejecución}{47}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Implementación y desarrollo}{48}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Resultados}{49}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{50}{chapter.7}%
-\contentsline {chapter}{Anexos}{51}{section*.47}%
-\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{52}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Sección de anexo}{52}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{53}{section*.48}%
+\contentsline {section}{\numberline {4.3}Resumen de herramientas utilizadas}{43}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Flujo metodológico de ejecución}{45}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Escaneo de puertos y servicios}{45}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Enumeración del dominio}{45}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Reconocimiento web}{46}{subsection.4.4.3}%
+\contentsline {subsection}{\numberline {4.4.4}Reconocimiento FTP}{48}{subsection.4.4.4}%
+\contentsline {subsection}{\numberline {4.4.5}Reconocimiento SSH}{48}{subsection.4.4.5}%
+\contentsline {subsection}{\numberline {4.4.6}Generación del informe}{48}{subsection.4.4.6}%
+\contentsline {section}{\numberline {4.5}Figura resumen del flujo de ejecución}{48}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Implementación y desarrollo}{50}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Resultados}{51}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{52}{chapter.7}%
+\contentsline {chapter}{Anexos}{53}{section*.48}%
+\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{54}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Sección de anexo}{54}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{55}{section*.49}%
