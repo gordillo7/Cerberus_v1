@@ -1,53 +1,82 @@
-# Cerberus - Pentesting Web Application
+# 🔍 Cerberus - Pentesting Web Application
 
-A simple pentesting web application built with Flask (Python) and JavaScript. It provides scanning functionality, report generation, and basic dashboard statistics.
+A web application for automated security reconnaissance, written in Python (Flask) and JavaScript. It integrates advanced scanning tools, automatic report generation, AI assistance, and a dashboard for managing versioned projects and scan results.
 
-## Features
+## 🚀 Main Features
 
-- **Dashboard**: Displays stats such as the number of generated reports, available modules, and scanned clients.
-- **Scanner**: Runs full scans based on a provided target.
-- **Reports**: Lists all generated PDF reports with the option to delete.
-- **Settings**: Placeholder for future configuration options.
+- Port and service scanning (Nmap)
+- DNS reconnaissance (DNSdumpster, MXToolbox, API Ninja WHOIS)
+- Email OSINT: leaked emails detection (IntelligenceX + LeakCheck)
+- Subdomain enumeration and activity check (Subfinder + HTTPX)
+- Web vulnerability scanning (Nuclei)
+- CMS detection (WhatWeb)
+- Website screenshot capture (Pyppeteer)
+- Web directory and file enumeration (Feroxbuster)
+- WordPress reconnaissance and brute force (WPScan)
+- Joomla reconnaissance (Joomscan)
+- FTP service analysis (ftplib + Searchsploit)
+- SSH brute-force and analysis (Hydra + Searchsploit)
+- Automatic PDF report generation (ReportLab)
+- Built-in AI assistant using Gemini Flash 2.0
 
-## Project Structure
+## 🧠 AI Assistant
 
-- `app.py`: Main Flask application containing routes, scanning logic, and report handling.
-- `static/`: Holds CSS, JS, and image assets.
-- `templates/`: HTML templates for rendering pages.
-- `modules/`: Python modules used for scanning and report generation.
-- `reports/`: Stores generated PDF reports.
-- `logs/`: Contains log data for scanned targets.
+Includes a generative AI model that can:
+- Suggest next steps after a scan
+- Recommend solutions for detected vulnerabilities
+- Answer technical questions based on scan results
 
-## Installation
+## 🖥️ Usage Modes
 
-1. Clone this repository.
-2. Create and activate a virtual environment.
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Ensure the necessary folders (`modules`, `reports`, `logs`, `static`, `templates`) are present.
+### Graphical User Interface (GUI)
 
-## Usage
+Allows users to:
+- Create and manage audit projects
+- Launch full or partial scans
+- View versioned reports and track audit history
 
-1. Start the Flask server:
-   ```bash
-   python app.py
-   ```
-2. Open your web browser and navigate to:
-   ```
-   http://127.0.0.1:5000/
-   ```
-3. Use the dashboard to view stats and perform scans.
+### Command-Line Mode
 
-## Endpoints Overview
+```bash
+python3 main.py <target> [-p <project>] [-ex]
+````
 
-- **GET /**: Renders the main page.
-- **GET /api/stats**: Returns JSON with reports, modules, and clients stats.
-- **POST /fullscan**: Initiates a full scan process.
-- **POST /stopscan**: Attempts to stop the current scanning process.
-- **GET /api/reports**: Retrieves a list of available PDF reports.
-- **DELETE /api/reports/<filename>**: Deletes a specific report.
+* `-p`: Associate the scan with an existing project
+* `-ex`: Enable exhaustive scan mode
+
+## ⚙️ Requirements
+
+* Python 3.8+
+* Linux OS (recommended)
+* All dependencies are listed in `requirements.txt`
+
+Install dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
+## 📁 Project Structure
+
+```
+├── main.py                    # Main script
+├── gui/                       # Graphical user interface
+├── modules/                   # Individual scan modules
+├── reports/                   # Generated reports
+├── resources/                 # Wordlists, templates, etc.
+└── requirements.txt           # Project dependencies
+```
+
+## 📸 Screenshot
+
+<p align="center">
+  <img src="static/img/demo1.jpg" alt="demo_image" width="100" height="100">
+</p>
+
+## 🙋‍♂️ Author
+
+Developed by \[David Gordillo Burrero] as part of the Bachelor's Thesis at \[Universidad de Extremadura].
+For more information, refer to the final project report.
 
 <br/>
 
