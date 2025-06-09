@@ -75,8 +75,6 @@ pip install -r requirements.txt
   <img src="static/img/demo1.jpg" alt="demo_image">
 </p>
 
-<br/>
-
 ## 🙋‍♂️ Author
 
 Developed by \[David Gordillo Burrero] as part of the Bachelor's Thesis at \[Universidad de Extremadura].
