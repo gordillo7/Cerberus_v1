@@ -5,7 +5,7 @@ A web application for automated security reconnaissance, written in Python (Flas
 ## 🚀 Main Features
 
 - Port and service scanning (Nmap)
-- DNS reconnaissance (DNSdumpster, MXToolbox, API Ninja WHOIS)
+- DNS reconnaissance (DNSdumpster + MXToolbox + API Ninja WHOIS)
 - Email OSINT: leaked emails detection (IntelligenceX + LeakCheck)
 - Subdomain enumeration and activity check (Subfinder + HTTPX)
 - Web vulnerability scanning (Nuclei)
@@ -59,11 +59,16 @@ pip install -r requirements.txt
 ## 📁 Project Structure
 
 ```
-├── main.py                    # Main script
-├── gui/                       # Graphical user interface
+├── config/                    # Configuration files
+├── static/                    # Styles
+├── templates/                 # GUI
 ├── modules/                   # Individual scan modules
 ├── reports/                   # Generated reports
-├── resources/                 # Wordlists, templates, etc.
+├── logs/                      # Generated logs
+├── projects/                  # Directory for projects
+├── wordlists/                 # Wordlists
+├── main.py                    # Main script
+├── app.py                     # Entry point for GUI
 └── requirements.txt           # Project dependencies
 ```
 
@@ -77,7 +82,7 @@ pip install -r requirements.txt
 
 ## 🙋‍♂️ Author
 
-Developed by \[David Gordillo Burrero] as part of the Bachelor's Thesis at \[Universidad de Extremadura].
+Developed by **David Gordillo Burrero** as part of the Bachelor's Thesis at **Universidad de Extremadura**.
 For more information, refer to the final project report.
 
 <br/>
