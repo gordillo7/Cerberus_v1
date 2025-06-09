@@ -69,9 +69,13 @@ pip install -r requirements.txt
 
 ## 📸 Screenshot
 
+<br/>
+
 <p align="center">
   <img src="static/img/demo1.jpg" alt="demo_image">
 </p>
+
+<br/>
 
 ## 🙋‍♂️ Author
 
