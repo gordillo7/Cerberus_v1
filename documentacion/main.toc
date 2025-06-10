@@ -28,9 +28,10 @@
 \contentsline {subsection}{\numberline {4.4.6}Generación del informe}{48}{subsection.4.4.6}%
 \contentsline {section}{\numberline {4.5}Figura resumen del flujo de ejecución}{48}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Implementación y desarrollo}{50}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Resultados}{51}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{52}{chapter.7}%
-\contentsline {chapter}{Anexos}{53}{section*.48}%
-\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{54}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Sección de anexo}{54}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{55}{section*.49}%
+\contentsline {section}{\numberline {5.1}Diseño de la arquitectura de la herramienta}{50}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Resultados}{53}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{54}{chapter.7}%
+\contentsline {chapter}{Anexos}{55}{section*.48}%
+\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{56}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Sección de anexo}{56}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{57}{section*.49}%

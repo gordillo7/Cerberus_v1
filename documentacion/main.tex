@@ -7,8 +7,45 @@
 \usepackage{xcolor}
 \usepackage{pifont}
 \usepackage{etoolbox}
+\usepackage{caption}
+\usepackage{listings}
 
 \definecolor{LightBlue}{RGB}{200,230,255} % o usa blue!10 para algo más sencillo
+\definecolor{mybeige}{RGB}{245, 245, 200}
+
+\lstset{
+    inputencoding=utf8,
+    language=Python,
+    basicstyle=\ttfamily\small,
+    backgroundcolor=\color{mybeige},
+    keywordstyle=\color{blue},
+    commentstyle=\color{lightgray},
+    stringstyle=\color{red},
+    frame=single,
+    rulecolor=\color{black},
+    showstringspaces=false,
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    tabsize=4,
+    aboveskip=1em,                     % Espacio antes del bloque
+    belowskip=2em,                     % Espacio después del bloque
+    breaklines=true,
+    breakatwhitespace=false,
+    escapeinside={(*@}{@*)},
+    literate={ñ}{{\~n}}1
+             {á}{{\'a}}1
+             {é}{{\'e}}1
+             {í}{{\'i}}1
+             {ó}{{\'o}}1
+             {ú}{{\'u}}1
+             {Á}{{\'A}}1
+             {É}{{\'E}}1
+             {Í}{{\'I}}1
+             {Ó}{{\'O}}1
+             {Ú}{{\'U}}1
+             {Ñ}{{\~N}}1
+}
 
 \newcommand{\cmark}{\textcolor{green!60!black}{\ding{51}}}
 \newcommand{\xmark}{\textcolor{red}{\ding{55}}}

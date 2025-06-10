@@ -356,4 +356,10 @@ DeepSeek.
 \newblock Documentación oficial de la API de DeepSeek.
 \newblock URL: \url{https://api-docs.deepseek.com/}.
 
+\bibitem{wikipedia_dom}
+Wikipedia contributors.
+\newblock Document object model, 2024.
+\newblock Definición del término "Document Object Model (DOM)".
+\newblock URL: \url{https://es.wikipedia.org/wiki/Document_Object_Model}.
+
 \end{thebibliography}

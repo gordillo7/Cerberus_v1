@@ -4,10 +4,6 @@ ROADMAP GENERAL:
 - [Si da tiempo] Hacer script de autoinstall para instalar dependencias.
 
 AVANCES:
-- Chatbot IA por cada proyecto (API de Gemini).
-- Mejorar generacion de reportes.
-- Boton generar resumen siguientes pasos (Offensive).
-- Boton como solucionar los problemas encontrados (Deffensive).
 
 DUDAS:
 

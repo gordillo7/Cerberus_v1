@@ -1,11 +1,101 @@
 \chapter{\implementationdevelopmentname}
 \begin{parskipenv}
-%\section{Diseño de la arquitectura de la herramienta}
-%\begin{itemize}
-%    \item Explicación de arquitectura modular y escalable.
-%    \item Figura con esquema de componentes (Figura~\ref{fig:arquitectura}).
-%\end{itemize}
-Capitulo Implementacion y desarrollo:
-1. Diseño de la arquitectura de la herramienta (main.py, app.py, etc).
-2. Diseño del experimento (que se necesita para ejecutarlo).
+
+\section{Diseño de la arquitectura de la herramienta}
+La herramienta ha sido diseñada con un enfoque modular, estructurada en distintos componentes que colaboran entre sí. Esta arquitectura permite mantener un flujo de ejecución claro, así como facilitar futuras ampliaciones, modificaciones o mantenimientos del sistema.
+
+El núcleo principal del sistema es el archivo \textbf{main.py}, encargado de orquestar todo el proceso de escaneo. Este script actúa como controlador central, invocando los módulos individuales contenidos en la carpeta \texttt{/modules}, cada uno de los cuales implementa una fase concreta del reconocimiento. El flujo general está guiado por condiciones lógicas que determinan qué módulos deben ejecutarse en función de las características del objetivo.
+
+Por ejemplo, en primer lugar se lanza el módulo \textbf{nmap.py}, que realiza el escaneo de puertos y servicios. A partir de su salida, se decide la ejecución condicional de otros módulos. Si el objetivo es un dominio (en vez de una IP), se lanza una cadena de módulos específicos para el reconocimiento DNS, OSINT y subdominios. Esta lógica se puede resumir en el siguiente pseudocódigo:
+
+\begin{lstlisting}[language=Python, caption={Pseudocódigo del archivo \textit{main.py}}]
+# Escaneo inicial
+run_nmap(target)
+
+# Si el objetivo no es una IP, se trata de un dominio
+try:
+    ipaddress.ip_address(target)
+except ValueError:
+    run_dns_recon(target)
+
+# Condiciones en funcion de los puertos detectados
+if port_80_open:
+    run_web_modules(target)
+
+if detected_cms == "wordpress":
+    run_wordpress(target)
+
+if detected_cms == "joomla":
+    run_joomla(target)
+
+if port_21_open:
+    run_ftp(target)
+
+if port_22_open:
+    run_ssh(target)
+
+# Generacion del informe final
+generate_report(target)
+\end{lstlisting}
+
+\medskip
+
+Por otra parte, el archivo \textbf{app.py} actúa como servidor web, encargado de gestionar la interfaz gráfica. Este archivo implementa una API interna mediante Flask, que conecta la interfaz (cliente) con el backend (lanzando llamadas al \textbf{main.py} y otras funciones auxiliares). A través de esta API se pueden lanzar escaneos, interactuar con el modelo de inteligencia artificial, consultar resultados anteriores o generar informes.
+
+La interfaz gráfica está implementada como una aplicación de una sola página (\textit{Single Page Application}). Se compone principalmente de un archivo HTML (\textbf{index.html}) y un archivo JavaScript (\textbf{script.js}) que gestiona la interacción dinámica del usuario. Este último se encarga de manipular los elementos del DOM (\textit{Document Object Model}) \cite{wikipedia_dom}, y realizar peticiones \texttt{fetch} a los endpoints de \textbf{app.py}. Por ejemplo, cuando el usuario pulsa el botón de ``Iniciar Escaneo'', se ejecuta una petición \texttt{fetch(/fullscan)} enviando los parámetros seleccionados por el usuario para lanzar el análisis completo.
+
+Cada módulo en la carpeta \texttt{/modules} está implementado como un archivo Python independiente, especializado en una única fase del proceso. Estos scripts almacenan sus resultados en la carpeta \texttt{/logs}. Posteriormente, esta información es utilizada para generar informes automáticos en formato PDF.
+
+Esta arquitectura modular permite separar claramente la lógica de escaneo, la interfaz gráfica y el almacenamiento, facilitando tanto el desarrollo como la depuración o sustitución de componentes individuales.
+
+
+% \subsection{Arquitectura modular y escalable}
+%* Justificación del enfoque modular: separación por responsabilidad.
+%* Ventajas: mantenibilidad, posibilidad de ampliación futura, reutilización de módulos.
+%* Cómo se comunican los módulos entre sí.
+%
+% \subsection{Tecnologías empleadas}
+%* Frontend: HTML, CSS, JavaScript.
+%* Backend: Python, Flask.
+%* Módulos de escaneo: herramientas externas integradas vía CLI y/o APIs (Nmap, Nuclei, WPScan, etc.).
+%* Motor de IA: Gemini Flash 2.0 vía API.
+
+% \subsection{Gestión de proyectos y reportes}
+%* Cómo se organiza la información por objetivo/proyecto.
+%* Estructura de versionado de informes.
+%* Gestión de rutas de almacenamiento.
+%
+% \subsection{Comunicación entre componentes}
+%* Explicar cómo la interfaz envía solicitudes al backend (`app.py` -> `main.py`).
+%* Cómo se ejecutan los módulos (`main.py` llama a módulos del directorio `/modules`).
+%* Figura de comunicación entre componentes (app.py, main.py, módulos, API de IA, generación de informes).
+%* Flujo de ejecución resumido.
+%
+%---
+%
+% \section{Diseño del experimento}
+%
+% \subsection{Requisitos previos}
+%* Dependencias necesarias (Python 3, instalación de herramientas externas).
+%* Sistemas operativos compatibles (idealmente Linux).
+%* Consideraciones de red (acceso a Internet para herramientas basadas en API).
+%
+% \subsection{Parámetros de entrada}
+%* IP o dominio objetivo.
+%* Opciones de configuración:
+%  * Escaneo por consola o GUI.
+%  * Escaneo exhaustivo.
+%  * Asociación con un proyecto concreto.
+%  * Configuración de proxy.
+%
+%\subsection{Ejemplo de ejecución}
+%* Captura de pantalla de la interfaz o ejecución por consola.
+%* Flujo simplificado: entrada → procesamiento → generación del reporte.
+%
+%---
+%
+% \section{Resumen y justificación de decisiones técnicas}
+%* Justificar por qué se han elegido ciertas tecnologías y descartado otras. --> Se descarto la idea de usar React (Next.js) para el frontend puesto 
+%  que aumentaba demasiado la complejidad para no usar muchas de sus caracteristicas como manejo de sesiones, login, register, databases, routes, etc.
+
 \end{parskipenv}
