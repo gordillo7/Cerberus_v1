@@ -1,0 +1,11 @@
+flask
+ftplib
+requests
+beautifulsoup4
+reportlab
+httpx
+pyppeteer
+asyncio
+google-generativeai
+leakcheck
+PyPDF2
