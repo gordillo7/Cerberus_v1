@@ -32,7 +32,7 @@ Includes a generative AI model that can:
 
 Allows users to:
 - Create and manage audit projects
-- Launch full or partial scans
+- Launch normal or comprehensive scans
 - View versioned reports and track audit history
 
 ### Command-Line Mode
@@ -46,7 +46,7 @@ python3 main.py <target> [-p <project>] [-ex]
 
 ## ⚙️ Requirements
 
-* Python 3.8+
+* Python 3
 * Linux OS (recommended)
 * All dependencies are listed in `requirements.txt`
 
