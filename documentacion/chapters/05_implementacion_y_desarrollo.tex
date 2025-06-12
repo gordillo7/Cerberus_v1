@@ -1,6 +1,6 @@
 \chapter{\implementationdevelopmentname}
+\newpage
 \begin{parskipenv}
-
 \section{Diseño de la arquitectura de la herramienta}
 La herramienta ha sido diseñada con un enfoque modular, estructurada en distintos componentes que colaboran entre sí. Esta arquitectura permite mantener un flujo de ejecución claro, así como facilitar futuras ampliaciones, modificaciones o mantenimientos del sistema.
 
@@ -48,38 +48,91 @@ Cada módulo en la carpeta \texttt{/modules} está implementado como un archivo 
 
 Esta arquitectura modular permite separar claramente la lógica de escaneo, la interfaz gráfica y el almacenamiento, facilitando tanto el desarrollo como la depuración o sustitución de componentes individuales.
 
+\subsection{Tecnologías empleadas}
+El desarrollo de la herramienta se ha llevado a cabo mediante una combinación de tecnologías tanto en el apartado del frontend como del backend. A continuación, se describen las principales tecnologías utilizadas:
 
-% \subsection{Arquitectura modular y escalable}
-%* Justificación del enfoque modular: separación por responsabilidad.
-%* Ventajas: mantenibilidad, posibilidad de ampliación futura, reutilización de módulos.
-%* Cómo se comunican los módulos entre sí.
-%
-% \subsection{Tecnologías empleadas}
-%* Frontend: HTML, CSS, JavaScript.
-%* Backend: Python, Flask.
-%* Módulos de escaneo: herramientas externas integradas vía CLI y/o APIs (Nmap, Nuclei, WPScan, etc.).
-%* Motor de IA: Gemini Flash 2.0 vía API.
+\begin{itemize}
+    \item \textbf{Frontend}: Se ha utilizado \textbf{HTML}, \textbf{CSS} y \textbf{JavaScript} para el diseño de la interfaz gráfica. JavaScript cumple una doble función: por un lado, permite gestionar la lógica de la interfaz (cambio de vistas, interacción dinámica con los elementos), y por otro, se encarga de establecer la comunicación con el backend mediante llamadas a la API, utilizando el método \texttt{fetch()}.
+    
+    \item \textbf{Backend}: Toda la lógica del backend está implementada en \textbf{Python}. Los módulos individuales encargados de realizar tareas específicas del reconocimiento están escritos en este lenguaje. Además, se utiliza \textbf{Flask}, un \textit{framework} web desarrollado en Python, para construir el archivo \texttt{app.py}, el cual actúa como puente entre la interfaz gráfica y el núcleo del sistema. Este archivo expone los endpoints necesarios para que el frontend pueda lanzar escaneos, acceder a informes, gestionar proyectos o interactuar con el modelo de IA.
+    
+    \item \textbf{Módulos de escaneo}: Cada uno de los módulos del sistema implementa una fase específica del proceso de auditoría y está escrito en Python. Estos módulos utilizan herramientas externas de línea de comandos o mediante APIs, como \texttt{Nmap}, \texttt{Subfinder}, \texttt{Nuclei}, \texttt{WPScan}, \texttt{Hydra}, entre otras, descritas en el capítulo de metodología.
+    
+    \item \textbf{Modelo de inteligencia artificial}: Para la parte de asistencia automatizada se ha integrado el modelo \textbf{Gemini Flash 2.0}, accedido a través de la API oficial proporcionada por Google. Las llamadas al modelo y el procesamiento de sus respuestas se realizan desde el backend en Python, integrándose de forma transparente en la interfaz para facilitar al usuario recomendaciones, próximos pasos o análisis contextualizado de los resultados.
+\end{itemize}
 
-% \subsection{Gestión de proyectos y reportes}
-%* Cómo se organiza la información por objetivo/proyecto.
-%* Estructura de versionado de informes.
-%* Gestión de rutas de almacenamiento.
-%
-% \subsection{Comunicación entre componentes}
-%* Explicar cómo la interfaz envía solicitudes al backend (`app.py` -> `main.py`).
-%* Cómo se ejecutan los módulos (`main.py` llama a módulos del directorio `/modules`).
-%* Figura de comunicación entre componentes (app.py, main.py, módulos, API de IA, generación de informes).
-%* Flujo de ejecución resumido.
-%
-%---
-%
-% \section{Diseño del experimento}
-%
-% \subsection{Requisitos previos}
-%* Dependencias necesarias (Python 3, instalación de herramientas externas).
-%* Sistemas operativos compatibles (idealmente Linux).
-%* Consideraciones de red (acceso a Internet para herramientas basadas en API).
-%
+La figura \ref{fig:tecnologias} resume las tecnologías empleadas en el desarrollo de la herramienta.
+
+\begin{figure}[H]
+    \centering
+    \hspace*{-0.4cm}
+    \includegraphics[width=0.7\textwidth]{pictures/tablaTecnologias.png}
+    \caption{Tecnologías empleadas en la herramienta}
+    \label{fig:tecnologias}
+\end{figure}
+
+\subsection{Comunicación entre componentes}
+La herramienta ha sido diseñada siguiendo un modelo de arquitectura en el que cada componente tiene una función específica y se comunica con el resto de forma estructurada. Esta separación de responsabilidades permite una mayor mantenibilidad y escalabilidad, facilitando la incorporación de nuevas funcionalidades o la modificación de las existentes sin afectar al conjunto del sistema.
+
+El flujo de comunicación entre los distintos componentes puede resumirse de la siguiente forma:
+
+\begin{itemize}
+\item El usuario interactúa con la interfaz gráfica.
+\item Cuando el usuario realiza una acción (por ejemplo, iniciar un escaneo), el archivo \texttt{script.js} lanza una petición \texttt{HTTP} mediante \texttt{fetch()} hacia un endpoint definido en \texttt{app.py}, el cual actúa como intermediario entre la interfaz y el backend.
+\item El archivo \texttt{app.py} procesa la solicitud recibida y lanza el script \texttt{main.py}, pasándole los parámetros necesarios (objetivo, modo de escaneo, etc.).
+\item El archivo \texttt{main.py} es el encargado de orquestar el proceso de escaneo completo. En función del tipo de objetivo y los puertos detectados, invoca secuencialmente los distintos módulos independientes ubicados en el directorio \texttt{/modules}, cada uno responsable de una fase concreta del reconocimiento.
+\item Los resultados generados por cada módulo se almacenan en archivos intermedios y son utilizados más adelante para generar un informe en formato PDF mediante la librería \textbf{ReportLab}.
+\item Por otro lado, cuando el usuario desea interactuar con el sistema de inteligencia artificial (por ejemplo, para solicitar recomendaciones o aclaraciones sobre el escaneo), la interfaz envía la petición a otro endpoint de \texttt{app.py}, que a su vez realiza una llamada a la \textbf{API de Gemini Flash 2.0}. La respuesta obtenida se devuelve a la interfaz y se muestra al usuario.
+\end{itemize}
+
+La Figura~\ref{fig:comunicacion_componentes} resume gráficamente este flujo de comunicación y la relación entre los distintos bloques funcionales del sistema.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{pictures/comunicacionComponentes.png}
+\caption{Flujo de comunicación entre los componentes de la herramienta.}
+\label{fig:comunicacion_componentes}
+\end{figure}
+
+Este diseño modular favorece la separación de responsabilidades y permite modificar o sustituir componentes concretos (como los módulos de escaneo o el motor de IA) sin afectar al resto de la aplicación, facilitando así su mantenimiento y evolución futura.
+
+\section{Diseño experimental}
+Esta sección describe los pasos necesarios para realizar una auditoría utilizando la herramienta desarrollada.
+
+\subsection{Requisitos previos}
+Antes de ejecutar la herramienta, es necesario cumplir con una serie de requisitos previos, tanto a nivel de software como de red.
+
+\begin{itemize}
+  \item \textbf{Entorno de ejecución}: La herramienta ha sido diseñada y probada sobre sistemas operativos GNU/Linux, por lo que se recomienda su uso en distribuciones como Ubuntu, Debian o Kali Linux.
+
+  \item \textbf{Python 3}: Es imprescindible contar con una versión de Python 3 instalada en el sistema. Se recomienda Python 3.8 o superior para asegurar la compatibilidad con todas las dependencias.
+
+  \item \textbf{Instalación de dependencias}: Las librerías necesarias para ejecutar la herramienta se encuentran especificadas en el archivo \texttt{requirements.txt}. Se pueden instalar con el siguiente comando: \texttt{pip install -r requirements.txt}
+
+  \item \textbf{Herramientas externas}: Algunas funcionalidades dependen de herramientas externas que deben instalarse manualmente en el sistema. Estas incluyen:
+
+  \begin{itemize}
+    \item \textbf{Nmap}
+    \item \textbf{Subfinder}
+    \item \textbf{Httpx}
+    \item \textbf{Nuclei}
+    \item \textbf{WhatWeb}
+    \item \textbf{Feroxbuster}
+    \item \textbf{WPScan}
+    \item \textbf{Joomscan}
+    \item \textbf{Hydra}
+    \item \textbf{Searchsploit}
+  \end{itemize}
+
+  Es recomendable añadir estas herramientas al \texttt{PATH} del sistema para que puedan ser invocadas desde cualquier módulo.
+
+  \item \textbf{Acceso a Internet}: La herramienta requiere conexión a Internet para funcionalidades que se apoyan en APIs externas, como la consulta WHOIS, OSINT de correos electrónicos o interacción con el modelo de inteligencia artificial.
+
+  \item \textbf{Claves de API}: Para utilizar algunos servicios, como API Ninja o IntelligenceX, es necesario disponer de una clave de API válida. Estas claves pueden obtenerse a través de las páginas de cada servicio y añadirse desde la interfaz gráfica o directamente en el archivo de configuración correspondiente (en la carpeta \texttt{/config}).
+\end{itemize}
+
+\subsection{Parámetros de entrada}
+
 % \subsection{Parámetros de entrada}
 %* IP o dominio objetivo.
 %* Opciones de configuración:
@@ -90,7 +143,7 @@ Esta arquitectura modular permite separar claramente la lógica de escaneo, la i
 %
 %\subsection{Ejemplo de ejecución}
 %* Captura de pantalla de la interfaz o ejecución por consola.
-%* Flujo simplificado: entrada → procesamiento → generación del reporte.
+%* Flujo simplificado: entrada --> procesamiento --> generación del reporte.
 %
 %---
 %
