@@ -1,33 +1,19 @@
-### Vulnerable Joomla Version
+### High Priority
 
-*   **Immediately upgrade Joomla to the latest version.** This is the highest priority due to the known SQL injection vulnerability (Joomla! 3.2.x < 3.4.4). This is a critical vulnerability.
-*   If immediate upgrade is not possible, implement a web application firewall (WAF) rule to block known SQL injection attack patterns targeting the vulnerable Joomla version.
+*   **Joomla Upgrade:** Immediately upgrade Joomla from version 3.4.3 to the latest stable version to patch the critical SQL Injection vulnerability (Joomla! 3.2.x < 3.4.4).
+*   **Password Reset & Monitoring:** Force a password reset for the `club@uclaestrella.es` account and monitor it for suspicious activity due to the identified breaches involving compromised credentials (password, origin). Implement multi-factor authentication (MFA) for this account and any other account on the domain using the same password.
 
-### Compromised Email Address
+### Medium Priority
 
-*   **Force a password reset** for the `club@uclaestrella.es` account.
-*   **Implement multi-factor authentication (MFA)** for the `club@uclaestrella.es` account and any other accounts associated with the domain.
-*   **Monitor the account `club@uclaestrella.es`** for suspicious activity.
+*   **SSH Hardening:**
+    *   Disable password authentication for SSH and enforce key-based authentication only.
+    *   Consider changing the SSH port from 2222 to a non-standard high port (above 1024) and implement rate limiting on SSH login attempts.
+    *   Keep OpenSSH up to date.
+*   **Admin Page Protection:** Implement IP whitelisting or MFA for access to the Joomla administrator panel (`https://uclaestrella.es/administrator/`) to prevent unauthorized access.
+*   **Directory Listing Prevention:** Disable directory listing for common directories found in the fuzzing scan, to prevent information leakage and unauthorized file access. The main paths to protect are `/libraries`, `/language`, `/layouts`, `/plugins`, `/tmp`, `/cache`, `/includes`, `/cli`, `/components`, `/modules`, `/logs`, `/bin`, `/installation`.
 
-### Exposed Administrator Interface
+### Low Priority
 
-*   **Implement IP whitelisting** or geographic restrictions to limit access to the Joomla administrator interface (`https://uclaestrella.es/administrator/`).
-*   **Enforce strong password policies** for all administrator accounts.
-*   **Enable two-factor authentication** for all administrator accounts.
-*   **Rename the administrator directory** to a non-standard name to obscure it from attackers, if supported by Joomla.
-
-### Open SSH Port on Non-Standard Port
-
-*   **Investigate why SSH is running on port 2222.** Determine if this is intentional or a misconfiguration.
-*   If legitimate, consider using key-based authentication and disabling password authentication for SSH.
-*   If not legitimate, disable or remove the SSH service on that port.
-*   **Review firewall rules** to ensure that access to port 2222 is properly restricted.
-
-### Information Disclosure
-
-*   **Review and restrict access** to sensitive directories found during fuzzing, such as `/libraries`, `/language`, `/layouts`, `/plugins`, `/tmp`, `/cache`, `/includes`, `/cli`, `/components`, `/modules`, `/logs`, `/bin`, `/installation`. Ensure that directory listing is disabled and that appropriate `.htaccess` files are in place to prevent unauthorized access.
-
-### DNS Records
-
-*   **Review the Whois information** and ensure that privacy settings are enabled to mask personal information.
-*   **Review and validate all DNS records**, specifically the MX and NS records, to ensure they are configured correctly and point to legitimate services. Confirm the Aruba DNS servers are the intended providers.
+*   **Domain Registration Info:** Investigate why the domain registration information is missing or unavailable (Registered with, Domain created on, Domain expires on, registrant details). Update the Whois information with correct details for better transparency and security.
+*   **Monitor Aruba Proxy:** Actively monitor the `aruba-proxy` service running on ports 80 and 443 for suspicious behavior and ensure it is correctly configured and patched against any known vulnerabilities.
+*   **DNS Records Review:** Periodically review and validate the DNS records, specifically NS and MX records, to ensure they are accurate and pointing to legitimate and trusted services. The current configuration has NS records pointing to multiple different providers, potentially increasing attack surface.

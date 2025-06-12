@@ -114,9 +114,9 @@
   ],
   "total_a_recs": 2,
   "txt": [
-    "\"v=spf1 include:_spf.serviciodecorreo.es include:spf.protection.outlook.com ~all\"",
     "\"google-site-verification=teRl21xHdDY_cwZCYG9tARwho2EMXoWwdVh4t9O6hes\"",
+    "\"google-site-verification=qOx8sJ3krxP953sxi92vbow4yUGR3rrSjmOVQbo3idg\"",
     "\"202411200251145jnqk2jfmfe4lafw0toyx5pkt0zaac2m8l0vm47ygt0yemql7r\"",
-    "\"google-site-verification=qOx8sJ3krxP953sxi92vbow4yUGR3rrSjmOVQbo3idg\""
+    "\"v=spf1 include:_spf.serviciodecorreo.es include:spf.protection.outlook.com ~all\""
   ]
 }

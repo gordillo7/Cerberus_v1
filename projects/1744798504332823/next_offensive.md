@@ -1,23 +1,29 @@
-### Joomla Exploitation
-*   Attempt to exploit the Joomla SQL Injection vulnerability (Joomla! 3.2.x < 3.4.4 - SQL Injection) using the provided Exploit-DB link ([https://www.exploit-db.com/exploits/38534/](https://www.exploit-db.com/exploits/38534/)). Focus on achieving remote code execution or database access.
+### Exploit Joomla SQL Injection Vulnerability
+*   Attempt to exploit the Joomla 3.2.x < 3.4.4 SQL Injection vulnerability (CVE-2015-7247, reference exploit-db.com/exploits/38534/). This is the highest priority due to the presence of a known and easily exploitable vulnerability.
 
-### Credential Reuse
-*   Attempt to use the compromised password from the `club@uclaestrella.es` breach (LinkedIn.com, Stealer Logs) to log in to the Joomla admin panel ([https://uclaestrella.es/administrator/](https://uclaestrella.es/administrator/)) or SSH (2222/tcp)
+### Credential Stuffing Attack
+*   Attempt to use the compromised credentials for `club@uclaestrella.es` to log in to the Joomla administrator panel (`https://uclaestrella.es/administrator/`), SSH on port 2222 or any other services.
 
-### SSH Enumeration & Exploitation
-*   Investigate OpenSSH 8.2p1. Search for known vulnerabilities, exploits, and configuration weaknesses. Attempt brute-force or dictionary attacks if weak credentials are suspected.
+### Manual Examination of Exposed Directories
+*   Manually browse the discovered directories (e.g., `/libraries`, `/language`, `/layouts`, `/plugins`, `/tmp`, `/cache`, `/administrator`, `/includes`, `/cli`, `/components`, `/modules`, `/logs`, `/bin`, `/installation`) to look for sensitive files, configuration files, or further attack vectors.
+*   Pay special attention to `/installation` to check if the Joomla installation directory is still present which can sometimes be exploited.
+*   Check `/logs` directory for any exposed log files that could contain sensitive information.
 
-### Web Application Fuzzing
-*   Conduct deeper fuzzing on potentially sensitive directories discovered, especially `administrator`, `components`, `modules`, `plugins`, `includes`, `logs`, `tmp`, and `cache`. Look for exposed files, directories, or vulnerabilities (LFI, RFI, etc.).
+### SSH Brute-Force/Dictionary Attack
+*   Attempt brute-force or dictionary attacks against the SSH service on port 2222 using common usernames and passwords, or leaked credentials from the `club@uclaestrella.es` breach.
 
-### Aruba Proxy Reconnaissance
-*   Investigate the Aruba proxy. Identify the specific product and version. Search for known vulnerabilities and exploits. Determine the proxy's purpose and configuration to identify potential bypasses or misconfigurations.
+### Aruba-Proxy Reconnaissance
+*   Investigate the `aruba-proxy` service running on ports 80 and 443. Research potential vulnerabilities or misconfigurations specific to this proxy server.
+*   Attempt to bypass the proxy if possible.
 
-### DNS Analysis & Spoofing
-*   Analyze the DNS records and identify potential weaknesses or misconfigurations. Investigate the ARUBA-ASN infrastructure. Assess the feasibility of DNS spoofing attacks to redirect traffic.
+### DNS Zone Transfer
+*   Attempt to perform a DNS zone transfer against the listed nameservers (dns2.technorail.com, dns4.arubadns.cz, dns.technorail.com, dns3.arubadns.net) to enumerate additional subdomains and internal hosts.
 
-### Directory Enumeration
-*   Use tools like dirbuster/gobuster to further enumerate the website's directories and files, searching for sensitive information, backup files, or configuration files not already found.
+### Further Fuzzing
+*   Conduct more targeted fuzzing on specific URLs and parameters, focusing on those related to the Joomla installation or administrative interfaces.
 
-### Email Harvesting & Phishing
-*   Gather more email addresses associated with the domain using OSINT techniques. Craft targeted phishing emails to employees (e.g., using the club@uclaestrella.es address as a sender) to obtain credentials or install malware.
+### Gather More Information on Aruba-ASN
+*   Research the ARUBA-ASN, IT provider to understand their security practices and potential vulnerabilities in their services.
+
+### Investigate MX Records
+*   Further investigation into the MX records (mx.uclaestrella.es) to identify the mail server and look for mail-related vulnerabilities, such as open relay.

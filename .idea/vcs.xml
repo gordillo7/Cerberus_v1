@@ -2,5 +2,6 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/logs/casat.es/http/wordpress/cve_exploits/2013-2009/Uberi_AHK-Scripts" vcs="Git" />
   </component>
 </project>
