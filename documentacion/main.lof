@@ -14,9 +14,20 @@
 \contentsline {xchapter}{Implementación y desarrollo}{50}{chapter.5}%
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Tecnologías empleadas en la herramienta}}{54}{figure.caption.48}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo de comunicación entre los componentes de la herramienta.}}{56}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Escaneo desde la interfaz gráfica.}}{58}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Escaneo desde consola.}}{59}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Formulario de creación de nuevo proyecto.}}{60}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Consola de escaneo dentro de un proyecto.}}{61}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Historial de informes generados en un proyecto.}}{61}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Interacción con el asistente de IA desde un proyecto.}}{62}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Configuración del proxy desde la interfaz.}}{63}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Visualización del informe PDF generado.}}{64}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Generación de siguientes pasos desde una perspectiva ofensiva.}}{65}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Generación de recomendaciones desde una perspectiva defensiva.}}{65}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Interacción directa con la IA integrada en la herramienta.}}{66}{figure.caption.60}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resultados}{59}{chapter.6}%
+\contentsline {xchapter}{Resultados}{69}{chapter.6}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones y trabajos futuros}{60}{chapter.7}%
+\contentsline {xchapter}{Conclusiones y trabajos futuros}{70}{chapter.7}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Ejemplo de anexo}{62}{appendix.Alph1}%
+\contentsline {xchapter}{Ejemplo de anexo}{72}{appendix.Alph1}%

@@ -3,4 +3,9 @@
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.2}Comunicación entre componentes}{\reset@font\mtcSSfont 55}{subsection.5.1.2}}
 {\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Diseño experimental}{\reset@font\mtcSfont 56}{section.5.2}}
 {\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.1}Requisitos previos}{\reset@font\mtcSSfont 56}{subsection.5.2.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Parámetros de entrada}{\reset@font\mtcSSfont 58}{subsection.5.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.2}Configuración del escaneo}{\reset@font\mtcSSfont 58}{subsection.5.2.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.2.3}Flujo de uso de la herramienta}{\reset@font\mtcSSfont 63}{subsection.5.2.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Decisiones técnicas}{\reset@font\mtcSfont 66}{section.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.1}Frontend: HTML, CSS y JavaScript}{\reset@font\mtcSSfont 67}{subsection.5.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.2}Backend: Python y Flask}{\reset@font\mtcSSfont 67}{subsection.5.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.3}Orquestación mediante \texttt {main.py}}{\reset@font\mtcSSfont 68}{subsection.5.3.3}}

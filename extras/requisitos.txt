@@ -19,7 +19,7 @@ from PyPDF2 import PdfReader
 nmap
 curl
 wpscan (ruby)
-serachsploit (git clone + enlace simbolico)
+searchsploit (git clone + enlace simbolico)
 joomscan (git clone + seguir los pasos de la documentacion en latex)
 subfinder (go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest (mover del go/bin a /usr/bin))
 nuclei (go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest (mover del go/bin a /usr/bin))

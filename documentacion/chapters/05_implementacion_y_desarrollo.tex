@@ -131,24 +131,181 @@ Antes de ejecutar la herramienta, es necesario cumplir con una serie de requisit
   \item \textbf{Claves de API}: Para utilizar algunos servicios, como API Ninja o IntelligenceX, es necesario disponer de una clave de API válida. Estas claves pueden obtenerse a través de las páginas de cada servicio y añadirse desde la interfaz gráfica o directamente en el archivo de configuración correspondiente (en la carpeta \texttt{/config}).
 \end{itemize}
 
-\subsection{Parámetros de entrada}
+\subsection{Configuración del escaneo}
+La herramienta permite configurar distintos aspectos del escaneo, adaptándose así a múltiples escenarios y necesidades del auditor. A continuación, se describen las principales opciones de configuración disponibles:
 
-% \subsection{Parámetros de entrada}
-%* IP o dominio objetivo.
-%* Opciones de configuración:
-%  * Escaneo por consola o GUI.
-%  * Escaneo exhaustivo.
-%  * Asociación con un proyecto concreto.
-%  * Configuración de proxy.
-%
-%\subsection{Ejemplo de ejecución}
-%* Captura de pantalla de la interfaz o ejecución por consola.
-%* Flujo simplificado: entrada --> procesamiento --> generación del reporte.
-%
-%---
-%
-% \section{Resumen y justificación de decisiones técnicas}
-%* Justificar por qué se han elegido ciertas tecnologías y descartado otras. --> Se descarto la idea de usar React (Next.js) para el frontend puesto 
-%  que aumentaba demasiado la complejidad para no usar muchas de sus caracteristicas como manejo de sesiones, login, register, databases, routes, etc.
+\begin{itemize}
+  \item \textbf{Objetivo del escaneo}: el usuario puede especificar como objetivo tanto una dirección IP como un nombre de dominio o una URL. La herramienta detecta automáticamente el tipo de objetivo y ajusta el flujo de reconocimiento en consecuencia.
+
+  \item \textbf{Modo de ejecución - interfaz gráfica o consola}:
+  \begin{itemize}
+    \item \textit{Interfaz gráfica (GUI)}: para lanzar un escaneo desde la interfaz, el usuario debe acceder a la pestaña de escaneo, introducir el objetivo y pulsar el botón \texttt{Start}. Los resultados se irán mostrando dinámicamente en la consola de escaneo integrada.\\
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{pictures/1.png}
+    \caption{Escaneo desde la interfaz gráfica.}
+    \label{fig:gui_escaneo}
+    \end{figure}
+    
+    \item \textit{Consola (CLI)}: también es posible lanzar un escaneo directamente desde la línea de comandos. Para ello, basta con ejecutar:
+    \begin{verbatim}
+    python3 main.py <objetivo>
+    \end{verbatim}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pictures/2.png}
+    \caption{Escaneo desde consola.}
+    \label{fig:cli_escaneo}
+    \end{figure}
+  \end{itemize}
+
+  \item \textbf{Escaneo exhaustivo}: esta opción permite aumentar la profundidad del análisis. Al activarse:
+  \begin{itemize}
+    \item Se lanza \texttt{Nuclei} para todos los subdominios activos, no solo para el dominio principal.
+    \item Se ejecuta \texttt{Feroxbuster} con nivel de recursividad 2 (en lugar del 1 por defecto).
+  \end{itemize}
+  Desde la interfaz gráfica, se puede activar esta opción marcando la casilla correspondiente al iniciar el escaneo. Desde consola, se activa con el parámetro \texttt{-ex}:
+  \begin{verbatim}
+  python3 main.py <objetivo> -ex
+  \end{verbatim}
+
+  \item \textbf{Asociación con proyecto}: una de las características principales de la herramienta es su sistema de proyectos, que permite agrupar los escaneos realizados sobre un mismo objetivo, gestionar versiones de informes y mantener un historial completo del análisis.
+  \begin{itemize}
+    \item En la interfaz gráfica, los proyectos se crean desde la pestaña \texttt{Proyectos}. Allí se puede introducir el nombre del proyecto y el objetivo.\\
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{pictures/3.png}
+    \caption{Formulario de creación de nuevo proyecto.}
+    \label{fig:crear_proyecto}
+    \end{figure}
+    
+    \item Una vez creado, se accede a una vista específica del proyecto con tres pestañas:
+    \begin{itemize}
+      \item \textbf{Consola de escaneo}: donde se lanza el reconocimiento y se visualiza el progreso.
+      \item \textbf{Historial de informes}: permite consultar los informes generados en auditorías anteriores.
+      \item \textbf{Chat con Orthrus}: chatbot integrado que utiliza inteligencia artificial para responder preguntas sobre el proyecto, sugerir próximos pasos o aclarar dudas sobre los resultados obtenidos.
+    \end{itemize}
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pictures/4.png}
+    \caption{Consola de escaneo dentro de un proyecto.}
+    \label{fig:proyecto_consola}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pictures/5.png}
+    \caption{Historial de informes generados en un proyecto.}
+    \label{fig:proyecto_informes}
+    \end{figure}
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{pictures/6.png}
+    \caption{Interacción con el asistente de IA desde un proyecto.}
+    \label{fig:proyecto_ia}
+    \end{figure}
+
+    \item Desde consola, no es posible crear nuevos proyectos, pero sí asociar un escaneo a uno ya existente con el parámetro \texttt{-p}:
+    \begin{verbatim}
+    python3 main.py <objetivo> -p nombre_proyecto
+    \end{verbatim}
+  \end{itemize}
+
+  \item \textbf{Configuración de proxy}: desde la pestaña de configuración, se puede habilitar un proxy para los escaneos, especialmente útil para evitar bloqueos. La herramienta permite elegir entre proxies \texttt{HTTP} y \texttt{SOCKS5}. Este proxy se integra en \texttt{WPScan}, redirigiendo su tráfico por la ruta indicada.\\
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{pictures/7.png}
+  \caption{Configuración del proxy desde la interfaz.}
+  \label{fig:config_proxy}
+  \end{figure}
+\end{itemize}
+
+\subsection{Flujo de uso de la herramienta}
+A continuación se describe un ejemplo del flujo completo de uso de la herramienta, aplicando la opción más realista y completa: la realización del escaneo desde un proyecto previamente creado en la interfaz gráfica.
+
+El primer paso consiste en crear un nuevo proyecto asociado al objetivo, introduciendo los datos correspondientes. Este proceso se realiza desde la pestaña de ``Proyectos'', tal y como se ha mostrado anteriormente en la Figura~\ref{fig:crear_proyecto}.
+
+Una vez creado el proyecto, se procede a lanzar el escaneo desde la consola de escaneo asociada al proyecto. Previamente, el usuario puede haber configurado opciones como el modo exhaustivo o el uso de un proxy. El lanzamiento del escaneo desde el entorno gráfico puede verse en la Figura~\ref{fig:proyecto_consola}, presentada en el capítulo anterior.
+
+Una vez finalizado el escaneo, la herramienta genera un informe PDF automáticamente, accesible desde la pestaña de informes del proyecto. Un ejemplo de este informe se muestra en la Figura~\ref{fig:reporte_generado}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{pictures/8.png}
+\caption{Visualización del informe PDF generado.}
+\label{fig:reporte_generado}
+\end{figure}
+
+A continuación, es habitual interactuar con la inteligencia artificial integrada en la herramienta. Esta interacción puede adoptar distintas formas:
+
+\begin{itemize}
+    \item \textbf{Generación de siguientes pasos ofensivos:} el usuario puede pulsar el botón correspondiente para que la IA sugiera cómo continuar con la auditoría desde un enfoque ofensivo, tal y como se observa en la Figura~\ref{fig:ia_ofensiva}.
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pictures/9.png}
+    \caption{Generación de siguientes pasos desde una perspectiva ofensiva.}
+    \label{fig:ia_ofensiva}
+    \end{figure}
+
+    \item \textbf{Generación de siguientes pasos defensivos:} por otra parte, se pueden generar recomendaciones defensivas para mitigar las debilidades detectadas, como se observa en la Figura~\ref{fig:ia_defensiva}.
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{pictures/10.png}
+    \caption{Generación de recomendaciones desde una perspectiva defensiva.}
+    \label{fig:ia_defensiva}
+    \end{figure}
+
+    \item \textbf{Interacción directa con la IA:} además de los botones predefinidos, el usuario puede realizar preguntas para resolver dudas específicas sobre el escaneo, como se muestra en la Figura~\ref{fig:ia_chat}.
+
+    \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{pictures/11.png}
+    \caption{Interacción directa con la IA integrada en la herramienta.}
+    \label{fig:ia_chat}
+    \end{figure}
+\end{itemize}
+
+Tras esto, el usuario cuenta con una base sólida de información obtenida durante la fase de reconocimiento, que le permite continuar con las siguientes etapas de la auditoría.
+
+\section{Decisiones técnicas}
+Durante el desarrollo de la herramienta se han tomado una serie de decisiones técnicas orientadas a maximizar la simplicidad, la eficiencia y la facilidad de mantenimiento del sistema. A continuación, se justifican las elecciones más relevantes respecto a tecnologías utilizadas y otras que fueron descartadas.
+
+\subsection{Frontend: HTML, CSS y JavaScript}
+Se optó por una interfaz basada en HTML, CSS y JavaScript puro por las siguientes razones:
+
+\begin{itemize}
+    \item \textbf{Simplicidad y ligereza:} al tratarse de una herramienta de propósito técnico, la interfaz no requiere grandes funcionalidades interactivas, por lo que el uso de tecnologías más avanzadas como React habría sido innecesario.
+    
+    \item \textbf{Facilidad de integración:} el frontend se comunica directamente con el backend mediante peticiones \texttt{fetch}, sin necesidad de routers, sesiones, ni gestión de estados complejos.
+    
+    \item \textbf{Rapidez de desarrollo:} la curva de aprendizaje es más baja y permite una implementación más directa y rápida.
+\end{itemize}
+
+\textbf{Tecnologías descartadas:} React (incluyendo Next.js) fue considerado inicialmente como posible alternativa. Sin embargo, su inclusión suponía una sobrecarga innecesaria en complejidad, ya que no se requerían características avanzadas como rutas dinámicas, autenticación, manejo de estado o conexión con bases de datos. Por ello, se optó por una solución más ligera y directa.
+
+\subsection{Backend: Python y Flask}
+La elección de Python como lenguaje principal y de Flask como framework se justifica por:
+
+\begin{itemize}
+    \item \textbf{Alta integración con herramientas de seguridad:} muchas de las utilidades utilizadas (Nmap, Subfinder, Nuclei, etc.) se invocan fácilmente desde Python mediante llamadas al sistema.
+    
+    \item \textbf{Desarrollo rápido y modular:} Flask proporciona una estructura clara, simple y fácil de mantener, ideal para proyectos de esta naturaleza.
+    
+    \item \textbf{Comunicación efectiva con el frontend:} al actuar como backend de la interfaz, Flask permite exponer endpoints REST a los que se puede acceder desde JavaScript con facilidad.
+\end{itemize}
+
+\subsection{Orquestación mediante \texttt{main.py}}
+Se decidió centralizar toda la lógica de ejecución de módulos en un único script llamado \texttt{main.py}, lo que permite:
+
+\begin{itemize}
+    \item Encapsular la lógica del flujo de ejecución.
+    \item Garantizar la reutilización del código tanto desde la consola como desde la interfaz.
+    \item Permitir una estructura modular, desacoplando cada funcionalidad en archivos separados dentro del directorio \texttt{/modules}.
+\end{itemize}
+
+En conjunto, estas tecnologías han permitido desarrollar una herramienta modular y fácilmente extensible, sin recurrir a opciones innecesariamente complejas para el propósito de la misma.
 
 \end{parskipenv}
