@@ -1,17 +1,108 @@
 \chapter{\resultsname}
-%Aqui poner empresa A, empresa B, y los pdfs correspondientes a los escaneos de cada una de las aplicaciones web. Tambien capturas de cada recurso abierto, por ejemplo, en la de UC La Estrella
-% captura de exploit db mostrando el cve de sqli que tiene, captura de logins, etc. Tambien poner capturas de la interaccion que se puede tener con la IA.
+\newpage
+\begin{parskipenv}
+En este capítulo se presentan los resultados obtenidos a partir de las pruebas realizadas con la herramienta desarrollada. Para ello, se ha llevado a cabo una serie de escaneos sobre diferentes objetivos reales. Por cuestiones de confidencialidad, no se revelarán los nombres de las empresas ni los detalles específicos de los recursos analizados, pero se proporcionarán descripciones generales de los objetivos y los tipos de información obtenida.
 
-Ambling web principal (https://ambling.es/) -- Escaneo normal:
+Se mostrará cómo la herramienta automatiza las distintas fases del reconocimiento, qué información es capaz de extraer, y cómo esta información puede aprovecharse para planificar acciones ofensivas o aplicar medidas defensivas.
 
-Ambling web principal (https://ambling.es/) -- Escaneo exahustivo:
+Asimismo, se analizarán aspectos clave como el rendimiento, la calidad de los resultados, la interacción con el sistema de inteligencia artificial, la generación automática de informes, y se discutirán las limitaciones observadas durante el proceso.
 
-Ambling clientes (https://clientes.ambling.es/) -- Escaneo normal:
+% Tabla de resultados resumidos + tiempo que tarda el escaneo (poner captura) + interaccion con IA + vulnerabilidades especificas (por ejemplo Django debug mode a True, Joomla SQLi vulnerability) + capturas de cosas generales.
 
-Ambling clientes (https://clientes.ambling.es/) -- Escaneo exahustivo:
+% ##### PROMPT CHATGPT #####
+% ---- Empresa A ----
+Voy ha hacer ahora \section{Empresa A}
 
-Ambling caucces (https://caucces.ambling.es/) -- Escaneo normal:
+Notas en sucio:
+```
+\section{Empresa A}
+En primer lugar se presentan los resultados obtenidos del escaneo a la Empresa A. Tras el escaneo realizado se ha obtenido la siguiente información. Esta se presenta en forma de tabla:
+---
+Puertos abiertos: 5, entre los que se encuentran SSH, FTP y HTTP (Web).
+88 URLs enumeradas.
+Provedor de correo: IONOS
+Provedor de DNS: IONOS
+Registro DMARC no público: esto puede dar lugar a email spoofing.
+CMS utilizado: WordPress.
+Se han enumerado 2 usuarios en WordPress.
+5 plugins WordPress con CVEs publicos instalados.
+1 direccion de correo electrónico brecheada.
+2 subdominios enumerados.
+El login de FTP no tienen protección contra fuerza bruta (ni limite de intentos, ni bloqueos, etc.).
+---
 
-Ambling caucces (https://caucces.ambling.es/) -- Escaneo exahustivo:
+Toda esta informacion se ha obtenido en 23 minutos y 16 segundos. Si se hubiera realizado de forma manual, se estima que el tiempo requerido habría sido considerablemente mayor. <!--- Captura de la herramienta mostrando el tiempo --->
+Una de las debilidades mas destacadas encontradas es la posibilidad de enumeraciond de usuarios wordpress. Gracias a la enumeracion de estos usuarios se puede llegar a realizar desde fuerza bruta a estos usuarios,
+hasta ataques de phishing personalizados, tambien gracias al correo brecheado encontrado. Cabe destacar tambien que se podria verificar manualmente los CVEs asociados a los plugins instalados.
 
-UC La Estrella.
+\subsection{Subdominio A1}
+Una vez encontrado el subdominio A1, perteneciente a la empresa A, se le ha realizado un escaneo con la herramienta. Los resultados obtenidos se presentan en forma de tabla:
+---
+Puertos abiertos: 9.
+41 URLs enumeradas.
+1 debilidad web de criticidad media encontrada: Django debug mode a True.
+Registro DMARC no público: esto puede dar lugar a email spoofing.
+---
+
+Toda esta informacion se ha obtenido en 10 minutos y 57 segundos, reduciendo considerablemente el tiempo que se habría requerido para realizarlo de forma manual. <!--- Captura de la herramienta mostrando el tiempo --->
+Entre los puertos abiertos, a parte de los mas estandar como 80, 443, etc, se encuentran puertos menos comunes como 8001, o 10050, los cuales se podrian investigar mas en profundidad ya que, al tratarse de puertos 
+menos comunes, podrian estar mas descuidados y tener brechas de seguridad. <!--- Captura de la herramienta mostrando los puertos abiertos --->
+
+Gracias a la enumeracion realizada por la herramienta en este subdominio, se ha encontrado una debilidad web provocada por el modo de depuración de Django. Esta debilidad
+ha sido verificada manualmente, y se ha comprobado que permite a un atacante obtener información sensible del servidor, como las variables de entorno, la configuración de la base de datos, o incluso el código fuente de la aplicación. <!--- Captura de la herramienta mostrando la debilidad encontrada --->
+Cabe destacar que toda la informacion sensible no se muestra en este documento por motivos de privacidad.
+Esto es debido a que el modo de depuración de Django no debería estar habilitado en entornos de producción, ya que cuando se acontece un error, Django muestra una página de error detallada que incluye información sensible.
+Ademas, entre uno de las URLs enumeradas, se encuentra una /api, la cual da acceso a una API REST. Si se combina el acceso a esta API con la debilidad de Django encontrada, puede derivar en la obtencion de información sensible del servidor.
+
+Si toda esta informacion se añade a los puertos enumerados y el resto de enumeracion realizada se podria llegar a investigar cada uno de los servicios abiertos con toda esta informacion.
+
+\subsection{Subdominio A2}
+Una vez encontrado el subdominio A2, perteneciente a la empresa A, se le ha realizado un escaneo con la herramienta. Los resultados obtenidos se presentan en forma de tabla:
+---
+Puertos abiertos: 11.
+15 URLs enumeradas.
+Misma debilidad web que el subdominio A1 encontrada: Django debug mode a True.
+Registro DMARC no público: esto puede dar lugar a email spoofing.
+El login de FTP no tienen protección contra fuerza bruta (ni limite de intentos, ni bloqueos, etc.).
+---
+
+Toda esta informacion se ha obtenido en 12 minutos y 57 segundos, reduciendo considerablemente el tiempo que se habría requerido para realizarlo de forma manual. <!--- Captura de la herramienta mostrando el tiempo --->
+Al igual que en el subdominio A1, se han encontrado varios servicios expuestos que no son comunes, los cuales se podrian investigar mas en profundidad. <!--- Captura de la herramienta mostrando los puertos abiertos --->
+
+Ademas, tambien se encuentra presente la debilidad de Django. A traves de esta, se ha enumerado una gran cantidad de informacion interna. Uno de los recursos mas sensibles que se 
+han enumerado es una API completa, con una cantidad de endpoints que permiten realizar operaciones CRUD sobre diferentes recursos. Ademas, se ofrece la documentacion completa de la API, lo que permite
+realizar pruebas a cada uno de los endpoints enumerados en busca de posibles debilidades.
+
+Otros de los puntos debiles encontrados es el servicio expuesto en el puerto 8080, que se trata de un panel de "Adminer", un motor de gestion de bases de datos. Si a esta informacion le obtenemos la informacion
+de las bases de datos enumeradas en el subdominio A1, se podria llegar a indagar mas en profundidad para acceder a la base de datos y obtener informacion sensible de la misma. <!--- Captura de la herramienta mostrando el panel de Adminer --->
+
+Ademas de todo esto, no se ha seguido enumerando ni indagando con el resto de informacion obtenida, ya que el objetivo de este escaneo era comprobar la capacidad de la herramienta para detectar debilidades web y enumerar recursos.
+Pero esto es un ejemplo de lo que se puede llegar a hacer gracias a la informacion obtenida por la herramienta.
+
+\subsection{Acciones recomendadas}
+Gracias a esta informacion la Empresa A sabe que debe tomar, entre otras, las siguientes medidas:
+- Deshabilitar el modo de depuración de Django en entornos de producción para evitar la filtracion de información sensible. Esto es prioritario.
+- Revisar los servicios expuestos, especialmente aquellos menos comunes, para aplicar las medidas de seguridad adecuadas.
+- Comprobar si la exposicion de las APIs REST enumeradas es necesaria y, en caso afirmativo, aplicar medidas de seguridad como autenticación y autorización.
+- Revisar la configuracion de los registros DMARC para evitar el email spoofing.
+- Eliminar la enumeracion de usuarios de WordPress.
+- Revisar si el correo brecheado sigue siendo valido y, en caso afirmativo, cambiarlo.
+- Implementar medidas de seguridad en el login de FTP, como limitar los intentos de acceso y bloquear IPs sospechosas.
+
+Para ello tambien se puede usar la IA de la herramienta, para generar las posibles medidas a tomar.
+<!--- Captura de la herramienta mostrando la IA recomendando acciones ---> Sugerencias propuestas por la IA para el subdominio A1.
+
+
+% ---- Empresa B ----
+\section{Empresa B}
+% Captura de pregunta a la IA de como explotar el CVE de SQLi de Joomla encontrado.
+
+```
+
+%Empresa A --> Ambling web principal (https://ambling.es/)
+%Subdominio A1 --> Ambling clientes (https://clientes.ambling.es/)
+%Subdominio A2 --> Ambling caucces (https://caucces.ambling.es/)
+%Empresa B --> UC La Estrella (https://www.uclaestrella.es/)
+
+
+\end{parskipenv}
