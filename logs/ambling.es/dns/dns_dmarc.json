@@ -4,9 +4,9 @@
   "Command": "dmarc",
   "IsTransitioned": false,
   "CommandArgument": "ambling.es",
-  "TimeRecorded": "2025-05-16T01:38:39.6878565-05:00",
-  "ReportingNameServer": "dns22.servidoresdns.net",
-  "TimeToComplete": "2257",
+  "TimeRecorded": "2025-06-16T03:27:15.7832162-05:00",
+  "ReportingNameServer": "dns21.servidoresdns.net",
+  "TimeToComplete": "2323",
   "RelatedIP": null,
   "ResourceRecordType": 0,
   "IsEmptySubDomain": false,
@@ -34,7 +34,7 @@
   "MultiInformation": [],
   "Transcript": [
     {
-      "Transcript": "- - - dmarc:_dmarc.ambling.es\r\n\r\n&emsp; 1 g.nic.es 204.61.217.1 NON-AUTH 0 ms Received 4 Referrals , rcode=NO_ERROR &emsp; ambling.es.\t86400\tIN\tNS\tdns22.servidoresdns.net,ambling.es.\t86400\tIN\tNS\tdns21.servidoresdns.net,ambling.es.\t86400\tIN\tNS\tclientes.ambling.es,ambling.es.\t86400\tIN\tNS\tcaucces.ambling.es,\r\n&emsp; 2 caucces.ambling.es 159.69.40.16 TIMED-OUT 25 ms , rcode=NO_DATA &emsp; &emsp;\r\n&emsp; 2 dns22.servidoresdns.net 82.223.218.143 AUTH 111 ms Received 1 Referrals , rcode=NAME_ERROR &emsp; ambling.es.\t300\tIN\tSOA\t mname=dns21.servidoresdns.net rname=hostmaster.servidoresdns.net serial=2010122910,\r\nLookupServer 2257ms\r\n"
+      "Transcript": "- - - dmarc:_dmarc.ambling.es\r\n\r\n&emsp; 1 a.nic.es 194.69.254.1 NON-AUTH 85 ms Received 4 Referrals , rcode=NO_ERROR &emsp; ambling.es.\t86400\tIN\tNS\tcaucces.ambling.es,ambling.es.\t86400\tIN\tNS\tdns21.servidoresdns.net,ambling.es.\t86400\tIN\tNS\tdns22.servidoresdns.net,ambling.es.\t86400\tIN\tNS\tclientes.ambling.es,\r\n&emsp; 2 caucces.ambling.es 159.69.40.16 TIMED-OUT 13 ms , rcode=NO_DATA &emsp; &emsp;\r\n&emsp; 2 dns21.servidoresdns.net 217.76.128.145 AUTH 109 ms Received 1 Referrals , rcode=NAME_ERROR &emsp; ambling.es.\t300\tIN\tSOA\t mname=dns21.servidoresdns.net rname=hostmaster.servidoresdns.net serial=2010122910,\r\n\r\n- LookupServer [dmarc:ambling.es] 2323ms \r\n"
     }
   ],
   "MxRep": 0,

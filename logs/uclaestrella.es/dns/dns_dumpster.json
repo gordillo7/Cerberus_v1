@@ -32,13 +32,27 @@
           "asn_range": "62.149.128.0/19",
           "country": "Italy",
           "country_code": "IT",
-          "ip": "62.149.128.163",
-          "ptr": "mxd2.aruba.it"
+          "ip": "62.149.128.72",
+          "ptr": "mxd4.aruba.it"
         }
       ]
     }
   ],
   "ns": [
+    {
+      "host": "dns3.arubadns.net",
+      "ips": [
+        {
+          "asn": "31034",
+          "asn_name": "ARUBA-ASN, IT",
+          "asn_range": "95.110.192.0/18",
+          "country": "Italy",
+          "country_code": "IT",
+          "ip": "95.110.220.5",
+          "ptr": "dns3.arubadns.net"
+        }
+      ]
+    },
     {
       "host": "dns2.technorail.com",
       "ips": [
@@ -49,7 +63,7 @@
           "country": "Italy",
           "country_code": "IT",
           "ip": "95.110.136.8",
-          "ptr": "dns2.technorail.com"
+          "ptr": ""
         }
       ]
     },
@@ -78,20 +92,6 @@
           "country_code": "IT",
           "ip": "94.177.210.13",
           "ptr": "dns.technorail.com"
-        }
-      ]
-    },
-    {
-      "host": "dns3.arubadns.net",
-      "ips": [
-        {
-          "asn": "31034",
-          "asn_name": "ARUBA-ASN, IT",
-          "asn_range": "95.110.192.0/18",
-          "country": "Italy",
-          "country_code": "IT",
-          "ip": "95.110.220.5",
-          "ptr": "dns3.arubadns.net"
         }
       ]
     }

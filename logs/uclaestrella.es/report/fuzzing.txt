@@ -1,4 +1,4 @@
-Found 28 valid URLs
+Found 56 valid URLs
 URL: https://uclaestrella.es/libraries
 URL: https://uclaestrella.es/language
 URL: https://uclaestrella.es/layouts
@@ -27,3 +27,31 @@ URL: https://uclaestrella.es/modules
 URL: https://uclaestrella.es/logs
 URL: https://uclaestrella.es/administrator
 URL: https://uclaestrella.es/installation
+URL: https://uclaestrella.es/cli
+URL: https://uclaestrella.es/logs
+URL: https://uclaestrella.es/modules
+URL: https://uclaestrella.es/plugins
+URL: https://uclaestrella.es/includes
+URL: https://uclaestrella.es/libraries
+URL: https://uclaestrella.es/installation
+URL: https://uclaestrella.es/cache
+URL: https://uclaestrella.es/administrator
+URL: https://uclaestrella.es/language
+URL: https://uclaestrella.es/layouts
+URL: https://uclaestrella.es/tmp
+URL: https://uclaestrella.es/components
+URL: https://uclaestrella.es/bin
+URL: https://uclaestrella.es/layouts
+URL: https://uclaestrella.es/bin
+URL: https://uclaestrella.es/cli
+URL: https://uclaestrella.es/components
+URL: https://uclaestrella.es/logs
+URL: https://uclaestrella.es/libraries
+URL: https://uclaestrella.es/plugins
+URL: https://uclaestrella.es/language
+URL: https://uclaestrella.es/installation
+URL: https://uclaestrella.es/tmp
+URL: https://uclaestrella.es/administrator
+URL: https://uclaestrella.es/includes
+URL: https://uclaestrella.es/cache
+URL: https://uclaestrella.es/modules

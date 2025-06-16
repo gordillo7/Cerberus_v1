@@ -3,10 +3,10 @@ MX Records:
     Email Provider: ARUBA-ASN, IT
 #
 NS Records:
+    NS Server: dns3.arubadns.net (Provider: ARUBA-ASN, IT, Located in: Italy)
     NS Server: dns2.technorail.com (Provider: ARUBA-ASN, IT, Located in: Italy)
     NS Server: dns4.arubadns.cz (Provider: INTERNET-CZ Ktis 2, 384 03 Ktis, CZ, Located in: Czechia)
     NS Server: dns.technorail.com (Provider: ARUBA-ASN, IT, Located in: Italy)
-    NS Server: dns3.arubadns.net (Provider: ARUBA-ASN, IT, Located in: Italy)
 #
 TXT Records:
     "v=spf1 include:_spf.aruba.it ~all"

@@ -5,34 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ede28f45-52e8-4961-b252-2e26cd22db71" name="Changes" comment="Completar todolist.txt">
-      <change beforePath="$PROJECT_DIR$/.idea/TFG.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TFG.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_5_25,_14_10_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_7_5_25__14_10__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extras/requisitos.txt" beforeDir="false" afterPath="$PROJECT_DIR$/extras/requisitos.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/dns/dns_dmarc.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/dns/dns_dmarc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/dns/dns_dumpster.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/dns/dns_dumpster.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/dns/records.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/dns/records.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/http/fuzzing/fuzz.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/http/fuzzing/fuzz.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ambling.es/http/subdomain/subdomains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/http/subdomain/subdomains.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ambling.es/http/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/http/screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ambling.es/http/whatweb/tec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/http/whatweb/tec.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ambling.es/http/wordpress/vulnerable_plugins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/http/wordpress/vulnerable_plugins.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/http/wordpress/wpscan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/http/wordpress/wpscan.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/nmap/initial_scan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/nmap/initial_scan.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ambling.es/nmap/ports.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/nmap/ports.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ambling.es/nmap/ports_services_versions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/nmap/ports_services_versions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/report/dns_recon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/report/dns_recon.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/report/fuzzing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/report/fuzzing.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ambling.es/report/http_subdomains.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/report/http_subdomains.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/ambling.es/report/nmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/report/nmap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ambling.es/report/http_screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/report/http_screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ambling.es/report/wordpress_vulnerable_plugins.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/report/wordpress_vulnerable_plugins.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/ssh/hydra_custom_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/ssh/hydra_custom_output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/ambling.es/ssh/hydra_default_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/ambling.es/ssh/hydra_default_output.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/scans.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/scans.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dmarc.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dmarc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dumpster.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/dns_dumpster.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/dns/records.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/dns/records.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/fuzzing/fuzz.json" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/http/fuzzing/fuzz.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/http/screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/http/whatweb/tec.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/http/whatweb/tec.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/initial_scan.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/initial_scan.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports_services_versions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/nmap/ports_services_versions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/dns_recon.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/dns_recon.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/fuzzing.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/fuzzing.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/http_screenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/http_screenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/uclaestrella.es/report/nmap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/logs/uclaestrella.es/report/nmap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/1744798504332823/next_defensive.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/1744798504332823/next_defensive.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/1744798504332823/next_offensive.md" beforeDir="false" afterPath="$PROJECT_DIR$/projects/1744798504332823/next_offensive.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/ambling.es.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/cartamundi.com.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/reports/cartamundi.com.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports/uclaestrella.es.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +103,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;deletionFromPopupRequiresConfirmation&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/gordillo7/PycharmProjects/TFG/static/js&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/gordillo7/PycharmProjects/TFG/projects/1749799278587366/reports&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -111,6 +115,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/projects/1749799278587366/reports" />
       <recent name="$PROJECT_DIR$/static/js" />
       <recent name="$PROJECT_DIR$/modules" />
     </key>
@@ -212,7 +217,9 @@
       <workItem from="1749470067136" duration="291000" />
       <workItem from="1749555871189" duration="18000" />
       <workItem from="1749556025153" duration="184000" />
-      <workItem from="1749718038547" duration="5915000" />
+      <workItem from="1749718038547" duration="5970000" />
+      <workItem from="1749797848635" duration="7926000" />
+      <workItem from="1750056249783" duration="8016000" />
     </task>
     <task id="LOCAL-00001" summary="Completar todolist.txt">
       <option name="closed" value="true" />
@@ -406,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747050916770</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Completar todolist.txt">
+      <option name="closed" value="true" />
+      <created>1749729540069</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1749729540069</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -430,7 +445,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/TFG$generate_report.coverage" NAME="generate_report Coverage Results" MODIFIED="1745825306514" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/modules" />
     <SUITE FILE_PATH="coverage/TFG$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1745825667228" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1749718062039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/TFG$TFG.coverage" NAME="TFG Coverage Results" MODIFIED="1750056318345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/TFG$app.coverage" NAME="app Coverage Results" MODIFIED="1743244825472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

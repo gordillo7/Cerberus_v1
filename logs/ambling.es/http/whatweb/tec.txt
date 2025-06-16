@@ -12,3 +12,17 @@ HTTP-Status: 403
  ["IP", [{:string=>"217.76.132.37", :certainty=>100}]],
  ["Title", [{:name=>"page title", :string=>"403 Forbidden", :certainty=>100}]]]
 
+Identifying: https://ambling.es
+HTTP-Status: 403
+[["Apache",
+  [{:regexp=>["Apache"],
+    :search=>"headers[server]",
+    :name=>"HTTP Server Header",
+    :regexp_compiled=>/^Apache/i,
+    :certainty=>100}]],
+ ["Country", [{:string=>"SPAIN", :module=>"ES", :certainty=>100}]],
+ ["HTTPServer",
+  [{:name=>"server string", :string=>"Apache", :certainty=>100}]],
+ ["IP", [{:string=>"217.76.132.37", :certainty=>100}]],
+ ["Title", [{:name=>"page title", :string=>"403 Forbidden", :certainty=>100}]]]
+

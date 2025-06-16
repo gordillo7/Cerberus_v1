@@ -4,9 +4,9 @@
   "Command": "dmarc",
   "IsTransitioned": false,
   "CommandArgument": "uclaestrella.es",
-  "TimeRecorded": "2025-04-16T05:16:44.3195419-05:00",
-  "ReportingNameServer": "dns3.arubadns.net",
-  "TimeToComplete": "478",
+  "TimeRecorded": "2025-06-16T03:54:47.843445-05:00",
+  "ReportingNameServer": "dns4.arubadns.cz",
+  "TimeToComplete": "440",
   "RelatedIP": null,
   "ResourceRecordType": 16,
   "IsEmptySubDomain": false,
@@ -17,8 +17,7 @@
   "IsEndpoint": false,
   "HasSubscriptions": false,
   "AlertgroupSubscriptionId": null,
-  "Failed": [],
-  "Warnings": [
+  "Failed": [
     {
       "ID": 197,
       "Name": "DMARC Policy Not Enabled",
@@ -28,6 +27,7 @@
       "IsExcludedByUser": false
     }
   ],
+  "Warnings": [],
   "Passed": [
     {
       "ID": 441,
@@ -46,18 +46,18 @@
       "IsExcludedByUser": false
     },
     {
-      "ID": 504,
-      "Name": "DMARC External Validation",
-      "Info": "All external domains in your DMARC record are giving permission to send them DMARC reports.",
-      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-External-Validation?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:uclaestrella.es",
-      "PublicDescription": null,
-      "IsExcludedByUser": false
-    },
-    {
       "ID": 505,
       "Name": "DMARC Multiple Records",
       "Info": "Multiple DMARC records corrected to a single record.",
       "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-Multiple-Records?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:uclaestrella.es",
+      "PublicDescription": null,
+      "IsExcludedByUser": false
+    },
+    {
+      "ID": 504,
+      "Name": "DMARC External Validation",
+      "Info": "All external domains in your DMARC record are giving permission to send them DMARC reports.",
+      "Url": "https://mxtoolbox.com/Problem/dmarc/DMARC-External-Validation?page=prob_dmarc&showlogin=1&hidetoc=1&action=dmarc:uclaestrella.es",
       "PublicDescription": null,
       "IsExcludedByUser": false
     }
@@ -100,13 +100,13 @@
   "MultiInformation": [],
   "Transcript": [
     {
-      "Transcript": "- - - dmarc:_dmarc.uclaestrella.es\r\n\r\n&emsp; 1 c.nic.es 194.0.34.53 NON-AUTH 0 ms Received 4 Referrals , rcode=NO_ERROR &emsp; uclaestrella.es.\t86400\tIN\tNS\tdns.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns2.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns3.arubadns.net,uclaestrella.es.\t86400\tIN\tNS\tdns4.arubadns.cz,\r\n&emsp; 2 dns3.arubadns.net 95.110.220.5 AUTH 129 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.uclaestrella.es.\t3600\tIN\tTXT\tv=DMARC1; p=none; adkim=r; aspf=r;,\r\nRecord returned is an RFC 7489 TXT record.<br/>\r\nLookupServer 478ms\r\n"
+      "Transcript": "- - - dmarc:_dmarc.uclaestrella.es\r\n\r\n&emsp; 1 g.nic.es 204.61.217.1 NON-AUTH 6 ms Received 4 Referrals , rcode=NO_ERROR &emsp; uclaestrella.es.\t86400\tIN\tNS\tdns4.arubadns.cz,uclaestrella.es.\t86400\tIN\tNS\tdns2.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns.technorail.com,uclaestrella.es.\t86400\tIN\tNS\tdns3.arubadns.net,\r\n&emsp; 2 dns4.arubadns.cz 81.2.216.238 AUTH 94 ms Received 1 Answers , rcode=NO_ERROR &emsp; _dmarc.uclaestrella.es.\t3600\tIN\tTXT\tv=DMARC1; p=none; adkim=r; aspf=r;,\r\nRecord returned is a RFC 7489 TXT record.\r\n\r\n- LookupServer [dmarc:uclaestrella.es] 440ms \r\n"
     }
   ],
   "MxRep": 0,
   "EmailServiceProvider": null,
   "DnsServiceProvider": "ArubaIT",
-  "DnsServiceProviderIdentifier": "arubadns.net",
+  "DnsServiceProviderIdentifier": "arubadns.cz",
   "RelatedLookups": [
     {
       "Name": "dns lookup",

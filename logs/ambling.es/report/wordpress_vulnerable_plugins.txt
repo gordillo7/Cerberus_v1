@@ -2,6 +2,10 @@ Plugin: bellows-accordion-menu
 CVE:
   - 2023-5164
 
+Plugin: bellows-accordion-menu
+CVE:
+  - 2025-49242
+
 Plugin: contact-form-7
 CVE:
   - 2023-6449
