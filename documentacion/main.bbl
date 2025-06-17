@@ -362,4 +362,10 @@ Wikipedia contributors.
 \newblock Definición del término "Document Object Model (DOM)".
 \newblock URL: \url{https://es.wikipedia.org/wiki/Document_Object_Model}.
 
+\bibitem{ibm_spearphishing}
+Matthew~Kosinski (IBM).
+\newblock ¿qué es spear phishing?, 2024.
+\newblock Artículo sobre el spear phishing.
+\newblock URL: \url{https://www.ibm.com/es-es/think/topics/spear-phishing}.
+
 \end{thebibliography}

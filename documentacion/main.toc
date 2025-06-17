@@ -41,13 +41,13 @@
 \contentsline {subsection}{\numberline {5.3.3}Orquestación mediante \texttt {main.py}}{68}{subsection.5.3.3}%
 \contentsline {chapter}{\numberline {6}Resultados}{69}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Empresa A}{70}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Empresa A}{70}{section.6.2}%
-\contentsline {subsection}{\numberline {6.2.1}Subdominio A1}{71}{subsection.6.2.1}%
-\contentsline {subsection}{\numberline {6.2.2}Subdominio A2}{72}{subsection.6.2.2}%
-\contentsline {subsection}{\numberline {6.2.3}Acciones recomendadas}{73}{subsection.6.2.3}%
-\contentsline {section}{\numberline {6.3}Empresa B}{74}{section.6.3}%
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{75}{chapter.7}%
-\contentsline {chapter}{Anexos}{76}{section*.61}%
-\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{77}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Sección de anexo}{77}{section.Alph1.1}%
-\contentsline {chapter}{Bibliografía}{78}{section*.62}%
+\contentsline {subsection}{\numberline {6.1.1}Subdominio A1}{72}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}Subdominio A2}{75}{subsection.6.1.2}%
+\contentsline {subsection}{\numberline {6.1.3}Acciones recomendadas para la Empresa A}{78}{subsection.6.1.3}%
+\contentsline {section}{\numberline {6.2}Empresa B}{80}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Acciones recomendadas para la Empresa B}{85}{subsection.6.2.1}%
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{88}{chapter.7}%
+\contentsline {chapter}{Anexos}{90}{section*.79}%
+\contentsline {chapter}{\numberline {A}Ejemplo de anexo}{91}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Sección de anexo}{91}{section.Alph1.1}%
+\contentsline {chapter}{Bibliografía}{92}{section*.80}%

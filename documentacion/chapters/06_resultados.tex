@@ -5,104 +5,307 @@ En este capítulo se presentan los resultados obtenidos a partir de las pruebas 
 
 Se mostrará cómo la herramienta automatiza las distintas fases del reconocimiento, qué información es capaz de extraer, y cómo esta información puede aprovecharse para planificar acciones ofensivas o aplicar medidas defensivas.
 
-Asimismo, se analizarán aspectos clave como el rendimiento, la calidad de los resultados, la interacción con el sistema de inteligencia artificial, la generación automática de informes, y se discutirán las limitaciones observadas durante el proceso.
+Asimismo, se analizarán aspectos clave como el rendimiento, la calidad de los resultados, la interacción con el sistema de inteligencia artificial y la generación automática de informes.
 
-% Tabla de resultados resumidos + tiempo que tarda el escaneo (poner captura) + interaccion con IA + vulnerabilidades especificas (por ejemplo Django debug mode a True, Joomla SQLi vulnerability) + capturas de cosas generales.
-
-% ##### PROMPT CHATGPT #####
-% ---- Empresa A ----
-Voy ha hacer ahora \section{Empresa A}
-
-Notas en sucio:
-```
 \section{Empresa A}
-En primer lugar se presentan los resultados obtenidos del escaneo a la Empresa A. Tras el escaneo realizado se ha obtenido la siguiente información. Esta se presenta en forma de tabla:
----
-Puertos abiertos: 5, entre los que se encuentran SSH, FTP y HTTP (Web).
-88 URLs enumeradas.
-Provedor de correo: IONOS
-Provedor de DNS: IONOS
-Registro DMARC no público: esto puede dar lugar a email spoofing.
-CMS utilizado: WordPress.
-Se han enumerado 2 usuarios en WordPress.
-5 plugins WordPress con CVEs publicos instalados.
-1 direccion de correo electrónico brecheada.
-2 subdominios enumerados.
-El login de FTP no tienen protección contra fuerza bruta (ni limite de intentos, ni bloqueos, etc.).
----
+En primer lugar se realizó un escaneo al dominio de la Empresa A utilizando la herramienta desarrollada. Los resultados se resumen a continuación, presentados en la Tabla~\ref{tabla:resultados_empresa_a}:
 
-Toda esta informacion se ha obtenido en 23 minutos y 16 segundos. Si se hubiera realizado de forma manual, se estima que el tiempo requerido habría sido considerablemente mayor. <!--- Captura de la herramienta mostrando el tiempo --->
-Una de las debilidades mas destacadas encontradas es la posibilidad de enumeraciond de usuarios wordpress. Gracias a la enumeracion de estos usuarios se puede llegar a realizar desde fuerza bruta a estos usuarios,
-hasta ataques de phishing personalizados, tambien gracias al correo brecheado encontrado. Cabe destacar tambien que se podria verificar manualmente los CVEs asociados a los plugins instalados.
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Aspecto Analizado} & \textbf{Resultado} \\
+\hline
+Puertos abiertos & 5, incluyendo \texttt{SSH}, \texttt{FTP} y \texttt{HTTP} \\
+\hline
+URLs enumeradas & 88 \\
+\hline
+Proveedor de correo & IONOS \\
+\hline
+Proveedor de DNS & IONOS \\
+\hline
+Registro \texttt{DMARC} & No público, riesgo de \textit{email spoofing} \\
+\hline
+CMS detectado & WordPress \\
+\hline
+Usuarios WordPress & 2 usuarios enumerados \\
+\hline
+Plugins WordPress & 5 plugins vulnerables \\
+\hline
+\textit{Emails} comprometidos & 1 dirección comprometida \\
+\hline
+Subdominios enumerados & 2 subdominios \\
+\hline
+Servicio FTP & Sin protección contra fuerza bruta \\
+\hline
+\end{tabular}
+\caption{Resumen del escaneo realizado a la Empresa A.}
+\label{tabla:resultados_empresa_a}
+\end{table}
+
+El escaneo se completó en un tiempo total de \textbf{23 minutos y 16 segundos}, como se puede observar en la Figura~\ref{fig:tiempo_empresaA}. Esta duración representa una mejora significativa en comparación con la ejecución manual de las mismas tareas, que requeriría considerablemente más tiempo y esfuerzo humano.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/tiempo_escaneo_empresaA.png}
+\caption{Duración del escaneo realizado a la Empresa A.}
+\label{fig:tiempo_empresaA}
+\end{figure}
+
+Entre las debilidades más destacadas se encuentra la \textbf{posibilidad de enumerar usuarios WordPress}, lo que expone al sistema a ataques de fuerza bruta y ataques dirigidos como \textit{spear phishing} \cite{ibm_spearphishing}, especialmente si se combinan con la dirección de correo electrónico comprometida. Además, se podrían verificar manualmente los \textit{CVEs} asociados a los plugins instalados para evaluar su impacto y aplicar parches si es necesario.
 
 \subsection{Subdominio A1}
-Una vez encontrado el subdominio A1, perteneciente a la empresa A, se le ha realizado un escaneo con la herramienta. Los resultados obtenidos se presentan en forma de tabla:
----
-Puertos abiertos: 9.
-41 URLs enumeradas.
-1 debilidad web de criticidad media encontrada: Django debug mode a True.
-Registro DMARC no público: esto puede dar lugar a email spoofing.
----
+Una vez descubierto el subdominio \textbf{A1}, perteneciente a la Empresa A, se procedió a realizar un escaneo sobre él utilizando la herramienta. La Tabla~\ref{tabla:subdominio_a1} resume los principales resultados obtenidos:
 
-Toda esta informacion se ha obtenido en 10 minutos y 57 segundos, reduciendo considerablemente el tiempo que se habría requerido para realizarlo de forma manual. <!--- Captura de la herramienta mostrando el tiempo --->
-Entre los puertos abiertos, a parte de los mas estandar como 80, 443, etc, se encuentran puertos menos comunes como 8001, o 10050, los cuales se podrian investigar mas en profundidad ya que, al tratarse de puertos 
-menos comunes, podrian estar mas descuidados y tener brechas de seguridad. <!--- Captura de la herramienta mostrando los puertos abiertos --->
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Aspecto Analizado} & \textbf{Resultado} \\
+\hline
+Puertos abiertos & 9, incluyendo puertos poco comunes como \texttt{8001} o \texttt{10050} \\
+\hline
+URLs enumeradas & 41 \\
+\hline
+Debilidades encontradas & 1 vulnerabilidad web de criticidad media: \textbf{modo de depuración de Django habilitado} \\
+\hline
+Registro \texttt{DMARC} & No público, riesgo de \textit{email spoofing} \\
+\hline
+\end{tabular}
+\caption{Resumen del escaneo realizado al subdominio A1.}
+\label{tabla:subdominio_a1}
+\end{table}
 
-Gracias a la enumeracion realizada por la herramienta en este subdominio, se ha encontrado una debilidad web provocada por el modo de depuración de Django. Esta debilidad
-ha sido verificada manualmente, y se ha comprobado que permite a un atacante obtener información sensible del servidor, como las variables de entorno, la configuración de la base de datos, o incluso el código fuente de la aplicación. <!--- Captura de la herramienta mostrando la debilidad encontrada --->
-Cabe destacar que toda la informacion sensible no se muestra en este documento por motivos de privacidad.
-Esto es debido a que el modo de depuración de Django no debería estar habilitado en entornos de producción, ya que cuando se acontece un error, Django muestra una página de error detallada que incluye información sensible.
-Ademas, entre uno de las URLs enumeradas, se encuentra una /api, la cual da acceso a una API REST. Si se combina el acceso a esta API con la debilidad de Django encontrada, puede derivar en la obtencion de información sensible del servidor.
+El escaneo se llevó a cabo en \textbf{10 minutos y 57 segundos}, como se muestra en la Figura~\ref{fig:tiempo_A1}.
 
-Si toda esta informacion se añade a los puertos enumerados y el resto de enumeracion realizada se podria llegar a investigar cada uno de los servicios abiertos con toda esta informacion.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/amblingclientestiempoescaneo.png}
+\caption{Duración del escaneo realizado al subdominio A1.}
+\label{fig:tiempo_A1}
+\end{figure}
+
+Entre los puertos abiertos destacan, además de los más habituales como \texttt{80} y \texttt{443}, otros menos comunes como \texttt{8001} y \texttt{10050}, los cuales podrían ser analizados más detalladamente de manera manual, ya que, al tratarse de puertos menos comunes, cabría la posibilidad de que estuviesen menos protegidos y presentasen brechas de seguridad. En la Figura~\ref{fig:puertos_A1} se muestran los puertos abiertos detectados en el subdominio A1.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/puertosabiertosamblingclientes.png}
+\caption{Puertos abiertos del subdominio A1.}
+\label{fig:puertos_A1}
+\end{figure}
+
+Gracias al proceso de enumeración, se identificó una vulnerabilidad relacionada con el \textbf{modo de depuración de Django}, el cual se encontraba activo en un entorno que ya estaba en producción. Esta debilidad fue \textbf{verificada manualmente}, confirmando que permitía a un atacante obtener información sensible del servidor, como:
+
+\begin{itemize}
+    \item Variables de entorno.
+    \item Configuración de la base de datos.
+    \item Fragmentos del código fuente de la aplicación.
+    \item Más información sensible.
+\end{itemize}
+
+La Figura~\ref{fig:django_A1} muestra el mensaje reportado por el subdominio A1, indicando que el modo de depuración de Django estaba habilitado.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/djangovulnamblingclientes.png}
+\caption{Debilidad de Django encontrada en el subdominio A1.}
+\label{fig:django_A1}
+\end{figure}
+
+Cabe destacar que, por razones de confidencialidad, los detalles sensibles no se muestran en este documento.
+
+Adicionalmente, entre las rutas detectadas se encontró un endpoint asociado a una \textbf{API REST} accesible públicamente. La existencia simultánea de esta API junto con el modo de depuración activado puede amplificar el riesgo, ya que un atacante podría combinar ambos vectores para extraer información crítica del sistema o interferir con la lógica de la aplicación.
+
+Si se combinan los puertos abiertos, la vulnerabilidad de Django y la API REST, se podría realizar un análisis exhaustivo de cada uno de los servicios expuestos, lo que podría llevar a la identificación de más debilidades o a la explotación de las existentes.
 
 \subsection{Subdominio A2}
-Una vez encontrado el subdominio A2, perteneciente a la empresa A, se le ha realizado un escaneo con la herramienta. Los resultados obtenidos se presentan en forma de tabla:
----
-Puertos abiertos: 11.
-15 URLs enumeradas.
-Misma debilidad web que el subdominio A1 encontrada: Django debug mode a True.
-Registro DMARC no público: esto puede dar lugar a email spoofing.
-El login de FTP no tienen protección contra fuerza bruta (ni limite de intentos, ni bloqueos, etc.).
----
+Una vez detectado el subdominio \textbf{A2}, también perteneciente a la Empresa A, se procedió a su análisis. Los resultados obtenidos se resumen en la Tabla~\ref{tabla:subdominio_a2}:
 
-Toda esta informacion se ha obtenido en 12 minutos y 57 segundos, reduciendo considerablemente el tiempo que se habría requerido para realizarlo de forma manual. <!--- Captura de la herramienta mostrando el tiempo --->
-Al igual que en el subdominio A1, se han encontrado varios servicios expuestos que no son comunes, los cuales se podrian investigar mas en profundidad. <!--- Captura de la herramienta mostrando los puertos abiertos --->
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Aspecto Analizado} & \textbf{Resultado} \\
+\hline
+Puertos abiertos & 11 \\
+\hline
+URLs enumeradas & 15 \\
+\hline
+Debilidades encontradas & Modo \texttt{debug} de Django habilitado \\
+\hline
+Registro \texttt{DMARC} & No público, riesgo de \textit{email spoofing} \\
+\hline
+Servicio FTP & Sin protección contra fuerza bruta \\
+\hline
+\end{tabular}
+\caption{Resumen del escaneo realizado al subdominio A2.}
+\label{tabla:subdominio_a2}
+\end{table}
 
-Ademas, tambien se encuentra presente la debilidad de Django. A traves de esta, se ha enumerado una gran cantidad de informacion interna. Uno de los recursos mas sensibles que se 
-han enumerado es una API completa, con una cantidad de endpoints que permiten realizar operaciones CRUD sobre diferentes recursos. Ademas, se ofrece la documentacion completa de la API, lo que permite
-realizar pruebas a cada uno de los endpoints enumerados en busca de posibles debilidades.
+Todo este reconocimiento se completó en \textbf{12 minutos y 57 segundos}, como se muestra en la Figura~\ref{fig:tiempo_A2}.
 
-Otros de los puntos debiles encontrados es el servicio expuesto en el puerto 8080, que se trata de un panel de "Adminer", un motor de gestion de bases de datos. Si a esta informacion le obtenemos la informacion
-de las bases de datos enumeradas en el subdominio A1, se podria llegar a indagar mas en profundidad para acceder a la base de datos y obtener informacion sensible de la misma. <!--- Captura de la herramienta mostrando el panel de Adminer --->
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/amblingcauccestiempoescaneo.png}
+\caption{Duración del escaneo realizado al subdominio A2.}
+\label{fig:tiempo_A2}
+\end{figure}
 
-Ademas de todo esto, no se ha seguido enumerando ni indagando con el resto de informacion obtenida, ya que el objetivo de este escaneo era comprobar la capacidad de la herramienta para detectar debilidades web y enumerar recursos.
-Pero esto es un ejemplo de lo que se puede llegar a hacer gracias a la informacion obtenida por la herramienta.
+Al igual que en el subdominio A1, se identificaron servicios expuestos en puertos menos comunes, los cuales podrían ser analizados más detalladamente de forma manual. Éstos se muestran en la Figura~\ref{fig:puertos_A2}.
 
-\subsection{Acciones recomendadas}
-Gracias a esta informacion la Empresa A sabe que debe tomar, entre otras, las siguientes medidas:
-- Deshabilitar el modo de depuración de Django en entornos de producción para evitar la filtracion de información sensible. Esto es prioritario.
-- Revisar los servicios expuestos, especialmente aquellos menos comunes, para aplicar las medidas de seguridad adecuadas.
-- Comprobar si la exposicion de las APIs REST enumeradas es necesaria y, en caso afirmativo, aplicar medidas de seguridad como autenticación y autorización.
-- Revisar la configuracion de los registros DMARC para evitar el email spoofing.
-- Eliminar la enumeracion de usuarios de WordPress.
-- Revisar si el correo brecheado sigue siendo valido y, en caso afirmativo, cambiarlo.
-- Implementar medidas de seguridad en el login de FTP, como limitar los intentos de acceso y bloquear IPs sospechosas.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/puertosabiertosamblingcaucces.png}
+\caption{Puertos abiertos del subdominio A2.}
+\label{fig:puertos_A2}
+\end{figure}
 
-Para ello tambien se puede usar la IA de la herramienta, para generar las posibles medidas a tomar.
-<!--- Captura de la herramienta mostrando la IA recomendando acciones ---> Sugerencias propuestas por la IA para el subdominio A1.
+Asimismo, se detectó nuevamente la debilidad asociada al modo de depuración de Django activado. Esta vulnerabilidad permitió enumerar una gran cantidad de información interna del servidor. Entre los recursos más sensibles identificados se encuentra una \textbf{API REST completa}, con múltiples endpoints que permiten operaciones CRUD sobre diversos recursos. Además, la documentación de esta API se encontraba disponible públicamente, lo que facilita la prueba sistemática de cada endpoint en busca de posibles vulnerabilidades.
 
+Otro punto crítico encontrado fue un servicio expuesto en el puerto \texttt{8080}, que corresponde a un panel de administración de \textbf{Adminer}, un sistema de gestión de bases de datos. Si se combina esta información con los datos obtenidos en el subdominio A1, como nombres de bases de datos y otras configuraciones, sería posible profundizar en la enumeración o incluso comprometer la base de datos. La Figura~\ref{fig:adminer_A2} muestra el panel de Adminer detectado en el subdominio A2.
 
-% ---- Empresa B ----
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/adminercauccesambling.png}
+\caption{Panel de Adminer encontrado en el subdominio A2.}
+\label{fig:adminer_A2}
+\end{figure}
+
+Cabe destacar que, si bien no se ha realizado una exploración completa de todos los vectores detectados, estos resultados ilustran con claridad el potencial de la herramienta para detectar debilidades y mapear la superficie de ataque. Este caso concreto demuestra hasta qué punto se puede avanzar en una auditoría únicamente con la información recopilada durante la fase de reconocimiento.
+
+\subsection{Acciones recomendadas para la Empresa A}
+Gracias a la información recopilada, se han identificado varias acciones defensivas que la Empresa A podría considerar para mejorar la seguridad de sus sistemas:
+
+\begin{itemize}
+  \item \textbf{Desactivar el modo de depuración de Django}, ya que expone información sensible del sistema. Esta medida debe considerarse prioritaria.
+  
+  \item \textbf{Revisar y auditar los servicios expuestos}, especialmente aquellos que utilizan puertos no estándar o poco comunes, ya que pueden presentar configuraciones por defecto o carecer de protección adecuada.
+  
+  \item \textbf{Evaluar la exposición de las APIs REST identificadas}. Si su exposición es necesaria, se deben aplicar medidas de seguridad como autenticación robusta, control de acceso por roles (RBAC) y validación de entrada.
+  
+  \item \textbf{Corregir la configuración de los registros \texttt{DMARC}} con el fin de evitar ataques de \textit{email spoofing}.
+  
+  \item \textbf{Eliminar la posibilidad de enumerar usuarios en WordPress}, ya que esta información puede ser utilizada en ataques de fuerza bruta o \textit{spear phishing}.
+  
+  \item \textbf{Verificar la vigencia de la dirección de correo electrónico comprometida}. En caso de seguir activa, se recomienda su reemplazo o, al menos, un cambio urgente de credenciales.
+  
+  \item \textbf{Asegurar el servicio FTP}, incorporando mecanismos como la limitación de intentos fallidos o bloqueo de direcciones IP sospechosas.
+\end{itemize}
+
+Además, la inteligencia artificial integrada en la herramienta puede ser utilizada para generar recomendaciones sobre las medidas a tomar. En la Figura~\ref{fig:ia_sugerencias_a1} se muestran las sugerencias defensivas propuestas por la IA para el subdominio A1.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/sugerenciasdefensivasambling.png}
+\caption{Sugerencias propuestas por la IA para el subdominio A1.}
+\label{fig:ia_sugerencias_a1}
+\end{figure}
+
 \section{Empresa B}
-% Captura de pregunta a la IA de como explotar el CVE de SQLi de Joomla encontrado.
+En segundo lugar se llevó a cabo un escaneo al dominio de la Empresa B. Los resultados se resumen a continuación, presentados en la Tabla~\ref{tabla:resultados_empresa_b}:
 
-```
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Elemento} & \textbf{Resultado} \\
+\hline
+Puertos abiertos & 4 \\
+\hline
+URLs enumeradas & 56 \\
+\hline
+Proveedor de correo & ARUBA-ASN, IT \\
+\hline
+Proveedor de DNS & ARUBA-ASN, IT e INTERNET-CZ Ktis, CZ \\
+\hline
+CMS detectado & Joomla, versión 3.4.3 \\
+\hline
+Vulnerabilidades encontradas & Vulnerabilidad SQL Injection de la versión de Joomla \\
+\hline
+\textit{Emails} comprometidos & 1 dirección comprometida \\
+\hline
+Subdominios enumerados & 1 subdominio \\
+\hline
+\end{tabular}
+\caption{Resumen del escaneo realizado a la Empresa B.}
+\label{tabla:resultados_empresa_b}
+\end{table}
 
-%Empresa A --> Ambling web principal (https://ambling.es/)
-%Subdominio A1 --> Ambling clientes (https://clientes.ambling.es/)
-%Subdominio A2 --> Ambling caucces (https://caucces.ambling.es/)
-%Empresa B --> UC La Estrella (https://www.uclaestrella.es/)
+El escaneo se completó en un tiempo total de \textbf{13 minutos y 9 segundos}, como se muestra en la Figura~\ref{fig:tiempo_empresaB}.
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/laestrellatiempoescaneo.png}
+\caption{Duración del escaneo realizado a la Empresa B.}
+\label{fig:tiempo_empresaB}
+\end{figure}
+
+Entre los hallazgos más relevantes destaca la detección del servicio \texttt{SSH} en el puerto \texttt{2222} en lugar del puerto estándar 22. Este hecho puede indicar que se trata de una instancia en fase de pruebas, lo que puede aumentar el riesgo de una posible explotación. La Figura~\ref{fig:puertos_empresaB} muestra los puertos abiertos detectados en la Empresa B.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/puertosabiertoslaestrella.png}
+\caption{Puertos abiertos de la Empresa B.}
+\label{fig:puertos_empresaB}
+\end{figure}
+
+Por otro lado, la herramienta ha detectado que el CMS utilizado es \textbf{Joomla}, en su versión \textbf{3.4.3}, considerablemente desactualizada respecto a la versión actual (5.3.1 en el momento del análisis). Esta versión incluye una vulnerabilidad crítica de tipo \textit{SQL Injection}. En el informe generado automáticamente por la herramienta se proporciona el enlace directo a un repositorio público que contiene un exploit para esta vulnerabilidad, como se muestra en la Figura~\ref{fig:joomla_sql}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/laestrellajoomlavulnerability.png}
+\caption{Vulnerabilidad SQL Injection de Joomla detectada.}
+\label{fig:joomla_sql}
+\end{figure}
+
+Además, se ha identificado el panel de autenticación de Joomla expuesto, lo que abre la posibilidad de lanzar ataques de fuerza bruta o intentar explotar la vulnerabilidad detectada directamente desde el formulario de login. La Figura~\ref{fig:joomla_login} muestra el panel de acceso de Joomla detectado en la Empresa B.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{pictures/laestrellaadministrator.png}
+\caption{Panel de acceso de Joomla detectado en la Empresa B.}
+\label{fig:joomla_login}
+\end{figure}
+
+Adicionalmente, se ha detectado una dirección de correo electrónico comprometida. Esta información, combinada con el resto de hallazgos, podría facilitar la ejecución de ataques de tipo \textit{spear phishing} dirigidos a usuarios específicos, o incluso ser utilizada para realizar ataques de fuerza bruta contra el panel de acceso de Joomla.
+
+La herramienta también permite interactuar con la inteligencia artificial para generar recomendaciones sobre acciones ofensivas a realizar. En la Figura~\ref{fig:ia_joomla_b} se muestran las sugerencias propuestas por la IA para continuar la auditoría de seguridad en la Empresa B.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/laestrellaoffensive.png}
+\caption{Sugerencias de acciones ofensivas propuestas por la IA para la Empresa B.}
+\label{fig:ia_joomla_b}
+\end{figure}
+
+\subsection{Acciones recomendadas para la Empresa B}
+A partir de la información obtenida durante el escaneo, la Empresa B podría considerar las siguientes acciones defensivas:
+
+\begin{itemize}
+  \item \textbf{Actualizar Joomla a su versión más reciente}, con el fin de corregir la vulnerabilidad crítica de \textit{SQL Injection} presente en la versión actualmente instalada (3.4.3).
+  
+  \item \textbf{Revisar la dirección de correo electrónico comprometida}: verificar si sigue en uso y, en caso afirmativo, proceder a su sustitución y cambio de credenciales asociadas.
+  
+  \item \textbf{Analizar la configuración de los servicios expuestos}, especialmente el servicio SSH presente en el puerto 2222, para comprobar si su exposición es intencionada y se encuentra adecuadamente protegido.
+  
+  \item \textbf{Evaluar la necesidad del subdominio enumerado}. Si no es necesario, se recomienda eliminarlo para reducir la superficie de ataque.
+\end{itemize}
+
+Estas acciones también pueden ser generadas por la inteligencia artificial integrada. En la Figura~\ref{fig:ia_empresa_b} se muestran las sugerencias defensivas propuestas por la IA para la Empresa B.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/laestrelladefensive.png}
+\caption{Sugerencias propuestas por la IA para la Empresa B.}
+\label{fig:ia_empresa_b}
+\end{figure}
 
 \end{parskipenv}
