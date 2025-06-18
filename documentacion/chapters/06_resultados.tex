@@ -1,19 +1,20 @@
 \chapter{\resultsname}
+\label{chapter:resultados}
 \newpage
 \begin{parskipenv}
-En este capítulo se presentan los resultados obtenidos a partir de las pruebas realizadas con la herramienta desarrollada. Para ello, se ha llevado a cabo una serie de escaneos sobre diferentes objetivos reales. Por cuestiones de confidencialidad, no se revelarán los nombres de las empresas ni los detalles específicos de los recursos analizados, pero se proporcionarán descripciones generales de los objetivos y los tipos de información obtenida.
+En este capítulo se presentan los resultados obtenidos a partir de las pruebas realizadas con la herramienta desarrollada. Para ello, se ha llevado a cabo una serie de escaneos sobre diferentes objetivos reales. Por cuestiones de confidencialidad, no se revelarán los nombres de las empresas ni los detalles específicos de los recursos analizados.
 
 Se mostrará cómo la herramienta automatiza las distintas fases del reconocimiento, qué información es capaz de extraer, y cómo esta información puede aprovecharse para planificar acciones ofensivas o aplicar medidas defensivas.
 
 Asimismo, se analizarán aspectos clave como el rendimiento, la calidad de los resultados, la interacción con el sistema de inteligencia artificial y la generación automática de informes.
 
 \section{Empresa A}
-En primer lugar se realizó un escaneo al dominio de la Empresa A utilizando la herramienta desarrollada. Los resultados se resumen a continuación, presentados en la Tabla~\ref{tabla:resultados_empresa_a}:
+En primer lugar se realizó un escaneo al dominio de la Empresa A. Los resultados se presentan resumidos en la Tabla~\ref{tabla:resultados_empresa_a}.
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{7cm}|}
 \hline
 \rowcolor{LightBlue}
 \textbf{Aspecto Analizado} & \textbf{Resultado} \\
@@ -49,7 +50,7 @@ El escaneo se completó en un tiempo total de \textbf{23 minutos y 16 segundos},
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/tiempo_escaneo_empresaA.png}
+\includegraphics[width=0.7\textwidth]{pictures/tiempo_escaneo_empresaA.jpg}
 \caption{Duración del escaneo realizado a la Empresa A.}
 \label{fig:tiempo_empresaA}
 \end{figure}
@@ -57,11 +58,11 @@ El escaneo se completó en un tiempo total de \textbf{23 minutos y 16 segundos},
 Entre las debilidades más destacadas se encuentra la \textbf{posibilidad de enumerar usuarios WordPress}, lo que expone al sistema a ataques de fuerza bruta y ataques dirigidos como \textit{spear phishing} \cite{ibm_spearphishing}, especialmente si se combinan con la dirección de correo electrónico comprometida. Además, se podrían verificar manualmente los \textit{CVEs} asociados a los plugins instalados para evaluar su impacto y aplicar parches si es necesario.
 
 \subsection{Subdominio A1}
-Una vez descubierto el subdominio \textbf{A1}, perteneciente a la Empresa A, se procedió a realizar un escaneo sobre él utilizando la herramienta. La Tabla~\ref{tabla:subdominio_a1} resume los principales resultados obtenidos:
+Una vez descubierto el subdominio \textbf{A1}, perteneciente a la Empresa A, se procedió a realizar un escaneo sobre él. La Tabla~\ref{tabla:subdominio_a1} resume los principales resultados obtenidos.
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.4}
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
 \hline
 \rowcolor{LightBlue}
@@ -84,7 +85,7 @@ El escaneo se llevó a cabo en \textbf{10 minutos y 57 segundos}, como se muestr
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/amblingclientestiempoescaneo.png}
+\includegraphics[width=0.7\textwidth]{pictures/amblingclientestiempoescaneo.png}
 \caption{Duración del escaneo realizado al subdominio A1.}
 \label{fig:tiempo_A1}
 \end{figure}
@@ -111,7 +112,7 @@ La Figura~\ref{fig:django_A1} muestra el mensaje reportado por el subdominio A1,
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/djangovulnamblingclientes.png}
+\includegraphics[width=\textwidth]{pictures/djangovulnamblingclientes.png}
 \caption{Debilidad de Django encontrada en el subdominio A1.}
 \label{fig:django_A1}
 \end{figure}
@@ -123,12 +124,12 @@ Adicionalmente, entre las rutas detectadas se encontró un endpoint asociado a u
 Si se combinan los puertos abiertos, la vulnerabilidad de Django y la API REST, se podría realizar un análisis exhaustivo de cada uno de los servicios expuestos, lo que podría llevar a la identificación de más debilidades o a la explotación de las existentes.
 
 \subsection{Subdominio A2}
-Una vez detectado el subdominio \textbf{A2}, también perteneciente a la Empresa A, se procedió a su análisis. Los resultados obtenidos se resumen en la Tabla~\ref{tabla:subdominio_a2}:
+Una vez detectado el subdominio \textbf{A2}, también perteneciente a la Empresa A, se procedió a su análisis. Los resultados obtenidos se resumen en la Tabla~\ref{tabla:subdominio_a2}.
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.4}
-\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{8cm}|}
 \hline
 \rowcolor{LightBlue}
 \textbf{Aspecto Analizado} & \textbf{Resultado} \\
@@ -148,11 +149,11 @@ Servicio FTP & Sin protección contra fuerza bruta \\
 \label{tabla:subdominio_a2}
 \end{table}
 
-Todo este reconocimiento se completó en \textbf{12 minutos y 57 segundos}, como se muestra en la Figura~\ref{fig:tiempo_A2}.
+Este reconocimiento se completó en \textbf{12 minutos y 57 segundos}, como se muestra en la Figura~\ref{fig:tiempo_A2}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/amblingcauccestiempoescaneo.png}
+\includegraphics[width=0.7\textwidth]{pictures/amblingcauccestiempoescaneo.png}
 \caption{Duración del escaneo realizado al subdominio A2.}
 \label{fig:tiempo_A2}
 \end{figure}
@@ -161,7 +162,7 @@ Al igual que en el subdominio A1, se identificaron servicios expuestos en puerto
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/puertosabiertosamblingcaucces.png}
+\includegraphics[width=0.7\textwidth]{pictures/puertosabiertosamblingcaucces.png}
 \caption{Puertos abiertos del subdominio A2.}
 \label{fig:puertos_A2}
 \end{figure}
@@ -180,7 +181,7 @@ Otro punto crítico encontrado fue un servicio expuesto en el puerto \texttt{808
 Cabe destacar que, si bien no se ha realizado una exploración completa de todos los vectores detectados, estos resultados ilustran con claridad el potencial de la herramienta para detectar debilidades y mapear la superficie de ataque. Este caso concreto demuestra hasta qué punto se puede avanzar en una auditoría únicamente con la información recopilada durante la fase de reconocimiento.
 
 \subsection{Acciones recomendadas para la Empresa A}
-Gracias a la información recopilada, se han identificado varias acciones defensivas que la Empresa A podría considerar para mejorar la seguridad de sus sistemas:
+Gracias a la información recopilada, la Empresa A podría considerar las siguientes medidas defensivas para mejorar la seguridad de sus sistemas:
 
 \begin{itemize}
   \item \textbf{Desactivar el modo de depuración de Django}, ya que expone información sensible del sistema. Esta medida debe considerarse prioritaria.
@@ -198,21 +199,21 @@ Gracias a la información recopilada, se han identificado varias acciones defens
   \item \textbf{Asegurar el servicio FTP}, incorporando mecanismos como la limitación de intentos fallidos o bloqueo de direcciones IP sospechosas.
 \end{itemize}
 
-Además, la inteligencia artificial integrada en la herramienta puede ser utilizada para generar recomendaciones sobre las medidas a tomar. En la Figura~\ref{fig:ia_sugerencias_a1} se muestran las sugerencias defensivas propuestas por la IA para el subdominio A1.
+Además, la inteligencia artificial integrada en la herramienta puede ser utilizada para generar recomendaciones sobre las medidas a tomar. En la Figura~\ref{fig:ia_sugerencias_a1} se muestran algunas de las sugerencias defensivas propuestas por la IA para el subdominio A1.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{pictures/sugerenciasdefensivasambling.png}
-\caption{Sugerencias propuestas por la IA para el subdominio A1.}
+\caption{Sugerencias defensivas propuestas por la IA para el subdominio A1.}
 \label{fig:ia_sugerencias_a1}
 \end{figure}
 
 \section{Empresa B}
-En segundo lugar se llevó a cabo un escaneo al dominio de la Empresa B. Los resultados se resumen a continuación, presentados en la Tabla~\ref{tabla:resultados_empresa_b}:
+En segundo lugar se llevó a cabo un escaneo al dominio de la Empresa B. Los resultados se presentan resumidos en la Tabla~\ref{tabla:resultados_empresa_b}.
 
 \begin{table}[H]
 \centering
-\renewcommand{\arraystretch}{1.4}
+\renewcommand{\arraystretch}{1.2}
 \begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
 \hline
 \rowcolor{LightBlue}
@@ -228,7 +229,7 @@ Proveedor de DNS & ARUBA-ASN, IT e INTERNET-CZ Ktis, CZ \\
 \hline
 CMS detectado & Joomla, versión 3.4.3 \\
 \hline
-Vulnerabilidades encontradas & Vulnerabilidad SQL Injection de la versión de Joomla \\
+Vulnerabilidades encontradas & Vulnerabilidad \textbf{SQL Injection} de la versión de Joomla \\
 \hline
 \textit{Emails} comprometidos & 1 dirección comprometida \\
 \hline
@@ -243,7 +244,7 @@ El escaneo se completó en un tiempo total de \textbf{13 minutos y 9 segundos}, 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/laestrellatiempoescaneo.png}
+\includegraphics[width=0.7\textwidth]{pictures/laestrellatiempoescaneo.png}
 \caption{Duración del escaneo realizado a la Empresa B.}
 \label{fig:tiempo_empresaB}
 \end{figure}
@@ -261,7 +262,7 @@ Por otro lado, la herramienta ha detectado que el CMS utilizado es \textbf{Jooml
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.9\textwidth]{pictures/laestrellajoomlavulnerability.png}
+\includegraphics[width=0.7\textwidth]{pictures/laestrellajoomlavulnerability.png}
 \caption{Vulnerabilidad SQL Injection de Joomla detectada.}
 \label{fig:joomla_sql}
 \end{figure}
@@ -277,12 +278,12 @@ Además, se ha identificado el panel de autenticación de Joomla expuesto, lo qu
 
 Adicionalmente, se ha detectado una dirección de correo electrónico comprometida. Esta información, combinada con el resto de hallazgos, podría facilitar la ejecución de ataques de tipo \textit{spear phishing} dirigidos a usuarios específicos, o incluso ser utilizada para realizar ataques de fuerza bruta contra el panel de acceso de Joomla.
 
-La herramienta también permite interactuar con la inteligencia artificial para generar recomendaciones sobre acciones ofensivas a realizar. En la Figura~\ref{fig:ia_joomla_b} se muestran las sugerencias propuestas por la IA para continuar la auditoría de seguridad en la Empresa B.
+La herramienta también permite interactuar con la inteligencia artificial para generar recomendaciones sobre acciones ofensivas a realizar. En la Figura~\ref{fig:ia_joomla_b} se muestran algunas de las sugerencias propuestas por la IA para continuar la auditoría de seguridad en la Empresa B.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{pictures/laestrellaoffensive.png}
-\caption{Sugerencias de acciones ofensivas propuestas por la IA para la Empresa B.}
+\caption{Sugerencias ofensivas propuestas por la IA para la Empresa B.}
 \label{fig:ia_joomla_b}
 \end{figure}
 
@@ -304,7 +305,7 @@ Estas acciones también pueden ser generadas por la inteligencia artificial inte
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{pictures/laestrelladefensive.png}
-\caption{Sugerencias propuestas por la IA para la Empresa B.}
+\caption{Sugerencias defensivas propuestas por la IA para la Empresa B.}
 \label{fig:ia_empresa_b}
 \end{figure}
 

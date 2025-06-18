@@ -32,16 +32,14 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Puertos abiertos del subdominio A1.}}{74}{figure.caption.65}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Debilidad de Django encontrada en el subdominio A1.}}{74}{figure.caption.66}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Duración del escaneo realizado al subdominio A2.}}{76}{figure.caption.68}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Puertos abiertos del subdominio A2.}}{77}{figure.caption.69}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Panel de Adminer encontrado en el subdominio A2.}}{78}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Sugerencias propuestas por la IA para el subdominio A1.}}{80}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Duración del escaneo realizado a la Empresa B.}}{82}{figure.caption.73}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Puertos abiertos de la Empresa B.}}{82}{figure.caption.74}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Vulnerabilidad SQL Injection de Joomla detectada.}}{83}{figure.caption.75}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel de acceso de Joomla detectado en la Empresa B.}}{83}{figure.caption.76}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Sugerencias de acciones ofensivas propuestas por la IA para la Empresa B.}}{85}{figure.caption.77}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Sugerencias propuestas por la IA para la Empresa B.}}{87}{figure.caption.78}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Puertos abiertos del subdominio A2.}}{76}{figure.caption.69}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Panel de Adminer encontrado en el subdominio A2.}}{77}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Sugerencias defensivas propuestas por la IA para el subdominio A1.}}{79}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Duración del escaneo realizado a la Empresa B.}}{80}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Puertos abiertos de la Empresa B.}}{81}{figure.caption.74}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Vulnerabilidad SQL Injection de Joomla detectada.}}{81}{figure.caption.75}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel de acceso de Joomla detectado en la Empresa B.}}{82}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Sugerencias ofensivas propuestas por la IA para la Empresa B.}}{83}{figure.caption.77}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Sugerencias defensivas propuestas por la IA para la Empresa B.}}{85}{figure.caption.78}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones y trabajos futuros}{88}{chapter.7}%
-\addvspace {10\p@ }
-\contentsline {xchapter}{Ejemplo de anexo}{91}{appendix.Alph1}%
+\contentsline {xchapter}{Conclusiones y trabajos futuros}{86}{chapter.7}%
