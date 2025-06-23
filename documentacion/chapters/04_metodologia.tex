@@ -22,22 +22,53 @@ Para establecer un marco sólido sobre el cual diseñar el flujo de reconocimien
 \end{itemize}
 
 \subsection{Enfoque adoptado en este trabajo}
-
 Las tres metodologías han sido consideradas como referencia durante el diseño de la herramienta, y en cierto modo, se han aplicado facetas de todas ellas. No obstante, el enfoque metodológico seguido no se ha adherido estrictamente a ninguna de ellas de forma literal. En su lugar, se ha optado por una aplicación flexible, combinando lo más relevante de cada marco con criterios prácticos derivados de la experiencia técnica y del objetivo del proyecto.
 
 Concretamente, el diseño del flujo de reconocimiento se apoya principalmente en las directrices del marco OWASP, dada su orientación clara a entornos web, y en la estructura del marco MITRE ATTACK, por su nivel de detalle y organización táctica. La herramienta incorpora fases descritas en ambos marcos, como el fingerprinting de tecnologías, el escaneo de vulnerabilidades web o la recopilación de información DNS y WHOIS.
 
-Sin embargo, también se han añadido tareas no descritas explícitamente en dichos marcos, como el escaneo de puertos y servicios o el análisis de servicios específicos, por considerarse elementos fundamentales en un reconocimiento técnico completo. Del mismo modo, algunas técnicas presentes en ATTACK o OSSTMM han sido descartadas por no ajustarse al alcance funcional de esta herramienta.
+Sin embargo, también se han añadido tareas no descritas explícitamente en dichos marcos, como la enumeración de subdominios o el análisis de servicios específicos, por considerarse elementos fundamentales en un reconocimiento técnico completo. Del mismo modo, algunas técnicas presentes en estas metodologías han sido descartadas por no ajustarse al alcance funcional de esta herramienta.
+
+En la Tabla~\ref{tabla:origen_tareas} se incluye la metodología de origen de cada una de las tareas que incorpora la herramienta. Cabe destacar que aquellas tareas cuyo origen no se corresponde con ninguna de las metodologías de referencia se encuentran marcadas como \textbf{UEx}.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|c|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Tarea} & \textbf{Origen metodológico} \\
+\hline
+\textbf{Escaneo de puertos y servicios}               & MITRE         \\
+\hline
+\textbf{Reconocimiento DNS}                           & MITRE         \\
+\hline
+\textbf{Email OSINT}                                  & MITRE         \\
+\hline
+\textbf{Enumeración de subdominios}                   & UEx           \\
+\hline
+\textbf{Escaneo de vulnerabilidades web}              & OWASP / MITRE \\
+\hline
+\textbf{Detección de CMS}                             & OWASP         \\
+\hline
+\textbf{Captura de pantalla del sitio web}            & UEx           \\
+\hline
+\textbf{Enumeración de directorios y archivos web}    & OWASP / MITRE \\
+\hline
+\textbf{Reconocimiento WordPress}                     & OWASP / MITRE \\
+\hline
+\textbf{Reconocimiento Joomla}                        & OWASP / MITRE \\
+\hline
+\textbf{Reconocimiento FTP}              & UEx           \\
+\hline
+\textbf{Reconocimiento SSH}              & UEx           \\
+\hline
+\end{tabular}
+\caption{Origen metodológico de las tareas incluidas en la herramienta.}
+\label{tabla:origen_tareas}
+\end{table}
 
 Las fases implementadas se documentan con mayor detalle en los apartados siguientes, donde se describen las herramientas y tecnologías utilizadas en cada etapa, así como el flujo metodológico exacto que sigue la herramienta.
 
-
-%\section{Análisis y elección de herramientas}
-%\subsection{Criterios de selección}
-%\subsection{Comparativa de herramientas consideradas}
-%\begin{itemize}
-%    \item Tabla comparativa (como la del estado del arte) por categoría de herramienta.
-%\end{itemize}
 \section{Análisis y elección de herramientas}
 La elección de herramientas adecuadas resulta clave para garantizar la eficacia, eficiencia y fiabilidad. En el desarrollo de este proyecto, se han analizado diversas alternativas tecnológicas disponibles para cada una de las tareas que conforman la fase de reconocimiento, valorando sus prestaciones, grado de actualización, facilidad de integración, rendimiento y adecuación al flujo metodológico propuesto.
 
@@ -83,6 +114,7 @@ La Tabla~\ref{tabla:comparativa_escaneo_puertos} resume la comparativa entre est
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{Nmap}        & \starthree & \starthree & \startwo & \starthree & \starthree & \starthree \\
 \hline
 \textbf{Masscan}     & \startwo   & \startwo   & \starthree & \startwo & \starone   & \starone \\
@@ -131,6 +163,7 @@ La Tabla~\ref{tabla:comparativa_dns} resume la comparativa entre estas herramien
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{DNSdumpster} & \startwo & \starthree   & \starthree   & \starthree   & \starthree   & \starthree \\
 \hline
 \textbf{Dnsrecon}    & \startwo   & \starone   & \startwo   & \startwo   & \startwo   & \starthree \\
@@ -178,6 +211,7 @@ La Tabla~\ref{tabla:comparativa_whois} resume la comparativa entre las principal
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{API Ninja (WHOIS)} & \startwo   & \starthree & \starthree & \starthree & \starthree & \starthree \\
 \hline
 \textbf{CLI \texttt{whois}} & \starthree & \starone   & \starthree & \startwo   & \starone   & \starone   \\
@@ -226,6 +260,7 @@ La Tabla~\ref{tabla:comparativa_osint_correos} presenta una comparativa de estas
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{LeakCheck}        & \startwo   & \starthree & \starthree & \starthree   & \starthree & \starthree \\
 \hline
 \textbf{Have I Been Pwned} & \starthree & \startwo   & \starthree & \starthree & \startwo   & \starthree \\
@@ -262,6 +297,7 @@ La Tabla~\ref{tabla:comparativa_subdominios} presenta una comparativa entre las 
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{Subfinder} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
 \hline
 \textbf{crt.sh}    & \startwo   & \starone   & \startwo   & \startwo   & \starone   & \startwo \\
@@ -292,6 +328,7 @@ La Tabla~\ref{tabla:comparativa_webscan} muestra la comparativa entre ambas herr
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{Nuclei} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
 \hline
 \textbf{Nikto}  & \startwo   & \startwo   & \startwo   & \startwo   & \starone   & \starthree \\
@@ -328,6 +365,7 @@ La Tabla~\ref{tabla:comparativa_cms} resume la comparativa entre estas herramien
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{WhatWeb}       & \starthree & \starthree & \starthree & \starone & \starthree & \starthree \\
 \hline
 \textbf{CMSeeK}        & \starone   & \startwo   & \startwo   & \starone & \startwo & \startwo \\
@@ -360,6 +398,7 @@ La Tabla~\ref{tabla:comparativa_screenshot} muestra una comparativa entre ambas 
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{Pyppeteer} & \startwo   & \starthree & \starthree & \startwo   & \startwo   & \starthree \\
 \hline
 \textbf{Selenium}  & \starthree & \starthree   & \starone   & \starthree & \starthree & \starthree \\
@@ -382,7 +421,7 @@ Se evaluaron otras alternativas que ofrecían funcionalidades similares:
 
     \item \textbf{Dirsearch} \cite{dirsearch}: herramienta desarrollada en Python, altamente configurable y en constante mantenimiento. Ofrece unas prestaciones similares a las de \textbf{Feroxbuster}.
 
-    \item \textbf{FFUF} \cite{ffuf}: herramienta muy potente y veloz desarrollada en Go, con salida en JSON, ideal para tareas de fuzzing de directorios y parámetros. Aunque comparable en prestaciones, se priorizó \textbf{Feroxbuster} por su mayor enfoque a la enumeración recursiva de rutas y mayor adopción en entornos Red Team.
+    \item \textbf{FFUF} \cite{ffuf}: herramienta muy potente y veloz desarrollada en Go, con salida en JSON, ideal para tareas de fuzzing de directorios y parámetros. Aunque comparable en prestaciones, se priorizó \textbf{Feroxbuster} por su mayor enfoque a la enumeración recursiva de rutas y mayor adopción en entornos \textit{Red Team} (seguridad ofensiva).
 \end{itemize}
 
 La Tabla~\ref{tabla:comparativa_dir_enum} muestra la comparativa de estas herramientas según los criterios establecidos.
@@ -396,6 +435,7 @@ La Tabla~\ref{tabla:comparativa_dir_enum} muestra la comparativa de estas herram
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{Feroxbuster} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
 \hline
 \textbf{FFUF}        & \starthree   & \starthree & \starthree & \starthree & \startwo   & \starthree \\
@@ -420,7 +460,7 @@ Se utiliza ésta para llevar a cabo un reconocimiento avanzado del sitio WordPre
 \begin{itemize}
   \item \textbf{Enumeración de usuarios}: los usuarios enumerados se almacenan en una \textit{wordlist} para su uso en fases posteriores, como ataques de fuerza bruta.
   \item \textbf{Enumeración de \textit{directory listing}}: se identifican rutas que permiten listar directorios y archivos, lo que puede revelar información sensible o configuraciones expuestas.
-  \item \textbf{Enumeración de plugins}: los plugins instalados se analizan para identificar posibles vulnerabilidades (CVEs). Si se encuentra un exploit público asociado en GitHub, se clona automáticamente para facilitar su análisis posterior.
+  \item \textbf{Enumeración de plugins}: los plugins instalados se analizan para identificar posibles vulnerabilidades (CVEs). Si se encuentra un exploit (código que aprovecha una vulnerabilidad) público asociado en GitHub, se clona automáticamente para facilitar su análisis posterior.
 \end{itemize}
 
 En caso de que se hayan identificado usuarios, se lanza un ataque de fuerza bruta mediante el propio \textbf{WPScan}, aprovechando el recurso \texttt{xmlrpc.php} \cite{xmlrpc}, que permite realizar múltiples intentos de autenticación sin restricciones. Si no se ha podido enumerar ningún usuario, se utiliza una lista por defecto con credenciales comunes.
@@ -474,6 +514,7 @@ La Tabla~\ref{tabla:comparativa_ssh} presenta la comparativa entre ambas solucio
 \rowcolor{LightBlue}
 \textbf{Herramienta} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{Hydra}     & \starthree & \startwo   & \startwo & \startwo & \startwo & \startwo \\
 \hline
 \textbf{Paramiko}  & \starone   & \starthree & \starone   & \startwo & \startwo   & \starthree \\
@@ -506,6 +547,7 @@ La Tabla~\ref{tabla:comparativa_pdf} muestra una comparativa entre ambas librer�
 \rowcolor{LightBlue}
 \textbf{Librería} & \textbf{Reconocimiento} & \textbf{Integración} & \textbf{Rendimiento} & \textbf{Actualización} & \textbf{Flexibilidad} & \textbf{Documentación} \\
 \hline
+\rowcolor{red!15}
 \textbf{ReportLab} & \starthree & \starthree & \starthree & \starthree & \starthree & \starthree \\
 \hline
 \textbf{fpdf2}     & \startwo   & \starthree & \starthree & \starthree & \startwo   & \starthree \\
@@ -554,7 +596,7 @@ Por su equilibrio entre capacidad, coste cero, integración sencilla y rendimien
 \section{Resumen de herramientas utilizadas}
 A continuación se presenta un resumen de las herramientas utilizadas en la propuesta.
 
-\begin{itemize}
+\begin{enumerate}
   \item \textbf{Escaneo de puertos y servicios}: \texttt{Nmap}
   \item \textbf{Reconocimiento DNS}: \texttt{DNSdumpster}, \texttt{MXToolbox} y \texttt{API Ninja (WHOIS)}
   \item \textbf{Email OSINT}: \texttt{IntelligenceX} y \texttt{LeakCheck}
@@ -569,7 +611,7 @@ A continuación se presenta un resumen de las herramientas utilizadas en la prop
   \item \textbf{Reconocimiento SSH}: \texttt{Hydra} y \texttt{Searchsploit}
   \item \textbf{Generación de informe}: \texttt{ReportLab}
   \item \textbf{Asistente de IA}: \texttt{Gemini Flash 2.0}
-\end{itemize}
+\end{enumerate}
 
 La Figura~\ref{fig:herramientas_utilizadas} muestra un esquema visual con el resumen de las herramientas utilizadas en cada fase:
 

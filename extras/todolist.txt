@@ -1,3 +1,72 @@
+CAPÍTULO 4
+%%4.1.2. Enfoque adoptado en este trabajo
+%%Adelantas algunas acciones que se proponen en OWASP, o en MITRE. Y también comentas que se han añadido otras tareas. Te propongo que en algún sitio detalles
+%%claramente qué tareas incluye nuestra herramienta (indicando si son de OWASP, MITRE, o de ambas, y también si son tareas que nosotros proponemos para mejorar
+%%el reconocimiento, aunque no estén en las propuestas de OWASP/MITRE). A nuestras propuestas, la podemos denominar propuestas #UEx o algo similar, por no poner #GIM.
+%%Esto quedaría muy bien, adelantaría qué tareas hacemos, y cuál es el origen de esas tareas (MITRE, OWASP, OWASP/MITRE, o UEx).
+%%Esto con una tabla quedaría fantástico.
+%%[Veo que en la página 43, en el apartado 4.3 tienes un resumen de esto que te propongo. Quizá se podría adelantar aquí, con el origen de las tareas, como te comento]
+%
+%%4.2.2. Comparativa de herramientas consideradas
+%%Me han gustado mucho las tablas comparativas de las diferentes herramientas, con estrellas. Muy buena elección.
+%%Lo que sí que podríamos hacer es destacar la opción que seleccionamos en cada tabla, por ejemplo destacándola en negrita o en color rojo o algo así para destacar visualmente la opción elegida.
+%
+%%Página 36. Enumeración de directorios y archivos web
+%%Cuando hablas de Red Team indica entre paréntesis (seguridad ofensiva) por si el lector no está familiarizado con lo que es red/blue team.
+%
+%%Página 37. Exploit (en el último párrafo). Indicar qué es un exploit, bien entre paréntesis como antes, o bien como una nota a pie de página.
+%
+%%4.3. Resumen de herramientas utilizadas
+%%¡Muy bueno!
+%%Te sugiero que cambies los puntos del enumerado, por números (del 1 al 14), ya que en la figura 4.1 incluyes números. Esto facilita la relación entre el texto y la figura.
+%
+%%4.5. Figura resumen del flujo de ejecución
+%%Muy buena aportación, te lo iba a sugerir…
+%
+CAPÍTULO 5
+%
+%%Las figuras de capturas de pantalla (5.3, 5.4, 5.6, 5.7, 5.8, 5.10…) debes hacerlas más grandes, más visibles. Revisa que se vean bien, que a partir de la 5.10 ya no anoté más…
+%
+%%Página 59, escaneo exhaustivo. Dices que desde la interfaz gráfica se active la casilla correspondiente. Podías incluir una imagen.
+%
+%%Página 64: “puede verse en la Figura 5.6, presentada en el capítulo anterior” cambiar por “puede verse en la Figura 5.6, presentada en el apartado anterior” (no es capítulo anterior, sino apartado anterior)
+%
+%%Después de leer todo el capítulo, creo que puedes mover el 5.3 decisiones técnicas justo después del 5.1 (defines la arquitectura y justifica las decisiones). 
+%%Luego, el Diseño experimental lo puedes mover como 5.3. Creo que queda mucho mejor así, para el lector.
+
+
+Y en el 5.1. echo en falta un poco más de explicaciones de implementación sobre cada funcionalidad. Defines el programa principal en pseudocódigo en la figura 5.1. 
+Luego podías indicar algo de la invocación a cada uno de los submódulos. Especialmente interesante es detallar la integración de Gemini en la arquitectura, mediante su API. 
+Creo que puede ser de interés para cualquier compañero tuyo que lea el TFG y esté interesado en replicar el modelo en otros posibles TFGs que podamos plantear. 
+No queda explicado lo suficiente. Y algo parecido con la parte de gestión de informes, no creo que nadie que quiera replicar el modelo se entere de mucho con la documentación. 
+Y consultar el código sin documentación ya sabes que es bastante duro, sin ayuda…
+No digo que detalles todo como si fuese un tutorial, sino que se echa en falta un poco de ayuda y detalle para futuras ampliaciones o para alguien que se inspire en tu TFG para hacer cosas relativamente parecidas.
+El capítulo tal y como está se queda en un “quiero y no puedo”, esto es, con lo que hay aquí, no me sirve de mucho…
+
+
+CAPÍTULO 6
+%%Pág. 70 “se ha llevado a cabo una serie de escaneos” a “se haN llevado a cabo una serie de escaneos”
+%
+%%¿Me puedes decir cuáles son las empresa A y B, así entre nosotros? Tal vez se podría hacer una pequeña descripción de los sistemas que tienen estas empresas, en un parrafito. El martes lo comentamos también.
+%%El párrafo descriptivo tendría que indicar qué sistemas tiene la empresa A, es decir, se trata de una empresa con un negocio a nivel nacional, que dispone de infraestructura informática amplia, 
+%%redes segmentadas, varios servidores, y con un escaparate web muy completo y bien estructurado… La empresa B se trata de una propuesta no comercial, 
+%%donde únicamente se ofrece un website con información sin base económica, donde se muestra información muy concreta y específica, sin necesidad de subdominios ni complicaciones… 
+%%(incluso podemos decir que lo que se muestra se trata de información deportiva).
+
+
+¿Te parece que podamos hacer esto mismo con una empresa C? Si se tardan 23 minutos, o media hora o así en el escaneo automático, luego tienes que redactar unas 8-10 páginas más de documentación… podría ser viable ¿no?
+ 
+
+Otra cuestión importante. Hablas de que se reducen considerablemente los tiempos de escaneo, en comparación con un escaneo manual. Pero no aportas datos.
+¿Sería demasiado pesado que hicieses una prueba de escaneo manual, anotando los tiempos, para poder ofrecer una comparativa real en, al menos, un ejemplo? 
+Es que si no, no nos podemos hacer una idea real de cuánto tiempo se reduce, y es una cuestión que también incluyes en el capítulo 7 de conclusiones: 
+“El tiempo de análisis se reduce considerablemente respecto a un enfoque manual” pero esto nos lo tenemos que creer, no hay ningún experimento que muestre o demuestre que es una reducción “considerable”.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 ROADMAP GENERAL:
 - [Si da tiempo] Script de lanzamiento automatico de escaneo.
 - [Si da tiempo] Mejora y limpieza del código (principalmente script.js).

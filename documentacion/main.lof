@@ -8,38 +8,39 @@
 \contentsline {xchapter}{Estado del Arte}{10}{chapter.3}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Metodología}{21}{chapter.4}%
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Figura resumen de las herramientas utilizadas en la propuesta.}}{44}{figure.caption.36}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Flujo metodológico de ejecución de la herramienta.}}{49}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Figura resumen de las herramientas utilizadas en la propuesta.}}{45}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Flujo metodológico de ejecución de la herramienta.}}{50}{figure.caption.48}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Implementación y desarrollo}{50}{chapter.5}%
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Tecnologías empleadas en la herramienta}}{54}{figure.caption.48}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo de comunicación entre los componentes de la herramienta.}}{56}{figure.caption.49}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Escaneo desde la interfaz gráfica.}}{58}{figure.caption.50}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Escaneo desde consola.}}{59}{figure.caption.51}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Formulario de creación de nuevo proyecto.}}{60}{figure.caption.52}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Consola de escaneo dentro de un proyecto.}}{61}{figure.caption.53}%
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Historial de informes generados en un proyecto.}}{61}{figure.caption.54}%
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Interacción con el asistente de IA desde un proyecto.}}{62}{figure.caption.55}%
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Configuración del proxy desde la interfaz.}}{63}{figure.caption.56}%
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Visualización del informe PDF generado.}}{64}{figure.caption.57}%
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Generación de siguientes pasos desde una perspectiva ofensiva.}}{65}{figure.caption.58}%
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Generación de recomendaciones desde una perspectiva defensiva.}}{65}{figure.caption.59}%
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Interacción directa con la IA integrada en la herramienta.}}{66}{figure.caption.60}%
+\contentsline {xchapter}{Implementación y desarrollo}{51}{chapter.5}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Tecnologías empleadas en la herramienta}}{55}{figure.caption.49}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Flujo de comunicación entre los componentes de la herramienta.}}{57}{figure.caption.50}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Escaneo desde la interfaz gráfica.}}{62}{figure.caption.51}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Escaneo desde consola.}}{62}{figure.caption.52}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Escaneo exhaustivo desde la interfaz gráfica.}}{63}{figure.caption.53}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Formulario de creación de nuevo proyecto.}}{64}{figure.caption.54}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Consola de escaneo dentro de un proyecto.}}{65}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Historial de informes generados en un proyecto.}}{66}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Interacción con el asistente de IA desde un proyecto.}}{66}{figure.caption.57}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Configuración del proxy desde la interfaz.}}{67}{figure.caption.58}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Visualización del informe PDF generado.}}{69}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Generación de siguientes pasos desde una perspectiva ofensiva.}}{70}{figure.caption.60}%
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Generación de recomendaciones desde una perspectiva defensiva.}}{71}{figure.caption.61}%
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Interacción directa con la IA integrada en la herramienta.}}{72}{figure.caption.62}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resultados}{69}{chapter.6}%
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Duración del escaneo realizado a la Empresa A.}}{72}{figure.caption.62}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Duración del escaneo realizado al subdominio A1.}}{73}{figure.caption.64}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Puertos abiertos del subdominio A1.}}{74}{figure.caption.65}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Debilidad de Django encontrada en el subdominio A1.}}{74}{figure.caption.66}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Duración del escaneo realizado al subdominio A2.}}{76}{figure.caption.68}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Puertos abiertos del subdominio A2.}}{76}{figure.caption.69}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Panel de Adminer encontrado en el subdominio A2.}}{77}{figure.caption.70}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Sugerencias defensivas propuestas por la IA para el subdominio A1.}}{79}{figure.caption.71}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Duración del escaneo realizado a la Empresa B.}}{80}{figure.caption.73}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Puertos abiertos de la Empresa B.}}{81}{figure.caption.74}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Vulnerabilidad SQL Injection de Joomla detectada.}}{81}{figure.caption.75}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel de acceso de Joomla detectado en la Empresa B.}}{82}{figure.caption.76}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Sugerencias ofensivas propuestas por la IA para la Empresa B.}}{83}{figure.caption.77}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Sugerencias defensivas propuestas por la IA para la Empresa B.}}{85}{figure.caption.78}%
+\contentsline {xchapter}{Resultados}{73}{chapter.6}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Duración del escaneo realizado a la Empresa A.}}{76}{figure.caption.64}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Duración del escaneo realizado al subdominio A1.}}{77}{figure.caption.66}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Puertos abiertos del subdominio A1.}}{78}{figure.caption.67}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Debilidad de Django encontrada en el subdominio A1.}}{78}{figure.caption.68}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Duración del escaneo realizado al subdominio A2.}}{80}{figure.caption.70}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Puertos abiertos del subdominio A2.}}{80}{figure.caption.71}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Panel de Adminer encontrado en el subdominio A2.}}{81}{figure.caption.72}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Sugerencias defensivas propuestas por la IA para el subdominio A1.}}{83}{figure.caption.73}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Duración del escaneo realizado a la Empresa B.}}{84}{figure.caption.75}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Puertos abiertos de la Empresa B.}}{85}{figure.caption.76}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Vulnerabilidad SQL Injection de Joomla detectada.}}{85}{figure.caption.77}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Panel de acceso de Joomla detectado en la Empresa B.}}{86}{figure.caption.78}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Sugerencias ofensivas propuestas por la IA para la Empresa B.}}{87}{figure.caption.79}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Sugerencias defensivas propuestas por la IA para la Empresa B.}}{89}{figure.caption.80}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones y trabajos futuros}{86}{chapter.7}%
+\contentsline {xchapter}{Conclusiones y trabajos futuros}{90}{chapter.7}%

@@ -8,24 +8,25 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces Comparativa entre la herramienta desarrollada y soluciones similares.}}{20}{table.caption.10}%
 \addvspace {10\p@ }
 \contentsline {xchapter}{Metodología}{21}{chapter.4}%
-\contentsline {table}{\numberline {4.1}{\ignorespaces Comparativa de herramientas para escaneo de puertos y servicios.}}{27}{table.caption.12}%
-\contentsline {table}{\numberline {4.2}{\ignorespaces Comparativa de herramientas para reconocimiento de registros DNS.}}{28}{table.caption.14}%
-\contentsline {table}{\numberline {4.3}{\ignorespaces Comparativa de herramientas para consultas WHOIS.}}{30}{table.caption.15}%
-\contentsline {table}{\numberline {4.4}{\ignorespaces Comparativa de herramientas para verificación de correos filtrados.}}{31}{table.caption.17}%
-\contentsline {table}{\numberline {4.5}{\ignorespaces Comparativa de herramientas para enumeración de subdominios.}}{32}{table.caption.19}%
-\contentsline {table}{\numberline {4.6}{\ignorespaces Comparativa de herramientas para escaneo de vulnerabilidades web.}}{33}{table.caption.21}%
-\contentsline {table}{\numberline {4.7}{\ignorespaces Comparativa de herramientas para la detección de CMS.}}{34}{table.caption.23}%
-\contentsline {table}{\numberline {4.8}{\ignorespaces Comparativa de herramientas para la captura automatizada de sitios web.}}{35}{table.caption.25}%
-\contentsline {table}{\numberline {4.9}{\ignorespaces Comparativa de herramientas para enumeración de directorios web.}}{37}{table.caption.27}%
-\contentsline {table}{\numberline {4.10}{\ignorespaces Comparativa de herramientas para fuerza bruta SSH.}}{40}{table.caption.32}%
-\contentsline {table}{\numberline {4.11}{\ignorespaces Comparativa de herramientas para generación de informes PDF.}}{41}{table.caption.34}%
+\contentsline {table}{\numberline {4.1}{\ignorespaces Origen metodológico de las tareas incluidas en la herramienta.}}{24}{table.caption.11}%
+\contentsline {table}{\numberline {4.2}{\ignorespaces Comparativa de herramientas para escaneo de puertos y servicios.}}{27}{table.caption.13}%
+\contentsline {table}{\numberline {4.3}{\ignorespaces Comparativa de herramientas para reconocimiento de registros DNS.}}{29}{table.caption.15}%
+\contentsline {table}{\numberline {4.4}{\ignorespaces Comparativa de herramientas para consultas WHOIS.}}{31}{table.caption.16}%
+\contentsline {table}{\numberline {4.5}{\ignorespaces Comparativa de herramientas para verificación de correos filtrados.}}{32}{table.caption.18}%
+\contentsline {table}{\numberline {4.6}{\ignorespaces Comparativa de herramientas para enumeración de subdominios.}}{33}{table.caption.20}%
+\contentsline {table}{\numberline {4.7}{\ignorespaces Comparativa de herramientas para escaneo de vulnerabilidades web.}}{34}{table.caption.22}%
+\contentsline {table}{\numberline {4.8}{\ignorespaces Comparativa de herramientas para la detección de CMS.}}{35}{table.caption.24}%
+\contentsline {table}{\numberline {4.9}{\ignorespaces Comparativa de herramientas para la captura automatizada de sitios web.}}{36}{table.caption.26}%
+\contentsline {table}{\numberline {4.10}{\ignorespaces Comparativa de herramientas para enumeración de directorios web.}}{38}{table.caption.28}%
+\contentsline {table}{\numberline {4.11}{\ignorespaces Comparativa de herramientas para fuerza bruta SSH.}}{41}{table.caption.33}%
+\contentsline {table}{\numberline {4.12}{\ignorespaces Comparativa de herramientas para generación de informes PDF.}}{42}{table.caption.35}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Implementación y desarrollo}{50}{chapter.5}%
+\contentsline {xchapter}{Implementación y desarrollo}{51}{chapter.5}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Resultados}{69}{chapter.6}%
-\contentsline {table}{\numberline {6.1}{\ignorespaces Resumen del escaneo realizado a la Empresa A.}}{71}{table.caption.61}%
-\contentsline {table}{\numberline {6.2}{\ignorespaces Resumen del escaneo realizado al subdominio A1.}}{73}{table.caption.63}%
-\contentsline {table}{\numberline {6.3}{\ignorespaces Resumen del escaneo realizado al subdominio A2.}}{75}{table.caption.67}%
-\contentsline {table}{\numberline {6.4}{\ignorespaces Resumen del escaneo realizado a la Empresa B.}}{80}{table.caption.72}%
+\contentsline {xchapter}{Resultados}{73}{chapter.6}%
+\contentsline {table}{\numberline {6.1}{\ignorespaces Resumen del escaneo realizado a la Empresa A.}}{75}{table.caption.63}%
+\contentsline {table}{\numberline {6.2}{\ignorespaces Resumen del escaneo realizado al subdominio A1.}}{77}{table.caption.65}%
+\contentsline {table}{\numberline {6.3}{\ignorespaces Resumen del escaneo realizado al subdominio A2.}}{79}{table.caption.69}%
+\contentsline {table}{\numberline {6.4}{\ignorespaces Resumen del escaneo realizado a la Empresa B.}}{84}{table.caption.74}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones y trabajos futuros}{86}{chapter.7}%
+\contentsline {xchapter}{Conclusiones y trabajos futuros}{90}{chapter.7}%

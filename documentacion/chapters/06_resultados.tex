@@ -2,14 +2,16 @@
 \label{chapter:resultados}
 \newpage
 \begin{parskipenv}
-En este capítulo se presentan los resultados obtenidos a partir de las pruebas realizadas con la herramienta desarrollada. Para ello, se ha llevado a cabo una serie de escaneos sobre diferentes objetivos reales. Por cuestiones de confidencialidad, no se revelarán los nombres de las empresas ni los detalles específicos de los recursos analizados.
+En este capítulo se presentan los resultados obtenidos a partir de las pruebas realizadas con la herramienta desarrollada. Para ello, se han llevado a cabo una serie de escaneos sobre diferentes objetivos reales. Por cuestiones de confidencialidad, no se revelarán los nombres de las empresas ni los detalles específicos de los recursos analizados.
 
 Se mostrará cómo la herramienta automatiza las distintas fases del reconocimiento, qué información es capaz de extraer, y cómo esta información puede aprovecharse para planificar acciones ofensivas o aplicar medidas defensivas.
 
 Asimismo, se analizarán aspectos clave como el rendimiento, la calidad de los resultados, la interacción con el sistema de inteligencia artificial y la generación automática de informes.
 
 \section{Empresa A}
-En primer lugar se realizó un escaneo al dominio de la Empresa A. Los resultados se presentan resumidos en la Tabla~\ref{tabla:resultados_empresa_a}.
+La Empresa A se trata de una organización con actividad comercial a nivel nacional que dispone de una infraestructura informática amplia y distribuida. Sus sistemas incluyen varios servidores, redes segmentadas, múltiples servicios expuestos y un escaparate web bien estructurado. Estas características hacen que la superficie de ataque sea notablemente extensa.
+
+Los resultados del escaneo realizado al dominio de la Empresa A se presentan resumidos en la Tabla~\ref{tabla:resultados_empresa_a}.
 
 \begin{table}[H]
 \centering
@@ -19,27 +21,27 @@ En primer lugar se realizó un escaneo al dominio de la Empresa A. Los resultado
 \rowcolor{LightBlue}
 \textbf{Aspecto Analizado} & \textbf{Resultado} \\
 \hline
-Puertos abiertos & 5, incluyendo \texttt{SSH}, \texttt{FTP} y \texttt{HTTP} \\
+\textbf{Puertos abiertos} & 5, incluyendo \texttt{SSH}, \texttt{FTP} y \texttt{HTTP} \\
 \hline
-URLs enumeradas & 88 \\
+\textbf{URLs enumeradas} & 88 \\
 \hline
-Proveedor de correo & IONOS \\
+\textbf{Proveedor de correo} & IONOS \\
 \hline
-Proveedor de DNS & IONOS \\
+\textbf{Proveedor de DNS} & IONOS \\
 \hline
-Registro \texttt{DMARC} & No público, riesgo de \textit{email spoofing} \\
+\textbf{Registro \texttt{DMARC}} & No público, riesgo de \textit{email spoofing} \\
 \hline
-CMS detectado & WordPress \\
+\textbf{CMS detectado} & WordPress \\
 \hline
-Usuarios WordPress & 2 usuarios enumerados \\
+\textbf{Usuarios WordPress} & 2 usuarios enumerados \\
 \hline
-Plugins WordPress & 5 plugins vulnerables \\
+\textbf{Plugins WordPress} & 5 plugins vulnerables \\
 \hline
-\textit{Emails} comprometidos & 1 dirección comprometida \\
+\textbf{\textit{Emails} comprometidos} & 1 dirección comprometida \\
 \hline
-Subdominios enumerados & 2 subdominios \\
+\textbf{Subdominios enumerados} & 2 subdominios \\
 \hline
-Servicio FTP & Sin protección contra fuerza bruta \\
+\textbf{Servicio FTP} & Sin protección contra fuerza bruta \\
 \hline
 \end{tabular}
 \caption{Resumen del escaneo realizado a la Empresa A.}
@@ -68,13 +70,13 @@ Una vez descubierto el subdominio \textbf{A1}, perteneciente a la Empresa A, se 
 \rowcolor{LightBlue}
 \textbf{Aspecto Analizado} & \textbf{Resultado} \\
 \hline
-Puertos abiertos & 9, incluyendo puertos poco comunes como \texttt{8001} o \texttt{10050} \\
+\textbf{Puertos abiertos} & 9, incluyendo puertos poco comunes como \texttt{8001} o \texttt{10050} \\
 \hline
-URLs enumeradas & 41 \\
+\textbf{URLs enumeradas} & 41 \\
 \hline
-Debilidades encontradas & 1 vulnerabilidad web de criticidad media: \textbf{modo de depuración de Django habilitado} \\
+\textbf{Debilidades encontradas} & 1 vulnerabilidad web de criticidad media: \textbf{modo de depuración de Django habilitado} \\
 \hline
-Registro \texttt{DMARC} & No público, riesgo de \textit{email spoofing} \\
+\textbf{Registro \texttt{DMARC}} & No público, riesgo de \textit{email spoofing} \\
 \hline
 \end{tabular}
 \caption{Resumen del escaneo realizado al subdominio A1.}
@@ -134,15 +136,15 @@ Una vez detectado el subdominio \textbf{A2}, también perteneciente a la Empresa
 \rowcolor{LightBlue}
 \textbf{Aspecto Analizado} & \textbf{Resultado} \\
 \hline
-Puertos abiertos & 11 \\
+\textbf{Puertos abiertos} & 11 \\
 \hline
-URLs enumeradas & 15 \\
+\textbf{URLs enumeradas} & 15 \\
 \hline
-Debilidades encontradas & Modo \texttt{debug} de Django habilitado \\
+\textbf{Debilidades encontradas} & Modo \texttt{debug} de Django habilitado \\
 \hline
-Registro \texttt{DMARC} & No público, riesgo de \textit{email spoofing} \\
+\textbf{Registro \texttt{DMARC}} & No público, riesgo de \textit{email spoofing} \\
 \hline
-Servicio FTP & Sin protección contra fuerza bruta \\
+\textbf{Servicio FTP} & Sin protección contra fuerza bruta \\
 \hline
 \end{tabular}
 \caption{Resumen del escaneo realizado al subdominio A2.}
@@ -209,7 +211,9 @@ Además, la inteligencia artificial integrada en la herramienta puede ser utiliz
 \end{figure}
 
 \section{Empresa B}
-En segundo lugar se llevó a cabo un escaneo al dominio de la Empresa B. Los resultados se presentan resumidos en la Tabla~\ref{tabla:resultados_empresa_b}.
+La Empresa B se trata de una propuesta no comercial, cuyo único propósito es ofrecer información sin base económica. El sitio web principal actúa únicamente como escaparate informativo con temática deportiva. Su infraestructura informática es reducida, sin aplicaciones complejas.
+
+Los resultados del escaneo realizado al dominio de la Empresa B se presentan resumidos en la Tabla~\ref{tabla:resultados_empresa_b}.
 
 \begin{table}[H]
 \centering
@@ -219,21 +223,21 @@ En segundo lugar se llevó a cabo un escaneo al dominio de la Empresa B. Los res
 \rowcolor{LightBlue}
 \textbf{Elemento} & \textbf{Resultado} \\
 \hline
-Puertos abiertos & 4 \\
+\textbf{Puertos abiertos} & 4 \\
 \hline
-URLs enumeradas & 56 \\
+\textbf{URLs enumeradas} & 56 \\
 \hline
-Proveedor de correo & ARUBA-ASN, IT \\
+\textbf{Proveedor de correo} & ARUBA-ASN, IT \\
 \hline
-Proveedor de DNS & ARUBA-ASN, IT e INTERNET-CZ Ktis, CZ \\
+\textbf{Proveedor de DNS} & ARUBA-ASN, IT e INTERNET-CZ Ktis, CZ \\
 \hline
-CMS detectado & Joomla, versión 3.4.3 \\
+\textbf{CMS detectado} & Joomla, versión 3.4.3 \\
 \hline
-Vulnerabilidades encontradas & Vulnerabilidad \textbf{SQL Injection} de la versión de Joomla \\
+\textbf{Vulnerabilidades encontradas} & Vulnerabilidad \textbf{SQL Injection} de la versión de Joomla \\
 \hline
-\textit{Emails} comprometidos & 1 dirección comprometida \\
+\textbf{\textit{Emails} comprometidos} & 1 dirección comprometida \\
 \hline
-Subdominios enumerados & 1 subdominio \\
+\textbf{Subdominios enumerados} & 1 subdominio \\
 \hline
 \end{tabular}
 \caption{Resumen del escaneo realizado a la Empresa B.}

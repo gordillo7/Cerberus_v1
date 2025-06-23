@@ -96,6 +96,44 @@ La Figura~\ref{fig:comunicacion_componentes} resume gráficamente este flujo de 
 
 Este diseño modular favorece la separación de responsabilidades y permite modificar o sustituir componentes concretos (como los módulos de escaneo o el motor de IA) sin afectar al resto de la aplicación, facilitando así su mantenimiento y evolución futura.
 
+\section{Decisiones técnicas}
+Durante el desarrollo de la herramienta se han tomado una serie de decisiones técnicas orientadas a maximizar la simplicidad, la eficiencia y la facilidad de mantenimiento del sistema. A continuación, se justifican las elecciones más relevantes respecto a tecnologías utilizadas y otras que fueron descartadas.
+
+\subsection{Frontend: HTML, CSS y JavaScript}
+Se optó por una interfaz basada en HTML, CSS y JavaScript puro por las siguientes razones:
+
+\begin{itemize}
+    \item \textbf{Simplicidad y ligereza:} al tratarse de una herramienta de propósito técnico, la interfaz no requiere grandes funcionalidades interactivas, por lo que el uso de tecnologías más avanzadas como React habría sido innecesario.
+    
+    \item \textbf{Facilidad de integración:} el frontend se comunica directamente con el backend mediante peticiones \texttt{fetch}, sin necesidad de routers, sesiones, ni gestión de estados complejos.
+    
+    \item \textbf{Rapidez de desarrollo:} la curva de aprendizaje es más baja y permite una implementación más directa y rápida.
+\end{itemize}
+
+\textbf{Tecnologías descartadas:} React (incluyendo Next.js) fue considerado inicialmente como posible alternativa. Sin embargo, su inclusión suponía una sobrecarga innecesaria en complejidad, ya que no se requerían características avanzadas como rutas dinámicas, autenticación, manejo de estado o conexión con bases de datos. Por ello, se optó por una solución más ligera y directa.
+
+\subsection{Backend: Python y Flask}
+La elección de Python como lenguaje principal y de Flask como framework se justifica por:
+
+\begin{itemize}
+    \item \textbf{Alta integración con herramientas de seguridad:} muchas de las utilidades utilizadas (Nmap, Subfinder, Nuclei, etc.) se invocan fácilmente desde Python mediante llamadas al sistema.
+    
+    \item \textbf{Desarrollo rápido y modular:} Flask proporciona una estructura clara, simple y fácil de mantener, ideal para proyectos de esta naturaleza.
+    
+    \item \textbf{Comunicación efectiva con el frontend:} al actuar como backend de la interfaz, Flask permite exponer endpoints REST a los que se puede acceder desde JavaScript con facilidad.
+\end{itemize}
+
+\subsection{Orquestación mediante \texttt{main.py}}
+Se decidió centralizar toda la lógica de ejecución de módulos en un único script llamado \texttt{main.py}, lo que permite:
+
+\begin{itemize}
+    \item Encapsular la lógica del flujo de ejecución.
+    \item Garantizar la reutilización del código tanto desde la consola como desde la interfaz.
+    \item Permitir una estructura modular, desacoplando cada funcionalidad en archivos separados dentro del directorio \texttt{/modules}.
+\end{itemize}
+
+En conjunto, estas tecnologías han permitido desarrollar una herramienta modular y fácilmente extensible, sin recurrir a opciones innecesariamente complejas para el propósito de la misma.
+
 \section{Diseño experimental}
 Esta sección describe los pasos necesarios para realizar una auditoría utilizando la herramienta desarrollada.
 
@@ -142,7 +180,7 @@ La herramienta permite configurar distintos aspectos del escaneo, adaptándose a
     \item \textit{Interfaz gráfica (GUI)}: para lanzar un escaneo desde la interfaz, el usuario debe acceder a la pestaña de escaneo, introducir el objetivo y pulsar el botón \texttt{Start}. Los resultados se irán mostrando dinámicamente en la consola de escaneo integrada.\\
     \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{pictures/1.png}
+    \includegraphics[width=0.9\textwidth]{pictures/1.png}
     \caption{Escaneo desde la interfaz gráfica.}
     \label{fig:gui_escaneo}
     \end{figure}
@@ -153,7 +191,7 @@ La herramienta permite configurar distintos aspectos del escaneo, adaptándose a
     \end{verbatim}
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{pictures/2.png}
+    \includegraphics[width=\textwidth]{pictures/2.png}
     \caption{Escaneo desde consola.}
     \label{fig:cli_escaneo}
     \end{figure}
@@ -168,6 +206,12 @@ La herramienta permite configurar distintos aspectos del escaneo, adaptándose a
   \begin{verbatim}
   python3 main.py <objetivo> -ex
   \end{verbatim}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{pictures/exscan.png}
+    \caption{Escaneo exhaustivo desde la interfaz gráfica.}
+    \label{fig:ex_scan}
+  \end{figure}
 
   \item \textbf{Asociación con proyecto}: una de las características principales de la herramienta es su sistema de proyectos, que permite agrupar los escaneos realizados sobre un mismo objetivo, gestionar versiones de informes y mantener un historial completo del análisis.
   \begin{itemize}
@@ -187,21 +231,21 @@ La herramienta permite configurar distintos aspectos del escaneo, adaptándose a
     \end{itemize}
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{pictures/4.png}
+    \includegraphics[width=\textwidth]{pictures/4.png}
     \caption{Consola de escaneo dentro de un proyecto.}
     \label{fig:proyecto_consola}
     \end{figure}
 
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{pictures/5.png}
+    \includegraphics[width=\textwidth]{pictures/5.png}
     \caption{Historial de informes generados en un proyecto.}
     \label{fig:proyecto_informes}
     \end{figure}
 
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{pictures/6.png}
+    \includegraphics[width=0.9\textwidth]{pictures/6.png}
     \caption{Interacción con el asistente de IA desde un proyecto.}
     \label{fig:proyecto_ia}
     \end{figure}
@@ -226,13 +270,13 @@ A continuación se describe un ejemplo del flujo completo de uso de la herramien
 
 El primer paso consiste en crear un nuevo proyecto asociado al objetivo, introduciendo los datos correspondientes. Este proceso se realiza desde la pestaña de ``Proyectos'', tal y como se ha mostrado anteriormente en la Figura~\ref{fig:crear_proyecto}.
 
-Una vez creado el proyecto, se procede a lanzar el escaneo desde la consola de escaneo asociada al proyecto. Previamente, el usuario puede haber configurado opciones como el modo exhaustivo o el uso de un proxy. El lanzamiento del escaneo desde el entorno gráfico puede verse en la Figura~\ref{fig:proyecto_consola}, presentada en el capítulo anterior.
+Una vez creado el proyecto, se procede a lanzar el escaneo desde la consola de escaneo asociada al proyecto. Previamente, el usuario puede haber configurado opciones como el modo exhaustivo o el uso de un proxy. El lanzamiento del escaneo desde el entorno gráfico puede verse en la Figura~\ref{fig:proyecto_consola}, presentada en el apartado anterior.
 
 Una vez finalizado el escaneo, la herramienta genera un informe PDF automáticamente, accesible desde la pestaña de informes del proyecto. Un ejemplo de este informe se muestra en la Figura~\ref{fig:reporte_generado}.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.5\textwidth]{pictures/8.png}
+\includegraphics[width=0.85\textwidth]{pictures/8.png}
 \caption{Visualización del informe PDF generado.}
 \label{fig:reporte_generado}
 \end{figure}
@@ -244,7 +288,7 @@ A continuación, es habitual interactuar con la inteligencia artificial integrad
 
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{pictures/9.png}
+    \includegraphics[width=0.9\textwidth]{pictures/9.png}
     \caption{Generación de siguientes pasos desde una perspectiva ofensiva.}
     \label{fig:ia_ofensiva}
     \end{figure}
@@ -253,7 +297,7 @@ A continuación, es habitual interactuar con la inteligencia artificial integrad
 
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{pictures/10.png}
+    \includegraphics[width=0.9\textwidth]{pictures/10.png}
     \caption{Generación de recomendaciones desde una perspectiva defensiva.}
     \label{fig:ia_defensiva}
     \end{figure}
@@ -262,50 +306,12 @@ A continuación, es habitual interactuar con la inteligencia artificial integrad
 
     \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{pictures/11.png}
+    \includegraphics[width=\textwidth]{pictures/11.png}
     \caption{Interacción directa con la IA integrada en la herramienta.}
     \label{fig:ia_chat}
     \end{figure}
 \end{itemize}
 
 Tras esto, el usuario cuenta con una base sólida de información obtenida durante la fase de reconocimiento, que le permite continuar con las siguientes etapas de la auditoría.
-
-\section{Decisiones técnicas}
-Durante el desarrollo de la herramienta se han tomado una serie de decisiones técnicas orientadas a maximizar la simplicidad, la eficiencia y la facilidad de mantenimiento del sistema. A continuación, se justifican las elecciones más relevantes respecto a tecnologías utilizadas y otras que fueron descartadas.
-
-\subsection{Frontend: HTML, CSS y JavaScript}
-Se optó por una interfaz basada en HTML, CSS y JavaScript puro por las siguientes razones:
-
-\begin{itemize}
-    \item \textbf{Simplicidad y ligereza:} al tratarse de una herramienta de propósito técnico, la interfaz no requiere grandes funcionalidades interactivas, por lo que el uso de tecnologías más avanzadas como React habría sido innecesario.
-    
-    \item \textbf{Facilidad de integración:} el frontend se comunica directamente con el backend mediante peticiones \texttt{fetch}, sin necesidad de routers, sesiones, ni gestión de estados complejos.
-    
-    \item \textbf{Rapidez de desarrollo:} la curva de aprendizaje es más baja y permite una implementación más directa y rápida.
-\end{itemize}
-
-\textbf{Tecnologías descartadas:} React (incluyendo Next.js) fue considerado inicialmente como posible alternativa. Sin embargo, su inclusión suponía una sobrecarga innecesaria en complejidad, ya que no se requerían características avanzadas como rutas dinámicas, autenticación, manejo de estado o conexión con bases de datos. Por ello, se optó por una solución más ligera y directa.
-
-\subsection{Backend: Python y Flask}
-La elección de Python como lenguaje principal y de Flask como framework se justifica por:
-
-\begin{itemize}
-    \item \textbf{Alta integración con herramientas de seguridad:} muchas de las utilidades utilizadas (Nmap, Subfinder, Nuclei, etc.) se invocan fácilmente desde Python mediante llamadas al sistema.
-    
-    \item \textbf{Desarrollo rápido y modular:} Flask proporciona una estructura clara, simple y fácil de mantener, ideal para proyectos de esta naturaleza.
-    
-    \item \textbf{Comunicación efectiva con el frontend:} al actuar como backend de la interfaz, Flask permite exponer endpoints REST a los que se puede acceder desde JavaScript con facilidad.
-\end{itemize}
-
-\subsection{Orquestación mediante \texttt{main.py}}
-Se decidió centralizar toda la lógica de ejecución de módulos en un único script llamado \texttt{main.py}, lo que permite:
-
-\begin{itemize}
-    \item Encapsular la lógica del flujo de ejecución.
-    \item Garantizar la reutilización del código tanto desde la consola como desde la interfaz.
-    \item Permitir una estructura modular, desacoplando cada funcionalidad en archivos separados dentro del directorio \texttt{/modules}.
-\end{itemize}
-
-En conjunto, estas tecnologías han permitido desarrollar una herramienta modular y fácilmente extensible, sin recurrir a opciones innecesariamente complejas para el propósito de la misma.
 
 \end{parskipenv}
