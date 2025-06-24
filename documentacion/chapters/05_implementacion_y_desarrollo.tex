@@ -6,7 +6,38 @@ La herramienta ha sido diseñada con un enfoque modular, estructurada en distint
 
 El núcleo principal del sistema es el archivo \textbf{main.py}, encargado de orquestar todo el proceso de escaneo. Este script actúa como controlador central, invocando los módulos individuales contenidos en la carpeta \texttt{/modules}, cada uno de los cuales implementa una fase concreta del reconocimiento. El flujo general está guiado por condiciones lógicas que determinan qué módulos deben ejecutarse en función de las características del objetivo.
 
-Por ejemplo, en primer lugar se lanza el módulo \textbf{nmap.py}, que realiza el escaneo de puertos y servicios. A partir de su salida, se decide la ejecución condicional de otros módulos. Si el objetivo es un dominio (en vez de una IP), se lanza una cadena de módulos específicos para el reconocimiento DNS, OSINT y subdominios. Esta lógica se puede resumir en el siguiente pseudocódigo:
+Cada uno de estos módulos está implementado como un archivo Python independiente. Éstos siguen una estructura similar en la cual se definen funciones internas auxiliares para realizar tareas concretas, y al final del archivo se incluye una función con el nombre \texttt{run\_nombre\_del\_módulo()}, que es la encargada de ejecutar el módulo completo y es invocada desde el \texttt{main.py}. Estos scripts almacenan sus resultados en la carpeta \texttt{/logs}, los cuales serán utilizados posteriormente para generar el informe. A modo de ejemplo se muestra el pseudocódigo del módulo \texttt{nmap.py}:
+
+\begin{lstlisting}[language=Python, caption={Estructura general de un módulo}]
+# modules/nmap.py
+def initial_scan(target_ip):
+    # Escaneo inicial de puertos
+    ...
+
+def extract_ports(target_ip):
+    # Extrae los puertos abiertos
+    ...
+
+def hard_scan(target_ip, open_ports):
+    # Escaneo profundo en los puertos abiertos
+    ...
+
+def clear_report(target_ip):
+    # Guarda los resultados en /logs
+    ...
+
+def run_nmap(target_ip):
+    print("[*] Running nmap module...")
+    initial_scan(target_ip)
+    open_ports = extract_ports(target_ip)
+    hard_scan(target_ip, open_ports)
+    clear_report(target_ip)
+    print("[+] Nmap module completed.")
+\end{lstlisting}
+
+\medskip
+
+La lógica del flujo de escaneo implementada en \texttt{main.py} puede resumirse en el siguiente pseudocódigo:
 
 \begin{lstlisting}[language=Python, caption={Pseudocódigo del archivo \textit{main.py}}]
 # Escaneo inicial
@@ -35,7 +66,7 @@ if port_22_open:
     run_ssh(target)
 
 # Generacion del informe final
-generate_report(target)
+run_generate_report(target, flag)
 \end{lstlisting}
 
 \medskip
@@ -44,9 +75,67 @@ Por otra parte, el archivo \textbf{app.py} actúa como servidor web, encargado d
 
 La interfaz gráfica está implementada como una aplicación de una sola página (\textit{Single Page Application}). Se compone principalmente de un archivo HTML (\textbf{index.html}) y un archivo JavaScript (\textbf{script.js}) que gestiona la interacción dinámica del usuario. Este último se encarga de manipular los elementos del DOM (\textit{Document Object Model}) \cite{wikipedia_dom}, y realizar peticiones \texttt{fetch} a los endpoints de \textbf{app.py}. Por ejemplo, cuando el usuario pulsa el botón de ``Iniciar Escaneo'', se ejecuta una petición \texttt{fetch(/fullscan)} enviando los parámetros seleccionados por el usuario para lanzar el análisis completo.
 
-Cada módulo en la carpeta \texttt{/modules} está implementado como un archivo Python independiente, especializado en una única fase del proceso. Estos scripts almacenan sus resultados en la carpeta \texttt{/logs}. Posteriormente, esta información es utilizada para generar informes automáticos en formato PDF.
+La integración con el modelo de Gemini se realiza utilizando la librería de Python \texttt{google.generativeai}. Se definen tres endpoints clave:
 
-Esta arquitectura modular permite separar claramente la lógica de escaneo, la interfaz gráfica y el almacenamiento, facilitando tanto el desarrollo como la depuración o sustitución de componentes individuales.
+\begin{itemize}
+    \item \texttt{/chat}: permite enviar preguntas al modelo IA desde el chat integrado.
+    \item \texttt{/next\_offensive}: genera automáticamente próximos pasos ofensivos a seguir.
+    \item \texttt{/next\_defensive}: genera automáticamente recomendaciones defensivas.
+\end{itemize}
+
+Todos los endpoints siguen una estructura similar: reciben la petición, cargan el contexto del informe más reciente, construyen el prompt y obtienen la respuesta del modelo. La diferencia entre ellos radica principalmente en el prompt utilizado. En el caso de \texttt{/chat}, se envía la pregunta del usuario junto con el informe, mientras que en los otros dos no es necesario incluir la pregunta, ya que el prompt es fijo. El siguiente pseudocódigo muestra la estructura general de estos endpoints:
+
+\begin{lstlisting}[language=Python, caption={Estructura general de los endpoints de IA}]
+@app.route("/endpoint", methods=["POST"])
+def ia_endpoint():
+    # Configurar API token
+    google.generativeai.configure(api_key=API_KEY)
+
+    # Cargar el contexto del informe más reciente
+    report = load_latest_report()
+
+    # Construir el prompt para la IA
+    prompt = f"Informe: {report}\n
+               Pregunta: {request.json['question']}"
+
+    # Llamar al modelo de IA
+    model = genai.GenerativeModel("gemini-2.0-flash")
+    response = model.generate_content(prompt)
+
+    # Devolver la respuesta al cliente (endpoint /chat)
+    return jsonify({"response": response.text})
+
+    # Guardar la respuesta en md (endpoints
+    # /next_offensive y /next_defensive)
+    save_response_to_md(response.text)
+\end{lstlisting}
+
+\medskip
+
+La generación de informes se realiza mediante el módulo \texttt{generate\_report.py}, el cual es invocado al final de \texttt{main.py}. Este módulo recoge todos los archivos de resultados generados por los submódulos (almacenados en \texttt{/logs}) y construye un documento PDF utilizando la librería \texttt{ReportLab}. La implementación de \texttt{generate\_report.py} se resume en el siguiente pseudocódigo:
+
+\begin{lstlisting}[language=Python, caption={Pseudocódigo del archivo \textit{generate\_report.py}}]
+# generate_report.py
+def create_elements():
+    # Crea los elementos del informe
+    ...
+
+def generate_report(target):
+    # Crea el documento PDF con los datos guardados en /logs
+    ...
+    # Si bandera -p activa, se asocia a un proyecto
+    ...
+    doc = SimpleDocTemplate(path, pagesize=letter)
+    for filename in os.listdir(logs_path):
+        if filename.endswith(".txt"):
+            write_to_pdf()
+    ...
+
+def run_generate_report(target, flag=None):
+    generate_report(target, flag)
+\end{lstlisting}
+
+Esta arquitectura modular permite separar claramente la lógica de escaneo, la interfaz gráfica y la interacción con el modelo de IA, facilitando tanto el desarrollo como la depuración o sustitución de componentes individuales.
 
 \subsection{Tecnologías empleadas}
 El desarrollo de la herramienta se ha llevado a cabo mediante una combinación de tecnologías tanto en el apartado del frontend como del backend. A continuación, se describen las principales tecnologías utilizadas:

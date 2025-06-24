@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.24)  23 JUN 2025 13:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.4.24)  24 JUN 2025 13:42
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2047,13 +2047,13 @@ Cap\'{\i }tulo 5.
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 11.
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
-LaTeX Info: Redefining \. on input line 25.
-LaTeX Info: Redefining \% on input line 25.
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
+LaTeX Info: Redefining \. on input line 22.
+LaTeX Info: Redefining \% on input line 22.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 25.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 22.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2064,13 +2064,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [52]
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
-LaTeX Info: Redefining \. on input line 48.
-LaTeX Info: Redefining \% on input line 48.
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
+LaTeX Info: Redefining \. on input line 54.
+LaTeX Info: Redefining \% on input line 54.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 48.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 54.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2081,13 +2081,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [53]
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
+LaTeX Info: Redefining \. on input line 78.
+LaTeX Info: Redefining \% on input line 78.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 60.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 78.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2098,18 +2098,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [54]
-<pictures/tablaTecnologias.png, id=929, 772.8875pt x 675.52374pt>
-File: pictures/tablaTecnologias.png Graphic file (type png)
-<use pictures/tablaTecnologias.png>
-Package pdftex.def Info: pictures/tablaTecnologias.png  used on input line 69.
-(pdftex.def)             Requested size: 318.66948pt x 278.52298pt.
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
-LaTeX Info: Redefining \. on input line 76.
-LaTeX Info: Redefining \% on input line 76.
+LaTeX Font Info:    Trying to load font information for TS1+cmtt on input line 99.
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmtt.fd
+File: ts1cmtt.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
+LaTeX Info: Redefining \. on input line 105.
+LaTeX Info: Redefining \% on input line 105.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 76.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 105.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2119,14 +2118,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55 <./pictures/tablaTecnologias.png>]
-LaTeX Info: Redefining \. on input line 89.
-LaTeX Info: Redefining \% on input line 89.
-LaTeX Info: Redefining \. on input line 89.
-LaTeX Info: Redefining \% on input line 89.
+[55]
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
+LaTeX Info: Redefining \. on input line 134.
+LaTeX Info: Redefining \% on input line 134.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 89.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 134.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2137,18 +2136,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [56]
-<pictures/comunicacionComponentes.png, id=941, 1018.80624pt x 416.55624pt>
-File: pictures/comunicacionComponentes.png Graphic file (type png)
-<use pictures/comunicacionComponentes.png>
-Package pdftex.def Info: pictures/comunicacionComponentes.png  used on input line 92.
-(pdftex.def)             Requested size: 455.24411pt x 186.13286pt.
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
+LaTeX Info: Redefining \. on input line 149.
+LaTeX Info: Redefining \% on input line 149.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 107.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 149.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2158,16 +2152,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[57 <./pictures/comunicacionComponentes.png>]
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 126.
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
-LaTeX Info: Redefining \. on input line 130.
-LaTeX Info: Redefining \% on input line 130.
+[57]
+<pictures/tablaTecnologias.png, id=1011, 772.8875pt x 675.52374pt>
+File: pictures/tablaTecnologias.png Graphic file (type png)
+<use pictures/tablaTecnologias.png>
+Package pdftex.def Info: pictures/tablaTecnologias.png  used on input line 158.
+(pdftex.def)             Requested size: 318.66948pt x 278.52298pt.
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 130.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 165.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2177,14 +2174,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[58]
-LaTeX Info: Redefining \. on input line 147.
-LaTeX Info: Redefining \% on input line 147.
-LaTeX Info: Redefining \. on input line 147.
-LaTeX Info: Redefining \% on input line 147.
+[58 <./pictures/tablaTecnologias.png>]
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
+LaTeX Info: Redefining \. on input line 178.
+LaTeX Info: Redefining \% on input line 178.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 147.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 178.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2195,23 +2192,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [59]
-Underfull \hbox (badness 3189) in paragraph at lines 148--149
-[]\OT1/cmr/bx/n/12 Instalaci^^Son de de-pen-den-cias\OT1/cmr/m/n/12 : Las li-brer^^S^^Pas ne-ce-sa-rias pa-ra eje-cu-tar la
- []
-
-
-Underfull \hbox (badness 3735) in paragraph at lines 167--168
-[]\OT1/cmr/bx/n/12 Acceso a In-ter-net\OT1/cmr/m/n/12 : La he-rra-mien-ta re-quie-re co-ne-xi^^Son a In-ter-net pa-ra
- []
-
-LaTeX Info: Redefining \. on input line 170.
-LaTeX Info: Redefining \% on input line 170.
-LaTeX Info: Redefining \. on input line 170.
-LaTeX Info: Redefining \% on input line 170.
+<pictures/comunicacionComponentes.png, id=1023, 1018.80624pt x 416.55624pt>
+File: pictures/comunicacionComponentes.png Graphic file (type png)
+<use pictures/comunicacionComponentes.png>
+Package pdftex.def Info: pictures/comunicacionComponentes.png  used on input line 181.
+(pdftex.def)             Requested size: 455.24411pt x 186.13286pt.
+LaTeX Info: Redefining \. on input line 196.
+LaTeX Info: Redefining \% on input line 196.
+LaTeX Info: Redefining \. on input line 196.
+LaTeX Info: Redefining \% on input line 196.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 170.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 196.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2219,25 +2213,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[60]
-<pictures/1.png, id=960, 751.80875pt x 483.8075pt>
-File: pictures/1.png Graphic file (type png)
-<use pictures/1.png>
-Package pdftex.def Info: pictures/1.png  used on input line 183.
-(pdftex.def)             Requested size: 409.71692pt x 263.66617pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 180--186
-
- []
-
-LaTeX Info: Redefining \. on input line 187.
-LaTeX Info: Redefining \% on input line 187.
-LaTeX Info: Redefining \. on input line 187.
-LaTeX Info: Redefining \% on input line 187.
+[60 <./pictures/comunicacionComponentes.png>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <14.4> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 215.
+LaTeX Info: Redefining \. on input line 219.
+LaTeX Info: Redefining \% on input line 219.
+LaTeX Info: Redefining \. on input line 219.
+LaTeX Info: Redefining \% on input line 219.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 187.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 219.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2246,23 +2233,91 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [61]
-<pictures/2.png, id=965, 726.715pt x 74.2775pt>
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+LaTeX Info: Redefining \. on input line 236.
+LaTeX Info: Redefining \% on input line 236.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 236.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[62]
+Underfull \hbox (badness 3189) in paragraph at lines 237--238
+[]\OT1/cmr/bx/n/12 Instalaci^^Son de de-pen-den-cias\OT1/cmr/m/n/12 : Las li-brer^^S^^Pas ne-ce-sa-rias pa-ra eje-cu-tar la
+ []
+
+
+Underfull \hbox (badness 3735) in paragraph at lines 256--257
+[]\OT1/cmr/bx/n/12 Acceso a In-ter-net\OT1/cmr/m/n/12 : La he-rra-mien-ta re-quie-re co-ne-xi^^Son a In-ter-net pa-ra
+ []
+
+LaTeX Info: Redefining \. on input line 259.
+LaTeX Info: Redefining \% on input line 259.
+LaTeX Info: Redefining \. on input line 259.
+LaTeX Info: Redefining \% on input line 259.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 259.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[63]
+<pictures/1.png, id=1042, 751.80875pt x 483.8075pt>
+File: pictures/1.png Graphic file (type png)
+<use pictures/1.png>
+Package pdftex.def Info: pictures/1.png  used on input line 272.
+(pdftex.def)             Requested size: 409.71692pt x 263.66617pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 269--275
+
+ []
+
+LaTeX Info: Redefining \. on input line 276.
+LaTeX Info: Redefining \% on input line 276.
+LaTeX Info: Redefining \. on input line 276.
+LaTeX Info: Redefining \% on input line 276.
+File: pictures/logouex.pdf Graphic file (type pdf)
+<use pictures/logouex.pdf>
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 276.
+(pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[64]
+<pictures/2.png, id=1047, 726.715pt x 74.2775pt>
 File: pictures/2.png Graphic file (type png)
 <use pictures/2.png>
-Package pdftex.def Info: pictures/2.png  used on input line 194.
+Package pdftex.def Info: pictures/2.png  used on input line 283.
 (pdftex.def)             Requested size: 455.24411pt x 46.53099pt.
 
-Underfull \hbox (badness 1092) in paragraph at lines 205--206
+Underfull \hbox (badness 1092) in paragraph at lines 294--295
 \OT1/cmr/m/n/12 Desde la in-ter-faz gr^^Safi-ca, se pue-de ac-ti-var es-ta op-ci^^Son mar-can-do la ca-si-lla
  []
 
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
-LaTeX Info: Redefining \. on input line 206.
-LaTeX Info: Redefining \% on input line 206.
+LaTeX Info: Redefining \. on input line 295.
+LaTeX Info: Redefining \% on input line 295.
+LaTeX Info: Redefining \. on input line 295.
+LaTeX Info: Redefining \% on input line 295.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 206.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 295.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2271,29 +2326,29 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[62 <./pictures/1.png> <./pictures/2.png>]
-<pictures/exscan.png, id=972, 769.87625pt x 243.91125pt>
+[65 <./pictures/1.png> <./pictures/2.png>]
+<pictures/exscan.png, id=1054, 769.87625pt x 243.91125pt>
 File: pictures/exscan.png Graphic file (type png)
 <use pictures/exscan.png>
-Package pdftex.def Info: pictures/exscan.png  used on input line 211.
+Package pdftex.def Info: pictures/exscan.png  used on input line 300.
 (pdftex.def)             Requested size: 455.24411pt x 144.2339pt.
-<pictures/3.png, id=973, 661.47125pt x 442.65375pt>
+<pictures/3.png, id=1055, 661.47125pt x 442.65375pt>
 File: pictures/3.png Graphic file (type png)
 <use pictures/3.png>
-Package pdftex.def Info: pictures/3.png  used on input line 221.
+Package pdftex.def Info: pictures/3.png  used on input line 310.
 (pdftex.def)             Requested size: 386.96027pt x 258.94801pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 218--224
+Underfull \hbox (badness 10000) in paragraph at lines 307--313
 
  []
 
-LaTeX Info: Redefining \. on input line 225.
-LaTeX Info: Redefining \% on input line 225.
-LaTeX Info: Redefining \. on input line 225.
-LaTeX Info: Redefining \% on input line 225.
+LaTeX Info: Redefining \. on input line 314.
+LaTeX Info: Redefining \% on input line 314.
+LaTeX Info: Redefining \. on input line 314.
+LaTeX Info: Redefining \% on input line 314.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 225.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 314.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2302,19 +2357,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[63 <./pictures/exscan.png>]
-<pictures/4.png, id=980, 956.57375pt x 647.41875pt>
+[66 <./pictures/exscan.png>]
+<pictures/4.png, id=1061, 956.57375pt x 647.41875pt>
 File: pictures/4.png Graphic file (type png)
 <use pictures/4.png>
-Package pdftex.def Info: pictures/4.png  used on input line 234.
+Package pdftex.def Info: pictures/4.png  used on input line 323.
 (pdftex.def)             Requested size: 455.24411pt x 308.10994pt.
-LaTeX Info: Redefining \. on input line 238.
-LaTeX Info: Redefining \% on input line 238.
-LaTeX Info: Redefining \. on input line 238.
-LaTeX Info: Redefining \% on input line 238.
+LaTeX Info: Redefining \. on input line 327.
+LaTeX Info: Redefining \% on input line 327.
+LaTeX Info: Redefining \. on input line 327.
+LaTeX Info: Redefining \% on input line 327.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 238.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 327.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2324,19 +2379,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[64 <./pictures/3.png>]
-<pictures/5.png, id=987, 1003.75pt x 598.235pt>
+[67 <./pictures/3.png>]
+<pictures/5.png, id=1068, 1003.75pt x 598.235pt>
 File: pictures/5.png Graphic file (type png)
 <use pictures/5.png>
-Package pdftex.def Info: pictures/5.png  used on input line 241.
+Package pdftex.def Info: pictures/5.png  used on input line 330.
 (pdftex.def)             Requested size: 455.24411pt x 271.33015pt.
-LaTeX Info: Redefining \. on input line 245.
-LaTeX Info: Redefining \% on input line 245.
-LaTeX Info: Redefining \. on input line 245.
-LaTeX Info: Redefining \% on input line 245.
+LaTeX Info: Redefining \. on input line 334.
+LaTeX Info: Redefining \% on input line 334.
+LaTeX Info: Redefining \. on input line 334.
+LaTeX Info: Redefining \% on input line 334.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 245.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 334.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2346,19 +2401,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[65 <./pictures/4.png>]
-<pictures/6.png, id=993, 960.58875pt x 692.5875pt>
+[68 <./pictures/4.png>]
+<pictures/6.png, id=1074, 960.58875pt x 692.5875pt>
 File: pictures/6.png Graphic file (type png)
 <use pictures/6.png>
-Package pdftex.def Info: pictures/6.png  used on input line 248.
+Package pdftex.def Info: pictures/6.png  used on input line 337.
 (pdftex.def)             Requested size: 409.71692pt x 295.40787pt.
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
-LaTeX Info: Redefining \. on input line 254.
-LaTeX Info: Redefining \% on input line 254.
+LaTeX Info: Redefining \. on input line 343.
+LaTeX Info: Redefining \% on input line 343.
+LaTeX Info: Redefining \. on input line 343.
+LaTeX Info: Redefining \% on input line 343.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 254.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 343.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2368,24 +2423,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[66 <./pictures/5.png> <./pictures/6.png>]
-<pictures/7.png, id=1000, 653.44125pt x 664.4825pt>
+[69 <./pictures/5.png> <./pictures/6.png>]
+<pictures/7.png, id=1082, 653.44125pt x 664.4825pt>
 File: pictures/7.png Graphic file (type png)
 <use pictures/7.png>
-Package pdftex.def Info: pictures/7.png  used on input line 262.
+Package pdftex.def Info: pictures/7.png  used on input line 351.
 (pdftex.def)             Requested size: 318.66948pt x 324.04797pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--265
+Underfull \hbox (badness 10000) in paragraph at lines 348--354
 
  []
 
-LaTeX Info: Redefining \. on input line 270.
-LaTeX Info: Redefining \% on input line 270.
-LaTeX Info: Redefining \. on input line 270.
-LaTeX Info: Redefining \% on input line 270.
+LaTeX Info: Redefining \. on input line 359.
+LaTeX Info: Redefining \% on input line 359.
+LaTeX Info: Redefining \. on input line 359.
+LaTeX Info: Redefining \% on input line 359.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 270.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 359.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2394,23 +2449,23 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[67 <./pictures/7.png>]
-Underfull \hbox (badness 7064) in paragraph at lines 275--276
+[70 <./pictures/7.png>]
+Underfull \hbox (badness 7064) in paragraph at lines 364--365
 []\OT1/cmr/m/n/12 Una vez fi-na-li-za-do el es-ca-neo, la he-rra-mien-ta ge-ne-ra un in-for-me PDF
  []
 
-<pictures/8.png, id=1010, 836.12375pt x 1184.425pt>
+<pictures/8.png, id=1091, 836.12375pt x 1184.425pt>
 File: pictures/8.png Graphic file (type png)
 <use pictures/8.png>
-Package pdftex.def Info: pictures/8.png  used on input line 279.
+Package pdftex.def Info: pictures/8.png  used on input line 368.
 (pdftex.def)             Requested size: 386.96027pt x 548.16753pt.
-LaTeX Info: Redefining \. on input line 283.
-LaTeX Info: Redefining \% on input line 283.
-LaTeX Info: Redefining \. on input line 283.
-LaTeX Info: Redefining \% on input line 283.
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
+LaTeX Info: Redefining \. on input line 372.
+LaTeX Info: Redefining \% on input line 372.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 283.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 372.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2419,14 +2474,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[68]
-LaTeX Info: Redefining \. on input line 288.
-LaTeX Info: Redefining \% on input line 288.
-LaTeX Info: Redefining \. on input line 288.
-LaTeX Info: Redefining \% on input line 288.
+[71]
+LaTeX Info: Redefining \. on input line 377.
+LaTeX Info: Redefining \% on input line 377.
+LaTeX Info: Redefining \. on input line 377.
+LaTeX Info: Redefining \% on input line 377.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 288.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 377.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2436,24 +2491,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[69 <./pictures/8.png>]
-<pictures/9.png, id=1022, 740.7675pt x 462.72874pt>
+[72 <./pictures/8.png>]
+<pictures/9.png, id=1102, 740.7675pt x 462.72874pt>
 File: pictures/9.png Graphic file (type png)
 <use pictures/9.png>
-Package pdftex.def Info: pictures/9.png  used on input line 291.
+Package pdftex.def Info: pictures/9.png  used on input line 380.
 (pdftex.def)             Requested size: 409.71692pt x 255.9349pt.
-<pictures/10.png, id=1024, 746.79pt x 761.84625pt>
+<pictures/10.png, id=1104, 746.79pt x 761.84625pt>
 File: pictures/10.png Graphic file (type png)
 <use pictures/10.png>
-Package pdftex.def Info: pictures/10.png  used on input line 300.
+Package pdftex.def Info: pictures/10.png  used on input line 389.
 (pdftex.def)             Requested size: 409.71692pt x 417.9705pt.
-LaTeX Info: Redefining \. on input line 304.
-LaTeX Info: Redefining \% on input line 304.
-LaTeX Info: Redefining \. on input line 304.
-LaTeX Info: Redefining \% on input line 304.
+LaTeX Info: Redefining \. on input line 393.
+LaTeX Info: Redefining \% on input line 393.
+LaTeX Info: Redefining \. on input line 393.
+LaTeX Info: Redefining \% on input line 393.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 304.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 393.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2463,19 +2518,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[70 <./pictures/9.png>]
-<pictures/11.png, id=1031, 1018.80624pt x 738.76pt>
+[73 <./pictures/9.png>]
+<pictures/11.png, id=1111, 1018.80624pt x 738.76pt>
 File: pictures/11.png Graphic file (type png)
 <use pictures/11.png>
-Package pdftex.def Info: pictures/11.png  used on input line 309.
+Package pdftex.def Info: pictures/11.png  used on input line 398.
 (pdftex.def)             Requested size: 455.24411pt x 330.1055pt.
-LaTeX Info: Redefining \. on input line 313.
-LaTeX Info: Redefining \% on input line 313.
-LaTeX Info: Redefining \. on input line 313.
-LaTeX Info: Redefining \% on input line 313.
+LaTeX Info: Redefining \. on input line 402.
+LaTeX Info: Redefining \% on input line 402.
+LaTeX Info: Redefining \. on input line 402.
+LaTeX Info: Redefining \% on input line 402.
 File: pictures/logouex.pdf Graphic file (type pdf)
 <use pictures/logouex.pdf>
-Package pdftex.def Info: pictures/logouex.pdf  used on input line 313.
+Package pdftex.def Info: pictures/logouex.pdf  used on input line 402.
 (pdftex.def)             Requested size: 35.56593pt x 50.28801pt.
 
 
@@ -2485,7 +2540,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[71 <./pictures/10.png>]) (./chapters/06_resultados.tex
+[74 <./pictures/10.png>]) (./chapters/06_resultados.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
@@ -2502,13 +2557,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[72 <./pictures/11.png>]
+[75 <./pictures/11.png>]
 Cap\'{\i }tulo 6.
 \openout3 = `main.mtc'.
 
 \openout3 = `main.mtc'.
 
-(./main.mtc6) [73
+(./main.mtc6) [76
 
 ]
 LaTeX Info: Redefining \. on input line 50.
@@ -2527,12 +2582,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[74]
+[77]
 Underfull \hbox (badness 1072) in paragraph at lines 51--52
 \OT1/cmr/m/n/12 co-mo se pue-de ob-ser-var en la Fi-gu-ra [][]6.1[][]. Es-ta du-ra-ci^^Son re-pre-sen-ta una me-jo-ra
  []
 
-<pictures/tiempo_escaneo_empresaA.jpg, id=1058, 706.64pt x 426.59375pt>
+<pictures/tiempo_escaneo_empresaA.jpg, id=1140, 706.64pt x 426.59375pt>
 File: pictures/tiempo_escaneo_empresaA.jpg Graphic file (type jpg)
 <use pictures/tiempo_escaneo_empresaA.jpg>
 Package pdftex.def Info: pictures/tiempo_escaneo_empresaA.jpg  used on input line 55.
@@ -2552,7 +2607,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[75]
+[78]
 LaTeX Info: Redefining \. on input line 85.
 LaTeX Info: Redefining \% on input line 85.
 LaTeX Info: Redefining \. on input line 85.
@@ -2569,13 +2624,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[76 <./pictures/tiempo_escaneo_empresaA.jpg>]
-<pictures/amblingclientestiempoescaneo.png, id=1072, 665.48625pt x 402.50375pt>
+[79 <./pictures/tiempo_escaneo_empresaA.jpg>]
+<pictures/amblingclientestiempoescaneo.png, id=1153, 665.48625pt x 402.50375pt>
 File: pictures/amblingclientestiempoescaneo.png Graphic file (type png)
 <use pictures/amblingclientestiempoescaneo.png>
 Package pdftex.def Info: pictures/amblingclientestiempoescaneo.png  used on input line 90.
 (pdftex.def)             Requested size: 318.66948pt x 192.73897pt.
-<pictures/puertosabiertosamblingclientes.png, id=1074, 676.5275pt x 329.23pt>
+<pictures/puertosabiertosamblingclientes.png, id=1155, 676.5275pt x 329.23pt>
 File: pictures/puertosabiertosamblingclientes.png Graphic file (type png)
 <use pictures/puertosabiertosamblingclientes.png>
 Package pdftex.def Info: pictures/puertosabiertosamblingclientes.png  used on input line 99.
@@ -2596,8 +2651,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[77 <./pictures/amblingclientestiempoescaneo.png>]
-<pictures/djangovulnamblingclientes.png, id=1081, 934.49126pt x 57.21375pt>
+[80 <./pictures/amblingclientestiempoescaneo.png>]
+<pictures/djangovulnamblingclientes.png, id=1162, 934.49126pt x 57.21375pt>
 File: pictures/djangovulnamblingclientes.png Graphic file (type png)
 <use pictures/djangovulnamblingclientes.png>
 Package pdftex.def Info: pictures/djangovulnamblingclientes.png  used on input line 117.
@@ -2618,8 +2673,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[78 <./pictures/puertosabiertosamblingclientes.png> <./pictures/djangovulnamblingclientes.png>]
-<pictures/amblingcauccestiempoescaneo.png, id=1090, 766.865pt x 464.73625pt>
+[81 <./pictures/puertosabiertosamblingclientes.png> <./pictures/djangovulnamblingclientes.png>]
+<pictures/amblingcauccestiempoescaneo.png, id=1172, 766.865pt x 464.73625pt>
 File: pictures/amblingcauccestiempoescaneo.png Graphic file (type png)
 <use pictures/amblingcauccestiempoescaneo.png>
 Package pdftex.def Info: pictures/amblingcauccestiempoescaneo.png  used on input line 158.
@@ -2640,8 +2695,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[79]
-<pictures/puertosabiertosamblingcaucces.png, id=1096, 446.66875pt x 367.3725pt>
+[82]
+<pictures/puertosabiertosamblingcaucces.png, id=1178, 446.66875pt x 367.3725pt>
 File: pictures/puertosabiertosamblingcaucces.png Graphic file (type png)
 <use pictures/puertosabiertosamblingcaucces.png>
 Package pdftex.def Info: pictures/puertosabiertosamblingcaucces.png  used on input line 167.
@@ -2662,8 +2717,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[80 <./pictures/amblingcauccestiempoescaneo.png> <./pictures/puertosabiertosamblingcaucces.png>]
-<pictures/adminercauccesambling.png, id=1104, 701.62125pt x 313.17pt>
+[83 <./pictures/amblingcauccestiempoescaneo.png> <./pictures/puertosabiertosamblingcaucces.png>]
+<pictures/adminercauccesambling.png, id=1186, 701.62125pt x 313.17pt>
 File: pictures/adminercauccesambling.png Graphic file (type png)
 <use pictures/adminercauccesambling.png>
 Package pdftex.def Info: pictures/adminercauccesambling.png  used on input line 178.
@@ -2684,8 +2739,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[81 <./pictures/adminercauccesambling.png>]
-<pictures/sugerenciasdefensivasambling.png, id=1112, 775.89874pt x 476.78125pt>
+[84 <./pictures/adminercauccesambling.png>]
+<pictures/sugerenciasdefensivasambling.png, id=1193, 775.89874pt x 476.78125pt>
 File: pictures/sugerenciasdefensivasambling.png Graphic file (type png)
 <use pictures/sugerenciasdefensivasambling.png>
 Package pdftex.def Info: pictures/sugerenciasdefensivasambling.png  used on input line 208.
@@ -2706,7 +2761,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[82]
+[85]
 Overfull \hbox (27.08484pt too wide) in paragraph at lines 221--243
  [][] 
  []
@@ -2726,8 +2781,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[83 <./pictures/sugerenciasdefensivasambling.png>]
-<pictures/laestrellatiempoescaneo.png, id=1124, 684.5575pt x 410.53375pt>
+[86 <./pictures/sugerenciasdefensivasambling.png>]
+<pictures/laestrellatiempoescaneo.png, id=1205, 684.5575pt x 410.53375pt>
 File: pictures/laestrellatiempoescaneo.png Graphic file (type png)
 <use pictures/laestrellatiempoescaneo.png>
 Package pdftex.def Info: pictures/laestrellatiempoescaneo.png  used on input line 251.
@@ -2748,18 +2803,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[84 <./pictures/laestrellatiempoescaneo.png>]
-<pictures/puertosabiertoslaestrella.png, id=1132, 666.49pt x 218.8175pt>
+[87 <./pictures/laestrellatiempoescaneo.png>]
+<pictures/puertosabiertoslaestrella.png, id=1213, 666.49pt x 218.8175pt>
 File: pictures/puertosabiertoslaestrella.png Graphic file (type png)
 <use pictures/puertosabiertoslaestrella.png>
 Package pdftex.def Info: pictures/puertosabiertoslaestrella.png  used on input line 260.
 (pdftex.def)             Requested size: 409.71692pt x 134.51686pt.
-<pictures/laestrellajoomlavulnerability.png, id=1134, 331.2375pt x 95.35625pt>
+<pictures/laestrellajoomlavulnerability.png, id=1215, 331.2375pt x 95.35625pt>
 File: pictures/laestrellajoomlavulnerability.png Graphic file (type png)
 <use pictures/laestrellajoomlavulnerability.png>
 Package pdftex.def Info: pictures/laestrellajoomlavulnerability.png  used on input line 269.
 (pdftex.def)             Requested size: 318.66948pt x 91.74173pt.
-<pictures/laestrellaadministrator.png, id=1136, 406.51875pt x 391.4625pt>
+<pictures/laestrellaadministrator.png, id=1217, 406.51875pt x 391.4625pt>
 File: pictures/laestrellaadministrator.png Graphic file (type png)
 <use pictures/laestrellaadministrator.png>
 Package pdftex.def Info: pictures/laestrellaadministrator.png  used on input line 278.
@@ -2780,8 +2835,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[85 <./pictures/puertosabiertoslaestrella.png> <./pictures/laestrellajoomlavulnerability.png>]
-<pictures/laestrellaoffensive.png, id=1144, 697.60625pt x 841.1425pt>
+[88 <./pictures/puertosabiertoslaestrella.png> <./pictures/laestrellajoomlavulnerability.png>]
+<pictures/laestrellaoffensive.png, id=1225, 697.60625pt x 841.1425pt>
 File: pictures/laestrellaoffensive.png Graphic file (type png)
 <use pictures/laestrellaoffensive.png>
 Package pdftex.def Info: pictures/laestrellaoffensive.png  used on input line 289.
@@ -2802,7 +2857,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[86 <./pictures/laestrellaadministrator.png>]
+[89 <./pictures/laestrellaadministrator.png>]
 LaTeX Info: Redefining \. on input line 299.
 LaTeX Info: Redefining \% on input line 299.
 LaTeX Info: Redefining \. on input line 299.
@@ -2819,8 +2874,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[87 <./pictures/laestrellaoffensive.png>]
-<pictures/laestrelladefensive.png, id=1157, 728.7225pt x 822.07124pt>
+[90 <./pictures/laestrellaoffensive.png>]
+<pictures/laestrelladefensive.png, id=1237, 728.7225pt x 822.07124pt>
 File: pictures/laestrelladefensive.png Graphic file (type png)
 <use pictures/laestrelladefensive.png>
 Package pdftex.def Info: pictures/laestrelladefensive.png  used on input line 311.
@@ -2841,7 +2896,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[88]) (./chapters/07_conclusiones_y_trabajos_futuros.tex
+[91]) (./chapters/07_conclusiones_y_trabajos_futuros.tex
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
@@ -2858,13 +2913,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[89 <./pictures/laestrelladefensive.png>]
+[92 <./pictures/laestrelladefensive.png>]
 Cap\'{\i }tulo 7.
 \openout3 = `main.mtc'.
 
 \openout3 = `main.mtc'.
 
-(./main.mtc7) [90
+(./main.mtc7) [93
 
 ]
 Underfull \hbox (badness 1389) in paragraph at lines 16--17
@@ -2886,7 +2941,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[91]
+[94]
 Underfull \hbox (badness 4156) in paragraph at lines 29--30
 []\OT1/cmr/bx/n/12 Personalizaci^^Son de in-for-mes\OT1/cmr/m/n/12 : una me-jo-ra des-ta-ca-da ser^^S^^Pa per-mi-tir la
  []
@@ -2911,7 +2966,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[92])
+[95])
 LaTeX Info: Redefining \. on input line 201.
 LaTeX Info: Redefining \% on input line 201.
 LaTeX Info: Redefining \. on input line 201.
@@ -2928,9 +2983,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[93] (./main.bbl [94
+[96] (./main.bbl [97
 
-] [95] [96] [97] [98] [99]) [100]
+] [98] [99] [100] [101] [102]) [103]
 Package minitoc Info: I0009
 (minitoc)             Listing minitoc auxiliary files. 
 (minitoc)             Creating the main.maf file.
@@ -2948,18 +3003,18 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 2EDB2AE5643617ADDECB601978E635F4;9457.
  ) 
 Here is how much of TeX's memory you used:
- 37000 strings out of 474222
- 712595 string characters out of 5748733
- 1987975 words of memory out of 5000000
- 58184 multiletter control sequences out of 15000+600000
- 569836 words of font info for 79 fonts, out of 8000000 for 9000
+ 37131 strings out of 474222
+ 714807 string characters out of 5748733
+ 2065975 words of memory out of 5000000
+ 58241 multiletter control sequences out of 15000+600000
+ 570134 words of font info for 80 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 117i,20n,121p,814b,2383s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on main.pdf (110 pages, 2766697 bytes).
+ 117i,20n,121p,814b,2384s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on main.pdf (113 pages, 2800362 bytes).
 PDF statistics:
- 1446 PDF objects out of 1728 (max. 8388607)
- 1217 compressed objects within 13 object streams
- 349 named destinations out of 1000 (max. 500000)
+ 1544 PDF objects out of 1728 (max. 8388607)
+ 1309 compressed objects within 14 object streams
+ 419 named destinations out of 1000 (max. 500000)
  682 words of extra memory for PDF output out of 10000 (max. 10000000)
 

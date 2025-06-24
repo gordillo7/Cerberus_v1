@@ -24,7 +24,6 @@ CAPÍTULO 4
 %%Muy buena aportación, te lo iba a sugerir…
 %
 CAPÍTULO 5
-%
 %%Las figuras de capturas de pantalla (5.3, 5.4, 5.6, 5.7, 5.8, 5.10…) debes hacerlas más grandes, más visibles. Revisa que se vean bien, que a partir de la 5.10 ya no anoté más…
 %
 %%Página 59, escaneo exhaustivo. Dices que desde la interfaz gráfica se active la casilla correspondiente. Podías incluir una imagen.
@@ -33,17 +32,15 @@ CAPÍTULO 5
 %
 %%Después de leer todo el capítulo, creo que puedes mover el 5.3 decisiones técnicas justo después del 5.1 (defines la arquitectura y justifica las decisiones). 
 %%Luego, el Diseño experimental lo puedes mover como 5.3. Creo que queda mucho mejor así, para el lector.
-
-
-Y en el 5.1. echo en falta un poco más de explicaciones de implementación sobre cada funcionalidad. Defines el programa principal en pseudocódigo en la figura 5.1. 
-Luego podías indicar algo de la invocación a cada uno de los submódulos. Especialmente interesante es detallar la integración de Gemini en la arquitectura, mediante su API. 
-Creo que puede ser de interés para cualquier compañero tuyo que lea el TFG y esté interesado en replicar el modelo en otros posibles TFGs que podamos plantear. 
-No queda explicado lo suficiente. Y algo parecido con la parte de gestión de informes, no creo que nadie que quiera replicar el modelo se entere de mucho con la documentación. 
-Y consultar el código sin documentación ya sabes que es bastante duro, sin ayuda…
-No digo que detalles todo como si fuese un tutorial, sino que se echa en falta un poco de ayuda y detalle para futuras ampliaciones o para alguien que se inspire en tu TFG para hacer cosas relativamente parecidas.
-El capítulo tal y como está se queda en un “quiero y no puedo”, esto es, con lo que hay aquí, no me sirve de mucho…
-
-
+%
+%%Y en el 5.1. echo en falta un poco más de explicaciones de implementación sobre cada funcionalidad. Defines el programa principal en pseudocódigo en la figura 5.1. 
+%%Luego podías indicar algo de la invocación a cada uno de los submódulos. Especialmente interesante es detallar la integración de Gemini en la arquitectura, mediante su API. 
+%%Creo que puede ser de interés para cualquier compañero tuyo que lea el TFG y esté interesado en replicar el modelo en otros posibles TFGs que podamos plantear. 
+%%No queda explicado lo suficiente. Y algo parecido con la parte de gestión de informes, no creo que nadie que quiera replicar el modelo se entere de mucho con la documentación. 
+%%Y consultar el código sin documentación ya sabes que es bastante duro, sin ayuda…
+%%No digo que detalles todo como si fuese un tutorial, sino que se echa en falta un poco de ayuda y detalle para futuras ampliaciones o para alguien que se inspire en tu TFG para hacer cosas relativamente parecidas.
+%%El capítulo tal y como está se queda en un “quiero y no puedo”, esto es, con lo que hay aquí, no me sirve de mucho…
+%
 CAPÍTULO 6
 %%Pág. 70 “se ha llevado a cabo una serie de escaneos” a “se haN llevado a cabo una serie de escaneos”
 %
