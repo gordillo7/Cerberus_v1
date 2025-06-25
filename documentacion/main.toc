@@ -46,7 +46,11 @@
 \contentsline {subsection}{\numberline {6.1.3}Acciones recomendadas para la Empresa A}{85}{subsection.6.1.3}%
 \contentsline {section}{\numberline {6.2}Empresa B}{86}{section.6.2}%
 \contentsline {subsection}{\numberline {6.2.1}Acciones recomendadas para la Empresa B}{90}{subsection.6.2.1}%
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{93}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusiones}{94}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Líneas de trabajo futuras}{95}{section.7.2}%
-\contentsline {chapter}{Bibliografía}{97}{section*.81}%
+\contentsline {section}{\numberline {6.3}Empresa C}{92}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Impacto en la eficiencia del análisis}{93}{section.6.4}%
+\contentsline {subsection}{\numberline {6.4.1}Comparativa por fases}{93}{subsection.6.4.1}%
+\contentsline {subsection}{\numberline {6.4.2}Resumen y análisis}{98}{subsection.6.4.2}%
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajos futuros}{100}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusiones}{101}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Líneas de trabajo futuras}{102}{section.7.2}%
+\contentsline {chapter}{Bibliografía}{104}{section*.88}%

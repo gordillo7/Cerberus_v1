@@ -313,4 +313,103 @@ Estas acciones también pueden ser generadas por la inteligencia artificial inte
 \label{fig:ia_empresa_b}
 \end{figure}
 
+\section{Empresa C}
+Empresa C
+
+\section{Impacto en la eficiencia del análisis}
+Con el objetivo de evaluar el impacto real de la herramienta desarrollada en la eficiencia del análisis, se ha realizado una comparación. Para ello, se ha replicado el escaneo realizado a la Empresa B de manera completamente manual, empleando las mismas herramientas utilizadas por la herramienta, pero sin el soporte de esta.
+
+Este análisis se ha llevado a cabo desde la perspectiva de un auditor que no memoriza todos los comandos ni sus parámetros específicos, por lo que se incluye también el tiempo necesario para consultar documentación, manuales, recursos personales o realizar búsquedas en Internet. Esta situación representa un caso más realista para muchos profesionales del sector.
+
+\subsection{Comparativa por fases}
+A continuación, se detallan las fases del reconocimiento realizadas manualmente, junto con el tiempo invertido en cada una de ellas.
+
+\begin{itemize}
+  \item \textbf{Planificación inicial:} el auditor debe elaborar una hoja de ruta con las tareas a ejecutar. Este paso consume aproximadamente \textbf{10 minutos}, mientras que la herramienta ya cuenta con una ejecución automatizada predefinida.
+  
+  \item \textbf{Escaneo de puertos y servicios:} se realizan dos escaneos con \texttt{Nmap}: el primero para obtener los puertos abiertos y el segundo para enumerar los servicios y versiones que se ejecutan en esos puertos. Entre la consulta de parámetros (\textbf{5 minutos} para cada escaneo), la ejecución del escaneo básico (\textbf{26 segundos}) y detallado (\textbf{2 minutos y 25 segundos}), y el registro de los resultados para el posterior informe (\textbf{3 minutos}), el tiempo total asciende a \textbf{15 minutos}.
+  
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pictures/j1.png}
+  \caption{Tiempo empleado en el escaneo inicial.}
+  \label{fig:escaneo_inicial}
+  \end{figure}
+  
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pictures/j2.png}
+  \caption{Tiempo empleado en el escaneo detallado.}
+  \label{fig:escaneo_detallado}
+  \end{figure}
+
+  \item \textbf{Reconocimiento DNS:} esta fase se divide en tres tareas principales. En primer lugar, se consultan los registros del dominio utilizando \texttt{DNSDumpster}, lo cual, sumando el tiempo de revisión de los resultados y su documentación para el informe, lleva aproximadamente \textbf{5 minutos}. A continuación, se utiliza la herramienta \texttt{MXToolBox} para verificar el estado del registro \texttt{DMARC}, lo cual requiere en torno a \textbf{1 minuto}. Por último, se realiza una consulta \texttt{WHOIS} mediante la misma API utilizada por la herramienta desarrollada, lo que añade unos \textbf{2 minutos} más. El tiempo total invertido en esta fase asciende a \textbf{8 minutos}.
+  
+  \item \textbf{OSINT sobre correos:} en esta fase se utilizan dos herramientas. Primero, se emplea \texttt{IntelligenceX} para localizar direcciones de correo asociadas al dominio objetivo, tarea que, incluyendo el registro de los resultados para el informe, requiere unos \textbf{3 minutos}. Posteriormente, se consultan estas direcciones en \texttt{LeakCheck} para verificar si alguna ha sido comprometida en brechas de datos, lo cual añade aproximadamente \textbf{2 minutos} adicionales. El tiempo total dedicado a esta fase es de \textbf{5 minutos}.
+  
+  \item \textbf{Enumeración de subdominios:} se utiliza la herramienta \texttt{Subfinder} para identificar subdominios asociados al dominio principal. La consulta de los parámetros necesarios y la ejecución del comando consume aproximadamente \textbf{1 minuto}, siendo la ejecución en sí muy rápida (tan solo \textbf{2 segundos}, como se muestra en la Figura~\ref{fig:subfinder_tiempo}). A esto se suma el tiempo destinado a documentar los subdominios encontrados, \textbf{1 minuto} adicional. El tiempo total invertido en esta fase asciende a \textbf{2 minutos}.
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pictures/j3.png}
+  \caption{Tiempo de ejecución de Subfinder.}
+  \label{fig:subfinder_tiempo}
+  \end{figure}
+  
+  \item \textbf{Escaneo de vulnerabilidades web:} se utiliza la herramienta \texttt{Nuclei} para detectar vulnerabilidades en servicios web del objetivo. Se han invertido \textbf{5 minutos} en revisar la documentación de la herramienta. El escaneo ha tardado \textbf{1 minuto y 4 segundos} en completarse, como se puede ver en la Figura~\ref{fig:nuclei_tiempo}. En este caso no se detectaron vulnerabilidades, por lo que no fue necesario registrar los resultados. El tiempo total empleado en esta fase asciende a \textbf{6 minutos}.
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pictures/j4.png}
+  \caption{Tiempo de ejecución de Nuclei.}
+  \label{fig:nuclei_tiempo}
+  \end{figure}
+  
+  \item \textbf{Fuzzing web:} para la enumeración de rutas y recursos web se emplea la herramienta \texttt{Feroxbuster}. Dado que cuenta con múltiples parámetros y opciones de configuración, se han invertido aproximadamente \textbf{10 minutos} en revisar su documentación y preparar el comando adecuado. La ejecución del escaneo ha durado \textbf{38 segundos}, como se muestra en la Figura~\ref{fig:feroxbuster_tiempo}. Posteriormente, se han dedicado \textbf{2 minutos} a registrar los resultados obtenidos. El tiempo total destinado a esta fase asciende a \textbf{12 minutos}.
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{pictures/j5.png}
+  \caption{Tiempo de ejecución de Feroxbuster.}
+  \label{fig:feroxbuster_tiempo}
+  \end{figure}
+  
+  \item \textbf{Detección de CMS:} para identificar el gestor de contenidos utilizado en el sitio, se emplea \texttt{WhatWeb}. La consulta de su documentación ha requerido aproximadamente \textbf{1 minuto}. La ejecución del comando ha tardado \textbf{3 segundos}, como se muestra en la Figura~\ref{fig:whatweb_tiempo}, y el registro de los resultados se ha realizado en aproximadamente \textbf{1 minuto}. En conjunto, esta fase ha supuesto un tiempo total de \textbf{2 minutos}.
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{pictures/j6.png}
+  \caption{Tiempo de ejecución de WhatWeb.}
+  \label{fig:whatweb_tiempo}
+  \end{figure}
+  
+  \item \textbf{Reconocimiento Joomla:} tras detectar que el CMS utilizado era \texttt{Joomla}, se empleó la herramienta \texttt{JoomScan} para identificar posibles vulnerabilidades específicas. La consulta de su documentación y opciones disponibles requirió unos \textbf{5 minutos}. La ejecución del escaneo tomó \textbf{2 minutos y 43 segundos}, como se puede observar en la Figura~\ref{fig:joomscan_tiempo}, y el registro de los resultados para el informe supuso aproximadamente \textbf{10 minutos}. En total, esta fase requirió unos \textbf{17 minutos}.
+
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{pictures/j7.png}
+  \caption{Tiempo de ejecución de JoomScan.}
+  \label{fig:joomscan_tiempo}
+  \end{figure}
+  
+  \item \textbf{Reconocimiento FTP / SSH:} en este caso no se detectó el puerto \texttt{21} para FTP ni el \texttt{22} para SSH, por lo que no se realizaron acciones para esta fase.
+  
+  \item \textbf{Redacción del informe:} la redacción manual del informe técnico ha requerido aproximadamente \textbf{20 minutos}.
+\end{itemize}
+
+\subsection{Resumen y análisis}
+En total, el proceso manual de reconocimiento ha supuesto un tiempo estimado de \textbf{97 minutos}, sin contar posibles errores humanos o distracciones. En comparación, la herramienta completó todo este proceso en \textbf{13 minutos y 9 segundos}, como se mostró anteriormente en la Figura~\ref{fig:tiempo_empresaB}, lo que supone una mejora considerable en términos de eficiencia, reduciendo el tiempo invertido en más de \textbf{80 minutos}.
+
+Además del ahorro de tiempo, cabe destacar que:
+
+\begin{itemize}
+  \item La herramienta automatiza tareas repetitivas, elimina la necesidad de consultar documentación técnica constantemente y garantiza que no se omitan fases del proceso.
+  
+  \item La integración de inteligencia artificial permite obtener sugerencias de medidas defensivas u ofensivas de manera inmediata, sin necesidad de razonamiento excesivo por parte del auditor. Esto agiliza la transición a fases posteriores de la auditoría, como la explotación.
+  
+  \item Cuantos más servicios incorpore el objetivo, mayor será el impacto positivo de la herramienta.
+\end{itemize}
+
+Por todo ello, puede concluirse que el uso de la herramienta propuesta no solo acelera de forma notable el proceso de reconocimiento, sino que además mejora su calidad y consistencia, permitiendo que el auditor se centre en las acciones que realmente requieren intervención humana.
+
 \end{parskipenv}

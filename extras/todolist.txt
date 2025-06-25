@@ -49,16 +49,17 @@ CAPÍTULO 6
 %%redes segmentadas, varios servidores, y con un escaparate web muy completo y bien estructurado… La empresa B se trata de una propuesta no comercial, 
 %%donde únicamente se ofrece un website con información sin base económica, donde se muestra información muy concreta y específica, sin necesidad de subdominios ni complicaciones… 
 %%(incluso podemos decir que lo que se muestra se trata de información deportiva).
+%
+%%Otra cuestión importante. Hablas de que se reducen considerablemente los tiempos de escaneo, en comparación con un escaneo manual. Pero no aportas datos.
+%%¿Sería demasiado pesado que hicieses una prueba de escaneo manual, anotando los tiempos, para poder ofrecer una comparativa real en, al menos, un ejemplo? 
+%%Es que si no, no nos podemos hacer una idea real de cuánto tiempo se reduce, y es una cuestión que también incluyes en el capítulo 7 de conclusiones: 
+%%“El tiempo de análisis se reduce considerablemente respecto a un enfoque manual” pero esto nos lo tenemos que creer, no hay ningún experimento que muestre o demuestre que es una reducción “considerable”.
 
 
 ¿Te parece que podamos hacer esto mismo con una empresa C? Si se tardan 23 minutos, o media hora o así en el escaneo automático, luego tienes que redactar unas 8-10 páginas más de documentación… podría ser viable ¿no?
- 
 
-Otra cuestión importante. Hablas de que se reducen considerablemente los tiempos de escaneo, en comparación con un escaneo manual. Pero no aportas datos.
-¿Sería demasiado pesado que hicieses una prueba de escaneo manual, anotando los tiempos, para poder ofrecer una comparativa real en, al menos, un ejemplo? 
-Es que si no, no nos podemos hacer una idea real de cuánto tiempo se reduce, y es una cuestión que también incluyes en el capítulo 7 de conclusiones: 
-“El tiempo de análisis se reduce considerablemente respecto a un enfoque manual” pero esto nos lo tenemos que creer, no hay ningún experimento que muestre o demuestre que es una reducción “considerable”.
 
+Figura comparativa por fases entre reconocimiento manual y con la herramienta.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
