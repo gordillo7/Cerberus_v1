@@ -221,7 +221,7 @@ Los resultados del escaneo realizado al dominio de la Empresa B se presentan res
 \begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
 \hline
 \rowcolor{LightBlue}
-\textbf{Elemento} & \textbf{Resultado} \\
+\textbf{Aspecto Analizado} & \textbf{Resultado} \\
 \hline
 \textbf{Puertos abiertos} & 4 \\
 \hline
@@ -314,7 +314,78 @@ Estas acciones también pueden ser generadas por la inteligencia artificial inte
 \end{figure}
 
 \section{Empresa C}
-Empresa C
+La Empresa C se trata de una organización con actividad comercial a nivel nacional, aunque opera principalmente en el ambito local. Su infraestructura informática es de tamaño moderado y cuenta con varios servicios expuestos, así como con un escaparate web bien estructurado.
+
+Los resultados obtenidos se resumen en la Tabla~\ref{tabla:resultados_empresa_c}.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|>{\columncolor{LightBlue}}l|p{10cm}|}
+\hline
+\rowcolor{LightBlue}
+\textbf{Aspecto Analizado} & \textbf{Resultado} \\
+\hline
+\textbf{Puertos abiertos} & 12 \\
+\hline
+\textbf{URLs enumeradas} & 5 \\
+\hline
+\textbf{Proveedor de correo} & STRATO AG, DE \\
+\hline
+\textbf{Proveedor de DNS} & IONOS \\
+\hline
+\textbf{CMS detectado} & WordPress \\
+\hline
+\textbf{Debilidades encontradas} & Acceso completo a la Intranet de la empresa \\
+\hline
+\textbf{\textit{Emails} enumerados} & 1 dirección encontrada \\
+\hline
+\textbf{Subdominios enumerados} & 5 subdominios \\
+\hline
+\end{tabular}
+\caption{Resumen del escaneo realizado a la Empresa C.}
+\label{tabla:resultados_empresa_c}
+\end{table}
+
+El escaneo se completó en un total de \textbf{15 minutos y 3 segundos}, como se muestra en la Figura~\ref{fig:tiempo_empresaC}. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/tiempoEscaneoEmpresaC.png}
+\caption{Duración del escaneo realizado a la Empresa C.}
+\label{fig:tiempo_empresaC}
+\end{figure}
+
+Durante el análisis se identificó una cantidad notable de puertos abiertos, así como múltiples subdominios activos, lo que amplía significativamente la superficie de ataque. La Figura~\ref{fig:puertos_empresaC} muestra los puertos abiertos detectados en el dominio principal.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{pictures/empresaCpuertosabiertos.png}
+\caption{Puertos abiertos de la Empresa C.}
+\label{fig:puertos_empresaC}
+\end{figure}
+
+El hallazgo más relevante ha sido una \textbf{debilidad de criticidad alta} que permite el acceso a la Intranet de la empresa. Al acceder a uno de los subdominios enumerados, se muestra inicialmente un error interno del servidor, pero tras introducir cualquier entrada en la barra de búsqueda, se obtiene acceso completo a un servicio que permite visualizar contenido e información interna de la empresa, como:
+
+\begin{itemize}
+    \item Mensajes internos.
+    \item Plantillas y modelos de documentos.
+    \item Direcciones de correo electrónico corporativo.
+    \item Información organizativa no destinada al público.
+\end{itemize}
+
+Cabe destacar que no se ha procedido a explotar esta vulnerabilidad, ya que el objetivo de este trabajo no es la intrusión o explotación, sino la evaluación de la capacidad de la herramienta para detectar debilidades reales y mapear correctamente la superficie de ataque.
+
+Tampoco se ha profundizado en el análisis del resto de subdominios ni de los servicios detectados en los distintos puertos abiertos, aunque se evidencian múltiples vectores de ataque potenciales.
+
+\subsection{Acciones recomendadas para la Empresa C}
+Gracias a la información obtenida, la Empresa C debería considerar las siguientes acciones defensivas:
+
+\begin{itemize}
+  \item \textbf{Corregir urgentemente el fallo de acceso a la Intranet}, ya que representa una vulnerabilidad crítica que permite la exposición directa de información interna.
+  \item \textbf{Revisar y auditar los servicios expuestos}, especialmente los que operan en puertos no estándar o los que se encuentran activos en múltiples subdominios.
+  \item \textbf{Evaluar la necesidad de cada subdominio detectado}. En caso de que alguno no sea imprescindible, se recomienda eliminarlo o desactivarlo para reducir la superficie de ataque.
+\end{itemize}
 
 \section{Impacto en la eficiencia del análisis}
 Con el objetivo de evaluar el impacto real de la herramienta desarrollada en la eficiencia del análisis, se ha realizado una comparación. Para ello, se ha replicado el escaneo realizado a la Empresa B de manera completamente manual, empleando las mismas herramientas utilizadas por la herramienta, pero sin el soporte de esta.

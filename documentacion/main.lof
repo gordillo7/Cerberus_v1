@@ -42,12 +42,14 @@
 \contentsline {figure}{\numberline {6.12}{\ignorespaces Panel de acceso de Joomla detectado en la Empresa B.}}{89}{figure.caption.78}%
 \contentsline {figure}{\numberline {6.13}{\ignorespaces Sugerencias ofensivas propuestas por la IA para la Empresa B.}}{90}{figure.caption.79}%
 \contentsline {figure}{\numberline {6.14}{\ignorespaces Sugerencias defensivas propuestas por la IA para la Empresa B.}}{92}{figure.caption.80}%
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Tiempo empleado en el escaneo inicial.}}{94}{figure.caption.81}%
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Tiempo empleado en el escaneo detallado.}}{94}{figure.caption.82}%
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Tiempo de ejecución de Subfinder.}}{95}{figure.caption.83}%
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Tiempo de ejecución de Nuclei.}}{96}{figure.caption.84}%
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Tiempo de ejecución de Feroxbuster.}}{97}{figure.caption.85}%
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Tiempo de ejecución de WhatWeb.}}{97}{figure.caption.86}%
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Tiempo de ejecución de JoomScan.}}{98}{figure.caption.87}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Duración del escaneo realizado a la Empresa C.}}{93}{figure.caption.82}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Puertos abiertos de la Empresa C.}}{94}{figure.caption.83}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Tiempo empleado en el escaneo inicial.}}{97}{figure.caption.84}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Tiempo empleado en el escaneo detallado.}}{97}{figure.caption.85}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Tiempo de ejecución de Subfinder.}}{98}{figure.caption.86}%
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Tiempo de ejecución de Nuclei.}}{99}{figure.caption.87}%
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Tiempo de ejecución de Feroxbuster.}}{100}{figure.caption.88}%
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Tiempo de ejecución de WhatWeb.}}{100}{figure.caption.89}%
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Tiempo de ejecución de JoomScan.}}{101}{figure.caption.90}%
 \addvspace {10\p@ }
-\contentsline {xchapter}{Conclusiones y trabajos futuros}{100}{chapter.7}%
+\contentsline {xchapter}{Conclusiones y trabajos futuros}{103}{chapter.7}%
