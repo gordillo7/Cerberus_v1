@@ -1,4 +1,0 @@
-# Nmap 7.94SVN scan initiated Mon Jun 16 10:51:54 2025 as: nmap -p- --open --min-rate 5000 -n -Pn -oG logs/uclaestrella.es/nmap/initial_scan.txt uclaestrella.es
-Host: 89.46.109.30 ()	Status: Up
-Host: 89.46.109.30 ()	Ports: 80/open/tcp//http///, 443/open/tcp//https///, 1720/open/tcp//h323q931///, 2222/open/tcp//EtherNetIP-1///	Ignored State: filtered (65531)
-# Nmap done at Mon Jun 16 10:52:20 2025 -- 1 IP address (1 host up) scanned in 26.45 seconds

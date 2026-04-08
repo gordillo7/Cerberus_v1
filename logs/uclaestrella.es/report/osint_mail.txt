@@ -1,8 +1,0 @@
-A total of 1 email addresses were found for the target 'uclaestrella.es':
-club@uclaestrella.es
-
-Out of these, 1 have been pwned in various security breaches
-
-- club@uclaestrella.es has been pwned in 2 breach(es).
-  Compromised fields: password, origin.
-  Breaches: LinkedIn.com (2012-05), Stealer Logs.

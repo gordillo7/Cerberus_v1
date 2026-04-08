@@ -1,4 +1,0 @@
-# Hydra v9.5 run at 2025-05-12 10:47:17 on ambling.es ssh (hydra -L logs/ambling.es/ssh/tmp_users.txt -P logs/ambling.es/ssh/tmp_passwords.txt -s 22 -o logs/ambling.es/ssh/hydra_custom_output.txt -f ambling.es ssh)
-# Hydra v9.5 run at 2025-05-12 10:50:26 on ambling.es ssh (hydra -L logs/ambling.es/ssh/tmp_users.txt -P logs/ambling.es/ssh/tmp_passwords.txt -s 22 -o logs/ambling.es/ssh/hydra_custom_output.txt -f ambling.es ssh)
-# Hydra v9.5 run at 2025-05-16 09:10:17 on ambling.es ssh (hydra -L logs/ambling.es/ssh/tmp_users.txt -P logs/ambling.es/ssh/tmp_passwords.txt -s 22 -o logs/ambling.es/ssh/hydra_custom_output.txt -f ambling.es ssh)
-# Hydra v9.5 run at 2025-06-16 10:47:03 on ambling.es ssh (hydra -L logs/ambling.es/ssh/tmp_users.txt -P logs/ambling.es/ssh/tmp_passwords.txt -s 22 -o logs/ambling.es/ssh/hydra_custom_output.txt -f ambling.es ssh)
